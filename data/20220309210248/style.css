@@ -1,0 +1,90 @@
+/* Code tidied up by ScrapBook */
+body { line-height: 1.5; font-family: "Source Sans Pro",sans-serif; font-size: 14px; color: rgb(143, 143, 143); background: rgb(34, 46, 56) url("pattern.png") repeat scroll 0% 0%; backface-visibility: hidden; }
+h1, h2, h3, h4, h5, h6 { font-family: "Roboto Condensed",sans-serif; color: rgb(68, 68, 68); }
+#page { display: none; animation: 1s ease 0s normal none 1 running fadein; }
+@keyframes fadein {
+0% { opacity: 0; }
+100% { opacity: 1; }
+}
+@keyframes fadein {
+0% { opacity: 0; }
+100% { opacity: 1; }
+}
+.main-navigation { clear: both; display: block; float: left; width: 100%; box-shadow: 0px 0px 1px rgb(0, 0, 0); position: relative; z-index: 999; background: rgb(34, 46, 56) url("pattern.png") repeat scroll 0% 0%; }
+.main-navigation ul { list-style: outside none none; margin: 0px; padding-left: 0px; }
+.main-navigation li { float: left; position: relative; padding: 25px 10px; margin-right: 10px; text-transform: uppercase; font-family: "Roboto Condensed",sans-serif; }
+.main-navigation a { display: block; text-decoration: none; color: rgb(255, 255, 255); text-shadow: 0px 1px 1px rgb(0, 0, 0); transition: color 0.3s ease 0s; }
+.main-navigation a:hover { color: rgb(0, 160, 176); }
+.main-navigation li:hover > a {  }
+.post-navigation, .paging-navigation, .comment-navigation { margin-bottom: 60px; }
+.post-navigation .nav-previous, .post-navigation .nav-next, .paging-navigation .nav-previous, .paging-navigation .nav-next { max-width: 50%; padding: 13px; border: 2px solid rgb(0, 160, 176); background-color: rgb(0, 160, 176); font-weight: 700; text-transform: uppercase; font-family: "Roboto Condensed",sans-serif; transition: all 0.3s ease 0s; }
+.comment-navigation .nav-previous, .paging-navigation .nav-previous, .post-navigation .nav-previous { float: left; max-width: 50%; }
+.comment-navigation .nav-next, .paging-navigation .nav-next, .post-navigation .nav-next { float: right; text-align: right; max-width: 50%; }
+.post-navigation, .paging-navigation, .post-navigation a, .paging-navigation a { color: rgb(255, 255, 255); text-decoration: none; }
+.post-navigation .nav-previous:hover, .post-navigation .nav-next:hover, .paging-navigation .nav-previous:hover, .paging-navigation .nav-next:hover { background-color: rgb(255, 255, 255); }
+.post-navigation .nav-previous:hover > a, .post-navigation .nav-next:hover > a, .paging-navigation .nav-previous:hover > a, .paging-navigation .nav-next:hover > a { color: rgb(0, 160, 176); }
+.screen-reader-text { clip: rect(1px, 1px, 1px, 1px); position: absolute !important; height: 1px; width: 1px; overflow: hidden; }
+.screen-reader-text:hover, .screen-reader-text:active, .screen-reader-text:focus { background-color: rgb(241, 241, 241); border-radius: 3px; box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.6); clip: auto !important; color: rgb(33, 117, 155); display: block; font-size: 14px; font-weight: bold; height: auto; left: 5px; line-height: normal; padding: 15px 23px 14px; text-decoration: none; top: 5px; width: auto; z-index: 100000; }
+.aligncenter { clear: both; display: block; margin: 0px auto; }
+.widget { margin: 0px 0px 30px; }
+.widget select { max-width: 100%; }
+.widget a { color: rgb(143, 143, 143); }
+.social-widget ul, .social-navigation ul { margin: 0px; text-align: center; list-style: outside none none; }
+.social-navigation { position: absolute; bottom: 0px; right: 50px; }
+.social-navigation li { display: inline-block; margin-right: 10px; position: relative; top: 15px; transition: all 0.3s ease 0s; }
+.social-navigation li:hover { top: -5px; }
+.social-widget li a, .social-navigation li a { text-decoration: none; }
+.social-widget a::before, .social-navigation li a::before { line-height: 1; color: rgb(255, 255, 255); font-family: FontAwesome; }
+.social-navigation li a::before { font-size: 35px; text-shadow: 0px 0px 1px rgb(0, 0, 0); }
+.social-widget a[href*="facebook.com"]::before, .social-navigation li a[href*="facebook.com"]::before { content: ""; }
+.footer-widget-area { padding: 30px 0px; }
+.footer-bar { box-shadow: none !important; }
+.hentry { margin: 0px 0px 30px; padding: 0px 0px 30px; border-bottom: 1px solid rgb(235, 235, 235); }
+.byline, .updated { display: none; }
+.single .byline, .group-blog .byline { display: inline; }
+.entry-header { margin-bottom: 15px; }
+.single .entry-title { margin-bottom: 15px; }
+.entry-title { margin: 0px; color: rgb(68, 68, 68); }
+.post-info a, .post-info, .entry-header span, .entry-header span a, .entry-footer a, .entry-footer, .post-date { color: rgb(143, 143, 143); }
+.entry-header span, .entry-footer span { margin-right: 10px; }
+.entry-footer { clear: both; }
+.hentry .col-md-12 { padding: 0px; position: relative; margin-bottom: 30px; }
+.single-thumb { padding: 0px; }
+.poster { padding-right: 15px; }
+img { max-width: 100%; height: auto; }
+.site-header { position: relative; padding: 0px 15px; }
+.site-branding { padding: 40px 0px; }
+.site-content { padding: 60px 60px 0px; background-color: rgb(255, 255, 255); box-shadow: 0px 1px 1px rgb(0, 0, 0); }
+.content-area { width: 690px; float: left; }
+.widget-area { width: 300px; float: right; }
+.site-info { padding: 30px 0px; }
+.site-footer .decoration-bar { box-shadow: none; }
+.site-info a { color: rgb(255, 255, 255); }
+.decoration-bar { height: 5px; clear: both; position: relative; box-shadow: 0px 1px 1px rgb(0, 0, 0); background: rgba(0, 0, 0, 0) linear-gradient(to right, rgb(0, 160, 176) 0%, rgb(0, 160, 176) 20%, rgb(78, 205, 196) 20%, rgb(78, 205, 196) 40%, rgb(237, 201, 81) 40%, rgb(237, 201, 81) 60%, rgb(255, 107, 107) 60%, rgb(255, 107, 107) 80%, rgb(196, 77, 88) 80%, rgb(196, 77, 88) 100%) repeat scroll 0% 0%; }
+@media only screen and (max-width: 1199px) {
+  .content-area { width: 490px; }
+}
+@media only screen and (max-width: 991px) {
+  .widget-area, .footer-widget-area { display: none; }
+  .content-area { width: 100%; }
+}
+@media only screen and (max-width: 767px) {
+  .social-navigation { display: none; }
+  .site-info { padding: 30px; }
+}
+@media only screen and (max-width: 599px) {
+  .site-content { padding: 30px 30px 0px; }
+}
+@media only screen and (max-width: 499px) {
+  .single-thumb { width: 100%; margin-bottom: 30px; }
+}
+@media only screen and (max-width: 320px) {
+  .site-content { padding: 15px 15px 0px; }
+}
+.menu-toggle { display: none; background-color: rgb(0, 0, 0); color: rgb(255, 255, 255); border-radius: 5px; font-size: 30px; margin: 30px 0px; width: 50px; border: 0px none; }
+@media screen and (max-width: 991px) {
+  .menu-toggle, .main-navigation.toggled .nav-menu { display: block; }
+  .main-navigation li { width: 100%; border: 0px none; padding: 5px 0px; text-align: center; }
+  .main-navigation li:first-child { padding-top: 15px; }
+  .main-navigation ul { display: none; }
+}

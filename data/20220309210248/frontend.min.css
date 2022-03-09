@@ -1,0 +1,10 @@
+/* Code tidied up by ScrapBook */
+.monsterinsights-inline-popular-posts.monsterinsights-popular-posts-styled a.monsterinsights-inline-popular-posts-title { text-decoration: none; box-shadow: none; font-style: normal; font-weight: bold; border: medium none; }
+.monsterinsights-inline-popular-posts.monsterinsights-popular-posts-styled a.monsterinsights-inline-popular-posts-title:hover, .monsterinsights-inline-popular-posts.monsterinsights-popular-posts-styled a.monsterinsights-inline-popular-posts-title:focus { text-decoration: underline; }
+.monsterinsights-inline-popular-posts.monsterinsights-popular-posts-styled.monsterinsights-inline-popular-posts-beta { padding: 14px; border-width: 1px; border-style: solid; border-color: rgb(240, 242, 244); }
+.monsterinsights-inline-popular-posts.monsterinsights-popular-posts-styled.monsterinsights-inline-popular-posts-beta .monsterinsights-inline-popular-posts-label { display: block; font-size: 18px; line-height: 18px; color: rgb(235, 87, 87); }
+.monsterinsights-inline-popular-posts.monsterinsights-popular-posts-styled.monsterinsights-inline-popular-posts-beta .monsterinsights-inline-popular-posts-text { display: inline-block; vertical-align: middle; width: calc(100% - 164px); }
+.monsterinsights-inline-popular-posts.monsterinsights-popular-posts-styled.monsterinsights-inline-popular-posts-beta .monsterinsights-inline-popular-posts-title { line-height: 130%; color: rgb(57, 63, 76); }
+.monsterinsights-inline-popular-posts.monsterinsights-popular-posts-styled.monsterinsights-inline-popular-posts-beta .monsterinsights-inline-popular-posts-image { width: 144px; padding: 0px; display: inline-block; margin-right: 19px; vertical-align: middle; }
+@media (max-width: 767px) {
+}

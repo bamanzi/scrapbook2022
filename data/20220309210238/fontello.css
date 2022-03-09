@@ -1,0 +1,9 @@
+/* Code tidied up by ScrapBook */
+@font-face {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  src: url("fontello.eot") format("embedded-opentype"), url("fontello.woff2") format("woff2"), url("fontello.woff") format("woff"), url("fontello.ttf") format("truetype"), url("fontello.svg") format("svg");
+}
+[class^="icon-"]::before, [class*=" icon-"]::before { font-family: "fontello"; font-style: normal; font-weight: normal; display: inline-block; text-decoration: inherit; width: 1em; margin-right: 0.2em; text-align: center; font-variant: normal; text-transform: none; line-height: 1em; margin-left: 0.2em; }
+.icon-mp-folder-oe::before { content: "؀"; }

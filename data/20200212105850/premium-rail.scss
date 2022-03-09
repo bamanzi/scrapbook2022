@@ -1,0 +1,25 @@
+/* Code tidied up by ScrapBook */
+.community-page-rail-module { border-top: 1px solid rgb(88, 88, 88); margin-top: 18px; position: relative; }
+.community-page-rail-module .avatars { display: flex; -moz-box-pack: center; justify-content: center; height: 32px; margin: 0px; position: absolute; top: -16px; width: 100%; }
+.community-page-rail-module .wds-avatar-stack { margin: 0px; max-width: 120px; }
+.community-page-rail-module .wds-avatar { height: 32px; min-width: 32px; width: 32px; position: relative; }
+.community-page-rail-module .wds-avatar a { color: rgb(88, 88, 88); }
+.community-page-rail-module .wds-avatar a:hover { color: rgb(88, 88, 88); }
+.community-page-rail-module .wds-avatar .wds-avatar__image { background-color: rgb(255, 255, 255); fill: rgb(88, 88, 88); }
+.community-page-rail-module .wds-avatar .wds-avatar__image:hover { fill: rgb(88, 88, 88); }
+.community-page-rail-module .wds-avatar img.wds-avatar__image { border: 2px solid rgb(88, 88, 88); }
+.community-page-rail-module .wds-avatar img.wds-avatar__image:hover { border-color: rgb(88, 88, 88); }
+.community-page-rail-module .content { display: flex; -moz-box-orient: horizontal; flex-direction: row; -moz-box-pack: justify; justify-content: space-between; -moz-box-align: center; align-items: center; margin-top: 26px; }
+.community-page-rail-module .description { flex: 1 1 0%; font-size: 14px; line-height: 18px; overflow: hidden; }
+.WikiaRail .premium-recirculation-rail .recirculation-rail__placeholder, .WikiaRail .premium-recirculation-rail img { border: 1px solid rgb(88, 88, 88); border-radius: 4px; height: 53px; min-width: 53px; width: 53px; }
+.WikiaRail .premium-recirculation-rail .recirculation-rail__placeholder, .WikiaRail .premium-recirculation-rail img { align-self: center; display: block; }
+.WikiaRail .premium-recirculation-rail .recirculation-rail__placeholder { background: rgb(0, 42, 50) none repeat scroll 0% 0%; position: relative; }
+.WikiaRail .premium-recirculation-rail .recirculation-rail__placeholder svg { fill: rgb(0, 214, 214); height: 50%; left: 50%; opacity: 0.2; position: absolute; top: 50%; transform: translate(-50%, -50%); width: 35%; }
+.WikiaRail .premium-recirculation-rail h2 { text-transform: capitalize; }
+.WikiaRail .premium-recirculation-rail li { margin: 0px 6px 16px; }
+.WikiaRail .premium-recirculation-rail a { color: rgb(213, 212, 212); display: flex; }
+.WikiaRail .premium-recirculation-rail a:hover { color: rgb(239, 151, 51); text-decoration: none; }
+.WikiaRail .premium-recirculation-rail p { margin: 16px 12px 0px; }
+.WikiaRail .premium-recirculation-rail .rail-sponsored-content p { margin: 0px 0px 5px; }
+.WikiaRail .premium-recirculation-rail .rail-sponsored-content span { font-style: italic; font-weight: bold; opacity: 0.5; }
+.WikiaRail .premium-recirculation-rail .rail-sponsored-content-desc { margin: 5px 12px; }
