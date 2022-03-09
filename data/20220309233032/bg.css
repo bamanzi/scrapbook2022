@@ -1,0 +1,26 @@
+/* Code tidied up by ScrapBook */
+p, dd, dt, table { font-family: "PT Serif",Georgia,serif; }
+h1, h2, h3, h4, h5, h6, .nav, .footer { font-family: "PT Sans",Tahoma,sans-serif; }
+.footer { font-size: 12px; text-align: center; }
+body { margin: 0px; padding: 0px; background: rgb(243, 242, 242) url("bg_tile.jpg") repeat scroll 0% 0%; }
+.logo { font-family: courier; float: left; display: inline; color: rgb(255, 255, 255); font-size: 2.5em; font-weight: normal; margin: 0px 10px; padding: 6px 0px 0px; }
+.logo a { text-decoration: none; color: rgb(255, 255, 255); border: medium none; }
+.logo a:hover { color: rgb(242, 156, 128); border: medium none; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; }
+.nav { margin: auto; width: 90%; background-color: rgb(230, 58, 0); overflow: hidden; border-radius: 0px 0px 10px 10px; }
+.nav ul { font-size: 0.95em; list-style: outside none none; padding: 0px; margin: 0px; float: right; }
+.nav li { margin: 0px; float: left; }
+.nav li a { float: left; text-align: center; display: block; width: 8em; border-left: 1px solid rgb(207, 53, 0); padding: 20px 0px; text-decoration: none; color: rgb(255, 255, 255); border-bottom: medium none; }
+.nav li a:hover { background-color: rgb(207, 53, 0); border-bottom: medium none; text-decoration: none; }
+.footer { margin-top: auto; margin-right: auto; margin-left: auto; margin-bottom: 0px !important; width: 90%; background-color: rgb(226, 226, 226); overflow: hidden; border-radius: 10px 10px 0px 0px; color: rgb(158, 158, 158); }
+.footer a { color: rgb(79, 79, 79); }
+h1 { font-size: 2em; }
+a { color: rgb(230, 58, 0); text-decoration: none; border-bottom: 1px solid rgb(220, 220, 220); }
+a:hover { color: rgb(207, 53, 0); text-decoration: none; border-bottom: 1px solid rgb(207, 53, 0); background: rgb(239, 207, 197) none repeat scroll 0% 0%; }
+.content { margin: 15px auto; width: 90%; overflow: hidden; clear: both; }
+table { width: 100%; height: auto; margin: 0px; padding: 0px; border-width: medium; border-style: none; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; border-collapse: inherit; border-spacing: 0px; border-color: inherit; vertical-align: inherit; font-weight: inherit; font-size: 14px; }
+th { background-color: rgb(102, 102, 102); color: rgb(255, 255, 255); line-height: 20px; position: sticky; top: 43px; }
+td { border-bottom: 1px solid rgb(247, 247, 247); padding: 5px; vertical-align: top; }
+th:only-child { text-align: left; font-weight: 400; background-color: rgb(51, 51, 51); color: rgb(255, 255, 255); padding: 12px; top: 0px; }
+td:first-child { vertical-align: top; }
+td .cell { background-color: rgb(255, 223, 172); font-size: 14px; margin: 1px; display: block; padding: 5px; text-align: center; }
+.github-logo::before { content: url("github.svg"); display: inline-block; width: 1em; height: 1em; padding-right: 3px; }

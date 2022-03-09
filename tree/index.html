@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html id="scrapbook-index">
+
+<head>
+<meta charset="UTF-8">
+<title>scrapbook2022 - ScrapBook</title>
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" type="text/css" href="index.css" media="all">
+<link rel="stylesheet" type="text/css" href="custom.css" media="all">
+<script>
+function init() {
+    toggleAll(false);
+    try {
+        initLoadHash();
+    } catch(ex) {
+        if (console && console.error) console.error(ex);
+    }
+    initEvents();
+}
+function initLoadHash() {
+    var hash = top.location.hash, hashTargetUrl, hashTargetItem;
+    if (hash) {
+        hashTargetUrl = hash.substring(1);
+        var mainPage = hashTargetUrl.replace(/^(\.\.\/data\/\d{14})\/.*/, "$1/index.html");
+        var elems = document.getElementById("container-root").getElementsByTagName("A");
+        for ( var i = 0, I = elems.length; i < I; i++ ) {
+            if (elems[i].getAttribute("href") == mainPage) {
+                hashTargetItem = elems[i];
+                break;
+            }
+        }
+    }
+    if (hashTargetUrl) {
+        if (self != top) top.frames["main"].location = hashTargetUrl;
+    }
+    if (hashTargetItem) {
+        if (self != top && hashTargetItem.title) top.document.title = hashTargetItem.title;
+        var ancs = hashTargetItem;
+        while (ancs) { 
+            if (ancs.nodeName == "UL") toggleElem(ancs, true);
+            ancs = ancs.parentNode;
+        }
+        hashTargetItem.focus();
+    }
+}
+function initEvents() {
+    document.getElementById("toggle-all").onclick = function () {
+        toggleAll();
+        return false;
+    }
+    var elems = document.getElementById("container-root").getElementsByTagName("A");
+    for ( var i = 0, I = elems.length; i < I; i++ ) {
+        if (elems[i].className == "container") {
+            elems[i].onclick = onClickContainer;
+        } else if (elems[i].className == "folder") {
+            elems[i].onclick = onClickFolder;
+        } else {
+            elems[i].onclick = onClickItem;
+        }
+    }
+}
+function onClickContainer() {
+    var ulElem = document.getElementById(this.id.replace(/^item-/, "container-"));
+    if (ulElem) toggleElem(ulElem);
+    return false;
+}
+function onClickFolder() {
+    var cElem = this.previousSibling;
+    cElem.focus();
+    cElem.click();
+    return false;
+}
+function onClickItem() {
+    if (self == top) return;
+    var hash = "#" + this.getAttribute("href");
+    var title = this.childNodes[1].nodeValue;
+    try {
+        if (history && history.pushState) top.history.pushState("", title, hash);
+        else top.location.hash = hash;
+        top.document.title = title;
+    } catch(ex) {
+        if (console && console.error) console.error(ex);
+    }
+}
+function toggleElem(elem, willOpen) {
+    var iElem = document.getElementById(elem.id.replace(/^container-/, "item-"));
+    if (!iElem) return;
+    if (typeof willOpen === "undefined") willOpen = (elem.style.display == "none");
+    if (willOpen) {
+        elem.style.display = "block";
+        iElem.textContent = "▽";
+    }
+    else {
+        elem.style.display = "none";
+        iElem.textContent = "▷";
+    }
+}
+function toggleAll(willOpen) {
+    var ulElems = document.getElementsByTagName("UL");
+    if (typeof willOpen === "undefined") {
+        willOpen = false;
+        for ( var i = 1; i < ulElems.length; i++ ) {
+            if (ulElems[i].style.display == "none") { willOpen = true; break; }
+        }
+    }
+    for ( var i = 1; i < ulElems.length; i++ ) {
+        toggleElem(ulElems[i], willOpen);
+    }
+}
+</script>
+<script src="custom.js"></script>
+</head>
+
+<body>
+<div id="header"><a id="toggle-all" title="Toggle all folders" href="#"><img src="toggle.png" alt="">ScrapBook</a> <a id="search" href="../search.html"><img src="search.png" alt=""></a></div>
+<ul id="container-root">
+<li class="depth1"><a id="item-20220309232217" class="container" title="Toggle" href="#">▷</a><a class="folder" title="golang"><img src="treefolder.png" alt="">golang</a><ul id="container-20220309232217">
+<li class="depth2"><a class="bookmark" title="Introduction · Go语言高级编程" href="https://chai2010.cn/advanced-go-programming-book/" target="_blank"><img src="https://chai2010.cn/advanced-go-programming-book/gitbook/images/favicon.ico" alt="">Introduction · Go语言高级编程</a></li>
+<li class="depth2"><a class="bookmark" title="前言 · Go语言圣经" href="https://books.studygolang.com/gopl-zh/?utm_source=pocket_mylist" target="_blank"><img src="https://books.studygolang.com/gopl-zh/gitbook/images/favicon.ico" alt="">前言 · Go语言圣经</a></li>
+</ul>
+</li>
+<li class="depth1"><a id="item-20220309210620" class="container" title="Toggle" href="#">▷</a><a class="folder" title="linux"><img src="treefolder.png" alt="">linux</a><ul id="container-20220309210620">
+<li class="depth2"><a class="page" title="Building Portable Binaries. Attempting to self-contain application… | by Square Engineering | Square Corner Blog | Medium" href="../data/20220309220112926635/index.html"><img src="../data/20220309220112926635/favicon.png" alt="">Building Portable Binaries. Attempting to self-contain application… | by Square Engineering | Square Corner Blog | Medium</a> <a class="bookmark" title="Source" href="https://medium.com/square-corner-blog/building-portable-binaries-50ca4f3d75cd" target="_blank">➤</a></li>
+<li class="depth2"><a class="" title="pressly/sup: Super simple deployment tool (replacemnt for python's fabric package)" href="../data/20220309232522/index.html"><img src="../data/20220309232522/favicon.svg" alt="">pressly/sup: Super simple deployment tool (replacemnt for python's fabric package)</a> <a class="bookmark" title="Source" href="https://github.com/pressly/sup?utm_source=pocket_mylist" target="_blank">➤</a></li>
+<li class="depth2"><a class="" title="Feature comparison of ack, ag, git-grep, grep and ripgrep" href="../data/20220309233032/index.html"><img src="../data/20220309233032/favicon.ico" alt="">Feature comparison of ack, ag, git-grep, grep and ripgrep</a> <a class="bookmark" title="Source" href="https://beyondgrep.com/feature-comparison/" target="_blank">➤</a></li>
+</ul>
+</li>
+<li class="depth1"><fieldset class="separator" title=""><legend>&nbsp;&nbsp;</legend></fieldset></li>
+<li class="depth1"><a id="item-20220308205416" class="container" title="Toggle" href="#">▷</a><a class="folder" title="doom"><img src="treefolder.png" alt="">doom</a><ul id="container-20220308205416">
+<li class="depth2"><a class="" title="Doom cheat codes | Doom Wiki | Fandom" href="../data/20200212105850/index.html"><img src="../data/20200212105850/Favicon.ico" alt="">Doom cheat codes | Doom Wiki | Fandom</a> <a class="bookmark" title="Source" href="https://doom.fandom.com/wiki/Doom_cheat_codes" target="_blank">➤</a></li>
+<li class="depth2"><a class="bookmark" title="Browsing directory levels/doom2/megawads/ - Doomworld /idgames database frontend" href="https://www.doomworld.com/idgames//index.php?dir=levels/doom2/megawads/&amp;sort=rating&amp;direction=desc" target="_blank"><img src="https://www.doomworld.com/favicon.ico" alt="">Browsing directory levels/doom2/megawads/ - Doomworld /idgames database frontend</a></li>
+</ul>
+</li>
+<li class="depth1"><a id="item-20220308205404" class="container" title="Toggle" href="#">▷</a><a class="folder" title="doctor who"><img src="treefolder.png" alt="">doctor who</a><ul id="container-20220308205404">
+<li class="depth2"><a class="" title="Main Range - Full Ranking (20210317) - The Time Scales " href="../data/20210317211933/index.html"><img src="../data/20210317211933/favicon.ico" alt="">Main Range - Full Ranking (20210317) - The Time Scales </a> <a class="bookmark" title="Source" href="https://thetimescales.com/Ratings/index.php?series=Monthly_Series" target="_blank">➤</a></li>
+<li class="depth2"><a class="site" title="Theory:Timeline - Last Great Time War | Tardis | Fandom" href="../data/20220308205541/index.html"><img src="../data/20220308205541/favicon.ico" alt="">Theory:Timeline - Last Great Time War | Tardis | Fandom</a> <a class="bookmark" title="Source" href="https://tardis.fandom.com/wiki/Theory:Timeline_-_Last_Great_Time_War?so=search" target="_blank">➤</a></li>
+</ul>
+</li>
+<li class="depth1"><a id="item-20220308205614" class="container" title="Toggle" href="#">▷</a><a class="folder" title="misc"><img src="treefolder.png" alt="">misc</a><ul id="container-20220308205614">
+</ul>
+</li>
+<li class="depth1"><a id="item-20220308211057" class="container" title="Toggle" href="#">▷</a><a class="folder" title="x-files"><img src="treefolder.png" alt="">x-files</a><ul id="container-20220308211057">
+<li class="depth2"><a class="" title="The 10 best short stories in ‘The X-Files: Trust No One’ (Book review)" href="../data/20220309210248/index.html"><img src="../data/20220309210248/cropped-rfmc-logo-192x192.jpg" alt="">The 10 best short stories in ‘The X-Files: Trust No One’ (Book review)</a> <a class="bookmark" title="Source" href="http://reviewsfrommycouch.com/2016/01/books/short-story-collection-trust-no-one-whets-appetite-for-return-of-x-files/" target="_blank">➤</a></li>
+<li class="depth2"><a class="site" title="The 10 best short stories in ‘The X-Files: The Truth is Out There’ (Book review)" href="../data/20220308213410/index.html"><img src="../data/20220308213410/cropped-rfmc-logo-192x192.jpg" alt="">The 10 best short stories in ‘The X-Files: The Truth is Out There’ (Book review)</a> <a class="bookmark" title="Source" href="http://reviewsfrommycouch.com/2016/05/books/the-truth-is-out-there-serves-up-another-mixed-bag-of-x-files-short-stories/" target="_blank">➤</a></li>
+<li class="depth2"><a class="" title="The 10 best short stories in ‘The X-Files: Secret Agendas’ (Book review)" href="../data/20220309210238/index.html"><img src="../data/20220309210238/cropped-rfmc-logo-192x192.jpg" alt="">The 10 best short stories in ‘The X-Files: Secret Agendas’ (Book review)</a> <a class="bookmark" title="Source" href="http://reviewsfrommycouch.com/2016/12/books/secret-agendas-offers-more-x-files-prose-more-mistakes/" target="_blank">➤</a></li>
+<li class="depth2"><a class="marked" title="Mytharc Primer « EatTheCorn.com" href="../data/20220309211027/index.html"><img src="../data/20220309211027/X_s.jpg" alt="">Mytharc Primer « EatTheCorn.com</a> <a class="bookmark" title="Source" href="http://www.eatthecorn.com/mytharc-primer/?utm_source=pocket_mylist" target="_blank">➤</a></li>
+<li class="depth2"><a class="bookmark" title="The X-Files - S1,2,3,4,5,6,7,8,9,10 - sharethefiles.com" href="https://web.archive.org/web/20160413083345/http://sharethefiles.com/forum/viewtopic.php?t=1455" target="_blank"><img src="treeitem.png" alt="">The X-Files - S1,2,3,4,5,6,7,8,9,10 - sharethefiles.com</a></li>
+</ul>
+</li>
+<li class="depth1"><a id="item-20220309225019" class="container" title="Toggle" href="#">▷</a><a class="folder" title="dc comics"><img src="treefolder.png" alt="">dc comics</a><ul id="container-20220309225019">
+<li class="depth2"><a class="" title="【长篇书单】来自REDDIT的蝙蝠侠补漫指南（上）" href="../data/20220309225441/index.html"><img src="treeitem.png" alt="">【长篇书单】来自REDDIT的蝙蝠侠补漫指南（上）</a> <a class="bookmark" title="Source" href="https://weibo.com/ttarticle/p/show?id=2309404278334975565095" target="_blank">➤</a></li>
+<li class="depth2"><a class="" title="【长篇书单】来自REDDIT的蝙蝠侠补漫指南（下）" href="../data/20220309225336/index.html"><img src="../data/20220309225336/favicon.ico" alt="">【长篇书单】来自REDDIT的蝙蝠侠补漫指南（下）</a> <a class="bookmark" title="Source" href="https://weibo.com/ttarticle/p/show?id=2309404278437710842748" target="_blank">➤</a></li>
+<li class="depth2"><a class="" title="【书单推荐】最好的15个超人故事" href="../data/20220309225738/index.html"><img src="../data/20220309225738/favicon.ico" alt="">【书单推荐】最好的15个超人故事</a> <a class="bookmark" title="Source" href="https://weibo.com/ttarticle/p/show?id=2309404128456093921486" target="_blank">➤</a></li>
+</ul>
+</li>
+<li class="depth1"><a id="item-20220309231854" class="container" title="Toggle" href="#">▷</a><a class="folder" title="star trek"><img src="treefolder.png" alt="">star trek</a><ul id="container-20220309231854">
+<li class="depth2"><a class="bookmark" title="Star Trek: TNG - S1,2,3,4,5,6,7 - sharethefiles.com" href="https://web.archive.org/web/20160414175500/http://sharethefiles.com/forum/viewtopic.php?t=2747" target="_blank"><img src="treeitem.png" alt="">Star Trek: TNG - S1,2,3,4,5,6,7 - sharethefiles.com</a></li>
+<li class="depth2"><a class="bookmark" title="Star Trek: Deep Space 9 - S1,2,3,4,5,6,7 - sharethefiles.com" href="https://web.archive.org/web/20160414235913/http://sharethefiles.com/forum/viewtopic.php?t=3988" target="_blank"><img src="treeitem.png" alt="">Star Trek: Deep Space 9 - S1,2,3,4,5,6,7 - sharethefiles.com</a></li>
+<li class="depth2"><a class="" title="The Greatest &quot;Star Trek&quot; Comic Book Stories of All-Time | CBR" href="../data/20220309234550/index.html"><img src="../data/20220309234550/favicon-192x192.8178bde4.png" alt="">The Greatest &quot;Star Trek&quot; Comic Book Stories of All-Time | CBR</a> <a class="bookmark" title="Source" href="https://www.cbr.com/the-greatest-star-trek-comic-book-stories-of-all-time/?utm_source=pocket_mylist" target="_blank">➤</a></li>
+<li class="depth2"><a class="bookmark" title="A complete guide to what 'Star Trek' to watch before 'Star Trek: Picard' | Space" href="https://www.space.com/star-trek-picard-essential-trek-viewing-guide.html?utm_source=pocket_mylist" target="_blank"><img src="https://vanilla.futurecdn.net/space/425245/apple-touch-icon.png" alt="">A complete guide to what 'Star Trek' to watch before 'Star Trek: Picard' | Space</a></li>
+</ul>
+</li>
+</ul>
+<script>init();</script>
+</body>
+
+</html>

@@ -1,0 +1,2033 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+
+        <title>Feature comparison of ack, ag, git-grep, grep and ripgrep</title>
+        <meta name="Author" content="Andy Lester">
+        <meta name="google-site-verification" content="qm9jhn-etECEUlDgRf7gRtnJoSD1hmHOQm_iue_ng3A">
+        <meta name="msvalidate.01" content="4EF6B7CF4E86418C29626DA5E8B28AF5">
+        <base href="">
+        <link href="css.css" rel="stylesheet" type="text/css">
+        <link href="css_001.css" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="favicon.ico">
+        <link rel="stylesheet" type="text/css" href="bg.css">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+<script type="text/javascript" async="" src="about:blank"></script><script async="" src="about:blank"></script>
+<script>/* Code removed by ScrapBook */</script>
+<script type="application/ld+json">/* Code removed by ScrapBook */</script>
+    <style>
+/* Code tidied up by ScrapBook */
+</style></head>
+    <body>
+        <div class="nav">
+<h1 class="logo">
+<a href="https://beyondgrep.com/">ack!</a>
+</h1>
+    <ul>
+        <li>
+<a href="https://beyondgrep.com/why-ack/">Why ack?</a>
+</li>
+        <li>
+<a href="https://beyondgrep.com/install/">Install</a>
+</li>
+        <li>
+<a href="https://beyondgrep.com/documentation/">Documentation</a>
+</li>
+        <li>
+<a href="https://beyondgrep.com/community/">Community</a>
+</li>
+        <li>
+<a href="https://beyondgrep.com/more-tools/">More Tools</a>
+</li>
+        <li>
+<a href="#">Feature Chart</a>
+</li>
+    </ul>
+</div>
+<div class="content">
+<h1>Feature comparison of ack, ag, git-grep, GNU grep and ripgrep</h1>
+<p>
+    There are many greplike tools available to choose from. <span data-sb-id="1646839820574" data-sb-obj="linemarker" class="linemarker-marked-line" style="border-bottom: medium solid rgb(51, 255, 51);"> ripgrep is
+    currently the fastest</span>, which folks seem to focus on, but they have
+    different features.  Here's a chart to help you see which tools can do
+    what.
+</p>
+<p>
+    If you find this chart useful, consider making one for the projects you run, even if it includes "competing" projects.
+    <a href="http://blog.petdance.com/2018/01/02/the-best-open-source-project-for-someone-might-not-be-yours-and-thats-ok/">The best
+    project for someone might not be your project, and that's OK</a>.
+</p>
+<p>
+    If you have updates to the chart, please
+    <a href="https://github.com/beyondgrep/website/issues/">submit as a GitHub issue</a>.
+</p>
+<table>
+        <tbody><tr>
+            <th>
+            </th>
+            <th width="14%">ack</th>
+            <th width="14%">ag</th>
+            <th width="14%">git-grep</th>
+            <th width="14%">GNU grep</th>
+            <th width="14%">rg</th>
+        </tr>
+                <tr>
+                    <td>Name</td>
+                        <td>
+            <span class="cell">ack</span>
+                        </td>
+                        <td>
+            <span class="cell">The Silver Searcher</span>
+                        </td>
+                        <td>
+            <span class="cell">git-grep</span>
+                        </td>
+                        <td>
+            <span class="cell">GNU grep</span>
+                        </td>
+                        <td>
+            <span class="cell">ripgrep</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Project page</td>
+                        <td>
+            <span class="cell"><a href="https://beyondgrep.com/">Link</a></span>
+                        </td>
+                        <td>
+            <span class="cell"><a href="https://geoff.greer.fm/ag/">Link</a></span>
+                        </td>
+                        <td>
+            <span class="cell"><a href="https://git-scm.com/docs/git-grep">Link</a></span>
+                        </td>
+                        <td>
+            <span class="cell"><a href="https://www.gnu.org/software/grep/">Link</a></span>
+                        </td>
+                        <td>
+            <span class="cell"><a href="https://github.com/BurntSushi/ripgrep">Link</a></span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Language</td>
+                        <td>
+            <span class="cell">Perl</span>
+                        </td>
+                        <td>
+            <span class="cell">C</span>
+                        </td>
+                        <td>
+            <span class="cell">C</span>
+                        </td>
+                        <td>
+            <span class="cell">C</span>
+                        </td>
+                        <td>
+            <span class="cell">Rust</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>License</td>
+                        <td>
+            <span class="cell">Artistic License 2.0</span>
+                        </td>
+                        <td>
+            <span class="cell">Apache License 2.0</span>
+                        </td>
+                        <td>
+            <span class="cell">GPL 2</span>
+                        </td>
+                        <td>
+            <span class="cell">GPL 3</span>
+                        </td>
+                        <td>
+            <span class="cell">MIT/Unlicense</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Regular expressions</td>
+                        <td>
+            <span class="cell">Native Perl</span>
+                        </td>
+                        <td>
+            <span class="cell">Perl-compatible</span>
+                        </td>
+                        <td>
+            <span class="cell">Basic, extended, or Perl-compatible</span>
+                        </td>
+                        <td>
+            <span class="cell">Basic, extended, or Perl-compatible (experimental)</span>
+                        </td>
+                        <td>
+            <span class="cell">Fast non-backtracking, Perl-compatible, or automatic selection</span>
+                        </td>
+                </tr>
+        <tr>
+            <th>
+                Feature
+            </th>
+            <th width="14%">ack</th>
+            <th width="14%">ag</th>
+            <th width="14%">git-grep</th>
+            <th width="14%">GNU grep</th>
+            <th width="14%">rg</th>
+        </tr>
+                <tr>
+                    <td>Search where</td>
+                        <td>
+            <span class="cell">anywhere</span>
+                        </td>
+                        <td>
+            <span class="cell">anywhere</span>
+                        </td>
+                        <td>
+            <span class="cell">git repository by default, or anywhere with --no-index</span>
+                        </td>
+                        <td>
+            <span class="cell">anywhere</span>
+                        </td>
+                        <td>
+            <span class="cell">anywhere</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Search git history</td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Include/exclude files by filetype</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Specify filetype by file extension</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Specify filetype by pattern match on filename</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Specify filetype by pattern match on first line of file</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Configuration file</td>
+                        <td>
+            <span class="cell">System-, user- and project-level</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">System-, user- and project-level</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">Specified by RIPGREP_CONFIG_PATH environment variable</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Ignore files based on .gitignore or .ignore files</td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Parallelism</td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔, threads</span>
+                        </td>
+                        <td>
+            <span class="cell">✔, threads</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔, threads</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Deterministic output</td>
+                        <td>
+            <span class="cell">✔, using --sort-files</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔, using --sort path</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Match patterns across newlines</td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Smart case searching</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Multiple patterns with boolean expressions</td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Print lines by number</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Show proximity of matches to other matches</td>
+                        <td>
+            <span class="cell">✔, in ack 3</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Build output for each line based on match groups</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Limit length of output lines</td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Underline matches to show matches w/o color</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Search in gzip files</td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+        <tr>
+            <th>
+                Searching
+            </th>
+            <th width="14%">ack</th>
+            <th width="14%">ag</th>
+            <th width="14%">git-grep</th>
+            <th width="14%">GNU grep</th>
+            <th width="14%">rg</th>
+        </tr>
+                <tr>
+                    <td>Ignore case</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Smart case searching (case-insensitive unless the pattern contains a capital letter)</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Re-enable case-sensitive search over case-insensitive or smart-case search</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Match whole words</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Invert match</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Match entire line only</td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Specify pattern explicitly</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Read patterns from a file</td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Specify multiple patterns with boolean expressions</td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Match patterns across newlines</td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Print specific lines by number</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                </tr>
+        <tr>
+            <th>
+                Regular expressions
+            </th>
+            <th width="14%">ack</th>
+            <th width="14%">ag</th>
+            <th width="14%">git-grep</th>
+            <th width="14%">GNU grep</th>
+            <th width="14%">rg</th>
+        </tr>
+                <tr>
+                    <td>Use fixed strings, not regular expressions, for a literal match</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Use basic regular expressions</td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Use extended regular expressions</td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Use Perl (or Perl-compatible) regular expressions</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+        <tr>
+            <th>
+                Search output
+            </th>
+            <th width="14%">ack</th>
+            <th width="14%">ag</th>
+            <th width="14%">git-grep</th>
+            <th width="14%">GNU grep</th>
+            <th width="14%">rg</th>
+        </tr>
+                <tr>
+                    <td>Print only filenames that contain matches</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Print only filenames that do not contain matches</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Show only the part of a line that matched</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Specify output for each line match</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Print the filename for each match</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Suppress the prefixing filename on output</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Print paths relative to the project top directory</td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Prefix the line number to matching lines</td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Suppress line numbers</td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Print a heading of each file's name before its matches</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Specify filename to show for matches on STDIN</td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Show the column number of the first match</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Print lines of context after matches</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Print lines of context before matches</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Print lines of context before and after matches</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Show number of lines matching per file</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Print null byte as separator between filenames</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Stop searching in each file after NUM matches</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Stop searching after one match of any kind</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Print the byte offset within the file before each line</td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Suppress error messages about nonexistent or unreadable files</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Limit length of output lines</td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Do not output matched lines</td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Print stats (files scanned, time taken, etc.)</td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+        <tr>
+            <th>
+                File presentation
+            </th>
+            <th width="14%">ack</th>
+            <th width="14%">ag</th>
+            <th width="14%">git-grep</th>
+            <th width="14%">GNU grep</th>
+            <th width="14%">rg</th>
+        </tr>
+                <tr>
+                    <td>Enable color output</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Underline matches</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Set colors for various output items</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Pipe output through a pager or other command</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Separate match output with blank lines unless they are on adjacent lines</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Group together all matches in a file</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Specify group separator</td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Show the function name of the match</td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Show the function in which a match was found</td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Print a break between results from different files</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Flush output on every line</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+        <tr>
+            <th>
+                File finding
+            </th>
+            <th width="14%">ack</th>
+            <th width="14%">ag</th>
+            <th width="14%">git-grep</th>
+            <th width="14%">GNU grep</th>
+            <th width="14%">rg</th>
+        </tr>
+                <tr>
+                    <td>Only print the files selected, without searching</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Show which types each file has</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                </tr>
+                <tr>
+                    <td>List searchable files that match a pattern</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Read the list of files to search from FILE</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Sort the found files lexically</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Read the list of files to search from STDIN</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Limit search to filenames matching a pattern</td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Search hidden files</td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+        <tr>
+            <th>
+                File inclusion/exclusion
+            </th>
+            <th width="14%">ack</th>
+            <th width="14%">ag</th>
+            <th width="14%">git-grep</th>
+            <th width="14%">GNU grep</th>
+            <th width="14%">rg</th>
+        </tr>
+                <tr>
+                    <td>Search only files of a given type</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Exclude files of a given type</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Recurse into subdirectories</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Recurse into subdirectories, following symlinks</td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>No descending into subdirectories</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Add/remove directory from list of ignored dirs</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Don't respect ignore files (.gitignore, .ignore, etc)</td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Ignore files larger than a given size</td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Specify files to search</td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Ignore files/directories matching</td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Add filter for ignoring files</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Include only files of recognized types</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Follow symlinks</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Don't follow links to other devices</td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Search all types of files</td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Limit directory search depth</td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Search binary files</td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Treat files as binary</td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Don't search in binary files</td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Treat binary files as if they were text</td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Search all text files</td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Search all files</td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Skip rules found in VCS ignore files (.gitignore, .hgignore, etc)</td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+        <tr>
+            <th>
+                File type specification
+            </th>
+            <th width="14%">ack</th>
+            <th width="14%">ag</th>
+            <th width="14%">git-grep</th>
+            <th width="14%">GNU grep</th>
+            <th width="14%">rg</th>
+        </tr>
+                <tr>
+                    <td>Create a filetype, replacing the previous specs</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Add specifications to an existing filetype</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Remove a file type</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Ignore default type definitions</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Display all known types</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+        <tr>
+            <th>
+                Miscellaneous
+            </th>
+            <th width="14%">ack</th>
+            <th width="14%">ag</th>
+            <th width="14%">git-grep</th>
+            <th width="14%">GNU grep</th>
+            <th width="14%">rg</th>
+        </tr>
+                <tr>
+                    <td>Print all lines, whether matching or not</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Outputs a default ackrc for your customization to standard output</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Dump information on which options are loaded</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Specify a configuration file to use</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Ignore environment variables and global configuration files</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Treat standard input as a pipe</td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Search contents of compressed files (e.g. gzip)</td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Specify input file encoding</td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+            <span class="cell">✔</span>
+                        </td>
+                </tr>
+</tbody></table>
+        <div class="footer">
+            <p>
+                Ack is copyright 2005-2021 <a href="http://petdance.com/">Andy Lester</a>,
+                <a href="mailto:andy@petdance.com">andy@petdance.com</a>.
+                Ack is free software; you can redistribute it and/or modify it under the terms of the
+                <a href="https://www.opensource.org/licenses/Artistic-2.0">Artistic License v2.0</a>.
+            </p>
+            <p>
+                Website design by Ashraful Sheikh and <a href="https://jeana.dev/">Jeana Clark</a>
+                <small>(available to fork on <a href="https://github.com/beyondgrep/website" class="github-logo">GitHub</a>)</small>.
+            </p>
+            <p>
+                Thanks to <a href="https://digitalocean.com/">DigitalOcean</a> for their support.<br>
+                <a href="https://digitalocean.com/"><img src="digital-ocean-badge.png" alt="Digital Ocean" width="120" height="25"></a>
+            </p>
+        </div>
+    
+
+</div></body><div style="all: initial;"></div>
+</html>

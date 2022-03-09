@@ -1,0 +1,135 @@
+/* Code tidied up by ScrapBook */
+body .hawk-nest .hawk-display-name-container { font-size: 14px; line-height: 22px; text-align: left; position: relative; color:var(--black); }
+body .hawk-nest .hawk-display-name-promotion { font-size: 14px; line-height: 22px; text-align: left; position: relative; color:var(--black); }
+body .hawk-nest .hawk-display-name-promotion { color:var(--promotion-primary-color); font-size: 40px; line-height: 1.5; font-weight: 700; }
+@media screen and (max-width: 500px) {
+  body .hawk-nest .hawk-display-name-promotion { font-size: 30px; margin-bottom: 20px; text-align: center; }
+}
+@media screen and (max-width: 500px) {
+}
+@media screen and (max-width: 500px) {
+}
+@media screen and (max-width: 500px) {
+}
+@media screen and (max-width: 500px) {
+}
+body .hawk-nest .hawk-affiliate-link-container { line-height: 1.2; }
+body .hawk-nest .hawk-affiliate-link-container, body .hawk-nest .hawk-affiliate-link-container:hover, body .hawk-nest .hawk-affiliate-link-container:hover:visited, body .hawk-nest .hawk-affiliate-link-container:visited { text-decoration: none; border: medium none; }
+body .hawk-nest .hawk-affiliate-link-underline { display: inline-block; margin-top: 5px; }
+body .hawk-nest .hawk-affiliate-link-underline, body .hawk-nest .hawk-affiliate-link-underline:hover, body .hawk-nest .hawk-affiliate-link-underline:hover:visited, body .hawk-nest .hawk-affiliate-link-underline:visited { text-decoration: underline; color:var(--black); }
+body .hawk-nest .hawk-affiliate-link-button { width: 100%; max-width: 150px; box-sizing: border-box; line-height: 1; display: flex; align-items: center; justify-content: center; text-align: center; color:var(--white); padding: 8px 10px; text-decoration: none; text-transform: uppercase; font-size: 13px; font-weight: 700; background-color:var(--site-color); word-break: normal; letter-spacing: normal; }
+body .hawk-nest .hawk-affiliate-link-button:hover { background-color:var(--site-color-hover); }
+body .hawk-nest .hawk-affiliate-link-button:hover, body .hawk-nest .hawk-affiliate-link-button:hover:visited, body .hawk-nest .hawk-affiliate-link-button:link, body .hawk-nest .hawk-affiliate-link-button:visited, body .hawk-nest .hawk-affiliate-link-button > * { color:var(--white); text-decoration: none; }
+@media screen and (max-width: 500px) {
+  body .hawk-nest .hawk-affiliate-link-button { max-width: 100px; }
+}
+@media screen and (max-width: 500px) {
+}
+@media screen and (max-width: 500px) {
+}
+@media screen and (max-width: 500px) {
+}
+@media screen and (max-width: 500px) {
+}
+@media screen and (max-width: 500px) {
+}
+body .hawk-nest .hawk-affiliate-link-promotion-button { max-width: 150px; box-sizing: border-box; line-height: 1; display: flex; align-items: center; justify-content: center; text-align: center; color:var(--white); padding: 8px 10px; text-decoration: none; text-transform: uppercase; font-size: 13px; font-weight: 700; background-color:var(--site-color); word-break: normal; letter-spacing: normal; }
+body .hawk-nest .hawk-affiliate-link-promotion-button:hover { background-color:var(--site-color-hover); }
+body .hawk-nest .hawk-affiliate-link-promotion-button:hover, body .hawk-nest .hawk-affiliate-link-promotion-button:hover:visited, body .hawk-nest .hawk-affiliate-link-promotion-button:link, body .hawk-nest .hawk-affiliate-link-promotion-button:visited, body .hawk-nest .hawk-affiliate-link-promotion-button > * { color:var(--white); text-decoration: none; }
+@media screen and (max-width: 500px) {
+  body .hawk-nest .hawk-affiliate-link-promotion-button { max-width: 100px; }
+}
+body .hawk-nest .hawk-affiliate-link-promotion-button { padding: 18px 10px; font-size: 14px; width: 100%; max-width: unset; margin-top: 15px; }
+@media screen and (max-width: 500px) {
+  body .hawk-nest .hawk-affiliate-link-promotion-button { max-width: unset; }
+}
+@media screen and (max-width: 500px) {
+}
+@media screen and (min-width: 801px) {
+}
+@media screen and (max-width: 500px) {
+}
+@media screen and (max-width: 500px) {
+}
+@media screen and (max-width: 500px) {
+}
+@media screen and (max-width: 500px) {
+}
+@media screen and (max-width: 500px) {
+}
+@media screen and (max-width: 500px) {
+}
+@media screen and (max-width: 500px) {
+}
+@media screen and (max-width: 500px) {
+}
+@media screen and (max-width: 500px) {
+}
+@media screen and (max-width: 500px) {
+}
+@media screen and (max-width: 500px) {
+}
+@media screen and (max-width: 500px) {
+}
+@media screen and (max-width: 500px) {
+}
+@media screen and (max-width: 500px) {
+}
+@media screen and (max-width: 500px) {
+}
+@media screen and (max-width: 500px) {
+}
+body .hawk-nest .hawk-lazy-image-image { display: block; margin: auto; mix-blend-mode: multiply; max-width: 100%; max-height: 100%; object-fit: contain; }
+body .hawk-nest .hawk-lazy-image-image[src*="/img/misc/no-image-available.svg"] { filter: none; }
+@media screen and (max-width: 500px) {
+}
+body .hawk-nest .hawk-lazy-image-promotion { display: block; margin: auto; mix-blend-mode: multiply; max-width: 100%; max-height: 100%; object-fit: contain; }
+body .hawk-nest .hawk-lazy-image-promotion { grid-area: 1 / 1 / auto / auto; display: flex; align-items: center; mix-blend-mode: unset; }
+@media screen and (max-width: 500px) {
+}
+@media screen and (max-width: 500px) {
+}
+@media screen and (max-width: 500px) {
+}
+@media screen and (max-width: 500px) {
+}
+body .hawk-nest .hawk-promotion-pros-container { height: 100%; }
+body .hawk-nest .hawk-promotion-pros-container .hawk-promotion-pros-heading { color:var(--promotion-primary-color); font-size: 20px; margin-bottom: 15px; }
+body .hawk-nest .hawk-promotion-pros-container .hawk-promotion-pros-list .hawk-promotion-pros-item { color:var(--promotion-secondary-color); margin: 13px 0px 13px 18px; list-style: outside none disc; line-height: 1.3; }
+@media screen and (max-width: 500px) {
+  body .hawk-nest .hawk-promotion-pros-container { margin-top: 20px; }
+  body .hawk-nest .hawk-promotion-pros-container .hawk-promotion-pros-heading { text-align: center; }
+  body .hawk-nest .hawk-promotion-pros-container .hawk-promotion-pros-list { padding: 0px 20px; }
+}
+@media screen and (max-width: 500px) {
+}
+body .hawk-nest .hawk-display-price-promotion { display: inline-block; white-space: nowrap; width: auto; line-height: 1; }
+body .hawk-nest .hawk-display-price-promotion .hawk-display-price-label { display: block; margin-bottom: 5px; }
+body .hawk-nest .hawk-display-price-promotion .hawk-display-price-price { color:var(--site-color); font-weight: 700; font-size: 16px; }
+body .hawk-nest .hawk-display-price-promotion { display: flex; }
+body .hawk-nest .hawk-display-price-promotion .hawk-display-price-label { margin-right: 5px; color:var(--promotion-secondary-color); font-size: 16px; }
+body .hawk-nest .hawk-display-price-promotion .hawk-display-price-price { color:var(--promotion-primary-color); font-size: 26px; }
+@media screen and (max-width: 500px) {
+}
+@media screen and (max-width: 500px) {
+}
+@media screen and (max-width: 500px) {
+}
+body .hawk-nest .hawk-promotion-deal-container { display: flex; flex-direction: column; width: 100%; align-items: left; }
+body .hawk-nest .hawk-promotion-deal-container .hawk-promotion-deal-main { display: flex; align-items: center; justify-content: flex-start; margin-bottom: 10px; color:var(--promotion-secondary-color); }
+@media screen and (max-width: 500px) {
+  body .hawk-nest .hawk-promotion-deal-container { align-items: center; }
+}
+@media screen and (max-width: 500px) {
+}
+body .hawk-nest .hawk-promotion-item-container { display: flex; flex-direction: column; }
+body .hawk-nest .hawk-promotion-item-container .hawk-promotion-item-innerContainer { display: grid; grid-template-columns: auto 1fr; grid-column-gap: 30px; margin-top: 20px; }
+body .hawk-nest .hawk-promotion-item-container .hawk-promotion-item-innerContainer .hawk-promotion-item-pros-deal-container { grid-area: 1 / 2 / auto / auto; display: flex; flex-direction: column; }
+@media screen and (max-width: 500px) {
+  body .hawk-nest .hawk-promotion-item-container, body .hawk-nest .hawk-promotion-item-container .hawk-promotion-item-innerContainer { display: block; }
+  body .hawk-nest .hawk-promotion-item-container .hawk-promotion-item-innerContainer .hawk-promotion-item-pros-deal-container { align-items: center; }
+}
+body .hawk-nest .hawk-promotion-main-container { padding: 40px; max-width: 970px; margin: auto; }
+@media screen and (max-width: 500px) {
+  body .hawk-nest .hawk-promotion-main-container { flex-direction: row; padding: 15px; }
+}
