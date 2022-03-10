@@ -1,0 +1,384 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>技术|关于 sudo 你可能不知道的</title>
+ 
+<meta name="keywords" content="关于 sudo 你可能不知道的">
+<meta name="description" content="觉得你已经了解了 sudo 的所有知识了吗？再想想。 ">
+<meta name="copyright" content="2005-2019 Linux.cn">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="applicable-device" content="pc,mobile">
+<meta name="referrer" content="always">
+<base href=""><link rel="stylesheet" type="text/css" href="style_1_common.css">
+<link rel="stylesheet" type="text/css" href="style_1_portal_view.css">
+<link href="responsive.css" rel="stylesheet">
+
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script src="about:blank" type="text/javascript"></script>
+<script src="about:blank" type="text/javascript"></script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script src="about:blank" type="text/javascript"></script>
+<script src="about:blank" type="text/javascript"></script>
+<link rel="alternate" type="application/rss+xml" title="Linux 中国◆开源社区 RSS" href="https://linux.cn/rss.xml">
+<link rel="shortcut icon" href="favicon.ico" sizes="32x32">
+<link rel="canonical" href="https://linux.cn/article-11595-1.html">
+<script src="about:blank" type="text/javascript"></script>
+<script type="text/javascript" id="lEokdkhfmflTrqgmBMKdPsJjYjljdhYY" charset="UTF-8" src="about:blank"></script><script type="text/javascript" id="seccodejs_cSw85eAk" src="about:blank"></script></head>
+
+<body id="nv_portal" class="pg_view">
+<div id="append_parent"></div><div id="ajaxwaitid"></div>
+<div id="hd">
+<div class="wp" style="box-shadow: 1px 1px 2px rgb(102, 102, 102);">
+<h1 id="linuxcn_logo"><a href="https://linux.cn/" title="Linux.中国 - 开源社区"></a><style type="text/css">
+/* Code tidied up by ScrapBook */
+@keyframes spin {
+100% { transform: rotate(360deg); }
+}
+@keyframes spin {
+100% { transform: rotate(360deg); }
+}
+</style></h1>
+<div class="p_pop h_pop" id="mn_userapp_menu" style="display: none;"></div><div id="topmenu_wrapper" style="height: 33px;">
+<div id="topmenu" class="affix" style="padding-left: 0px; width: 1200px;">
+<div id="nv">
+<ul><li id="mn_N6666" style="display: block; width: 179px;"><a href="https://linux.cn/" hidefocus="true" style="font-weight: bold; padding: 0px 45px;">Linux 中国</a></li><li id="mn_P3"><a href="https://linux.cn/tech/" hidefocus="true" style="color: rgb(255, 250, 229);">技术</a></li><li id="mn_P1"><a href="https://linux.cn/news/" hidefocus="true" style="color: rgb(255, 250, 229);">新闻</a></li><li id="mn_P4"><a href="https://linux.cn/talk/" hidefocus="true" style="color: rgb(255, 250, 229);">观点</a></li><li id="mn_P8"><a href="https://linux.cn/share/" hidefocus="true" style="color: rgb(255, 250, 229);">分享</a></li><li id="mn_N1fa1"><a href="https://linux.cn/lctt/" hidefocus="true" target="_blank">LCTT</a></li></ul>
+</div>
+<div id="mu" class="cl">
+<ul class="cl " id="snav_mn_P3" style="display: none;">
+<li><a href="https://linux.cn/tech/desktop/" hidefocus="true">桌面应用</a></li><li><a href="https://linux.cn/tech/sa/" hidefocus="true">系统运维</a></li><li><a href="https://linux.cn/tech/program/" hidefocus="true">软件开发</a></li><li><a href="https://linux.cn/tech/raspberrypi/" hidefocus="true">树莓派</a></li><li><a href="https://linux.cn/tech/container/" hidefocus="true">容器与云</a></li><li><a href="https://linux.cn/portal.php?mod=list&amp;catid=27" hidefocus="true">区块链</a></li></ul>
+<ul class="cl " id="snav_mn_P1" style="display: none;">
+<li><a href="https://linux.cn/news/express/" hidefocus="true">硬核观察</a></li></ul>
+<ul class="cl " id="snav_mn_P4" style="display: none;">
+<li><a href="https://linux.cn/talk/comic/" hidefocus="true">极客漫画</a></li><li><a href="https://linux.cn/talk/ossip/" hidefocus="true">开源智慧</a></li><li><a href="https://linux.cn/talk/interview/" hidefocus="true">穿山甲专访</a></li><li><a href="https://linux.cn/talk/ocselected/" hidefocus="true">开源之道</a></li><li><a href="https://linux.cn/talk/clh/" hidefocus="true">代码英雄</a></li></ul>
+<ul class="cl " id="snav_mn_P8" style="display: none;">
+<li><a href="https://linux.cn/share/distro/" hidefocus="true">Linux 发行版</a></li></ul>
+<ul class="cl " id="snav_mn_userapp" style="display: none;">
+</ul>
+</div>
+</div>
+</div>
+<div id="scbar" class="cl">
+<form id="scbar_form" method="post" autocomplete="off" action="https://linux.cn/search.php?searchsubmit=yes" target="_blank">
+<input name="mod" id="scbar_mod" value="search" type="hidden">
+<input name="formhash" value="b7133b8d" type="hidden">
+<input name="srchtype" value="title" type="hidden">
+<input name="srhfid" value="0" type="hidden">
+<input name="srhlocality" value="portal::view" type="hidden">
+<table id="scbar_table" style="float: right;" cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td class="scbar_icon_td"></td>
+<td class="scbar_txt_td"><input name="srchtxt" id="scbar_txt" value="请注册后再搜索" autocomplete="off" speech="" class=" xg1" placeholder="请注册后再搜索" type="text"></td>
+<td class="scbar_type_td"><a id="scbar_type" class="xg1" hidefocus="true">搜索</a></td>
+<td class="scbar_btn_td"><button type="submit" name="searchsubmit" id="scbar_btn" sc="1" class="pn pnc" value="true"><strong class="xi2">搜索</strong></button></td>
+<td class="scbar_hot_td">
+<div id="scbar_hot">
+</div>
+</td>
+</tr>
+</tbody></table>
+</form>
+<span class="z titletext" style="padding: 0px 10px 0px 20px;">❏ 站外平台：</span>
+<ul id="ext_plantform" class="cl mutag z">
+<li><a class="hidefocus tsina" hidefocus="true" href="https://weibo.com/linuxcn" target="_blank" title="微博认证号：Linux中国"></a></li>
+<li><a class="hidefocus tticon" hidefocus="true" href="https://www.toutiao.com/c/user/52889878622/" target="_blank" title="今日头条：Linux中国"></a></li>
+<li><a class="hidefocus tticon" hidefocus="true" href="http://www.toutiao.com/c/user/3357852467/" target="_blank" title="今日头条：Linux技术"></a></li>
+<li><a class="hidefocus wyicon" hidefocus="true" href="http://dy.163.com/v2/article/detail/D282EJLD0511CPOJ.html" target="_blank" title="网易号：Linux"></a></li>
+<li><a class="hidefocus fbicon" hidefocus="true" href="https://www.facebook.com/linux.china/" target="_blank" title="Facebook Page：Linux中国"></a></li>
+<li><a class="hidefocus zhicon" hidefocus="true" href="https://www.zhihu.com/org/linuxzhong-guo/" target="_blank" title="知乎机构号：Linux中国"></a></li>
+<li><a class="hidefocus twicon" hidefocus="true" href="https://twitter.com/linux_cn" target="_blank" title="Twitter：Linux中国"></a></li>
+<li><a class="hidefocus tgicon" hidefocus="true" href="https://t.me/linuxdotcn" target="_blank" title="Telegram Channel：Linux中国"></a></li>
+</ul>
+</div>
+<br class="clear">
+<ul id="scbar_type_menu" class="p_pop" style="display: none;"><li><a rel="search">全站</a></li></ul>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+
+</div>
+</div>
+<div id="wp" class="wp">
+
+<style type="text/css">
+/* Code tidied up by ScrapBook */
+#nv_portal .vw .h.hm { background: rgb(255, 255, 255) url("091740ape5b74jppjj4q36.jpg") repeat scroll center center / cover ; border-radius: 0px; height: 640px; position: relative; padding: 10px; margin-bottom: 0px; }
+#nv_portal .vw .h.hm h1 { background-color: rgba(33, 33, 33, 0.8); border-radius: 0px; position: absolute; margin: 10px 20px 20px; padding: 15px 10px; bottom: 0px; width: 90%; }
+</style>
+<div style="margin: 2px 0px;"></div>
+<div id="ct" class="ct2 wp cl">
+<div class="mn">
+<article class="vw">
+<div class="h hm bm" style="margin-top: 0px;">
+<h1 class="ph" id="article_title">关于 sudo 你可能不知道的 </h1>
+<div class="ph" id="article_copyright">
+<span>作者： 
+    	 
+    		    			<span class="textcut"><a href="https://opensource.com/article/19/10/know-about-sudo" target="_blank">Peter Czanik</a></span>
+    		    	    	<span>译者： 
+<a href="https://linux.cn/lctt/" target="_blank">LCTT</a>&nbsp;<a href="https://linux.cn/lctt/wxy" target="_blank">Xingyu.Wang</a></span>
+<p id="article_date">
+| 2019-11-20 09:18&nbsp;&nbsp;
+评论: <a href="https://linux.cn/portal.php?mod=comment&amp;id=11595&amp;idtype=aid" title="查看全部评论"><em id="_commentnum">1</em></a>&nbsp;收藏: <em id="_favtimes">4</em>&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
+</span></div>
+</div>
+
+<div class="d" style="width: 100%; margin: 0px;">
+<div id="article_content" style="border-radius: 0px;">
+<blockquote>
+<p>觉得你已经了解了 sudo 的所有知识了吗？再想想。</p>
+</blockquote>
+
+<p>大家都知道 <code>sudo</code>，对吗？默认情况下，该工具已安装在大多数 Linux 系统上，并且可用于大多数 BSD 和商业 Unix 变体。不过，在与数百名 <code>sudo</code> 用户交谈之后，我得到的最常见的答案是 <code>sudo</code> 是一个使生活复杂化的工具。</p>
+<p>有 root 用户和 <code>su</code> 命令，那么为什么还要使用另一个工具呢？对于许多人来说，<code>sudo</code> 只是管理命令的前缀。只有极少数人提到，当你在同一个系统上有多个管理员时，可以使用 <code>sudo</code> 日志查看谁做了什么。</p>
+<p>那么，<code>sudo</code> 是什么？ 根据 <a href="https://www.sudo.ws/" class="ext" rel="external nofollow" target="_blank">sudo 网站</a>：</p>
+<blockquote>
+<p>“sudo 允许系统管理员通过授予某些用户以 root 用户或其他用户身份运行某些命令的能力，同时提供命令及其参数的审核记录，从而委派权限。”</p>
+</blockquote>
+<p>默认情况下，<code>sudo</code> 只有简单的配置，一条规则允许一个用户或一组用户执行几乎所有操作（在本文后面的配置文件中有更多信息）：</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pun">%</span><span class="pln">wheel ALL</span><span class="pun">=(</span><span class="pln">ALL</span><span class="pun">)</span><span class="pln"> ALL</span></code></li></ol></pre>
+<p>在此示例中，参数表示以下含义：</p>
+<ul>
+<li>第一个参数（<code>%wheel</code>）定义组的成员。</li>
+<li>第二个参数（<code>ALL</code>）定义组成员可以在其上运行命令的主机。</li>
+<li>第三个参数（<code>(ALL)</code>）定义了可以执行命令的用户名。</li>
+<li>最后一个参数（<code>ALL</code>）定义可以运行的应用程序。</li>
+</ul>
+<p>因此，在此示例中，<code>wheel</code> 组的成员可以以所有主机上的所有用户身份运行所有应用程序。但即使是这个一切允许的规则也很有用，因为它会记录谁在计算机上做了什么。</p>
+<h3 id="toc_1">别名</h3>
+<p>当然，它不仅可以让你和你最好的朋友管理一个共享机器，你还可以微调权限。你可以将以上配置中的项目替换为列表：用户列表、命令列表等。多数情况下，你可能会复制并粘贴配置中的一些列表。</p>
+<p>在这种情况下，别名可以派上用场。在多个位置维护相同的列表容易出错。你可以定义一次别名，然后可以多次使用。因此，当你对一位管理员不再信任时，将其从别名中删除就行了。使用多个列表而不是别名，很容易忘记从具有较高特权的列表之一中删除用户。</p>
+<h3 id="toc_2">为特定组的用户启用功能</h3>
+<p><code>sudo</code> 命令带有大量默认设置。不过，在某些情况下，你想覆盖其中的一些情况，这时你可以在配置中使用 <code>Defaults</code> 语句。通常，对每个用户都强制使用这些默认值，但是你可以根据主机、用户名等将设置缩小到一部分用户。这里有个我那一代的系统管理员都喜欢玩的一个示例：“羞辱”。这些只不过是一些有人输入错误密码时的有趣信息：</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">czanik@linux</span><span class="pun">-</span><span class="pln">mewy</span><span class="pun">:~&gt;</span><span class="pln"> </span><span class="kwd">sudo</span><span class="pln"> </span><span class="kwd">ls</span></code></li><li class="L1"><code><span class="pun">[</span><span class="kwd">sudo</span><span class="pun">]</span><span class="pln"> password </span><span class="kwd">for</span><span class="pln"> root</span><span class="pun">:</span></code></li><li class="L2"><code><span class="typ">Hold</span><span class="pln"> it up to the light </span><span class="pun">---</span><span class="pln"> </span><span class="kwd">not</span><span class="pln"> a brain </span><span class="kwd">in</span><span class="pln"> sight</span><span class="pun">!</span><span class="pln">  </span><span class="com">#</span><span class="pln"> </span><span class="pun">把灯举高点，脑仁太小看不到</span></code></li><li class="L3"><code><span class="pun">[</span><span class="kwd">sudo</span><span class="pun">]</span><span class="pln"> password </span><span class="kwd">for</span><span class="pln"> root</span><span class="pun">:</span></code></li><li class="L4"><code><span class="typ">My</span><span class="pln"> pet ferret can type better than you</span><span class="pun">!</span><span class="pln">     </span><span class="com">#</span><span class="pln"> </span><span class="pun">我的宠物貂也比你输入的好</span></code></li><li class="L5"><code><span class="pun">[</span><span class="kwd">sudo</span><span class="pun">]</span><span class="pln"> password </span><span class="kwd">for</span><span class="pln"> root</span><span class="pun">:</span></code></li><li class="L6"><code><span class="kwd">sudo</span><span class="pun">:</span><span class="pln"> </span><span class="lit">3</span><span class="pln"> incorrect password attempts</span></code></li><li class="L7"><code><span class="pln">czanik@linux</span><span class="pun">-</span><span class="pln">mewy</span><span class="pun">:~&gt;</span></code></li></ol></pre>
+<p>由于并非所有人都喜欢系统管理员的这种幽默，因此默认情况下会禁用这些羞辱信息。以下示例说明了如何仅对经验丰富的系统管理员（即 <code>wheel</code> 组的成员）启用此设置：</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="typ">Defaults</span><span class="pln"> </span><span class="pun">!</span><span class="pln">insults</span></code></li><li class="L1"><code><span class="typ">Defaults</span><span class="pun">:%</span><span class="pln">wheel insults</span></code></li></ol></pre>
+<p>我想，感谢我将这些消息带回来的人用两只手也数不过来吧。</p>
+<h3 id="toc_3">摘要验证</h3>
+<p>当然，<code>sudo</code> 还有更严肃的功能。其中之一是摘要验证。你可以在配置中包括应用程序的摘要：</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">peter ALL </span><span class="pun">=</span><span class="pln"> sha244</span><span class="pun">:</span><span class="lit">11925141bb22866afdf257ce7790bd6275feda80b3b241c108b79c88</span><span class="pln"> </span><span class="pun">/</span><span class="pln">usr</span><span class="pun">/</span><span class="pln">bin</span><span class="pun">/</span><span class="kwd">passwd</span></code></li></ol></pre>
+<p>在这种情况下，<code>sudo</code> 在运行应用程序之前检查应用程序摘要，并将其与配置中存储的摘要进行比较。如果不匹配，<code>sudo</code> 拒绝运行该应用程序。尽管很难在配置中维护此信息（没有用于此目的的自动化工具），但是这些摘要可以为你提供额外的保护层。</p>
+<h3 id="toc_4">会话记录</h3>
+<p>会话记录也是 <code>sudo</code> 鲜为人知的功能。在演示之后，许多人离开我的演讲后就计划在其基础设施上实施它。为什么？因为使用会话记录，你不仅可以看到命令名称，还可以看到终端中发生的所有事情。你可以看到你的管理员在做什么，要不他们用 shell 访问了机器而日志仅会显示启动了 <code>bash</code>。</p>
+<p>当前有一个限制。记录存储在本地，因此具有足够的权限的话，用户可以删除他们的痕迹。所以请继续关注即将推出的功能。</p>
+<h3 id="toc_5">插件</h3>
+<p>从 1.8 版开始，<code>sudo</code> 更改为基于插件的模块化体系结构。通过将大多数功能实现为插件，你可以编写自己的功能轻松地替换或扩展 <code>sudo</code> 的功能。已经有了 <code>sudo</code> 上的开源和商业插件。</p>
+<p>在我的演讲中，我演示了 <code>sudo_pair</code> 插件，该插件可在 <a href="https://github.com/square/sudo_pair/" class="ext" rel="external nofollow" target="_blank">GitHub</a> 上获得。这个插件是用 Rust 开发的，这意味着它不是那么容易编译，甚至更难以分发其编译结果。另一方面，该插件提供了有趣的功能，需要第二个管理员通过 <code>sudo</code> 批准（或拒绝）运行命令。不仅如此，如果有可疑活动，可以在屏幕上跟踪会话并终止会话。</p>
+<p>在最近的 All Things Open 会议上的一次演示中，我做了一个臭名昭著的演示：</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">czanik@linux</span><span class="pun">-</span><span class="pln">mewy</span><span class="pun">:~&gt;</span><span class="pln"> </span><span class="kwd">sudo</span><span class="pln"> &nbsp;</span><span class="kwd">rm</span><span class="pln"> </span><span class="pun">-</span><span class="pln">fr </span><span class="pun">/</span></code></li></ol></pre>
+<p>看着屏幕上显示的命令。每个人都屏住呼吸，想看看我的笔记本电脑是否被毁了，然而它逃过一劫。</p>
+<h3 id="toc_6">日志</h3>
+<p>正如我在开始时提到的，日志记录和警报是 <code>sudo</code> 的重要组成部分。如果你不会定期检查 <code>sudo</code> 日志，那么日志在使用 <code>sudo</code> 中并没有太多价值。该工具通过电子邮件提醒配置中指定的事件，并将所有事件记录到 syslog 中。可以打开调试日志用于调试规则或报告错误。</p>
+<h3 id="toc_7">警报</h3>
+<p>电子邮件警报现在有点过时了，但是如果你使用 syslog-ng 来收集日志消息，则会自动解析 <code>sudo</code> 日志消息。你可以轻松创建自定义警报并将其发送到各种各样的目的地，包括 Slack、Telegram、Splunk 或 Elasticsearch。你可以从<a href="https://www.syslog-ng.com/community/b/blog/posts/alerting-on-sudo-events-using-syslog-ng" class="ext" rel="external nofollow" target="_blank">我在 syslong-ng.com 上的博客</a>中了解有关此功能的更多信息。</p>
+<h3 id="toc_8">配置</h3>
+<p>我们谈论了很多 <code>sudo</code> 功能，甚至还看到了几行配置。现在，让我们仔细看看 <code>sudo</code> 的配置方式。配置本身可以在 <code>/etc/sudoers</code> 中获得，这是一个简单的文本文件。不过，不建议直接编辑此文件。相反，请使用 <code>visudo</code>，因为此工具还会执行语法检查。如果你不喜欢 <code>vi</code>，则可以通过将 <code>EDITOR</code> 环境变量指向你的首选编辑器来更改要使用的编辑器。</p>
+<p>在开始编辑 <code>sudo</code> 配置之前，请确保你知道 root 密码。（是的，即使在默认情况下 root 用户没有密码的 Ubuntu 上也是如此。）虽然 <code>visudo</code> 会检查语法，但创建语法正确而将你锁定在系统之外的配置也很容易。</p>
+<p>如果在紧急情况下，而你手头有 root 密码，你也可以直接编辑配置。当涉及到 <code>sudoers</code> 文件时，有一件重要的事情要记住：从上到下读取该文件，以最后的设置为准。这个事实对你来说意味着你应该从通用设置开始，并在末尾放置例外情况，否则，通用设置会覆盖例外情况。</p>
+<p>你可以在下面看到一个基于 CentOS 的简单 <code>sudoers</code> 文件，并添加我们之前讨论的几行：</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="typ">Defaults</span><span class="pln"> </span><span class="pun">!</span><span class="pln">visiblepw</span></code></li><li class="L1"><code><span class="typ">Defaults</span><span class="pln"> always_set_home</span></code></li><li class="L2"><code><span class="typ">Defaults</span><span class="pln"> match_group_by_gid</span></code></li><li class="L3"><code><span class="typ">Defaults</span><span class="pln"> always_query_group_plugin</span></code></li><li class="L4"><code><span class="typ">Defaults</span><span class="pln"> env_reset</span></code></li><li class="L5"><code><span class="typ">Defaults</span><span class="pln"> env_keep </span><span class="pun">=</span><span class="pln"> </span><span class="str">"COLORS DISPLAY HOSTNAME HISTSIZE KDEDIR LS_COLORS"</span></code></li><li class="L6"><code><span class="typ">Defaults</span><span class="pln"> env_keep </span><span class="pun">+=</span><span class="pln"> </span><span class="str">"MAIL PS1 PS2 QTDIR USERNAME LANG LC_ADDRESS LC_CTYPE"</span></code></li><li class="L7"><code><span class="typ">Defaults</span><span class="pln"> secure_path </span><span class="pun">=</span><span class="pln"> </span><span class="str">/sbin:/</span><span class="pln">bin</span><span class="pun">:</span><span class="str">/usr/</span><span class="pln">sbin</span><span class="pun">:</span><span class="str">/usr/</span><span class="pln">bin</span></code></li><li class="L8"><code><span class="pln">root ALL</span><span class="pun">=(</span><span class="pln">ALL</span><span class="pun">)</span><span class="pln"> ALL</span></code></li><li class="L9"><code><span class="pun">%</span><span class="pln">wheel ALL</span><span class="pun">=(</span><span class="pln">ALL</span><span class="pun">)</span><span class="pln"> ALL</span></code></li><li class="L0"><code><span class="typ">Defaults</span><span class="pun">:%</span><span class="pln">wheel insults</span></code></li><li class="L1"><code><span class="typ">Defaults</span><span class="pln"> </span><span class="pun">!</span><span class="pln">insults</span></code></li><li class="L2"><code><span class="typ">Defaults</span><span class="pln"> log_output</span></code></li></ol></pre>
+<p>该文件从更改多个默认值开始。然后是通常的默认规则：<code>root</code> 用户和 <code>wheel</code> 组的成员对计算机具有完全权限。接下来，我们对 <code>wheel</code> 组启用“羞辱”，但对其他所有人禁用它们。最后一行启用会话记录。</p>
+<p>上面的配置在语法上是正确的，但是你可以发现逻辑错误吗？是的，有一个：后一个通用设置覆盖了先前的更具体设置，让所有人均禁用了“羞辱”。一旦交换了这两行的位置，设置就会按预期进行：<code>wheel</code> 组的成员会收到有趣的消息，但其他用户则不会收到。</p>
+<h3 id="toc_9">配置管理</h3>
+<p>一旦必须在多台机器上维护 <code>sudoers</code> 文件，你很可能希望集中管理配置。这里主要有两种可能的开源方法。两者都有其优点和缺点。</p>
+<p>你可以使用也用来配置其余基础设施的配置管理应用程序之一：Red Hat Ansible、Puppet 和 Chef 都具有用于配置 <code>sudo</code> 的模块。这种方法的问题在于更新配置远非实时。同样，用户仍然可以在本地编辑 <code>sudoers</code> 文件并更改设置。</p>
+<p><code>sudo</code> 工具也可以将其配置存储在 LDAP 中。在这种情况下，配置更改是实时的，用户不能弄乱<code>sudoers</code> 文件。另一方面，该方法也有局限性。例如，当 LDAP 服务器不可用时，你不能使用别名或使用 <code>sudo</code>。</p>
+<h3 id="toc_10">新功能</h3>
+<p>新版本的 <code>sudo</code> 即将推出。1.9 版将包含许多有趣的新功能。以下是最重要的计划功能：</p>
+<ul>
+<li>记录服务可集中收集会话记录，与本地存储相比，它具有许多优点：
+<ul>
+<li>在一个地方搜索更方便。</li>
+<li>即使发送记录的机器关闭，也可以进行记录。</li>
+<li>记录不能被想要删除其痕迹的人删除。</li>
+</ul>
+</li>
+<li>audit 插件没有向 <code>sudoers</code> 添加新功能，而是为插件提供了 API，以方便地访问任何类型的 <code>sudo</code> 日志。这个插件允许使用插件从 <code>sudo</code> 事件创建自定义日志。</li>
+<li>approval 插件无需使用第三方插件即可启用会话批准。</li>
+<li>以及我个人最喜欢的：插件的 Python 支持，这使你可以轻松地使用 Python 代码扩展 <code>sudo</code>，而不是使用 C 语言进行原生编码。 &nbsp;&nbsp; ### 总结</li>
+</ul>
+<p>希望本文能向你证明 <code>sudo</code> 不仅仅是一个简单的命令前缀。有无数种可能性可以微调系统上的权限。你不仅可以微调权限，还可以通过检查摘要来提高安全性。会话记录使你能够检查系统上正在发生的事情。你也可以使用插件扩展 <code>sudo</code> 的功能，或者使用已有的插件或编写自己的插件。最后，从即将发布的功能列表中你可以看到，即使 <code>sudo</code> 已有数十年的历史，它也是一个不断发展的有生命力的项目。</p>
+<p>如果你想了解有关 <code>sudo</code> 的更多信息，请参考以下资源：</p>
+<ul>
+<li><a href="https://www.sudo.ws/" class="ext" rel="external nofollow" target="_blank">sudo 网站</a></li>
+<li><a href="https://blog.sudo.ws/" class="ext" rel="external nofollow" target="_blank">sudo 博客</a></li>
+<li><a href="https://twitter.com/sudoproject" class="ext" rel="external nofollow" target="_blank">在 Twitter 上关注我们</a></li>
+</ul>
+<hr>
+<p>via: <a href="https://opensource.com/article/19/10/know-about-sudo" class="ext" rel="external nofollow" target="_blank">https://opensource.com/article/19/10/know-about-sudo</a></p>
+<p>作者：<a href="https://opensource.com/users/czanik" class="ext" rel="external nofollow" target="_blank">Peter Czanik</a> 选题：<a href="https://github.com/lujun9972" class="ext" rel="external nofollow" target="_blank">lujun9972</a> 译者：<a href="https://github.com/wxy" class="ext" rel="external nofollow" target="_blank">wxy</a> 校对：<a href="https://github.com/wxy" class="ext" rel="external nofollow" target="_blank">wxy</a></p>
+<p>本文由 <a href="https://github.com/LCTT/TranslateProject" class="ext" rel="external nofollow" target="_blank">LCTT</a> 原创编译，<a href="#">Linux中国</a> 荣誉推出</p>  					<section><img style="width: 24px; height: 24px; float: right;" src="linisi.svg"><br class="clear"></section>
+</div>
+</div>
+<br class="clear">
+<div class="vw">
+<div id="add_comment" class="h bm" style="display: none;">
+<div class="bm_h cl">
+<h3>发表评论</h3>
+</div>
+<div class="bm_c pbn">
+<form id="cform" name="cform" action="https://linux.cn/portal.php?mod=portalcp&amp;ac=comment" method="post" autocomplete="off">
+<div class="tedt">
+<div class="area">
+<textarea name="message" rows="10" class="pt" id="message"></textarea>
+</div>
+</div>
+
+<div class="mtm z"><span id="seccode_cSw85eAk"><input name="seccodehash" value="cSw85eAk" type="hidden"><input name="seccodemodid" value="portal::view" type="hidden">验证码 <span id="seccodecSw85eAk"><input name="seccodeverify" id="seccodeverify_cSw85eAk" autocomplete="off" style="ime-mode: disabled; width: 100px;" class="txt px vm" type="text"> <a class="xi2">换一个</a><span id="checkseccodeverify_cSw85eAk"><img id="checksec_none_cSw85eAk" src="none.gif" class="vm" height="16" width="16"></span></span><div id="seccodecSw85eAk_menu" class="p_pop p_opt" style="display: none;"><span id="vseccode_cSw85eAk">输入下图中的字符<br><img src="misc.php" class="vm" alt="" height="40" width="100"></span></div></span>		
+<script type="text/javascript" reload="1">/* Code removed by ScrapBook */</script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+</div>
+<input name="portal_referer" value="https://linux.cn/article-11595-1.html#comment" type="hidden">
+<input name="referer" value="https://linux.cn/article-11595-1.html#comment" type="hidden">
+<input name="id" value="0" type="hidden">
+<input name="idtype" value="" type="hidden">
+<input name="aid" value="11595" type="hidden">
+<input id="reppid" name="reppid" value="" type="hidden">
+<input name="formhash" value="b7133b8d" type="hidden">
+<input name="replysubmit" value="true" type="hidden">
+<input name="commentsubmit" value="true" type="hidden">
+<p class="mtm" style="text-align: center;"><button type="submit" name="commentsubmit_btn" id="commentsubmit_btn" value="true" class="pn"><strong>评论</strong></button></p>
+<br class="clear">
+</form>
+</div>
+</div>
+<div id="comment" class="bm h">
+<div class="bm_h cl">
+<h3 class="z"><a name="comment"></a>最新评论</h3>
+</div>
+<div id="comment_ul" class="bm_c">
+<div style="text-align: center;"><button type="button" class="pnc" style="font-size: 24px; width: 160px;" id="c_add"><strong>发表评论</strong></button></div><a name="comment_anchor_48132"></a>
+<dl id="comment_48132_li" class="pbm bbda cl">
+<dt class="mbm  s4">
+<span class=" xw0 vm">来自北京的 Firefox 52.0|GNU/Linux 用户</span>
+<span class=" xw0 vm">2019-12-05 15:43</span>
+<span class="y xw0 xi2 opt" style="margin-right: 5px;">
+<a class="replyadd" href="https://linux.cn/portal.php?mod=review&amp;action=postreview&amp;do=support&amp;idtype=aid&amp;tid=11595&amp;pid=48132&amp;hash=b7133b8d"><span id="review_support_48132">33</span> 赞</a> 
+<!--<a href="javascript:;" onclick="portal_comment_reppost(48132, '11595');">回复</a> --><a id="reply_48132" href="https://linux.cn/portal.php?mod=portalcp&amp;ac=comment&amp;op=reply&amp;cid=48132&amp;aid=11595&amp;idtype=">回复</a> </span>	
+</dt>
+<dd>
+虽然基本看不懂，但是感觉好NB的样子</dd>
+</dl><div class="ptm pbm cl">
+</div>
+</div>
+</div>
+</div>
+<div class="h bm_c bm z" id="footer_info">
+<p class="copyright">
+    	 
+    		    			    			<span class="z textcut">译自：<a href="https://opensource.com/article/19/10/know-about-sudo" target="_blank">opensource.com</a></span>
+    			    		    		<span class="y">作者： Peter Czanik</span>    		<br class="clear">
+    	    	<span class="z">原创：<a href="https://linux.cn/lctt/" target="_blank">LCTT</a> <a href="#" target="_blank">https://linux.cn/article-11595-1.html</a></span>
+            			<span class="y">译者： Xingyu.Wang</span>    		<br class="clear">
+    	    	<br>
+    	    		<span>本文由 LCTT 原创翻译，<a href="#">Linux 中国首发</a>。也想加入译者行列，为开源做一些自己的贡献么？欢迎加入 <a href="https://linux.cn/lctt/" target="_blank">LCTT</a>！<br>翻译工作和译文发表仅用于学习和交流目的，翻译工作遵照 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank">CC-BY-SA 协议规定</a>，如果我们的工作有侵犯到您的权益，请及时联系我们。</span>
+    		    		<br class="clear">
+    		<span style="color: red;">欢迎遵照 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank">CC-BY-SA 协议规定</a> 转载，敬请在正文中标注并保留原文/译文链接和作者/译者等信息。</span>
+                		<br class="clear">
+    	    	<span>文章仅代表作者的知识和看法，如有不同观点，请楼下排队<a>吐槽</a> :D</span>
+    	<br class="clear">
+</p>
+
+
+
+<div class="o cl ptm pbm">
+<a href="https://linux.cn/home.php?mod=spacecp&amp;ac=favorite&amp;type=article&amp;id=11595&amp;handlekey=favoritearticlehk_11595" id="a_favorite" class="favorite z" title="收藏"></a>
+<!-- <a href="misc.php?mod=invite&amp;action=article&amp;id=11595" id="a_invite" onclick="showWindow('invite', this.href, 'get', 0);" class="invite z" title="邀请"></a> -->
+<a href="https://linux.cn/article-11595-1.html?pr" class="print z" title="打印"></a>
+				
+</div>
+<div class="pren pbm cl">
+<em>上一篇：<a href="https://linux.cn/article-11593-1.html">PostgreSQL 入门</a></em><em>下一篇：<a href="https://linux.cn/article-11598-1.html">在 Ubuntu 19.10 上入门 ZFS 文件系统</a></em></div>
+</div>
+<div><div id="translator_info" class="bm" style="position: relative; margin: 8px 4px 8px 0px ! important; float: right;">
+<div class="bm_h cl">
+LCTT 译者
+</div>
+<div class="bm_c">
+<div>
+<a href="https://linux.cn/lctt/wxy" target="_blank"><img class="avatar" src="128338.jpeg" style="max-width: 64px; float: left; margin-top: 10px;"></a>
+<div style="float: left; margin-left: 10px; font-size: 12px; line-height: 1.5em;">
+<div>
+<a href="https://github.com/wxy" target="_blank"><img src="github_icon.png" style="vertical-align: middle;"></a> <a href="https://linux.cn/lctt/wxy" target="_blank" style="font-weight: bold;">Xingyu.Wang</a> 💎💎💎</div>
+<div class="addfiles">共计翻译： <span class="num" style="color: rgb(255, 0, 0); font-weight: 700;">846.0</span> 篇
+| 共计贡献： <span class="num" style="color: rgb(255, 0, 0); font-weight: 700;">2785</span> 天</div>
+<div>贡献时间：2014-07-25 -&gt; 2022-03-10</div><a href="https://linux.cn/lctt/wxy" target="_blank">访问我的 LCTT 主页</a> | <a href="https://github.com/wxy" target="_blank">在 GitHub 上关注我</a>
+</div>
+<br class="clear">
+</div>
+</div>
+</div>
+</div>
+
+<div id="related" class="bm block z">
+<div class="bm_h cl">
+<h3>相关阅读</h3>
+</div>
+<div class="bm_c pbn" id="related_tag">
+<ul class="xl xl2 cl bbs pbm" id="tag"><li><a href="https://linux.cn/tag-sudo.html">sudo</a></li>
+</ul>
+</div>
+<div class="bm_c xl xl1 cl" id="related_article">
+<ul><li><em>2019-04-18</em><a href="https://linux.cn/article-10746-1-rel.html" target="_blank">如何在 Linux 中配置 sudo 访问权限</a> </li>
+<li><em>2019-07-24</em><a href="https://linux.cn/article-11142-1-rel.html" target="_blank">用大写字母输入 Linux 命令以将其作为 sudo 用户运行</a> </li>
+<li><em>2019-10-16</em><a href="https://linux.cn/article-11465-1-rel.html" target="_blank">Linux sudo 被曝提权漏洞，任意用户均能以 root 身份运行命令</a> </li>
+<li><em>2019-10-24</em><a href="https://linux.cn/article-11495-1-rel.html" target="_blank">Linux sudo 漏洞可能导致未经授权的特权访问</a> </li>
+<li><em>2020-01-31</em><a href="https://linux.cn/article-11837-1-rel.html" target="_blank">Ubuntu 中的 root 用户：你应该知道的重要事情</a> </li>
+</ul>
+</div>
+</div>
+<br class="clear">
+</article>
+</div>
+
+</div>
+
+
+<input id="portalview" value="1" type="hidden">
+
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<link rel="stylesheet" href="prettify.css" type="text/css">
+<script src="about:blank" type="text/javascript"></script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>	</div>
+    <div id="footer">
+        <p>
+            <span>Linux.CN © Since 2003</span>
+        </p>
+        <p>
+            <a href="http://www.miitbeian.gov.cn/" target="_blank">京ICP备2021020457</a>            京公网安备110105001595
+        </p>
+        <p>
+        <a href="https://linux.cn/legal.html">服务条款</a> |
+        除特别申明外，本站原创内容版权遵循 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank">CC-BY-SA 协议规定</a></p>
+        <p>
+        <a href="https://linux.cn/"><img src="linuxcn_logo_mini.png" align="absmiddle"></a>
+        </p>
+<p>
+<a href="https://linux.cn/forum.php?mod=misc&amp;action=showdarkroom">小黑屋</a><span class="pipe">|</span></p>
+</div>
+
+<div id="ft" class="cl"></div>
+<div id="scrolltop" style="left: auto; right: 0px; visibility: visible;">
+<span>
+<a class="wxicon"></a>
+<a title="分享到微博" class="tsina"></a>
+<a title="收藏" href="https://linux.cn/home.php?mod=spacecp&amp;ac=favorite&amp;type=article&amp;id=11595&amp;handlekey=favoritearticlehk_11595" id="a_favorite" class="favorite"></a>
+    	<a href="https://linux.cn/article-11595-1.html?pr" class="print" title="!print!"></a>
+
+</span>
+<span hidefocus="true"><a title="返回顶部" class="scrolltopa"><b>返回顶部</b></a></span>
+</div>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<div id="qrcode">
+<p>分享到微信</p>
+<div id="canvas"></div>
+<p><em>打开微信，点击顶部的“╋”，<br>
+使用“扫一扫”将网页分享至微信。</em></p></div>
+<!-- script type="text/javascript" src="https://img.linux.net.cn/static/js/ads.js?o0G"></script -->
+<!-- div id="Lo0GCisOsS" style="display: none; background-color: #A00; position: fixed; top: 0; width: 100%; z-index: 9999; left: 0; font-size: 16px; color: #fff; text-align: center; padding: 10px; opacity: 0.8;">请将我们加入您的广告过滤器的白名单，请支持开源站点。谢谢您。</div -->
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+
+
+</body>
+</html>

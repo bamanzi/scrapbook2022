@@ -1,0 +1,51 @@
+/* Code tidied up by ScrapBook */
+@import url("p.css");
+@font-face {
+  font-family: "expo-serif-pro";
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: normal;
+  src: url("l.dat") format("woff2"), url("d.woff") format("woff"), url("a.dat") format("opentype");
+}
+@font-face {
+  font-family: "expo-serif-pro";
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: normal;
+  src: url("l_001.dat") format("woff2"), url("d_001.woff") format("woff"), url("a_001.dat") format("opentype");
+}
+@font-face {
+  font-family: "expo-serif-pro";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: normal;
+  src: url("l_002.dat") format("woff2"), url("d_002.woff") format("woff"), url("a_002.dat") format("opentype");
+}
+@font-face {
+  font-family: "neue-haas-unica";
+  font-style: normal;
+  font-weight: 800;
+  font-stretch: normal;
+  src: url("l_003.dat") format("woff2"), url("d_003.woff") format("woff"), url("a_003.dat") format("opentype");
+}
+@font-face {
+  font-family: "neue-haas-unica";
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: normal;
+  src: url("l_004.dat") format("woff2"), url("d_004.woff") format("woff"), url("a_004.dat") format("opentype");
+}
+@font-face {
+  font-family: "neue-haas-unica";
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: normal;
+  src: url("l_005.dat") format("woff2"), url("d_005.woff") format("woff"), url("a_005.dat") format("opentype");
+}
+@font-face {
+  font-family: "neue-haas-unica";
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+  src: url("l_006.dat") format("woff2"), url("d_006.woff") format("woff"), url("a_006.dat") format("opentype");
+}

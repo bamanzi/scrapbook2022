@@ -1,0 +1,347 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>技术|从 apt 升级中排除/保留/阻止特定软件包的三种方法</title>
+ 
+<meta name="keywords" content="从 apt 升级中排除/保留/阻止特定软件包的三种方法">
+<meta name="description" content="有时，由于某些应用依赖性，你可能会意外更新不想更新的软件包。 ">
+<meta name="copyright" content="2005-2019 Linux.cn">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="applicable-device" content="pc,mobile">
+<meta name="referrer" content="always">
+<base href=""><link rel="stylesheet" type="text/css" href="style_1_common.css">
+<link rel="stylesheet" type="text/css" href="style_1_portal_view.css">
+<link href="responsive.css" rel="stylesheet">
+
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script src="about:blank" type="text/javascript"></script>
+<script src="about:blank" type="text/javascript"></script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script src="about:blank" type="text/javascript"></script>
+<script src="about:blank" type="text/javascript"></script>
+<link rel="alternate" type="application/rss+xml" title="Linux 中国◆开源社区 RSS" href="https://linux.cn/rss.xml">
+<link rel="shortcut icon" href="favicon.ico" sizes="32x32">
+<link rel="canonical" href="https://linux.cn/article-11992-1.html">
+<script src="about:blank" type="text/javascript"></script>
+<script type="text/javascript" id="lEokdkhfmflTrqgmBMKdPsJjYjljdhYY" charset="UTF-8" src="about:blank"></script><script type="text/javascript" id="seccodejs_cSw85eAk" src="about:blank"></script></head>
+
+<body id="nv_portal" class="pg_view">
+<div id="append_parent"></div><div id="ajaxwaitid"></div>
+<div id="hd">
+<div class="wp" style="box-shadow: 1px 1px 2px rgb(102, 102, 102);">
+<h1 id="linuxcn_logo"><a href="https://linux.cn/" title="Linux.中国 - 开源社区"></a><style type="text/css">
+/* Code tidied up by ScrapBook */
+@keyframes spin {
+100% { transform: rotate(360deg); }
+}
+@keyframes spin {
+100% { transform: rotate(360deg); }
+}
+</style></h1>
+<div class="p_pop h_pop" id="mn_userapp_menu" style="display: none;"></div><div id="topmenu_wrapper" style="height: 33px;">
+<div id="topmenu" class="affix" style="padding-left: 0px; width: 1200px;">
+<div id="nv">
+<ul><li id="mn_N6666" style="display: block; width: 179px;"><a href="https://linux.cn/" hidefocus="true" style="font-weight: bold; padding: 0px 45px;">Linux 中国</a></li><li id="mn_P3"><a href="https://linux.cn/tech/" hidefocus="true" style="color: rgb(255, 250, 229);">技术</a></li><li id="mn_P1"><a href="https://linux.cn/news/" hidefocus="true" style="color: rgb(255, 250, 229);">新闻</a></li><li id="mn_P4"><a href="https://linux.cn/talk/" hidefocus="true" style="color: rgb(255, 250, 229);">观点</a></li><li id="mn_P8" initialized="true"><a href="https://linux.cn/share/" hidefocus="true" style="color: rgb(255, 250, 229);">分享</a></li><li id="mn_N1fa1"><a href="https://linux.cn/lctt/" hidefocus="true" target="_blank">LCTT</a></li></ul>
+</div>
+<div id="mu" class="cl">
+<ul class="cl " id="snav_mn_P3" style="display: none;">
+<li><a href="https://linux.cn/tech/desktop/" hidefocus="true">桌面应用</a></li><li><a href="https://linux.cn/tech/sa/" hidefocus="true">系统运维</a></li><li><a href="https://linux.cn/tech/program/" hidefocus="true">软件开发</a></li><li><a href="https://linux.cn/tech/raspberrypi/" hidefocus="true">树莓派</a></li><li><a href="https://linux.cn/tech/container/" hidefocus="true">容器与云</a></li><li><a href="https://linux.cn/portal.php?mod=list&amp;catid=27" hidefocus="true">区块链</a></li></ul>
+<ul class="cl " id="snav_mn_P1" style="display: none;">
+<li><a href="https://linux.cn/news/express/" hidefocus="true">硬核观察</a></li></ul>
+<ul class="cl " id="snav_mn_P4" style="display: none;">
+<li><a href="https://linux.cn/talk/comic/" hidefocus="true">极客漫画</a></li><li><a href="https://linux.cn/talk/ossip/" hidefocus="true">开源智慧</a></li><li><a href="https://linux.cn/talk/interview/" hidefocus="true">穿山甲专访</a></li><li><a href="https://linux.cn/talk/ocselected/" hidefocus="true">开源之道</a></li><li><a href="https://linux.cn/talk/clh/" hidefocus="true">代码英雄</a></li></ul>
+<ul class="cl floatmu" id="snav_mn_P8" style="position: absolute; z-index: 301; display: none;" initialized="true">
+<li><a href="https://linux.cn/share/distro/" hidefocus="true" class="">Linux 发行版</a></li></ul>
+<ul class="cl " id="snav_mn_userapp" style="display: none;">
+</ul>
+</div>
+</div>
+</div>
+<div id="scbar" class="cl">
+<form id="scbar_form" method="post" autocomplete="off" action="https://linux.cn/search.php?searchsubmit=yes" target="_blank">
+<input name="mod" id="scbar_mod" value="search" type="hidden">
+<input name="formhash" value="b7133b8d" type="hidden">
+<input name="srchtype" value="title" type="hidden">
+<input name="srhfid" value="0" type="hidden">
+<input name="srhlocality" value="portal::view" type="hidden">
+<table id="scbar_table" style="float: right;" cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td class="scbar_icon_td"></td>
+<td class="scbar_txt_td"><input name="srchtxt" id="scbar_txt" value="请注册后再搜索" autocomplete="off" speech="" class=" xg1" placeholder="请注册后再搜索" type="text"></td>
+<td class="scbar_type_td"><a id="scbar_type" class="xg1" hidefocus="true">搜索</a></td>
+<td class="scbar_btn_td"><button type="submit" name="searchsubmit" id="scbar_btn" sc="1" class="pn pnc" value="true"><strong class="xi2">搜索</strong></button></td>
+<td class="scbar_hot_td">
+<div id="scbar_hot">
+</div>
+</td>
+</tr>
+</tbody></table>
+</form>
+<span class="z titletext" style="padding: 0px 10px 0px 20px;">❏ 站外平台：</span>
+<ul id="ext_plantform" class="cl mutag z">
+<li><a class="hidefocus tsina" hidefocus="true" href="https://weibo.com/linuxcn" target="_blank" title="微博认证号：Linux中国"></a></li>
+<li><a class="hidefocus tticon" hidefocus="true" href="https://www.toutiao.com/c/user/52889878622/" target="_blank" title="今日头条：Linux中国"></a></li>
+<li><a class="hidefocus tticon" hidefocus="true" href="http://www.toutiao.com/c/user/3357852467/" target="_blank" title="今日头条：Linux技术"></a></li>
+<li><a class="hidefocus wyicon" hidefocus="true" href="http://dy.163.com/v2/article/detail/D282EJLD0511CPOJ.html" target="_blank" title="网易号：Linux"></a></li>
+<li><a class="hidefocus fbicon" hidefocus="true" href="https://www.facebook.com/linux.china/" target="_blank" title="Facebook Page：Linux中国"></a></li>
+<li><a class="hidefocus zhicon" hidefocus="true" href="https://www.zhihu.com/org/linuxzhong-guo/" target="_blank" title="知乎机构号：Linux中国"></a></li>
+<li><a class="hidefocus twicon" hidefocus="true" href="https://twitter.com/linux_cn" target="_blank" title="Twitter：Linux中国"></a></li>
+<li><a class="hidefocus tgicon" hidefocus="true" href="https://t.me/linuxdotcn" target="_blank" title="Telegram Channel：Linux中国"></a></li>
+</ul>
+</div>
+<br class="clear">
+<ul id="scbar_type_menu" class="p_pop" style="display: none;"><li><a rel="search">全站</a></li></ul>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+
+</div>
+</div>
+<div id="wp" class="wp">
+
+<style type="text/css">
+/* Code tidied up by ScrapBook */
+#nv_portal .vw .h.hm { background: rgb(255, 255, 255) url("103902tfyv8eeuo5jf9ifo.jpg") repeat scroll center center / cover ; border-radius: 0px; height: 640px; position: relative; padding: 10px; margin-bottom: 0px; }
+#nv_portal .vw .h.hm h1 { background-color: rgba(33, 33, 33, 0.8); border-radius: 0px; position: absolute; margin: 10px 20px 20px; padding: 15px 10px; bottom: 0px; width: 90%; }
+</style>
+<div style="margin: 2px 0px;"></div>
+<div id="ct" class="ct2 wp cl">
+<div class="mn">
+<article class="vw">
+<div class="h hm bm" style="margin-top: 0px;">
+<h1 class="ph" id="article_title">从 apt 升级中排除/保留/阻止特定软件包的三种方法 </h1>
+<div class="ph" id="article_copyright">
+<span>作者： 
+    	 
+    		    			<span class="textcut"><a href="https://www.2daygeek.com/debian-ubuntu-exclude-hold-prevent-packages-from-apt-get-upgrade/" target="_blank">Magesh Maruthamuthu</a></span>
+    		    	    	<span>译者： 
+<a href="https://linux.cn/lctt/" target="_blank">LCTT</a>&nbsp;<a href="https://linux.cn/lctt/geekpi" target="_blank">geekpi</a></span>
+<p id="article_date">
+| 2020-03-13 10:40&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+</p>
+</span></div>
+</div>
+
+<div class="d" style="width: 100%; margin: 0px;">
+<div id="article_content" style="border-radius: 0px;">
+
+<p>有时，由于某些应用依赖性，你可能会意外更新不想更新的软件包。这在全系统更新或自动包升级时经常会发生。如果发生这种情况，可能会破坏应用的功能。这会造成严重的问题，你需要花费大量时间来解决问题。</p>
+<p>如何避免这种情况？如何从 <code>apt-get</code> 更新中排除软件包？</p>
+<blockquote>
+<p>如果你要<a href="https://www.2daygeek.com/redhat-centos-yum-update-exclude-specific-packages/" class="ext" rel="external nofollow" target="_blank">从 Yum Update 中排除特定软件包</a>，请参考这篇。</p>
+</blockquote>
+<p>是的，可以在 Debian 和 Ubuntu 系统上使用以下三种方法来完成。</p>
+<ul>
+<li><a href="https://www.2daygeek.com/apt-get-apt-cache-command-examples-manage-packages-debian-ubuntu-systems/" class="ext" rel="external nofollow" target="_blank">apt-mark 命令</a></li>
+<li><a href="https://www.2daygeek.com/dpkg-command-to-manage-packages-on-debian-ubuntu-linux-mint-systems/" class="ext" rel="external nofollow" target="_blank">dpkg 命令</a></li>
+<li>aptitude 命令</li>
+</ul>
+<p>我们将分别详细展示。</p>
+<h3 id="toc_1">方法 1：如何使用 apt-mark 命令排除 Debian/Ubuntu 系统上的软件包更新</h3>
+<p><code>apt-mark</code> 用于将软件包标记/取消标记为自动安装。</p>
+<p><code>hold</code> 选项用于将软件包标记为保留，以防止软件包被自动安装、升级或删除。</p>
+<p><code>unhold</code> 选项用于取消先前面的设置，以允许重复执行所有操作。</p>
+<p>运行以下命令以使用 <code>apt-mark</code> 命令保留指定的软件包。</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">$ </span><span class="kwd">sudo</span><span class="pln"> apt</span><span class="pun">-</span><span class="pln">mark hold </span><span class="kwd">nano</span></code></li><li class="L1"><code><span class="kwd">nano</span><span class="pln"> </span><span class="kwd">set</span><span class="pln"> on hold</span><span class="pun">.</span></code></li></ol></pre>
+<p>保留软件包后，请运行以下 <code>apt-mark</code> 命令查看它们。</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">$ </span><span class="kwd">sudo</span><span class="pln"> apt</span><span class="pun">-</span><span class="pln">mark showhold</span></code></li><li class="L1"><code><span class="kwd">nano</span></code></li></ol></pre>
+<p>这表明在执行完整的系统更新时，不会升级 nano 包。</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">$ </span><span class="kwd">sudo</span><span class="pln"> apt update</span></code></li><li class="L1"><code></code></li><li class="L2"><code><span class="typ">Reading</span><span class="pln"> </span><span class="kwd">package</span><span class="pln"> lists</span><span class="pun">…</span><span class="pln"> </span><span class="typ">Done</span></code></li><li class="L3"><code><span class="typ">Building</span><span class="pln"> dependency tree</span></code></li><li class="L4"><code><span class="typ">Reading</span><span class="pln"> state information</span><span class="pun">…</span><span class="pln"> </span><span class="typ">Done</span></code></li><li class="L5"><code><span class="typ">Calculating</span><span class="pln"> upgrade</span><span class="pun">…</span><span class="pln"> </span><span class="typ">Done</span></code></li><li class="L6"><code><span class="typ">The</span><span class="pln"> following packages have been kept back</span><span class="pun">:</span></code></li><li class="L7"><code><span class="pln">  </span><span class="kwd">nano</span></code></li><li class="L8"><code><span class="lit">0</span><span class="pln"> upgraded</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pln"> newly installed</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pln"> to remove </span><span class="kwd">and</span><span class="pln"> </span><span class="lit">1</span><span class="pln"> </span><span class="kwd">not</span><span class="pln"> upgraded</span><span class="pun">.</span></code></li></ol></pre>
+<p>运行以下命令，使用 <code>apt-mark</code> 命令取消保留 nano 包。</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">$ </span><span class="kwd">sudo</span><span class="pln"> apt</span><span class="pun">-</span><span class="pln">mark unhold </span><span class="kwd">nano</span></code></li><li class="L1"><code><span class="typ">Canceled</span><span class="pln"> hold on </span><span class="kwd">nano</span><span class="pun">.</span></code></li></ol></pre>
+<h3 id="toc_2">方法 2：如何使用 dpkg 命令在 Debian/Ubuntu 系统上排除软件包更新</h3>
+<p><code>dpkg</code> 命令是一个 CLI 工具，用于安装、构建、删除和管理 Debian 软件包。<code>dpkg</code> 的主要且更用户友好的前端是 <code>aptitude</code>。</p>
+<p>运行以下命令使用 <code>dpkg</code> 命令阻止给定的软件包。</p>
+<p>语法：</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">$ </span><span class="kwd">echo</span><span class="pln"> </span><span class="str">"package_name hold"</span><span class="pln"> </span><span class="pun">|</span><span class="pln"> </span><span class="kwd">sudo</span><span class="pln"> dpkg </span><span class="pun">--</span><span class="kwd">set</span><span class="pun">-</span><span class="pln">selections</span></code></li></ol></pre>
+<p>运行以下 <code>dpkg</code> 命令以保留 apache2 包。</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">$ </span><span class="kwd">echo</span><span class="pln"> </span><span class="str">"apache2 hold"</span><span class="pln"> </span><span class="pun">|</span><span class="pln"> </span><span class="kwd">sudo</span><span class="pln"> dpkg </span><span class="pun">--</span><span class="kwd">set</span><span class="pun">-</span><span class="pln">selections</span></code></li></ol></pre>
+<p>保留软件包后，请运行以下命令查看它们。</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">$ </span><span class="kwd">sudo</span><span class="pln"> dpkg </span><span class="pun">--</span><span class="kwd">get</span><span class="pun">-</span><span class="pln">selections </span><span class="pun">|</span><span class="pln"> </span><span class="kwd">grep</span><span class="pln"> </span><span class="str">"hold"</span></code></li><li class="L1"><code><span class="pln">apache2                        hold</span></code></li></ol></pre>
+<p>它会显示在执行完整的系统更新时，不会升级 apache2包。</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">$ </span><span class="kwd">sudo</span><span class="pln"> apt update</span></code></li><li class="L1"><code></code></li><li class="L2"><code><span class="typ">Reading</span><span class="pln"> </span><span class="kwd">package</span><span class="pln"> lists</span><span class="pun">…</span><span class="pln"> </span><span class="typ">Done</span></code></li><li class="L3"><code><span class="typ">Building</span><span class="pln"> dependency tree</span></code></li><li class="L4"><code><span class="typ">Reading</span><span class="pln"> state information</span><span class="pun">…</span><span class="pln"> </span><span class="typ">Done</span></code></li><li class="L5"><code><span class="typ">Calculating</span><span class="pln"> upgrade</span><span class="pun">…</span><span class="pln"> </span><span class="typ">Done</span></code></li><li class="L6"><code><span class="typ">The</span><span class="pln"> following packages have been kept back</span><span class="pun">:</span></code></li><li class="L7"><code><span class="pln">  apache2</span></code></li><li class="L8"><code><span class="lit">0</span><span class="pln"> upgraded</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pln"> newly installed</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pln"> to remove </span><span class="kwd">and</span><span class="pln"> </span><span class="lit">1</span><span class="pln"> </span><span class="kwd">not</span><span class="pln"> upgraded</span><span class="pun">.</span></code></li></ol></pre>
+<p>运行以下命令，使用 <code>dpkg</code> 命令取消对指定软件包的保留。</p>
+<p>语法：</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">$ </span><span class="kwd">echo</span><span class="pln"> </span><span class="str">"package_name install"</span><span class="pln"> </span><span class="pun">|</span><span class="pln"> </span><span class="kwd">sudo</span><span class="pln"> dpkg </span><span class="pun">--</span><span class="kwd">set</span><span class="pun">-</span><span class="pln">selections</span></code></li></ol></pre>
+<p>运行以下命令，使用 <code>dpkg</code> 命令取消保留 apache2 包。</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">$ </span><span class="kwd">echo</span><span class="pln"> </span><span class="str">"apache2 install"</span><span class="pln"> </span><span class="pun">|</span><span class="pln"> </span><span class="kwd">sudo</span><span class="pln"> dpkg </span><span class="pun">--</span><span class="kwd">set</span><span class="pun">-</span><span class="pln">selections</span></code></li></ol></pre>
+<h3 id="toc_3">方法 3：如何使用 aptitude 命令排除 Debian/Ubuntu 系统上的软件包更新</h3>
+<p><code>aptitude</code> 命令是 Debian 及其衍生版本的基于文​​本的软件包管理界面。</p>
+<p>它允许用户查看软件包列表并执行软件包管理任务，例如安装、升级和删除软件包。它可以从可视界面或命令行执行操作。</p>
+<p>运行以下命令，使用 <code>aptitude</code> 命令保留指定的软件包。</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">$ </span><span class="kwd">sudo</span><span class="pln"> aptitude hold python3</span></code></li></ol></pre>
+<p>保留某些软件包后，请运行以下命令查看它们。</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">$ </span><span class="kwd">sudo</span><span class="pln"> dpkg </span><span class="pun">--</span><span class="kwd">get</span><span class="pun">-</span><span class="pln">selections </span><span class="pun">|</span><span class="pln"> </span><span class="kwd">grep</span><span class="pln"> </span><span class="str">"hold"</span></code></li><li class="L1"><code><span class="pun">或者</span></code></li><li class="L2"><code><span class="pln">$ </span><span class="kwd">sudo</span><span class="pln"> apt</span><span class="pun">-</span><span class="pln">mark showhold</span></code></li><li class="L3"><code></code></li><li class="L4"><code><span class="pln">python3</span></code></li></ol></pre>
+<p>这表明在执行完整的系统更新时，不会升级 python3 软件包。</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">$ </span><span class="kwd">sudo</span><span class="pln"> apt update</span></code></li><li class="L1"><code></code></li><li class="L2"><code><span class="typ">Reading</span><span class="pln"> </span><span class="kwd">package</span><span class="pln"> lists</span><span class="pun">…</span><span class="pln"> </span><span class="typ">Done</span></code></li><li class="L3"><code><span class="typ">Building</span><span class="pln"> dependency tree</span></code></li><li class="L4"><code><span class="typ">Reading</span><span class="pln"> state information</span><span class="pun">…</span><span class="pln"> </span><span class="typ">Done</span></code></li><li class="L5"><code><span class="typ">Calculating</span><span class="pln"> upgrade</span><span class="pun">…</span><span class="pln"> </span><span class="typ">Done</span></code></li><li class="L6"><code><span class="typ">The</span><span class="pln"> following packages have been kept back</span><span class="pun">:</span></code></li><li class="L7"><code><span class="pln">  python3</span></code></li><li class="L8"><code><span class="lit">0</span><span class="pln"> upgraded</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pln"> newly installed</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pln"> to remove </span><span class="kwd">and</span><span class="pln"> </span><span class="lit">1</span><span class="pln"> </span><span class="kwd">not</span><span class="pln"> upgraded</span><span class="pun">.</span></code></li></ol></pre>
+<p>使用 <code>aptitude</code> 命令运行以下命令以解除对 python3 软件包的保留。</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">$ </span><span class="kwd">sudo</span><span class="pln"> aptitude unhold python3</span></code></li></ol></pre>
+<hr>
+<p>via: <a href="https://www.2daygeek.com/debian-ubuntu-exclude-hold-prevent-packages-from-apt-get-upgrade/" class="ext" rel="external nofollow" target="_blank">https://www.2daygeek.com/debian-ubuntu-exclude-hold-prevent-packages-from-apt-get-upgrade/</a></p>
+<p>作者：<a href="https://www.2daygeek.com/author/magesh/" class="ext" rel="external nofollow" target="_blank">Magesh Maruthamuthu</a> 选题：<a href="https://github.com/lujun9972" class="ext" rel="external nofollow" target="_blank">lujun9972</a> 译者：<a href="https://github.com/geekpi" class="ext" rel="external nofollow" target="_blank">geekpi</a> 校对：<a href="https://github.com/wxy" class="ext" rel="external nofollow" target="_blank">wxy</a></p>
+<p>本文由 <a href="https://github.com/LCTT/TranslateProject" class="ext" rel="external nofollow" target="_blank">LCTT</a> 原创编译，<a href="#">Linux中国</a> 荣誉推出</p>  					<section><img style="width: 24px; height: 24px; float: right;" src="linisi.svg"><br class="clear"></section>
+</div>
+</div>
+<br class="clear">
+<div class="vw">
+<div id="add_comment" class="h bm" style="display: none;">
+<div class="bm_h cl">
+<h3>发表评论</h3>
+</div>
+<div class="bm_c pbn">
+<form id="cform" name="cform" action="https://linux.cn/portal.php?mod=portalcp&amp;ac=comment" method="post" autocomplete="off">
+<div class="tedt">
+<div class="area">
+<textarea name="message" rows="10" class="pt" id="message"></textarea>
+</div>
+</div>
+
+<div class="mtm z"><span id="seccode_cSw85eAk"><input name="seccodehash" value="cSw85eAk" type="hidden"><input name="seccodemodid" value="portal::view" type="hidden">验证码 <span id="seccodecSw85eAk"><input name="seccodeverify" id="seccodeverify_cSw85eAk" autocomplete="off" style="ime-mode: disabled; width: 100px;" class="txt px vm" type="text"> <a class="xi2">换一个</a><span id="checkseccodeverify_cSw85eAk"><img id="checksec_none_cSw85eAk" src="none.gif" class="vm" height="16" width="16"></span></span><div id="seccodecSw85eAk_menu" class="p_pop p_opt" style="display: none;"><span id="vseccode_cSw85eAk">输入下图中的字符<br><img src="misc.php" class="vm" alt="" height="40" width="100"></span></div></span>		
+<script type="text/javascript" reload="1">/* Code removed by ScrapBook */</script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+</div>
+<input name="portal_referer" value="https://linux.cn/article-11992-1.html#comment" type="hidden">
+<input name="referer" value="https://linux.cn/article-11992-1.html#comment" type="hidden">
+<input name="id" value="0" type="hidden">
+<input name="idtype" value="" type="hidden">
+<input name="aid" value="11992" type="hidden">
+<input id="reppid" name="reppid" value="" type="hidden">
+<input name="formhash" value="b7133b8d" type="hidden">
+<input name="replysubmit" value="true" type="hidden">
+<input name="commentsubmit" value="true" type="hidden">
+<p class="mtm" style="text-align: center;"><button type="submit" name="commentsubmit_btn" id="commentsubmit_btn" value="true" class="pn"><strong>评论</strong></button></p>
+<br class="clear">
+</form>
+</div>
+</div>
+<div id="comment" class="bm h">
+<div class="bm_h cl">
+<h3 class="z"><a name="comment"></a>最新评论</h3>
+</div>
+<div id="comment_ul" class="bm_c">
+<div style="text-align: center;"><button type="button" class="pnc" style="font-size: 24px; width: 160px;" id="c_add"><strong>发表评论</strong></button></div></div>
+</div>
+</div>
+<div class="h bm_c bm z" id="footer_info">
+<p class="copyright">
+    	 
+    		    			    			<span class="z textcut">译自：<a href="https://www.2daygeek.com/debian-ubuntu-exclude-hold-prevent-packages-from-apt-get-upgrade/" target="_blank">2daygeek.com</a></span>
+    			    		    		<span class="y">作者： Magesh Maruthamuthu</span>    		<br class="clear">
+    	    	<span class="z">原创：<a href="https://linux.cn/lctt/" target="_blank">LCTT</a> <a href="#" target="_blank">https://linux.cn/article-11992-1.html</a></span>
+            			<span class="y">译者： geekpi</span>    		<br class="clear">
+    	    	<br>
+    	    		<span>本文由 LCTT 原创翻译，<a href="#">Linux 中国首发</a>。也想加入译者行列，为开源做一些自己的贡献么？欢迎加入 <a href="https://linux.cn/lctt/" target="_blank">LCTT</a>！<br>翻译工作和译文发表仅用于学习和交流目的，翻译工作遵照 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank">CC-BY-SA 协议规定</a>，如果我们的工作有侵犯到您的权益，请及时联系我们。</span>
+    		    		<br class="clear">
+    		<span style="color: red;">欢迎遵照 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank">CC-BY-SA 协议规定</a> 转载，敬请在正文中标注并保留原文/译文链接和作者/译者等信息。</span>
+                		<br class="clear">
+    	    	<span>文章仅代表作者的知识和看法，如有不同观点，请楼下排队<a>吐槽</a> :D</span>
+    	<br class="clear">
+</p>
+
+
+
+<div class="o cl ptm pbm">
+<a href="https://linux.cn/home.php?mod=spacecp&amp;ac=favorite&amp;type=article&amp;id=11992&amp;handlekey=favoritearticlehk_11992" id="a_favorite" class="favorite z" title="收藏"></a>
+<!-- <a href="misc.php?mod=invite&amp;action=article&amp;id=11992" id="a_invite" onclick="showWindow('invite', this.href, 'get', 0);" class="invite z" title="邀请"></a> -->
+<a href="https://linux.cn/article-11992-1.html?pr" class="print z" title="打印"></a>
+				
+</div>
+<div class="pren pbm cl">
+<em>上一篇：<a href="https://linux.cn/article-11987-1.html">Ubuntu 上 Wireshark 的安装与使用</a></em><em>下一篇：<a href="https://linux.cn/article-12003-1.html">你所不知道的用 less 查看文件的高级用法</a></em></div>
+</div>
+<div><div id="translator_info" class="bm" style="position: relative; margin: 8px 4px 8px 0px ! important; float: right;">
+<div class="bm_h cl">
+LCTT 译者
+</div>
+<div class="bm_c">
+<div>
+<a href="https://linux.cn/lctt/geekpi" target="_blank"><img class="avatar" src="3888598.png" style="max-width: 64px; float: left; margin-top: 10px;"></a>
+<div style="float: left; margin-left: 10px; font-size: 12px; line-height: 1.5em;">
+<div>
+<a href="https://github.com/geekpi" target="_blank"><img src="github_icon.png" style="vertical-align: middle;"></a> <a href="https://linux.cn/lctt/geekpi" target="_blank" style="font-weight: bold;">geekpi</a> 💎💎💎💎</div>
+<div class="addfiles">共计翻译： <span class="num" style="color: rgb(255, 0, 0); font-weight: 700;">1642.5</span> 篇
+| 共计贡献： <span class="num" style="color: rgb(255, 0, 0); font-weight: 700;">3058</span> 天</div>
+<div>贡献时间：2013-10-25 -&gt; 2022-03-10</div><a href="https://linux.cn/lctt/geekpi" target="_blank">访问我的 LCTT 主页</a> | <a href="https://github.com/geekpi" target="_blank">在 GitHub 上关注我</a>
+</div>
+<br class="clear">
+</div>
+</div>
+</div>
+</div>
+
+<div id="related" class="bm block z">
+<div class="bm_h cl">
+<h3>相关阅读</h3>
+</div>
+<div class="bm_c pbn" id="related_tag">
+<ul class="xl xl2 cl bbs pbm" id="tag"><li><a href="https://linux.cn/tag-%E6%9B%B4%E6%96%B0.html">更新</a></li>
+<li><a href="https://linux.cn/tag-%E8%BD%AF%E4%BB%B6%E5%8C%85.html">软件包</a></li>
+<li><a href="https://linux.cn/tag-apt.html">apt</a></li>
+</ul>
+</div>
+<div class="bm_c xl xl1 cl" id="related_article">
+<ul><li><em>2015-03-31</em><a href="https://linux.cn/article-5154-1-rel.html" target="_blank">Linux 基础：如何在Ubuntu上检查一个软件包是否安装</a> </li>
+<li><em>2020-04-23</em><a href="https://linux.cn/article-12143-1-rel.html" target="_blank">如何为 Linux 打包 Python 应用</a> </li>
+<li><em>2020-05-13</em><a href="https://linux.cn/article-12216-1-rel.html" target="_blank">修复 Ubuntu 中的 “Unable to parse package file” 错误</a> </li>
+<li><em>2020-06-15</em><a href="https://linux.cn/article-12317-1-rel.html" target="_blank">使用 AppImage 进行 Linux 软件包管理</a> </li>
+<li><em>2020-06-26</em><a href="https://linux.cn/article-12353-1-rel.html" target="_blank">在 Ubuntu 中使用轻量的 Apt 软件包管理器 Synaptic</a> </li>
+</ul>
+</div>
+</div>
+<br class="clear">
+</article>
+</div>
+
+</div>
+
+
+<input id="portalview" value="1" type="hidden">
+
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<link rel="stylesheet" href="prettify.css" type="text/css">
+<script src="about:blank" type="text/javascript"></script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>	</div>
+    <div id="footer">
+        <p>
+            <span>Linux.CN © Since 2003</span>
+        </p>
+        <p>
+            <a href="http://www.miitbeian.gov.cn/" target="_blank">京ICP备2021020457</a>            京公网安备110105001595
+        </p>
+        <p>
+        <a href="https://linux.cn/legal.html">服务条款</a> |
+        除特别申明外，本站原创内容版权遵循 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank">CC-BY-SA 协议规定</a></p>
+        <p>
+        <a href="https://linux.cn/"><img src="linuxcn_logo_mini.png" align="absmiddle"></a>
+        </p>
+<p>
+<a href="https://linux.cn/forum.php?mod=misc&amp;action=showdarkroom">小黑屋</a><span class="pipe">|</span></p>
+</div>
+
+<div id="ft" class="cl"></div>
+<script src="about:blank" type="text/javascript"></script>
+<div id="scrolltop" style="left: auto; right: 0px; visibility: visible;">
+<span>
+<a class="wxicon"></a>
+<a title="分享到微博" class="tsina"></a>
+<a title="收藏" href="https://linux.cn/home.php?mod=spacecp&amp;ac=favorite&amp;type=article&amp;id=11992&amp;handlekey=favoritearticlehk_11992" id="a_favorite" class="favorite"></a>
+    	<a href="https://linux.cn/article-11992-1.html?pr" class="print" title="!print!"></a>
+
+</span>
+<span hidefocus="true"><a title="返回顶部" class="scrolltopa"><b>返回顶部</b></a></span>
+</div>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<div id="qrcode">
+<p>分享到微信</p>
+<div id="canvas"></div>
+<p><em>打开微信，点击顶部的“╋”，<br>
+使用“扫一扫”将网页分享至微信。</em></p></div>
+<!-- script type="text/javascript" src="https://img.linux.net.cn/static/js/ads.js?o0G"></script -->
+<!-- div id="Lo0GCisOsS" style="display: none; background-color: #A00; position: fixed; top: 0; width: 100%; z-index: 9999; left: 0; font-size: 16px; color: #fff; text-align: center; padding: 10px; opacity: 0.8;">请将我们加入您的广告过滤器的白名单，请支持开源站点。谢谢您。</div -->
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+
+
+</body>
+</html>

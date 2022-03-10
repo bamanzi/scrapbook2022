@@ -1,0 +1,9 @@
+/* Code tidied up by ScrapBook */
+@keyframes fpFadeInDown {
+0% { opacity: 0; transform: translate3d(0px, -20px, 0px); }
+100% { opacity: 1; transform: translate3d(0px, 0px, 0px); }
+}
+@keyframes fpFadeInDown {
+0% { opacity: 0; transform: translate3d(0px, -20px, 0px); }
+100% { opacity: 1; transform: translate3d(0px, 0px, 0px); }
+}

@@ -1,0 +1,27 @@
+/* Code tidied up by ScrapBook */
+pre .str, code .str { color: rgb(101, 176, 66); }
+pre .kwd, code .kwd { color: rgb(226, 137, 100); }
+pre .typ, code .typ { color: rgb(137, 189, 255); }
+pre .lit, code .lit { color: rgb(51, 135, 204); }
+pre .pun, code .pun { color: rgb(184, 255, 184); }
+pre .pln, code .pln { color: rgb(184, 255, 184); }
+pre, code, ol.linenums { background-color: rgb(22, 27, 32); background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAICAYAAAA4GpVBAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB90GBgMqHcZ0EYUAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAAF0lEQVQI12NgYGAwZsAECDEWBgYGBgYACpwAazfG694AAAAASUVORK5CYII="); }
+pre:hover, pre li:hover, pre code:hover { background-color: rgb(17, 17, 17); }
+pre { font-size: 14px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5); text-shadow: 0px 1px 1px rgb(0, 0, 0); border-radius: 6px; color: rgb(184, 255, 184); margin: 10px; padding: 1em 1em 1em 2em; white-space: pre-wrap; border: 1px solid rgb(0, 0, 0); }
+pre.prettyprint { font-size: 14px; border: 1px solid rgb(0, 0, 0); }
+pre ol, pre ul { margin: 1em ! important; border-left: 2px solid rgb(0, 153, 0); padding: 1px; }
+pre li:hover { cursor: text; }
+pre code { background: transparent none repeat scroll 0% 0%; border: medium none ! important; padding: 0px 0px 0px 10px ! important; border-radius: 0px ! important; margin: 1em 0px ! important; }
+code { padding: 2px 4px; border-radius: 4px; margin: 0px 4px; color: rgb(33, 150, 243); background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+code:hover { color: rgb(33, 150, 243); }
+ol.linenums { margin-top: 0px; margin-bottom: 0px; color: rgb(174, 174, 174); }
+ol.linenums li { line-height: 1.5em ! important; text-indent: -28px; padding-left: 28px; }
+li.L1, li.L3, li.L5, li.L7, li.L9 {  }
+@media print {
+  pre .str, code .str { color: rgb(0, 102, 0); }
+  pre .kwd, code .kwd { color: rgb(0, 0, 102); font-weight: bold; }
+  pre .typ, code .typ { color: rgb(68, 0, 68); font-weight: bold; }
+  pre .lit, code .lit { color: rgb(0, 68, 68); }
+  pre .pun, code .pun { color: rgb(68, 68, 0); }
+  pre .pln, code .pln { color: rgb(0, 0, 0); }
+}

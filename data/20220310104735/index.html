@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="plocate, a much faster locate.">
+
+    <title>plocate, a much faster locate</title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="starter-template.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <main role="main" class="container">
+
+      <div class="starter-template">
+        <h1>plocate, a much faster locate</h1>
+        <p class="lead">plocate is a locate(1) based on posting lists, completely replacing
+          mlocate with a much faster (and smaller) index. It is suitable as a default locate
+          on your system.</p>
+
+        <pre class="text-light bg-dark text-left">
+  cassarossa:~&gt; time mlocate movit-fosdem-talk
+  /export/cassarossa/itk/sesse/public_html/movit-fosdem-talk.odp
+  /export/cassarossa/itk/sesse/public_html/movit-fosdem-talk.pdf
+  mlocate movit-fosdem-talk  19.75s user 0.33s system 99% cpu <span class="bg-danger">20.118</span> total
+  
+  cassarossa:~&gt; time plocate movit-fosdem-talk
+  /export/cassarossa/itk/sesse/public_html/movit-fosdem-talk.odp
+  /export/cassarossa/itk/sesse/public_html/movit-fosdem-talk.pdf
+  plocate movit-fosdem-talk  0.01s user 0.00s system 78% cpu <span class="bg-success">0.008</span> total
+
+  cassarossa:~&gt; ls -lh /var/lib/[mp]locate/*.db
+  -rw-r----- 1 root mlocate <span class="bg-danger">1.1G</span> Apr  2 06:26 /var/lib/mlocate/mlocate.db
+  -rw-r----- 1 root plocate <span class="bg-success">466M</span> Apr  2 06:28 /var/lib/plocate/plocate.db
+        </pre>
+
+      <p>In the example above, plocate found two files out of 27 million
+        in just a few milliseconds.</p>
+
+      <p class="text-left">plocate works by creating an inverted index over <em>trigrams</em>
+        (combinations of three bytes) in the search strings, which allows it
+        to rapidly narrow down the set of candidates to a very small list,
+        instead of linearly scanning through every entry. It does nearly all
+        I/O asynchronously using <a href="https://lwn.net/Articles/810414/">io_uring</a>
+        if available (Linux 5.1+), which reduces the impact of seek latency
+        on systems without SSDs. Like mlocate and slocate, the returned file
+        set is user-dependent, ie. a user will only see a file if find(1)
+        would list it (all directories from the root have +rx permissions).</p>
+
+  <!--    <p class="text-left">plocate uses the posting list format from
+        <a href="https://github.com/powturbo/TurboPFor-Integer-Compression">TurboPFor</a>
+        (with an independent implementation), and <a href="https://github.com/facebook/zstd">zstd</a>
+        for compressing the filenames. libzstd is the sole required library dependency,
+        although <a href="https://github.com/axboe/liburing">liburing</a> is strongly
+        recommended.</p> -->
+
+      <ul class="text-left">
+        <li><a href="https://plocate.sesse.net/download/plocate-1.1.15.tar.gz">Download plocate 1.1.15</a> (last update: January 31st, 2022)</li>
+        <li><a href="https://git.sesse.net/?p=plocate">git repository</a></li>
+        <li>
+          Man pages: <a href="https://plocate.sesse.net/plocate.1.html">plocate(1)</a>,
+          <a href="https://plocate.sesse.net/plocate-build.8.html">plocate-build(8)</a>,
+          <a href="https://plocate.sesse.net/updatedb.8.html">updatedb(8)</a>,
+          <a href="https://plocate.sesse.net/updatedb.conf.5.html">updatedb.conf(5)</a>
+        </li>
+        <li><a href="https://www.sesse.net/">Contact information</a></li>
+      </ul>
+
+      </div>
+    </main>
+
+<!--    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="jquery-slim.min.js"><\/script>')</script>
+    <script src="popper.min.js"></script>
+    <script src="bootstrap.min.js"></script> -->
+  
+
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+/* Code tidied up by ScrapBook */
+.post-title { font-size: 15px; font-weight: 700; }
+.same-category-post-item { border-bottom: 1px solid rgb(204, 204, 204); list-style: outside none none; margin: 3px 0px; padding: 3px 0px; }
+.same-category-post-item:last-child { border-bottom: medium none; }
+.same-category-post-item::before, .same-category-post-item::after { content: ""; display: table; clear: both; }

@@ -1,0 +1,427 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>桌面应用|如何自定义 GNOME 3 桌面？</title>
+ 
+<meta name="keywords" content="如何自定义 GNOME 3 桌面？">
+<meta name="description" content="这篇文章帮助其他人来轻松地自定义他们的桌面。 ">
+<meta name="copyright" content="2005-2019 Linux.cn">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="applicable-device" content="pc,mobile">
+<meta name="referrer" content="always">
+<base href=""><link rel="stylesheet" type="text/css" href="style_1_common.css">
+<link rel="stylesheet" type="text/css" href="style_1_portal_view.css">
+<link href="responsive.css" rel="stylesheet">
+
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script src="about:blank" type="text/javascript"></script>
+<script src="about:blank" type="text/javascript"></script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script src="about:blank" type="text/javascript"></script>
+<script src="about:blank" type="text/javascript"></script>
+<link rel="alternate" type="application/rss+xml" title="Linux 中国◆开源社区 RSS" href="https://linux.cn/rss.xml">
+<link rel="shortcut icon" href="favicon.ico" sizes="32x32">
+<link rel="canonical" href="https://linux.cn/article-11256-1.html">
+<script src="about:blank" type="text/javascript"></script>
+<script type="text/javascript" id="lEokdkhfmflTrqgmBMKdPsJjYjljdhYY" charset="UTF-8" src="about:blank"></script><script type="text/javascript" id="seccodejs_cSw85eAk" src="about:blank"></script></head>
+
+<body id="nv_portal" class="pg_view">
+<div id="append_parent"></div><div id="ajaxwaitid"></div>
+<div id="hd">
+<div class="wp" style="box-shadow: 1px 1px 2px rgb(102, 102, 102);">
+<h1 id="linuxcn_logo"><a href="https://linux.cn/" title="Linux.中国 - 开源社区"></a><style type="text/css">
+/* Code tidied up by ScrapBook */
+@keyframes spin {
+100% { transform: rotate(360deg); }
+}
+@keyframes spin {
+100% { transform: rotate(360deg); }
+}
+</style></h1>
+<div class="p_pop h_pop" id="mn_userapp_menu" style="display: none;"></div><div id="topmenu_wrapper" style="height: 33px;">
+<div id="topmenu" class="affix" style="padding-left: 0px; width: 1200px;">
+<div id="nv">
+<ul><li id="mn_N6666" style="display: block; width: 179px;"><a href="https://linux.cn/" hidefocus="true" style="font-weight: bold; padding: 0px 45px;">Linux 中国</a></li><li id="mn_P3" initialized="true"><a href="https://linux.cn/tech/" hidefocus="true" style="color: rgb(255, 250, 229);">技术</a></li><li id="mn_P1" initialized="true"><a href="https://linux.cn/news/" hidefocus="true" style="color: rgb(255, 250, 229);">新闻</a></li><li id="mn_P4"><a href="https://linux.cn/talk/" hidefocus="true" style="color: rgb(255, 250, 229);">观点</a></li><li id="mn_P8"><a href="https://linux.cn/share/" hidefocus="true" style="color: rgb(255, 250, 229);">分享</a></li><li id="mn_N1fa1"><a href="https://linux.cn/lctt/" hidefocus="true" target="_blank">LCTT</a></li></ul>
+</div>
+<div id="mu" class="cl">
+<ul class="cl floatmu" id="snav_mn_P3" style="position: absolute; z-index: 301; display: none;" initialized="true">
+<li><a href="https://linux.cn/tech/desktop/" hidefocus="true" class="">桌面应用</a></li><li><a href="https://linux.cn/tech/sa/" hidefocus="true">系统运维</a></li><li><a href="https://linux.cn/tech/program/" hidefocus="true">软件开发</a></li><li><a href="https://linux.cn/tech/raspberrypi/" hidefocus="true">树莓派</a></li><li><a href="https://linux.cn/tech/container/" hidefocus="true">容器与云</a></li><li><a href="https://linux.cn/portal.php?mod=list&amp;catid=27" hidefocus="true">区块链</a></li></ul>
+<ul class="cl floatmu" id="snav_mn_P1" style="position: absolute; z-index: 301; display: none;" initialized="true">
+<li><a href="https://linux.cn/news/express/" hidefocus="true" class="">硬核观察</a></li></ul>
+<ul class="cl " id="snav_mn_P4" style="display: none;">
+<li><a href="https://linux.cn/talk/comic/" hidefocus="true">极客漫画</a></li><li><a href="https://linux.cn/talk/ossip/" hidefocus="true">开源智慧</a></li><li><a href="https://linux.cn/talk/interview/" hidefocus="true">穿山甲专访</a></li><li><a href="https://linux.cn/talk/ocselected/" hidefocus="true">开源之道</a></li><li><a href="https://linux.cn/talk/clh/" hidefocus="true">代码英雄</a></li></ul>
+<ul class="cl " id="snav_mn_P8" style="display: none;">
+<li><a href="https://linux.cn/share/distro/" hidefocus="true">Linux 发行版</a></li></ul>
+<ul class="cl " id="snav_mn_userapp" style="display: none;">
+</ul>
+</div>
+</div>
+</div>
+<div id="scbar" class="cl">
+<form id="scbar_form" method="post" autocomplete="off" action="https://linux.cn/search.php?searchsubmit=yes" target="_blank">
+<input name="mod" id="scbar_mod" value="search" type="hidden">
+<input name="formhash" value="b7133b8d" type="hidden">
+<input name="srchtype" value="title" type="hidden">
+<input name="srhfid" value="0" type="hidden">
+<input name="srhlocality" value="portal::view" type="hidden">
+<table id="scbar_table" style="float: right;" cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td class="scbar_icon_td"></td>
+<td class="scbar_txt_td"><input name="srchtxt" id="scbar_txt" value="请注册后再搜索" autocomplete="off" speech="" class=" xg1" placeholder="请注册后再搜索" type="text"></td>
+<td class="scbar_type_td"><a id="scbar_type" class="xg1" hidefocus="true">搜索</a></td>
+<td class="scbar_btn_td"><button type="submit" name="searchsubmit" id="scbar_btn" sc="1" class="pn pnc" value="true"><strong class="xi2">搜索</strong></button></td>
+<td class="scbar_hot_td">
+<div id="scbar_hot">
+</div>
+</td>
+</tr>
+</tbody></table>
+</form>
+<span class="z titletext" style="padding: 0px 10px 0px 20px;">❏ 站外平台：</span>
+<ul id="ext_plantform" class="cl mutag z">
+<li><a class="hidefocus tsina" hidefocus="true" href="https://weibo.com/linuxcn" target="_blank" title="微博认证号：Linux中国"></a></li>
+<li><a class="hidefocus tticon" hidefocus="true" href="https://www.toutiao.com/c/user/52889878622/" target="_blank" title="今日头条：Linux中国"></a></li>
+<li><a class="hidefocus tticon" hidefocus="true" href="http://www.toutiao.com/c/user/3357852467/" target="_blank" title="今日头条：Linux技术"></a></li>
+<li><a class="hidefocus wyicon" hidefocus="true" href="http://dy.163.com/v2/article/detail/D282EJLD0511CPOJ.html" target="_blank" title="网易号：Linux"></a></li>
+<li><a class="hidefocus fbicon" hidefocus="true" href="https://www.facebook.com/linux.china/" target="_blank" title="Facebook Page：Linux中国"></a></li>
+<li><a class="hidefocus zhicon" hidefocus="true" href="https://www.zhihu.com/org/linuxzhong-guo/" target="_blank" title="知乎机构号：Linux中国"></a></li>
+<li><a class="hidefocus twicon" hidefocus="true" href="https://twitter.com/linux_cn" target="_blank" title="Twitter：Linux中国"></a></li>
+<li><a class="hidefocus tgicon" hidefocus="true" href="https://t.me/linuxdotcn" target="_blank" title="Telegram Channel：Linux中国"></a></li>
+</ul>
+</div>
+<br class="clear">
+<ul id="scbar_type_menu" class="p_pop" style="display: none;"><li><a rel="search">全站</a></li></ul>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+
+</div>
+</div>
+<div id="wp" class="wp">
+
+<style type="text/css">
+/* Code tidied up by ScrapBook */
+#nv_portal .vw .h.hm { background: rgb(255, 255, 255) url("000206fnml4zlka4nz162e.jpg") repeat scroll center center / cover ; border-radius: 0px; height: 640px; position: relative; padding: 10px; margin-bottom: 0px; }
+#nv_portal .vw .h.hm h1 { background-color: rgba(33, 33, 33, 0.8); border-radius: 0px; position: absolute; margin: 10px 20px 20px; padding: 15px 10px; bottom: 0px; width: 90%; }
+</style>
+<div style="margin: 2px 0px;"></div>
+<div id="ct" class="ct2 wp cl">
+<div class="mn">
+<article class="vw">
+<div class="h hm bm" style="margin-top: 0px;">
+<h1 class="ph" id="article_title">如何自定义 GNOME 3 桌面？ </h1>
+<div class="ph" id="article_copyright">
+<span>作者： 
+    	 
+    		    			<span class="textcut"><a href="https://www.2daygeek.com/how-to-customize-the-gnome-3-desktop/" target="_blank">Magesh Maruthamuthu</a></span>
+    		    	    	<span>译者： 
+<a href="https://linux.cn/lctt/" target="_blank">LCTT</a>&nbsp;<a href="https://linux.cn/lctt/robsean" target="_blank">郑</a></span>
+<p id="article_date">
+| 2019-08-22 00:02&nbsp;&nbsp;
+评论: <a href="https://linux.cn/portal.php?mod=comment&amp;id=11256&amp;idtype=aid" title="查看全部评论"><em id="_commentnum">3</em></a>&nbsp;收藏: <em id="_favtimes">1</em>&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
+</span></div>
+</div>
+
+<div class="d" style="width: 100%; margin: 0px;">
+<div id="article_content" style="border-radius: 0px;">
+
+<p>我们收到很多来自用户的电子邮件，要我们写一篇关于 GNOME 3 桌面自定义的文章，但是，我们没有时间来写这个主题。</p>
+<p>在很长时间内，我一直在我的主要笔记本电脑上使用 Ubuntu 操作系统，并且，渐感无聊，我想测试一些与 Arch Linux 相关的其它的发行版。</p>
+<p>我比较喜欢 Majaro，我在我的笔记本电脑中安装使用了 GNOME 3 桌面的 Manjaro 18.0 。</p>
+<p>我按照我想要的自定义我的桌面。所以，我想抓住这个机会来详细撰写这篇文章，以帮助其他人。</p>
+<p>这篇文章帮助其他人来轻松地自定义他们的桌面。</p>
+<p>我不打算包括我所有的自定义，并且，我将强制性地添加一个对 Linux 桌面用户来说有用的必要的东西。</p>
+<p>如果你觉得这篇文章中缺少一些调整，请你在评论区提到缺少的东西。对其它用户来说这是非常有用的 。</p>
+<h3 id="toc_1">1) 如何在 GNOME 3 桌面中启动活动概述？</h3>
+<p>活动概述将显示所有运行的应用程序，或通过单击 <code>Super</code> 键 ，或在左上角上单击“活动”按钮来启动/打开窗口。</p>
+<p>它允许你来启动一个新的应用程序、切换窗口，和在工作空间之间移动窗口。</p>
+<p>你可以通过选择如下任一操作简单地退出活动概述，如选择一个窗口、应用程序或工作区间，或通过按 <code>Super</code> 键或 <code>Esc</code> 键。</p>
+<p class="article_img"><img src="001409nd0ccm0ll66l0wmu.jpg" title="活动概述屏幕截图" alt="活动概述屏幕截图"></p>
+<p class="article_img_desc"><em>活动概述屏幕截图</em></p>
+<h3 id="toc_2">2) 如何在 GNOME 3 桌面中重新调整窗口大小？</h3>
+<p>通过下面的组合键来将启动的窗口最大化、取消最大化，并吸附到屏幕的一侧（左侧或右侧）。</p>
+<ul>
+<li><code>Super Key+下箭头</code>：来非最大化窗口。</li>
+<li><code>Super Key+上箭头</code>：来最大化窗口。</li>
+<li><code>Super Key+右箭头</code>：来在填充半个屏幕的右侧窗口。</li>
+<li><code>Super Key+作箭头</code>：来在填充半个屏幕的左侧窗口。</li>
+</ul>
+<p class="article_img"><img src="001447ux66066m4n3zihdb.jpg" title="使用 Super Key+下箭头 来取消最大化窗口。" alt="使用 Super Key+下箭头 来取消最大化窗口。"></p>
+<p class="article_img_desc"><em>使用 <code>Super Key+下箭头</code> 来取消最大化窗口。</em></p>
+<p class="article_img"><img src="001518env0ysj0incjjwyq.jpg" title="使用 Super Key+上箭头 来最大化窗口。" alt="使用 Super Key+上箭头 来最大化窗口。"></p>
+<p class="article_img_desc"><em>使用 <code>Super Key+上箭头</code> 来最大化窗口。</em></p>
+<p class="article_img"><img src="001546z9h9wc9bkzebbh1w.jpg" title="使用 Super Key+右箭头 来在填充半个屏幕的右侧窗口。" alt="使用 Super Key+右箭头 来在填充半个屏幕的右侧窗口。"></p>
+<p class="article_img_desc"><em>使用 <code>Super Key+右箭头</code> 来在填充半个屏幕的右侧窗口。</em></p>
+<p class="article_img"><img src="001615lxmohczio4i8ri74.jpg" title="使用 Super Key+左箭头 来在填充半个屏幕的左侧窗口。" alt="使用 Super Key+左箭头 来在填充半个屏幕的左侧窗口。"></p>
+<p class="article_img_desc"><em>使用 <code>Super Key+左箭头</code> 来在填充半个屏幕的左侧窗口。</em></p>
+<p>这个功能将帮助你可以一次查看两个应用程序，又名，拆分屏幕。</p>
+<p class="article_img"><img src="001644ikcflivkgolaffil.jpg"></p>
+<h3 id="toc_3">3) 如何在 GNOME 3 桌面中显示应用程序？</h3>
+<p>在 Dash 中，单击“显示应用程序网格”按钮来显示在你的系统上的所有已安装的应用程序。</p>
+<p class="article_img"><img src="001718q3zkeznx3r6zev31.jpg"></p>
+<h3 id="toc_4">4) 如何在 GNOME 3 桌面中的 Dash 中添加应用程序？</h3>
+<p>为加速你的日常活动，你可能想要把频繁使用的应用程序添加到 Dash 中，或拖拽应用程序启动器到 Dash 中。</p>
+<p>它将允许你直接启动你的收藏夹中的应用程序，而不用先去搜索应用程序。为做到这样，在应用程序上简单地右击，并使用选项“添加到收藏夹”。</p>
+<p class="article_img"><img src="001749in9ij4ivyv9ltbbw.jpg"></p>
+<p>为从 Dash 中移除一个应用程序启动器（收藏的程序），要么从 Dash 中拖拽应用程序到网格按钮，或者在应用程序上简单地右击，并使用选项“从收藏夹中移除”。</p>
+<p class="article_img"><img src="001816ywud5fdgezguuhud.jpg"></p>
+<h3 id="toc_5">5) 如何在 GNOME 3 桌面中的工作区间之间切换？</h3>
+<p>工作区间允许你将窗口组合在一起。它将帮助你恰当地分隔你的工作。如果你正在做多项工作，并且你想对每项工作和相关的事物进行单独地分组，那么，它将是非常便利的，对你来说是一个非常方便和完美的选项。</p>
+<p>你可以用两种方法切换工作区间，打开活动概述，并从右手边选择一个工作区间，或者使用下面的组合键。</p>
+<ul>
+<li>使用 <code>Ctrl+Alt+Up</code> 切换到上一个工作区间。</li>
+<li>使用 <code>Ctrl+Alt+Down</code> 切换到下一个工作区间。</li>
+</ul>
+<p class="article_img"><img src="001846qzs6hf3lql3f3il5.jpg"></p>
+<h3 id="toc_6">6) 如何在 GNOME 3 桌面中的应用程序之间切换 (应用程序切换器) ？</h3>
+<p>使用 <code>Alt+Tab</code> 或 <code>Super+Tab</code> 来在应用程序之间切换。为启动应用程序切换器，使用 <code>Alt+Tab</code> 或 <code>Super+Tab</code> 。</p>
+<p>在启动后，只需要按住 <code>Alt</code> 或 <code>Super</code> 键，按 <code>Tab</code> 键来从左到右的依次移动接下来的应用程序。</p>
+<h3 id="toc_7">7) 如何在 GNOME 3 桌面中添加用户姓名到顶部面板？</h3>
+<p>如果你想添加你的用户姓名到顶部面板，那么安装下面的<a href="https://extensions.gnome.org/extension/1108/add-username-to-top-panel/" class="ext" rel="external nofollow" target="_blank">添加用户姓名到顶部面板</a> GNOME 扩展。</p>
+<p class="article_img"><img src="001917kh06mo1o1xf5r82o.jpg"></p>
+<h3 id="toc_8">8) 如何在 GNOME 3 桌面中添加微软 Bing 的桌面背景？</h3>
+<p>安装下面的 <a href="https://extensions.gnome.org/extension/1262/bing-wallpaper-changer/" class="ext" rel="external nofollow" target="_blank">Bing 桌面背景更换器</a> GNOME shell 扩展，来每天更改你的桌面背景为微软 Bing 的桌面背景。</p>
+<p class="article_img"><img src="001952ynqcqy33qtug3qjj.jpg"></p>
+<h3 id="toc_9">9) 如何在 GNOME 3 桌面中启用夜光？</h3>
+<p>夜光应用程序是著名的应用程序之一，它通过在日落后把你的屏幕从蓝光调成暗黄色，来减轻眼睛疲劳。</p>
+<p>它在智能手机上也可用。相同目标的其它已知应用程序是 flux 和 <a href="https://www.2daygeek.com/install-redshift-reduce-prevent-protect-eye-strain-night-linux/" class="ext" rel="external nofollow" target="_blank">redshift</a>。</p>
+<p>为启用这个特色，导航到<strong>系统设置</strong> &gt;&gt; <strong>设备</strong> &gt;&gt; <strong>显示</strong> ，并打开夜光。</p>
+<p class="article_img"><img src="002019fq9am88n9rniiq3z.jpg"></p>
+<p>在它启用后，状态图标将被放置到顶部面板上。</p>
+<p class="article_img"><img src="002105hxjlanzpyx246jbg.jpg"></p>
+<h3 id="toc_10">10) 如何在 GNOME 3 桌面中显示电池百分比？</h3>
+<p>电池百分比将向你精确地显示电池使用情况。为启用这个功能，遵循下面的步骤。</p>
+<p>启动 GNOME Tweaks &gt;&gt; <strong>顶部栏</strong> &gt;&gt; <strong>电池百分比</strong> ，并打开它。</p>
+<p class="article_img"><img src="002137at58669w8f335f3c.jpg"></p>
+<p>在修改后，你能够在顶部面板上看到电池百分比图标。</p>
+<p class="article_img"><img src="002205w268a2aaj9mjjr6s.jpg"></p>
+<h3 id="toc_11">11) 如何在 GNOME 3 桌面中启用鼠标右键单击？</h3>
+<p>在 GNOME 3 桌面环境中右键单击是默认禁用的。为启用这个特色，遵循下面的步骤。</p>
+<p>启动 GNOME Tweaks &gt;&gt; <strong>键盘和鼠标</strong> &gt;&gt; 鼠标点击硬件仿真，并选择“区域”选项。</p>
+<p class="article_img"><img src="002232d6nrwigu6ga8kfv9.jpg"></p>
+<h3 id="toc_12">12) 如何在 GNOME 3 桌面中启用单击最小化？</h3>
+<p>启用单击最小化功能，这将帮助我们最小化打开的窗口，而不必使用最小化选项。</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">$ gsettings </span><span class="kwd">set</span><span class="pln"> org</span><span class="pun">.</span><span class="pln">gnome</span><span class="pun">.</span><span class="pln">shell</span><span class="pun">.</span><span class="pln">extensions</span><span class="pun">.</span><span class="pln">dash</span><span class="pun">-</span><span class="pln">to</span><span class="pun">-</span><span class="pln">dock click</span><span class="pun">-</span><span class="pln">action </span><span class="str">'minimize'</span></code></li></ol></pre>
+<h3 id="toc_13">13) 如何在 GNOME 3 桌面中自定义 Dock ？</h3>
+<p>如果你想更改你的 Dock，类似于 Deepin 桌面或 Mac 桌面，那么使用下面的一组命令。</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">$ gsettings </span><span class="kwd">set</span><span class="pln"> org</span><span class="pun">.</span><span class="pln">gnome</span><span class="pun">.</span><span class="pln">shell</span><span class="pun">.</span><span class="pln">extensions</span><span class="pun">.</span><span class="pln">dash</span><span class="pun">-</span><span class="pln">to</span><span class="pun">-</span><span class="pln">dock dock</span><span class="pun">-</span><span class="pln">position BOTTOM</span></code></li><li class="L1"><code><span class="pln">$ gsettings </span><span class="kwd">set</span><span class="pln"> org</span><span class="pun">.</span><span class="pln">gnome</span><span class="pun">.</span><span class="pln">shell</span><span class="pun">.</span><span class="pln">extensions</span><span class="pun">.</span><span class="pln">dash</span><span class="pun">-</span><span class="pln">to</span><span class="pun">-</span><span class="pln">dock extend</span><span class="pun">-</span><span class="pln">height </span><span class="kwd">false</span></code></li><li class="L2"><code><span class="pln">$ gsettings </span><span class="kwd">set</span><span class="pln"> org</span><span class="pun">.</span><span class="pln">gnome</span><span class="pun">.</span><span class="pln">shell</span><span class="pun">.</span><span class="pln">extensions</span><span class="pun">.</span><span class="pln">dash</span><span class="pun">-</span><span class="pln">to</span><span class="pun">-</span><span class="pln">dock transparency</span><span class="pun">-</span><span class="pln">mode FIXED</span></code></li><li class="L3"><code><span class="pln">$ gsettings </span><span class="kwd">set</span><span class="pln"> org</span><span class="pun">.</span><span class="pln">gnome</span><span class="pun">.</span><span class="pln">shell</span><span class="pun">.</span><span class="pln">extensions</span><span class="pun">.</span><span class="pln">dash</span><span class="pun">-</span><span class="pln">to</span><span class="pun">-</span><span class="pln">dock dash</span><span class="pun">-</span><span class="pln">max</span><span class="pun">-</span><span class="pln">icon</span><span class="pun">-</span><span class="kwd">size</span><span class="pln"> </span><span class="lit">50</span></code></li></ol></pre>
+<p class="article_img"><img src="002304u56lejl66o51zem4.jpg"></p>
+<h3 id="toc_14">14) 如何在 GNOME 3桌面中显示桌面？</h3>
+<p>默认 <code>Super 键 + D</code> 快捷键不能显示你的桌面。为配置这种情况，遵循下面的步骤。</p>
+<p>设置 &gt;&gt; <strong>设备</strong> &gt;&gt; <strong>键盘</strong> &gt;&gt; 单击在导航下的 <strong>隐藏所有普通窗口</strong> ，然后按 <code>Super 键 + D</code> ，最后按<code>设置</code>按钮来启用它。</p>
+<p class="article_img"><img src="002333nwikriblnbg3g6pp.jpg"></p>
+<h3 id="toc_15">15) 如何自定义日期和时间格式？</h3>
+<p>GNOME 3 默认用 <code>Sun 04:48</code> 的格式来显示日期和时间。它并不清晰易懂，如果你想获得以下格式的输出：<code>Sun Dec 2 4:49 AM</code> ，遵循下面的步骤。</p>
+<p><strong>对于日期修改:</strong> 打开 GNOME Tweaks &gt;&gt; <strong>顶部栏</strong> ，并在时钟下启用“星期”选项。</p>
+<p class="article_img"><img src="002401vsvpv4upwzuh4kew.jpg"></p>
+<p><strong>对于时间修改:</strong> 设置 &gt;&gt; <strong>具体情况</strong> &gt;&gt; <strong>日期和时间</strong> ，然后，在时间格式中选择 <code>AM/PM</code> 选项。</p>
+<p class="article_img"><img src="002432ur0drde5fmfbep0e.jpg"></p>
+<p>在修改后，你能够看到与下面相同的日期和时间格式。</p>
+<p class="article_img"><img src="002501nw1dyrd1xv2kptiw.jpg"></p>
+<h3 id="toc_16">16) 如何在启动程序中永久地禁用不使用的服务？</h3>
+<p>就我来说，我不使用 <strong>蓝牙</strong> &amp; <strong>cups（打印机服务）</strong>。因此，在我的笔记本电脑上禁用这些服务。为在基于 Arch 的系统上禁用服务，使用 <a href="https://www.2daygeek.com/pacman-command-examples-manage-packages-arch-linux-system/" class="ext" rel="external nofollow" target="_blank">Pacman 软件包管理器</a>。</p>
+<p>对于蓝牙：</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">$ </span><span class="kwd">sudo</span><span class="pln"> </span><span class="kwd">systemctl</span><span class="pln"> stop bluetooth</span><span class="pun">.</span><span class="pln">service</span></code></li><li class="L1"><code><span class="pln">$ </span><span class="kwd">sudo</span><span class="pln"> </span><span class="kwd">systemctl</span><span class="pln"> disable bluetooth</span><span class="pun">.</span><span class="pln">service</span></code></li><li class="L2"><code><span class="pln">$ </span><span class="kwd">sudo</span><span class="pln"> </span><span class="kwd">systemctl</span><span class="pln"> mask bluetooth</span><span class="pun">.</span><span class="pln">service</span></code></li><li class="L3"><code><span class="pln">$ </span><span class="kwd">systemctl</span><span class="pln"> status bluetooth</span><span class="pun">.</span><span class="pln">service</span></code></li></ol></pre>
+<p>对于 cups：</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">$ </span><span class="kwd">sudo</span><span class="pln"> </span><span class="kwd">systemctl</span><span class="pln"> stop org</span><span class="pun">.</span><span class="pln">cups</span><span class="pun">.</span><span class="pln">cupsd</span><span class="pun">.</span><span class="pln">service</span></code></li><li class="L1"><code><span class="pln">$ </span><span class="kwd">sudo</span><span class="pln"> </span><span class="kwd">systemctl</span><span class="pln"> disable org</span><span class="pun">.</span><span class="pln">cups</span><span class="pun">.</span><span class="pln">cupsd</span><span class="pun">.</span><span class="pln">service</span></code></li><li class="L2"><code><span class="pln">$ </span><span class="kwd">sudo</span><span class="pln"> </span><span class="kwd">systemctl</span><span class="pln"> mask org</span><span class="pun">.</span><span class="pln">cups</span><span class="pun">.</span><span class="pln">cupsd</span><span class="pun">.</span><span class="pln">service</span></code></li><li class="L3"><code><span class="pln">$ </span><span class="kwd">systemctl</span><span class="pln"> status org</span><span class="pun">.</span><span class="pln">cups</span><span class="pun">.</span><span class="pln">cupsd</span><span class="pun">.</span><span class="pln">service</span></code></li></ol></pre>
+<p>最后，使用以下命令验证这些服务是否在启动程序中被禁用。如果你想再次确认这一点，你可以重新启动一次，并检查相同的东西。导航到以下链接来了解更多关于 <a href="https://www.2daygeek.com/sysvinit-vs-systemd-cheatsheet-systemctl-command-usage/" class="ext" rel="external nofollow" target="_blank">systemctl</a> 的用法，</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">$ </span><span class="kwd">systemctl</span><span class="pln"> </span><span class="kwd">list</span><span class="pun">-</span><span class="pln">unit</span><span class="pun">-</span><span class="pln">files </span><span class="pun">--</span><span class="pln">type</span><span class="pun">=</span><span class="pln">service </span><span class="pun">|</span><span class="pln"> </span><span class="kwd">grep</span><span class="pln"> enabled</span></code></li><li class="L1"><code><span class="pun">[</span><span class="pln">email&nbsp;</span><span class="kwd">protected</span><span class="pun">]</span><span class="pln"> enabled</span></code></li><li class="L2"><code><span class="pln">dbus</span><span class="pun">-</span><span class="pln">org</span><span class="pun">.</span><span class="pln">freedesktop</span><span class="pun">.</span><span class="typ">ModemManager1</span><span class="pun">.</span><span class="pln">service enabled</span></code></li><li class="L3"><code><span class="pln">dbus</span><span class="pun">-</span><span class="pln">org</span><span class="pun">.</span><span class="pln">freedesktop</span><span class="pun">.</span><span class="typ">NetworkManager</span><span class="pun">.</span><span class="pln">service enabled</span></code></li><li class="L4"><code><span class="pln">dbus</span><span class="pun">-</span><span class="pln">org</span><span class="pun">.</span><span class="pln">freedesktop</span><span class="pun">.</span><span class="kwd">nm</span><span class="pun">-</span><span class="pln">dispatcher</span><span class="pun">.</span><span class="pln">service enabled</span></code></li><li class="L5"><code><span class="pln">display</span><span class="pun">-</span><span class="pln">manager</span><span class="pun">.</span><span class="pln">service enabled</span></code></li><li class="L6"><code><span class="pln">gdm</span><span class="pun">.</span><span class="pln">service enabled</span></code></li><li class="L7"><code><span class="pun">[</span><span class="pln">email&nbsp;</span><span class="kwd">protected</span><span class="pun">]</span><span class="pln"> enabled</span></code></li><li class="L8"><code><span class="pln">linux</span><span class="pun">-</span><span class="kwd">module</span><span class="pun">-</span><span class="pln">cleanup</span><span class="pun">.</span><span class="pln">service enabled</span></code></li><li class="L9"><code><span class="typ">ModemManager</span><span class="pun">.</span><span class="pln">service enabled</span></code></li><li class="L0"><code><span class="typ">NetworkManager</span><span class="pun">-</span><span class="pln">dispatcher</span><span class="pun">.</span><span class="pln">service enabled</span></code></li><li class="L1"><code><span class="typ">NetworkManager</span><span class="pun">-</span><span class="pln">wait</span><span class="pun">-</span><span class="pln">online</span><span class="pun">.</span><span class="pln">service enabled</span></code></li><li class="L2"><code><span class="typ">NetworkManager</span><span class="pun">.</span><span class="pln">service enabled</span></code></li><li class="L3"><code><span class="kwd">systemd</span><span class="pun">-</span><span class="kwd">fsck</span><span class="pun">-</span><span class="pln">root</span><span class="pun">.</span><span class="pln">service enabled</span><span class="pun">-</span><span class="pln">runtime</span></code></li><li class="L4"><code><span class="pln">tlp</span><span class="pun">-</span><span class="kwd">sleep</span><span class="pun">.</span><span class="pln">service enabled</span></code></li><li class="L5"><code><span class="pln">tlp</span><span class="pun">.</span><span class="pln">service enabled</span></code></li></ol></pre>
+<h3 id="toc_17">17) 在 GNOME 3 桌面中安装图标和主题？</h3>
+<p>有大量的图标和主题可供 GNOME 桌面使用，因此，选择吸引你的 <a href="https://www.2daygeek.com/category/gtk-theme/" class="ext" rel="external nofollow" target="_blank">GTK 主题</a> 和 <a href="https://www.2daygeek.com/category/icon-theme/" class="ext" rel="external nofollow" target="_blank">图标主题</a>。</p>
+<hr>
+<p>via: <a href="https://www.2daygeek.com/how-to-customize-the-gnome-3-desktop/" class="ext" rel="external nofollow" target="_blank">https://www.2daygeek.com/how-to-customize-the-gnome-3-desktop/</a></p>
+<p>作者：<a href="https://www.2daygeek.com/author/magesh/" class="ext" rel="external nofollow" target="_blank">Magesh Maruthamuthu</a> 选题：<a href="https://github.com/lujun9972" class="ext" rel="external nofollow" target="_blank">lujun9972</a> 译者：<a href="https://github.com/robsean" class="ext" rel="external nofollow" target="_blank">robsean</a> 校对：<a href="https://github.com/wxy" class="ext" rel="external nofollow" target="_blank">wxy</a></p>
+<p>本文由 <a href="https://github.com/LCTT/TranslateProject" class="ext" rel="external nofollow" target="_blank">LCTT</a> 原创编译，<a href="#">Linux中国</a> 荣誉推出</p>  					<section><img style="width: 24px; height: 24px; float: right;" src="linisi.svg"><br class="clear"></section>
+</div>
+</div>
+<br class="clear">
+<div class="vw">
+<div id="add_comment" class="h bm" style="display: none;">
+<div class="bm_h cl">
+<h3>发表评论</h3>
+</div>
+<div class="bm_c pbn">
+<form id="cform" name="cform" action="https://linux.cn/portal.php?mod=portalcp&amp;ac=comment" method="post" autocomplete="off">
+<div class="tedt">
+<div class="area">
+<textarea name="message" rows="10" class="pt" id="message"></textarea>
+</div>
+</div>
+
+<div class="mtm z"><span id="seccode_cSw85eAk"><input name="seccodehash" value="cSw85eAk" type="hidden"><input name="seccodemodid" value="portal::view" type="hidden">验证码 <span id="seccodecSw85eAk"><input name="seccodeverify" id="seccodeverify_cSw85eAk" autocomplete="off" style="ime-mode: disabled; width: 100px;" class="txt px vm" type="text"> <a class="xi2">换一个</a><span id="checkseccodeverify_cSw85eAk"><img id="checksec_none_cSw85eAk" src="none.gif" class="vm" height="16" width="16"></span></span><div id="seccodecSw85eAk_menu" class="p_pop p_opt" style="display: none;"><span id="vseccode_cSw85eAk">输入下图中的字符<br><img src="misc.php" class="vm" alt="" height="40" width="100"></span></div></span>		
+<script type="text/javascript" reload="1">/* Code removed by ScrapBook */</script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+</div>
+<input name="portal_referer" value="https://linux.cn/article-11256-1.html#comment" type="hidden">
+<input name="referer" value="https://linux.cn/article-11256-1.html#comment" type="hidden">
+<input name="id" value="0" type="hidden">
+<input name="idtype" value="" type="hidden">
+<input name="aid" value="11256" type="hidden">
+<input id="reppid" name="reppid" value="" type="hidden">
+<input name="formhash" value="b7133b8d" type="hidden">
+<input name="replysubmit" value="true" type="hidden">
+<input name="commentsubmit" value="true" type="hidden">
+<p class="mtm" style="text-align: center;"><button type="submit" name="commentsubmit_btn" id="commentsubmit_btn" value="true" class="pn"><strong>评论</strong></button></p>
+<br class="clear">
+</form>
+</div>
+</div>
+<div id="comment" class="bm h">
+<div class="bm_h cl">
+<h3 class="z"><a name="comment"></a>最新评论</h3>
+</div>
+<div id="comment_ul" class="bm_c">
+<div style="text-align: center;"><button type="button" class="pnc" style="font-size: 24px; width: 160px;" id="c_add"><strong>发表评论</strong></button></div><a name="comment_anchor_48080"></a>
+<dl id="comment_48080_li" class="pbm bbda cl">
+<dt class="mbm user ">
+<a href="https://linux.cn/space/30827/" class="xi2 xw1 vm" c="1" target="_blank" mid="card_2753">心上人one [Chrome 78.0|GNU/Linux]</a>
+<span class=" xw0 vm">2019-11-16 18:25</span>
+<span class="y xw0 xi2 opt" style="margin-right: 5px;">
+<a class="replyadd" href="https://linux.cn/portal.php?mod=review&amp;action=postreview&amp;do=support&amp;idtype=aid&amp;tid=11256&amp;pid=48080&amp;hash=b7133b8d"><span id="review_support_48080">1</span> 赞</a> 
+<!--<a href="javascript:;" onclick="portal_comment_reppost(48080, '11256');">回复</a> --><a id="reply_48080" href="https://linux.cn/portal.php?mod=portalcp&amp;ac=comment&amp;op=reply&amp;cid=48080&amp;aid=11256&amp;idtype=">回复</a> </span>	
+</dt>
+<dd>
+还是使用deepin多一点 www.ljmovie.com</dd>
+</dl><a name="comment_anchor_47800"></a>
+<dl id="comment_47800_li" class="pbm bbda cl">
+<dd class="list"><blockquote id="replist_47800_47799" class="replist"><dt class="mbm s3"><span class="info">
+<div class="z count">[1] </div>来自广东深圳的 Chromium 76.0|Ubuntu 用户 发表于 2019-08-22 10:27 的评论：
+</span>
+<div id="opt_47800_47799" class="y opt"><a href="https://linux.cn/portal.php?mod=review&amp;action=postreview&amp;do=support&amp;idtype=aid&amp;tid=11256&amp;pid=47799&amp;hash=b7133b8d"><span name="review_support_rep_47799">12</span> 赞</a> <a id="reply_47799" href="https://linux.cn/portal.php?mod=portalcp&amp;ac=comment&amp;op=reply&amp;cid=47799&amp;aid=11256&amp;idtype=">回复</a>   </div></dt>
+<div class="msg">gnome非常不好用，浪费时间，改用xfce了</div>
+</blockquote></dd>
+<dt class="mbm user s3">
+<a href="https://linux.cn/space/3304/" class="xi2 xw1 vm" c="1" target="_blank" mid="card_4310">绿色圣光 [Firefox 60.0|GNU/Linux]</a>
+<span class=" xw0 vm">2019-08-22 11:12</span>
+<span class="y xw0 xi2 opt" style="margin-right: 5px;">
+<a class="replyadd" href="https://linux.cn/portal.php?mod=review&amp;action=postreview&amp;do=support&amp;idtype=aid&amp;tid=11256&amp;pid=47800&amp;hash=b7133b8d"><span id="review_support_47800">12</span> 赞</a> 
+<!--<a href="javascript:;" onclick="portal_comment_reppost(47800, '11256');">回复</a> --><a id="reply_47800" href="https://linux.cn/portal.php?mod=portalcp&amp;ac=comment&amp;op=reply&amp;cid=47800&amp;aid=11256&amp;idtype=">回复</a> </span>	
+</dt>
+<dd>
+但我觉得非常好用。哈哈！</dd>
+</dl><div class="ptm pbm cl">
+</div>
+</div>
+</div>
+</div>
+<div class="h bm_c bm z" id="footer_info">
+<p class="copyright">
+    	 
+    		    			    			<span class="z textcut">译自：<a href="https://www.2daygeek.com/how-to-customize-the-gnome-3-desktop/" target="_blank">2daygeek.com</a></span>
+    			    		    		<span class="y">作者： Magesh Maruthamuthu</span>    		<br class="clear">
+    	    	<span class="z">原创：<a href="https://linux.cn/lctt/" target="_blank">LCTT</a> <a href="#" target="_blank">https://linux.cn/article-11256-1.html</a></span>
+            			<span class="y">译者： 郑</span>    		<br class="clear">
+    	    	<br>
+    	    		<span>本文由 LCTT 原创翻译，<a href="#">Linux 中国首发</a>。也想加入译者行列，为开源做一些自己的贡献么？欢迎加入 <a href="https://linux.cn/lctt/" target="_blank">LCTT</a>！<br>翻译工作和译文发表仅用于学习和交流目的，翻译工作遵照 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank">CC-BY-SA 协议规定</a>，如果我们的工作有侵犯到您的权益，请及时联系我们。</span>
+    		    		<br class="clear">
+    		<span style="color: red;">欢迎遵照 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank">CC-BY-SA 协议规定</a> 转载，敬请在正文中标注并保留原文/译文链接和作者/译者等信息。</span>
+                		<br class="clear">
+    	    	<span>文章仅代表作者的知识和看法，如有不同观点，请楼下排队<a>吐槽</a> :D</span>
+    	<br class="clear">
+</p>
+
+
+
+<div class="o cl ptm pbm">
+<a href="https://linux.cn/home.php?mod=spacecp&amp;ac=favorite&amp;type=article&amp;id=11256&amp;handlekey=favoritearticlehk_11256" id="a_favorite" class="favorite z" title="收藏"></a>
+<!-- <a href="misc.php?mod=invite&amp;action=article&amp;id=11256" id="a_invite" onclick="showWindow('invite', this.href, 'get', 0);" class="invite z" title="邀请"></a> -->
+<a href="https://linux.cn/article-11256-1.html?pr" class="print z" title="打印"></a>
+				
+</div>
+<div class="pren pbm cl">
+<em>上一篇：<a href="https://linux.cn/article-11255-1.html">如何在 Ubuntu 上设置多语言输入法</a></em><em>下一篇：<a href="https://linux.cn/article-11264-1.html">4 种方式来自定义 Xfce 来给它一个现代化外观</a></em></div>
+</div>
+<div><div id="translator_info" class="bm" style="position: relative; margin: 8px 4px 8px 0px ! important; float: right;">
+<div class="bm_h cl">
+LCTT 译者
+</div>
+<div class="bm_c">
+<div>
+<a href="https://linux.cn/lctt/robsean" target="_blank"><img class="avatar" src="555448.png" style="max-width: 64px; float: left; margin-top: 10px;"></a>
+<div style="float: left; margin-left: 10px; font-size: 12px; line-height: 1.5em;">
+<div>
+<a href="https://github.com/robsean" target="_blank"><img src="github_icon.png" style="vertical-align: middle;"></a> <a href="https://linux.cn/lctt/robsean" target="_blank" style="font-weight: bold;">郑</a> 🌟🌟🌟🌟🌟</div>
+<div class="addfiles">共计翻译： <span class="num" style="color: rgb(255, 0, 0); font-weight: 700;">89.0</span> 篇
+| 共计贡献： <span class="num" style="color: rgb(255, 0, 0); font-weight: 700;">1183</span> 天</div>
+<div>贡献时间：2018-12-03 -&gt; 2022-02-28</div><a href="https://linux.cn/lctt/robsean" target="_blank">访问我的 LCTT 主页</a> | <a href="https://github.com/robsean" target="_blank">在 GitHub 上关注我</a>
+</div>
+<br class="clear">
+</div>
+</div>
+</div>
+</div>
+
+<div id="related" class="bm block z">
+<div class="bm_h cl">
+<h3>相关阅读</h3>
+</div>
+<div class="bm_c pbn" id="related_tag">
+<ul class="xl xl2 cl bbs pbm" id="tag"><li><a href="https://linux.cn/tag-gnome.html">gnome</a></li>
+</ul>
+</div>
+<div class="bm_c xl xl1 cl" id="related_article">
+<ul><li><em>2021-10-21</em><a href="https://linux.cn/article-13905-1-rel.html" target="_blank">Dash to Dock 终于可以在 GNOME 40 上使用了</a> </li>
+<li><em>2021-12-08</em><a href="https://linux.cn/article-14060-1-rel.html" target="_blank">GNOME 有了一个全新的“文本编辑器”，它会成为默认编辑器吗？</a> </li>
+<li><em>2021-12-25</em><a href="https://linux.cn/article-14115-1-rel.html" target="_blank">GNOME 搜索功能的一些小技巧</a> </li>
+<li><em>2022-01-11</em><a href="https://linux.cn/article-14168-1-rel.html" target="_blank">我希望在 GNOME 中看到的 5 个微小而有用的功能</a> </li>
+<li><em>2022-02-11</em><a href="https://linux.cn/article-14261-1-rel.html" target="_blank">在 Gnome 中共享电脑屏幕</a> </li>
+</ul>
+</div>
+</div>
+<br class="clear">
+</article>
+</div>
+
+</div>
+
+
+<input id="portalview" value="1" type="hidden">
+
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<link rel="stylesheet" href="prettify.css" type="text/css">
+<script src="about:blank" type="text/javascript"></script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>	</div>
+    <div id="footer">
+        <p>
+            <span>Linux.CN © Since 2003</span>
+        </p>
+        <p>
+            <a href="http://www.miitbeian.gov.cn/" target="_blank">京ICP备2021020457</a>            京公网安备110105001595
+        </p>
+        <p>
+        <a href="https://linux.cn/legal.html">服务条款</a> |
+        除特别申明外，本站原创内容版权遵循 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank">CC-BY-SA 协议规定</a></p>
+        <p>
+        <a href="https://linux.cn/"><img src="linuxcn_logo_mini.png" align="absmiddle"></a>
+        </p>
+<p>
+<a href="https://linux.cn/forum.php?mod=misc&amp;action=showdarkroom">小黑屋</a><span class="pipe">|</span></p>
+</div>
+
+<div id="ft" class="cl"></div>
+<script src="about:blank" type="text/javascript"></script>
+<div id="scrolltop" style="left: auto; right: 0px; visibility: visible;">
+<span>
+<a class="wxicon"></a>
+<a title="分享到微博" class="tsina"></a>
+<a title="收藏" href="https://linux.cn/home.php?mod=spacecp&amp;ac=favorite&amp;type=article&amp;id=11256&amp;handlekey=favoritearticlehk_11256" id="a_favorite" class="favorite"></a>
+    	<a href="https://linux.cn/article-11256-1.html?pr" class="print" title="!print!"></a>
+
+</span>
+<span hidefocus="true"><a title="返回顶部" class="scrolltopa"><b>返回顶部</b></a></span>
+</div>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<div id="qrcode">
+<p>分享到微信</p>
+<div id="canvas"></div>
+<p><em>打开微信，点击顶部的“╋”，<br>
+使用“扫一扫”将网页分享至微信。</em></p></div>
+<!-- script type="text/javascript" src="https://img.linux.net.cn/static/js/ads.js?o0G"></script -->
+<!-- div id="Lo0GCisOsS" style="display: none; background-color: #A00; position: fixed; top: 0; width: 100%; z-index: 9999; left: 0; font-size: 16px; color: #fff; text-align: center; padding: 10px; opacity: 0.8;">请将我们加入您的广告过滤器的白名单，请支持开源站点。谢谢您。</div -->
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+
+
+</body>
+</html>

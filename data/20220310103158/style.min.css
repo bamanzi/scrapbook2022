@@ -1,0 +1,67 @@
+/* Code tidied up by ScrapBook */
+.wp-block-button__link { color: rgb(255, 255, 255); background-color: rgb(50, 55, 60); border-radius: 9999px; box-shadow: none; cursor: pointer; display: inline-block; font-size: 1.125em; padding: calc(0.667em + 2px) calc(1.333em + 2px); text-align: center; text-decoration: none; box-sizing: border-box; }
+.wp-block-button__link:active, .wp-block-button__link:focus, .wp-block-button__link:hover, .wp-block-button__link:visited { color: rgb(255, 255, 255); }
+.wp-block-buttons > .wp-block-button.has-custom-width { max-width: none; }
+.wp-block-buttons > .wp-block-button.has-custom-width .wp-block-button__link { width: 100%; }
+.wp-block-buttons > .wp-block-button.wp-block-button__width-100 { width: 100%; flex-basis: 100%; }
+.wp-block-buttons > .wp-block-button { display: inline-block; margin: 0px; }
+.wp-block-buttons.is-content-justification-center { justify-content: center; }
+.wp-block-buttons.aligncenter { text-align: center; }
+.wp-block-code code { display: block; white-space: pre-wrap; overflow-wrap: break-word; }
+@media (min-width: 782px) {
+}
+@media (max-width: 599px) {
+}
+@media (min-width: 600px) and (max-width: 781px) {
+}
+@media (min-width: 782px) {
+}
+@supports (-webkit-overflow-scrolling:touch) {
+  .wp-block-cover-image.has-parallax, .wp-block-cover.has-parallax { background-attachment: scroll; }
+}
+@media not all {
+}
+@supports (position:sticky) {
+  .wp-block-cover-image::after, .wp-block-cover::after { content: none; }
+}
+@media (min-width: 600px) {
+}
+@media (min-width: 600px) {
+}
+h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
+.wp-block-image { margin: 0px 0px 1em; }
+.wp-block-image img { vertical-align: bottom; }
+.wp-block-image:not(.is-style-rounded) > a, .wp-block-image:not(.is-style-rounded) img { border-radius: inherit; }
+.wp-block-image.aligncenter { text-align: center; }
+@supports ((-webkit-mask-image:none) or (mask-image:none)) or (-webkit-mask-image:none) {
+  .wp-block-image.is-style-circle-mask img { mask-image: url("data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"/></svg>"); mask-mode: alpha; mask-repeat: no-repeat; mask-size: contain; mask-position: center center; border-radius: 0px; }
+}
+@media (min-width: 600px) {
+}
+ol, ul { overflow-wrap: break-word; }
+@media (max-width: 600px) {
+}
+@media (min-width: 782px) {
+}
+@media (min-width: 782px) {
+}
+@media (min-width: 782px) {
+}
+@media (min-width: 600px) {
+}
+@media (min-width: 600px) {
+}
+p { overflow-wrap: break-word; }
+@media (min-width: 600px) {
+}
+@media (min-width: 600px) {
+}
+@media not all {
+}
+@supports (position:sticky) {
+  .wp-block-video [poster] { object-fit: cover; }
+}
+:root { --wp--preset--font-size--normal: 16px; --wp--preset--font-size--huge: 42px; }
+.aligncenter { clear: both; }
+.screen-reader-text { border: 0px none; clip: rect(1px, 1px, 1px, 1px); clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; overflow-wrap: normal ! important; }
+.screen-reader-text:focus { background-color: rgb(221, 221, 221); clip: auto ! important; clip-path: none; color: rgb(68, 68, 68); display: block; font-size: 1em; height: auto; left: 5px; line-height: normal; padding: 15px 23px 14px; text-decoration: none; top: 5px; width: auto; z-index: 100000; }

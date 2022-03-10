@@ -1,0 +1,358 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>分享|ClusterShell：一个在集群节点上并行运行命令的好工具</title>
+ 
+<meta name="keywords" content="ClusterShell：一个在集群节点上并行运行命令的好工具">
+<meta name="description" content="ClusterShell 是一个事件驱动的开源 Python 库，旨在在服务器场或大型 Linux 集群上并行运行本地或远程命令。 ">
+<meta name="copyright" content="2005-2019 Linux.cn">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="applicable-device" content="pc,mobile">
+<meta name="referrer" content="always">
+<base href=""><link rel="stylesheet" type="text/css" href="style_1_common.css">
+<link rel="stylesheet" type="text/css" href="style_1_portal_view.css">
+<link href="responsive.css" rel="stylesheet">
+
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script src="about:blank" type="text/javascript"></script>
+<script src="about:blank" type="text/javascript"></script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script src="about:blank" type="text/javascript"></script>
+<script src="about:blank" type="text/javascript"></script>
+<link rel="alternate" type="application/rss+xml" title="Linux 中国◆开源社区 RSS" href="https://linux.cn/rss.xml">
+<link rel="shortcut icon" href="favicon.ico" sizes="32x32">
+<link rel="canonical" href="https://linux.cn/article-11147-1.html">
+<script src="about:blank" type="text/javascript"></script>
+<script type="text/javascript" id="lEokdkhfmflTrqgmBMKdPsJjYjljdhYY" charset="UTF-8" src="about:blank"></script><script type="text/javascript" id="seccodejs_cSw85eAk" src="about:blank"></script></head>
+
+<body id="nv_portal" class="pg_view">
+<div id="append_parent"></div><div id="ajaxwaitid"></div>
+<div id="hd">
+<div class="wp" style="box-shadow: 1px 1px 2px rgb(102, 102, 102);">
+<h1 id="linuxcn_logo"><a href="https://linux.cn/" title="Linux.中国 - 开源社区"></a><style type="text/css">
+/* Code tidied up by ScrapBook */
+@keyframes spin {
+100% { transform: rotate(360deg); }
+}
+@keyframes spin {
+100% { transform: rotate(360deg); }
+}
+</style></h1>
+<div class="p_pop h_pop" id="mn_userapp_menu" style="display: none;"></div><div id="topmenu_wrapper" style="height: 33px;">
+<div id="topmenu" class="affix" style="padding-left: 0px; width: 1200px;">
+<div id="nv">
+<ul><li id="mn_N6666" style="display: block; width: 179px;"><a href="https://linux.cn/" hidefocus="true" style="font-weight: bold; padding: 0px 45px;">Linux 中国</a></li><li id="mn_P3"><a href="https://linux.cn/tech/" hidefocus="true" style="color: rgb(255, 250, 229);">技术</a></li><li id="mn_P1"><a href="https://linux.cn/news/" hidefocus="true" style="color: rgb(255, 250, 229);">新闻</a></li><li id="mn_P4"><a href="https://linux.cn/talk/" hidefocus="true" style="color: rgb(255, 250, 229);">观点</a></li><li id="mn_P8"><a href="https://linux.cn/share/" hidefocus="true" style="color: rgb(255, 250, 229);">分享</a></li><li id="mn_N1fa1"><a href="https://linux.cn/lctt/" hidefocus="true" target="_blank">LCTT</a></li></ul>
+</div>
+<div id="mu" class="cl">
+<ul class="cl " id="snav_mn_P3" style="display: none;">
+<li><a href="https://linux.cn/tech/desktop/" hidefocus="true">桌面应用</a></li><li><a href="https://linux.cn/tech/sa/" hidefocus="true">系统运维</a></li><li><a href="https://linux.cn/tech/program/" hidefocus="true">软件开发</a></li><li><a href="https://linux.cn/tech/raspberrypi/" hidefocus="true">树莓派</a></li><li><a href="https://linux.cn/tech/container/" hidefocus="true">容器与云</a></li><li><a href="https://linux.cn/portal.php?mod=list&amp;catid=27" hidefocus="true">区块链</a></li></ul>
+<ul class="cl " id="snav_mn_P1" style="display: none;">
+<li><a href="https://linux.cn/news/express/" hidefocus="true">硬核观察</a></li></ul>
+<ul class="cl " id="snav_mn_P4" style="display: none;">
+<li><a href="https://linux.cn/talk/comic/" hidefocus="true">极客漫画</a></li><li><a href="https://linux.cn/talk/ossip/" hidefocus="true">开源智慧</a></li><li><a href="https://linux.cn/talk/interview/" hidefocus="true">穿山甲专访</a></li><li><a href="https://linux.cn/talk/ocselected/" hidefocus="true">开源之道</a></li><li><a href="https://linux.cn/talk/clh/" hidefocus="true">代码英雄</a></li></ul>
+<ul class="cl " id="snav_mn_P8" style="display: none;">
+<li><a href="https://linux.cn/share/distro/" hidefocus="true">Linux 发行版</a></li></ul>
+<ul class="cl " id="snav_mn_userapp" style="display: none;">
+</ul>
+</div>
+</div>
+</div>
+<div id="scbar" class="cl">
+<form id="scbar_form" method="post" autocomplete="off" action="https://linux.cn/search.php?searchsubmit=yes" target="_blank">
+<input name="mod" id="scbar_mod" value="search" type="hidden">
+<input name="formhash" value="b7133b8d" type="hidden">
+<input name="srchtype" value="title" type="hidden">
+<input name="srhfid" value="0" type="hidden">
+<input name="srhlocality" value="portal::view" type="hidden">
+<table id="scbar_table" style="float: right;" cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td class="scbar_icon_td"></td>
+<td class="scbar_txt_td"><input name="srchtxt" id="scbar_txt" value="请注册后再搜索" autocomplete="off" speech="" class=" xg1" placeholder="请注册后再搜索" type="text"></td>
+<td class="scbar_type_td"><a id="scbar_type" class="xg1" hidefocus="true">搜索</a></td>
+<td class="scbar_btn_td"><button type="submit" name="searchsubmit" id="scbar_btn" sc="1" class="pn pnc" value="true"><strong class="xi2">搜索</strong></button></td>
+<td class="scbar_hot_td">
+<div id="scbar_hot">
+</div>
+</td>
+</tr>
+</tbody></table>
+</form>
+<span class="z titletext" style="padding: 0px 10px 0px 20px;">❏ 站外平台：</span>
+<ul id="ext_plantform" class="cl mutag z">
+<li><a class="hidefocus tsina" hidefocus="true" href="https://weibo.com/linuxcn" target="_blank" title="微博认证号：Linux中国"></a></li>
+<li><a class="hidefocus tticon" hidefocus="true" href="https://www.toutiao.com/c/user/52889878622/" target="_blank" title="今日头条：Linux中国"></a></li>
+<li><a class="hidefocus tticon" hidefocus="true" href="http://www.toutiao.com/c/user/3357852467/" target="_blank" title="今日头条：Linux技术"></a></li>
+<li><a class="hidefocus wyicon" hidefocus="true" href="http://dy.163.com/v2/article/detail/D282EJLD0511CPOJ.html" target="_blank" title="网易号：Linux"></a></li>
+<li><a class="hidefocus fbicon" hidefocus="true" href="https://www.facebook.com/linux.china/" target="_blank" title="Facebook Page：Linux中国"></a></li>
+<li><a class="hidefocus zhicon" hidefocus="true" href="https://www.zhihu.com/org/linuxzhong-guo/" target="_blank" title="知乎机构号：Linux中国"></a></li>
+<li><a class="hidefocus twicon" hidefocus="true" href="https://twitter.com/linux_cn" target="_blank" title="Twitter：Linux中国"></a></li>
+<li><a class="hidefocus tgicon" hidefocus="true" href="https://t.me/linuxdotcn" target="_blank" title="Telegram Channel：Linux中国"></a></li>
+</ul>
+</div>
+<br class="clear">
+<ul id="scbar_type_menu" class="p_pop" style="display: none;"><li><a rel="search">全站</a></li></ul>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+
+</div>
+</div>
+<div id="wp" class="wp">
+
+<style type="text/css">
+/* Code tidied up by ScrapBook */
+#nv_portal .vw .h.hm { background: rgb(255, 255, 255) url("053202pgcgg1y1rc5l5mgg.jpg") repeat scroll center center / cover ; border-radius: 0px; height: 640px; position: relative; padding: 10px; margin-bottom: 0px; }
+#nv_portal .vw .h.hm h1 { background-color: rgba(33, 33, 33, 0.8); border-radius: 0px; position: absolute; margin: 10px 20px 20px; padding: 15px 10px; bottom: 0px; width: 90%; }
+</style>
+<div style="margin: 2px 0px;"></div>
+<div id="ct" class="ct2 wp cl">
+<div class="mn">
+<article class="vw">
+<div class="h hm bm" style="margin-top: 0px;">
+<h1 class="ph" id="article_title">ClusterShell：一个在集群节点上并行运行命令的好工具 </h1>
+<div class="ph" id="article_copyright">
+<span>作者： 
+    	 
+    		    			<span class="textcut"><a href="https://www.2daygeek.com/clustershell-clush-run-commands-on-cluster-nodes-remote-system-in-parallel-linux/" target="_blank">Magesh Maruthamuthu</a></span>
+    		    	    	<span>译者： 
+<a href="https://linux.cn/lctt/" target="_blank">LCTT</a>&nbsp;<a href="https://linux.cn/lctt/wxy" target="_blank">Xingyu.Wang</a></span>
+<p id="article_date">
+| 2019-07-26 05:32&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+</p>
+</span></div>
+</div>
+
+<div class="d" style="width: 100%; margin: 0px;">
+<div id="article_content" style="border-radius: 0px;">
+
+<p>我们过去曾写过两篇如何并行地在多个远程服务器上运行命令的文章：<a href="https://www.2daygeek.com/pssh-parallel-ssh-run-execute-commands-on-multiple-linux-servers/" class="ext" rel="external nofollow" target="_blank">并行 SSH（PSSH）</a> 和<a href="https://www.2daygeek.com/dsh-run-execute-shell-commands-on-multiple-linux-servers-at-once/" class="ext" rel="external nofollow" target="_blank">分布式 Shell（DSH）</a>。今天，我们将讨论相同类型的主题，但它允许我们在集群节点上执行相同的操作。你可能会想，我可以编写一个小的 shell 脚本来实现这个目的，而不是安装这些第三方软件包。</p>
+<p>当然，你是对的，如果要在十几个远程系统中运行一些命令，那么你不需要使用它。但是，你的脚本需要一些时间来完成此任务，因为它是按顺序运行的。想想你要是在一千多台服务器上运行一些命令会是什么样子？在这种情况下，你的脚本用处不大。此外，完成任务需要很长时间。所以，要克服这种问题和情况，我们需要可以在远程计算机上并行运行命令。</p>
+<p>为此，我们需要在一个并行应用程序中使用它。我希望这个解释可以解决你对并行实用程序的疑虑。</p>
+<h3 id="toc_1">ClusterShell</h3>
+<p><a href="https://cea-hpc.github.io/clustershell/" class="ext" rel="external nofollow" target="_blank">ClusterShell</a> 是一个事件驱动的开源 Python 库，旨在在服务器场或大型 Linux 集群上并行运行本地或远程命令。（<code>clush</code> 即 <a href="https://cea-hpc.github.io/clustershell/" class="ext" rel="external nofollow" target="_blank">ClusterShell</a>）。</p>
+<p>它将处理在 HPC 集群上遇到的常见问题，例如在节点组上操作，使用优化过的执行算法运行分布式命令，以及收集结果和合并相同的输出，或检索返回代码。</p>
+<p>ClusterShell 可以利用已安装在系统上的现有远程 shell 设施，如 SSH。</p>
+<p>ClusterShell 的主要目标是通过为开发人员提供轻量级、但可扩展的 Python API 来改进高性能集群的管理。它还提供了 <code>clush</code>、<code>clubak</code> 和 <code>cluset</code>/<code>nodeset</code> 等方便的命令行工具，可以让传统的 shell 脚本利用这个库的一些功能。</p>
+<p>ClusterShell 是用 Python 编写的，它需要 Python（v2.6+ 或 v3.4+）才能在你的系统上运行。</p>
+<h3 id="toc_2">如何在 Linux 上安装 ClusterShell？</h3>
+<p>ClusterShell 包在大多数发行版的官方包管理器中都可用。因此，使用发行版包管理器工具进行安装。</p>
+<p>对于 Fedora 系统，使用 <a href="https://www.2daygeek.com/dnf-command-examples-manage-packages-fedora-system/" class="ext" rel="external nofollow" target="_blank">DNF 命令</a>来安装 clustershell。</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">$ </span><span class="kwd">sudo</span><span class="pln"> dnf install clustershell</span></code></li></ol></pre>
+<p>如果系统默认是 Python 2，这会安装 Python 2 模块和工具，可以运行以下命令安装 Python 3 开发包。</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">$ </span><span class="kwd">sudo</span><span class="pln"> dnf install python3</span><span class="pun">-</span><span class="pln">clustershell</span></code></li></ol></pre>
+<p>在执行 clustershell 安装之前，请确保你已在系统上启用 <a href="https://www.2daygeek.com/install-enable-epel-repository-on-rhel-centos-scientific-linux-oracle-linux/" class="ext" rel="external nofollow" target="_blank">EPEL 存储库</a>。</p>
+<p>对于 RHEL/CentOS 系统，使用 <a href="https://www.2daygeek.com/yum-command-examples-manage-packages-rhel-centos-systems/" class="ext" rel="external nofollow" target="_blank">YUM 命令</a> 来安装 clustershell。</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">$ </span><span class="kwd">sudo</span><span class="pln"> </span><span class="kwd">yum</span><span class="pln"> install clustershell</span></code></li></ol></pre>
+<p>如果系统默认是 Python 2，这会安装 Python 2 模块和工具，可以运行以下命令安装 Python 3 开发包。</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">$ </span><span class="kwd">sudo</span><span class="pln"> </span><span class="kwd">yum</span><span class="pln"> install python34</span><span class="pun">-</span><span class="pln">clustershell</span></code></li></ol></pre>
+<p>对于 openSUSE Leap 系统，使用 <a href="https://www.2daygeek.com/zypper-command-examples-manage-packages-opensuse-system/" class="ext" rel="external nofollow" target="_blank">Zypper 命令</a> 来安装 clustershell。</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">$ </span><span class="kwd">sudo</span><span class="pln"> zypper install clustershell</span></code></li></ol></pre>
+<p>如果系统默认是 Python 2，这会安装 Python 2 模块和工具，可以运行以下命令安装 Python 3 开发包。</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">$ </span><span class="kwd">sudo</span><span class="pln"> zypper install python3</span><span class="pun">-</span><span class="pln">clustershell</span></code></li></ol></pre>
+<p>对于 Debian/Ubuntu 系统，使用 <a href="https://www.2daygeek.com/apt-get-apt-cache-command-examples-manage-packages-debian-ubuntu-systems/" class="ext" rel="external nofollow" target="_blank">APT-GET 命令</a> 或 <a href="https://www.2daygeek.com/apt-command-examples-manage-packages-debian-ubuntu-systems/" class="ext" rel="external nofollow" target="_blank">APT 命令</a> 来安装 clustershell。</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">$ </span><span class="kwd">sudo</span><span class="pln"> apt install clustershell</span></code></li></ol></pre>
+<h3 id="toc_3">如何在 Linux 使用 PIP 安装 ClusterShell？</h3>
+<p>可以使用 PIP 安装 ClusterShell，因为它是用 Python 编写的。</p>
+<p>在执行 clustershell 安装之前，请确保你已在系统上启用了 <a href="https://www.2daygeek.com/3-methods-to-install-latest-python3-package-on-centos-6-system/" class="ext" rel="external nofollow" target="_blank">Python</a> 和 <a href="https://www.2daygeek.com/install-pip-manage-python-packages-linux/" class="ext" rel="external nofollow" target="_blank">PIP</a>。</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">$ </span><span class="kwd">sudo</span><span class="pln"> pip install </span><span class="typ">ClusterShell</span></code></li></ol></pre>
+<h3 id="toc_4">如何在 Linux 上使用 ClusterShell？</h3>
+<p>与其他实用程序（如 <code>pssh</code> 和 <code>dsh</code>）相比，它是直接了当的优秀工具。它有很多选项可以在远程并行执行。</p>
+<p>在开始使用 clustershell 之前，请确保你已启用系统上的<a href="https://www.2daygeek.com/linux-passwordless-ssh-login-using-ssh-keygen/" class="ext" rel="external nofollow" target="_blank">无密码登录</a>。</p>
+<p>以下配置文件定义了系统范围的默认值。你不需要修改这里的任何东西。</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">$ </span><span class="kwd">cat</span><span class="pln"> </span><span class="pun">/</span><span class="pln">etc</span><span class="pun">/</span><span class="pln">clustershell</span><span class="pun">/</span><span class="pln">clush</span><span class="pun">.</span><span class="pln">conf</span></code></li></ol></pre>
+<p>如果你想要创建一个服务器组，那也可以。默认情况下有一些示例，请根据你的要求执行相同操作。</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">$ </span><span class="kwd">cat</span><span class="pln"> </span><span class="pun">/</span><span class="pln">etc</span><span class="pun">/</span><span class="pln">clustershell</span><span class="pun">/</span><span class="kwd">groups</span><span class="pun">.</span><span class="pln">d</span><span class="pun">/</span><span class="kwd">local</span><span class="pun">.</span><span class="pln">cfg</span></code></li></ol></pre>
+<p>只需按以下列格式运行 clustershell 命令即可从给定节点获取信息：</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">$ clush </span><span class="pun">-</span><span class="kwd">w</span><span class="pln"> </span><span class="lit">192.168</span><span class="pun">.</span><span class="lit">1.4</span><span class="pun">,</span><span class="lit">192.168</span><span class="pun">.</span><span class="lit">1.9</span><span class="pln"> </span><span class="kwd">cat</span><span class="pln"> </span><span class="pun">/</span><span class="pln">proc</span><span class="pun">/</span><span class="pln">version</span></code></li><li class="L1"><code><span class="lit">192.168</span><span class="pun">.</span><span class="lit">1.9</span><span class="pun">:</span><span class="pln"> </span><span class="typ">Linux</span><span class="pln"> version </span><span class="lit">4.15</span><span class="pun">.</span><span class="lit">0</span><span class="pun">-</span><span class="lit">45</span><span class="pun">-</span><span class="kwd">generic</span><span class="pln"> </span><span class="pun">([</span><span class="pln">email&nbsp;</span><span class="kwd">protected</span><span class="pun">])</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">gcc</span><span class="pln"> version </span><span class="lit">7.3</span><span class="pun">.</span><span class="lit">0</span><span class="pln"> </span><span class="pun">(</span><span class="typ">Ubuntu</span><span class="pln"> </span><span class="lit">7.3</span><span class="pun">.</span><span class="lit">0</span><span class="pun">-</span><span class="lit">16ubuntu3</span><span class="pun">))</span><span class="pln"> </span><span class="com">#</span><span class="lit">48</span><span class="pun">-</span><span class="typ">Ubuntu</span><span class="pln"> SMP </span><span class="typ">Tue</span><span class="pln"> </span><span class="typ">Jan</span><span class="pln"> </span><span class="lit">29</span><span class="pln"> </span><span class="lit">16</span><span class="pun">:</span><span class="lit">28</span><span class="pun">:</span><span class="lit">13</span><span class="pln"> UTC </span><span class="lit">2019</span></code></li><li class="L2"><code><span class="lit">192.168</span><span class="pun">.</span><span class="lit">1.4</span><span class="pun">:</span><span class="pln"> </span><span class="typ">Linux</span><span class="pln"> version </span><span class="lit">3.10</span><span class="pun">.</span><span class="lit">0</span><span class="pun">-</span><span class="lit">957.el7.x86</span><span class="pln">_64 </span><span class="pun">([</span><span class="pln">email&nbsp;</span><span class="kwd">protected</span><span class="pun">])</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">gcc</span><span class="pln"> version </span><span class="lit">4.8</span><span class="pun">.</span><span class="lit">5</span><span class="pln"> </span><span class="lit">20150623</span><span class="pln"> </span><span class="pun">(</span><span class="typ">Red</span><span class="pln"> </span><span class="typ">Hat</span><span class="pln"> </span><span class="lit">4.8</span><span class="pun">.</span><span class="lit">5</span><span class="pun">-</span><span class="lit">36</span><span class="pun">)</span><span class="pln"> </span><span class="pun">(</span><span class="pln">GCC</span><span class="pun">)</span><span class="pln"> </span><span class="pun">)</span><span class="pln"> </span><span class="com">#</span><span class="lit">1</span><span class="pln"> SMP </span><span class="typ">Thu</span><span class="pln"> </span><span class="typ">Nov</span><span class="pln"> </span><span class="lit">8</span><span class="pln"> </span><span class="lit">23</span><span class="pun">:</span><span class="lit">39</span><span class="pun">:</span><span class="lit">32</span><span class="pln"> UTC </span><span class="lit">2018</span></code></li></ol></pre>
+<p>选项：</p>
+<ul>
+<li><code>-w:</code> 你要运行该命令的节点。</li>
+</ul>
+<p>你可以使用正则表达式而不是使用完整主机名和 IP：</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">$ clush </span><span class="pun">-</span><span class="kwd">w</span><span class="pln"> </span><span class="lit">192.168</span><span class="pun">.</span><span class="lit">1.</span><span class="pun">[</span><span class="lit">4</span><span class="pun">,</span><span class="lit">9</span><span class="pun">]</span><span class="pln"> </span><span class="kwd">uname</span><span class="pln"> </span><span class="pun">-</span><span class="pln">r</span></code></li><li class="L1"><code><span class="lit">192.168</span><span class="pun">.</span><span class="lit">1.9</span><span class="pun">:</span><span class="pln"> </span><span class="lit">4.15</span><span class="pun">.</span><span class="lit">0</span><span class="pun">-</span><span class="lit">45</span><span class="pun">-</span><span class="kwd">generic</span></code></li><li class="L2"><code><span class="lit">192.168</span><span class="pun">.</span><span class="lit">1.4</span><span class="pun">:</span><span class="pln"> </span><span class="lit">3.10</span><span class="pun">.</span><span class="lit">0</span><span class="pun">-</span><span class="lit">957.el7.x86</span><span class="pln">_64</span></code></li></ol></pre>
+<p>或者，如果服务器位于同一 IP 系列中，则可以使用以下格式：</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">$ clush </span><span class="pun">-</span><span class="kwd">w</span><span class="pln"> </span><span class="lit">192.168</span><span class="pun">.</span><span class="lit">1.</span><span class="pun">[</span><span class="lit">4</span><span class="pun">-</span><span class="lit">9</span><span class="pun">]</span><span class="pln"> </span><span class="kwd">date</span></code></li><li class="L1"><code><span class="lit">192.168</span><span class="pun">.</span><span class="lit">1.6</span><span class="pun">:</span><span class="pln"> </span><span class="typ">Mon</span><span class="pln"> </span><span class="typ">Mar</span><span class="pln">  </span><span class="lit">4</span><span class="pln"> </span><span class="lit">21</span><span class="pun">:</span><span class="lit">08</span><span class="pun">:</span><span class="lit">29</span><span class="pln"> IST </span><span class="lit">2019</span></code></li><li class="L2"><code><span class="lit">192.168</span><span class="pun">.</span><span class="lit">1.7</span><span class="pun">:</span><span class="pln"> </span><span class="typ">Mon</span><span class="pln"> </span><span class="typ">Mar</span><span class="pln">  </span><span class="lit">4</span><span class="pln"> </span><span class="lit">21</span><span class="pun">:</span><span class="lit">08</span><span class="pun">:</span><span class="lit">29</span><span class="pln"> IST </span><span class="lit">2019</span></code></li><li class="L3"><code><span class="lit">192.168</span><span class="pun">.</span><span class="lit">1.8</span><span class="pun">:</span><span class="pln"> </span><span class="typ">Mon</span><span class="pln"> </span><span class="typ">Mar</span><span class="pln">  </span><span class="lit">4</span><span class="pln"> </span><span class="lit">21</span><span class="pun">:</span><span class="lit">08</span><span class="pun">:</span><span class="lit">29</span><span class="pln"> IST </span><span class="lit">2019</span></code></li><li class="L4"><code><span class="lit">192.168</span><span class="pun">.</span><span class="lit">1.5</span><span class="pun">:</span><span class="pln"> </span><span class="typ">Mon</span><span class="pln"> </span><span class="typ">Mar</span><span class="pln">  </span><span class="lit">4</span><span class="pln"> </span><span class="lit">09</span><span class="pun">:</span><span class="lit">16</span><span class="pun">:</span><span class="lit">30</span><span class="pln"> CST </span><span class="lit">2019</span></code></li><li class="L5"><code><span class="lit">192.168</span><span class="pun">.</span><span class="lit">1.9</span><span class="pun">:</span><span class="pln"> </span><span class="typ">Mon</span><span class="pln"> </span><span class="typ">Mar</span><span class="pln">  </span><span class="lit">4</span><span class="pln"> </span><span class="lit">21</span><span class="pun">:</span><span class="lit">08</span><span class="pun">:</span><span class="lit">29</span><span class="pln"> IST </span><span class="lit">2019</span></code></li><li class="L6"><code><span class="lit">192.168</span><span class="pun">.</span><span class="lit">1.4</span><span class="pun">:</span><span class="pln"> </span><span class="typ">Mon</span><span class="pln"> </span><span class="typ">Mar</span><span class="pln">  </span><span class="lit">4</span><span class="pln"> </span><span class="lit">09</span><span class="pun">:</span><span class="lit">16</span><span class="pun">:</span><span class="lit">30</span><span class="pln"> CST </span><span class="lit">2019</span></code></li></ol></pre>
+<p>clustershell 允许我们以批处理模式运行命令。使用以下格式来实现此目的：</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">$ clush </span><span class="pun">-</span><span class="kwd">w</span><span class="pln"> </span><span class="lit">192.168</span><span class="pun">.</span><span class="lit">1.4</span><span class="pun">,</span><span class="lit">192.168</span><span class="pun">.</span><span class="lit">1.9</span><span class="pln"> </span><span class="pun">-</span><span class="pln">b</span></code></li><li class="L1"><code><span class="typ">Enter</span><span class="pln"> </span><span class="str">'quit'</span><span class="pln"> to leave </span><span class="kwd">this</span><span class="pln"> interactive mode</span></code></li><li class="L2"><code><span class="typ">Working</span><span class="pln"> </span><span class="kwd">with</span><span class="pln"> nodes</span><span class="pun">:</span><span class="pln"> </span><span class="lit">192.168</span><span class="pun">.</span><span class="lit">1.</span><span class="pun">[</span><span class="lit">4</span><span class="pun">,</span><span class="lit">9</span><span class="pun">]</span></code></li><li class="L3"><code><span class="pln">clush</span><span class="pun">&gt;</span><span class="pln"> </span><span class="kwd">hostnamectl</span></code></li><li class="L4"><code><span class="pun">---------------</span></code></li><li class="L5"><code><span class="lit">192.168</span><span class="pun">.</span><span class="lit">1.4</span></code></li><li class="L6"><code><span class="pun">---------------</span></code></li><li class="L7"><code><span class="pln">   </span><span class="typ">Static</span><span class="pln"> </span><span class="kwd">hostname</span><span class="pun">:</span><span class="pln"> </span><span class="typ">CentOS7</span><span class="pun">.</span><span class="lit">2daygeek</span><span class="pun">.</span><span class="pln">com</span></code></li><li class="L8"><code><span class="pln">         </span><span class="typ">Icon</span><span class="pln"> name</span><span class="pun">:</span><span class="pln"> computer</span><span class="pun">-</span><span class="pln">vm</span></code></li><li class="L9"><code><span class="pln">           </span><span class="typ">Chassis</span><span class="pun">:</span><span class="pln"> vm</span></code></li><li class="L0"><code><span class="pln">        </span><span class="typ">Machine</span><span class="pln"> ID</span><span class="pun">:</span><span class="pln"> </span><span class="lit">002f47b82af248f5be1d67b67e03514c</span></code></li><li class="L1"><code><span class="pln">           </span><span class="typ">Boot</span><span class="pln"> ID</span><span class="pun">:</span><span class="pln"> f9b37a073c534dec8b236885e754cb56</span></code></li><li class="L2"><code><span class="pln">    </span><span class="typ">Virtualization</span><span class="pun">:</span><span class="pln"> kvm</span></code></li><li class="L3"><code><span class="pln">  </span><span class="typ">Operating</span><span class="pln"> </span><span class="typ">System</span><span class="pun">:</span><span class="pln"> </span><span class="typ">CentOS</span><span class="pln"> </span><span class="typ">Linux</span><span class="pln"> </span><span class="lit">7</span><span class="pln"> </span><span class="pun">(</span><span class="typ">Core</span><span class="pun">)</span></code></li><li class="L4"><code><span class="pln">       CPE OS </span><span class="typ">Name</span><span class="pun">:</span><span class="pln"> cpe</span><span class="pun">:/</span><span class="pln">o</span><span class="pun">:</span><span class="pln">centos</span><span class="pun">:</span><span class="pln">centos</span><span class="pun">:</span><span class="lit">7</span></code></li><li class="L5"><code><span class="pln">            </span><span class="typ">Kernel</span><span class="pun">:</span><span class="pln"> </span><span class="typ">Linux</span><span class="pln"> </span><span class="lit">3.10</span><span class="pun">.</span><span class="lit">0</span><span class="pun">-</span><span class="lit">957.el7.x86</span><span class="pln">_64</span></code></li><li class="L6"><code><span class="pln">      </span><span class="typ">Architecture</span><span class="pun">:</span><span class="pln"> x86</span><span class="pun">-</span><span class="lit">64</span></code></li><li class="L7"><code><span class="pun">---------------</span></code></li><li class="L8"><code><span class="lit">192.168</span><span class="pun">.</span><span class="lit">1.9</span></code></li><li class="L9"><code><span class="pun">---------------</span></code></li><li class="L0"><code><span class="pln">   </span><span class="typ">Static</span><span class="pln"> </span><span class="kwd">hostname</span><span class="pun">:</span><span class="pln"> </span><span class="typ">Ubuntu18</span></code></li><li class="L1"><code><span class="pln">         </span><span class="typ">Icon</span><span class="pln"> name</span><span class="pun">:</span><span class="pln"> computer</span><span class="pun">-</span><span class="pln">vm</span></code></li><li class="L2"><code><span class="pln">           </span><span class="typ">Chassis</span><span class="pun">:</span><span class="pln"> vm</span></code></li><li class="L3"><code><span class="pln">        </span><span class="typ">Machine</span><span class="pln"> ID</span><span class="pun">:</span><span class="pln"> </span><span class="lit">27f6c2febda84dc881f28fd145077187</span></code></li><li class="L4"><code><span class="pln">           </span><span class="typ">Boot</span><span class="pln"> ID</span><span class="pun">:</span><span class="pln"> f176f2eb45524d4f906d12e2b5716649</span></code></li><li class="L5"><code><span class="pln">    </span><span class="typ">Virtualization</span><span class="pun">:</span><span class="pln"> oracle</span></code></li><li class="L6"><code><span class="pln">  </span><span class="typ">Operating</span><span class="pln"> </span><span class="typ">System</span><span class="pun">:</span><span class="pln"> </span><span class="typ">Ubuntu</span><span class="pln"> </span><span class="lit">18.04</span><span class="pun">.</span><span class="lit">2</span><span class="pln"> LTS</span></code></li><li class="L7"><code><span class="pln">            </span><span class="typ">Kernel</span><span class="pun">:</span><span class="pln"> </span><span class="typ">Linux</span><span class="pln"> </span><span class="lit">4.15</span><span class="pun">.</span><span class="lit">0</span><span class="pun">-</span><span class="lit">45</span><span class="pun">-</span><span class="kwd">generic</span></code></li><li class="L8"><code><span class="pln">      </span><span class="typ">Architecture</span><span class="pun">:</span><span class="pln"> x86</span><span class="pun">-</span><span class="lit">64</span></code></li><li class="L9"><code><span class="pln">clush</span><span class="pun">&gt;</span><span class="pln"> free </span><span class="pun">-</span><span class="pln">m</span></code></li><li class="L0"><code><span class="pun">---------------</span></code></li><li class="L1"><code><span class="lit">192.168</span><span class="pun">.</span><span class="lit">1.4</span></code></li><li class="L2"><code><span class="pun">---------------</span></code></li><li class="L3"><code><span class="pln">              total        used        free      shared  buff</span><span class="pun">/</span><span class="pln">cache   available</span></code></li><li class="L4"><code><span class="typ">Mem</span><span class="pun">:</span><span class="pln">           </span><span class="lit">1838</span><span class="pln">         </span><span class="lit">641</span><span class="pln">         </span><span class="lit">217</span><span class="pln">          </span><span class="lit">19</span><span class="pln">         </span><span class="lit">978</span><span class="pln">         </span><span class="lit">969</span></code></li><li class="L5"><code><span class="typ">Swap</span><span class="pun">:</span><span class="pln">          </span><span class="lit">2047</span><span class="pln">           </span><span class="lit">0</span><span class="pln">        </span><span class="lit">2047</span></code></li><li class="L6"><code><span class="pun">---------------</span></code></li><li class="L7"><code><span class="lit">192.168</span><span class="pun">.</span><span class="lit">1.9</span></code></li><li class="L8"><code><span class="pun">---------------</span></code></li><li class="L9"><code><span class="pln">              total        used        free      shared  buff</span><span class="pun">/</span><span class="pln">cache   available</span></code></li><li class="L0"><code><span class="typ">Mem</span><span class="pun">:</span><span class="pln">           </span><span class="lit">1993</span><span class="pln">         </span><span class="lit">352</span><span class="pln">        </span><span class="lit">1067</span><span class="pln">           </span><span class="lit">1</span><span class="pln">         </span><span class="lit">573</span><span class="pln">        </span><span class="lit">1473</span></code></li><li class="L1"><code><span class="typ">Swap</span><span class="pun">:</span><span class="pln">          </span><span class="lit">1425</span><span class="pln">           </span><span class="lit">0</span><span class="pln">        </span><span class="lit">1425</span></code></li><li class="L2"><code><span class="pln">clush</span><span class="pun">&gt;</span><span class="pln"> </span><span class="kwd">w</span></code></li><li class="L3"><code><span class="pun">---------------</span></code></li><li class="L4"><code><span class="lit">192.168</span><span class="pun">.</span><span class="lit">1.4</span></code></li><li class="L5"><code><span class="pun">---------------</span></code></li><li class="L6"><code><span class="pln"> </span><span class="lit">09</span><span class="pun">:</span><span class="lit">21</span><span class="pun">:</span><span class="lit">14</span><span class="pln"> up  </span><span class="lit">3</span><span class="pun">:</span><span class="lit">21</span><span class="pun">,</span><span class="pln">  </span><span class="lit">3</span><span class="pln"> </span><span class="kwd">users</span><span class="pun">,</span><span class="pln">  load average</span><span class="pun">:</span><span class="pln"> </span><span class="lit">0.00</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0.01</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0.05</span></code></li><li class="L7"><code><span class="pln">USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT</span></code></li><li class="L8"><code><span class="pln">daygeek  </span><span class="pun">:</span><span class="lit">0</span><span class="pln">       </span><span class="pun">:</span><span class="lit">0</span><span class="pln">               </span><span class="lit">06</span><span class="pun">:</span><span class="lit">02</span><span class="pln">   </span><span class="pun">?</span><span class="pln">xdm</span><span class="pun">?</span><span class="pln">   </span><span class="lit">1</span><span class="pun">:</span><span class="lit">28</span><span class="pln">   </span><span class="lit">0.30s</span><span class="pln"> </span><span class="pun">/</span><span class="pln">usr</span><span class="pun">/</span><span class="pln">libexec</span><span class="pun">/</span><span class="pln">gnome</span><span class="pun">-</span><span class="pln">session</span><span class="pun">-</span><span class="pln">binary </span><span class="pun">--</span><span class="pln">session gnome</span><span class="pun">-</span><span class="pln">classic</span></code></li><li class="L9"><code><span class="pln">daygeek  pts</span><span class="pun">/</span><span class="lit">0</span><span class="pln">    </span><span class="pun">:</span><span class="lit">0</span><span class="pln">               </span><span class="lit">06</span><span class="pun">:</span><span class="lit">03</span><span class="pln">    </span><span class="lit">3</span><span class="pun">:</span><span class="lit">17m</span><span class="pln">  </span><span class="lit">0.06s</span><span class="pln">  </span><span class="lit">0.06s</span><span class="pln"> </span><span class="kwd">bash</span></code></li><li class="L0"><code><span class="pln">daygeek  pts</span><span class="pun">/</span><span class="lit">1</span><span class="pln">    </span><span class="lit">192.168</span><span class="pun">.</span><span class="lit">1.6</span><span class="pln">      </span><span class="lit">06</span><span class="pun">:</span><span class="lit">03</span><span class="pln">   </span><span class="lit">52</span><span class="pun">:</span><span class="lit">26</span><span class="pln">   </span><span class="lit">0.10s</span><span class="pln">  </span><span class="lit">0.10s</span><span class="pln"> </span><span class="pun">-</span><span class="kwd">bash</span></code></li><li class="L1"><code><span class="pun">---------------</span></code></li><li class="L2"><code><span class="lit">192.168</span><span class="pun">.</span><span class="lit">1.9</span></code></li><li class="L3"><code><span class="pun">---------------</span></code></li><li class="L4"><code><span class="pln"> </span><span class="lit">21</span><span class="pun">:</span><span class="lit">13</span><span class="pun">:</span><span class="lit">12</span><span class="pln"> up  </span><span class="lit">3</span><span class="pun">:</span><span class="lit">12</span><span class="pun">,</span><span class="pln">  </span><span class="lit">1</span><span class="pln"> user</span><span class="pun">,</span><span class="pln">  load average</span><span class="pun">:</span><span class="pln"> </span><span class="lit">0.08</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0.03</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0.00</span></code></li><li class="L5"><code><span class="pln">USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT</span></code></li><li class="L6"><code><span class="pln">daygeek  pts</span><span class="pun">/</span><span class="lit">0</span><span class="pln">    </span><span class="lit">192.168</span><span class="pun">.</span><span class="lit">1.6</span><span class="pln">      </span><span class="lit">20</span><span class="pun">:</span><span class="lit">42</span><span class="pln">   </span><span class="lit">29</span><span class="pun">:</span><span class="lit">41</span><span class="pln">   </span><span class="lit">0.05s</span><span class="pln">  </span><span class="lit">0.05s</span><span class="pln"> </span><span class="pun">-</span><span class="kwd">bash</span></code></li><li class="L7"><code><span class="pln">clush</span><span class="pun">&gt;</span><span class="pln"> quit</span></code></li></ol></pre>
+<p>如果要在一组节点上运行该命令，请使用以下格式：</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">$ clush </span><span class="pun">-</span><span class="kwd">w</span><span class="pln"> </span><span class="lit">@dev</span><span class="pln"> </span><span class="kwd">uptime</span></code></li><li class="L1"><code><span class="kwd">or</span></code></li><li class="L2"><code><span class="pln">$ clush </span><span class="pun">-</span><span class="pln">g dev </span><span class="kwd">uptime</span></code></li><li class="L3"><code><span class="kwd">or</span></code></li><li class="L4"><code><span class="pln">$ clush </span><span class="pun">--</span><span class="pln">group</span><span class="pun">=</span><span class="pln">dev </span><span class="kwd">uptime</span></code></li><li class="L5"><code></code></li><li class="L6"><code><span class="lit">192.168</span><span class="pun">.</span><span class="lit">1.9</span><span class="pun">:</span><span class="pln">  </span><span class="lit">21</span><span class="pun">:</span><span class="lit">10</span><span class="pun">:</span><span class="lit">10</span><span class="pln"> up  </span><span class="lit">3</span><span class="pun">:</span><span class="lit">09</span><span class="pun">,</span><span class="pln">  </span><span class="lit">1</span><span class="pln"> user</span><span class="pun">,</span><span class="pln">  load average</span><span class="pun">:</span><span class="pln"> </span><span class="lit">0.09</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0.03</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0.01</span></code></li><li class="L7"><code><span class="lit">192.168</span><span class="pun">.</span><span class="lit">1.4</span><span class="pun">:</span><span class="pln">  </span><span class="lit">09</span><span class="pun">:</span><span class="lit">18</span><span class="pun">:</span><span class="lit">12</span><span class="pln"> up  </span><span class="lit">3</span><span class="pun">:</span><span class="lit">18</span><span class="pun">,</span><span class="pln">  </span><span class="lit">3</span><span class="pln"> </span><span class="kwd">users</span><span class="pun">,</span><span class="pln">  load average</span><span class="pun">:</span><span class="pln"> </span><span class="lit">0.01</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0.02</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0.05</span></code></li></ol></pre>
+<p>如果要在多个节点组上运行该命令，请使用以下格式：</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">$ clush </span><span class="pun">-</span><span class="kwd">w</span><span class="pln"> </span><span class="lit">@dev</span><span class="pun">,</span><span class="lit">@uat</span><span class="pln"> </span><span class="kwd">uptime</span></code></li><li class="L1"><code><span class="kwd">or</span></code></li><li class="L2"><code><span class="pln">$ clush </span><span class="pun">-</span><span class="pln">g dev</span><span class="pun">,</span><span class="pln">uat </span><span class="kwd">uptime</span></code></li><li class="L3"><code><span class="kwd">or</span></code></li><li class="L4"><code><span class="pln">$ clush </span><span class="pun">--</span><span class="pln">group</span><span class="pun">=</span><span class="pln">dev</span><span class="pun">,</span><span class="pln">uat </span><span class="kwd">uptime</span></code></li><li class="L5"><code></code></li><li class="L6"><code><span class="lit">192.168</span><span class="pun">.</span><span class="lit">1.7</span><span class="pun">:</span><span class="pln"> </span><span class="lit">07</span><span class="pun">:</span><span class="lit">57</span><span class="pun">:</span><span class="lit">19</span><span class="pln"> up </span><span class="lit">59</span><span class="pln"> min</span><span class="pun">,</span><span class="pln"> </span><span class="lit">1</span><span class="pln"> user</span><span class="pun">,</span><span class="pln"> load average</span><span class="pun">:</span><span class="pln"> </span><span class="lit">0.08</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0.03</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0.00</span></code></li><li class="L7"><code><span class="lit">192.168</span><span class="pun">.</span><span class="lit">1.9</span><span class="pun">:</span><span class="pln"> </span><span class="lit">20</span><span class="pun">:</span><span class="lit">27</span><span class="pun">:</span><span class="lit">20</span><span class="pln"> up </span><span class="lit">1</span><span class="pun">:</span><span class="lit">00</span><span class="pun">,</span><span class="pln"> </span><span class="lit">1</span><span class="pln"> user</span><span class="pun">,</span><span class="pln"> load average</span><span class="pun">:</span><span class="pln"> </span><span class="lit">0.00</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0.00</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0.00</span></code></li><li class="L8"><code><span class="lit">192.168</span><span class="pun">.</span><span class="lit">1.5</span><span class="pun">:</span><span class="pln"> </span><span class="lit">08</span><span class="pun">:</span><span class="lit">57</span><span class="pun">:</span><span class="lit">21</span><span class="pln"> up </span><span class="lit">59</span><span class="pln"> min</span><span class="pun">,</span><span class="pln"> </span><span class="lit">1</span><span class="pln"> user</span><span class="pun">,</span><span class="pln"> load average</span><span class="pun">:</span><span class="pln"> </span><span class="lit">0.00</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0.01</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0.05</span></code></li></ol></pre>
+<p>clustershell 允许我们将文件复制到远程计算机。将本地文件或目录复制到同一个远程节点：</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">$ clush </span><span class="pun">-</span><span class="kwd">w</span><span class="pln"> </span><span class="lit">192.168</span><span class="pun">.</span><span class="lit">1.</span><span class="pun">[</span><span class="lit">4</span><span class="pun">,</span><span class="lit">9</span><span class="pun">]</span><span class="pln"> </span><span class="pun">--</span><span class="pln">copy </span><span class="pun">/</span><span class="pln">home</span><span class="pun">/</span><span class="pln">daygeek</span><span class="pun">/</span><span class="kwd">passwd</span><span class="pun">-</span><span class="pln">up</span><span class="pun">.</span><span class="pln">sh</span></code></li></ol></pre>
+<p>我们可以通过运行以下命令来验证它：</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">$ clush </span><span class="pun">-</span><span class="kwd">w</span><span class="pln"> </span><span class="lit">192.168</span><span class="pun">.</span><span class="lit">1.</span><span class="pun">[</span><span class="lit">4</span><span class="pun">,</span><span class="lit">9</span><span class="pun">]</span><span class="pln"> </span><span class="kwd">ls</span><span class="pln"> </span><span class="pun">-</span><span class="pln">lh </span><span class="pun">/</span><span class="pln">home</span><span class="pun">/</span><span class="pln">daygeek</span><span class="pun">/</span><span class="kwd">passwd</span><span class="pun">-</span><span class="pln">up</span><span class="pun">.</span><span class="pln">sh</span></code></li><li class="L1"><code><span class="lit">192.168</span><span class="pun">.</span><span class="lit">1.4</span><span class="pun">:</span><span class="pln"> </span><span class="pun">-</span><span class="pln">rwxr</span><span class="pun">-</span><span class="pln">xr</span><span class="pun">-</span><span class="pln">x</span><span class="pun">.</span><span class="pln"> </span><span class="lit">1</span><span class="pln"> daygeek daygeek </span><span class="lit">159</span><span class="pln"> </span><span class="typ">Mar</span><span class="pln"> </span><span class="lit">4</span><span class="pln"> </span><span class="lit">09</span><span class="pun">:</span><span class="lit">00</span><span class="pln"> </span><span class="pun">/</span><span class="pln">home</span><span class="pun">/</span><span class="pln">daygeek</span><span class="pun">/</span><span class="kwd">passwd</span><span class="pun">-</span><span class="pln">up</span><span class="pun">.</span><span class="pln">sh</span></code></li><li class="L2"><code><span class="lit">192.168</span><span class="pun">.</span><span class="lit">1.9</span><span class="pun">:</span><span class="pln"> </span><span class="pun">-</span><span class="pln">rwxr</span><span class="pun">-</span><span class="pln">xr</span><span class="pun">-</span><span class="pln">x </span><span class="lit">1</span><span class="pln"> daygeek daygeek </span><span class="lit">159</span><span class="pln"> </span><span class="typ">Mar</span><span class="pln"> </span><span class="lit">4</span><span class="pln"> </span><span class="lit">20</span><span class="pun">:</span><span class="lit">52</span><span class="pln"> </span><span class="pun">/</span><span class="pln">home</span><span class="pun">/</span><span class="pln">daygeek</span><span class="pun">/</span><span class="kwd">passwd</span><span class="pun">-</span><span class="pln">up</span><span class="pun">.</span><span class="pln">sh</span></code></li></ol></pre>
+<p>将本地文件或目录复制到不同位置的远程节点：</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">$ clush </span><span class="pun">-</span><span class="pln">g uat </span><span class="pun">--</span><span class="pln">copy </span><span class="pun">/</span><span class="pln">home</span><span class="pun">/</span><span class="pln">daygeek</span><span class="pun">/</span><span class="kwd">passwd</span><span class="pun">-</span><span class="pln">up</span><span class="pun">.</span><span class="pln">sh </span><span class="pun">--</span><span class="pln">dest </span><span class="pun">/</span><span class="pln">tmp</span></code></li></ol></pre>
+<p>我们可以通过运行以下命令来验证它：</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">$ clush </span><span class="pun">--</span><span class="pln">group</span><span class="pun">=</span><span class="pln">uat </span><span class="kwd">ls</span><span class="pln"> </span><span class="pun">-</span><span class="pln">lh </span><span class="pun">/</span><span class="pln">tmp</span><span class="pun">/</span><span class="kwd">passwd</span><span class="pun">-</span><span class="pln">up</span><span class="pun">.</span><span class="pln">sh</span></code></li><li class="L1"><code><span class="lit">192.168</span><span class="pun">.</span><span class="lit">1.7</span><span class="pun">:</span><span class="pln"> </span><span class="pun">-</span><span class="pln">rwxr</span><span class="pun">-</span><span class="pln">xr</span><span class="pun">-</span><span class="pln">x</span><span class="pun">.</span><span class="pln"> </span><span class="lit">1</span><span class="pln"> daygeek daygeek </span><span class="lit">159</span><span class="pln"> </span><span class="typ">Mar</span><span class="pln"> </span><span class="lit">6</span><span class="pln"> </span><span class="lit">07</span><span class="pun">:</span><span class="lit">44</span><span class="pln"> </span><span class="pun">/</span><span class="pln">tmp</span><span class="pun">/</span><span class="kwd">passwd</span><span class="pun">-</span><span class="pln">up</span><span class="pun">.</span><span class="pln">sh</span></code></li></ol></pre>
+<p>将文件或目录从远程节点复制到本地系统：</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">$ clush </span><span class="pun">-</span><span class="kwd">w</span><span class="pln"> </span><span class="lit">192.168</span><span class="pun">.</span><span class="lit">1.7</span><span class="pln"> </span><span class="pun">--</span><span class="pln">rcopy </span><span class="pun">/</span><span class="pln">home</span><span class="pun">/</span><span class="pln">daygeek</span><span class="pun">/</span><span class="typ">Documents</span><span class="pun">/</span><span class="pln">magi</span><span class="pun">.</span><span class="pln">txt </span><span class="pun">--</span><span class="pln">dest </span><span class="pun">/</span><span class="pln">tmp</span></code></li></ol></pre>
+<p>我们可以通过运行以下命令来验证它：</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">$ </span><span class="kwd">ls</span><span class="pln"> </span><span class="pun">-</span><span class="pln">lh </span><span class="pun">/</span><span class="pln">tmp</span><span class="pun">/</span><span class="pln">magi</span><span class="pun">.</span><span class="pln">txt</span><span class="pun">.</span><span class="lit">192.168</span><span class="pun">.</span><span class="lit">1.7</span></code></li><li class="L1"><code><span class="pun">-</span><span class="pln">rw</span><span class="pun">-</span><span class="pln">r</span><span class="pun">--</span><span class="pln">r</span><span class="pun">--</span><span class="pln"> </span><span class="lit">1</span><span class="pln"> daygeek daygeek </span><span class="lit">35</span><span class="pln"> </span><span class="typ">Mar</span><span class="pln"> </span><span class="lit">6</span><span class="pln"> </span><span class="lit">20</span><span class="pun">:</span><span class="lit">24</span><span class="pln"> </span><span class="pun">/</span><span class="pln">tmp</span><span class="pun">/</span><span class="pln">magi</span><span class="pun">.</span><span class="pln">txt</span><span class="pun">.</span><span class="lit">192.168</span><span class="pun">.</span><span class="lit">1.7</span></code></li></ol></pre>
+<hr>
+<p>via: <a href="https://www.2daygeek.com/clustershell-clush-run-commands-on-cluster-nodes-remote-system-in-parallel-linux/" class="ext" rel="external nofollow" target="_blank">https://www.2daygeek.com/clustershell-clush-run-commands-on-cluster-nodes-remote-system-in-parallel-linux/</a></p>
+<p>作者：<a href="https://www.2daygeek.com/author/magesh/" class="ext" rel="external nofollow" target="_blank">Magesh Maruthamuthu</a> 选题：<a href="https://github.com/lujun9972" class="ext" rel="external nofollow" target="_blank">lujun9972</a> 译者：<a href="https://github.com/wxy" class="ext" rel="external nofollow" target="_blank">wxy</a> 校对：<a href="https://github.com/wxy" class="ext" rel="external nofollow" target="_blank">wxy</a></p>
+<p>本文由 <a href="https://github.com/LCTT/TranslateProject" class="ext" rel="external nofollow" target="_blank">LCTT</a> 原创编译，<a href="#">Linux中国</a> 荣誉推出</p>  					<section><img style="width: 24px; height: 24px; float: right;" src="linisi.svg"><br class="clear"></section>
+</div>
+</div>
+<br class="clear">
+<div class="vw">
+<div id="add_comment" class="h bm" style="display: none;">
+<div class="bm_h cl">
+<h3>发表评论</h3>
+</div>
+<div class="bm_c pbn">
+<form id="cform" name="cform" action="https://linux.cn/portal.php?mod=portalcp&amp;ac=comment" method="post" autocomplete="off">
+<div class="tedt">
+<div class="area">
+<textarea name="message" rows="10" class="pt" id="message"></textarea>
+</div>
+</div>
+
+<div class="mtm z"><span id="seccode_cSw85eAk"><input name="seccodehash" value="cSw85eAk" type="hidden"><input name="seccodemodid" value="portal::view" type="hidden">验证码 <span id="seccodecSw85eAk"><input name="seccodeverify" id="seccodeverify_cSw85eAk" autocomplete="off" style="ime-mode: disabled; width: 100px;" class="txt px vm" type="text"> <a class="xi2">换一个</a><span id="checkseccodeverify_cSw85eAk"><img id="checksec_none_cSw85eAk" src="none.gif" class="vm" height="16" width="16"></span></span><div id="seccodecSw85eAk_menu" class="p_pop p_opt" style="display: none;"><span id="vseccode_cSw85eAk">输入下图中的字符<br><img src="misc.php" class="vm" alt="" height="40" width="100"></span></div></span>		
+<script type="text/javascript" reload="1">/* Code removed by ScrapBook */</script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+</div>
+<input name="portal_referer" value="https://linux.cn/article-11147-1.html#comment" type="hidden">
+<input name="referer" value="https://linux.cn/article-11147-1.html#comment" type="hidden">
+<input name="id" value="0" type="hidden">
+<input name="idtype" value="" type="hidden">
+<input name="aid" value="11147" type="hidden">
+<input id="reppid" name="reppid" value="" type="hidden">
+<input name="formhash" value="b7133b8d" type="hidden">
+<input name="replysubmit" value="true" type="hidden">
+<input name="commentsubmit" value="true" type="hidden">
+<p class="mtm" style="text-align: center;"><button type="submit" name="commentsubmit_btn" id="commentsubmit_btn" value="true" class="pn"><strong>评论</strong></button></p>
+<br class="clear">
+</form>
+</div>
+</div>
+<div id="comment" class="bm h">
+<div class="bm_h cl">
+<h3 class="z"><a name="comment"></a>最新评论</h3>
+</div>
+<div id="comment_ul" class="bm_c">
+<div style="text-align: center;"><button type="button" class="pnc" style="font-size: 24px; width: 160px;" id="c_add"><strong>发表评论</strong></button></div></div>
+</div>
+</div>
+<div class="h bm_c bm z" id="footer_info">
+<p class="copyright">
+    	 
+    		    			    			<span class="z textcut">译自：<a href="https://www.2daygeek.com/clustershell-clush-run-commands-on-cluster-nodes-remote-system-in-parallel-linux/" target="_blank">2daygeek.com</a></span>
+    			    		    		<span class="y">作者： Magesh Maruthamuthu</span>    		<br class="clear">
+    	    	<span class="z">原创：<a href="https://linux.cn/lctt/" target="_blank">LCTT</a> <a href="#" target="_blank">https://linux.cn/article-11147-1.html</a></span>
+            			<span class="y">译者： Xingyu.Wang</span>    		<br class="clear">
+    	    	<br>
+    	    		<span>本文由 LCTT 原创翻译，<a href="#">Linux 中国首发</a>。也想加入译者行列，为开源做一些自己的贡献么？欢迎加入 <a href="https://linux.cn/lctt/" target="_blank">LCTT</a>！<br>翻译工作和译文发表仅用于学习和交流目的，翻译工作遵照 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank">CC-BY-SA 协议规定</a>，如果我们的工作有侵犯到您的权益，请及时联系我们。</span>
+    		    		<br class="clear">
+    		<span style="color: red;">欢迎遵照 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank">CC-BY-SA 协议规定</a> 转载，敬请在正文中标注并保留原文/译文链接和作者/译者等信息。</span>
+                		<br class="clear">
+    	    	<span>文章仅代表作者的知识和看法，如有不同观点，请楼下排队<a>吐槽</a> :D</span>
+    	<br class="clear">
+</p>
+
+
+
+<div class="o cl ptm pbm">
+<a href="https://linux.cn/home.php?mod=spacecp&amp;ac=favorite&amp;type=article&amp;id=11147&amp;handlekey=favoritearticlehk_11147" id="a_favorite" class="favorite z" title="收藏"></a>
+<!-- <a href="misc.php?mod=invite&amp;action=article&amp;id=11147" id="a_invite" onclick="showWindow('invite', this.href, 'get', 0);" class="invite z" title="邀请"></a> -->
+<a href="https://linux.cn/article-11147-1.html?pr" class="print z" title="打印"></a>
+				
+</div>
+<div class="pren pbm cl">
+<em>上一篇：<a href="https://linux.cn/article-11141-1.html">使用 ImageGlass 以幻灯片形式快速查看 JPG 图像</a></em><em>下一篇：<a href="https://linux.cn/article-11165-1.html">在树莓派上玩怀旧游戏的 5 种方法</a></em></div>
+</div>
+<div><div id="translator_info" class="bm" style="position: relative; margin: 8px 4px 8px 0px ! important; float: right;">
+<div class="bm_h cl">
+LCTT 译者
+</div>
+<div class="bm_c">
+<div>
+<a href="https://linux.cn/lctt/wxy" target="_blank"><img class="avatar" src="128338.jpeg" style="max-width: 64px; float: left; margin-top: 10px;"></a>
+<div style="float: left; margin-left: 10px; font-size: 12px; line-height: 1.5em;">
+<div>
+<a href="https://github.com/wxy" target="_blank"><img src="github_icon.png" style="vertical-align: middle;"></a> <a href="https://linux.cn/lctt/wxy" target="_blank" style="font-weight: bold;">Xingyu.Wang</a> 💎💎💎</div>
+<div class="addfiles">共计翻译： <span class="num" style="color: rgb(255, 0, 0); font-weight: 700;">846.0</span> 篇
+| 共计贡献： <span class="num" style="color: rgb(255, 0, 0); font-weight: 700;">2785</span> 天</div>
+<div>贡献时间：2014-07-25 -&gt; 2022-03-10</div><a href="https://linux.cn/lctt/wxy" target="_blank">访问我的 LCTT 主页</a> | <a href="https://github.com/wxy" target="_blank">在 GitHub 上关注我</a>
+</div>
+<br class="clear">
+</div>
+</div>
+</div>
+</div>
+
+<div id="related" class="bm block z">
+<div class="bm_h cl">
+<h3>相关阅读</h3>
+</div>
+<div class="bm_c pbn" id="related_tag">
+<ul class="xl xl2 cl bbs pbm" id="tag"><li><a href="https://linux.cn/tag-%E5%B9%B6%E8%A1%8C.html">并行</a></li>
+</ul>
+</div>
+<div class="bm_c xl xl1 cl" id="related_article">
+<ul><li><em>2013-05-10</em><a href="https://linux.cn/article-1301-1-rel.html" target="_blank">全世界只有我们Erlang程序员是正确的</a> </li>
+<li><em>2016-09-18</em><a href="https://linux.cn/article-7784-1-rel.html" target="_blank">使用 Python 和 Asyncio 编写在线多用人游戏（二）</a> </li>
+<li><em>2016-09-20</em><a href="https://linux.cn/article-7793-1-rel.html" target="_blank">使用 Python 和 Asyncio 编写在线多人游戏（三）</a> </li>
+<li><em>2018-06-07</em><a href="https://linux.cn/article-9718-1-rel.html" target="_blank">使用 GNU Parallel 提高 Linux 命令行执行效率</a> </li>
+<li><em>2019-04-17</em><a href="https://linux.cn/article-10742-1-rel.html" target="_blank">使用 Dask 在 Python 中进行并行计算</a> </li>
+</ul>
+</div>
+</div>
+<br class="clear">
+</article>
+</div>
+
+</div>
+
+
+<input id="portalview" value="1" type="hidden">
+
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<link rel="stylesheet" href="prettify.css" type="text/css">
+<script src="about:blank" type="text/javascript"></script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>	</div>
+    <div id="footer">
+        <p>
+            <span>Linux.CN © Since 2003</span>
+        </p>
+        <p>
+            <a href="http://www.miitbeian.gov.cn/" target="_blank">京ICP备2021020457</a>            京公网安备110105001595
+        </p>
+        <p>
+        <a href="https://linux.cn/legal.html">服务条款</a> |
+        除特别申明外，本站原创内容版权遵循 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank">CC-BY-SA 协议规定</a></p>
+        <p>
+        <a href="https://linux.cn/"><img src="linuxcn_logo_mini.png" align="absmiddle"></a>
+        </p>
+<p>
+<a href="https://linux.cn/forum.php?mod=misc&amp;action=showdarkroom">小黑屋</a><span class="pipe">|</span></p>
+</div>
+
+<div id="ft" class="cl"></div>
+<div id="scrolltop" style="left: auto; right: 0px; visibility: visible;">
+<span>
+<a class="wxicon"></a>
+<a title="分享到微博" class="tsina"></a>
+<a title="收藏" href="https://linux.cn/home.php?mod=spacecp&amp;ac=favorite&amp;type=article&amp;id=11147&amp;handlekey=favoritearticlehk_11147" id="a_favorite" class="favorite"></a>
+    	<a href="https://linux.cn/article-11147-1.html?pr" class="print" title="!print!"></a>
+
+</span>
+<span hidefocus="true"><a title="返回顶部" class="scrolltopa"><b>返回顶部</b></a></span>
+</div>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<div id="qrcode">
+<p>分享到微信</p>
+<div id="canvas"></div>
+<p><em>打开微信，点击顶部的“╋”，<br>
+使用“扫一扫”将网页分享至微信。</em></p></div>
+<!-- script type="text/javascript" src="https://img.linux.net.cn/static/js/ads.js?o0G"></script -->
+<!-- div id="Lo0GCisOsS" style="display: none; background-color: #A00; position: fixed; top: 0; width: 100%; z-index: 9999; left: 0; font-size: 16px; color: #fff; text-align: center; padding: 10px; opacity: 0.8;">请将我们加入您的广告过滤器的白名单，请支持开源站点。谢谢您。</div -->
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+
+
+</body>
+</html>

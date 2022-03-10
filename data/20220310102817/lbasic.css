@@ -1,0 +1,43 @@
+/* Code tidied up by ScrapBook */
+body { font-family: Arial,Arimo,"Liberation Sans","Segoe UI Emoji","Apple Color Emoji","Noto Color Emoji",sans-serif; margin-top: 41px; margin-bottom: 50px; }
+p, a, li, figcaption, div, span { overflow-wrap: anywhere; }
+ul { margin-top: 28px; margin-bottom: 28px; }
+li { margin-bottom: 8px; line-height: 1.6; }
+p { line-height: 1.6; max-width: 70ch; }
+img { max-width: 100%; height: auto; margin: 3px 1px 1px; }
+figure { padding: 0px; margin: 20px 0px; }
+figure > img, figure > div { box-shadow: 3px 3px 8px 4px silver; }
+figcaption { line-height: 1.6; }
+footer { text-align: center; }
+footer a { display: inline-block; }
+a:visited, a:link { text-decoration: none; }
+a:hover { background-color: pink; }
+a { font-size: 20px; }
+var { font-family: Consolas,Menlo,monospace; font-size: 18px; }
+code { font-family: Consolas,Menlo,monospace; font-size: 18px; white-space: pre-wrap; color: rgb(204, 0, 0); }
+pre { font-family: Consolas,Menlo,monospace; tab-size: 2; padding: 8px; margin: 8px; white-space: pre-wrap; border-width: thin thin thin 5px; border-style: solid; border-color: grey; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; }
+pre::before { content: ""; position: relative; top: -8px; right: 0px; float: right; text-shadow: 2px 2px 2px grey; }
+nav.navBackXL > a { display: inline-block; position: fixed; top: 1px; left: 1px; z-index: 2; margin: 0px; padding: 4px; border: 2px solid darkred; border-radius: 16px; background-color: darkred; color: white; }
+nav.navBackXL > a:hover { background-color: pink; }
+nav.navBackXL > a::before { content: "Back to "; }
+span.xsignet { font-family: "Times New Roman",serif; font-size: 3rem; color: darkred; }
+span.xsignetxah { font-family: "Times New Roman",serif; font-size: 2rem; color: darkred; }
+code.path_xl { color: green; font-weight: bold; }
+var.d { color: green; }
+pre.bash { border-color: darkgrey; }
+pre.bash::before { content: "bash"; }
+.comment { color: firebrick; }
+.comment-delimiter { color: firebrick; }
+@media (prefers-color-scheme: dark) {
+  body { color: white; background-color: black; }
+  a:visited, a:link { color: dodgerblue; }
+}
+@media all and (min-width: 801px) {
+  main { margin-left: 215px; }
+  footer { margin-left: 215px; }
+  .lpanelXL { position: absolute; top: 41px; left: 2px; }
+}
+.lpanelXL { width: 200px; border-width: 2px 2px 5px; border-style: solid; border-color: grey; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; margin-top: 10px; padding-bottom: 40px; padding-left: 4px; border-radius: 16px; }
+.lpanelXL > ul, .lpanelXL > ol { margin-left: -16px; }
+.lpanelXL > ul > li { margin-left: -16px; list-style-type: none; border-top: thin solid grey; }
+.lpanelXL ul > li > a { display: inline-block; vertical-align: top; }

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="lbasic.css">
+
+<title>Linux: How to Install Font, List Fonts</title>
+
+<script data-ad-client="ca-pub-5125343095650532" async="" src="about:blank"></script>
+</head>
+<body>
+
+<nav class="navBackXL"><a href="http://xahlee.info/linux/linux_index.html">Linux Tutorial</a></nav>
+
+<main>
+
+<h1>Linux: How to Install Font, List Fonts</h1>
+
+<div class="byline">By Xah Lee. Date: <time>2014-02-09</time>. Last updated: <time>2020-01-12</time>.</div>
+
+<h2>Where Are Font Installed?</h2>
+
+<p>Linux (Ubuntu) font locations are at:</p>
+
+<ul>
+<li><code class="path_xl">~/.fonts/</code> → for your own fonts.</li>
+<li><code class="path_xl">/usr/local/share/fonts/</code> → system-wide, user installed fonts.</li>
+<li><code class="path_xl">/usr/share/fonts/</code> → system's font location.</li>
+</ul>
+
+<h2>List All Fonts</h2>
+
+<pre class="bash"><span class="comment-delimiter"># </span><span class="comment">list all fonts
+</span>fc-list</pre>
+
+<h2>How to Install Font</h2>
+
+<p>Just copy your TrueType font (.ttf) into one of the directory
+<code class="path_xl">~/.fonts/</code>
+</p>
+
+<p>Or, you can launch a font viewer, by clicking on the ttf font
+then click the install button there.
+</p>
+
+<p>or in terminal type
+<code>sudo gnome-font-viewer <var class="d">fontfile.ttf</var></code>,
+then click the install button there.</p>
+
+<p>If you get error (possibly because a earlier version is already installed), then just manually copy the font to the dir as instructed above.</p>
+
+<h2>How to view font?</h2>
+
+<p>Double click the ttf font to open.</p>
+
+<p>Or, in terminal:</p>
+
+<p><code>sudo gnome-font-viewer <var class="d">fontfile.ttf</var></code></p>
+
+<figure>
+<img src="linux_gnome-font-viewer_screenshot_2014-02-09.png" alt="linux gnome-font-viewer screenshot 2014-02-09" height="376" width="718">
+<figcaption>
+Linux gnome-font-viewer screenshot</figcaption>
+</figure>
+
+<h2>Clear Font Cache</h2>
+
+<pre class="bash"><span class="comment-delimiter"># </span><span class="comment">clear font cache
+</span>sudo fc-cache -f -v</pre>
+
+<p>Restart each app to use the new font. Or, relog.</p>
+
+</main>
+
+<div class="lpanelXL">
+<h4>Linux Shell Basics</h4>
+<ul>
+<li><a href="http://xahlee.info/linux/linux_common_commands.html">Shell Basics</a></li>
+<li><a href="http://xahlee.info/linux/linux_info.html">Get System Info</a></li>
+<li><a href="http://xahlee.info/linux/linux_shell_text_processing.html">grep, cat, awk, uniq</a></li>
+<li><a href="http://xahlee.info/linux/linux_command_sort.html">sort</a></li>
+<li><a href="http://xahlee.info/linux/linux_convert_file_encoding.html">Convert File Encoding</a></li>
+<li><a href="http://xahlee.info/linux/linux_shell_find_example.html">find, xargs</a></li>
+<li><a href="http://xahlee.info/linux/linux_diff_comparing_files_and_dirs.html">diff Files/Dir </a></li>
+<li><a href="http://xahlee.info/linux/linux_du_command.html">dir size: du</a></li>
+<li><a href="http://xahlee.info/linux/linux_view_dir_as_tree.html">dir tree</a></li>
+<li><a href="http://xahlee.info/linux/linux_gzip_bzip2_xz_7zip.html">tar gzip bzip2 xz 7zip rar zip</a></li>
+<li><a href="http://xahlee.info/linux/wget_curl_tutorial.html">wget, curl</a></li>
+<li><a href="http://xahlee.info/linux/linux_rsync.html">rsync</a></li>
+<li><a href="http://xahlee.info/linux/linux_package_system.html">Install Packages</a></li>
+</ul>
+<h4>Sys Admin</h4>
+<ul>
+<li><a href="http://xahlee.info/linux/linux_job_control.html">Job Control</a></li>
+<li><a href="http://xahlee.info/linux/linux_ps_command.html">ps</a></li>
+<li><a href="http://xahlee.info/linux/linux_monitor_processes.html">top</a></li>
+<li><a href="http://xahlee.info/linux/linux_monitor_processes_htop.html">htop</a></li>
+<li><a href="http://xahlee.info/linux/linux_free_memory.html">RAM stat</a></li>
+<li><a href="http://xahlee.info/linux/linux_users_groups_admin.html">Users and Groups</a></li>
+<li><a href="http://xahlee.info/linux/linux_file_perm_system.html">File Permission</a></li>
+<li><a href="http://xahlee.info/linux/linux_lsof_show_open_files.html">Opened Files: lsof</a></li>
+<li><a href="http://xahlee.info/linux/linux_command_line_to_sleep_hibernate.html">shutdown, sleep</a></li>
+</ul>
+<h4>Bash/Terminal</h4>
+<ul>
+<li><a href="http://xahlee.info/linux/bash_keybinding.html">Bash/Terminal Keys</a></li>
+<li><a href="http://xahlee.info/linux/linux_man_page_tutorial.html">Man Page Keys</a></li>
+<li><a href="http://xahlee.info/linux/bash_prompt_setup.html">Bash Prompt Setup</a></li>
+<li><a href="http://xahlee.info/linux/shell_color_prompt.html">Bash Color Prompt</a></li>
+<li><a href="http://xahlee.info/linux/dot_bash_profile_bashrc_etc_difference.html">.bashrc, .profile, .bash_profile</a></li>
+<li><a href="http://xahlee.info/linux/zsh_prompt_setup.html">zsh Prompt Setup</a></li>
+<li><a href="http://xahlee.info/linux/linux_virtual_console.html">Virtual Console</a></li>
+<li><a href="http://xahlee.info/linux/linux_terminal_control_sequence_keys.html">Terminal Control Sequence Keys</a></li>
+<li><a href="http://xahlee.info/linux/linux_Ctrl-s_freeze_vi.html">Ctrl+s Freeze vim</a></li>
+<li><a href="http://xahlee.info/linux/linux_reset_clear_terminal.html">Reset Terminal</a></li>
+<li><a href="http://xahlee.info/linux/tmux_screen_tutorial.html">tmux</a></li>
+<li><a href="http://xahlee.info/linux/bash_doc_info_basic_keys.html">Bash Manual in Chapters</a></li>
+<li><a href="http://xahlee.info/linux/unix_bash_misc_tips.html">Bash Misc Tips</a></li>
+<li><a href="http://xahlee.info/linux/linux_log_terminal.html">Log Terminal Session</a></li>
+<li><a href="http://xahlee.info/linux/linux_xterm.html">xterm Copy Paste, Font Size</a></li>
+</ul>
+<h4>Linux Desktop</h4>
+<ul>
+<li><a href="http://xahlee.info/linux/linux_common_apps.html">Useful GUI App Names</a></li>
+<li><a href="http://xahlee.info/linux/linux_set_default_app.html">Set Default App</a></li>
+<li><a href="http://xahlee.info/linux/linux_gui_command_line_names.html">Commands for GUI Apps</a></li>
+<li><a href="http://xahlee.info/linux/linux_image_viewers.html">Image Viewers</a></li>
+<li><a href="http://xahlee.info/linux/linux_music_players.html">Music Players</a></li>
+<li><a href="http://xahlee.info/linux/linux_trash_location.html">Move to Trash Command</a></li>
+<li><a href="http://xahlee.info/linux/linux_sync_x11_primary_selection_and_clipboard.html">X11 Selection and Clipboard</a></li>
+<li><a href="http://xahlee.info/linux/linux_install_new_windows_manager.html">Switch to LXDE/Xfce</a></li>
+<li><a href="http://xahlee.info/linux/linux_restart_x11.html">How to Restart X11</a></li>
+<li><a href="http://xahlee.info/linux/why_tiling_window_manager_sucks.html">Why Tiling Window Manager Sucks</a></li>
+<li><a href="http://xahlee.info/linux/linux_fonts.html">Standard Fonts</a></li>
+<li><a href="#" style="background-color: lime; box-shadow: 10px 10px 20px 0px green; pointer-events: none;">How to Install Font</a></li>
+</ul>
+</div>
+
+
+<footer><a href="http://xahlee.info/index.html"><span class="xsignet">∑</span><span class="xsignetxah">XAH</span></a> © 1995, 2022 Xah Lee.</footer>
+
+<script defer="" src="about:blank"></script>
+
+
+</body>
+</html>
