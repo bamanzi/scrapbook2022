@@ -1,0 +1,54 @@
+/* Effective stylesheet produced by snapshot save */
+.dissolve .item:nth-child(2) { animation-delay: 10s; }
+.dissolve .item:nth-child(3) { animation-delay: 20s; }
+.dissolve .item:nth-child(4) { animation-delay: 30s; }
+.dissolve .item:nth-child(5) { animation-delay: 40s; }
+.dissolve .item:nth-child(6) { animation-delay: 50s; }
+.dissolve .item:nth-child(7) { animation-delay: 60s; }
+.dissolve .item:nth-child(8) { animation-delay: 70s; }
+.dissolve .item:nth-child(9) { animation-delay: 80s; }
+.dissolve .item:nth-child(10) { animation-delay: 90s; }
+.dissolve .item:nth-child(11) { animation-delay: 100s; }
+.dissolve .item:nth-child(12) { animation-delay: 110s; }
+.dissolve .item:nth-child(13) { animation-delay: 120s; }
+@keyframes dissolve {
+  7.69%, 15.38%, 23.08%, 30.77%, 38.46%, 46.15%, 53.85%, 61.54%, 69.23%, 76.92%, 84.61%, 92.3%, 100% { opacity: 0; }
+  11%, 20%, 27%, 33%, 41%, 50%, 57%, 66%, 72%, 80%, 89%, 96% { opacity: 1; }
+}
+@keyframes dissolve {
+  7.69%, 15.38%, 23.08%, 30.77%, 38.46%, 46.15%, 53.85%, 61.54%, 69.23%, 76.92%, 84.61%, 92.3%, 100% { opacity: 0; }
+  11%, 20%, 27%, 33%, 41%, 50%, 57%, 66%, 72%, 80%, 89%, 96% { opacity: 1; }
+}
+.portable-infobox { border: 1px solid rgb(229, 192, 118); background: rgb(255, 255, 255) none repeat scroll 0% 0%; color: black; line-height: 130%; padding: 5px; width: 250px !important; }
+.portable-infobox .pi-item-spacing { padding: 1px 0px 0px; }
+.portable-infobox .pi-title, .portable-infobox .pi-header { background: rgb(229, 192, 118) none repeat scroll 0% 0%; color: rgb(0, 0, 0); font-weight: bold; text-align: center; text-transform: none; letter-spacing: 0px; line-height: 140%; }
+.pi-header { line-height: 1.2em; font-size: 1em; }
+.portable-infobox .pi-title a, .portable-infobox .pi-title a:link, .portable-infobox .pi-title a:visited, .portable-infobox .pi-title a:hover, .portable-infobox .pi-header a, .portable-infobox .pi-header a:visited, .portable-infobox .pi-header a:link, .portable-infobox .pi-header a:hover { color: rgb(0, 0, 0); text-decoration: none; }
+.portable-infobox .pi-navigation { background-color: rgb(236, 236, 236); line-height: 130%; }
+.pi-navigation:first-of-type { line-height: 150%; padding: 0px 5px; }
+.ns-0 .portable-infobox .pi-navigation a, .ns-0 .portable-infobox .pi-navigation a:link, .ns-0 .portable-infobox .pi-navigation a:visited, .ns-0 .portable-infobox .pi-navigation a:hover, .portable-infobox .pi-navigation a, .portable-infobox .pi-navigation a:link, .portable-infobox .pi-navigation a:visited, .portable-infobox .pi-navigation a:hover { color: rgb(0, 0, 0) !important; }
+.pi-collapse-closed .pi-header::after { transform: rotate(0deg); font-size: 10px; color: rgb(255, 255, 255); border-color: transparent; border-width: 0px; width: 35px; right: 3px; top: 40%; display: none; content: "[more]" !important; }
+.pi-collapse .pi-header::after { transform: rotate(0deg); color: rgb(255, 255, 255); content: "[hide]"; font-size: 10px; border-color: transparent; border-width: 0px; width: 35px; right: 3px; top: 40%; display: none; }
+#grid.wikitable tr > td:first-of-type a, #grid.wikitable td:nth-of-type(n+2) a { z-index: 2; color: white !important; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0% !important; }
+#grid.wikitable tr:hover > td:hover:nth-of-type(n+2) > a:hover { text-decoration: none; }
+#grid.wikitable tr:hover > td:hover:nth-of-type(n+2) > a::after { content: ""; position: absolute; left: 0px; top: 0px; height: 100%; width: 100%; z-index: 2; }
+#grid.wikitable tr > td:nth-child(n+2) { background: rgb(108, 151, 193) none repeat scroll 0% 0%; color: rgb(58, 58, 58); border-width: 0.5px; border-left: 0.5px none rgb(1, 44, 87); border-color: rgb(1, 44, 87); }
+#grid.wikitable tr:hover > td:nth-child(n+2) { background: rgb(92, 140, 187) none repeat scroll 0% 0% !important; }
+#grid.wikitable tr > td:nth-child(1), #grid.wikitable tr > th { border-color: rgb(78, 125, 171); border-width: 1px; }
+#grid.wikitable th:nth-of-type(n+2):hover { background: rgb(0, 34, 68) none repeat scroll 0% 0% !important; }
+#grid.wikitable td:nth-of-type(n+2), #grid.wikitable th:nth-of-type(n+2) { position: relative; }
+#grid.wikitable td:nth-of-type(n+2):hover::after, #grid.wikitable th:nth-of-type(n+2):hover::after { content: ""; position: absolute; background-color: rgb(55, 114, 177); left: 0px; top: -5000px; height: 10000px; width: 100%; z-index: 1; opacity: 0.2; }
+#grid.wikitable tr:nth-of-type(2n+1) > td#sh-2 { background: rgb(82, 128, 173) none repeat scroll 0% 0%; }
+#grid.wikitable td#sh:nth-of-type(n+2):hover::after, #grid.wikitable td#sh-2:hover::after { display: none; }
+.WikiaMainContent a.new, .WikiaMainContent a.new:visited { color: rgb(245, 158, 158); }
+.mainpage .WikiaArticle a.external::after { display: none; }
+body.mainpage .WikiaArticle a.external::after, body.mainpage .WikiaArticle a[href^="gopher://"]::after { background-image: url("urn:download-error:https://images.wikia.nocookie.net/tardis/images/f/fb/ExternalLinkLight.png") !important; background-position: right top !important; background-repeat: no-repeat !important; }
+body.mainpage .WikiaArticle a.external::after, body.mainpage .WikiaArticle a[href^="gopher://"]::after { background-image: none !important; }
+.ns-112 #WikiaArticle, .ns-112 #WikiaMainContent, .ns-113 #WikiaArticle, .ns-113 #WikiaMainContent, .ns-114 #WikiaArticle, .ns-114 #WikiaMainContent, .ns-115 #WikiaArticle, .ns-115 #WikiaMainContent { font-family: Rubik; }
+.ns-112 h1, .ns-113 h1, .ns-114 h1, .ns-115 h1, .ns-112 h2, .ns-113 h2, .ns-114 h2, .ns-115 h2, .ns-112 h3, .ns-113 h3, .ns-114 h3, .ns-115 h3, .ns-112 h4, .ns-113 h4, .ns-114 h4, .ns-115 h4, .ns-112 h5, .ns-113 h5, .ns-114 h5, .ns-115 h5, .ns-112 h6, .ns-113 h6, .ns-114 h6, .ns-115 h6, .ns-112 a, .ns-113 a, .ns-114 a, .ns-115 a {  }
+.ns-112 div.WikiaPageContentWrapper, .ns-113 div.WikiaPageContentWrapper, .ns-114 div.WikiaPageContentWrapper, .ns-115 div.WikiaPageContentWrapper {  }
+.pi-theme-_Toby-Hadoke_s-Who_s-Round .pi-navigation:nth-of-type(2) { padding: 0px 5px; line-height: 235%; }
+.ns-116 .WikiaArticle a.external::after, .ns-116 .WikiaArticle a[href^="gopher://"]::after { background-image: url("urn:download-error:https://images.wikia.nocookie.net/tardis/images/f/fb/ExternalLinkLight.png") !important; background-position: right top !important; background-repeat: no-repeat !important; }
+.warn1::after, .warn1::before, .warn2::after, .warn2::before, .warn3::after, .warn3::before, .warn4::after, .warn4::before { background: rgb(230, 221, 164) url("urn:download-error:https://images.wikia.nocookie.net/__cb20111014042019/tardis/images/4/44/Tape-right.png") repeat scroll 0% 0% content-box; overflow: visible; opacity: 0.5; content: ""; height: 30px; position: absolute; top: -25px; box-shadow: 0px 5px 10px -7px rgba(0, 0, 0, 0.5); }
+.warn1::after, .warn2::after, .warn3::after, .warn4::after { left: -40px; width: 80px; transform: rotate(-45deg); }
+.warn1::before, .warn2::before, .warn3::before, .warn4::before { right: -30px; width: 125px; transform: rotate(25deg); }

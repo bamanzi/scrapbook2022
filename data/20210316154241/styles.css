@@ -1,0 +1,22 @@
+/* Effective stylesheet produced by snapshot save */
+@keyframes fade-in {
+  100% { opacity: 1; }
+}
+@keyframes fade-in {
+  100% { opacity: 1; }
+}
+@keyframes fade-in {
+  100% { opacity: 1; }
+}
+@keyframes fade-in {
+  100% { opacity: 1; }
+}
+@keyframes fade-in {
+  100% { opacity: 1; }
+}
+.porvata-outstream.porvata3::before { content: attr(data-label); display: block; font-size: 0.625rem; font-weight: 700; line-height: 0.75rem; margin: 0px; padding-bottom: 6px; padding-top: 6px; text-align: center; text-transform: uppercase; }
+.wds-global-navigation-wrapper { top: 0px; position: fixed; width: 100%; z-index: 400; }
+#globalNavigation { position: static; }
+.gpt-ad { text-align: center; }
+.gpt-ad.hide, .gpt-ad .hide { display: none !important; }
+#invisible_skin { display: none !important; }

@@ -1,0 +1,15 @@
+/* Effective stylesheet produced by snapshot save */
+@import url("load.php-3.css");
+@import url("css.css");
+.WikiaPage { border: 0px none; }
+.WikiaArticle, .WikiaPage, .WikiaRail { font-family: Rubik; }
+.WikiaArticle h2, .WikiaArticle h3, .WikiaArticle h4, .WikiaArticle h5, .WikiaArticle h6 { color: rgb(229, 192, 118); font-family: "Maven pro"; }
+#PageHeader, .page-header, .WikiaPage .page-header__title, .WikiaPage .page-header__page-subtitle, span.page-header__categories-in { font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important; }
+.WikiaArticle li, .WikiaPage li { line-height: 130%; }
+.stub-type, #stub-type, div#stub-type { float: left; margin-right: 20px; margin-top: 5px; }
+.toc, #toc, .WikiaArticle .toc { border: 1px solid rgb(229, 192, 118); float: right; clear: right; width: 250px; min-width: 250px; color: rgb(0, 0, 0); padding: 5px; text-align: left; margin: auto auto auto 20px; background-color: rgb(229, 192, 118); }
+.toc a, #toc a, .WikiaArticle .toc a, .toc a:link, #toc a:link, .WikiaArticle .toc a:link { color: rgb(0, 0, 0); }
+.simplequote[cite]::after { display: block; text-align: right; content: "— " attr(cite); font-style: normal; font-size: 1.2em; color: rgb(1, 44, 87); }
+blockquote span.author::before { display: block; content: ""; position: absolute; top: 50%; left: 0px; width: 100%; float: left; height: 1px; background: rgb(204, 204, 204) none repeat scroll 0% 0%; z-index: 1; }
+blockquote::before { display: block; position: absolute; top: 40px; left: 0px; content: "“"; font-family: Rubik; font-size: 150px; color: rgb(1, 44, 87); z-index: 6; }
+.ns-114 .wds-banner-notification__container, .ns-114 .banner-notifications-placeholder { display: none; position: inherit; }

@@ -1,0 +1,8 @@
+/* Effective stylesheet produced by snapshot save */
+@import url("record.css");
+#wm-ipp-base { height: 65px; padding: 0px; margin: 0px; border: medium none; background: transparent none repeat scroll 0% 0%; }
+#wm-ipp-print { display: none !important; }
+@media print {
+  #wm-ipp-base { display: none !important; }
+  #wm-ipp-print { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block !important; }
+}

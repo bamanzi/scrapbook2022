@@ -1,0 +1,1936 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="canonical" href="https://www.ghacks.net/2017/11/28/a-umatrix-guide-for-firefox/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+<title>A uMatrix guide for Firefox - gHacks Tech News</title>
+<meta name="description" content="The uMatrix guide for Firefox helps you get started with the Firefox extension uMatrix, a sophisticated connection and ontent blocker for the browser.">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A uMatrix guide for Firefox - gHacks Tech News">
+<meta property="og:description" content="The uMatrix guide for Firefox helps you get started with the Firefox extension uMatrix, a sophisticated connection and ontent blocker for the browser.">
+<meta property="og:url" content="https://www.ghacks.net/2017/11/28/a-umatrix-guide-for-firefox/">
+<meta property="og:site_name" content="gHacks Technology News">
+<meta property="article:publisher" content="https://www.facebook.com/ghacksnet">
+<meta property="article:published_time" content="2017-11-28T06:15:23+00:00">
+<meta property="article:modified_time" content="2019-09-30T16:41:57+00:00">
+<meta property="og:image" content="https://www.ghacks.net/wp-content/uploads/2017/11/umatrix-firefox-guide.png">
+<meta property="og:image:width" content="997">
+<meta property="og:image:height" content="495">
+<meta property="og:image:type" content="image/png">
+<meta name="twitter:label1" content="Written by">
+<meta name="twitter:data1" content="Martin Brinkmann">
+<meta name="twitter:label2" content="Est. reading time">
+<meta name="twitter:data2" content="5 minutes">
+<script async="" src="about:blank"></script><script id="spcloader" type="text/javascript" async="" src="about:blank" charset="utf-8"></script><script type="application/ld+json" class="yoast-schema-graph">/* Code removed by ScrapBook */</script>
+
+<link rel="alternate" type="application/rss+xml" title="gHacks Technology News » Feed" href="https://www.ghacks.net/feed/">
+<link rel="alternate" type="application/rss+xml" title="gHacks Technology News » Comments Feed" href="https://www.ghacks.net/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="gHacks Technology News » A uMatrix guide for Firefox Comments Feed" href="https://www.ghacks.net/2017/11/28/a-umatrix-guide-for-firefox/feed/">
+<link rel="stylesheet" id="wp-block-library-css" href="style.min.css" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="wpos-slick-style-css" href="slick.css" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="wppsac-public-style-css" href="recent-post-style.css" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="swiper-css-css" href="swiper.min.css" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="notix-css" href="notix-public.css" type="text/css" media="all">
+<style id="responsive-menu-inline-css" type="text/css">
+/* Code tidied up by ScrapBook */
+#rmp_menu_trigger-176613 { width: 45px; height: 45px; position: absolute; top: 10px; border-radius: 5px; display: none; text-decoration: none; right: 15%; background: rgb(59, 59, 59) none repeat scroll 0% 0%; transition: transform 0.5s ease 0s, background-color 0.5s ease 0s; }
+#rmp_menu_trigger-176613:hover, #rmp_menu_trigger-176613:focus { background: rgb(59, 59, 59) none repeat scroll 0% 0%; text-decoration: unset; }
+#rmp_menu_trigger-176613 .rmp-trigger-box { width: 25px; color: rgb(255, 255, 255); }
+#rmp_menu_trigger-176613 .responsive-menu-pro-inner { display: block; }
+#rmp_menu_trigger-176613 .responsive-menu-pro-inner, #rmp_menu_trigger-176613 .responsive-menu-pro-inner::before, #rmp_menu_trigger-176613 .responsive-menu-pro-inner::after { width: 25px; height: 2px; background-color: rgb(255, 255, 255); border-radius: 4px; position: absolute; }
+#rmp_menu_trigger-176613:hover .responsive-menu-pro-inner, #rmp_menu_trigger-176613:hover .responsive-menu-pro-inner::before, #rmp_menu_trigger-176613:hover .responsive-menu-pro-inner::after { background-color: rgb(255, 255, 255); }
+@media screen and (max-width: 1024px) {
+  .top-navigation, #mobile-nav-trigger { display: none !important; }
+  #rmp_menu_trigger-176613 { display: block; }
+  #rmp-container-176613 { position: fixed; top: 0px; margin: 0px; transition: transform 0.5s ease 0s; overflow: auto; display: block; width: 75%; min-width: 250px; background-color: rgb(247, 247, 247); background-image: url(""); height: 100%; left: 0px; padding: 0px; }
+  #rmp-menu-wrap-176613 { padding: 0px; background-color: rgb(255, 255, 255); }
+  #rmp-menu-wrap-176613 .rmp-menu, #rmp-menu-wrap-176613 .rmp-submenu { width: 100%; box-sizing: border-box; margin: 0px; padding: 0px; }
+  #rmp-menu-wrap-176613 .rmp-menu-item { width: 100%; list-style: outside none none; margin: 0px; }
+  #rmp-menu-wrap-176613 .rmp-menu-item-link { height: 40px; line-height: 40px; font-size: 13px; border-bottom: 1px solid rgb(231, 231, 231); font-family: inherit; color: rgb(92, 91, 91); text-align: left; background-color: rgb(255, 255, 255); font-weight: normal; letter-spacing: 0px; display: block; width: 100%; text-decoration: none; position: relative; overflow: hidden; transition: background-color 0.5s ease 0s, border-color 0.5s ease 0s, all 0.5s ease 0s; padding: 0px 50px 0px 5%; }
+  #rmp-menu-wrap-176613 .rmp-menu-item-link::after, #rmp-menu-wrap-176613 .rmp-menu-item-link::before { display: none; }
+  #rmp-menu-wrap-176613 .rmp-menu-item-link:hover { color: rgb(0, 0, 0); border-color: rgb(231, 231, 231); background-color: rgb(247, 247, 247); }
+  #rmp-menu-wrap-176613 .rmp-menu-item-link:focus { outline: medium none; border-color: unset; box-shadow: unset; }
+  #rmp-menu-title-176613 { background-color: rgb(255, 255, 255); color: rgb(255, 255, 255); text-align: left; font-size: 13px; padding: 10% 5% 0%; font-weight: 400; transition: background-color 0.5s ease 0s, border-color 0.5s ease 0s, color 0.5s ease 0s; }
+  #rmp-menu-title-176613:hover { background-color: rgb(255, 255, 255); color: rgb(255, 255, 255); }
+  #rmp-menu-title-176613 > a { color: rgb(255, 255, 255); width: 100%; background-color: unset; text-decoration: none; }
+  #rmp-menu-title-176613 > a:hover { color: rgb(255, 255, 255); }
+  #rmp-menu-title-176613 .rmp-menu-title-image { height: 41px; }
+}
+.rmp-container { display: none; visibility: visible; padding: 0px; z-index: 99998; transition: all 0.3s ease 0s; }
+.rmp-container.rmp-slide-left, .rmp-container.rmp-push-left { transform: translateX(-100%); }
+.rmp-container .rmp-menu-wrap .rmp-menu { transition: none 0s ease 0s ; border-radius: 0px; box-shadow: none; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; border: 0px none; bottom: auto; box-sizing: border-box; clip: auto; color: rgb(102, 102, 102); display: block; float: none; font-family: inherit; font-size: 14px; height: auto; left: auto; line-height: 1.7; list-style-type: none; margin: 0px; min-height: auto; max-height: none; opacity: 1; outline: medium none; overflow: visible; padding: 0px; position: relative; pointer-events: auto; right: auto; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; transform: none; top: auto; visibility: inherit; width: auto; overflow-wrap: break-word; white-space: normal; }
+.rmp-container .rmp-menu-title { display: flex; flex-direction: column; }
+.rmp-container .rmp-menu-title .rmp-menu-title-image { max-width: 100%; display: block; margin: auto auto 15px; }
+button.rmp_menu_trigger { z-index: 999999; overflow: hidden; outline: medium none; border: 0px none; display: none; margin: 0px; transition: transform 0.5s ease 0s, background-color 0.5s ease 0s; padding: 0px; }
+button.rmp_menu_trigger .responsive-menu-pro-inner::before, button.rmp_menu_trigger .responsive-menu-pro-inner::after { content: ""; display: block; }
+button.rmp_menu_trigger .responsive-menu-pro-inner::before { top: 10px; }
+button.rmp_menu_trigger .responsive-menu-pro-inner::after { bottom: 10px; }
+button.rmp_menu_trigger .rmp-trigger-box { width: 40px; display: inline-block; position: relative; pointer-events: none; vertical-align: super; }
+.rmp-menu-trigger-boring .responsive-menu-pro-inner { transition-property: none; }
+.rmp-menu-trigger-boring .responsive-menu-pro-inner::after, .rmp-menu-trigger-boring .responsive-menu-pro-inner::before { transition-property: none; }
+</style>
+<link data-minify="1" rel="stylesheet" id="dashicons-css" href="dashicons.min.css" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="ghacks-style-css" href="style.css" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="single-css-css" href="single.css" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="tablepress-default-css" href="tablepress-combined.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="tablepress-responsive-tables-css" href="tablepress-responsive.min.css" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="rating_style-css" href="jquery.rating.css" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="bsf_style-css" href="style_001.css" type="text/css" media="all">
+<script type="text/javascript" src="about:blank" id="jquery-core-js"></script>
+<script type="text/javascript" src="about:blank" id="jquery-migrate-js" defer=""></script>
+<script type="text/javascript" src="about:blank" id="notix-js" defer=""></script>
+<script type="text/javascript" src="about:blank" id="jquery_rating-js" defer=""></script>
+<link rel="https://api.w.org/" href="https://www.ghacks.net/wp-json/"><link rel="alternate" type="application/json" href="https://www.ghacks.net/wp-json/wp/v2/posts/139176"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.ghacks.net/xmlrpc.php?rsd">
+<link rel="shortlink" href="https://www.ghacks.net/?p=139176">
+<link rel="alternate" type="application/json+oembed" href="https://www.ghacks.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.ghacks.net%2F2017%2F11%2F28%2Fa-umatrix-guide-for-firefox%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://www.ghacks.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.ghacks.net%2F2017%2F11%2F28%2Fa-umatrix-guide-for-firefox%2F&amp;format=xml">
+<script type="text/javascript">/* Code removed by ScrapBook */</script><script src="about:blank" defer=""></script>
+<script>/* Code removed by ScrapBook */</script><script id="script">/* Code removed by ScrapBook */</script><script src="about:blank"></script><link rel="amphtml" href="https://www.ghacks.net/2017/11/28/a-umatrix-guide-for-firefox/?amp"><noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+
+<meta property="td-page" content="GH-Articlepage">
+<meta property="td-section" content="GH-Features">
+<meta property="gh-contentid" content="a-umatrix-guide-for-firefox">
+<script async="" src="about:blank"></script>
+
+<script src="about:blank" async=""></script>
+<script async="" type="module" src="about:blank"></script>
+<script nomodule="" src="about:blank" defer=""></script>
+<script>/* Code removed by ScrapBook */</script>
+<script>/* Code removed by ScrapBook */</script>
+
+<script>/* Code removed by ScrapBook */</script>
+
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<meta name="robots" content="max-image-preview:large">
+<link rel="search" type="application/opensearchdescription+xml" title="ghacks.net" href="https://www.ghacks.net/opensearch.xml">
+<style>
+/* Code tidied up by ScrapBook */
+</style></head>
+<body><iframe style="display: none;" name="__tcfapiLocator" title="__tcfapiLocator" src="index_1.html"></iframe>
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHW6RDK"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<div class="banner-box-scroll show">
+<div id="snhb-snhb_ghacks_top-1"></div> </div>
+<header style="display: block; margin: 0px; padding: 0px;">
+<div class="mb--30 ghacks-header" style="margin-bottom: 30px; position: relative; z-index: 10;">
+<div class="bg--darkGray pt--10 pb--10" style="padding: 10px 0px; background-color: rgb(59, 59, 59); margin: 0px;">
+<div class="container" style="max-width: 1200px; margin-left: auto; margin-right: auto; padding-right: 2rem; padding-left: 2rem;">
+<div class="row middle-xs between-xs nocol" style="margin-left: 0px; margin-right: 0px; padding-right: 0rem; padding-left: 0rem; -moz-box-align: center; align-items: center; justify-content: space-between;">
+<div class="ghacks-header-logo">
+<a href="https://www.ghacks.net/" class="no-underline" style="text-decoration: none;" data-wpel-link="internal">
+<span style="flex-wrap: nowrap;" class="row middle-xs ghacks-logo ghacks-logo--light ghacks-logo--medium">
+<span class="mr--10"><svg class="" style=" " width="42" height="42" viewBox="0 0 42 42" fill="#F3B434"><ellipse cx="21" cy="20.9" rx="20.7" ry="20.9" fill="#FFF"></ellipse><path d="M41.6 20.7C31 33.8 18.1 36.4 2 29.3 3.6 32.8 6 35.8 9.1 38 20.8 40.9 29.6 39.1 37.5 33.3 40.1 29.9 41.6 25.6 41.6 20.9 41.6 20.8 41.6 20.8 41.6 20.7L41.6 20.7Z"></path><path d="M12.3 19.4C8.7 19.4 4.8 18.5 0.7 17.1 0.4 18.3 0.3 19.6 0.3 20.9 0.3 21.9 0.4 22.8 0.5 23.7 4.6 25 8.6 25.8 12.4 26 12.4 26 11.3 22.9 12.3 19.4L12.3 19.4Z"></path><path d="M28.6 15.7C31.2 18.1 31.6 21.9 31.6 21.9 34.9 20 37.9 17.5 40.6 14.4 39.8 12.1 38.7 10 37.3 8.1 34.7 11.4 31.8 14 28.6 15.7L28.6 15.7Z"></path><path d="M28.2 20C28 18.7 27.2 17.7 26.2 17 24.7 16 22.8 15.6 20.7 16 18.5 16.4 16.6 17.8 15.8 19.4 15.3 20.4 15.1 21.4 15.3 22.5 15.6 24 16.6 25.2 18.1 26 18.1 26 18.1 26 18.1 26 17.9 27.2 17.2 28.4 17.2 28.4 17.2 28.4 19.6 28.3 21.1 26.7 21.6 26.7 22.2 26.6 22.8 26.5 24.6 26.1 26.1 25.2 27.1 24 28 22.8 28.5 21.4 28.2 20L28.2 20Z"></path><path d="M31.4 3.6C31.5 3.4 31.6 3.3 31.7 3.1 30.1 2.1 28.4 1.3 26.5 0.8 21.4 6.4 14.9 7.7 6.9 5.6 5.4 7 4.2 8.6 3.2 10.3 13.4 14.3 25 12.7 31.4 3.6L31.4 3.6Z"></path></svg></span>
+<div>
+<span class="color--orange">g</span>hacks.<span class="color--orange">net</span>
+</div>
+</span>
+</a>
+</div>
+<div class="show-sm-up ml--20 mr--20" style="margin-right: 20px; margin-left: 20px; display: block;">
+<div class="ghacks-ad" data-width="728" data-height="90" style="min-height: 90px;">
+<div id="snhb-snhb_ghacks_top-0"></div> </div>
+</div>
+<div [class]="display ? 'show-sm-down close' : 'show'" id="mobile-nav-trigger" class="" style="position: absolute; right: 20px;">
+<span></span>
+<span></span>
+<span></span>
+</div>
+<div [class]="visible ? 'open-custom-search show' : 'open-custom-search'" class="open-custom-search"></div>
+</div>
+</div>
+</div>
+<div class="top-navigation">
+<div class="bg--black pt--10 color--white" style="background-color: rgb(39, 39, 39); padding-top: 10px; color: rgb(255, 255, 255);">
+<div class="container" style="max-width: 1200px; margin-left: auto; margin-right: auto; padding-right: 2rem; padding-left: 2rem;">
+<div class="row noflex" style="display: block;">
+<ul class="top-level" style="display: flex; justify-content: space-between; align-items: center; list-style: outside none none;">
+<li style="display: inline-block; position: relative;">
+<a class="" href="https://www.ghacks.net/" style="text-decoration: none; display: inline-block; padding-bottom: 8px; color: rgb(255, 255, 255);">
+Home </a>
+</li>
+<li style="display: inline-block; position: relative;">
+<a class="" href="https://www.ghacks.net/category/windows/" style="text-decoration: none; display: inline-block; padding-bottom: 8px; color: rgb(255, 255, 255);">
+Windows </a>
+</li>
+<li style="display: inline-block; position: relative;">
+<a class="" href="https://www.ghacks.net/category/linux/" style="text-decoration: none; display: inline-block; padding-bottom: 8px; color: rgb(255, 255, 255);">
+Linux </a>
+</li>
+<li style="display: inline-block; position: relative;">
+<a class="" href="https://www.ghacks.net/category/software/" style="text-decoration: none; display: inline-block; padding-bottom: 8px; color: rgb(255, 255, 255);">
+Software </a>
+</li>
+<li style="display: inline-block; position: relative;">
+<a class="" href="https://www.ghacks.net/category/firefox/" style="text-decoration: none; display: inline-block; padding-bottom: 8px; color: rgb(255, 255, 255);">
+Firefox </a>
+</li>
+<li style="display: inline-block; position: relative;">
+<a class="" href="https://www.ghacks.net/category/google-chrome-browsing/" style="text-decoration: none; display: inline-block; padding-bottom: 8px; color: rgb(255, 255, 255);">
+Chrome </a>
+</li>
+<li style="display: inline-block; position: relative;">
+<a class="" href="https://www.ghacks.net/category/the-web/" style="text-decoration: none; display: inline-block; padding-bottom: 8px; color: rgb(255, 255, 255);">
+Internet </a>
+</li>
+<li style="display: inline-block; position: relative;">
+<a class="" href="https://www.ghacks.net/category/mobile-computing/" style="text-decoration: none; display: inline-block; padding-bottom: 8px; color: rgb(255, 255, 255);">
+Mobile Computing </a>
+</li>
+<li style="display: inline-block; position: relative;">
+<a class="" href="https://www.ghacks.net/category/companies/" style="text-decoration: none; display: inline-block; padding-bottom: 8px; color: rgb(255, 255, 255);">
+Companies </a>
+</li>
+ <li style="display: inline-block; position: relative;">
+<a class="" href="https://www.ghacks.net/category/email/" style="text-decoration: none; display: inline-block; padding-bottom: 8px; color: rgb(255, 255, 255);">
+Email </a>
+</li>
+<li style="display: inline-block; position: relative;">
+<a class="" href="https://www.ghacks.net/category/misc/" style="text-decoration: none; display: inline-block; padding-bottom: 8px; color: rgb(255, 255, 255);">
+Misc </a>
+</li>
+<li style="display: inline-block; position: relative;">
+<a class="" href="https://deals.ghacks.net/" style="text-decoration: none; display: inline-block; padding-bottom: 8px; color: rgb(255, 255, 255);">
+Deals </a>
+</li>
+<li class="search-box-btn" style="display: inline-block; position: relative;">
+<div [class]="visible ? 'open-custom-search show' : 'open-custom-search'" class="open-custom-search"></div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="amp-menu" [class]="display ? 'show' : 'hide'">
+<div class="amp-menu-box-logo">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-lazy-src="/wp-content/uploads/2020/11/ghack-logo-menu.png"><noscript><img src="/wp-content/uploads/2020/11/ghack-logo-menu.png" /></noscript>
+</div>
+<div class="menu-header-menu-container"><ul id="menu-header-menu" class="menu"><li id="menu-item-170930" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-170930"><a href="https://www.ghacks.net/" data-wpel-link="internal">Home</a></li>
+<li id="menu-item-93262" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-93262"><a href="https://www.ghacks.net/category/windows/" data-wpel-link="internal">Windows</a>
+<ul class="sub-menu">
+<li id="menu-item-171555" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-171555"><a href="https://www.ghacks.net/category/windows/windows-11/" data-wpel-link="internal">Windows 11 News</a></li>
+<li id="menu-item-173935" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-173935"><a href="https://www.ghacks.net/category/windows/windows-11-help/" data-wpel-link="internal">Windows 11 Help</a></li>
+<li id="menu-item-169959" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169959"><a href="https://www.ghacks.net/category/windows/windows-10/" data-wpel-link="internal">Windows 10</a></li>
+<li id="menu-item-169961" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169961"><a href="https://www.ghacks.net/category/windows/windows-8/" data-wpel-link="internal">Windows 8</a></li>
+<li id="menu-item-169960" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169960"><a href="https://www.ghacks.net/category/windows/windows-7/" data-wpel-link="internal">Windows 7</a></li>
+<li id="menu-item-169962" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169962"><a href="https://www.ghacks.net/category/windows/windows-tips/" data-wpel-link="internal">Windows tips</a></li>
+<li id="menu-item-169963" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169963"><a href="https://www.ghacks.net/category/windows/windows-update/" data-wpel-link="internal">Windows Update</a></li>
+</ul>
+</li>
+<li id="menu-item-139904" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-139904"><a href="https://www.ghacks.net/category/linux/" data-wpel-link="internal">Linux</a>
+<ul class="sub-menu">
+<li id="menu-item-170016" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-170016"><a href="https://www.ghacks.net/category/linux/linuxmint/" data-wpel-link="internal">Linux Mint</a></li>
+</ul>
+</li>
+<li id="menu-item-93261" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-93261"><a href="https://www.ghacks.net/category/software/" data-wpel-link="internal">Software</a>
+<ul class="sub-menu">
+<li id="menu-item-169964" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169964"><a href="https://www.ghacks.net/category/software/antivirus/" data-wpel-link="internal">Antivirus</a></li>
+<li id="menu-item-169965" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169965"><a href="https://www.ghacks.net/category/software/backup/" data-wpel-link="internal">Backup</a></li>
+<li id="menu-item-169966" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169966"><a href="https://www.ghacks.net/category/software/data-recovery/" data-wpel-link="internal">Data Recovery</a></li>
+<li id="menu-item-169967" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169967"><a href="https://www.ghacks.net/category/software/encryption/" data-wpel-link="internal">Encryption</a></li>
+<li id="menu-item-169968" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169968"><a href="https://www.ghacks.net/category/software/file-sharing/" data-wpel-link="internal">File Sharing</a></li>
+<li id="menu-item-169969" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169969"><a href="https://www.ghacks.net/category/software/microsoft-office/" data-wpel-link="internal">Microsoft Office</a></li>
+<li id="menu-item-169970" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169970"><a href="https://www.ghacks.net/category/software/security/" data-wpel-link="internal">Security</a></li>
+</ul>
+</li>
+<li id="menu-item-93263" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-93263"><a href="https://www.ghacks.net/category/firefox/" data-wpel-link="internal">Firefox</a>
+<ul class="sub-menu">
+<li id="menu-item-169971" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-169971"><a href="https://www.ghacks.net/category/firefox/firefox-add-ons/" data-wpel-link="internal">Firefox add-ons</a></li>
+</ul>
+</li>
+<li id="menu-item-93264" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-93264"><a href="https://www.ghacks.net/category/google-chrome-browsing/" data-wpel-link="internal">Chrome</a>
+<ul class="sub-menu">
+<li id="menu-item-139919" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-139919"><a href="https://www.ghacks.net/category/google-chrome-browsing/google-chrome-extensions/" data-wpel-link="internal">Chrome Extensions</a></li>
+</ul>
+</li>
+<li id="menu-item-139911" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-139911"><a href="https://www.ghacks.net/category/the-web/" data-wpel-link="internal">Internet</a>
+<ul class="sub-menu">
+<li id="menu-item-169974" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169974"><a href="https://www.ghacks.net/category/the-web/brave/" data-wpel-link="internal">Brave</a></li>
+<li id="menu-item-169976" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169976"><a href="https://www.ghacks.net/category/the-web/internet-explorer-browsing/" data-wpel-link="internal">Internet Explorer</a></li>
+<li id="menu-item-169977" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169977"><a href="https://www.ghacks.net/category/the-web/microsoft-edge/" data-wpel-link="internal">Microsoft Edge</a></li>
+<li id="menu-item-169978" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169978"><a href="https://www.ghacks.net/category/the-web/opera/" data-wpel-link="internal">Opera</a></li>
+<li id="menu-item-169979" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169979"><a href="https://www.ghacks.net/category/the-web/pale-moon/" data-wpel-link="internal">Pale Moon</a></li>
+<li id="menu-item-169981" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169981"><a href="https://www.ghacks.net/category/the-web/vivaldi/" data-wpel-link="internal">Vivaldi</a></li>
+<li id="menu-item-172175" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-172175"><a href="https://www.ghacks.net/category/the-web/vpns/" data-wpel-link="internal">VPNs</a></li>
+<li id="menu-item-169975" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169975"><a href="https://www.ghacks.net/category/the-web/google-maps/" data-wpel-link="internal">Google Maps</a></li>
+<li id="menu-item-169980" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169980"><a href="https://www.ghacks.net/category/the-web/search/" data-wpel-link="internal">Search</a></li>
+</ul>
+</li>
+<li id="menu-item-139910" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-139910"><a href="https://www.ghacks.net/category/mobile-computing/" data-wpel-link="internal">Mobile Computing</a>
+<ul class="sub-menu">
+<li id="menu-item-169984" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169984"><a href="https://www.ghacks.net/category/mobile-computing/google-android-mobiles/" data-wpel-link="internal">Google Android</a></li>
+<li id="menu-item-169983" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169983"><a href="https://www.ghacks.net/category/mobile-computing/apps/" data-wpel-link="internal">Apps</a></li>
+<li id="menu-item-169985" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169985"><a href="https://www.ghacks.net/category/mobile-computing/ios/" data-wpel-link="internal">iOS</a></li>
+</ul>
+</li>
+<li id="menu-item-139958" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-139958"><a href="https://www.ghacks.net/category/companies/" data-wpel-link="internal">Companies</a>
+<ul class="sub-menu">
+<li id="menu-item-169987" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169987"><a href="https://www.ghacks.net/category/companies/amazon/" data-wpel-link="internal">Amazon</a></li>
+<li id="menu-item-169988" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169988"><a href="https://www.ghacks.net/category/companies/apple-companies/" data-wpel-link="internal">Apple</a></li>
+<li id="menu-item-169989" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169989"><a href="https://www.ghacks.net/category/companies/facebook-company/" data-wpel-link="internal">Facebook</a></li>
+<li id="menu-item-169990" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169990"><a href="https://www.ghacks.net/category/companies/google/" data-wpel-link="internal">Google</a></li>
+<li id="menu-item-169991" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169991"><a href="https://www.ghacks.net/category/companies/microsoft-companies/" data-wpel-link="internal">Microsoft</a></li>
+<li id="menu-item-169993" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169993"><a href="https://www.ghacks.net/category/companies/twitter/" data-wpel-link="internal">Twitter</a></li>
+<li id="menu-item-169994" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169994"><a href="https://www.ghacks.net/category/companies/yahoo/" data-wpel-link="internal">Yahoo</a></li>
+<li id="menu-item-169995" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169995"><a href="https://www.ghacks.net/category/companies/youtube/" data-wpel-link="internal">Youtube</a></li>
+</ul>
+</li>
+<li id="menu-item-122011" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-122011"><a href="https://www.ghacks.net/category/email/" data-wpel-link="internal">Email</a>
+<ul class="sub-menu">
+<li id="menu-item-169996" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169996"><a href="https://www.ghacks.net/category/email/gmail/" data-wpel-link="internal">Gmail</a></li>
+<li id="menu-item-169997" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169997"><a href="https://www.ghacks.net/category/email/outlook/" data-wpel-link="internal">Outlook</a></li>
+<li id="menu-item-169998" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169998"><a href="https://www.ghacks.net/category/email/thunderbird/" data-wpel-link="internal">Thunderbird</a></li>
+</ul>
+</li>
+<li id="menu-item-139959" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-139959"><a href="https://www.ghacks.net/category/misc/" data-wpel-link="internal">Misc</a>
+<ul class="sub-menu">
+<li id="menu-item-175393" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-175393"><a href="https://www.ghacks.net/category/misc/crypto-and-blockchain/" data-wpel-link="internal">Crypto &amp; Blockchain</a></li>
+<li id="menu-item-139939" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-139939"><a href="https://www.ghacks.net/category/misc/webdevelopment/" data-wpel-link="internal">Development</a></li>
+<li id="menu-item-139940" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-139940"><a href="https://www.ghacks.net/category/misc/games/" data-wpel-link="internal">Games</a></li>
+<li id="menu-item-139941" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-139941"><a href="https://www.ghacks.net/category/misc/hardware/" data-wpel-link="internal">Hardware</a></li>
+<li id="menu-item-139942" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-139942"><a href="https://www.ghacks.net/category/misc/music-and-video/" data-wpel-link="internal">Music and Video</a></li>
+<li id="menu-item-139943" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-139943"><a href="https://www.ghacks.net/category/misc/networks/" data-wpel-link="internal">Network</a></li>
+<li id="menu-item-139945" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-139945"><a href="https://www.ghacks.net/category/misc/tutorials-basic/" data-wpel-link="internal">Tutorials</a></li>
+</ul>
+</li>
+<li id="menu-item-113697" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-113697"><a href="https://deals.ghacks.net/" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Deals</a></li>
+</ul></div></div>
+</header>
+<div class="container">
+<div id="test_deploy2"></div>
+<div class="ghacks-sidebared-content">
+<div class="ghacks-content">
+<div [class]="visible ? 'top-search-box show' : 'top-search-box hide-item'" class="top-search-box hide-item">
+<form role="search" method="get" class="search-form" action="https://www.ghacks.net/">
+<label wfd-id="97">
+<span class="screen-reader-text">Search for:</span>
+<input id="search-site" class="search-field" placeholder="Search …" value="" name="s" type="search">
+</label>
+<input class="search-submit" value="Search" type="submit">
+</form>
+</div>
+<main class="post-list mt--60 mt--first--0">
+<div class="box-banner banner-feed banner-leaderboard mb--10">
+<div id="snhb-snhb_ghacks_top-m-lb">
+<span class="ad-title">ADVERTISEMENT</span>
+</div>
+</div>
+<h1 class="heading--large" style="color: rgb(67, 65, 78); font-weight: 400;">A uMatrix guide for Firefox</h1>
+<div class="post-subtitle-meta">
+<div class="post-subtitle-meta_left">
+<div class="post-subtitle-meta_left_author">
+<a href="https://www.ghacks.net/author/martin/" data-wpel-link="internal">
+Martin Brinkmann </a>
+</div>
+<div class="post-subtitle-meta_left_date-published">
+Nov 28, 2017 </div>
+<div class="post-subtitle-meta_left_update ">
+<div class="post-subtitle-meta_left_update_date">
+Updated • Sep 30, 2019 </div>
+</div>
+</div>
+<div class="post-subtitle-meta_right">
+<div class="post-subtitle-meta_right_categories">
+<a href="https://www.ghacks.net/category/firefox/" rel="category tag" data-wpel-link="internal">Firefox</a>, <a href="https://www.ghacks.net/category/firefox/firefox-add-ons/" rel="category tag" data-wpel-link="internal">Firefox add-ons</a> </div>
+<div class="post-subtitle-meta_right_separator">|</div>
+<div class="post-subtitle-meta_right_comments">
+<a href="#comments" data-wpel-link="internal">69</a>
+</div>
+</div>
+</div>
+<div class="user-content dont-break-out" style="color: rgb(67, 65, 78);">
+<p>The Firefox extension uMatrix (it is also available for Chrome and other browsers), gives users control over a website's connections and data that is loaded when the site is loaded in the browser.</p>
+<p>The extension is developed and maintained by Raymond Hill (Gorhill), the <a href="https://www.ghacks.net/2017/08/31/ublock-origin-pure-webextension/" data-wpel-link="internal">developer of uBlock Origin</a>, a popular content blocker that is also available for various browsers including Firefox.</p>
+<!-- -->
+<p>Why two extensions and not just one? While both extensions can be used for the same purpose -- blocking content -- they are different when it comes to scope. Without going into too much detail: uMatrix is like the advanced brother of uBlock Origin. It gives you more control, and comes with privacy enhancements on top of that.</p>
+<h3>uMatrix for Firefox</h3>
+<p><picture class="alignnone size-full wp-image-139177 sp-no-webp" data-rv-in-image="rv-in-image-1"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2017/11/umatrix-firefox-guide.webp 997w" sizes="(max-width: 997px) 100vw, 997px" type="image/webp" srcset="umatrix-firefox-guide.webp 997w"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2017/11/umatrix-firefox-guide.png 997w, https://www.ghacks.net/wp-content/uploads/2017/11/umatrix-firefox-guide-660x328.png 660w, https://www.ghacks.net/wp-content/uploads/2017/11/umatrix-firefox-guide-768x381.png 768w, https://www.ghacks.net/wp-content/uploads/2017/11/umatrix-firefox-guide-100x50.png 100w" sizes="(max-width: 997px) 100vw, 997px" type="image/png" srcset="umatrix-firefox-guide.png 997w, umatrix-firefox-guide-660x328.png 660w, umatrix-firefox-guide-768x381.png 768w, umatrix-firefox-guide-100x50.png 100w"><img src="umatrix-firefox-guide.png" class="alignnone size-full wp-image-139177 sp-no-webp entered lazyloaded" alt="umatrix firefox guide" data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2017/11/umatrix-firefox-guide.png 997w, https://www.ghacks.net/wp-content/uploads/2017/11/umatrix-firefox-guide-660x328.png 660w, https://www.ghacks.net/wp-content/uploads/2017/11/umatrix-firefox-guide-768x381.png 768w, https://www.ghacks.net/wp-content/uploads/2017/11/umatrix-firefox-guide-100x50.png 100w" data-lazy-sizes="(max-width: 997px) 100vw, 997px" data-lazy-src="https://www.ghacks.net/wp-content/uploads/2017/11/umatrix-firefox-guide.png" data-ll-status="loaded" sizes="(max-width: 997px) 100vw, 997px" srcset="umatrix-firefox-guide.png 997w, umatrix-firefox-guide-660x328.png 660w, umatrix-firefox-guide-768x381.png 768w, umatrix-firefox-guide-100x50.png 100w" data-rv-in-image="rv-in-image-1" width="997" height="495"><noscript><img src="https://www.ghacks.net/wp-content/uploads/2017/11/umatrix-firefox-guide.png" class="alignnone size-full wp-image-139177 sp-no-webp" alt="umatrix firefox guide" height="495" width="997" srcset="https://www.ghacks.net/wp-content/uploads/2017/11/umatrix-firefox-guide.png 997w, https://www.ghacks.net/wp-content/uploads/2017/11/umatrix-firefox-guide-660x328.png 660w, https://www.ghacks.net/wp-content/uploads/2017/11/umatrix-firefox-guide-768x381.png 768w, https://www.ghacks.net/wp-content/uploads/2017/11/umatrix-firefox-guide-100x50.png 100w" sizes="(max-width: 997px) 100vw, 997px"></noscript></picture></p> <div class="box-banner">
+<span class="ad-title">ADVERTISEMENT</span>
+<div id="snhb-snhb_ghacks_sidebar_top-1"></div>
+</div>
+<p>You can install uMatrix in any recent version of the Firefox web browser from <a href="https://addons.mozilla.org/en-US/firefox/addon/umatrix/?src=search" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Mozilla AMO</a>. Simply visit the website, and click on the "add to Firefox" button to do so. I suggest you disable or remove any content blocker that is installed in the browser before you do so (e.g. NoScript, uBlock Origin, Adblock Plus) to avoid issues.</p>
+<p>The extension adds an icon to Firefox's main toolbar that you use to control what sites may load. Before you do, you may want to visit the options of the extension to make changes to the initial configuration. The easiest way to get there is to click on the extension icon after installation and there on the title bar that displays "go to dashboard" on hover.</p>
+<p><strong>Preferences</strong></p>
+<p>The preferences are divided into tabs; the very first, Settings, list several interesting options.</p><div class="box-banner banner-feed">
+<span class="ad-title">ADVERTISEMENT</span>
+<div id="snhb-sidebar_01-1"></div>
+<!-- -->
+</div>
+<p><picture class="alignnone size-full wp-image-154988 sp-no-webp" data-rv-in-image="rv-in-image-2"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2017/11/umatrix-settings-firefox.webp" type="image/webp" srcset="umatrix-settings-firefox.webp"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2017/11/umatrix-settings-firefox.png" type="image/png" srcset="umatrix-settings-firefox.png"><img src="umatrix-settings-firefox.png" class="alignnone size-full wp-image-154988 sp-no-webp entered lazyloaded" alt="umatrix settings firefox" data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2017/11/umatrix-settings-firefox.png" data-lazy-src="https://www.ghacks.net/wp-content/uploads/2017/11/umatrix-settings-firefox.png" data-rv-in-image="rv-in-image-2" data-ll-status="loaded" srcset="umatrix-settings-firefox.png" width="960" height="687"><noscript><img src="https://www.ghacks.net/wp-content/uploads/2017/11/umatrix-settings-firefox.png" class="alignnone size-full wp-image-154988 sp-no-webp" alt="umatrix settings firefox" height="687" width="960" srcset="https://www.ghacks.net/wp-content/uploads/2017/11/umatrix-settings-firefox.png"></noscript></picture></p>
+<p>Here is a list of preferences that you may find useful. I suggest you go through them all though as you may find some useful that are not mentioned here.</p>
+<ul>
+<li>Settings &gt; Convenience -- <strong>Show the number of distinct requests on the icon</strong>.</li>
+<li>Settings &gt; Convenience -- <strong>Collapse placeholder of blocked elements</strong>. (If an element is blocked, placeholder is collapsed. May result in a cleaner site, may cause display issues on some sites.</li>
+<li>Settings &gt; PrivacyÂ&nbsp; -- <strong>Delete blocked cookies</strong>. uMatrix does not prevent sites from setting (blacklisted) cookies, but it blocks cookies from leaving your local system.</li>
+<li>Settings &gt; PrivacyÂ&nbsp; -- <strong>Delete local storage content set by blocked hostnames</strong>. (removes data stored by blocked hostnames on the local system).</li>
+<li>Settings &gt; Privacy -- <strong>Spoof HTTP referrer string of third-party requests</strong>. The extension will spoof the HTTP referrer information if the domain name of the HTTP referrer is third-party to the domain name of net request.</li>
+<li>Settings &gt; Privacy -- <strong>Strict HTTPS: forbid mixed content</strong> -- Prevents the loading of non-secure content on HTTPS sites.</li>
+<li>Settings &gt; Privacy -- <strong>Block all hyperlink auditing attempts</strong>. Prevents that sites may add pings to links to inform "any party".</li>
+</ul>
+<p>You may also check the list of hosts lists the extension uses by default, and may add new lists to it. It loads six lists by default to block malware, ads and tracking servers automatically.</p>
+<div class="box-banner banner-feed">
+<span class="ad-title">ADVERTISEMENT</span>
+<div id="snhb-sidebar_02-1"></div>
+
+</div><p>Switch to the Assets tab to take a look. You may use the import option to add hosts files or disable some of the available resources.</p>
+<p>Once you are done with that, you need to decide how to run uMatrix. You have two main options to do so: block all or allow all.</p>
+<h3>The interface</h3>
+<p><picture class="alignnone size-full wp-image-139179 sp-no-webp" data-rv-in-image="rv-in-image-3"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2017/11/umatrix-interface.webp 577w" sizes="(max-width: 577px) 100vw, 577px" type="image/webp" srcset="umatrix-interface.webp 577w"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2017/11/umatrix-interface.png 577w, https://www.ghacks.net/wp-content/uploads/2017/11/umatrix-interface-100x69.png 100w" sizes="(max-width: 577px) 100vw, 577px" type="image/png" srcset="umatrix-interface.png 577w, umatrix-interface-100x69.png 100w"><img src="umatrix-interface.png" class="alignnone size-full wp-image-139179 sp-no-webp entered lazyloaded" alt="umatrix interface" data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2017/11/umatrix-interface.png 577w, https://www.ghacks.net/wp-content/uploads/2017/11/umatrix-interface-100x69.png 100w" data-lazy-sizes="(max-width: 577px) 100vw, 577px" data-lazy-src="https://www.ghacks.net/wp-content/uploads/2017/11/umatrix-interface.png" data-rv-in-image="rv-in-image-3" data-ll-status="loaded" sizes="(max-width: 577px) 100vw, 577px" srcset="umatrix-interface.png 577w, umatrix-interface-100x69.png 100w" width="577" height="399"><noscript><img src="https://www.ghacks.net/wp-content/uploads/2017/11/umatrix-interface.png" class="alignnone size-full wp-image-139179 sp-no-webp" alt="umatrix interface" height="399" width="577" srcset="https://www.ghacks.net/wp-content/uploads/2017/11/umatrix-interface.png 577w, https://www.ghacks.net/wp-content/uploads/2017/11/umatrix-interface-100x69.png 100w" sizes="(max-width: 577px) 100vw, 577px"></noscript></picture></p>
+<p>The interface may look intimidating on first glance. It lists all first party and third-party connections a web page makes, and data types such as cookies, CSS or script, that are loaded or blocked.</p>
+<p>Colors are used to indicate loaded and blocked content, with green highlighting content that is loaded and red content that is blocked.</p>
+<p>You may click on a header, e.g. cookie, to set up uMatrix to allow or disallow this type of data globally (with exceptions that you define). Green indicates that a content type is allowed, red that it is disallowed.</p>
+<p><strong>Tip</strong>: you set something to allowed (green) if you click in the upper half of a box, and to disallowed (red) if you click in the lower half. The difference between dark and light green, and dark and light red is the following one: Darker colors mean that there is a whitelist or blacklist entry assigned to the cell, lighter colors that the status is inherited.</p>
+<p>Another option that you have is to allow or disallow for specific hostnames. You may block or allow all for a hostname, or use the granular controls to allow or disallow certain types of data, for instance frames.</p>
+<h3>Block all</h3>
+<p><picture class="alignnone size-full wp-image-139180 sp-no-webp" data-rv-in-image="rv-in-image-4"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2017/11/block-all.webp 516w" sizes="(max-width: 516px) 100vw, 516px" type="image/webp" srcset="block-all.webp 516w"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2017/11/block-all.png 516w, https://www.ghacks.net/wp-content/uploads/2017/11/block-all-100x64.png 100w" sizes="(max-width: 516px) 100vw, 516px" type="image/png" srcset="block-all.png 516w, block-all-100x64.png 100w"><img src="block-all.png" class="alignnone size-full wp-image-139180 sp-no-webp entered lazyloaded" alt="block all" data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2017/11/block-all.png 516w, https://www.ghacks.net/wp-content/uploads/2017/11/block-all-100x64.png 100w" data-lazy-sizes="(max-width: 516px) 100vw, 516px" data-lazy-src="https://www.ghacks.net/wp-content/uploads/2017/11/block-all.png" data-rv-in-image="rv-in-image-4" data-ll-status="loaded" sizes="(max-width: 516px) 100vw, 516px" srcset="block-all.png 516w, block-all-100x64.png 100w" width="516" height="328"><noscript><img src="https://www.ghacks.net/wp-content/uploads/2017/11/block-all.png" class="alignnone size-full wp-image-139180 sp-no-webp" alt="block all" height="328" width="516" srcset="https://www.ghacks.net/wp-content/uploads/2017/11/block-all.png 516w, https://www.ghacks.net/wp-content/uploads/2017/11/block-all-100x64.png 100w" sizes="(max-width: 516px) 100vw, 516px"></noscript></picture></p>
+<p>If you set uMatrix to block all, all is blocked from being loaded except for the elements that you whitelist. To enable the block all mode, blacklist (set to red) the "all" and "frame" cells of the table.</p>
+<p>You may want to allow the "css" and "img" cells so that styles and images do get loaded when you connect to sites.</p>
+<p>Click on the padlock icon to save the modified configuration.</p>
+<p>This mode blocks all but CSS and images. It improves privacy and security, and is beneficial to the bandwidth on top of that. A downside to this is that you will run into sites that don't render properly or at all so that you may need to allow certain things on particular sites to access them.</p>
+<h3>Allow All</h3>
+<p><picture class="alignnone size-full wp-image-139181 sp-no-webp" data-rv-in-image="rv-in-image-5"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2017/11/allow-all.webp 520w" sizes="(max-width: 520px) 100vw, 520px" type="image/webp" srcset="allow-all.webp 520w"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2017/11/allow-all.png 520w, https://www.ghacks.net/wp-content/uploads/2017/11/allow-all-100x62.png 100w" sizes="(max-width: 520px) 100vw, 520px" type="image/png" srcset="allow-all.png 520w, allow-all-100x62.png 100w"><img src="allow-all.png" class="alignnone size-full wp-image-139181 sp-no-webp entered lazyloaded" alt="allow all" data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2017/11/allow-all.png 520w, https://www.ghacks.net/wp-content/uploads/2017/11/allow-all-100x62.png 100w" data-lazy-sizes="(max-width: 520px) 100vw, 520px" data-lazy-src="https://www.ghacks.net/wp-content/uploads/2017/11/allow-all.png" data-rv-in-image="rv-in-image-5" data-ll-status="loaded" sizes="(max-width: 520px) 100vw, 520px" srcset="allow-all.png 520w, allow-all-100x62.png 100w" width="520" height="322"><noscript><img src="https://www.ghacks.net/wp-content/uploads/2017/11/allow-all.png" class="alignnone size-full wp-image-139181 sp-no-webp" alt="allow all" height="322" width="520" srcset="https://www.ghacks.net/wp-content/uploads/2017/11/allow-all.png 520w, https://www.ghacks.net/wp-content/uploads/2017/11/allow-all-100x62.png 100w" sizes="(max-width: 520px) 100vw, 520px"></noscript></picture></p>
+<p>Allow all allows any connection and type to be loaded with the exception of hostnames that are blacklisted. This is better for compatibility purposes, but problematic from a privacy and security point of view.</p>
+<p>To configure it, set the "all" cell to green, and make sure any other cell is set to green as well. Don't forget to click on the padlock icon to save the new configuration.</p>
+<p>The core advantage of allow all is that you won't run into nearly as many rendering issues as with block all, but the effect on privacy and security is diminished.</p>
+<h3>Closing Words</h3>
+<p>How you configure uMatrix depends entirely on you. If you want maximum privacy and security, you should go with the block all approach and whitelist only hostnames that you trust. You can still allow certain things temporarily using uMatrix, or load a site in private browsing mode instead.</p>
+<p><strong>uMatrix resources and further reading</strong></p>
+<ul>
+<li><a href="https://github.com/gorhill/uMatrix" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">uMatrix GitHub page</a></li>
+<li><a href="https://github.com/gorhill/httpswitchboard/wiki" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">uMatrix Wiki</a> (detailed information on all aspects of the extension, and more)</li>
+</ul>
+<div class="box-banner banner-feed">
+<span class="ad-title">ADVERTISEMENT</span>
+<div id="snhb-sidebar_03-1"></div>
+</div><div id="snippet-box" class="snippet-type-10" style="background: rgb(245, 245, 245) none repeat scroll 0% 0%; color: rgb(51, 51, 51); border: 1px solid rgb(172, 172, 172);"><div class="snippet-title" style="background: rgb(228, 228, 228) none repeat scroll 0% 0%; color: rgb(51, 51, 51); border-bottom: 1px solid rgb(172, 172, 172);">Summary</div><div itemscope="" itemtype="https://schema.org/Article"><div class="snippet-image" itemprop="image" itemscope="" itemtype="https://schema.org/ImageObject"><picture class="sp-no-webp"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2017/11/block-all.webp" type="image/webp" srcset="block-all.webp"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2017/11/block-all.png" type="image/png" srcset="block-all.png"><img src="block-all.png" class="sp-no-webp entered lazyloaded" alt="A uMatrix guide for Firefox" data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2017/11/block-all.png" data-lazy-src="https://www.ghacks.net/wp-content/uploads/2017/11/block-all.png" data-ll-status="loaded" srcset="block-all.png" width="180"><noscript><img src="https://www.ghacks.net/wp-content/uploads/2017/11/block-all.png" class="sp-no-webp" alt="A uMatrix guide for Firefox" width="180" srcset="https://www.ghacks.net/wp-content/uploads/2017/11/block-all.png"></noscript></picture><meta itemprop="url" content="https://www.ghacks.net/wp-content/uploads/2017/11/block-all.png"></div><div class="aio-info"><div class="snippet-label-img">Article Name</div><div class="snippet-data-img"><span itemprop="headline">A uMatrix guide for Firefox</span></div><div class="snippet-clear"></div><div class="snippet-label-img">Description</div><div class="snippet-data-img"><span itemprop="description">The uMatrix guide for Firefox helps you get started with the Firefox extension uMatrix, a sophisticated connection and ontent blocker for the browser.</span></div><div class="snippet-clear"></div><div class="snippet-label-img">Author</div><div class="snippet-data-img" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+<span itemprop="name">Martin Brinkmann</span>
+</div>
+<div class="snippet-clear"></div><div itemprop="publisher" itemscope="" itemtype="https://schema.org/Organization"><div class="snippet-label-img">Publisher</div><div class="snippet-data-img">
+<span itemprop="name">Ghacks Technology News</span>
+</div>
+<div class="snippet-clear"></div><div class="snippet-label-img">Logo</div><div class="snippet-data-img publisher-logo" itemprop="logo" itemscope="" itemtype="https://schema.org/ImageObject"><picture class="sp-no-webp"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2005/10/ghacks-technology-news.webp" type="image/webp" srcset="ghacks-technology-news.webp"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2005/10/ghacks-technology-news.jpg" type="image/jpeg" srcset="ghacks-technology-news.jpg"><img src="ghacks-technology-news.jpg" class="sp-no-webp entered lazyloaded" alt="Ghacks Technology News" data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2005/10/ghacks-technology-news.jpg" data-lazy-src="https://www.ghacks.net/wp-content/uploads/2005/10/ghacks-technology-news.jpg" data-ll-status="loaded" srcset="ghacks-technology-news.jpg" width="180"><noscript><img src="https://www.ghacks.net/wp-content/uploads/2005/10/ghacks-technology-news.jpg" class="sp-no-webp" alt="Ghacks Technology News" width="180" srcset="https://www.ghacks.net/wp-content/uploads/2005/10/ghacks-technology-news.jpg"></noscript></picture><meta itemprop="url" content="https://www.ghacks.net/wp-content/uploads/2005/10/ghacks-technology-news.jpg"></div></div><meta itemscope="" itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="https://www.ghacks.net/2017/11/28/a-umatrix-guide-for-firefox/"><meta itemprop="datePublished" content="2017-11-28T07:15:23+01:00"><meta itemprop="dateModified" content="2019-09-30T18:41:57+02:00"></div>
+</div></div><div class="snippet-clear"></div>
+Advertisement
+
+<div id="div-gpt-ad-1524862513262-0"></div>
+</div>
+<meta itemprop="commentCount" content="69">
+<meta itemprop="dateUpdated" content="">
+<meta itemprop="discussionURL" content="https://www.ghacks.net/2017/11/28/a-umatrix-guide-for-firefox/">
+<meta itemprop="inLanguage" content="en">
+<meta itemprop="timeRequired" content="P6M">
+</main>
+<div class="show-lg-only mt--20" style="margin-top: 20px; display: block;">
+<div class="ghacks-ad" data-width="728" data-height="90">
+</div>
+</div>
+<aside id="post-author" class="border--top--gray pt--40 mt--40">
+<div class="profile-content">
+<h3 class="heading--small mb--20">About Martin Brinkmann</h3>
+<div class="user-content">
+Martin Brinkmann is a journalist from Germany who founded Ghacks Technology News Back in 2005. He is passionate about all things tech and knows the Internet and computers like the back of his hand.
+You can follow Martin on <a href="https://www.facebook.com/therealmartinbrinkmann" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Facebook</a> or <a href="https://twitter.com/martibrinkm" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Twitter</a> </div>
+<div class="profile-link mt--20 user-content">
+<a href="https://www.ghacks.net/author/martin/" data-wpel-link="internal">
+View all posts by Martin Brinkmann <span class="meta-nav">→</span></a>
+</div>
+</div>
+</aside>
+<div class="the_related_part border--top--gray mt--40 pt--40">
+<h3 class="heading--small mb--20">Related content</h3>
+<div class="related-posts-box">
+<div class="swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-autoheight">
+<div class="swiper-wrapper" style="height: 172px; transform: translate3d(0px, 0px, 0px);">
+<div class="swiper-slide swiper-slide-active" style="width: 292.667px; margin-right: 20px;">
+<div class="content-post-slide post-177488 post type-post status-publish format-standard has-post-thumbnail hentry category-firefox">
+<picture class="attachment-medium size-medium wp-post-image sp-no-webp"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2022/03/firefox-relay-ui-scaled.webp 1200w" sizes="(max-width: 1200px) 100vw, 1200px" type="image/webp" srcset="firefox-relay-ui-scaled.webp 1200w"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2022/03/firefox-relay-ui-scaled.jpg 1200w, https://www.ghacks.net/wp-content/uploads/2022/03/firefox-relay-ui-1536x1088.jpg 1536w, https://www.ghacks.net/wp-content/uploads/2022/03/firefox-relay-ui-2048x1451.jpg 2048w" sizes="(max-width: 1200px) 100vw, 1200px" type="image/jpeg" srcset="firefox-relay-ui-scaled.jpg 1200w, firefox-relay-ui-1536x1088.jpg 1536w, firefox-relay-ui-2048x1451.jpg 2048w"><img src="firefox-relay-ui-scaled.jpg" class="attachment-medium size-medium wp-post-image sp-no-webp entered lazyloaded" alt="firefox relay ui" data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2022/03/firefox-relay-ui-scaled.jpg 1200w, https://www.ghacks.net/wp-content/uploads/2022/03/firefox-relay-ui-1536x1088.jpg 1536w, https://www.ghacks.net/wp-content/uploads/2022/03/firefox-relay-ui-2048x1451.jpg 2048w" data-lazy-sizes="(max-width: 1200px) 100vw, 1200px" data-lazy-src="https://www.ghacks.net/wp-content/uploads/2022/03/firefox-relay-ui-scaled.jpg" data-ll-status="loaded" sizes="(max-width: 1200px) 100vw, 1200px" srcset="firefox-relay-ui-scaled.jpg 1200w, firefox-relay-ui-1536x1088.jpg 1536w, firefox-relay-ui-2048x1451.jpg 2048w" width="1200" height="850"><noscript><img src="https://www.ghacks.net/wp-content/uploads/2022/03/firefox-relay-ui-scaled.jpg" class="attachment-medium size-medium wp-post-image sp-no-webp" alt="firefox relay ui" height="850" width="1200" srcset="https://www.ghacks.net/wp-content/uploads/2022/03/firefox-relay-ui-scaled.jpg 1200w, https://www.ghacks.net/wp-content/uploads/2022/03/firefox-relay-ui-1536x1088.jpg 1536w, https://www.ghacks.net/wp-content/uploads/2022/03/firefox-relay-ui-2048x1451.jpg 2048w" sizes="(max-width: 1200px) 100vw, 1200px"></noscript></picture>
+<a class="box-title-slide" href="https://www.ghacks.net/2022/03/12/firefox-relay-update-brings-larger-attachment-sizes-and-a-filter-for-promotional-emails/" data-wpel-link="internal">
+<h2 class="title-post-slide">Firefox Relay update brings larger attachment sizes and a filter for promotional emails</h2>
+</a>
+</div>
+</div>
+<div class="swiper-slide swiper-slide-next" style="width: 292.667px; margin-right: 20px;">
+<div class="content-post-slide post-177464 post type-post status-publish format-standard has-post-thumbnail hentry category-firefox-add-ons category-google-chrome-extensions category-microsoft-edge">
+<picture class="attachment-medium size-medium wp-post-image sp-no-webp"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2022/03/whatsapp-code-verify.webp" type="image/webp" srcset="whatsapp-code-verify.webp"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2022/03/whatsapp-code-verify.webp" type="image/webp" srcset="whatsapp-code-verify.webp"><img src="whatsapp-code-verify.webp" class="attachment-medium size-medium wp-post-image sp-no-webp entered lazyloaded" alt="whatsapp code verify" data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2022/03/whatsapp-code-verify.webp" data-lazy-src="https://www.ghacks.net/wp-content/uploads/2022/03/whatsapp-code-verify.webp" data-ll-status="loaded" srcset="whatsapp-code-verify.webp" width="1200" height="675"><noscript><img src="https://www.ghacks.net/wp-content/uploads/2022/03/whatsapp-code-verify.webp" class="attachment-medium size-medium wp-post-image sp-no-webp" alt="whatsapp code verify" height="675" width="1200" srcset="https://www.ghacks.net/wp-content/uploads/2022/03/whatsapp-code-verify.webp"></noscript></picture>
+<a class="box-title-slide" href="https://www.ghacks.net/2022/03/11/meta-releases-code-verify-extension-for-whatsapp-web/" data-wpel-link="internal">
+<h2 class="title-post-slide">Meta releases Code Verify extension for WhatsApp Web</h2>
+</a>
+</div>
+</div>
+<div class="swiper-slide" style="width: 292.667px; margin-right: 20px;">
+<div class="content-post-slide post-177461 post type-post status-publish format-standard has-post-thumbnail hentry category-firefox-add-ons">
+<picture class="attachment-medium size-medium wp-post-image sp-no-webp"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2022/03/ublock-origin-firefox-popular.webp 1920w" sizes="(max-width: 1920px) 100vw, 1920px" type="image/webp" srcset="ublock-origin-firefox-popular.webp 1920w"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2022/03/ublock-origin-firefox-popular.png 1920w, https://www.ghacks.net/wp-content/uploads/2022/03/ublock-origin-firefox-popular-1536x810.png 1536w" sizes="(max-width: 1920px) 100vw, 1920px" type="image/png" srcset="ublock-origin-firefox-popular.png 1920w, ublock-origin-firefox-popular-1536x810.png 1536w"><img src="ublock-origin-firefox-popular.png" class="attachment-medium size-medium wp-post-image sp-no-webp entered lazyloaded" alt="ublock origin firefox popular" data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2022/03/ublock-origin-firefox-popular.png 1920w, https://www.ghacks.net/wp-content/uploads/2022/03/ublock-origin-firefox-popular-1536x810.png 1536w" data-lazy-sizes="(max-width: 1920px) 100vw, 1920px" data-lazy-src="https://www.ghacks.net/wp-content/uploads/2022/03/ublock-origin-firefox-popular.png" data-ll-status="loaded" sizes="(max-width: 1920px) 100vw, 1920px" srcset="ublock-origin-firefox-popular.png 1920w, ublock-origin-firefox-popular-1536x810.png 1536w" width="1920" height="1012"><noscript><img src="https://www.ghacks.net/wp-content/uploads/2022/03/ublock-origin-firefox-popular.png" class="attachment-medium size-medium wp-post-image sp-no-webp" alt="ublock origin firefox popular" height="1012" width="1920" srcset="https://www.ghacks.net/wp-content/uploads/2022/03/ublock-origin-firefox-popular.png 1920w, https://www.ghacks.net/wp-content/uploads/2022/03/ublock-origin-firefox-popular-1536x810.png 1536w" sizes="(max-width: 1920px) 100vw, 1920px"></noscript></picture>
+<a class="box-title-slide" href="https://www.ghacks.net/2022/03/11/ublock-origin-is-now-the-most-popular-firefox-add-on/" data-wpel-link="internal">
+<h2 class="title-post-slide">uBlock Origin is now the most popular Firefox add-on</h2>
+</a>
+</div>
+</div>
+<div class="swiper-slide" style="width: 292.667px; margin-right: 20px;">
+<div class="content-post-slide post-177398 post type-post status-publish format-standard has-post-thumbnail hentry category-firefox">
+<picture class="attachment-medium size-medium wp-post-image sp-no-webp"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2022/03/firefox-98.webp" type="image/webp"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2022/03/firefox-98.png" type="image/png"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201284%20762'%3E%3C/svg%3E" class="attachment-medium size-medium wp-post-image sp-no-webp" alt="firefox 98" data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2022/03/firefox-98.png" data-lazy-src="https://www.ghacks.net/wp-content/uploads/2022/03/firefox-98.png" width="1284" height="762"><noscript><img src="https://www.ghacks.net/wp-content/uploads/2022/03/firefox-98.png" class="attachment-medium size-medium wp-post-image sp-no-webp" alt="firefox 98" height="762" width="1284" srcset="https://www.ghacks.net/wp-content/uploads/2022/03/firefox-98.png"></noscript></picture>
+<a class="box-title-slide" href="https://www.ghacks.net/2022/03/08/mozilla-firefox-98-0-here-is-what-is-new/" data-wpel-link="internal">
+<h2 class="title-post-slide">Mozilla Firefox 98.0: here is what is new</h2>
+</a>
+</div>
+</div>
+<div class="swiper-slide" style="width: 292.667px; margin-right: 20px;">
+<div class="content-post-slide post-177357 post type-post status-publish format-standard has-post-thumbnail hentry category-firefox">
+<picture class="attachment-medium size-medium wp-post-image sp-no-webp"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2022/03/firefox-97.0.2.webp" type="image/webp"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2022/03/firefox-97.0.2.png" type="image/png"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201200%20651'%3E%3C/svg%3E" class="attachment-medium size-medium wp-post-image sp-no-webp" alt="firefox 97.0.2" data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2022/03/firefox-97.0.2.png" data-lazy-src="https://www.ghacks.net/wp-content/uploads/2022/03/firefox-97.0.2.png" width="1200" height="651"><noscript><img src="https://www.ghacks.net/wp-content/uploads/2022/03/firefox-97.0.2.png" class="attachment-medium size-medium wp-post-image sp-no-webp" alt="firefox 97.0.2" height="651" width="1200" srcset="https://www.ghacks.net/wp-content/uploads/2022/03/firefox-97.0.2.png"></noscript></picture>
+<a class="box-title-slide" href="https://www.ghacks.net/2022/03/05/firefox-97-0-2-and-firefox-esr-91-6-1-are-out-with-critical-security-fixes/" data-wpel-link="internal">
+<h2 class="title-post-slide">Firefox 97.0.2 and Firefox ESR 91.6.1 are out with critical security fixes</h2>
+</a>
+</div>
+</div>
+<div class="swiper-slide" style="width: 292.667px; margin-right: 20px;">
+<div class="content-post-slide post-177311 post type-post status-publish format-standard has-post-thumbnail hentry category-firefox">
+<picture class="attachment-medium size-medium wp-post-image sp-no-webp"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2022/03/firefox-background-ads-mobile.webp" type="image/webp"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2022/03/firefox-background-ads-mobile.jpg" type="image/jpeg"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201200%201172'%3E%3C/svg%3E" class="attachment-medium size-medium wp-post-image sp-no-webp" alt="firefox background ads mobile" data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2022/03/firefox-background-ads-mobile.jpg" data-lazy-src="https://www.ghacks.net/wp-content/uploads/2022/03/firefox-background-ads-mobile.jpg" width="1200" height="1172"><noscript><img src="https://www.ghacks.net/wp-content/uploads/2022/03/firefox-background-ads-mobile.jpg" class="attachment-medium size-medium wp-post-image sp-no-webp" alt="firefox background ads mobile" height="1172" width="1200" srcset="https://www.ghacks.net/wp-content/uploads/2022/03/firefox-background-ads-mobile.jpg"></noscript></picture>
+<a class="box-title-slide" href="https://www.ghacks.net/2022/03/02/mozilla-appears-to-be-testing-background-ads-in-firefox-mobile/" data-wpel-link="internal">
+<h2 class="title-post-slide">Mozilla appears to be testing new tab page background ads in Firefox Mobile</h2>
+</a>
+</div>
+</div>
+</div>
+<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+
+<div class="swiper-pagination my-pagination swiper-pagination-clickable swiper-pagination-bullets"><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span></div>
+</div>
+</div>
+<div><br>
+Previous Post: « <a href="https://www.ghacks.net/2017/11/24/run-userchrome-js-scripts-in-firefox-57-or-newer/" rel="prev" data-wpel-link="internal">Run userchrome.js scripts in Firefox 57 or newer</a><br>
+Next Post: « <a href="https://www.ghacks.net/2017/11/28/firefox-58-to-block-top-level-data-url-navigation/" rel="next" data-wpel-link="internal">Firefox 58 to block top-level data URL navigation</a> </div>
+<div style="margin-top: 40px;" id="snhb-snhb_ghacks_bottom-0"></div>
+<div class="border--top--gray mt--40 pt--40" id="comments">
+<h3 class="heading--large">Comments</h3>
+<ol class="comment-list mt--40">
+<li class="comment even thread-even depth-1" id="comment-4295221">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>uMatrix fan</strong> said on November 28, 2017 at 7:51 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4295221" data-commentid="4295221" data-postid="139176" data-belowelement="comment-4295221" data-respondelement="respond" data-replyto="Reply to uMatrix fan" aria-label="Reply to uMatrix fan">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>A good configuration for uMatrix for both privacy and convenience is to allow all except (or not) frames, block all scripts.<br>
+For convenience, when pages break, just allow all parties temporarily.<br>
+uMatrix cannot block scripts independently from host names, you can use uBlock Origin for that.</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment odd alt depth-2" id="comment-4301855">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Millenicide</strong> said on December 4, 2017 at 5:47 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4301855" data-commentid="4301855" data-postid="139176" data-belowelement="comment-4301855" data-respondelement="respond" data-replyto="Reply to Millenicide" aria-label="Reply to Millenicide">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>“uMatrix cannot block scripts independently from host names, you can use uBlock Origin for that.”<br>
+Can you please explain this in more detail. :)</p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="comment-4295241">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>yikes</strong> said on November 28, 2017 at 8:49 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4295241" data-commentid="4295241" data-postid="139176" data-belowelement="comment-4295241" data-respondelement="respond" data-replyto="Reply to yikes" aria-label="Reply to yikes">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Can anyone explain the little triangles in the top left corner of some of the squares?</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment byuser comment-author-martin bypostauthor odd alt depth-2" id="comment-4295246">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Martin Brinkmann</strong> said on November 28, 2017 at 9:05 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4295246" data-commentid="4295246" data-postid="139176" data-belowelement="comment-4295246" data-respondelement="respond" data-replyto="Reply to Martin Brinkmann" aria-label="Reply to Martin Brinkmann">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Green triangle on light red cell: permanently whitelisted cell that is temporarily graylisted (anything from hostname will be blocked, but the main frame).</p>
+<p>Green triangle on dark red cell: permanently whitelisted cell that is blacklisted temporarily.</p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+<li class="comment even thread-even depth-1" id="comment-4295266">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Mike</strong> said on November 28, 2017 at 9:21 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4295266" data-commentid="4295266" data-postid="139176" data-belowelement="comment-4295266" data-respondelement="respond" data-replyto="Reply to Mike" aria-label="Reply to Mike">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>I’ve always wondered this but if you install uMatrix, is uBlock Origin not necessary anymore? Can uMatrix do everything that uBlock does but better?</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment odd alt depth-2" id="comment-4295651">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Cloudman</strong> said on November 28, 2017 at 1:51 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4295651" data-commentid="4295651" data-postid="139176" data-belowelement="comment-4295651" data-respondelement="respond" data-replyto="Reply to Cloudman" aria-label="Reply to Cloudman">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>uMatrix doesn’t have esthetic filters.</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment even depth-3" id="comment-4295764">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>BM</strong> said on November 28, 2017 at 3:30 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4295764" data-commentid="4295764" data-postid="139176" data-belowelement="comment-4295764" data-respondelement="respond" data-replyto="Reply to BM" aria-label="Reply to BM">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Agree. The eyedropper tool (element picker) is a big reason we have both installed. There are other reasons, I have since forgotten, but I think one reason had to do with lists unique to uB Origin not available in uMatrix. (Edit: I see Donkeyfumbler below mentions this).</p>
+<p>uMatrix is a PITA if one uses a virtual/sandbox environment, as the settings cannot be easily saved. However, the extra level of protection is still worth it, IMHO.</p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+<li class="comment odd alt depth-2" id="comment-4297306">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Django</strong> said on November 29, 2017 at 3:10 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4297306" data-commentid="4297306" data-postid="139176" data-belowelement="comment-4297306" data-respondelement="respond" data-replyto="Reply to Django" aria-label="Reply to Django">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>uBO is a second line of defence. uMatrix replaces advantageously the dynamic filtering part of uBO, but the static filtering part remains. If you allow YouTube embedded videos on Ghacks through dynamic filtering, static filtering will ensure that YouTube tracking scripts and ads will remain blocked.</p>
+<p>uBO has dynamic filtering but it’s limited and I can find no satisfying way to use it, so ultimately I always have to install uMatrix and defer ALL dynamic filtering to it.</p>
+<p>The downside is that uBO can’t inject neutered scripts any more, those help in keeping site functionality intact when they are coded poorly enough to break without, say, Google Analytics.</p>
+<p>I wish uBO and uMatrix were more readily compatible and made to work with each other. I don’t see a point in using uMatrix without an adblocker, and uBO’s dynamic filtering doesn’t cut it for me. IMO uMatrix UI is also infinitely more appropriate when what the user wants is a clear view of what’s going on.</p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="comment-4295282">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Donkeyfumbler</strong> said on November 28, 2017 at 9:33 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4295282" data-commentid="4295282" data-postid="139176" data-belowelement="comment-4295282" data-respondelement="respond" data-replyto="Reply to Donkeyfumbler" aria-label="Reply to Donkeyfumbler">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>I’m really not entirely sure why there are two add-ins by the same developer that seem to do fairly much exactly the same thing. </p>
+<p>From what I can see UBlock, once you turn on advanced mode, does exactly the same kind of element filtering in exactly the same way, down to the light and dark colours. However it also has fairly extensive ad-blocking filter black lists that Umatrix doesn’t.</p>
+<p>From what I can tell then, the question is the other way round – why would I use umatrix when ublock does the same and more? Also, why does the dev not just combine the two into one add-in?</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment odd alt depth-2" id="comment-4295348">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Sophie</strong> said on November 28, 2017 at 10:15 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4295348" data-commentid="4295348" data-postid="139176" data-belowelement="comment-4295348" data-respondelement="respond" data-replyto="Reply to Sophie" aria-label="Reply to Sophie">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>I found when I tried Umatrix, (being already a UBO user, with extensive use of UBO), that Umatrix seemed almost overkill. I would be happy with the learning curve, as I like to understand as much as possible, but I found that it needed too much management and broke too many things. To be honest, everything went fairly haywire.</p>
+<p>Granted that all this would settle down once you managed it properly, so this is in no way the fault of Umatrix, I simply reached the conclusion that UBO was more than sufficient. Big thanks to the developer though, pretty much nothing to touch his extensions.</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment even depth-3" id="comment-4295792">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>BM</strong> said on November 28, 2017 at 3:59 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4295792" data-commentid="4295792" data-postid="139176" data-belowelement="comment-4295792" data-respondelement="respond" data-replyto="Reply to BM" aria-label="Reply to BM">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Depends on your use case. If you do a lot of research online (i.e. need to visit multiple sites over time vs visit a limited number of sites), you get to have a very good feel for which hostnames to allow, and which to remain blocked.</p>
+<p>Where things go “haywire” are websites that require some element (usually a script) that is only available after authorizing a hard blocked (dark red) hostname’s script (i.e. a script that is flagged within one of the lists). That required one will not be present until the prerequisite is authorized.</p>
+<p>Figuring this out is problematic, to say the least. If the site is important enough, sometimes I turn off uMatrix, and sometimes even uB Origin too. Sometimes that is not even enough. If site is “crucial” and reached this point, then it is on to (rarely used) Edge. Otherwise, I abandon that site. </p>
+<p>We use two additional Chrome extensions to help: uB Origin Extra and uB Origin Protection. The latter helps greatly with websites that block adblockers, usually with another page or an overlay that obscures content.</p>
+<p>Overall, having more difficulties with sites that block VPN access than with using Gorhill’s tools.</p>
+</div>
+</div>
+</li>
+<li class="comment odd alt depth-3" id="comment-4305458">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>BM</strong> said on December 10, 2017 at 12:11 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4305458" data-commentid="4305458" data-postid="139176" data-belowelement="comment-4305458" data-respondelement="respond" data-replyto="Reply to BM" aria-label="Reply to BM">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Just noticed that the extension called uBlock Origin Protection is now called Nano Defender. FYI</p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+<li class="comment even depth-2" id="comment-4295467">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Silver</strong> said on November 28, 2017 at 11:28 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4295467" data-commentid="4295467" data-postid="139176" data-belowelement="comment-4295467" data-respondelement="respond" data-replyto="Reply to Silver" aria-label="Reply to Silver">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>“From what I can tell then, the question is the other way round – why would I use umatrix when ublock does the same and more?”<br>
+It’s the opposite. Why would I use ublock when umatrix does the same and more.</p>
+<p>That being said, like Sophie, umatrix is overkill. It’s very powerful but as a result, it’s very tedious for very little more protection. Therefore for most users, it’s better to just stick with ublock in advanced mode. However, for the power users who like minute control over everything as well as knowing exactly how many images, scripts, and more are loaded from which domain, umatrix is perfect for that. But for me? Not my cup of tea.</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment odd alt depth-3" id="comment-4295500">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Donkeyfumbler</strong> said on November 28, 2017 at 11:48 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4295500" data-commentid="4295500" data-postid="139176" data-belowelement="comment-4295500" data-respondelement="respond" data-replyto="Reply to Donkeyfumbler" aria-label="Reply to Donkeyfumbler">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>As I said Ublock has the filtering lists that Umatrix lacks, but the script and content blocking is fairly much the same on either product. Unless you really need those extra privacy options (and really don’t like cookies), why then choose umatrix over ublock? Lots of people saying it’s ‘more powerful’ but failing to show how that’s actually the case.</p>
+</div>
+</div>
+</li>
+<li class="comment even depth-3" id="comment-4296170">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Silver</strong> said on November 29, 2017 at 12:08 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4296170" data-commentid="4296170" data-postid="139176" data-belowelement="comment-4296170" data-respondelement="respond" data-replyto="Reply to Silver" aria-label="Reply to Silver">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>@ Donkeyfumbler<br>
+One thing is uMatrix shows exactly what type of resource and how many of these resources are being loaded from which domain. Basically if a 3rd party frame is loaded, uMatrix shows the domain of that 3rd party frame. uBlock does not do that or makes it very hard to find out. In other words, uBlock simply tells you nothing about what resources are being loaded unless you decided to block them which uBlock will show something like “18 or 81%” resources blocked from loading. uMatrix tells you exactly how many resources were blocked, where it’s coming from (the domain), and what type is the resource. All these information is given whether you blocked the resources or not. That gives you a lot more info in helping you modify your lists and filter for certain sites.</p>
+<p>uMatrix then allows you fine control over those resources from different domains. For example, what if I don’t want to block all 3rd party scripts? Only certain ones? Basically like I said, uMatrix gives you granular control. And that’s very likely the very reason why the author did not combine the two. If you give uBlock that much granular control, it’s too much for most users. Instead, the author separate this fine granular control into uMatrix and the “coarse” control in uBlock. For most users, uBlock is good enough. For the users that are anal about over every resource type and where it’s coming from, they have uMatrix.</p>
+<p>People saying uMatrix is more powerful does not take anything away from uBlock so I honestly don’t know why you are so worried over it. Who cares if a Ferrari is more powerful than a minivan if all I want to do is have enough space to carry my groceries. Something being more powerful does not mean it’s the best at everything.</p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li class="comment odd alt thread-even depth-1" id="comment-4295370">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>dd</strong> said on November 28, 2017 at 10:31 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4295370" data-commentid="4295370" data-postid="139176" data-belowelement="comment-4295370" data-respondelement="respond" data-replyto="Reply to dd" aria-label="Reply to dd">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>use a browser with lots of blocker stuff for regular use.. use another browser with less when it breaks. use edge for no filter when you can’t be bothered to figure out what gets what blocked</p>
+</div>
+</div>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="comment-4295377">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Hans</strong> said on November 28, 2017 at 10:39 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4295377" data-commentid="4295377" data-postid="139176" data-belowelement="comment-4295377" data-respondelement="respond" data-replyto="Reply to Hans" aria-label="Reply to Hans">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>What ist the effect of the the rule â€ž* * frame blockâ€œ? The frame column is coloured light red just like the (unblocked) script column for instance. I canâ€™t see the difference.</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment odd alt depth-2" id="comment-4295616">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>gorhill</strong> said on November 28, 2017 at 1:18 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4295616" data-commentid="4295616" data-postid="139176" data-belowelement="comment-4295616" data-respondelement="respond" data-replyto="Reply to gorhill" aria-label="Reply to gorhill">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>* * frame block = “block all frames from everywhere” (starting from the scope where the rule exists).</p>
+<p>This will cause the header “frame” cell to be blacklisted (dark red). The higher precedence “frame” cells will inherit this block rule (pale red) by virtue of uMatrix rule-propagation logic.</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment even depth-3" id="comment-4295753">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Hans</strong> said on November 28, 2017 at 3:19 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4295753" data-commentid="4295753" data-postid="139176" data-belowelement="comment-4295753" data-respondelement="respond" data-replyto="Reply to Hans" aria-label="Reply to Hans">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Now I got it, thank you!</p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li class="comment odd alt thread-even depth-1" id="comment-4295386">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Thorky</strong> said on November 28, 2017 at 10:42 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4295386" data-commentid="4295386" data-postid="139176" data-belowelement="comment-4295386" data-respondelement="respond" data-replyto="Reply to Thorky" aria-label="Reply to Thorky">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>The first thing you should do after installing uMatrix is:</p>
+<p>– click the small grey cogwheel in the upper left of uMatrix window<br>
+– open My Rules<br>
+– click Edit-Button below Temporary Rules on the right side of the page<br>
+– add the term&gt; * * script block &lt;to the list<br>
+– click Save<br>
+– click Commit</p>
+<p>From now on, Scripts are blocked by standard like in NoScript! :)</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment even depth-2" id="comment-4295414">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Tom Hawack</strong> said on November 28, 2017 at 11:00 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4295414" data-commentid="4295414" data-postid="139176" data-belowelement="comment-4295414" data-respondelement="respond" data-replyto="Reply to Tom Hawack" aria-label="Reply to Tom Hawack">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>&gt; “From now on, Scripts are blocked by standard like in NoScript! :)”<br>
+And the per-site script authorizations’ madness as well! The number of sites which rely on scripts is a majority. Here with uBO I do block all scripts … from 3rd-party sites (as well as calling those very sites) but indeed that doesn’t protect from a given site’s own scripts : for those I rely on uBO’s filters. Sure, this policy is applicable with uMatrix I guess. But a too high granular protection can be terribly time consuming.</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment odd alt depth-3" id="comment-4297331">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Django</strong> said on November 29, 2017 at 3:26 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4297331" data-commentid="4297331" data-postid="139176" data-belowelement="comment-4297331" data-respondelement="respond" data-replyto="Reply to Django" aria-label="Reply to Django">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>You can allow all first party scripts with uMatrix (NoScript too) by default if you want. With per-site permissions you can save your non-global rules without worry, which means you only have to setup rules once, not twice. (Like you do with a Windows per-application firewall)</p>
+<p>Many sites don’t need JavaScript, so if you allow CSS, images and frames to first party sites by default, you won’t need to tweak all sites even on first time visit. Maybe 50% ?</p>
+<p>If on top of that you also allow CSS and images globally for all sites except those blocked by filter lists, first time visits where you need to add permissions become rather infrequent.</p>
+<p>&nbsp;</p>
+<p>And with uMatrix (and NoScript), you don’t end up allowing more than you thought, unlike uBO. (I love uBO but I just have to defend uMatrix and NoScript because I don’t think it’s remotely true that uBO can replace either of them, its role is to run alongside one of them if security and privacy are the user’s priorities.)</p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+<li class="comment even depth-2" id="comment-4341249">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Kubrick</strong> said on January 22, 2018 at 9:34 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4341249" data-commentid="4341249" data-postid="139176" data-belowelement="comment-4341249" data-respondelement="respond" data-replyto="Reply to Kubrick" aria-label="Reply to Kubrick">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>@thorky.<br>
+thats pointless.<br>
+you may as well just turn off javascript in the browser itself.</p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-4295396">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Tom Hawack</strong> said on November 28, 2017 at 10:47 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4295396" data-commentid="4295396" data-postid="139176" data-belowelement="comment-4295396" data-respondelement="respond" data-replyto="Reply to Tom Hawack" aria-label="Reply to Tom Hawack">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>uMatrix’s page on AMO is explicit : “*For advanced users.*”.<br>
+What defines an “advanced user”? What does it mean to be, to consider myself or someone as advanced in terms of computing knowledge? I don’t have the answer. A rather relative definition perhaps. Some users stick on ‘Adblock (Plus)’ because they consider that ‘uBlock Origin’ (uBO) required advanced skills. That’s my position regarding uMatrix and some uMatrix users on the other hand will consider the extension as perfectly accessible… hard to tell.</p>
+<p>What is sure is that uBO is not presented as “For advanced users” and is obviously less complex to use than uMatrix. Complex, not complicated. Some may also as myself lack confidence in their true abilities and/or express a sort of “intellectual laziness” (yawn and “wow, too tiring”). </p>
+<p>As far as I’m concerned I’ll point out this :<br>
+1- Yes, I believe I could make it to uMatrix should I make the effort. Yes, I’d make the effort if uBO didn’t exist because traditional ad blockers are far too far from what I consider as essential to give a chance to privacy and security nowadays when running a browser.<br>
+2- I use uBO intensively, I have a wide array of filters and rules, mine included. I’d have to move those to uMatrix, in what conditions, what is movable and what is not…. Maybe I should have started with uMatrix rather than uBO, maybe did I lack self-confidence or maybe was I tempted by a good “less effort”/”efficiency” ratio.</p>
+<p>Magnana maybe. (is that how you spell ‘tomorrow in Spanish?!). I often doubt that laziness is considered as a capital sin and sometimes I vaguely perceive why is could definitely be one :)</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment even depth-2" id="comment-4295493">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Sophie</strong> said on November 28, 2017 at 11:44 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4295493" data-commentid="4295493" data-postid="139176" data-belowelement="comment-4295493" data-respondelement="respond" data-replyto="Reply to Sophie" aria-label="Reply to Sophie">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>@Tom – agreed too…..I have made use of a lot of filtering on uBO, my own as well as what’s on offer, and also export these to a NAS drive which my whole network picks up and Syncs with. </p>
+<p>To migrate those over to uMatrix, be uncertain how they will fit – what will work, what won’t , what might break….and then at the end of it, not even be sure if I have achieved much, these are the reasons I stick with uBO.</p>
+<p>If I had gone with iMatrix to begin with, I would be at that place of “maturity” with it, but as I see it, it just seems like life is too short, and the ability for it to break things perhaps just a little too great. Not its’ fault of course….only mine for not trying hard enough.</p>
+</div>
+</div>
+</li>
+<li class="comment odd alt depth-2" id="comment-4295800">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>BM</strong> said on November 28, 2017 at 4:14 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4295800" data-commentid="4295800" data-postid="139176" data-belowelement="comment-4295800" data-respondelement="respond" data-replyto="Reply to BM" aria-label="Reply to BM">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Making a mountain out of a mole hill. </p>
+<p>uMatrix is easy for anyone with technical skills. For most use cases, uMatrix need only be set the first time a site is encountered, and the settings saved. Unless the website changes, this should suffice for all future encounters. </p>
+<p>One can either do this, or choose to invest their time with a wide array of filters and rules in uB O. I don’t bother with that, as I like the deny first approach of uM and the easy selectivity right at the browser.</p>
+<p>Agree that even with uB Origin, users needs some level of technical understanding to deal with any configuration settings outside of the default. </p>
+<p>Indeed, it is relative, as is the “efficiency ratio”.</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment even depth-3" id="comment-4295822">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Tom Hawack</strong> said on November 28, 2017 at 4:33 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4295822" data-commentid="4295822" data-postid="139176" data-belowelement="comment-4295822" data-respondelement="respond" data-replyto="Reply to Tom Hawack" aria-label="Reply to Tom Hawack">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>“uMatrix is easy for anyone with technical skills.” : that’s the montain!<br>
+“Agree that even with uB Origin, users needs some level of technical understanding to deal with any configuration settings outside of the default.” : that’s the moll hill!</p>
+<p>You can choose (not you, BM, I’m talkin’ to ’em fellas lazier than I) flat grounds but where’s the pleasure with no effort?! Forget the pleasure, it’s privacy and security which are concerned! Bonus? Besides privacy and security, no ads and faster page rendering : now what would we say about that? I say : grrr, I should at least give uMatrix a try. Don’t whip me, that don’t help; rather share your experience with uMatrix, as BM does, with a smile and an Everest of encouragements : we need them :)</p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+<li class="comment odd alt depth-2" id="comment-4295860">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Richard Allen</strong> said on November 28, 2017 at 5:12 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4295860" data-commentid="4295860" data-postid="139176" data-belowelement="comment-4295860" data-respondelement="respond" data-replyto="Reply to Richard Allen" aria-label="Reply to Richard Allen">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>MaÃ±ana ;)</p>
+<p>Totally agree. I would probably have to say that performance, ease of use, security and privacy are my ‘goals’ when online, and probably in the order that they are listed. I like uMatrix but once I moved from FF ESR, I started to pare down my add-ons in preparation for 57+ and uMatrix ended up in my disabled list. In it’s place I’ve been using “No-Script Suite Lite (revived)”, it’s lite on resources, takes like two seconds to enable js, most often permanently, and I’m basically just using it as a javascript whitelist, mostly so that when visiting a new site (intentionally or not) js will be disabled, there are also a handful (surprisingly large handful) of sites I regularly visit that I’ve left js disabled because they work and look fine for my purposes. </p>
+<p>Even blocking js on new, unknown websites might be a little on the overkill side of things for some people since I use uBlock Origin to globally block 3rd party iframes and I use dozens of my own personal rules and filters. For example, some websites I have javascript enabled in No-Script Suite Lite but then have 3rd party js blocked with uBO or maybe just a specific individual script is blocked preventing auto playing video. On websites that I know are guilty of having inadvertently (maybe) distributed malware in the past, the odds of my enabling All javascript on those sites is Very slim. With the capability available in uBO it’s hard for me to feel like I’m missing out by not using uMatrix. or even NoScript Security Suite, which should not be confused with No-Script Suite Lite (revived), the latter is what I’m using. </p>
+<p>All that said, I feel very fortunate to have Mr. Hill developing both uBO and uMatrix!! I’m hoping somehow someway that the ad ecosystem gets cleaned up or at the very least doesn’t get worse than it is now so that I don’t feel like I need to resort to using something like uMatrix. I am much too lazy to have to do that!!</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment even depth-3" id="comment-4295870">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Tom Hawack</strong> said on November 28, 2017 at 5:26 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4295870" data-commentid="4295870" data-postid="139176" data-belowelement="comment-4295870" data-respondelement="respond" data-replyto="Reply to Tom Hawack" aria-label="Reply to Tom Hawack">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Hello Richard!<br>
+I read you attentively as always. You mention the “No-Script Suite Lite (revived)” Firefox extension which “allows JavaScript (inline &amp; external) to be executed only by trusted websites of your choice.” (as mentioned on AMO). But this feature is included in uBO with the ‘1st-party scripts’ setting. What is the advantage of adding an extension which performs the same thing as uBO?</p>
+</div>
+</div>
+</li>
+<li class="comment odd alt depth-3" id="comment-4295889">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Richard Allen</strong> said on November 28, 2017 at 5:43 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4295889" data-commentid="4295889" data-postid="139176" data-belowelement="comment-4295889" data-respondelement="respond" data-replyto="Reply to Richard Allen" aria-label="Reply to Richard Allen">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Basically, I do Not want to Globally block w/uBO: inline,1st party or 3rd party javascript and maybe most importantly I do Not want to visit a new website, no matter how I got there, with Any javascript enabled. Ease of use is extremely important, for me.</p>
+</div>
+</div>
+</li>
+<li class="comment even depth-3" id="comment-4295911">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Richard Allen</strong> said on November 28, 2017 at 6:03 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4295911" data-commentid="4295911" data-postid="139176" data-belowelement="comment-4295911" data-respondelement="respond" data-replyto="Reply to Richard Allen" aria-label="Reply to Richard Allen">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>I’m going to repeat myself because I edited my post in the last minute and it will probably be stuck in the Twilight Zone for a while. I know better and I still do it too often, a last minute edit. ;)</p>
+<p>Basically, I do Not want to Globally block w/uBO: inline, 1st party or 3rd party javascript and maybe most importantly I do Not want to visit a new website, no matter how I got there, with Any javascript enabled. Ease of use is extremely important, for me.</p>
+<p>You’re right, the exact same thing can be done with uBO. It just feels easier to me to let No-Script Suite Lite take care of globally blocking js instead of in the long run adding a hundred or two more rules in uBO.</p>
+</div>
+</div>
+</li>
+<li class="comment odd alt depth-3" id="comment-4295919">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Richard Allen</strong> said on November 28, 2017 at 6:21 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4295919" data-commentid="4295919" data-postid="139176" data-belowelement="comment-4295919" data-respondelement="respond" data-replyto="Reply to Richard Allen" aria-label="Reply to Richard Allen">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>I forgot to mention my concern about at what point does the number of personal rules and filters that I’m using start to impact the performance and memory use of uBO. I’m already using dozens of MY Rules and MY Filters. I don’t know what the impact would be or if there is even any impact at all if I were to add another hundred or two rules. So… I’m just playing it safe a little bit.</p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li class="comment even thread-even depth-1" id="comment-4295577">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Var</strong> said on November 28, 2017 at 12:50 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4295577" data-commentid="4295577" data-postid="139176" data-belowelement="comment-4295577" data-respondelement="respond" data-replyto="Reply to Var" aria-label="Reply to Var">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>I have used uMatrix to bypass paywalls on certain sites. Doesn’t work on all but on a few its quite effective. But it seems to have a steep learning curve, its not easy to get right away.</p>
+</div>
+</div>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-4295584">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>dw4rf_toss</strong> said on November 28, 2017 at 12:57 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4295584" data-commentid="4295584" data-postid="139176" data-belowelement="comment-4295584" data-respondelement="respond" data-replyto="Reply to dw4rf_toss" aria-label="Reply to dw4rf_toss">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Cool, with a side of “I’ll shoot my eye out”. There’s an older release that runs with “old” Firefox without webextensions (1.1.4), so I’m running the old version. I’ve disabled uMatrix hosts files, as I either opted out of them in uBlock or they are already covered by it. So if I end up hating this, I can just uninstall uMatrix. </p>
+<p>Again: got uBlock and uMatrix running in tandem, all seems well enough. Side note: I’m letting uBlock origin handle the “list” blocking and disabled such in uMatrix; I was getting unnecessary page reloads when both have same lists enabled. </p>
+<p>So far, uMatrix has proven useful, though. It shows exactly what it is blocking, and unblocking things to test is thankfully pretty simple. I was able to allow Disqus chat and some other functions very quickly. Then ya click the lock icon to save permanently once ya get it all just so.</p>
+<p>Just disable the lists in uMatrix if you want to play with it and not break anything you depend on in uBlock. I guess my bottom line is that uBlock is just too useful to let go (element zapper, anyone?).</p>
+</div>
+</div>
+</li>
+<li class="comment even thread-even depth-1" id="comment-4295635">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>12bytes</strong> said on November 28, 2017 at 1:41 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4295635" data-commentid="4295635" data-postid="139176" data-belowelement="comment-4295635" data-respondelement="respond" data-replyto="Reply to 12bytes" aria-label="Reply to 12bytes">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Firefox Configuration Guide for Privacy Freaks and Performance Buffs | 12Bytes.org<br>
+<a href="http://12bytes.org/tech/firefoxgecko-configuration-guide-for-privacy-and-performance-buffs" rel="nofollow ugc external noopener noreferrer" data-wpel-link="external" target="_blank">http://12bytes.org/tech/firefoxgecko-configuration-guide-for-privacy-and-performance-buffs</a></p>
+</div>
+</div>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-4295731">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Peter</strong> said on November 28, 2017 at 3:03 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4295731" data-commentid="4295731" data-postid="139176" data-belowelement="comment-4295731" data-respondelement="respond" data-replyto="Reply to Peter" aria-label="Reply to Peter">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Love it! Too bad support for Pale Moon was dropped but as long as 1.0.0 works I’m a happy camper.<br>
+It does miss the element blocker UBO harbours.</p>
+</div>
+</div>
+</li>
+<li class="comment even thread-even depth-1" id="comment-4295741">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>MdN</strong> said on November 28, 2017 at 3:09 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4295741" data-commentid="4295741" data-postid="139176" data-belowelement="comment-4295741" data-respondelement="respond" data-replyto="Reply to MdN" aria-label="Reply to MdN">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>I’ve been using uMatrix ever since I found out about it. Once I learned my way around it, it has become a routine, and compared to uBlock sometimes I save a few seconds of loading time on some websites simply because it’s easier to see what there is to filter. For my use it’s perfect as I, 90 percent of the time, tend to visit the same bunch of websites. When I started I installed it on my less-used browser and I would slowly, when I had free time, edit the settings for all my favorite websites. Once I was done, I just exported the settings and applied them to uMatrix in my other browsers.</p>
+</div>
+</div>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-4295833">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Daguil</strong> said on November 28, 2017 at 4:46 pm</div>
+ </div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4295833" data-commentid="4295833" data-postid="139176" data-belowelement="comment-4295833" data-respondelement="respond" data-replyto="Reply to Daguil" aria-label="Reply to Daguil">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>I use UBo for static filtering (non-advanced-mode) and uMatrix for Dynamic filtering. </p>
+<p>I am not a developer. But I did spend a full week reading the Wilders Security forum on UBo. While Gorhill removed the page from his wiki on how to use both UBo and Umatrix together :(, hereâ€™s what Iâ€™ve been able to piece together from Wilderâ€™s security forums. </p>
+<p>NOTE: this assumes youâ€™re going to use UBo and Umatrix together. </p>
+<p>In UBo:<br>
+–	Settings:<br>
+o	Uncheck â€œI am an advanced userâ€<br>
+o	Check all the Privacy settings<br>
+–	3rd Party Filters:<br>
+o	Check the boxes for â€œAuto-updateâ€ and â€œParse Cosmeticâ€<br>
+o	Myfilters<br>
+o	All the uBlock filters (per Gorhill, these are not optional)<br>
+o	Easylist<br>
+o	Easyprivacy<br>
+o	All the Fanboyâ€™s stuff<br>
+o	Personal:<br>
+*	Chef Kochâ€™s BarBlock @ <a href="https://raw.githubusercontent.com/CHEF-KOCH/BarbBlock-filter-list/master/uBlock.txt" rel="nofollow ugc external noopener noreferrer" data-wpel-link="external" target="_blank">https://raw.githubusercontent.com/CHEF-KOCH/BarbBlock-filter-list/master/uBlock.txt</a><br>
+*	NoCoin Filter List<br>
+o	UNCHECK all of the Malware domains.<br>
+o	UNCHECK all of the multipurpose domains.<br>
+o	Only check the â€œRegionsâ€ that apply to where you live &amp; browse.<br>
+–	My rules:<br>
+o	no-csp-reports: * true<br>
+o	behind-the-scene * 3p noop<br>
+o	behind-the-scene * 3p-frame noop</p>
+<p>In uMatrix:<br>
+–	Settings: Self explanatory.<br>
+–	Privacy: Check everything. (Except for me, I unchecked â€œSpoof User Agentâ€…this broke a few sites I need to work.)<br>
+–	My rules:<br>
+o	Youâ€™ll tailor these as needed to make your own sites work. Everyone draws a different line between privacy and convenience. I’ve seen others share their lists, but I personally didn’t find it very helpful since we all browse different sites.<br>
+o	Generally, I block all and allow as exceptions only on the websites I need to get working. But I universally allow youtube vids, since they are pretty much everywhere and I didnâ€™t want to bother too much with enabling them on every site. Most would find my approach too difficult/time-consuming, others would say Iâ€™m crazy to allow Youtube everywhere.<br>
+o	If you find yourself allowing “ajax.googleapis.com” on every site and you don’t want to bother with a rule to allow it on each site, then allow it universally like I did. Ditto for “Code.jquery.com”.<br>
+o	After about a week of using this config, you’ll find the pattern of what needs to be enabled for sites to work. Seems like many sites use a 3rd party site for their own CDN &amp; images. i.e. consumerreports.org requires: consumerreportscdn.org and static5.consumerreportscdn.org. You must allow those two scripts/XHR on their site in order to see the tables of product comparisons.<br>
+o	Using the consumerreports.org example: All of the really bad staff that got blacklisted by the filters was NOT required for the site to function. And I recognized the CDN &amp; Static script/XHR right away a allowed them on that site only. So I had this site running almost immediately, and it worked fine while blocking the most intrusive stuff. That’s how it is with many sites (for now.)<br>
+o	If you use the â€œDecentraleyesâ€ (recommended by Gorhill), thereâ€™s a few domains you must allow. See: <a href="https://github.com/Synzvato/decentraleyes/wiki/Frequently-Asked-Questions" rel="nofollow ugc external noopener noreferrer" data-wpel-link="external" target="_blank">https://github.com/Synzvato/decentraleyes/wiki/Frequently-Asked-Questions</a><br>
+–	Hosts Files:<br>
+o	Check the box to auto-update.<br>
+o	Turn on all hosts files. Youâ€™ll notice that these are all the filters you unchecked over in UBo. I forget the technical reason for this, but the developer-types on the Wilders Security forums seemed fairly certain this was the way to go. </p>
+<p>Backup your configurations. I invested several weeks mastering this configuration, I canâ€™t even imagine starting from scratch. </p>
+<p>I also use Pants/Earthlngâ€™s User.js file, to include blocking all cookies/enabling them on a per-site/per-session basis. Between the two Gorhill extensions and the User.js file, Iâ€™m confident that Iâ€™m safe from non-targeted attacks/privacy intrusions. The biggest risk now isâ€¦me. </p>
+<p>There are sites that just refuse to work with this much stuff blocked. So, I use a tiered approach, with my old Chrome setup as the secondary, Edge as the third option (with UBo in advanced blocking mode), and Internet Explorer as an absolute last resort that requires a full disk-cleanup and a quick shower after using. </p>
+<p>Big thanks to Gorhill, Pants, Earthlng, Chef Koch, Synzvato, 12bytes, and everyone else (especially the filter/blocklist maintainers) who make the Internet safe to browse. I think of you guys all the time! Seems like a handfull of heroes maintain free privacy tools for us laypeople against billions, billions, and billions of dollarsâ€™ worth of corporate revenues generated by invading our privacy &amp; risking our security from malware. You guys are singular contributors in the history of capitalism. Thank you.</p>
+</div>
+</div>
+</li>
+<li class="comment even thread-even depth-1" id="comment-4295906">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Bronckman</strong> said on November 28, 2017 at 6:00 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4295906" data-commentid="4295906" data-postid="139176" data-belowelement="comment-4295906" data-respondelement="respond" data-replyto="Reply to Bronckman" aria-label="Reply to Bronckman">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Thank you, Martin for bringing some light into this matter. Personally I do consider Umatrix’s UI a desaster. It is confusing and not self explanatory. I tried to work with it and ended up being highly frustrated and toxicated after solacing myself with some powerful drops of spirits from my bar.</p>
+<p>I am not saying this program is bad. I believe it’s a fine piece of work but ruined by its UI. So, dear developer: please have mercy with us ignorant and illiterate computer users and try to change it for the better. I am also greatly convinced it won’t happen. </p>
+<p>I am ready and willing to take the usual insults and name callings which are happening here much too often. Honestly, I don’t care about it and the person behind it, it’s meaningless. But if someone has something meaningful to say, your are very, very welcome.</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment odd alt depth-2" id="comment-4296558">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Clairvaux</strong> said on November 29, 2017 at 6:20 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4296558" data-commentid="4296558" data-postid="139176" data-belowelement="comment-4296558" data-respondelement="respond" data-replyto="Reply to Clairvaux" aria-label="Reply to Clairvaux">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Have a look at the Wiki. It’s extremely helpful. uMatrix has a learning curve, but this was the help formerly missing to clear the first hurdle, which is quite low actually. Once you’ve got the first knack of it, you’re allowed mistakes and you don’t need to understand everything to use it. Provided you learn the basics, it’s like getting to ride a bicycle or to drive a car. It’s only intimidating when you’ve never left base.</p>
+<p><a href="https://github.com/gorhill/uMatrix/wiki" rel="nofollow ugc external noopener noreferrer" data-wpel-link="external" target="_blank">https://github.com/gorhill/uMatrix/wiki</a></p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="comment-4296005">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Gabriel</strong> said on November 28, 2017 at 8:07 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4296005" data-commentid="4296005" data-postid="139176" data-belowelement="comment-4296005" data-respondelement="respond" data-replyto="Reply to Gabriel" aria-label="Reply to Gabriel">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Great article, Martin.<br>
+The only thing I wish uMatrix had was selective blocking. As in, for example, being able to block specific scripts on a webpage and not all of them.<br>
+I messaged the developer about this and said he wasn’t going to implement it.</p>
+<p>Sometimes a webpage has 3 scripts.. 2 needed for it to function and 1 nasty one.<br>
+What to do in these cases?</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment odd alt depth-2" id="comment-4296019">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Tom Hawack</strong> said on November 28, 2017 at 8:31 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4296019" data-commentid="4296019" data-postid="139176" data-belowelement="comment-4296019" data-respondelement="respond" data-replyto="Reply to Tom Hawack" aria-label="Reply to Tom Hawack">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Many, most if not all lists include scripts’ filtering, not only ads. This is true with uBO and it is true with uMatrix. This is why lists are so important given that they remain as body guards in case the user opts for the less protective policy (allow all and block selectively). The ultimate is always block all and allow selectively but requires more work, even if with time we get used to it and spot quickly what can/should be allowed.</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment even depth-3" id="comment-4296021">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Gabriel</strong> said on November 28, 2017 at 8:34 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4296021" data-commentid="4296021" data-postid="139176" data-belowelement="comment-4296021" data-respondelement="respond" data-replyto="Reply to Gabriel" aria-label="Reply to Gabriel">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Hi Tom.<br>
+Yes, that’s what I do.<br>
+I block all and then allow what is needed.<br>
+But you can’t allow 1 script and block 2 other scripts from the same domain. You block all or allow all.</p>
+</div>
+</div>
+</li>
+<li class="comment odd alt depth-3" id="comment-4296039">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Tom Hawack</strong> said on November 28, 2017 at 8:53 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4296039" data-commentid="4296039" data-postid="139176" data-belowelement="comment-4296039" data-respondelement="respond" data-replyto="Reply to Tom Hawack" aria-label="Reply to Tom Hawack">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>@Gabriel, I don’t know how it works in uMatrix but with uBO you can enable/disable scripts selectively with the ‘Logger’ feature : just search for ‘Scripts’ from within the Logger and you can then manipulate whatever script (as whatever data type) selectively. Unfortunately I know nothing of uMatrix.</p>
+</div>
+</div>
+</li>
+<li class="comment even depth-3" id="comment-4298408">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Bjoern</strong> said on November 30, 2017 at 8:37 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4298408" data-commentid="4298408" data-postid="139176" data-belowelement="comment-4298408" data-respondelement="respond" data-replyto="Reply to Bjoern" aria-label="Reply to Bjoern">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>@Gabriel: Did you try Tom’s suggestion, but instead with the uMatrix logger, to see if you could effectively achieve selective script blocking within a domain perchance?</p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+<li class="comment odd alt depth-2" id="comment-4297447">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Sam</strong> said on November 29, 2017 at 5:04 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4297447" data-commentid="4297447" data-postid="139176" data-belowelement="comment-4297447" data-respondelement="respond" data-replyto="Reply to Sam" aria-label="Reply to Sam">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>&gt; The only thing I wish uMatrix had was selective blocking. As in, for example, being able to block specific scripts on a webpage and not all of them. Sometimes a webpage has 3 scripts.. 2 needed for it to function and 1 nasty one. What to do in these cases?</p>
+<p>&nbsp;</p>
+<p>Use uBO together with uMatrix for that: uMatrix is not made to use adblocking syntax, it’s not the same role :)</p>
+<p>You don’t need to enable uBO’s advanced mode when you have uMatrix. You can use it in set and forget mode with a bunch of filter lists.</p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+<li class="comment even thread-even depth-1" id="comment-4296011">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Clairvaux</strong> said on November 28, 2017 at 8:13 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4296011" data-commentid="4296011" data-postid="139176" data-belowelement="comment-4296011" data-respondelement="respond" data-replyto="Reply to Clairvaux" aria-label="Reply to Clairvaux">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Great and timely article, Martin. I have a question. On some of your screenshots, the blue background on the top left cell, where the URL of the main Web page is to be found, is cut in half, and the other half is grey. (Like in [www.reddit.com])</p>
+<p>This started to happen to me with Firefox 57, and I presumed I did something wrong. Is it a bug of the add-on ? Does it have some specific meaning ?</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment odd alt depth-2" id="comment-4296063">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Richard Allen</strong> said on November 28, 2017 at 9:27 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4296063" data-commentid="4296063" data-postid="139176" data-belowelement="comment-4296063" data-respondelement="respond" data-replyto="Reply to Richard Allen" aria-label="Reply to Richard Allen">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Look at scope selector at the link. Specifically the text that is covered in blue.<br>
+“https://github.com/gorhill/uMatrix/wiki/The-popup-panel”</p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="comment-4296026">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Keith</strong> said on November 28, 2017 at 8:40 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4296026" data-commentid="4296026" data-postid="139176" data-belowelement="comment-4296026" data-respondelement="respond" data-replyto="Reply to Keith" aria-label="Reply to Keith">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>For uBlock Origin users, here’s a post on improved UB settings by a pretty sharp guy named RejZor. I use these and UB works fine with rarely any site breakage. You can always click it off to disable it on any website.</p>
+<p>Post #13<br>
+<a href="https://www.techpowerup.com/forums/threads/ublock-origin-how-the-heck-do-you-use-it.232035/" rel="nofollow ugc external noopener noreferrer" data-wpel-link="external" target="_blank">https://www.techpowerup.com/forums/threads/ublock-origin-how-the-heck-do-you-use-it.232035/</a></p>
+</div>
+</div>
+<ol class="children">
+<li class="comment odd alt depth-2" id="comment-4297381">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Sam</strong> said on November 29, 2017 at 4:09 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4297381" data-commentid="4297381" data-postid="139176" data-belowelement="comment-4297381" data-respondelement="respond" data-replyto="Reply to Sam" aria-label="Reply to Sam">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>If that was sharp, then anyone here is scalpel grade!</p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+<li class="comment even thread-even depth-1" id="comment-4296045">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>vitamin c</strong> said on November 28, 2017 at 9:06 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4296045" data-commentid="4296045" data-postid="139176" data-belowelement="comment-4296045" data-respondelement="respond" data-replyto="Reply to vitamin c" aria-label="Reply to vitamin c">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Yes, this is completely normal, it’s a new layout design that was added very recently to uMatrix.<br>
+It means you can use the grid of rules you can see for multiple level domains.</p>
+<p>For example, in the top image on this page, “reddit.com” is highlighted in blue, and to the left of it is in grey. This means that all the rules within the grid (red for block and green for allow), are being applied to any website that ends in ‘reddit.com’.<br>
+This is useful because you might want rules to only apply to ‘magic.madeupwebsite.com’ and not ‘tasty.madeupwebsite.com’ or in this case to both of them with ‘madeupwebsite.com’.<br>
+The little asterisk to the right is then for ‘general’ which means ‘apply these rules to every single website’.</p>
+<p>This is fantastic for fine-tuning. So I can block scripts from blah.com on any website (using the general asterisk and making ‘scripts’ for ‘blah.com’ red), but then only allow it specifically on ‘tasty.madeupwebsite.com’. This means it won’t load the scripts on any site (even madeupwebsite.com, only specifically on tasty.madeupwebsite.com) – a good usecase for this is facebook. You might want to use facebook on facebook.com but block ‘connect.facebook.com’ following you on news sites or asking you to connect your account to it.</p>
+<p>A bit advanced, but a fantastic tool when you get the hang of it.</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment odd alt depth-2" id="comment-4296517">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Clairvaux</strong> said on November 29, 2017 at 5:46 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4296517" data-commentid="4296517" data-postid="139176" data-belowelement="comment-4296517" data-respondelement="respond" data-replyto="Reply to Clairvaux" aria-label="Reply to Clairvaux">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Thank you, Richard Allen and vitamin c.</p>
+<p>It seems to me that Gorhill tremendously extended the uMatrix Wiki since I remarked here how shorter it was compared to uBlock’s. He also linked to a new how-to that wasn’t there when I last had a look :<br>
+<a href="http://adamantine.me/index.php/2015/11/18/umatrix-desperately-needed-guide/" rel="nofollow ugc external noopener noreferrer" data-wpel-link="external" target="_blank">http://adamantine.me/index.php/2015/11/18/umatrix-desperately-needed-guide/</a></p>
+<p>He says about the documentation, “feel free to improve as you wish, I am not a writer”, but I think he’s being modest.</p>
+<p>Just noticed the solution to a nagging problem I had (like many other people, presumably) :<br>
+<a href="https://github.com/gorhill/uMatrix/wiki/How-to-get-past-%22uMatrix-has-prevented-the-following-page-from-loading%22" rel="nofollow ugc external noopener noreferrer" data-wpel-link="external" target="_blank">https://github.com/gorhill/uMatrix/wiki/How-to-get-past-%22uMatrix-has-prevented-the-following-page-from-loading%22</a></p>
+<p>This is fantastic work. We’re getting traction here ! If other talented and devoted people such as him get up to speed on Web Extensions, we would be on to something…</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment even depth-3" id="comment-4297407">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Sam</strong> said on November 29, 2017 at 4:31 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4297407" data-commentid="4297407" data-postid="139176" data-belowelement="comment-4297407" data-respondelement="respond" data-replyto="Reply to Sam" aria-label="Reply to Sam">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Personally I don’t need or actually, WANT, any other privacy or security extension. The more you have, the higher the risk that they mess each other up in unnoticeable yet really counterproductive ways. It was especially true with legacy add-ons but I don’t think WebExtensions are completely immune to that either.</p>
+<p>So it’s a matter of picking the right ones. I think uBO+NoScript and uBO+uMatrix are pretty nice combinations. With the former, cookies remain to be covered so a third privacy add-on is needed but you get targeted protections against many attacks, some of those enabled even with scripts allowed. It also has script surrogates, which uBO has but can’t use with NoScript. With the latter, cookies are covered and you get an amazing user interface that makes you fully aware of what’s going on, and allows you to unbreak things easily and quickly even when you don’t want to allowing anything more than the bare minimum.</p>
+<p>Yet, even with just two well known add-ons, in both cases there is some amount of messing one another up going on. Fortunately the collisions do not affect security or privacy or anything important, it’s just illustrating that this risk is real.</p>
+<p>Some people would add Decentral Eyes to the list, which will limit network requests to common CDN resources needed by many sites, by replacing resources such as (I imagine – I don’t use that add-on) ajax.googleapis.com or cdnjs.cloudflare.com. I don’t know if it collides in any way with NoScript, uBO or uMatrix.</p>
+<p>&nbsp;</p>
+<p>Finally, a fully featured NoScript should make uBO+NoScript more secure than uBO+uMatrix. The current WebExtension NoScript is not yet fully featured though (but it’s planned to get there), so at the moment I recommend uBO+uMatrix on Firefox 57+.</p>
+</div>
+</div>
+</li>
+<li class="comment odd alt depth-3" id="comment-4297419">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Sam</strong> said on November 29, 2017 at 4:42 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4297419" data-commentid="4297419" data-postid="139176" data-belowelement="comment-4297419" data-respondelement="respond" data-replyto="Reply to Sam" aria-label="Reply to Sam">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>CORRECTION:</p>
+<p>*script surrogates, which uBO has but can’t use with uMATRIX. So NoScript having them restores the functionality.</p>
+<p>(It’s called neutered scripts in uBO)</p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="comment-4296475">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Anonymous</strong> said on November 29, 2017 at 5:24 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4296475" data-commentid="4296475" data-postid="139176" data-belowelement="comment-4296475" data-respondelement="respond" data-replyto="Reply to " aria-label="Reply to ">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>The developer took the decision not to support xul based browsers anymore (safe browsers like Pale Moon). Which means for updates you are now forced to install spyware browsers (e.g Google Chrome, Mozilla Firefox). Sounds like a nonsense to me.</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment odd alt depth-2" id="comment-4297096">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Alien</strong> said on November 29, 2017 at 12:19 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4297096" data-commentid="4297096" data-postid="139176" data-belowelement="comment-4297096" data-respondelement="respond" data-replyto="Reply to Alien" aria-label="Reply to Alien">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>“install spyware browsers (e.g Google Chrome, Mozilla Firefox). Sounds like a nonsense to me.”<br>
+Yeah, this does sound like nonsense.</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment even depth-3" id="comment-4297119">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Tom Hawack</strong> said on November 29, 2017 at 12:35 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4297119" data-commentid="4297119" data-postid="139176" data-belowelement="comment-4297119" data-respondelement="respond" data-replyto="Reply to Tom Hawack" aria-label="Reply to Tom Hawack">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>The comment, I presume.</p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+<li class="comment odd alt depth-2" id="comment-4297434">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>gorhill</strong> said on November 29, 2017 at 4:51 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4297434" data-commentid="4297434" data-postid="139176" data-belowelement="comment-4297434" data-respondelement="respond" data-replyto="Reply to gorhill" aria-label="Reply to gorhill">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>&gt; Sounds like a nonsense to me.</p>
+<p>Feel free to contribute and volunteer to maintain the legacy version.</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment even depth-3" id="comment-4297706">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Anonymous</strong> said on November 29, 2017 at 9:13 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4297706" data-commentid="4297706" data-postid="139176" data-belowelement="comment-4297706" data-respondelement="respond" data-replyto="Reply to " aria-label="Reply to ">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>“The legacy version” for a “legacy browser” I presume..<br>
+<a href="https://forum.palemoon.org/viewtopic.php?f=61&amp;t=17530&amp;sid=e4e71bc519b1f6a914d3a38070793aef" rel="nofollow ugc external noopener noreferrer" data-wpel-link="external" target="_blank">https://forum.palemoon.org/viewtopic.php?f=61&amp;t=17530&amp;sid=e4e71bc519b1f6a914d3a38070793aef</a></p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li class="comment odd alt thread-even depth-1" id="comment-4297184">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Homeboy</strong> said on November 29, 2017 at 1:32 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4297184" data-commentid="4297184" data-postid="139176" data-belowelement="comment-4297184" data-respondelement="respond" data-replyto="Reply to Homeboy" aria-label="Reply to Homeboy">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Problem with uMatrix is that all of your configuration data gets stored locally, and your network connection fingerprint will look different and more unique, and, and, …. better stay up with Tor Browser homeboy!</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment even depth-2" id="comment-4297367">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Sam</strong> said on November 29, 2017 at 3:51 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4297367" data-commentid="4297367" data-postid="139176" data-belowelement="comment-4297367" data-respondelement="respond" data-replyto="Reply to Sam" aria-label="Reply to Sam">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>If you use the Tor network then yes, this matters. For privacy and security nothing is better than Tor Browser, which Firefox private browsing mode should end up becoming in the future, once Mozilla and the Tor team are done with Tor Uplift, once the Tor network is ready for the load and as a last step once Tor is shipped with Firefox.</p>
+<p>If or when you don’t use the Tor network, reducing exposure by limiting network connections is best :)</p>
+</div>
+</div>
+</li>
+<li class="comment odd alt depth-2" id="comment-4297481">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Clairvaux</strong> said on November 29, 2017 at 5:34 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4297481" data-commentid="4297481" data-postid="139176" data-belowelement="comment-4297481" data-respondelement="respond" data-replyto="Reply to Clairvaux" aria-label="Reply to Clairvaux">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Tor is a thoroughly different step in the privacy arms race. Tor changes your IP. Whereas blockers speed up your browsing, Tor slows it down, considerably in some cases. It’s also also completely non-configurable, and you need to accept a smallish window, at least if yo don’t want to break the inbuilt privacy.</p>
+<p>There are some (important) sites that are difficult, or impossible to use with Tor. Some sites will start to throw captchas at you all the time. Some might flag you as a potential fraudster if your IP changes at each visit.</p>
+</div>
+</div>
+</li>
+<li class="comment even depth-2" id="comment-4462930">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>G00f</strong> said on May 14, 2020 at 3:29 am</div>
+</div>
+ <a rel="nofollow" class="comment-reply-link" href="#comment-4462930" data-commentid="4462930" data-postid="139176" data-belowelement="comment-4462930" data-respondelement="respond" data-replyto="Reply to G00f" aria-label="Reply to G00f">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>LOL WTF ARE YOU EVEN TALKING ABOUT?</p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-4301379">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>CHEF-KOCH</strong> said on December 3, 2017 at 9:43 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4301379" data-commentid="4301379" data-postid="139176" data-belowelement="comment-4301379" data-respondelement="respond" data-replyto="Reply to CHEF-KOCH" aria-label="Reply to CHEF-KOCH">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>My own solution to workaround is to give people a database (they can contribute to it) to add their own findings, which lowers the time re-creating the rules each time manually or in case you’re too lazy. The project currently offers, configurations and pre-configured rules for uBlock, uMatrix, NoScript and ScriptSafe. Sadly all of the mentioned tools don’t native support a crowd which can submit/commit their findings, so that’s why I created the project. </p>
+<p><a href="https://github.com/CHEF-KOCH/NoScript-Whitelist" rel="nofollow ugc external noopener noreferrer" data-wpel-link="external" target="_blank">https://github.com/CHEF-KOCH/NoScript-Whitelist</a></p>
+</div>
+</div>
+</li>
+<li class="comment even thread-even depth-1" id="comment-4440516">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Amir</strong> said on September 30, 2019 at 12:24 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4440516" data-commentid="4440516" data-postid="139176" data-belowelement="comment-4440516" data-respondelement="respond" data-replyto="Reply to Amir" aria-label="Reply to Amir">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Hi, dear Martin, I thought to ask you if possible, and if you liked, and needed, please update this article, with any new tips, etc. you might want to add. Thank you.</p>
+</div>
+</div>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-4440558">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Amir</strong> said on September 30, 2019 at 6:15 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4440558" data-commentid="4440558" data-postid="139176" data-belowelement="comment-4440558" data-respondelement="respond" data-replyto="Reply to Amir" aria-label="Reply to Amir">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>@Martin, The preferences that are divided into tabs, in the new uMatirx don’t have the Privacy tab. You may update the settings part in this article. Thank you.</p>
+</div>
+</div>
+</li>
+<li class="comment byuser comment-author-martin bypostauthor even thread-even depth-1" id="comment-4440560">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Martin Brinkmann</strong> said on September 30, 2019 at 6:49 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4440560" data-commentid="4440560" data-postid="139176" data-belowelement="comment-4440560" data-respondelement="respond" data-replyto="Reply to Martin Brinkmann" aria-label="Reply to Martin Brinkmann">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Hi Amir, thank you for letting me know. I have updated the guide to reflect that.</p>
+</div>
+</div>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-4440758">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Amir</strong> said on October 3, 2019 at 7:09 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4440758" data-commentid="4440758" data-postid="139176" data-belowelement="comment-4440758" data-respondelement="respond" data-replyto="Reply to Amir" aria-label="Reply to Amir">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Thanks, Martin, will you make a guide for uBlock Origin’s Medium Mode?<br>
+I thought to suggest that. Thank you.</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment byuser comment-author-martin bypostauthor even depth-2" id="comment-4440760">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Martin Brinkmann</strong> said on October 3, 2019 at 7:33 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4440760" data-commentid="4440760" data-postid="139176" data-belowelement="comment-4440760" data-respondelement="respond" data-replyto="Reply to Martin Brinkmann" aria-label="Reply to Martin Brinkmann">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>I’ll take a look!</p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+<div id="respond" class="comment-respond">
+<h3 class="heading--large mb--20">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="#respond" style="display: none;" data-wpel-link="internal">Cancel reply</a></small></h3><form action="https://www.ghacks.net/wp-comments-post.php" method="post" id="commentform" class="kinsta-form--whitebg kinsta-form" novalidate=""><p class="comment-form-comment"><label for="comment">Comment</label><textarea required="required" id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p><input name="privacy" value="privacy-key" class="privacyBox" aria-req="true" type="checkbox"><span style="padding-left: 6px; padding-top: 3px;" class="pprivacy">Check the box to consent to your data being stored in line with the guidelines set out in our <a target="blank" href="https://hello.softonic.com/privacy-policy/" data-wpel-link="external" rel="external noopener noreferrer">privacy policy</a><br><br>We love comments and welcome thoughtful and civilized discussion. Rudeness and personal attacks will not be tolerated. Please stay on-topic.<br>Please note that your comment may not appear immediately after you post it.<br><span><div class="row gutter--small mt--20 comment-fields"><div class="col-xs-12 col-sm-6"><p class="comment-form-author"><label for="author">Name</label> <input id="author" required="required" name="author" value="" size="30" type="text"></p></div>
+<div class="col-xs-12 col-sm-6"><p class="comment-form-email"><label for="email">Email</label> <input id="email" required="required" name="email" value="" size="30" type="email"></p></div></div>
+<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" value="yes" type="checkbox"> <label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label></p>
+<p class="form-submit"><input name="submit" id="submit" class="submit" value="Post Comment" type="submit"> <input name="comment_post_ID" value="139176" id="comment_post_ID" type="hidden">
+<input name="comment_parent" id="comment_parent" value="0" type="hidden">
+</p> </span></span></form></div>
+</div>
+<div id="snhb-snhb_ghacks_bottom-1"></div>
+</div>
+<div class="ghacks-sidebar">
+<div id="search-8" class="widget widget_search mt--30 mt--first--0 ghacks-links--nounderline"><form role="search" method="get" class="search-form" action="https://www.ghacks.net/">
+<label>
+<span class="screen-reader-text">Search for:</span>
+<input class="search-field" placeholder="Search …" value="" name="s" type="search">
+</label>
+<input class="search-submit" value="Search" type="submit">
+</form></div><div id="ghacks_ad_code-6" class="widget ghacks_ad_code mt--30 mt--first--0 ghacks-links--nounderline"><h3 class="heading--tiny border--bottom--gray mb--10 pb--6">Advertisement</h3><div class="ghacks-ad" data-width="336" data-height="336"><div class="center-box-banner">
+<div id="snhb-snhb_ghacks_sidebar_top-0"></div>
+</div>
+</div></div><div id="ghacks_share_widget-7" class="widget ghacks_share_widget mt--30 mt--first--0 ghacks-links--nounderline"><h3 class="heading--tiny border--bottom--gray mb--10 pb--6">Spread the Word</h3> <div class="row nocol">
+<a rel="noopener noreferrer nofollow external" class="mr--6" href="https://www.facebook.com/ghacksnet" data-wpel-link="external" target="_blank"><svg class="" style=" " width="48" height="48" viewBox="0 0 48 48" version="1.1"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><path d="M44,0 C46.2,0 48,1.8 48,4 L48,44 C48,46.2 46.2,48 44,48 L4,48 C1.8,48 0,46.2 0,44 L0,4 C0,1.8 1.8,0 4,0 L44,0 Z M31,25 L32,20 L27,20 L27,16 C27,14.5 27.8,14 30,14 L32,14 L32,9 L28,9 C23.9,9 21,11.4 21,16 L21,20 L16,20 L16,25 L21,25 L21,39 L27,39 L27,25 L31,25 Z" id="Combined-Shape" fill="#3A5BA0" fill-rule="nonzero"></path></g></svg></a>
+<a rel="noopener noreferrer nofollow external" class="mr--6" href="https://twitter.com/ghacks" data-wpel-link="external" target="_blank"><svg class="" style=" " width="48" height="48" viewBox="0 0 48 48" version="1.1"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="twitter" fill-rule="nonzero" fill="#2CA7E0"><path d="M44,0 C46.2,0 48,1.8 48,4 L48,44 C48,46.2 46.2,48 44,48 L4,48 C1.8,48 0,46.2 0,44 L0,4 C0,1.8 1.8,0 4,0 L44,0 Z M39,15.2 C37.9,15.7 36.2,16.3 35,16.5 C36.3,15.7 37.5,13.9 38,12.5 C37,13.1 35.9,13.9 34.8,14.3 L34,13.5 C32.9,12.3 31.8,11.5 30,11.5 C26.6,11.5 24,14.1 24,17.5 C24,17.9 24,18.2 24.1,18.5 L24,18.5 C18,18.5 14,17.2 11,13.5 C10.5,14.4 10,15.4 10,16.5 C10,18.6 11.3,20.4 13,21.5 C12,21.5 10.8,21 10,20.5 C10,23.5 14.2,26.9 17,27.5 C16,28.5 12.4,27.6 12,27.5 C12.8,29.9 15.3,31.4 18,31.5 C15.9,33.1 13.4,34 10.5,34 C10,34 9.5,34 9,33.9 C11.7,35.6 15.5,36.5 19,36.5 C30.3,36.5 36,27.6 36,19.5 L36,18.5 C37.2,17.6 38.2,16.4 39,15.2 Z" id="Combined-Shape"></path></g></g></svg></a>
+<a rel="noopener noreferrer nofollow" href="https://www.ghacks.net/feed/" data-wpel-link="internal"><svg class="" style=" " width="48" height="48" viewBox="0 0 48 48" version="1.1"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="rss" fill-rule="nonzero" fill="#F2890A"><path d="M44,0 C46.2,0 48,1.8 48,4 L48,44 C48,46.2 46.2,48 44,48 L4,48 C1.8,48 0,46.2 0,44 L0,4 C0,1.8 1.8,0 4,0 L44,0 Z M14.5,37 C16.4329966,37 18,35.4329966 18,33.5 C18,31.5670034 16.4329966,30 14.5,30 C12.5670034,30 11,31.5670034 11,33.5 C11,35.4329966 12.5670034,37 14.5,37 Z M11,11 L11,15.3 C23,15.3 32.7,25 32.7,37 L37,37 C37,22.6 25.4,11 11,11 Z M11,19.7 L11,24 C18.2,24 24,29.8 24,37 L28.3,37 C28.3,27.4 20.6,19.7 11,19.7 Z" id="Combined-Shape"></path></g></g></svg></a>
+</div>
+</div><div id="text-37" class="widget widget_text mt--30 mt--first--0 ghacks-links--nounderline"><h3 class="heading--tiny border--bottom--gray mb--10 pb--6">Ghacks Newsletter Sign Up</h3> <div class="textwidget"><p>Please click on the following link to open the newsletter signup page: <a href="http://eepurl.com/dp_1rj" rel="nofollow external noopener noreferrer" data-mce-href="http://eepurl.com/dp_1rj" data-wpel-link="external" target="_blank">Ghacks Newsletter Sign up</a></p>
+</div>
+</div><div id="ghacks_ad_code-7" class="widget ghacks_ad_code mt--30 mt--first--0 ghacks-links--nounderline"><h3 class="heading--tiny border--bottom--gray mb--10 pb--6">Advertisement</h3><div class="ghacks-ad" data-width="336" data-height="336"><div class="center-box-banner">
+<div id="snhb-sidebar_01-0"></div>
+</div>
+</div></div><div id="ghacks_taxonomy_popular-2" class="widget widget_ghacks_taxonomy_popular mt--30 mt--first--0 ghacks-links--nounderline"><h3 class="heading--tiny border--bottom--gray mb--10 pb--6">Popular Posts</h3>
+<ul>
+<li>
+<a href="https://www.ghacks.net/2021/06/01/firefox-89-ships-with-interface-changes/" data-wpel-link="internal">Firefox 89 ships with interface changes</a>
+<div class="popular-comments">
+<span class="comments-number comments-number-medium">251</span>
+</div>
+</li>
+<li>
+<a href="https://www.ghacks.net/2021/03/14/mozilla-plans-to-remove-the-compact-density-option-from-firefoxs-customize-menu/" data-wpel-link="internal">Mozilla plans to remove the Compact Density option from Firefox's Customize menu</a>
+<div class="popular-comments">
+<span class="comments-number comments-number-medium">131</span>
+</div>
+</li>
+<li>
+<a href="https://www.ghacks.net/2021/05/09/how-to-fix-the-firefox-89-user-interface/" data-wpel-link="internal">How to fix the Firefox 89 user interface</a>
+<div class="popular-comments">
+<span class="comments-number comments-number-medium">124</span>
+</div>
+</li>
+<li>
+<a href="https://www.ghacks.net/2021/04/19/here-is-what-is-new-and-changed-in-firefox-88-0/" data-wpel-link="internal">Here is what is new and changed in Firefox 88.0</a>
+<div class="popular-comments">
+<span class="comments-number comments-number-medium">104</span>
+</div>
+</li>
+<li>
+<a href="https://www.ghacks.net/2021/11/02/firefox-94-0-release-here-is-what-is-new-and-changed/" data-wpel-link="internal">Firefox 94.0 release: here is what is new and changed</a>
+<div class="popular-comments">
+<span class="comments-number comments-number-medium">100</span>
+</div>
+</li>
+</ul>
+
+</div><div id="ghacks_ad_code-8" class="widget ghacks_ad_code mt--30 mt--first--0 ghacks-links--nounderline"><h3 class="heading--tiny border--bottom--gray mb--10 pb--6">Advertisement</h3><div class="ghacks-ad" data-width="336" data-height="336"><div class="center-box-banner">
+<div id="snhb-sidebar_02-0"></div>
+</div>
+</div></div><div id="ghacks_taxonomy_last_news-2" class="widget widget_ghacks_taxonomy_last_news mt--30 mt--first--0 ghacks-links--nounderline"><h3 class="heading--tiny border--bottom--gray mb--10 pb--6">Recently Updated</h3>
+<ul>
+<li>
+<a href="https://www.ghacks.net/2022/03/12/firefox-relay-update-brings-larger-attachment-sizes-and-a-filter-for-promotional-emails/" data-wpel-link="internal">Firefox Relay update brings larger attachment sizes and a filter for promotional emails</a>
+<div class="popular-comments">
+Published in: March 12, 2022 4:55 pm | Updated in: March 12, 2022 4:55 pm
+</div>
+</li>
+<li>
+<a href="https://www.ghacks.net/2022/03/11/meta-releases-code-verify-extension-for-whatsapp-web/" data-wpel-link="internal">Meta releases Code Verify extension for WhatsApp Web</a>
+<div class="popular-comments">
+Published in: March 11, 2022 11:49 am | Updated in: March 11, 2022 11:49 am
+</div>
+</li>
+<li>
+<a href="https://www.ghacks.net/2022/03/11/ublock-origin-is-now-the-most-popular-firefox-add-on/" data-wpel-link="internal">uBlock Origin is now the most popular Firefox add-on</a>
+<div class="popular-comments">
+Published in: March 11, 2022 6:26 am | Updated in: March 11, 2022 6:26 am
+</div>
+</li>
+<li>
+<a href="https://www.ghacks.net/2022/03/08/mozilla-firefox-98-0-here-is-what-is-new/" data-wpel-link="internal">Mozilla Firefox 98.0: here is what is new</a>
+<div class="popular-comments">
+Published in: March 8, 2022 9:26 am | Updated in: March 8, 2022 9:26 am
+</div>
+</li>
+<li>
+<a href="https://www.ghacks.net/2022/03/05/firefox-97-0-2-and-firefox-esr-91-6-1-are-out-with-critical-security-fixes/" data-wpel-link="internal">Firefox 97.0.2 and Firefox ESR 91.6.1 are out with critical security fixes</a>
+<div class="popular-comments">
+Published in: March 5, 2022 8:04 am | Updated in: March 5, 2022 8:04 am
+</div>
+</li>
+</ul>
+</div><div id="ghacks_ad_code-9" class="widget ghacks_ad_code mt--30 mt--first--0 ghacks-links--nounderline"><h3 class="heading--tiny border--bottom--gray mb--10 pb--6">Advertisement</h3><div class="ghacks-ad" data-width="336" data-height="336"><div class="center-box-banner">
+<div id="snhb-sidebar_03-0"></div>
+</div>
+</div></div> </div>
+</div>
+</div>
+
+<script>/* Code removed by ScrapBook */</script>
+<div class="mt--30" id="site-footer" style="margin: 30px 0px 0px;">
+<div class="bg--darkGray color--white pt--40 pb--40" style="background-color: rgb(59, 59, 59); padding-top: 40px; padding-bottom: 40px; color: rgb(255, 255, 255);">
+<div class="container">
+<div class="row gutter--large cols-footer" style="display: flex;">
+<div class="col-half" style="padding-right: 0.5rem; padding-left: 0.5rem;">
+<h4 class="heading--tiny mb--10" style="font-size: 14px; font-weight: 600; text-transform: uppercase;">About gHacks</h4>
+<p class="text--small" style="font-size: 14px;">
+Ghacks is a technology news blog that was founded in 2005 by Martin Brinkmann. It has since then become one of the most popular tech news sites on the Internet with five authors and regular contributions from freelance writers.
+</p>
+</div>
+<div class="col-quarter ghacks-links--nounderline mt--xs--40" style="padding-right: 0.5rem; padding-left: 0.5rem;">
+<ul class="top-level">
+<li>
+<a href="https://www.ghacks.net/about-us/" data-wpel-link="internal">About</a> </li>
+<li>
+<a href="https://www.ghacks.net/ghacksnet-feed-list/" data-wpel-link="internal">RSS Feeds</a> </li>
+<li>
+<span data-loc="aHR0cHM6Ly9oZWxsby5zb2Z0b25pYy5jb20vbGVnYWwtaW5mb3JtYXRpb24v">Legal Information</span> </li>
+<li>
+<span data-loc="aHR0cHM6Ly9oZWxsby5zb2Z0b25pYy5jb20vdGVybXMtb2YtdXNlLw==">Terms of use</span> </li>
+<li>
+<span data-loc="aHR0cHM6Ly9oZWxsby5zb2Z0b25pYy5jb20vcHJpdmFjeS1wb2xpY3kv">Privacy Policy</span> </li>
+<li>
+<span data-loc="aHR0cHM6Ly9oZWxsby5zb2Z0b25pYy5jb20vY29va2llcy1wb2xpY3kv">Cookie Policy</span> </li>
+<li>
+<a href="#"><span>Cookie settings</span></a> </li>
+<li>
+ <a href="mailto:advertisers@softonic.com">Advertise with Us</a> </li>
+</ul>
+</div>
+<div class="col-quarter ghacks-links--nounderline mt--xs--40" style="padding-right: 0.5rem; padding-left: 0.5rem;">
+<ul class="top-level">
+<li>
+<a href="https://www.ghacks.net/author/martin/" data-wpel-link="internal">Martin Brinkmann</a>
+</li>
+<li>
+<a href="https://www.ghacks.net/author/miketur/" data-wpel-link="internal">Mike Turcotte</a>
+</li>
+<li>
+<a href="https://www.ghacks.net/author/ashwin/" data-wpel-link="internal">Ashwin</a>
+</li>
+<li>
+<a href="https://www.ghacks.net/we-use/" data-wpel-link="internal">We Use</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="bg--black color--white pt--6 pb--6 text--center" style="background-color: rgb(39, 39, 39); padding: 6px 0px; text-align: center; color: rgb(255, 255, 255);">
+<div class="container">
+<div class="opacity--60 text--tiny" style="font-size: 12px; opacity: 0.6;">The name and logo of Ghacks are copyrights or trademarks of SOFTONIC INTERNATIONAL S.A.</div>
+<div class="opacity--60 text--tiny" style="font-size: 12px; opacity: 0.6;">Copyright SOFTONIC INTERNATIONAL S.A. © 2005- 2022 - All rights reserved</div>
+
+</div>
+</div>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+
+<button type="button" aria-controls="rmp-container-176613" aria-label="Menu Trigger" id="rmp_menu_trigger-176613" destination="" class="rmp_menu_trigger rmp-menu-trigger-boring">
+<span class="rmp-trigger-box">
+<span class="responsive-menu-pro-inner"></span>
+</span>
+</button>
+<div id="rmp-container-176613" class="rmp-container rmp-container rmp-slide-left">
+<div id="rmp-menu-title-176613" class="rmp-menu-title">
+<a href="#" target="_self" id="rmp-menu-title-link" data-wpel-link="internal">
+<img class="rmp-menu-title-image" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3C/svg%3E" alt="" title="" data-lazy-src="https://www.ghacks.net/wp-content/uploads/2020/11/ghack-logo-menu.png" width="100" height="100"><noscript><img class="rmp-menu-title-image" src="https://www.ghacks.net/wp-content/uploads/2020/11/ghack-logo-menu.png" alt="" title="" width="100" height="100" /></noscript> <span></span>
+</a>
+</div>
+<div id="rmp-menu-wrap-176613" class="rmp-menu-wrap"><ul id="rmp-menu-176613" class="rmp-menu" role="menubar" aria-label="Default Menu"><li id="rmp-menu-item-170930" class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-home rmp-menu-item rmp-menu-top-level-item" role="none"><a href="https://www.ghacks.net/" class="rmp-menu-item-link" role="menuitem" data-wpel-link="internal">Home</a></li><li id="rmp-menu-item-93262" class=" menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children rmp-menu-item rmp-menu-top-level-item" role="none"><a href="https://www.ghacks.net/category/windows/" class="rmp-menu-item-link" role="menuitem" data-wpel-link="internal">Windows</a></li><li id="rmp-menu-item-139904" class=" menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children rmp-menu-item rmp-menu-top-level-item" role="none"><a href="https://www.ghacks.net/category/linux/" class="rmp-menu-item-link" role="menuitem" data-wpel-link="internal">Linux</a></li><li id="rmp-menu-item-93261" class=" menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children rmp-menu-item rmp-menu-top-level-item" role="none"><a href="https://www.ghacks.net/category/software/" class="rmp-menu-item-link" role="menuitem" data-wpel-link="internal">Software</a></li><li id="rmp-menu-item-93263" class=" menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children rmp-menu-item rmp-menu-item-current-parent rmp-menu-top-level-item" role="none"><a href="https://www.ghacks.net/category/firefox/" class="rmp-menu-item-link" role="menuitem" data-wpel-link="internal">Firefox</a></li><li id="rmp-menu-item-93264" class=" menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children rmp-menu-item rmp-menu-top-level-item" role="none"><a href="https://www.ghacks.net/category/google-chrome-browsing/" class="rmp-menu-item-link" role="menuitem" data-wpel-link="internal">Chrome</a></li><li id="rmp-menu-item-139911" class=" menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children rmp-menu-item rmp-menu-top-level-item" role="none"><a href="https://www.ghacks.net/category/the-web/" class="rmp-menu-item-link" role="menuitem" data-wpel-link="internal">Internet</a></li><li id="rmp-menu-item-139910" class=" menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children rmp-menu-item rmp-menu-top-level-item" role="none"><a href="https://www.ghacks.net/category/mobile-computing/" class="rmp-menu-item-link" role="menuitem" data-wpel-link="internal">Mobile Computing</a></li><li id="rmp-menu-item-139958" class=" menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children rmp-menu-item rmp-menu-top-level-item" role="none"><a href="https://www.ghacks.net/category/companies/" class="rmp-menu-item-link" role="menuitem" data-wpel-link="internal">Companies</a></li><li id="rmp-menu-item-122011" class=" menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children rmp-menu-item rmp-menu-top-level-item" role="none"><a href="https://www.ghacks.net/category/email/" class="rmp-menu-item-link" role="menuitem" data-wpel-link="internal">Email</a></li><li id="rmp-menu-item-139959" class=" menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children rmp-menu-item rmp-menu-top-level-item" role="none"><a href="https://www.ghacks.net/category/misc/" class="rmp-menu-item-link" role="menuitem" data-wpel-link="internal">Misc</a></li><li id="rmp-menu-item-113697" class=" menu-item menu-item-type-custom menu-item-object-custom rmp-menu-item rmp-menu-top-level-item" role="none"><a href="https://deals.ghacks.net/" class="rmp-menu-item-link" role="menuitem" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Deals</a></li></ul></div> </div>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script type="text/javascript" id="geoip-detect-js-js-extra">/* Code removed by ScrapBook */</script>
+<script type="text/javascript" src="about:blank" id="geoip-detect-js-js" defer=""></script>
+<script type="text/javascript" src="about:blank" id="swiper-js" defer=""></script>
+<script type="text/javascript" id="rmp_menu_scripts-js-extra">/* Code removed by ScrapBook */</script>
+<script type="text/javascript" src="about:blank" id="rmp_menu_scripts-js" defer=""></script>
+<script type="text/javascript" id="ghacks-scripts-js-extra">/* Code removed by ScrapBook */</script>
+<script type="text/javascript" src="about:blank" id="ghacks-scripts-js" defer=""></script>
+<script type="text/javascript" src="about:blank" id="comment-reply-js" defer=""></script>
+<script type="text/javascript" src="about:blank" id="wp-embed-js" defer=""></script>
+<script>/* Code removed by ScrapBook */</script><script data-no-minify="1" async="" src="about:blank"></script>
+
+</div></body><div style="all: initial;"></div>
+</html>

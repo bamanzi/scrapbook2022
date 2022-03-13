@@ -1,0 +1,9 @@
+/* Effective stylesheet produced by snapshot save */
+@keyframes bounce_spinningSquaresG {
+  0% { transform: scale(1); background-color: rgb(0, 0, 0); }
+  100% { transform: scale(0.3) rotate(90deg); background-color: rgb(255, 255, 255); }
+}
+@keyframes bounce_spinningSquaresG {
+  0% { transform: scale(1); background-color: rgb(0, 0, 0); }
+  100% { transform: scale(0.3) rotate(90deg); background-color: rgb(255, 255, 255); }
+}
