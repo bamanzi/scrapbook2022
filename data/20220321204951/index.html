@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="canonical" href="https://www.ghacks.net/2018/12/15/manage-firefox-tabs-bookmarks-and-containers-in-the-sidebar/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+<title>Manage Firefox tabs, bookmarks and containers in the sidebar - gHacks Tech News</title>
+<meta name="description" content="Sidebery is a new extension for the Firefox web browser to manage browser tabs, bookmarks, and containers in the sidebar.">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Manage Firefox tabs, bookmarks and containers in the sidebar - gHacks Tech News">
+<meta property="og:description" content="Sidebery is a new extension for the Firefox web browser to manage browser tabs, bookmarks, and containers in the sidebar.">
+<meta property="og:url" content="https://www.ghacks.net/2018/12/15/manage-firefox-tabs-bookmarks-and-containers-in-the-sidebar/">
+<meta property="og:site_name" content="gHacks Technology News">
+<meta property="article:publisher" content="https://www.facebook.com/ghacksnet">
+<meta property="article:published_time" content="2018-12-15T10:46:19+00:00">
+<meta property="og:image" content="https://www.ghacks.net/wp-content/uploads/2018/12/sidebery-firefox-sidebar-container.png">
+<meta property="og:image:width" content="898">
+<meta property="og:image:height" content="579">
+<meta property="og:image:type" content="image/png">
+<meta name="twitter:label1" content="Written by">
+<meta name="twitter:data1" content="Martin Brinkmann">
+<meta name="twitter:label2" content="Est. reading time">
+<meta name="twitter:data2" content="2 minutes">
+<script async="" src="about:blank"></script><script id="spcloader" type="text/javascript" async="" src="about:blank" charset="utf-8"></script><script type="application/ld+json" class="yoast-schema-graph">/* Code removed by ScrapBook */</script>
+
+<link rel="alternate" type="application/rss+xml" title="gHacks Technology News » Feed" href="https://www.ghacks.net/feed/">
+<link rel="alternate" type="application/rss+xml" title="gHacks Technology News » Comments Feed" href="https://www.ghacks.net/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="gHacks Technology News » Manage Firefox tabs, bookmarks and containers in the sidebar Comments Feed" href="https://www.ghacks.net/2018/12/15/manage-firefox-tabs-bookmarks-and-containers-in-the-sidebar/feed/">
+<link rel="stylesheet" id="wp-block-library-css" href="style.min.css" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="wpos-slick-style-css" href="slick.css" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="wppsac-public-style-css" href="recent-post-style.css" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="swiper-css-css" href="swiper.min.css" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="notix-css" href="notix-public.css" type="text/css" media="all">
+<style id="responsive-menu-inline-css" type="text/css">
+/* Code tidied up by ScrapBook */
+#rmp_menu_trigger-176613 { width: 45px; height: 45px; position: absolute; top: 10px; border-radius: 5px; display: none; text-decoration: none; right: 15%; background: rgb(59, 59, 59) none repeat scroll 0% 0%; transition: transform 0.5s ease 0s, background-color 0.5s ease 0s; }
+#rmp_menu_trigger-176613:hover, #rmp_menu_trigger-176613:focus { background: rgb(59, 59, 59) none repeat scroll 0% 0%; text-decoration: unset; }
+#rmp_menu_trigger-176613 .rmp-trigger-box { width: 25px; color: rgb(255, 255, 255); }
+#rmp_menu_trigger-176613 .responsive-menu-pro-inner { display: block; }
+#rmp_menu_trigger-176613 .responsive-menu-pro-inner, #rmp_menu_trigger-176613 .responsive-menu-pro-inner::before, #rmp_menu_trigger-176613 .responsive-menu-pro-inner::after { width: 25px; height: 2px; background-color: rgb(255, 255, 255); border-radius: 4px; position: absolute; }
+#rmp_menu_trigger-176613:hover .responsive-menu-pro-inner, #rmp_menu_trigger-176613:hover .responsive-menu-pro-inner::before, #rmp_menu_trigger-176613:hover .responsive-menu-pro-inner::after { background-color: rgb(255, 255, 255); }
+@media screen and (max-width: 1024px) {
+  .top-navigation, #mobile-nav-trigger { display: none !important; }
+  #rmp_menu_trigger-176613 { display: block; }
+  #rmp-container-176613 { position: fixed; top: 0px; margin: 0px; transition: transform 0.5s ease 0s; overflow: auto; display: block; width: 75%; min-width: 250px; background-color: rgb(247, 247, 247); background-image: url(""); height: 100%; left: 0px; padding: 0px; }
+  #rmp-menu-wrap-176613 { padding: 0px; background-color: rgb(255, 255, 255); }
+  #rmp-menu-wrap-176613 .rmp-menu, #rmp-menu-wrap-176613 .rmp-submenu { width: 100%; box-sizing: border-box; margin: 0px; padding: 0px; }
+  #rmp-menu-wrap-176613 .rmp-menu-item { width: 100%; list-style: outside none none; margin: 0px; }
+  #rmp-menu-wrap-176613 .rmp-menu-item-link { height: 40px; line-height: 40px; font-size: 13px; border-bottom: 1px solid rgb(231, 231, 231); font-family: inherit; color: rgb(92, 91, 91); text-align: left; background-color: rgb(255, 255, 255); font-weight: normal; letter-spacing: 0px; display: block; width: 100%; text-decoration: none; position: relative; overflow: hidden; transition: background-color 0.5s ease 0s, border-color 0.5s ease 0s, all 0.5s ease 0s; padding: 0px 50px 0px 5%; }
+  #rmp-menu-wrap-176613 .rmp-menu-item-link::after, #rmp-menu-wrap-176613 .rmp-menu-item-link::before { display: none; }
+  #rmp-menu-wrap-176613 .rmp-menu-item-link:hover { color: rgb(0, 0, 0); border-color: rgb(231, 231, 231); background-color: rgb(247, 247, 247); }
+  #rmp-menu-wrap-176613 .rmp-menu-item-link:focus { outline: medium none; border-color: unset; box-shadow: unset; }
+  #rmp-menu-title-176613 { background-color: rgb(255, 255, 255); color: rgb(255, 255, 255); text-align: left; font-size: 13px; padding: 10% 5% 0%; font-weight: 400; transition: background-color 0.5s ease 0s, border-color 0.5s ease 0s, color 0.5s ease 0s; }
+  #rmp-menu-title-176613:hover { background-color: rgb(255, 255, 255); color: rgb(255, 255, 255); }
+  #rmp-menu-title-176613 > a { color: rgb(255, 255, 255); width: 100%; background-color: unset; text-decoration: none; }
+  #rmp-menu-title-176613 > a:hover { color: rgb(255, 255, 255); }
+  #rmp-menu-title-176613 .rmp-menu-title-image { height: 41px; }
+}
+.rmp-container { display: none; visibility: visible; padding: 0px; z-index: 99998; transition: all 0.3s ease 0s; }
+.rmp-container.rmp-slide-left, .rmp-container.rmp-push-left { transform: translateX(-100%); }
+.rmp-container .rmp-menu-wrap .rmp-menu { transition: none 0s ease 0s ; border-radius: 0px; box-shadow: none; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; border: 0px none; bottom: auto; box-sizing: border-box; clip: auto; color: rgb(102, 102, 102); display: block; float: none; font-family: inherit; font-size: 14px; height: auto; left: auto; line-height: 1.7; list-style-type: none; margin: 0px; min-height: auto; max-height: none; opacity: 1; outline: medium none; overflow: visible; padding: 0px; position: relative; pointer-events: auto; right: auto; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; transform: none; top: auto; visibility: inherit; width: auto; overflow-wrap: break-word; white-space: normal; }
+.rmp-container .rmp-menu-title { display: flex; flex-direction: column; }
+.rmp-container .rmp-menu-title .rmp-menu-title-image { max-width: 100%; display: block; margin: auto auto 15px; }
+button.rmp_menu_trigger { z-index: 999999; overflow: hidden; outline: medium none; border: 0px none; display: none; margin: 0px; transition: transform 0.5s ease 0s, background-color 0.5s ease 0s; padding: 0px; }
+button.rmp_menu_trigger .responsive-menu-pro-inner::before, button.rmp_menu_trigger .responsive-menu-pro-inner::after { content: ""; display: block; }
+button.rmp_menu_trigger .responsive-menu-pro-inner::before { top: 10px; }
+button.rmp_menu_trigger .responsive-menu-pro-inner::after { bottom: 10px; }
+button.rmp_menu_trigger .rmp-trigger-box { width: 40px; display: inline-block; position: relative; pointer-events: none; vertical-align: super; }
+.rmp-menu-trigger-boring .responsive-menu-pro-inner { transition-property: none; }
+.rmp-menu-trigger-boring .responsive-menu-pro-inner::after, .rmp-menu-trigger-boring .responsive-menu-pro-inner::before { transition-property: none; }
+</style>
+<link data-minify="1" rel="stylesheet" id="dashicons-css" href="dashicons.min.css" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="ghacks-style-css" href="style_001.css" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="single-css-css" href="single.css" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="tablepress-default-css" href="tablepress-combined.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="tablepress-responsive-tables-css" href="tablepress-responsive.min.css" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="rating_style-css" href="jquery.rating.css" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="bsf_style-css" href="style.css" type="text/css" media="all">
+<script type="text/javascript" src="about:blank" id="jquery-core-js"></script>
+<script type="text/javascript" src="about:blank" id="jquery-migrate-js" defer=""></script>
+<script type="text/javascript" src="about:blank" id="notix-js" defer=""></script>
+<script type="text/javascript" src="about:blank" id="jquery_rating-js" defer=""></script>
+<link rel="https://api.w.org/" href="https://www.ghacks.net/wp-json/"><link rel="alternate" type="application/json" href="https://www.ghacks.net/wp-json/wp/v2/posts/149270"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.ghacks.net/xmlrpc.php?rsd">
+<link rel="shortlink" href="https://www.ghacks.net/?p=149270">
+<link rel="alternate" type="application/json+oembed" href="https://www.ghacks.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.ghacks.net%2F2018%2F12%2F15%2Fmanage-firefox-tabs-bookmarks-and-containers-in-the-sidebar%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://www.ghacks.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.ghacks.net%2F2018%2F12%2F15%2Fmanage-firefox-tabs-bookmarks-and-containers-in-the-sidebar%2F&amp;format=xml">
+<script type="text/javascript">/* Code removed by ScrapBook */</script><script src="about:blank" defer=""></script>
+<script>/* Code removed by ScrapBook */</script><script id="script">/* Code removed by ScrapBook */</script><script src="about:blank"></script><link rel="amphtml" href="https://www.ghacks.net/2018/12/15/manage-firefox-tabs-bookmarks-and-containers-in-the-sidebar/?amp"><noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+
+<meta property="td-page" content="GH-Articlepage">
+<meta property="td-section" content="GH-Features">
+<meta property="gh-contentid" content="manage-firefox-tabs-bookmarks-and-containers-in-the-sidebar">
+<script async="" src="about:blank"></script>
+
+<script src="about:blank" async=""></script>
+<script async="" type="module" src="about:blank"></script>
+<script nomodule="" src="about:blank" defer=""></script>
+<script>/* Code removed by ScrapBook */</script>
+<script>/* Code removed by ScrapBook */</script>
+
+<script>/* Code removed by ScrapBook */</script>
+
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<meta name="robots" content="max-image-preview:large">
+<link rel="search" type="application/opensearchdescription+xml" title="ghacks.net" href="https://www.ghacks.net/opensearch.xml">
+<style>
+/* Code tidied up by ScrapBook */
+</style></head>
+<body><div class="container"><div class="ghacks-sidebared-content"><div class="ghacks-content"><!--DOCUMENT_FRAGMENT--><main class="post-list mt--60 mt--first--0"><h1 class="heading--large" style="color: rgb(67, 65, 78); font-weight: 400;">Manage Firefox tabs, bookmarks and containers in the sidebar</h1>
+<div class="post-subtitle-meta">
+<div class="post-subtitle-meta_left">
+<div class="post-subtitle-meta_left_author">
+<a href="https://www.ghacks.net/author/martin/" data-wpel-link="internal">
+Martin Brinkmann </a>
+</div>
+<div class="post-subtitle-meta_left_date-published">
+Dec 15, 2018 </div>
+</div>
+<div class="post-subtitle-meta_right">
+<div class="post-subtitle-meta_right_categories">
+<a href="https://www.ghacks.net/category/firefox/" rel="category tag" data-wpel-link="internal">Firefox</a>, <a href="https://www.ghacks.net/category/firefox/firefox-add-ons/" rel="category tag" data-wpel-link="internal">Firefox add-ons</a> </div>
+<div class="post-subtitle-meta_right_separator">|</div>
+<div class="post-subtitle-meta_right_comments">
+<a href="https://www.ghacks.net/2018/12/15/manage-firefox-tabs-bookmarks-and-containers-in-the-sidebar/#comments" data-wpel-link="internal">11</a>
+</div>
+</div>
+</div>
+<div class="user-content dont-break-out" style="color: rgb(67, 65, 78);">
+<p>Sidebery is a new extension for the Firefox web browser to manage browser tabs, bookmarks, and containers in the sidebar.</p>
+<p>The default sidebar of the Firefox web browser may display bookmarks or the browsing history already; Sidebery extends the functionality by adding open tabs and containers.</p>
+<!-- -->
+<p>The extension adds a new sidebar to Firefox to control open tabs, containers, and bookmarks. It displays an icon bar at the top that you use to navigate between the different elements. You may close and open the sidebar with a tab on F1, or by pressing Alt and selecting View &gt; Sidebar &gt; Nav Center.</p>
+<p>A click on the bookmark icon displays the bookmark structure and options to navigate it.Â&nbsp; A left-click on any bookmark opens it in the current tab, a middle-click in a new tab.</p> <div class="box-banner">
+<span class="ad-title">ADVERTISEMENT</span>
+<div id="snhb-snhb_ghacks_sidebar_top-1"></div>
+</div>
+<p>You can use keyboard modifiers to open links, or the right-click menu to get advanced options such as loading bookmarks in specific containers. You may use the menu to edit or delete bookmarks right from the sidebar.</p>
+<p><picture class="alignnone size-full wp-image-149271 sp-no-webp" data-rv-in-image="rv-in-image-1"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2018/12/sidebery-firefox-sidebar-container.webp" type="image/webp" srcset="sidebery-firefox-sidebar-container.webp"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2018/12/sidebery-firefox-sidebar-container.png" type="image/png" srcset="sidebery-firefox-sidebar-container.png"><img src="sidebery-firefox-sidebar-container.png" class="alignnone size-full wp-image-149271 sp-no-webp entered lazyloaded" alt="firefox sidebar container tabs" data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2018/12/sidebery-firefox-sidebar-container.png" data-lazy-src="https://www.ghacks.net/wp-content/uploads/2018/12/sidebery-firefox-sidebar-container.png" data-ll-status="loaded" srcset="sidebery-firefox-sidebar-container.png" data-rv-in-image="rv-in-image-1" width="898" height="579"><noscript><img src="https://www.ghacks.net/wp-content/uploads/2018/12/sidebery-firefox-sidebar-container.png" class="alignnone size-full wp-image-149271 sp-no-webp" alt="firefox sidebar container tabs" height="579" width="898" srcset="https://www.ghacks.net/wp-content/uploads/2018/12/sidebery-firefox-sidebar-container.png"></noscript></picture></p>
+<p>Open tabs are displayed in a vertical layout that uses multiple levels to indicate relationship. The default tabs listing displays all tabs except for those that are loaded in containers.</p>
+<p>The right-click menu displays options to load open tabs in a container, to move it to a new window or private browsing window, and to run operations on it such as mute, pin or duplicate.</p><div class="box-banner banner-feed">
+<span class="ad-title">ADVERTISEMENT</span>
+<div id="snhb-sidebar_01-1"></div>
+<!-- -->
+</div>
+<p>There is also a useful "clear cookies" option that you may use to clear cookies set by that domain.</p>
+<p>A click on a container icon displays tabs loaded in that container; a double-click opens a new tab in the container. The right-click menu displays the same operations that you get in the regular open tabs listing.</p>
+<p>Sideberry supports the creation of new containers from the sidebar. A click on the settings icon lists customization options; lots of them.</p>
+<div class="box-banner banner-feed">
+<span class="ad-title">ADVERTISEMENT</span>
+<div id="snhb-sidebar_02-1"></div>
+
+</div><p>You may change click actions, e.g. that a double-click on a tab reloads it or mutes it, or that a long left-click clears the cookies.</p>
+<p>Bookmarks can be opened in new tabs automatically, horizontal scroll may be enabled to switch between panels using the mouse, or you may change the theme and default font size.</p>
+<p>The settings listing displays supported keybindings.Â&nbsp; You may use Alt-G to select all items, switch between containers using Alt-Period or Alt-Comma, or use Ctrl-Delete to delete the active tab.</p>
+<p>Switching between panels may change the active tab automatically. You can disable that in the settings if you prefer to keep the current tab active before you switch to another panel in the sidebar.</p>
+<h3>Closing Words</h3>
+<p>Sideberry is a powerful extension for Firefox that improves tab, bookmarking and container management. It is especially useful to Firefox users who run Mozilla's Containers extension as it improves the management of container tabsÂ&nbsp; in Firefox.</p>
+<p><strong>Now You:</strong> Do you use containers in Firefox?</p>
+<div class="box-banner banner-feed">
+<span class="ad-title">ADVERTISEMENT</span>
+<div id="snhb-sidebar_03-1"></div>
+</div><div id="snippet-box" class="snippet-type-8" style="background: rgb(245, 245, 245) none repeat scroll 0% 0%; color: rgb(51, 51, 51); border: 1px solid rgb(172, 172, 172);"><div class="snippet-title" style="background: rgb(228, 228, 228) none repeat scroll 0% 0%; color: rgb(51, 51, 51); border-bottom: 1px solid rgb(172, 172, 172);">Summary<span class="ratings"><div class="star-blocks"><form name="rating" method="post" action="https://www.ghacks.net/2018/12/15/manage-firefox-tabs-bookmarks-and-containers-in-the-sidebar/" id="bsf-rating"><input id="bsf_rating_nonce" name="bsf_rating_nonce" value="ee87a86d4d" type="hidden"><input name="_wp_http_referer" value="/2018/12/15/manage-firefox-tabs-bookmarks-and-containers-in-the-sidebar/" type="hidden"><span class="star-rating-control"><div class="rating-cancel"><a title="Cancel Rating"></a></div><div role="text" aria-label="" class="star-rating rater-0 star star-1 star-rating-applied star-rating-live"><a title="1">1</a></div><div role="text" aria-label="" class="star-rating rater-0 star star-2 star-rating-applied star-rating-live"><a title="2">2</a></div><div role="text" aria-label="" class="star-rating rater-0 star star-3 star-rating-applied star-rating-live"><a title="3">3</a></div><div role="text" aria-label="" class="star-rating rater-0 star star-4 star-rating-applied star-rating-live"><a title="4">4</a></div><div role="text" aria-label="" class="star-rating rater-0 star star-5 star-rating-applied star-rating-live"><a title="5">5</a></div></span><input name="star-review" class="star star-1 star-rating-applied" value="1" style="display: none;" type="radio"><input name="star-review" class="star star-2 star-rating-applied" value="2" style="display: none;" type="radio"><input name="star-review" class="star star-3 star-rating-applied" value="3" style="display: none;" type="radio"><input name="star-review" class="star star-4 star-rating-applied" value="4" style="display: none;" type="radio"><input name="star-review" class="star star-5 star-rating-applied" value="5" style="display: none;" type="radio"><input name="ip" value="103.136.251.74, 172.70.123.12" type="hidden"><input name="post_id" value="149270" type="hidden"></form></div></span><script type="text/javascript">/* Code removed by ScrapBook */</script>
+</div><div itemscope="" itemtype="https://schema.org/SoftwareApplication"><div class="snippet-image"><picture itemprop="screenshot" class="sp-no-webp"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2018/12/sidebery-firefox-sidebar-container.webp" type="image/webp" srcset="sidebery-firefox-sidebar-container.webp"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2018/12/sidebery-firefox-sidebar-container.png" type="image/png" srcset="sidebery-firefox-sidebar-container.png"><img src="sidebery-firefox-sidebar-container.png" itemprop="screenshot" class="sp-no-webp entered lazyloaded" alt="software image" data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2018/12/sidebery-firefox-sidebar-container.png" data-lazy-src="https://www.ghacks.net/wp-content/uploads/2018/12/sidebery-firefox-sidebar-container.png" data-ll-status="loaded" srcset="sidebery-firefox-sidebar-container.png" width="180"><noscript><img src="https://www.ghacks.net/wp-content/uploads/2018/12/sidebery-firefox-sidebar-container.png" itemprop="screenshot" class="sp-no-webp" alt="software image" width="180" srcset="https://www.ghacks.net/wp-content/uploads/2018/12/sidebery-firefox-sidebar-container.png"></noscript></picture></div><div class="aio-info"><div class="snippet-label-img">Author Rating</div><div class="snippet-data-img"><span class="star-img"><img src="1star.png" alt="1star" data-lazy-src="https://www.ghacks.net/wp-content/plugins/all-in-one-schemaorg-rich-snippets/images/1star.png" data-ll-status="loaded" class="entered lazyloaded"><noscript><img src="https://www.ghacks.net/wp-content/plugins/all-in-one-schemaorg-rich-snippets/images/1star.png" alt="1star"></noscript><img src="1star.png" alt="1star" data-lazy-src="https://www.ghacks.net/wp-content/plugins/all-in-one-schemaorg-rich-snippets/images/1star.png" data-ll-status="loaded" class="entered lazyloaded"><noscript><img src="https://www.ghacks.net/wp-content/plugins/all-in-one-schemaorg-rich-snippets/images/1star.png" alt="1star"></noscript><img src="1star.png" alt="1star" data-lazy-src="https://www.ghacks.net/wp-content/plugins/all-in-one-schemaorg-rich-snippets/images/1star.png" data-ll-status="loaded" class="entered lazyloaded"><noscript><img src="https://www.ghacks.net/wp-content/plugins/all-in-one-schemaorg-rich-snippets/images/1star.png" alt="1star"></noscript><img src="1star.png" alt="1star" data-lazy-src="https://www.ghacks.net/wp-content/plugins/all-in-one-schemaorg-rich-snippets/images/1star.png" data-ll-status="loaded" class="entered lazyloaded"><noscript><img src="https://www.ghacks.net/wp-content/plugins/all-in-one-schemaorg-rich-snippets/images/1star.png" alt="1star"></noscript><img src="1star.png" alt="1star" data-lazy-src="https://www.ghacks.net/wp-content/plugins/all-in-one-schemaorg-rich-snippets/images/1star.png" data-ll-status="loaded" class="entered lazyloaded"><noscript><img src="https://www.ghacks.net/wp-content/plugins/all-in-one-schemaorg-rich-snippets/images/1star.png" alt="1star"></noscript></span></div><div class="snippet-clear"></div><div class="aggregate_sec" itemprop="aggregateRating" itemscope="" itemtype="https://schema.org/AggregateRating"><div class="snippet-label-img"></div><div class="snippet-data-img"><span itemprop="ratingValue">5</span> based on <span class="rating-count" itemprop="reviewCount">4</span> votes </div></div><div class="snippet-clear"></div><div class="snippet-label-img">Software Name</div> <div class="snippet-data-img"> <span itemprop="name">Sideberry</span></div><div class="snippet-clear"></div><div class="snippet-label-img">Software Category</div> <div class="snippet-data-img"> <span itemprop="applicationCategory">Browser</span></div><div class="snippet-clear"></div><div class="snippet-label-img">Landing Page</div><div class="snippet-data-img"> <a itemprop="featureList" href="https://addons.mozilla.org/en-US/firefox/addon/sidebery/" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://addons.mozilla.org/en-US/firefox/addon/sidebery/</a></div><div class="snippet-clear"></div></div>
+</div></div><div class="snippet-clear"></div>
+Advertisement
+
+<div id="div-gpt-ad-1524862513262-0"></div>
+</div>
+<meta itemprop="commentCount" content="11">
+<meta itemprop="dateUpdated" content="">
+<meta itemprop="discussionURL" content="https://www.ghacks.net/2018/12/15/manage-firefox-tabs-bookmarks-and-containers-in-the-sidebar/">
+<meta itemprop="inLanguage" content="en">
+<meta itemprop="timeRequired" content="P3M">
+</main>
+<div class="show-lg-only mt--20" style="margin-top: 20px; display: block;">
+<div class="ghacks-ad" data-width="728" data-height="90">
+</div>
+</div>
+<aside id="post-author" class="border--top--gray pt--40 mt--40">
+<div class="profile-content">
+<h3 class="heading--small mb--20">About Martin Brinkmann</h3>
+<div class="user-content">
+Martin Brinkmann is a journalist from Germany who founded Ghacks Technology News Back in 2005. He is passionate about all things tech and knows the Internet and computers like the back of his hand.
+You can follow Martin on <a href="https://www.facebook.com/therealmartinbrinkmann" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Facebook</a> or <a href="https://twitter.com/martibrinkm" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Twitter</a> </div>
+<div class="profile-link mt--20 user-content">
+<a href="https://www.ghacks.net/author/martin/" data-wpel-link="internal">
+View all posts by Martin Brinkmann <span class="meta-nav">→</span></a></div></div></aside><!--/DOCUMENT_FRAGMENT--></div></div></div></body>
+</html>

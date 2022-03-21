@@ -1,0 +1,60 @@
+/* Effective stylesheet produced by snapshot save */
+.mw-parser-output { clear: both; }
+@font-face {
+  font-family: "Caprica";
+  font-style: normal;
+  src: url("caprica_ttf") format("truetype"), url("caprica_otf") format("opentype");
+}
+#mw-header-container #p-banner, #mw-header-container #personal h2, #content h1, #content h2, #content h3, #content h4, #content h5, #content h6, #content #firstHeading { font-family: Caprica; }
+#content h1, #content h2 { font-variant: small-caps; }
+:root { --text: #fff; --background: #471919; --background2: #000; --background3: #160807; --background-dark: #f4a460; --background-dark2: #d2691e; --text-inverse: #018; --grey: #ccc; --grey-bright: #eee; --grey-dark: #666; --red: #d44; --red-bright: #f55; --red-dark: #900; --orange: #ffa500; --orange-bright: #ff4500; --orange-dark: #ff8c00; --yellow: #ffff00; --yellow-bright: #ffffe0; --yellow-dark: #ffd700; --green: #3b7; --green-bright: #4c8; --green-dark: #396; --blue: #08d; --blue-bright: #2af; --blue-dark: #069; --link: #ffff00; --link-red: #d44; --font-size: 0.93em; }
+body { color:  var(--text); background:  var(--background3); font-size:  var(--font-size); line-height: 1.4; }
+#mw-page-header-links li:hover { border-bottom-color:  var(--grey); }
+#mw-page-header-links li.selected { border-bottom-color:  var(--orange); }
+#mw-page-header-links li.selected a { color:  var(--text); }
+.ts-inner { max-width: 1920px; }
+#mw-content-container { background:  var(--background2); border-bottom:  solid 4px var(--yellow-dark); }
+#mw-content { border:  solid var(--yellow-dark); padding: 1.25em 1.75em; box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.02); background:  var(--background); position: relative; z-index: 0; }
+#p-logo { background: rgb(22, 8, 7) none repeat scroll 0% 0%; border: 1px solid rgb(71, 25, 25); }
+#mw-site-navigation .sidebar-chunk, #mw-related-navigation .sidebar-chunk, #personal .dropdown { background: rgb(22, 8, 7) none repeat scroll 0% 0%; border-style: solid; border-color: rgb(255, 215, 0); border-image: initial; border-width: 1px 1px 0.2em; color: rgb(255, 255, 255); }
+#mw-header-container { background: rgb(71, 25, 25) none repeat scroll 0% 0%; color: rgb(255, 255, 255); }
+#p-logo-text a { color: rgb(255, 255, 255); }
+.color-middle-container { padding: 0px 4em; max-width: 1920px; }
+.color-middle { margin-left: 13.2em; margin-right: 15em; background: rgb(255, 140, 0) none repeat scroll 0% 0%; }
+#mw-footer-container { border-top: 1px solid rgb(255, 165, 0); background: rgb(22, 8, 7) none repeat scroll 0% 0%; }
+a, .toctogglelabel { text-decoration: none; color:  var(--yellow); }
+a:hover { color:  var(--yellow-bright); }
+a:visited { color:  var(--yellow-dark); }
+a.extiw, .extiw a, a.external.text, a.external.free, .mw-parser-output a.extiw { color:  var(--orange); }
+a.extiw:hover, .extiw a:hover, a.external.text:hover, a.external.free:hover, .mw-parser-output a.extiw:hover, a.extiw:visited, .extiw a:visited, a.external.text:visited, a.external.free:visited, .mw-parser-output a.extiw:visited { color:  var(--orange-dark); }
+a.new, .new a { color:  var(--red); }
+a.new:hover, .new a:hover, a.new:visited, .new a:visited { color:  var(--red-dark); }
+.mw-body h1, .mw-body h2, .mw-body h3, .mw-body h4, .mw-body h5, .mw-body h6, .mw-body dt { color:  var(--yellow-dark); line-height: 1.125; margin: 0.7em 0px 0.5em; }
+.mw-body dl { margin-top: 0.2em; margin-bottom: 0.5em; }
+.mw-body h1.firstHeading { margin: 0.25em 0px 0.5em; border-bottom:  solid 4px var(--yellow-dark); overflow: visible; }
+.mw-body h1 { font-size: 2em; border-bottom:  solid 3px var(--orange); overflow: hidden; }
+.mw-body h2 { font-size: 1.5em; border-bottom:  solid 2px var(--orange); overflow: hidden; }
+.mw-body h3 { font-size: 1.3em; }
+.mw-body h4 { font-size: 1.15em; }
+.mw-body dd { margin-bottom: 1em; }
+.thumbinner { background:  var(--background3); border:  solid 1px var(--yellow-dark); box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.02); }
+ul#filetoc, .toc, .mw-warning { display: table; background:  var(--background3); border:  solid 1px var(--yellow-dark); box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.02); padding: 1.25em 1.75em; margin-top: 1em; margin-bottom: 1em; min-width: 15em; }
+#menus-cover { background:  var(--background) ; }
+.sidebar-inner { background:  var(--background3); }
+@media screen and (max-width: 851px) {
+  .dropdown, .sidebar-inner { background:  var(--background3); border:  solid 1px var(--yellow-dark); color:  var(--text); }
+}
+#pt-notifications-alert .mw-echo-notifications-badge::before, #pt-notifications-notice .mw-echo-notifications-badge::before { background-color: white; }
+div#addthistoolbar { padding: 1.25em 1.75em; box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.02); background:  var(--background3)   ! important; border:  solid var(--yellow-dark)   ! important; }
+.mw-rcfilters-ui-filterMenuOptionWidget.oo-ui-flaggedElement-muted:not(.oo-ui-optionWidget-selected) { border-bottom:  1px solid var(--background-dark); background-color:  var(--blue-dark)   ! important; }
+.mw-rcfilters-ui-itemMenuOptionWidget:not(:last-child) { border-bottom:  1px solid var(--background-dark); }
+.mwe-popups .mwe-popups-extract::after { background-image: linear-gradient(to right, rgba(244, 164, 96, 0), rgb(244, 164, 96) 50%) ! important; }
+.mwe-popups.flipped-x-y::after, .mwe-popups.flipped-y::after { border-top:  12px solid var(--background-dark)   ! important; }
+.mwe-popups.mwe-popups-no-image-pointer::after, .mwe-popups.mwe-popups-no-image-pointer::before { border-bottom:  12px solid var(--background-dark)   ! important; }
+.mwe-popups.mwe-popups-image-pointer::before, .mwe-popups.flipped-x.mwe-popups-is-tall::before, .mwe-popups.mwe-popups-image-pointer.flipped-x::before { border-bottom:  8px solid var(--red)   ! important; }
+.mwe-popups.mwe-popups-type-page.mwe-popups-fade-in-down.flipped-x-y.mwe-popups-is-tall::before, .mwe-popups.mwe-popups-type-page.mwe-popups-fade-in-down.flipped-x-y.mwe-popups-is-not-tall::before { border-top:  8px solid var(--red)   ! important; }
+.mwe-popups.mwe-popups-type-page.mwe-popups-fade-in-down.flipped-x-y.mwe-popups-is-tall::after { border-top:  12px solid var(--red)   ! important; }
+div#content-bottom-stuff, div#mw-header-nav-hack, #mw-related-navigation .sidebar-inner, #mw-site-navigation .sidebar-inner { background-color:  var(--background2); }
+#mw-site-navigation h2, #mw-related-navigation h2 { font-family: Caprica ! important; }
+span:target, .focused { background-color: red; transition: all 1s linear 0s; }
+span:target::before, .focused::before { font: 70% sans-serif; content: "►"; color:  var(--yellow-dark); margin-right: 0.25em; }

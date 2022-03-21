@@ -1,10 +1,10 @@
 id	20201208140118
 create	20201208140118
-modify	20220313160920
+modify	20220321221214
 type	
-title	The Sandman Universe - Wikipedia-1
+title	The Sandman Universe - Wikipedia
 chars	UTF-8
-icon	resource://scrapbook/data/20201208140118/favicon.ico.bin
+icon	
 source	https://en.m.wikipedia.org/wiki/The_Sandman_Universe
 comment	
 lock	
