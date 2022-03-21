@@ -1,0 +1,84 @@
+/* Code tidied up by ScrapBook */
+@media not all, (min-resolution: 192dpi) {
+}
+@media not all, (min-resolution: 288dpi) {
+}
+@media not all, (min-resolution: 384dpi) {
+}
+@media (min-width: 360px) {
+}
+.CommentTopbar-title { display: inline-block; font-size: 15px; font-weight: 600; font-synthesis: style; }
+.CommentTopbar-title { color: rgb(18, 18, 18); }
+.CommentTopbar { border-radius: 2px; }
+.CommentEditorV2-inputUpLoad-Icon, .ImagePopover { width: 24px; height: 24px; }
+.ImagePopover { margin-right: 8px; }
+@keyframes spinnerBladeFade {
+0% { opacity: 0.85; }
+50% { opacity: 0.25; }
+100% { opacity: 0.25; }
+}
+@keyframes spinnerBladeFade {
+0% { opacity: 0.85; }
+50% { opacity: 0.25; }
+100% { opacity: 0.25; }
+}
+.CommentEditorV2--normal { position: relative; transition: padding-right 0.3s ease 0s; }
+.CommentEditorV2--normal .CommentEditorV2-input { overflow: hidden; width: 100%; }
+.CommentEditorV2--normal .Editable-unstyled { margin: 0px !important; }
+.CommentEditorV2-singleButton { position: absolute; right: 16px; bottom: 13px; line-height: 34px !important; transform: scale(0); transition: opacity 0.3s ease 0s, transform 0.3s ease 0s, -webkit-transform 0.3s ease 0s; }
+.CommentEditorV2-singleButton:disabled { cursor: not-allowed; }
+.CommentEditorV2-input { border: medium none; font-size: 15px; }
+.CommentEditorV2-input .Dropzone { min-height: auto !important; }
+.CommentEditorV2-inputWrap { width: 100%; position: relative; display: flex; -moz-box-align: end; align-items: flex-end; border: 1px solid rgb(235, 235, 235); }
+.CommentEditorV2-inputWrap { border-radius: 3px; background-color: rgb(246, 246, 246); }
+.CommentEditorV2-inputUpload { height: 36px; display: flex; -moz-box-align: center; align-items: center; }
+.CommentEditorV2-popoverWrap { display: flex; }
+.CommentEditorV2-popoverWrap .Editable-control:hover:not(:disabled) { background-color: transparent; border-color: transparent; }
+.CommentItemV2 { position: relative; flex-shrink: 0; padding: 12px 20px 10px; font-size: 15px; }
+.CommentItemV2:not(:first-child)::after { position: absolute; left: 0px; right: 0px; bottom: 0px; display: block; margin: 10px 20px 0px; border-bottom: 1px solid rgb(246, 246, 246); }
+.CommentItemV2:not(:first-child)::after { content: ""; }
+.CommentItemV2-meta { position: relative; height: 24px; padding-right: 3px; padding-left: 1px; margin-bottom: 4px; line-height: 24px; }
+.CommentItemV2-meta .UserLink-link { font-weight: 500; }
+.CommentItemV2-metaSibling { padding-left: 33px; }
+.CommentItemV2-avatar { margin-right: 8px; }
+.CommentItemV2-avatar .UserLink-avatar { vertical-align: top; }
+.CommentItemV2-reply, .CommentItemV2-roleInfo, html[data-theme="dark"] .CommentItemV2-reply, html[data-theme="dark"] .CommentItemV2-roleInfo { color: rgb(133, 144, 166); }
+.CommentItemV2-reply { margin-right: 8px; margin-left: 8px; }
+.CommentItemV2-time { float: right; font-size: 14px; color: rgb(133, 144, 166); }
+.CommentItemV2-content { margin-bottom: 6px; line-height: 25px; }
+.CommentItemV2-footer { display: flex; -moz-box-align: center; align-items: center; height: 24px; font-size: 14px; line-height: 24px; margin-top: 4px; }
+.CommentItemV2-footer .Button + .Button { margin-left: 20px; }
+.CommentItemV2-hoverBtn.Button { opacity: 0; transition: opacity 0.2s ease 0s; }
+.CommentItemV2:hover .CommentItemV2-hoverBtn.Button { opacity: 1; }
+.CommentItemV2:hover .CommentItemV2-hoverBtn.Button:disabled { opacity: 0.5; }
+@keyframes highlight {
+0% { background: rgba(0, 132, 255, 0.06) none repeat scroll 0% 0%; }
+100% { background: initial; }
+}
+@keyframes highlight {
+0% { background: rgba(0, 132, 255, 0.06) none repeat scroll 0% 0%; }
+100% { background: initial; }
+}
+@media (min-width: 360px) {
+}
+.NestComment { position: relative; }
+.NestComment:not(:last-child)::after { position: absolute; left: 0px; right: 0px; bottom: 0px; display: block; margin: 0px 20px; border-bottom: 1px solid rgb(246, 246, 246); }
+.NestComment:not(:last-child)::after { content: ""; }
+.NestComment .NestComment--child { position: relative; padding-left: 33px; }
+.NestComment .NestComment--child::after { position: absolute; left: 0px; right: 0px; bottom: 0px; display: block; margin-right: 20px; margin-left: 84px; border-bottom: 1px solid rgb(246, 246, 246); }
+.NestComment .NestComment--child::after { content: ""; }
+.NestComment--rootComment { position: relative; }
+.NestComment--rootComment::after { position: absolute; left: 0px; right: 0px; bottom: 0px; display: block; margin-right: 20px; margin-left: 52px; border-bottom: 1px solid rgb(246, 246, 246); }
+.NestComment--rootComment::after { content: ""; }
+.Comments-container { height: 100%; }
+.CommentsV2 { display: flex; -moz-box-orient: vertical; -moz-box-direction: normal; flex-direction: column; height: 100%; overflow: hidden; box-sizing: border-box; }
+.CommentListV2 { -moz-box-flex: 1; flex: 1 1 0%; overflow-x: hidden; overflow-y: auto; }
+.CommentsV2-footer { padding: 12px 20px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; }
+.CommentsV2-footer { border-top: 1px solid rgb(235, 235, 235); }
+.CommentsV2-footer-wrapper { position: relative; }
+.CommentsV2-withPagination { border: 1px solid rgb(235, 235, 235); }
+.CommentsV2-withPagination { box-shadow: 0px 1px 3px rgba(18, 18, 18, 0.1); }
+.CommentsV2-withPagination { background: rgb(255, 255, 255) none repeat scroll 0% 0%; }
+.CommentsV2-withPagination { margin-top: 12px; overflow: visible; border-radius: 4px; }
+.CommentsV2-withPagination .CommentListV2 { overflow-y: visible; }
+.CommentItemV2 { outline: medium none; }

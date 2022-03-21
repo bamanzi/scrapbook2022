@@ -1,0 +1,80 @@
+/* Code tidied up by ScrapBook */
+#doctors { vertical-align: middle; margin-top: 10px; }
+#doctors .doctor { display: inline-table; margin-left: 1px; margin-right: 1px; }
+#doctors .doctor img { width: 40px; height: 40px; box-shadow: 0px 0px 5px rgb(51, 51, 51); border: 1px solid rgb(0, 0, 0); border-radius: 5px; }
+#doctors .doctor img:hover { border: 1px solid rgb(255, 255, 0); }
+@media (min-width: 1671px) {
+}
+@media (min-width: 1300px) {
+}
+@media (max-width: 1020px) {
+}
+@media (max-width: 768px) {
+}
+@media (max-width: 659px) {
+}
+#seriesRankName { font-size: 2.5em; font-family: Ubuntu; font-weight: 700; color: rgb(0, 0, 68); margin-top: 20px; text-shadow: 0px 2px 6px rgb(0, 0, 0); }
+.recentRatingGrid { display: block; clear: both; padding: 1px; margin: 10px auto; }
+.recentRatingGrid .storylistHeader { font-size: 1.4em; margin: 1px; }
+.recentRatingGrid .gridStory { width: 310px; text-align: left; margin: 1px 1px 5px; vertical-align: middle; background: rgb(221, 221, 221) none repeat scroll 0% 0%; }
+@media (min-width: 1300px) {
+  .recentRatingGrid .gridStory { width: 400px; }
+}
+.recentRatingGrid .gridStory .cover, .recentRatingGrid .gridStory .info, .recentRatingGrid .gridStory .rank, .recentRatingGrid .gridStory .rating { display: inline-table; font-size: 2em; vertical-align: middle; color: rgb(204, 204, 204); margin-top: 5px; }
+.recentRatingGrid .gridStory .info, .recentRatingGrid .gridStory .series, .recentRatingGrid .gridStory .title { overflow-wrap: normal; width: 200px; font-size: 0.9em; margin-bottom: 2px; }
+.recentRatingGrid .gridStory .series a:hover, .recentRatingGrid .gridStory .title a:hover { color: red; }
+.recentRatingGrid .gridStory .title a { color: rgb(34, 34, 34); text-decoration: none; font-size: 1.2em; }
+.recentRatingGrid .gridStory .series a { color: rgb(0, 0, 102); text-decoration: none; font-size: 1.1em; }
+.recentRatingGrid .gridStory .cover, .recentRatingGrid .gridStory .rating { width: 50px; height: 50px; text-align: center; font-size: 1.3em; font-weight: 700; color: rgb(0, 0, 255); }
+.recentRatingGrid .gridStory .rating { line-height: 20px; }
+.recentRatingGrid .gridStory .rating .votes { font-size: 0.8em; color: rgb(85, 85, 85); }
+.recentRatingGrid .gridStory .rank { margin-left: 5px; width: 40px; text-align: center; font-size: 1.5em; font-weight: 700; color: orange; background: rgb(85, 85, 85) none repeat scroll 0% 0%; line-height: 40px; border-radius: 25px; box-shadow: 0px 0px 5px rgb(0, 0, 0); }
+.recentRatingGrid .gridColumn { display: inline-table; margin-left: 1px; margin-right: 1px; vertical-align: middle; }
+@media (min-width: 1280px) {
+}
+@media (min-width: 1620px) {
+}
+@media (min-width: 1300px) {
+}
+.seriesmenu { vertical-align: middle; background: rgb(255, 191, 0) none repeat scroll 0% 0%; width: 100%; margin: 10px auto; }
+.menuItem { display: inline-table; margin-left: 3px; margin-right: 3px; padding-top: 2px; padding-bottom: 2px; }
+.menuItem a { text-decoration: none; color: rgb(0, 0, 0); font-size: 1em; }
+.menuItem a:hover { color: rgb(0, 0, 255); background: rgb(102, 175, 233) none repeat scroll 0% 0%; border-radius: 5px; padding-top: 2px; padding-bottom: 2px; }
+#siteStats { color: rgb(221, 221, 221); background: rgb(0, 0, 68) none repeat scroll 0% 0%; width: 100%; max-width: 1024px; margin: auto auto 10px; border-radius: 5px; border: 1px solid rgb(0, 0, 119); }
+#siteStats .statsColumn { display: inline-table; margin: 5px; width: 200px; }
+#siteStats .statsColumn .label { display: inline-table; text-align: right; margin-right: 10px; color: rgb(204, 204, 204); }
+#siteStats .statsColumn .value { display: inline-table; text-align: left; color: rgb(255, 255, 255); }
+@media (min-width: 1300px) {
+}
+@media (max-width: 1020px) {
+}
+@media (max-width: 768px) {
+}
+@media (max-width: 659px) {
+}
+body { font-size: 80%; background: rgb(187, 187, 187) none repeat scroll 0% 0%; margin: 0px auto; padding: 0px; text-align: center; font-family: Roboto,Ubuntu,sans-serif; }
+a { text-decoration: none; }
+.pageHeader { width: 100%; min-height: 40px; background: rgb(0, 0, 0) none repeat scroll 0% 0%; z-index: 200; color: rgb(221, 221, 221); font-size: 2.1em; line-height: 40px; margin-top: 0px; }
+.pageHeader a { text-decoration: none; color: rgb(255, 255, 255); }
+.pageHeader div { display: inline-table; }
+.footer { width: 100%; max-width: 1024px; background: rgb(51, 51, 51) none repeat scroll 0% 0%; display: inline-block; border-radius: 10px; color: rgb(204, 204, 204); margin: auto auto 10px; text-align: center; padding-bottom: 10px; }
+.footer .disclaimer { padding: 20px; }
+.footer .disclaimer a { color: rgb(255, 238, 187); }
+.footer .contact a { color: rgb(255, 238, 187); text-decoration: underline; }
+.footer .contact a:hover, .footer .disclaimer a:hover { color: red; }
+.ts9Section { background: rgb(204, 204, 204) none repeat scroll 0% 0%; border-radius: 5px; width: 100%; max-width: 1024px; margin: auto auto 10px; box-shadow: 0px 0px 5px rgb(136, 136, 136); }
+.ts9SectionBlack { background: rgb(0, 0, 0) none repeat scroll 0% 0%; border-radius: 5px; width: 100%; max-width: 1024px; margin: auto auto 10px; box-shadow: 0px 1px 1px rgb(0, 0, 0); }
+@media (min-width: 1280px) {
+  .footer, .ts9Section, .ts9SectionBlack, .ts9SectionClear, .ts9SectionDark, .ts9SectionDarker, .ts9SectionLight { max-width: 1280px; }
+}
+@media (min-width: 700px) {
+}
+.breadCrumb { margin-top: 20px; color: rgb(187, 187, 187); }
+.breadCrumb a { color: rgb(204, 204, 204); }
+.breadCrumb a:hover { color: rgb(255, 255, 0); }
+@media (min-width: 1300px) {
+}
+@media (min-width: 1300px) {
+}
+@media (min-width: 1300px) {
+}

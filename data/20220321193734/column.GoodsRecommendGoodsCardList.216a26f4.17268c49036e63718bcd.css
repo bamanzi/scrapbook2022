@@ -1,0 +1,21 @@
+/* Code tidied up by ScrapBook */
+@font-face {
+  font-family: "ZHVipFont";
+  src: url("ZHVipFont.93af276f.otf"), url("ZHVipFont.e6f344c2.ttf");
+}
+@keyframes skeleton-wave {
+0% { transform: translateX(-8000%); }
+100% { transform: translateX(10000%); }
+}
+@keyframes skeleton-wave {
+0% { transform: translateX(-8000%); }
+100% { transform: translateX(10000%); }
+}
+@keyframes linear-double {
+0% { transform: translateX(-56%); }
+100% { transform: translateX(56%); }
+}
+@keyframes linear-double {
+0% { transform: translateX(-56%); }
+100% { transform: translateX(56%); }
+}

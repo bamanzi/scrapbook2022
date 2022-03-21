@@ -1,0 +1,27 @@
+/* Code tidied up by ScrapBook */
+.Dropzone { position: relative; }
+@media print {
+}
+.Editable-languageSuggestions { position: fixed; z-index: 1; }
+.Editable-languageSuggestionsInput { cursor: pointer; }
+.Editable-languageSuggestionsInput input { cursor: inherit; }
+.Editable-languageSuggestionsInput input:focus { cursor: text; }
+@media (max-width: 320px) {
+}
+@keyframes fxRichTextFadeIn {
+0% { opacity: 0; }
+100% { opacity: 1; }
+}
+@keyframes fxRichTextFadeIn {
+0% { opacity: 0; }
+100% { opacity: 1; }
+}
+.RichText--clearBoth::after, .RichText--clearBoth::before { clear: both; content: ""; display: block; }
+.RichText .lazy[data-lazy-status] { background-color: rgb(246, 246, 246); }
+.RichText .lazy[data-lazy-status="ok"] { background-color: transparent; animation: 0.5s ease-in 0s normal none 1 running fxRichTextFadeIn; }
+.Editable { padding: 0px; position: relative; }
+.Editable-content { padding: 6px 12px; cursor: text; }
+.Editable .public-DraftEditorPlaceholder-root { color: rgb(133, 144, 166); position: absolute; pointer-events: none; }
+.Editable-styled, .Editable-unstyled { margin: 0px 0px 1.4em; }
+.Editable-styled:first-child, .Editable-unstyled:first-child { margin-top: 0px; }
+.Editable-styled:last-child, .Editable-unstyled:last-child { margin-bottom: 0px; }
