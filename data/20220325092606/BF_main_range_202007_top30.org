@@ -1,0 +1,37 @@
+
+* top 30
+
+| Top | Rating |  No. | Title                                                     | Doctor |      |
+|-----+--------+------+-----------------------------------------------------------+--------+------|
+|   1 |    9.5 |  140 | A Death in the Family                                     | 7th    | 2010 |
+|   2 |    9.4 |   29 | The Chimes of Midnight                                    | 8th    | 2002 |
+|   3 |    9.2 |   34 | Spart Parts                                               | 5th    | 2002 |
+|   4 |    9.2 |   14 | The Holy Terror                                           | 6th    | 2000 |
+|   5 |    9.1 |   48 | Davros                                                    | 6th    | 2003 |
+|   6 |    9.1 |  230 | Time in Office                                            | 5th    | 2017 |
+|   7 |    9.0 |   40 | Jubilee                                                   | 6th    | 2003 |
+|   8 |    8.0 |   27 | The One Doctor                                            | 6th    | 2001 |
+|   9 |    8.9 |   49 | Master                                                    | 7th    | 2003 |
+|  10 |    8.9 |   81 | The Kingmaker                                             | 7th    | 2006 |
+|  11 |    8.8 |  94b | Urgent Calls                                              | 6th    | 2007 |
+|  12 |    8.8 |  213 | The Two Masters                                           | 7th    | 2016 |
+|  13 |    8.8 |  209 | Aquitaine                                                 | 5th    | 2016 |
+|  14 |    8.8 |   43 | Doctor Who and the Pirates of the Lass that Lost a Sailor | 6th    | 2003 |
+|  15 |    8.7 |  130 | A Thousand Tiny Wings                                     | 7th    | 2010 |
+|  16 |    8.7 |  132 | The Architects of History                                 | 7th    | 2010 |
+|  17 |    8.7 | 188d | The Curious Incident of the Docotor in the Night-Time     | 6th    | 2014 |
+|  18 |    8.7 |  162 | Protect and Survive                                       | 5th    | 2012 |
+|  19 |    8.6 |  91c | Circular Time - Autumn                                    | 5th    | 2007 |
+|  20 |    8.6 |  120 | The Magic Mousetrap                                       | 7th    | 2009 |
+|  21 |    8.6 | 131a | Klein's Story                                             | 7th    | 2010 |
+|  22 |    8.6 |  153 | The Silver Turk                                           | 8th    | 2011 |
+|  23 |    8.6 |  192 | The Widow's Assassin                                      | 6th    | 2014 |
+|  24 |    8.6 | 115d | The Word Lord                                             | 7th    | 2008 |
+|  25 |    8.6 |  193 | Masters of Earth                                          | 6th    | 2014 |
+|  26 |    8.6 |    6 | The Marian Conspiracy                                     | 6th    | 2000 |
+|  27 |    8.6 |  233 | Static                                                    | 5th    | 2018 |
+|  28 |    8.5 |   52 | Scherzo                                                   | 8th    | 2003 |
+|  29 |    8.5 |   57 | Arrangements for War                                      | 6th    | 2004 |
+|  30 |    8.5 |  91d | Circular Time - Winter                                    | 5th    | 2007 |
+|  31 |    8.5 |  236 | Serpent in the Silver Mask                                | 5th    | 2018 |
+|  32 |    8.5 | 123d | The Company of Friends - Mary's Story                     | 8th    | 2009 |

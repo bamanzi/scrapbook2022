@@ -1,0 +1,47 @@
+/* Code tidied up by ScrapBook */
+* { margin: 0px; padding: 0px; }
+ul, li { list-style: outside none none; }
+a { text-decoration: none; }
+img { border: medium none; }
+body { padding-top: 1px; font-family: "微软雅黑","Source Han Sans" ! important; box-sizing: border-box; }
+@media screen and (max-width: 1170px) {
+  #newHeader .new-wrap { width: 1170px ! important; }
+}
+#newHeader ul { margin: 0px; }
+#newHeader a { text-decoration: none; }
+body #newHeader { background-color: rgb(40, 40, 40); }
+#newHeader { background-color: rgb(40, 40, 40); position: fixed; top: 0px; left: 0px; z-index: 9999; width: 100%; }
+#newHeader .new-wrap { width: 1170px; margin: 0px auto; transition: all 0.3s ease 0s; position: relative; }
+#newHeader .new-wrap .logo { display: block; position: absolute; left: 0px; top: 50%; line-height: normal; transform: translate(0px, -60%); }
+#newHeader .new-wrap .new-menu { position: absolute; right: 0px; top: 0px; height: 100%; }
+#newHeader .new-wrap .new-menu > li { float: left; height: 100%; position: relative; background-color: rgb(40, 40, 40); }
+#newHeader .new-wrap .new-menu > li > a { color: rgb(222, 222, 222); padding: 0px 15px; }
+#newHeader .new-wrap .new-menu > li > a .new-line-animate { position: relative; font-size: 14px; text-transform: uppercase; }
+#newHeader .new-wrap .new-menu > li > a .new-line-animate::before { content: ""; position: absolute; left: 0px; bottom: -4px; height: 2px; width: 100%; background: rgb(44, 167, 248) none repeat scroll 0% 0%; transform: scale(0); transition: all 0.3s ease 0s; }
+#newHeader .new-wrap .new-menu li:hover .new-line-animate::before { transform: scale(1); }
+#newHeader .new-wrap .new-menu li:hover .sub-menu { display: block; }
+#newHeader .new-wrap .new-menu li:hover > a { color: rgb(44, 167, 248); }
+#newHeader .new-wrap .new-menu .add-search > a, #newHeader .new-wrap .new-menu .add-login > a { padding: 0px ! important; display: block; width: 16px; height: 100%; }
+#newHeader .left { float: left; }
+#newHeader .right { float: right; }
+#newHeader .hh { height: 80px; line-height: 80px; }
+#newHeader .move { height: 54px; line-height: 54px; }
+@media screen and (max-width: 1170px) {
+}
+#newHeader .sub-menu { display: none; position: absolute; left: 0px; top: 100%; background: rgb(246, 246, 246) none repeat scroll 0% 0%; min-width: 200px; box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2); }
+#newHeader .sub-menu li { line-height: 15px; padding: 10px 15px; float: none; border-bottom: 1px solid rgb(240, 240, 240); height: auto; }
+#newHeader .sub-menu li:hover { background: rgb(240, 240, 240) none repeat scroll 0% 0%; }
+#newHeader .sub-menu li > a { color: rgb(68, 68, 68); font-size: 14px; }
+.new-search { display: block; width: 16px; height: 16px; background: transparent url("icon_search.png") no-repeat scroll center center; }
+.add-search > a, .hs-menu .add-login > a { width: 18px; height: 80px; padding: 0px; position: relative; }
+.add-login { padding-left: 25px; }
+.add-search > a > span, .hs-menu .add-login > a > span { position: absolute; top: 50%; transform: translate(0px, -50%); cursor: pointer; }
+#newHeader .add-login .sub-menu { right: 0px; left: auto; min-width: 102px; }
+.add-search .ipt-search { box-sizing: border-box; border-radius: 4px; width: 230px; height: 28px; line-height: 28px; padding-left: 30px; position: absolute; top: 50%; right: 0px; z-index: 99; transform: translate(0px, -50%); background-color: rgb(255, 255, 255); display: none; }
+.add-search .ipt-search input { width: 196px; height: 28px; box-sizing: border-box; position: absolute; top: 0px; right: 0px; border: medium none; line-height: 28px; font-size: 12px; padding-left: 0px; border-radius: 0px 4px 4px 0px; outline: medium none; }
+.add-search .ipt-search .icon-s { position: absolute; left: 0px; top: 0px; width: 24px; height: 28px; background: transparent url("icon_search.png") no-repeat scroll right center / 13px 13px; margin: 0px; cursor: pointer; }
+.add-search a, .add-login a { position: relative; }
+.add-login a { display: block; }
+.add-login img { position: absolute; top: 50%; right: 0px; z-index: 99; transform: translate(0px, -50%); }
+#newHeader .sub-menu { z-index: 9; }
+#newHeader .new-menu > li:nth-child(9) .sub-menu > li:first-child a, #hs-site-navigation #menu-item-22403 a { font-family: "微软雅黑","Source Han Sans" ! important; }

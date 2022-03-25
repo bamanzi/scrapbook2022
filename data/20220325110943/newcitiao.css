@@ -1,0 +1,55 @@
+/* Code tidied up by ScrapBook */
+body .wrap .slide .search .icon-search:hover, body a:hover { cursor: pointer; }
+input { font-family: inherit; }
+* { margin: 0px; padding: 0px; }
+body, html { height: 100%; width: 100%; }
+table td, table th { border: 1px solid rgb(204, 204, 204); padding: 1px 5px; }
+#ct a:hover { color: rgb(44, 167, 248); }
+body { background-color: rgb(249, 249, 249); font-family: "微软雅黑","Source Han Sans"; color: rgb(51, 51, 51); padding-top: 1px; }
+body li, body ul { list-style: outside none none; }
+body a { color: rgb(51, 51, 51); text-decoration: none; }
+body .wrap { width: 1140px; margin: 100px auto 40px; box-sizing: border-box; position: relative; overflow: hidden; background-color: rgb(255, 255, 255); border-radius: 4px; border: 1px solid rgb(236, 236, 236); padding: 0px 0px 80px 240px; }
+body .wrap .right-line { width: 1px; height: 100%; position: absolute; background: rgb(229, 229, 229) none repeat scroll 0% 0%; top: 0px; left: 240px; }
+body .wrap .slide { position: fixed; width: 239px; left: 0px; top: 102px; box-sizing: border-box; overflow-y: auto; }
+body .wrap .slide .nav { padding-top: 36px; padding-left: 12%; padding-right: 4%; font-size: 14px; }
+body .wrap .slide .nav > a { display: block; font-size: 12px; line-height: 2.5; color: rgb(84, 89, 104); margin-bottom: 20px; }
+body .wrap .slide .nav .active, body .wrap .slide .nav .active > a, body .wrap .slide .nav li a:hover, body .wrap .slide .nav > a:hover { color: rgb(19, 139, 202); }
+body .wrap .slide .nav .active > .sub-nav { display: block; }
+body .wrap .slide .nav li { line-height: 30px; }
+body .wrap .slide .nav .sub-nav { padding-left: 8.5%; font-size: 12px; display: none; }
+body .wrap .main { box-sizing: border-box; padding: 0px 4.22222%; }
+body .wrap .main .head { height: 84px; border-bottom: 1px solid rgb(230, 230, 230); position: relative; }
+body .wrap .main .head .disable #edit:hover .noedit { display: block; position: absolute; width: auto; height: auto; line-height: 32px; padding: 0px 20px; background: rgb(255, 250, 244) none repeat scroll 0% 0%; border: 1px solid rgb(252, 227, 202); border-radius: 0px; white-space: nowrap; left: 0px; top: 26px; margin: 0px; }
+body .wrap .main .head .disable #edit:hover { background: rgb(255, 255, 255) none repeat scroll 0% 0%; border: 1px solid rgb(230, 230, 230); }
+body .wrap .main .head p { line-height: 84px; font-size: 25px; color: rgb(51, 51, 51); }
+body .wrap .main .head p .noedit { display: none; }
+body .wrap .main .head p span { position: relative; display: inline-block; width: 46px; height: 20px; line-height: 20px; color: rgb(102, 102, 102); background: rgb(255, 255, 255) none repeat scroll 0% 0%; border-radius: 4px; font-size: 12px; text-align: center; margin-left: 5px; border: 1px solid rgb(230, 230, 230); }
+body .wrap .main .head p span:hover { cursor: pointer; background: rgb(11, 121, 184) none repeat scroll 0% 0%; border: medium none; }
+body .wrap .main .head .history { position: absolute; right: 0px; bottom: 18px; }
+body .wrap .main .head .history p { font-size: 12px; color: rgb(84, 89, 104); line-height: 26px; white-space: nowrap; }
+body .wrap .main .head .history p a { color: rgb(19, 139, 202); margin-left: 20px; }
+body .wrap .main section div { font-size: 14px; }
+body .wrap .main section .other { margin-bottom: 40px; }
+body .wrap .main section .before { margin-top: 36px; }
+body .wrap .main section h2 { font-size: 20px; padding-left: 16px; font-weight: 400; position: relative; color: rgb(51, 51, 51); margin-bottom: 10px; }
+body .wrap .main section h2:not(.no-before)::before { content: ""; position: absolute; width: 5px; height: 20px; background-color: rgb(44, 167, 248); left: 0px; top: 5px; }
+body .wrap .main section h2 > span[id], body .wrap .main section h3 > span[id], body .wrap .main section h4 > span[id], body .wrap .main section h5 > span[id] { padding-top: 60px; pointer-events: none; }
+body .wrap .main section p { font-size: 14px; color: rgb(51, 51, 51); line-height: 26px; padding-left: 15px; }
+body .wrap .main section .new-box #toc, body .wrap .main section .new-box hr { display: none; }
+body .wrap .main section .new-box ul { margin: 20px 0px; padding-left: 30px; font-size: 14px; }
+body .wrap .main section .new-box ul li { position: relative; padding-left: 5px; font-size: 14px; color: rgb(51, 51, 51); }
+body .wrap .main section .new-box ul li > p { padding-left: 0px; }
+body .wrap .main section .new-box ul li::before { content: "· "; position: absolute; left: -5px; top: 50%; transform: translate(0px, -50%); }
+body .wrap .main section .new-box h1, body .wrap .main section .new-box h2, body .wrap .main section .new-box h3, body .wrap .main section .new-box h4, body .wrap .main section .new-box h5, body .wrap .main section .new-box h6 { margin-top: 40px; margin-bottom: 10px; font-weight: 400; }
+#ct .main li, #ct .main table { margin-top: 10px; }
+body .wrap .main section .new-box table { margin-left: 15px; }
+#ct table { border-collapse: collapse; border-spacing: 0px; width: 100%; }
+#ct table td, #ct table th { padding: 12px 20px; border: 1px solid rgb(230, 230, 230); }
+#ct .main ol, #ct .main ol li { list-style-type: decimal; list-style-position: inside; }
+#ct .main table { font-size: 14px; }
+#ct .main ol { padding-left: 15px; }
+#ct .main ol li { font-size: 14px; color: rgb(51, 51, 51); line-height: 26px; }
+#ct .main ol li p { padding-left: 0px; display: inline-block; }
+@media screen and (max-width: 1140px) {
+  body .wrap { width: auto; }
+}

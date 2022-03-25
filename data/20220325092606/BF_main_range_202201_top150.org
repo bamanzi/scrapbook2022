@@ -1,0 +1,463 @@
+#+TITLE: Big Finish Main Range top 80
+
+* BF Main Range top 150 (>=7.5)
+
+
+|   | Rank |  Rating | No.. Title                                    | Doctor   | Year | Features                       | Writer                         | Story Ars            | PLOT |            |   |   |
+|   |      | 2022.01 | . <34>                                        |          |      | <30>                           | <30>                           |                      |      |            |   |   |
+|---+------+---------+-----------------------------------------------+----------+------+--------------------------------+--------------------------------+----------------------+------+------------+---+---|
+|   |  122 |     7.7 | 20. Loups-Garoux                              | 5th      | 2001 | Turlough                       | Marc Platt                     |                      |      |            |   |   |
+|   |  120 |     7.7 | 24. +The Eye of the Scorpion+                 | 5th      | 2001 | Peri, Erimem                   | Iain McLaughlin                |                      |      |            |   |   |
+|   |    4 |     9.1 | 34. +Spare Parts+                             | 5th      | 2002 | Nyssa, Cybermen                | Marc Platt                     | none                 | Y    | #Cybermen  |   |   |
+|   |  109 |     7.7 | 38. The Church and the Crown                  | 5th      | 2002 | Peri, Erimem                   | Cavan Scott and Mark Wright    |                      |      |            |   |   |
+| / |   62 |     8.2 | 44. Creatures of Beauty                       | 5th      | 2003 | Nyssa                          | Nicholas Briggs                | none                 | -    |            |   |   |
+|   |  103 |     7.8 | 47. Omega                                     | 5th      | 2003 | Omega                          | Nov Fountain                   |                      |      |            |   |   |
+|   |  115 |     7.7 | 71. The Council of Nicaea                     | 5th      | 2005 | Peri, Erimem                   | Caroline Symcox                |                      |      |            |   |   |
+|   |   14 |     8.8 | 81. The Kingmaker                             | 5th      | 2006 | Peri, Erimem, Fourth Doctor    | Nev Fountain                   |                      | -    |            |   |   |
+|   |  110 |     7.7 | 91b. Circular Time - Summer                   | 5th      | 2007 | Nyssa                          | Mike Maddox / Paul Cornell     | none                 |      |            |   |   |
+|   |   26 |     8.6 | 91c. Circular Time - Autumn                   | 5th      | 2007 | Nyssa                          | Paul Cornell                   | none                 | Y    |            |   |   |
+|   |   35 |     8.5 | 91d. Circular Time - Winter                   | 5th      | 2007 | Nyssa, Kamelion                | Paul Cornell                   | none                 | Y    | #Master    |   |   |
+|   |   42 |     8.4 | 99. +Son of the Dragon+                       | 5th      | 2007 | Peri, Erimem                   | Steve Lyons                    |                      | Y    |            |   |   |
+|   |  116 |     7.7 | 104. The Bride of Peladon                     | 5th      | 2008 | Peri, Erimem, Peladonians, Ice Warriors | Barnaby Edwards                |                      |      |            |   |   |
+|   |   95 |     7.9 | 107. +The Haunting of Thomas Brewster+        | 5th      | 2008 | Nyssa, Brewster                | Jonathan Morris                | Brewster             |      |            |   |   |
+|   |  137 |     7.5 | 127. Castle of Fear                           | 5th      | 2009 | Nyssa, Rutans                  | Castle of Fear                 |                      |      |            |   |   |
+|   |   46 |     8.4 | 128. +The Eternal Summer+                     | 5th      | 2009 | Nyssa, Maxwell Edison          | Matthew Sweet                  |                      | Y    |            |   |   |
+|   |   66 |     8.1 | 136. +Cobwebs+                                | 5th      | 2010 | Nyssa, Tegan, Turlough         | Jonathan Morris                |                      | Y    |            |   |   |
+|   |  142 |     7.5 | 142c. Doing Time                              | 5th      | 2010 | Nyssa                          | William Gallagher              |                      |      |            |   |   |
+|   |   53 |     8.3 | 142d. Special Features                        | 5th      | 2010 | Nyssa                          | John Dorney                    |                      | Y    |            |   |   |
+|   |   58 |     8.2 | 159. The Emerald Tiger                        | 5th      | 2012 | Nyssa, Tegan, Turlough         | Barnaby Edwards                |                      | Y    |            |   |   |
+|   |   75 |     8.0 | 161. The Butcher of Brisbane                  | 5th      | 2012 | Nyssa, Tegan, Turlough, Magnus Greel | Marc Platt                     |                      | Y    |            |   |   |
+|   |   80 |     7.9 | 165. The Burning Prince                       | 5th      | 2012 | Kylo Sorsha                    | John Dorney                    |                      |      |            |   |   |
+|   |  114 |     7.7 | 173. The Lady of Mercia                       | 5th      | 2013 | Nyssa, Tegan, Turlough         | Paul Magrs                     |                      |      |            |   |   |
+|   |   55 |     8.2 | 174. Prisoners of Fate                        | 5th      | 2013 | Nyssa, Tegan, Turlough, Eldrad | Jonathan Morris                |                      | Y    |            |   |   |
+|   |   51 |     8.3 | 178. +1963: Fanfare for the Common Men+       | 5th      | 2013 | Nyssa                          | Eddie Robson                   |                      | Y    |            |   |   |
+|   |  123 |     7.7 | 196. Equilibrium                              | 5th      | 2015 | Nyssa, Tegan, Turlough         | Matt Fitton                    |                      |      |            |   |   |
+|   |   68 |     8.1 | 197. The Entropy Plague                       | 5th      | 2015 | Nyssa, Tegan, Turlough         | Jonathan Morris                |                      | -    |            |   |   |
+|   |   54 |     8.3 | 200. +The Secret History+                     | 5th      | 2015 | Steven, Vicki, the Monk        | Eddie Robson                   |                      | Y    |            |   |   |
+|   |   81 |     7.9 | 208. The Waters of Amsterdam                  | 5th      | 2016 | Tegan, Nyssa                   | Jonathan Morris	            |                      |      |            |   |   |
+|   |   12 |     8.8 | 209. +Aquitaine+                              | 5th      | 2016 | Tegen, Nyssa                   | Simon Barnard and Paul Morris  |                      | Y    |            |   |   |
+|   |   60 |     8.2 | 210. The Peterloo Massacre                    | 5th      | 2016 | Tegan, Nyssa                   | Paul Magrs                     |                      | Y    |            |   |   |
+|   |  140 |     7.5 | 212. +Vampire of the Mind+                    | 5th      | 2016 | The Master                     | Justin Richards                |                      |      |            |   |   |
+|   |   74 |     8.0 | 217c. Repeat Offender                         | 5th      | 2016 | Turlough                       | Eddie Robson                   |                      | Y    |            |   |   |
+|   |   33 |     8.5 | 224b. Dalek Soul                              | 5th      | 2017 | Nyssa, Daleks                  | Guy Adams                      |                      | -    | #Daleks    |   |   |
+|   |   16 |     8.9 | 230. +Time in Office+                         | 5th      | 2017 | Tegan, Leela, Time Lords       | Eddie Robson                   |                      | y    |            |   |   |
+|   |  141 |     7.5 | 234. Kingdom of Lies                          | 5th      | 2018 | Adric, Tegan, Nyssa            | Robert Khan, Tom Salinsky      |                      |      |            |   |   |
+|   |   52 |     8.3 | 235. Ghost Walk <^>                           | 5th      | 2018 | Adric, Nyssa, Tegan            | James Goss                     |                      | Y    |            |   |   |
+|   |   37 |     8.5 | 236. Serpent in the Silver Mask               | 5th      | 2018 | Adric, Nyssa, Tegan            | David Llewellyn                |                      | Y    |            |   |   |
+|   |   65 |     8.1 | 258A. Warzone                                 | 5th      | 2019 | Nyssa, Tegan, Marc             | Chris Chapman                  |                      | -    |            |   |   |
+|---+------+---------+-----------------------------------------------+----------+------+--------------------------------+--------------------------------+----------------------+------+------------+---+---|
+|   |   24 |     8.6 | 6. The Marian Conspiracy                      | 6th      | 2000 | Evelyn                         | Jacqueline Rayner              | Evelyn               | Y    |            |   |   |
+|   |   88 |     7.9 | 9. The Spectre of Lanyon Moor                 | 6th      | 2000 | Evelyn, the Brigadier          | Nicholas Pegg                  |                      |      |            |   |   |
+|   |    3 |     9.2 | 14. +The Holy Terror+                         | 6th      | 2000 | Frobisher                      | Robert Shearman                | none                 | Y    |            |   |   |
+|   |  105 |     7.8 | 23. +Project : Twilight+                      | 6th      | 2001 | Evelyn, Nimrod, the Forge      | Cavan Scott and Mark Wright    | Evelyn               |      |            |   |   |
+|   |    9 |     8.9 | 27. The One Doctor                            | 6th      | 2001 | Mel                            | Gareth Roberts / Clayton Hickman | none                 | -    |            |   |   |
+|   |  129 |     7.6 | 33½ - The Maltese Penguin                     | 6th      | 2002 | Frobisher                      | Robert Shearman                |                      |      |            |   |   |
+|   |    6 |     9.1 | 40. +Jubilee+                                 | 6th      | 2003 | Evelyn, Daleks                 | Robert Shearman                | Evelyn               | y    | #Daleks    |   |   |
+|   |   15 |     8.8 | 43. Doctor Who and the Pirates                | 6th      | 2003 | Evelyn                         | Jacqueline Rayner              | Evelyn               | Y    |            |   |   |
+|   |  111 |     7.7 | 45. +Project Lazarus+                         | 6th, 7th | 2003 | Evelyn, Nimrod, the Forge      | Cavan Scott / Mark Wright      | Evelyn               |      |            |   |   |
+|   |    5 |     9.1 | 48. +Davros+                                  | 6th      | 2003 | Davros                         | Lance Parkin                   | none                 | Y    |            |   |   |
+|   |  143 |     7.5 | 51. The Wormery                               | 6th      | 2003 | Iris Wildthyme                 | Paul Magrs, Stephen Cole       | none                 |      |            |   |   |
+|   |   28 |     8.6 | 57. Arrangements for War                      | 6th      | 2004 | Evelyn, Rossiter               | Paul Sutton                    | Evelyn               | -    |            |   |   |
+|   |   91 |     7.8 | 65. +The Juggernauts+                         | 6th      | 2005 | Mel, Daleks, Davros, Mechanoids | Scott Alan Woodard             |                      |      |            |   |   |
+|   |   84 |     7.9 | 73. Thicker than Water                        | 6th      | 2005 | Mel, Evelyn, Rossiter          | Paul Sutton                    | Evelyn               |      |            |   |   |
+|   |  125 |     7.6 | 84. +The Nowhere Place+                       | 6th      | 2006 | Evelyn                         | Nicholas Briggs                |                      |      |            |   |   |
+|   |   98 |     7.8 | 86. +The Reaping+                             | 6th      | 2006 | Peri, Cybermen                 | Joseph Lidster                 |                      |      |            |   |   |
+|   |  126 |     7.6 | 90. Year of the Pig                           | 6th      | 2006 | Peri                           | Matthew Sweet                  |                      |      |            |   |   |
+|   |   13 |     8.8 | 94b. +Urgent Calls+                           | 6th      | 2007 | -                              | Eddie Robson                   | none                 | Y    | #Viyrans   |   |   |
+|   |   70 |     8.1 | 100b. My Own Private Wolfgang                 | 6th      | 2007 | Evelyn                         | Robert Shearman                |                      | -    |            |   |   |
+|   |   92 |     7.8 | 100c. Bedtime Story                           | 6th      | 2007 | Evelyn                         | Joseph Lidster                 |                      |      |            |   |   |
+| / |   45 |     8.4 | 105. The Condemned                            | 6th      | 2008 | Charley, DI Menzies            | Eddie Robson                   | Charley              | -    |            |   |   |
+|   |  139 |     7.5 | 114. Brotherhood of the Daleks                | 6th      | 2008 | Charley, Thals, Daleks         | Alan Barnes                    | Charley              |      |            |   |   |
+|   |   89 |     7.9 | 116. The Raincloud Man                        | 6th      | 2008 | Charley, DI Menzies            | Eddie Robson                   | Charley              |      |            |   |   |
+|   |   57 |     8.2 | 124. +Patient Zero+                           | 6th      | 2009 | Charley, Viyrans               | Nicholas Briggs                | Charley              | -    | #Viyrans   |   |   |
+|   |   69 |     8.1 | 126. Blue Forgotten Planet                    | 6th      | 2009 | Mila, Charley, Viyrans         | Nicholas Briggs                | Charley              | -    | #Viyrans   |   |   |
+|   |  135 |     7.6 | 134. The Wreck of the Titan                   | 6th      | 2010 | "Jamie"                        | Barnaby Edwards                |                      |      |            |   |   |
+|   |   34 |     8.5 | 135. Legend of the Cybermen                   | 6th      | 2010 | "Jamie", Zoe, Cybermen         | Mike Maddox                    |                      | Y    | #Cybermen  |   |   |
+|   |  138 |     7.5 | 144. The Feast of Axos                        | 6th      | 2011 | Evelyn, Brewster, Axons        | Mike Maddox                    | Evelyn/Brewster      |      |            |   |   |
+|   |   47 |     8.3 | 150d. Question Marks                          | 6th      | 2011 | Peri                           | Philip Lawrence                |                      | -    |            |   |   |
+|   |   82 |     7.9 | 156. +The Curse of Davros+                    | 6th      | 2012 | Flip, Davros, Daleks           | Jonathan Morris                | Flip                 | -    | #Daleks    |   |   |
+|   |  132 |     7.6 | 157. The Fourth Wall                          | 6th      | 2012 | Flip                           | John Dorney                    | Flip                 |      |            |   |   |
+|   |   83 |     7.9 | 169. The Wrong Doctors                        | 6th      | 2013 | Mel                            | Matt Fitton                    | none                 |      |            |   |   |
+|   |   22 |     8.6 | 188d. The Curious Incident of the Docotor...  | 6th      | 2014 | Peri                           | Nev Fountain                   |                      | -    |            |   |   |
+|   |   29 |     8.6 | 192. +The Widow's Assassin+                   | 6th      | 2014 | Peri                           | Matt Fitton                    |                      | -    |            |   |   |
+|   |   25 |     8.6 | 193. +Masters of Earth+                       | 6th      | 2014 | Peri, Daleks                   | Mark Wright and Cavan Scott    |                      | -    | #Daleks    |   |   |
+|   |   96 |     7.8 | 194. The Rani Elite                           | 6th      | 2014 | Peri, Second Rani              | Justin Richards                |                      |      |            |   |   |
+|   |  100 |     7.8 | 204. Criss-Cross                              | 6th      | 2015 | Constance                      | Matt Fitton                    |                      |      |            |   |   |
+|   |   86 |     7.9 | 220. Quicksilver                              | 6th      | 2016 | Constance, Flip                | Matt Fitton                    | Flip                 |      |            |   |   |
+|   |   36 |     8.4 | 232. The Middle                               | 6th      | 2017 | Constance, Flip                | Chris Chapman                  | Flip                 | -    |            |   |   |
+|   |   30 |     8.6 | 233. Static                                   | 6th      | 2017 | Constance, Flip, Static        | Jonathan Morris                | Flip                 | -    |            |   |   |
+|   |  136 |     7.5 | 239. Iron Bright                              | 6th      | 2018 | Isambard Kingdom Brunel        | Chris Chapman                  |                      |      |            |   |   |
+|   |  104 |     7.8 | 240. Hour of the Cybermen                     | 6th      | 2018 | Daniel Hopkins, UNIT, Cybermen | Andrew Smith                   |                      |      |            |   |   |
+|---+------+---------+-----------------------------------------------+----------+------+--------------------------------+--------------------------------+----------------------+------+------------+---+---|
+|   |   79 |     7.9 | 5. The Fearmonger                             | 7th      | 2000 | Ace                            | Jonathan Blum                  |                      |      |            |   |   |
+|   |   49 |     8.3 | 12. The Fires of Vulcan                       | 7th      | 2000 | Mel                            | Steve Lyons                    |                      | -    |            |   |   |
+|   |   76 |     8.0 | 25. +Colditz+                                 | 7th      | 2001 | Peri, Klein                    | Steve Lyons                    | Klein                |      |            |   |   |
+|   |    7 |     9.0 | 49. +Master+                                  | 7th      | 2003 | The Master, Death              | Joseph Lidster                 | none                 | Y    | #Master    |   |   |
+|   |   50 |     8.3 | 58. +The Harvest+                             | 7th      | 2004 | Ace, Hex, Cybermen             | Dan Abnett                     | Hex                  | Y    | #Cybermen  |   |   |
+|   |   31 |     8.5 | 74. Live 34                                   | 7th      | 2005 | Ace, Hex                       | James Parson / Andrew Stirling-Brown | Hex                  | -    |            |   |   |
+|   |   71 |     8.0 | 79. Night Thoughts                            | 7th      | 2006 | Ace, Hex                       | Gary Russell                   |                      | -    |            |   |   |
+|   |  107 |     7.7 | 82. The Settling                              | 7th      | 2006 | Ace, Hex                       | Simon Guerrier                 |                      |      |            |   |   |
+|   |  119 |     7.7 | 89. No Man's Land                             | 7th      | 2006 | Ace, Hex, the Forge            | Martin Day                     | Forge                |      |            |   |   |
+|   |   20 |     8.6 | 115d. The Word Lord                           | 7th      | 2008 | Ace, Hex, Nobody No-One        | Steven Hall                    |                      | -    |            |   |   |
+|   |   23 |     8.6 | 120. The Magic Mousetrap                      | 7th      | 2009 | Ace, Hex, Celestial Toymaker   | Matthew Sweet                  |                      | -    | #OldOnes   |   |   |
+|   |   64 |     8.2 | 122. The Angel of Scutari                     | 7th      | 2009 | Ace, Hex                       | Paul Sutton                    | Hex                  | -    |            |   |   |
+|   |   11 |     8.8 | 130. +A Thousand Tiny Wings+                  | 7th      | 2010 | Klein                          | Andy Lane                      | Klein                | -    | #Klein     |   |   |
+|   |   19 |     8.6 | 131a. +Klein's Story+                         | 7th      | 2010 | Klein                          | John Ainsworth / Lee Mansfield | Klein                | y    | #Klein     |   |   |
+|   |   87 |     7.9 | 131b. +Survival of the Fittest+               | 7th      | 2010 | Klein                          | Jonathan Clements              | Klein                |      |            |   |   |
+|   |   18 |     8.7 | 132. +The Architects of History+              | 7th      | 2010 | Klein, Selachians              | Steve Lyons                    | Klein                | -    | #Klein     |   |   |
+|   |   73 |     8.0 | 139. Project Destiny                          | 7th      | 2010 | Ace, Hex, Nimrod, the Forge    | Cavan Scott and Mark Wright    | Hex, Forge           | -    | #The_Forge |   |   |
+|   |    1 |     9.5 | 140. A Death in the Family                    | 7th      | 2010 | Ace, Hex, Evelyn, Nobody No-One, the Forge | Steven Hall                    | Evelyn, Hex, Forge   | -    | #OldOnes   |   |   |
+|   |   40 |     8.4 | 149. Robophobia                               | 7th      | 2011 | Liv, Kaldor androids           | Nicholas Briggs                |                      | -    |            |   |   |
+|   |  112 |     7.7 | 152. +House of Blue Fire+                     | 7th      | 2011 | Sally                          | Mark Morris                    | Hex                  |      |            |   |   |
+|   |   10 |     8.8 | 162. +Protect and Survive+                    | 7th      | 2012 | Ace, Hex                       | Jonathan Morris                | Hex                  | Y    | #OldOnes   |   |   |
+| / |  121 |     7.7 | 163. Black and White                          | 7th      | 2013 | Ace, Hex, Sally, Lysandra, Garundel, the Forge | Matt Fitton                    | Hex                  |      |            |   |   |
+|   |   43 |     8.4 | 164. Gods and Monsters                        | 7th      | 2013 | Ace, Hex, Sally, Lysandra, Fenric, the Forge | Mike Maddox and Alan Barnes    | Hex/Sally            | -    | #OldOnes   |   |   |
+|   |   97 |     7.8 | 176. Starlight Robbery                        | 7th      | 2013 | Klein, Will, Sontarans, Garundel | Matt Fitton                    | Klein                |      |            |   |   |
+|   |   77 |     8.0 | 180. 1963: The Assassination Games            | 7th      | 2013 | Ace, Counter-Measures          | John Dorney                    |                      | -    |            |   |   |
+|   |   56 |     8.2 | 181. Afterlife                                | 7th      | 2013 | Ace, Hex, Sally                | Matt Fitton                    | Hex/Sally            | -    |            |   |   |
+|   |  113 |     7.7 | 201. +We Are the Daleks+                      | 7th      | 2015 | Mel, Daleks                    | Jonathan Morris                | none                 |      |            |   |   |
+|   |   67 |     8.1 | 207a. +You Are the Doctor+                    | 7th      | 2015 | Ace                            | John Dorney                    |                      | -    |            |   |   |
+|   |    8 |     8.9 | 213. +The Two Masters+                        | 7th      | 2016 | The Old Master, The New Master | John Dorney                    |                      | -    | #Master    |   |   |
+|   |  106 |     7.8 | 226b. World Apart                             | 7th      | 2017 | Ace, Hex                       | Scott Handcock                 |                      |      |            |   |   |
+|   |  131 |     7.5 | 243. The Quantum Possibility Engine           | 7th      | 2018 | Ace, Mel                       | Guy Adams                      |                      |      |            |   |   |
+|   |   61 |     8.1 | 245. Muse of Fire                             | 7th      | 2018 | Ace, Hex, Iris, Panda          | Paul Magrs                     |                      | -    |            |   |   |
+|---+------+---------+-----------------------------------------------+----------+------+--------------------------------+--------------------------------+----------------------+------+------------+---+---|
+|   |  124 |     7.6 | 16. +Storm Warning+                           | 8th      | 2001 | Charley                        | Gary Russell                   | Charley              |      |            |   |   |
+|   |    2 |     9.5 | 29. +The Chimes of Midnight+                  | 8th      | 2002 | Charley                        | Robert Shearman                | Charley              | Y    |            |   |   |
+|   |   59 |     8.2 | 30. +Seasons of Fear+                         | 8th      | 2002 | Charley, Nimon                 | Paul Cornell and Caroline Symcox |                      | Y    |            |   |   |
+|   |   39 |     8.4 | 33. Neverland                                 | 8th      | 2002 | Charley, Romana II, Rassilon, Time Lords | Alan Barnes                    | Charley, Di-Universe | Y    |            |   |   |
+|   |   17 |     8.6 | 52. Scherzo                                   | 8th      | 2003 | Charley                        | Robert Shearman                | Di-Universe          | Y    |            |   |   |
+|   |   38 |     8.4 | 54. +The Natural History of Fear+             | 8th      | 2004 | Charley, C'rizz                | Jim Mortimore                  | Charley              | -    |            |   |   |
+|   |  130 |     7.6 | 62. The Last                                  | 8th      | 2004 | Charley, C'rizz, Kro'ka        | Gary Hopkins                   | Di-Universe          |      |            |   |   |
+|   |  127 |     7.6 | 63. Caerdroia                                 | 8th      | 2004 | Charley, C'rizz, Kro'ka        | LIoyd Rose                     | Di-Universe          |      |            |   |   |
+|   |  102 |     7.8 | 72. +Terror Firma+                            | 8th      | 2005 | Charley, Charley, Daleks, Davros | Joseph Lidster                 |                      |      |            |   |   |
+|   |  118 |     7.7 | 77. +Other Lives+                             | 8th      | 2005 | Charley, C'rizz                | Gary Hopkins                   |                      |      |            |   |   |
+|   |   85 |     7.9 | 88. +Memory Lane+                             | 8th      | 2005 | Charley, C'rizz                | Eddie Robson                   |                      |      |            |   |   |
+|   |   48 |     8.3 | 103. The Girl Who Never Was                   | 8th      | 2007 | Charley, Cybermen              | Alan Barnes                    | Charley              | Y    | #Cybermen  |   |   |
+|   |   41 |     8.4 | 123d. +The Company of Friends - Mary's Story+ | 8th      | 2009 | Mary                           | Jonathan Morris                |                      | Y    |            |   |   |
+|   |   27 |     8.6 | 153. +The Silver Turk+                        | 8th      | 2011 | Mary, Cybermen                 | Marc Platt                     |                      | Y    | #Cybermen  |   |   |
+|---+------+---------+-----------------------------------------------+----------+------+--------------------------------+--------------------------------+----------------------+------+------------+---+---|
+|   |  157 |     7.4 | 46. Flip-flop                                 | 7th      | 2003 | Mel                            | Jonathan Morris                |                      |      |            |   |   |
+|   |  154 |     7.4 | 80. Time Works                                | 8th      | 2006 | Charley, C'rizz                | Steve Lyons                    |                      |      |            |   |   |
+|   |  149 |     7.4 | 85. Red                                       | 7th      | 2006 | Mel                            | Stewart Sheargold              |                      |      |            |   |   |
+|   |  155 |     7.4 | 95b. Urban Myths                              | 5th      | 2007 | Peri                           | Paul Sutton                    |                      |      |            |   |   |
+|   |  146 |     7.4 | 111. The Doomwood Curse                       | 6th      | 2008 | Charley                        | Jacqueline Rayne               |                      |      |            |   |   |
+|   |  150 |     7.4 | 115c. Casualties of War                       | 7th      | 2008 | Ace, Hex, the Forge            | Mark Michalowsk                |                      |      |            |   |   |
+|   |  144 |     7.4 | 121. Enemy of the Daleks                      | 7th      | 2009 | Ace, Hex, Daleks               | David Bishop                   | Hex                  |      |            |   |   |
+|   |  147 |     7.4 | 143. The Crimes of Thomas Brewster            | 6th      | 2011 | Evelyn, Brewster, Flip, DI Menzies | Jonathan Morris                |                      |      |            |   |   |
+|   |  145 |     7.4 | 207b. Come Die With Me                        | 7th      | 2015 | Ace                            |                                |                      |      |            |   |   |
+|   |  148 |     7.4 | 256. Tartarus                                 | 5th      | 2019 | Nyssa, Tegan, Marc             | David Liewellyn                |                      |      |            |   |   |
+|   |  151 |     7.4 | 258B. Conversion                              | 5th      | 2019 | Nyssa, Tegan, Marc, Cybermen   | Guy Adams                      |                      |      |            |   |   |
+|---+------+---------+-----------------------------------------------+----------+------+--------------------------------+--------------------------------+----------------------+------+------------+---+---|
+|   |   99 |     7.8 | 260. Dark Universe                            | 7th      | 2020 | Ace, the Eleven, Ollistra, Rasmus | Guy Adams                      |                      |      |            |   |   |
+|   |      |     7.1 | 261. The Psychic Circus                       | 7th      | 2020 | Chief clown, Kingpin, the Master, Morgana, Gods of Ragnarok |                                |                      |      |            |   |   |
+|   |   93 |     7.8 | 262. Subterfuge                               | 7th      | 2020 | Churchill, The Monk            | Helen Goldwyn                  |                      |      |            |   |   |
+|   |  152 |     7.4 | 263. Cry of the Vultriess                     | 6th      | 2020 | Flip, Constance, Ice Warriors  | Darren Jone                    |                      |      |            |   |   |
+|   |   32 |     8.4 | 264. Scorched Earth ⇈                         | 6th      | 2020 | Flip, Constance                | Chris Chapman                  |                      | Y    |            |   |   |
+|   |      |     6.9 | 265. The Lovecraft Invasion                   | 6th      | 2020 | Flip, Constance, H. P. Lovecraft |                                |                      |      |            |   |   |
+|   |   63 |     8.1 | 266A. Ghost Station                           | 5th      | 2020 | -                              | Steve Lyons                    |                      | -    |            |   |   |
+|   |      |     7.1 | 266B. The Bridge Master                       | 5th      | 2020 | -                              |                                |                      |      |            |   |   |
+|   |   78 |     7.9 | 266C. What Lurks Down Under                   | 5th      | 2020 | -                              | Tommy Donbavand                |                      |      |            |   |   |
+|   |      |         | 266D. The Dancing Plague                      | 5th      | 2020 | -                              |                                |                      |      |            |   |   |
+| / |   94 |     7.8 | 267A. Thin Time                               | 5th      | 2020 | 11th Doctor                    | Dan Abnett                     |                      |      |            |   |   |
+|   |      |     6.8 | 267B. Madquake                                | 5th      | 2020 | Nyssa, Tegan, Marc, Slitheen   |                                |                      |      |            |   |   |
+|   |      |     6.7 | 268A. The Flying Dutchman                     | 7th      | 2020 | Ace, Hex                       |                                |                      |      |            |   |   |
+|   |  101 |     7.8 | 268B. Displaced                               | 7th      | 2020 | Ace, Hex                       | Katharine Armitage             |                      |      |            |   |   |
+|   |  128 |     7.6 | 269A. Aimed at the Body <v>                   | 5th      | 2020 | Daleks                         |                                | Time War             |      |            |   |   |
+|   |      |     6.5 | 269B. Lightspeed                              | 5th      | 2020 | Daleks                         |                                |                      |      |            |   |   |
+|   |   44 |     8.4 | 269c. The Bookshop at the End of the World    | 5th      | 2020 | Daleks                         | Simon Guerrier                 | Time War             |      |            |   |   |
+|   |      |     6.6 | 269d. Interlude                               | 5th      | 2020 | Daleks                         |                                |                      |      |            |   |   |
+|   |   72 |     8.0 | 270A. The Echo Chamber                        | 5th      | 2020 | Daleks                         | Jonathan Barnes                | Time War             |      |            |   |   |
+|   |  156 |     7.4 | 270B. Towards Zero                            | 5th      | 2020 | Daleks                         |                                | Time War             |      |            |   |   |
+|   |      |     6.8 | 270c. Castle Hydra                            | 5th      | 2020 | Daleks                         |                                |                      |      |            |   |   |
+|   |  117 |     7.7 | 270D. Effect and Cause                        | 5th      | 2020 | Daleks                         |                                | Time War             |      |            |   |   |
+|   |   21 |     8.6 | 271. Plight of the Pimpernel                  | 6th      | 2020 | Peri                           | Chris Chapman                  |                      |      |            |   |   |
+|   |  134 |     7.5 | 272. The Grey Man of the Mountain             | 7th      | 2020 | Ace, the Brigadier             |                                |                      |      |            |   |   |
+|   |      |     7.0 | 273. Colony of Fear                           | 6th      | 2021 | Constance                      |                                |                      |      |            |   |   |
+|   |      |     7.1 | 274. The Blazing Hour                         | 5th      | 2021 | Turlough                       |                                |                      |      |            |   |   |
+|   |  153 |     7.4 | 275a. Death and the Desert                    | 5-8th    | 2021 | Turlough, Constance, Charley   | Robert Valentine               |                      |      |            |   |   |
+|   |      |     6.8 | 275b. Flight of the Blackstar                 |          | 2021 | Turlough, Constance, Charley   | Robert Valentine               |                      |      |            |   |   |
+|   |   90 |     7.9 | 275c. Night Gallery ⇓                         | 5-8th    | 2021 | Turlough, Constance, Charley   | Robert Valentine               |                      |      |            |   |   |
+|   |  133 |     7.6 | 275d. The Lost Moon ⇊                         | 5-8th    | 2021 | Turlough, Constance, Charley  Calypso Jonze | Robert Valentine               |                      |      |            |   |   |
+#+TBLFM: 
+
+* BF Companion Chronicals top 30
+
+| best | rating | reviews | title                                         | doctor   | year | featuring                                    |          |
+|------+--------+---------+-----------------------------------------------+----------+------+----------------------------------------------+----------|
+|    5 |    8.9 | (152)   | 3.11 - The Mahogany Murderers                 | -        | 2009 | Jago & Litefoot                              |          |
+|   15 |    8.3 | (69)    | 8.1 - Mastermind                              | -        | 2013 | The Master, Matheson, Sato                   |          |
+|------+--------+---------+-----------------------------------------------+----------+------+----------------------------------------------+----------|
+|    4 |    9.1 | (142)   | 3.5 - Home Truths [fn:11]                     | 1st      | 2008 | Sara, Steven, Robert                         |          |
+|    8 |    8.5 | (97)    | 5.12 The Cold Equations                       | 1st      | 2011 | Steven, Oliver                               |          |
+|    9 |    8.5 | (43)    | 11.2 - Across the Darkened City               | 1st      | 2017 | Steven, Vicki, Daleks                        |          |
+|   10 |    8.5 | (39)    | 9.4 - The Locked Room [fn:13]                 | 1st      | 2015 | Steven, 1st Doctor's mind copy, Sida, Vardan |          |
+|   11 |    8.5 | (115)   | 5.1 - The Guardian of the Solar System [fn:11] | 1st      | 2010 | Sara, Steven, Bret, Mavic Chen, Robert       |          |
+|   13 |    8.4 | (89)    | 6.5 - The First Wave                          | 1st      | 2011 | Steven, Oliver, Vardans                      |          |
+|   14 |    8.3 | (114)   | 6.2 - The Rocket Men [fn:12]                  | 1st      | 2011 | Ian, Barbara, Vicki, Rocket Men              |          |
+|   16 |    8.3 | (113)   | 3.7 - The Transit of Venus                    | 1st      | 2009 | Ian, Barbara, Susan                          |          |
+|   17 |    8.2 | (71)    | 7.5 - Return of the Rocket Men [fn:12]        | 1st      | 2012 | Steven, Dodo, Rocket Men                     |          |
+|   18 |    8.2 | (119)   | 4.1 - The Drowned World [fn:11]               | 1st      | 2009 | Sara, Steven, Robert                         |          |
+|   20 |    8.1 | (93)    | 4.7 - The Suffering                           | 1st      | 2010 | Vicki, Steven    February                    |          |
+|   23 |    8.0 | (14)    | 13.3 - The Vardan Invasion of Mirth           | 1st      | 2019 | Steven, Vardans                              |          |
+|   24 |    8.0 | (42)    | 9.2 - The Unwinding World                     | 1st      | 2015 | Vicki, Ian, Barbara                          |          |
+|   26 |    8.0 | (38)    | 11.4 - The Plague of Dreams                   | 1st      | 2017 | Polly, Ben                                   |          |
+|   27 |    7.9 | (57)    | 8.10 - The War To End All Wars [fn:13]        | 1st      | 2014 | Steven, Dodo, Sida                           |          |
+|   28 |    7.9 | (70)    | 7.10 - The Library of Alexandria              | 1st      | 2013 | Ian, Barbara, Susan, The Mim                 |          |
+|   29 |    7.9 | (78)    | 6.7 - The Anachronauts                        | 1st      | 2012 | Steven, Sara                                 |          |
+|   34 |    7.8 | (111)   | 5.8 - The Perpetual Bond                      | 1st      | 2011 | Steven, Oliver                               |          |
+|   35 |    7.8 | (62)    | 7.7 - The Flames of Cadiz                     | 1st      | 2013 | Ian, Susan, Barbara                          |          |
+|   36 |    7.8 | (118)   | 1.1 - Frostfire                               | 1st      | 2007 | Vicki, Steven                                |          |
+|   38 |    7.7 | (111)   | 2.1 - Mother Russia                           | 1st      | 2007 | Steven, Dodo                                 |          |
+|   40 |    7.7 | (70)    | 7.1 - The Time Museum                         | 1st      | 2012 | Ian                                          |          |
+|   46 |    7.5 | (60)    | 8.2 - The Alchemists                          | 1st      | 2013 | Susan                                        |          |
+|   47 |    7.5 | (38)    | 9.3 - The Founding Fathers [fn:13]            | 1st      | 2015 | Steven, Vicki, 1st Doctor's mind copy, Sida  |          |
+|------+--------+---------+-----------------------------------------------+----------+------+----------------------------------------------+----------|
+|   12 |    8.5 | (44)    | 8.12 - Second Chances [fn:21]                       | 2nd      | 2014 | Zoe, Jamie, The Company                      |          |
+|   19 |    8.1 | (109)   | 4.2 - The Glorious Revolution                 | 2nd      | 2009 | Jamie, Zoe                                   |          |
+|   22 |    8.0 | (18)    | 12.4 - The Tactics of Defeat                  | 2nd      | 2018 | Jamie, Zoe, Ruth                             |          |
+|   31 |    7.8 | (24)    | 12.2 - Dumb Waiter                            | 2nd      | 2018 | Jamie, Victoria, Leela                       |          |
+|   32 |    7.8 | (72)    | 6.11 - The Jigsaw War                         | 2nd      | 2012 | Jamie, Zoe                                   |          |
+|   37 |    7.7 | (74)    | 6.3 - The Memory Cheats [fn:21]                     | 2nd      | 2011 | Zoe, Jamie, The Company                      |          |
+|   39 |    7.7 | (95)    | 3.9 - Resistance                              | 2nd      | 2009 | Polly, Ben, Jamie                            |          |
+|   42 |    7.7 | (46)    | 10.1 - The Mouthless Dead                     | 2nd      | 2016 | Jamie, Polly, Ben                            |          |
+|   44 |    7.6 | (79)    | 6.8 - The Selachian Gambit                    | 2nd      | 2012 | Jamie, Polly, Ben, Selachians                |          |
+|   49 |    7.5 | (19)    | 12.3 - The Iron Maid                          | 2nd      | 2018 | Jamie, Zoe                                   |          |
+|   50 |    7.5 | (82)    | 5.9 - The Forbidden Time                      | 2nd      | 2011 | Polly, Ben, Jamie                            |          |
+|------+--------+---------+-----------------------------------------------+----------+------+----------------------------------------------+----------|
+|    6 |    8.7 | (95)    | 7.9 - The Scorchies                           | 3rd      | 2013 | Jo, the Brig, Scorchies                      |          |
+|    7 |    8.6 | (127)   | 5.3 - Find and Replace                        | 3rd      | 2010 | Jo, Iris Wildthyme, Huxley, the Brig, Benton |          |
+|   21 |    8.0 | (54)    | 8.4 - Ghost in the Machine                    | 3rd      | 2013 | Jo                                           |          |
+|   33 |    7.8 | (98)    | 4.9 - Shadow of the Past                      | 3rd      | 2010 | Liz, the Brig, Yates, the Mim                |          |
+|   41 |    7.7 | (55)    | 7.12 - Council of War                         | 3rd      | 2013 | Benton, the Brig                             |          |
+|   43 |    7.6 | (86)    | 4.3 - The Prisoner of Peladon                 | 3rd      | 2009 | King Peladon, Alpha Centauri, Ice Warriors   |          |
+|   45 |    7.6 | (85)    | 3.10 - The Magician's Oath                    | 3rd      | 2009 | ates, Jo, the Brig, Benton                   |          |
+|   48 |    7.5 | (109)   | 2.3 - Old Soldiers                            | 3rd      | 2007 | The Brig                                     |          |
+|    3 |    9.1 | (110)   | 7.4 - The Last Post                           | 3th      | 2012 | Liz, Emily, the Brig                         |          |
+|------+--------+---------+-----------------------------------------------+----------+------+----------------------------------------------+----------|
+|   30 |    7.9 | (103)   | 2.4 - The Catalyst                            | 4th      | 2008 | Leela                                        |          |
+|   25 |    8.0 | (86)    | 4.5 - Ringpullworld                           | 5th      | 2009 | Turlough, Tegan, Huxley  12                  |          |
+|    1 |    9.2 | (151)   | 5.7 - Peri and the Piscon Paradox             | 5th, 6th | 2011 | Peri                                         |          |
+|    2 |    9.2 | (183)   | 4.12 - Solitaire                              | 8th      | 2010 | Charley, Celestial Toymaker                  | #OldOnes |
+
+* BF Short Trips top 30
+
+| best | rating | reviews | title                                            | doctor     | year | featuring                                             |
+|------+--------+---------+--------------------------------------------------+------------+------+-------------------------------------------------------|
+|    / |    8.9 | (15)    | Home Again, Home Again                           | 1st        |      | Ian, Barbara                                          |
+|    8 |    8.3 | (128)   | 1.1 - Rise and Fall                              | 1st        | 2010 | Susan, Barbara, Ian                                   |
+|   20 |    7.9 | (27)    | 7.12 - O Tannenbaum                              | 1st        | 2017 | Steven                                                |
+|   28 |    7.8 | (16)    | 8.9 - A Small Semblance of Home                  | 1st        | 2018 | Ian, Barbara, Susan                                   |
+|   30 |    7.7 | (70)    | 2.1 - 1963                                       | 1st        | 2011 | Barbara, Ian, Vicki                                   |
+|------+--------+---------+--------------------------------------------------+------------+------+-------------------------------------------------------|
+|    / |    8.3 | (54)    | 3. Lepidoptery for Beginners                     | 2nd        |      | -                                                     |
+|   12 |    8.1 | (37)    | 8.X - The Last Day At Work                       | 2nd        | 2018 | Jamie                                                 |
+|   19 |    7.9 | (15)    | 10.2 - Deleted Scenes                            | 2nd, 4th   | 2020 | Jamie, Sarah Jane Smith                               |
+|------+--------+---------+--------------------------------------------------+------------+------+-------------------------------------------------------|
+|    5 |    8.5 | (14)    | 9.6 - The Same Face                              | 3rd        | 2019 | Jo                                                    |
+|   10 |    8.3 | (32)    | 6.8 - Damascus                                   | 3rd        | 2016 | Jeremy Thorpe, Jo, UNIT                               |
+|   11 |    8.2 | (37)    | 6.7 - The Blame Game                             | 3rd        | 2016 | Liz, the Monk                                         |
+|    / |    9.3 | (13)    | Still Life                                       | 3rd        |      | Jo                                                    |
+|------+--------+---------+--------------------------------------------------+------------+------+-------------------------------------------------------|
+|    1 |    9.2 | (54)    | 7.6 - How to Win Planets and Influence People    | 4th        | 2017 | The Monk, Sarah, Jane, Harry                          |
+|    2 |    9.0 | (45)    | 6.9 - A Full Life                                | 4th        | 2016 | Adric, Romana II, K9                                  |
+|    3 |    8.9 | (43)    | 8.10 - I Am The Master                           | 4th        | 2018 | The Master                                            |
+|    7 |    8.5 | (24)    | 8.4 - Erasure                                    | 4th        | 2018 | Adric, Narvin                                         |
+|  STR |    8.4 | (23)    | 14. The Warren Legacy                            | 4th        |      | Romana I                                              |
+|      |    8.0 | (31)    | 5. Sound the Siren And I'll Come To You Comrade  | 4th        |      | Leela                                                 |
+|      |    7.9 | (15)    | The Doctor's First XI                            | 4th        |      | Romana I                                              |
+|   26 |    7.8 | (36)    | 4.4 - The Old Rogue                              | 4th, 2nd   | 2011 | Romana II, K9 Mark II, Second Doctor, Jamie McCrimmon |
+|------+--------+---------+--------------------------------------------------+------------+------+-------------------------------------------------------|
+|    6 |    8.5 | (30)    | 7.11 - The Ingenious Gentleman Adric of Alzarius | 5th        | 2017 | Adric, Nyssa, Tegan                                   |
+|   14 |    8.1 | (38)    | 4.6 - To Cut a Blade of Grass                    | 6th        | 2011 | Peri                                                  |
+|   16 |    8.0 | (11)    | 10.8 - These Stolen Hours                        | 6th        | 2020 | Charley                                               |
+|    9 |    8.3 | (63)    | 6.X - Forever Fallen                             | 7th        | 2016 | Ace                                                   |
+|------+--------+---------+--------------------------------------------------+------------+------+-------------------------------------------------------|
+|    / |    8.3 | (10)    | Tuesday                                          | 8th        |      | Harry                                                 |
+|    / |    7.9 | (60)    | 2. Museum Peace                                  | 8th        |      | Kalendorf                                             |
+|   22 |    7.8 | (53)    | 2.8 - Letting Go                                 | 8th        | 2011 | Charley                                               |
+|   24 |    7.8 | (31)    | 6.11 - The Man Who Wasn't There                  | 8th        | 2016 | Charley                                               |
+|   25 |    7.8 | (37)    | 7.10 - All Hands on Deck                         | 8th        | 2016 | Susan                                                 |
+|   31 |    7.7 | (31)    | 7.9 - A Heart on Both Sides                      | 8th        | 2017 | Nyssa                                                 |
+|   32 |    7.7 | (29)    | 5.8 - Foreshadowing                              | 8th        | 2015 | Charley, Yates                                        |
+|------+--------+---------+--------------------------------------------------+------------+------+-------------------------------------------------------|
+|   18 |    8.0 | (20)    | 9.7 - Battle Scars                               | 9th        | 2019 | -                                                     |
+|   29 |    7.8 | (16)    | 10.9 - Her Own Bootstraps                        | 9th        | 2020 | Rose                                                  |
+|   17 |    8.0 | (20)    | 8.8 - Flight Into Hull!                          | 10th'      | 2018 | Jackie                                                |
+|   21 |    7.9 | (22)    | 8.6 - The Siege of Big Ben                       | 10th'      | 2018 | Jackie                                                |
+|   23 |    7.8 | (32)    | 7.4 - The Jago & Litefoot Revival Act 2          | 10th, 11th | 2017 | Jago, Litefoot, Ellie                                 |
+|   27 |    7.8 | (34)    | 7.3 - The Jago & Litefoot Revival Act 1          | 10th, 11th | 2017 | Jago, Litefoot, Ellie                                 |
+|    4 |    8.5 | (33)    | 10.5 - Regeneration Impossible                   | 11th, 12th | 2020 |                                                       |
+|   15 |    8.0 | (26)    | 9.2 - The Astrea Conspiracy                      | 12th       | 2019 | Aphra Behn                                            |
+|------+--------+---------+--------------------------------------------------+------------+------+-------------------------------------------------------|
+|   13 |    8.1 | (20)    | 10.XB - Lesser Evils                             | -          | 2020 | The Master, Kotturuh                                  |
+
+* 1D
+** 1DA
+** EA
+* 2D EA
+* 3DA
+* 4DA
+
+|   | 2021.07 | Prio. | 2020.07 |    # | Title                            | Author                         | Featuring                                | Released          |
+|   |         |       |         |      |                                  |                                | <40>                                     |                   |
+|---+---------+-------+---------+------+----------------------------------+--------------------------------+------------------------------------------+-------------------|
+|   |     6.3 | [#E]  |         |  1.1 | Destination: Nerva               | Nicholas Briggs                | Leela                                    | 9 January 2012    |
+|   |     7.5 | [#C]  |         |  1.2 | The Renaissance Man              | Justin Richards                | Leela                                    | February 2012     |
+| / |     8.4 | [#B]  |         |  1.3 | The Wrath of the Iceni           | John Dorney                    | Leela                                    | March 2012        |
+|   |     6.6 | [#E]  |         |  1.4 | Energy of the Daleks             | Nicholas Briggs                | Leela, Daleks                            | April 2012        |
+|   |     7.3 | [#D]  |         |  1.5 | Trail of the White Worm /        | Alan Barnes                    | Leela, The Master                        | May 2012          |
+|   |     7.2 | [#D]  |         |  1.6 | The Oseidon Adventure            | Alan Barnes                    | Leela, The Master, Kraals                | June 2012         |
+| / |     8.2 | [#B]  |         |  2.1 | The Auntie Matter                | Jonathan Morris                | Romana I                                 | 14 January 2013   |
+|   |     6.8 | [#E]  |         |  2.2 | The Sands of Life /              | Nicholas Briggs                | Romana I, K9 Mark II, Cuthbert, Laan     | 11 February 2013  |
+|   |     6.3 | [#E]  |         |  2.3 | War Against the Laan             | Nicholas Briggs                | Romana I, Cuthbert, Laan                 | 11 March 2013     |
+| ^ |     8.1 | [#B]  |         |  2.4 | The Justice of Jalxar            | John Dorney                    | Romana I, Jago, Litefoot                 | March 2013        |
+| ^ |     7.6 | [#C]  |         |  2.5 | Phantoms of the Deep             | Jonathan Morris                | Romana I, K9 Mark II                     | May 2013          |
+|   |     7.0 | [#D]  |         |  2.6 | The Dalek Contract /             | Nicholas Briggs                | Romana I, K9 Mark II, Daleks, Cuthbert   | June 2013         |
+|   |     7.0 | [#D]  |         |  2.7 | The Final Phase                  | Nicholas Briggs                | Romana I, K9 Mark II, Daleks, Cuthbert   | July 2013         |
+| / |     7.7 | [#C]  |         |  3.1 | The King of Sontar               | John Dorney                    | Leela, Sontarans                         | 15 January 2014   |
+|   |     7.4 | [#D]  |         |  3.2 | White Ghosts                     | Alan Barnes                    | Leela                                    | 14 February 2014  |
+| / |     8.2 | [#B]  |         |  3.3 | The Crooked Man                  | John Dorney                    | Leela                                    | 14 March 2014     |
+|   |     6.2 | [#E]  |         |  3.4 | The Evil One                     | Nicholas Briggs                | Leela, The Master                        | 11 April 2014     |
+| / |     7.8 | [#C]  |         |  3.5 | Last of the Colophon             | Jonathan Morris                | Leela                                    | 14 May 2014       |
+|   |     6.9 | [#E]  |         |  3.6 | Destroy the Infinite             | Nicholas Briggs                | Leela, The Eminence                      | 18 June 2014      |
+|   |     6.3 | [#E]  |         |  3.7 | The Abandoned                    | Louise Jameson and Nigel Fairs | Leela                                    | 11 July 2014      |
+|   |     7.0 | [#D]  |         |  3.8 | Zygon Hunt                       | Nicholas Briggs                | Leela, Zygons                            | 15 August 2014    |
+|   |     6.5 | [#E]  |         |  4.1 | The Exxilons                     | Nicholas Briggs                | Leela, K9 Mark I, Exxilons               | 15 January 2015   |
+|   |     7.5 | [#C]  |         |  4.2 | The Darkness of Glass            | Justin Richards                | Leela                                    | 12 February 2015  |
+| ^ |     8.4 | [#B]  |         |  4.3 | Requiem for the Rocket Men       | John Dorney                    | Leela, K9 Mark I, Rocket Men, The Master | 13 March 2015     |
+|   |     7.3 | [#D]  |         |  4.4 | Death Match                      | Matt Fitton                    | Leela, K9 Mark I, The Master             | 16 April 2015     |
+| ^ |     7.7 | [#C]  |         |  4.5 | Suburban Hell                    | Alan Barnes                    | Leela                                    | 21 May 2015       |
+|   |     7.4 | [#D]  |         |  4.6 | The Cloisters of Terror          | Jonathan Morris                | Leela, Emily Shaw                        | 4 June 2015       |
+|   |     7.2 | [#D]  |         |  4.7 | The Fate of Krelos /             | Nicholas Briggs                | Leela, K9 Mark I                         | 8 July 2015       |
+|   |     6.0 | [#E]  |     5.8 |  4.8 | Return to Telos                  | Nicholas Briggs                | Leela, K9 Mark I, Jamie, Cybermen        | 11 August 2015    |
+|   |     7.1 | [#D]  |         |  5.1 | Wave of Destruction              | Justin Richards                | Romana II, K9 Mark II, Vardans           | 12 January 2016   |
+|   |     7.1 | [#D]  |         |  5.2 | The Labyrinth of Buda Castle     | Eddie Robson                   | Romana II                                | 18 February 2016  |
+| ^ |     7.6 | [#C]  |         |  5.3 | The Paradox Planet /             | Jonathan Morris                | Ronama II, K9 Mark II                    | 16 March 2016     |
+| ^ |     7.6 | [#C]  |         |  5.4 | Legacy of Death                  | Jonathan Morris                | Ronama II, K9 Mark II                    | 13 April 2016     |
+|   |     7.2 | [#D]  |         |  5.5 | Gallery of Ghouls                | Alan Barnes                    | Romana II                                | 10 May 2016       |
+| / |     8.7 | [#A]  |         |  5.6 | The Trouble with Drax            | John Dorney                    | Romana II, K9 Mark II, Drax              | 14 June 2016      |
+|   |     7.4 | [#D]  |         |  5.7 | The Pursuit of History /         | Nicholas Briggs                | Roaman II, K9 Mark II, Black Guardian, White Guardian, Cuthbert, Laan | 13 July 2016      |
+|   |     7.3 | [#D]  |         |  5.8 | Casualties of Time               | Nicholas Briggs                | Roaman II, K9 Mark II, Black Guardian, White Guardian, Cuthbert, Laan | 10 August 2016    |
+|   |     6.8 | [#E]  |         |  6.1 | The Beast of Kravenos            | Justin Richards                | Romana II, K9 Mark II, Jago, Litefoot    | 11 January 2017   |
+|   |     7.3 | [#D]  |         |  6.2 | The Eternal Battle               | Cavan Scott, Mark Wright       | Romana II, K9 Mark II, Sontarans         | 15 February 2017  |
+|   |     6.3 | [#E]  |         |  6.3 | The Silent Scream                | James Goss                     | Romana II, K9 Mark II                    | 22 March 2017     |
+|   |     6.7 | [#E]  |         |  6.4 | Dethras                          | Adrian Poynton                 | Romana II                                | 20 April 2017     |
+|   |     7.4 | [#D]  |         |  6.5 | The Haunting of Malkin Place     | Phil Mulryne                   | Romana II                                | 17 May 2017       |
+|   |     7.0 | [#D]  |         |  6.6 | Subterranea                      | Jonathan Morris                | Romana II                                | 14 June 2017      |
+|   |     6.6 | [#E]  |         |  6.7 | The Movellan Grave               | Andrew Smith                   | Romana II, Movellans                     | 12 July 2017      |
+|   |     7.4 | [#D]  |     7.2 |  6.8 | The Skin of the Sleek /          | Marc Platt                     | Romana II                                | 16 August 2017    |
+|   |     7.1 | [#D]  |         |  6.9 | The Thief Who Stole Time         | Marc Platt                     | Romana II                                | 13 September 2017 |
+| ^ |     7.7 | [#C]  |         |  7.1 | The Sons of Kaldor               | Andrew Smith                   | Leela, Kaldor androids                   | 18 January 2018   |
+|   |     7.5 | [#C]  |         |  7.2 | The Crowmarsh Experiment         | David Llewellyn                | Leela                                    | 18 January 2018   |
+|   |     7.4 | [#D]  |         |  7.3 | The Mind Runners /               | John Dorney                    | K9 Mark I                                | 18 January 2018   |
+|   |     7.4 | [#D]  |         |  7.4 | The Demon Rises                  | John Dorney                    | K9 Mark I                                | 18 January 2018   |
+|   |     7.0 | [#D]  |         |  7.5 | The Shadow of London             | Justin Richards                | Leela                                    | 16 May 2018       |
+|   |     7.2 | [#D]  |     7.5 |  7.6 | The Bad Penny                    | Dan Starkey                    | Leela                                    | 16 May 2018       |
+| ^ |     7.8 | [#C]  |         |  7.7 | Kill the Doctor! /               | Guy Adams                      | Leela, Sutekh                            | 16 May 2018       |
+|   |     7.0 | [#D]  |         |  7.8 | The Age of Sutekh                | Guy Adams                      | Leela, Sutekh                            | 16 May 2018       |
+|   |     6.8 | [#E]  |         |  8.1 | The Sinestran Kill               | Andrew Smith                   | Ann                                      | 16 January 2019   |
+|   |     6.7 | [#E]  |     6.9 |  8.2 | Planet of the Drashigs           | Phil Mulryne                   | Ann, K9 Mark II, Drashigs                | 16 January 2019   |
+| ^ |     7.7 | [#C]  |     7.9 |  8.3 | The Enchantress of Numbers       | Simon Barnard, Paul Morris     | Ann, Ada Lovelace                        | 16 January 2019   |
+|   |     7.2 | [#D]  |         |  8.4 | The False Guardian /             | Guy Adams                      | Ann, K9 Mark II, Zephon, Varga plants    | 16 January 2019   |
+|   |     6.8 | [#E]  |         |  8.5 | Time's Assassin                  | Guy Adams                      | Ann, K9 Mark II, Zephon, Varga plants    | 13 February 2019  |
+|   |     7.3 | [#D]  |         |  8.6 | Fever Island                     | Jonathan Barnes                | Ann                                      | 13 February 2019  |
+| ^ |     8.2 | [#B]  |         |  8.7 | The Perfect Prisoners /          | John Dorney                    | Ann, K9 Mark II, Malpha, Sentreal, Trantis, Beaus, Celation, Gearon | 13 February 2019  |
+| ^ |     8.3 | [#B]  |         |  8.8 | The Perfect Prisoners (part 2)   | John Dorney                    | Ann, K9 Mark II, Malpha, Sentreal, Trantis, Beaus, Celation, Gearon | 13 February 2019  |
+| / |     8.2 | [#B]  |     8.6 | 9SP1 | Shadow of the Sun                | Robert Valentine               | Leela, K9 Mark I                         | 12 May 2020       |
+| ^ |     7.7 | [#C]  |         |  9.1 | Purgatory 12                     | Marc Platt                     | Romana II, Adric, K9 Mark II             | 22 January 2020   |
+| ? |     8.3 | [#B]  |         |  9.2 | Chase the Night                  | Jonathan Morris                | Romana II, Adric, K9 Mark II             | 22 January 2020   |
+|   |     7.2 | [#D]  |     7.5 |  9.3 | The Planet of Witches            | Alan Barnes                    | Romana II, Adric, K9 Mark II             | 12 February 2020  |
+| ^ |     8.0 | [#B]  |     8.4 |  9.4 | The Quest of the Engineer        | Andrew Smith                   | Romana II, Adric, K9 Mark II             | 12 February 2020  |
+| ^ |     7.6 | [#C]  |         | 10.1 | The World Traders                | Guy Adams                      | Leela, Usurians                          | 20 January 2021   |
+| ^ |     7.8 | [#C]  |         | 10.2 | The Day of the Comet             | Jonathan Morris                | Leela                                    | 20 January 2021   |
+| ^ |     7.8 | [#C]  |         | 10.3 | The Tribulations of Tahdeus Nook | Andrew Smith                   | Leela                                    | 10 February 2021  |
+|   |     6.1 | [#E]  |         | 10.4 | The Primeval Design              | Helen Goldwyn                  | Leela, Mary Annin                        |                   |
+#+TBLFM: $3='(cond ((>= $2 8.5) "[#A]") ((>= $2 8.0) "[#B]") ((>= $2 7.5) "[#C]") ((>= $2 7.0) "[#D]") (t "[#E]"));N
+* 8D
+
+** 8DA
+
+|   |      |         # | Title                          | 2021.04 | Featuring                                       |   |
+|---+------+-----------+--------------------------------+---------+-------------------------------------------------+---|
+| ? | [#B] |   FALM1.4 | Island of the Fendahl          |     8.1 | Lucie, Fendahl                                  |   |
+|   | [#C] |   FALM1.3 | The House on the Edge of Chaos |     7.6 |                                                 |   |
+|   | [#C] |      VIII | An Earthly Child               |     7.5 | Susan, Alex                                     |   |
+|   | [#D] |    DWM337 | Living Legend                  |     7.4 | Charley                                         |   |
+|   | [#E] |   FALM1.2 | The Revolution Game            |     6.8 | Lucie                                           |   |
+|   | [#E] |   FALM1.1 | The Dalek Trap                 |     6.6 | Lucie, Daleks                                   |   |
+| # | [#C] | 1.1 / 1.2 | Blood of the Daleks            |     7.8 | Lucie, Daleks                                   |   |
+|   | [#C] |       1.3 | Horror of Glam Rock            |     7.5 | Lucie, Pat                                      |   |
+| / | [#D] |       1.4 | +Immortal Beloved+             |     7.3 | Lucie                                           |   |
+|   | [#E] |       1.5 | Phobos                         |     6.5 | Lucie                                           |   |
+|   | [#D] |       1.6 | No More Lies                   |     7.1 | Lucie                                           |   |
+| ^ | [#A] |       1.7 | Human Resources /              |     8.7 | Lucie, Cybermen, the Headhunter, Karen, Straxus |   |
+| ^ | [#B] |       1.8 | Human Resources                |     8.3 |                                                 |   |
+|   | [#E] |       2.1 | Dead London                    |     6.5 | Lucie                                           |   |
+|   | [#C] |       2.2 | Max Warp                       |     7.5 |                                                 |   |
+| # | [#C] |       2.3 | Brave New Town                 |     7.9 | Lucie, Nestene                                  |   |
+|   | [#E] |       2.4 | The Skull of Sobek             |     5.5 | Lucie                                           |   |
+| # | [#C] |       2.5 | Grand Theft Cosmos             |     7.9 | Lucie, the Headhunter, Karen                    |   |
+| # | [#C] |       2.6 | +The Zygon Who Fell to Earth+  |     7.9 | Lucie, Pat, Zygons                              |   |
+|   | [#C] |       2.7 | Sisters of the Flame           |     7.7 | Lucie, Morbius, Sisterhood of Karn, Straxus     |   |
+|   | [#D] |       2.8 | The Vengeance of Morbius       |     7.1 | Lucie, Morbius, Sisterhood of Karn, Straxus     |   |
+|   | [#D] |       3.1 | Orbis                          |     7.1 | Lucie, the Headhunter                           |   |
+|   | [#E] |       3.2 | Hothouse                       |     6.8 | Lucie, Krynoids                                 |   |
+|   | [#C] |       3.3 | The Beast of Orlok             |     7.5 | Lucie                                           |   |
+|   | [#D] |       3.4 | Wirrn Dawn                     |     7.1 | Lucie, Wirrn                                    |   |
+|   | [#D] |       3.5 | The Scapegoat                  |     7.2 | Lucie                                           |   |
+|   | [#C] |       3.6 | The Cannibalists               |     7.5 | Lucie                                           |   |
+|   | [#C] |       3.7 | The Eight Truths               |     7.7 | Lucie, Karen, Eight Legs                        |   |
+|   | [#C] |       3.8 | Worldwide Web                  |     7.5 | Lucie, Karen, Eight Legs                        |   |
+|   | [#A] |      4.10 | +To the Death+                 |     9.1 | Daleks, Lucie, Susan, Alex, the Monk, Tamsin    |   |
+| ^ | [#B] |       4.1 | +Death in Blackpool+           |     8.4 | Lucie, Pat, Zygons                              |   |
+|   | [#C] |       4.2 | Situation Vacant               |     7.6 | Tamsin                                          |   |
+|   | [#E] |       4.3 | Nevermore                      |     6.6 | Tamsin                                          |   |
+| / | [#B] |       4.4 | +The Book of Kells+            |     8.1 | Tamsin, the Monk, Lucie                         |   |
+| / | [#C] |       4.5 | +[[https://tardis.fandom.com/wiki/Deimos_(audio_story)][Deimos]]+                       |     7.8 | Tamsin, Ice Warriors                            |   |
+| / | [#B] |       4.6 | +[[https://tardis.fandom.com/wiki/The_Resurrection_of_Mars_(audio_story)][The Resurrection of Mars]]+     |     8.2 | Tamsin, Lucie, Ice Warriors, the Monk           |   |
+|   | [#C] |       4.7 | Relative Dimensions            |     7.6 | Susan, Alex, Lucie                              |   |
+|   | [#D] |       4.8 | Prisoner of the Sun            |     7.3 | Susan, Alex, Lucie                              |   |
+|   | [#A] |       4.9 | +Lucie Miller+                 |     8.9 | Daleks, Lucie, Susan, Alex, the Monk, Tamsin    |   |
+#+TBLFM: $2='(cond ((>= $5 8.5) "[#A]") ((>= $5 8.0) "[#B]") ((>= $5 7.5) "[#C]") ((>= $5 7.0) "[#D]") (t "[#E]"));N
+
+** Dark Eyes
+
+
+* 10DA
+
+|     |       # | Title                             | Author       | Doctor | Featuring          | Released         |
+|-----+---------+-----------------------------------+--------------+--------+--------------------+------------------|
+| 7.7 |     1.1 | /[[https://tardis.fandom.com/wiki/Technophobia_(audio_story)][Technophobia]]/                    | Matt_Fitton  | 10th   | Donna              | 16 May 2016      |
+| 7.1 |     1.2 | /[[https://tardis.fandom.com/wiki/Time_Reaver_(audio_story)][Time Reaver]]/                     | Jenny_Colgan |        | Donna, [[https://tardis.fandom.com/wiki/Gully_(In_the_Blood)][Gully]]       |                  |
+| 8.5 |     1.3 | /[[https://tardis.fandom.com/wiki/Death_and_the_Queen_(audio_story)][Death and the Queen]]/             | James_Goss   |        | Donna              |                  |
+|-----+---------+-----------------------------------+--------------+--------+--------------------+------------------|
+| 7.5 |     2.1 | /[[https://tardis.fandom.com/wiki/Infamy_of_the_Zaross_(audio_story)][Infamy of the Zaross]]/            | John_Dorney  | 10th   | Rose, [[https://tardis.fandom.com/wiki/Jackie_Tyler][Jackie]]       | 23 November 2017 |
+| 7.1 |     2.2 | /[[https://tardis.fandom.com/wiki/The_Sword_of_the_Chevalier_(audio_story)][The Sword of the Chevalier]]/      | [[https://tardis.fandom.com/wiki/Guy_Adams][Guy Adams]]    |        | Rose               |                  |
+| 6.3 |     2.3 | /[[https://tardis.fandom.com/wiki/Cold_Vengeance_(audio_story)][Cold Vengeance]]/                  | Matt_Fitton  |        | Rose, [[https://tardis.fandom.com/wiki/Ice_Warrior][Ice Warriors]] |                  |
+|-----+---------+-----------------------------------+--------------+--------+--------------------+------------------|
+| 8.3 |     3.1 | No Place                          |              |        |                    |                  |
+| 7.6 |     3.2 | One Mile Down                     |              |        |                    |                  |
+| 7.2 |     3.3 | The Creeping Death                |              |        |                    |                  |
+|-----+---------+-----------------------------------+--------------+--------+--------------------+------------------|
+| 8.5 | 10&RS 1 | +Expiry Dating+                   |              |        |                    |                  |
+| 6.5 | 10&RS 2 | Precious Annihilation             |              |        |                    |                  |
+| 8.3 | 10&RS 3 | Ghosts                            |              |        |                    |                  |
+|-----+---------+-----------------------------------+--------------+--------+--------------------+------------------|
+| 8.5 |  DU 1.1 | +Buying Time+                     |              |        | Anya, Mark Seven   |                  |
+| 8.8 |  DU 1.2 | The Wrong Woman                   |              |        | Anya, Mark Seven   |                  |
+| 7.9 |  DU 1.3 | The House of Kingdom              |              |        | Anya, Mark Seven   |                  |
+|-----+---------+-----------------------------------+--------------+--------+--------------------+------------------|
+| 7.8 |   OoT 1 | +Out of Time+                     |              |        | 4th Dr.            |                  |
+| 7.5 |   OoT 2 | Out of Time 2 - The Gates of Hell |              |        |                    |                  |
+
+* Footnotes
+
+[fn:21] The Company (CC5.2/6.3/7.2/8.13)
+
+[fn:13] old Steven trilogy (CC8.10/9.3/9.4)
+
+[fn:12] Rocket Men (CC 6.2/7.5, 4DA 4.3)
+
+[fn:11] Sarah Kingdom trilogy (CC3.5/4.1/5.1)
+

@@ -1,0 +1,1009 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-03-25 Fri 09:35 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgf321a6b">1. BF Main Range top50</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf321a6b" class="outline-2">
+<h2 id="orgf321a6b"><span class="section-number-2">1</span> BF Main Range top50</h2>
+<div class="outline-text-2" id="text-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">PLOT</th>
+<th scope="col" class="org-right">2021.03</th>
+<th scope="col" class="org-right">Rating</th>
+<th scope="col" class="org-right">2020.07</th>
+<th scope="col" class="org-right">No.</th>
+<th scope="col" class="org-left">Title</th>
+<th scope="col" class="org-left">Doctor</th>
+<th scope="col" class="org-right">Year</th>
+<th scope="col" class="org-left">Features</th>
+<th scope="col" class="org-left">Author</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Y</td>
+<td class="org-right">3</td>
+<td class="org-right">9.2</td>
+<td class="org-right">3</td>
+<td class="org-right">34</td>
+<td class="org-left">Spart Parts</td>
+<td class="org-left">5th</td>
+<td class="org-right">2002</td>
+<td class="org-left">Nyssa, Cybermen</td>
+<td class="org-left">Marc Platt</td>
+</tr>
+
+<tr>
+<td class="org-left">-</td>
+<td class="org-right">15</td>
+<td class="org-right">8.8</td>
+<td class="org-right">10</td>
+<td class="org-right">81</td>
+<td class="org-left">The Kingmaker</td>
+<td class="org-left">5th</td>
+<td class="org-right">2006</td>
+<td class="org-left">Peri, Erimem, Fourth Doctor</td>
+<td class="org-left">Nev Fountain</td>
+</tr>
+
+<tr>
+<td class="org-left">Y</td>
+<td class="org-right">26</td>
+<td class="org-right">8.6</td>
+<td class="org-right">19</td>
+<td class="org-right">91c</td>
+<td class="org-left">Circular Time - Autumn</td>
+<td class="org-left">5th</td>
+<td class="org-right">2007</td>
+<td class="org-left">Nyssa</td>
+<td class="org-left">Paul Cornell</td>
+</tr>
+
+<tr>
+<td class="org-left">Y</td>
+<td class="org-right">33</td>
+<td class="org-right">8.5</td>
+<td class="org-right">30</td>
+<td class="org-right">91d</td>
+<td class="org-left">Circular Time - Winter</td>
+<td class="org-left">5th</td>
+<td class="org-right">2007</td>
+<td class="org-left">Nyssa, Kamelion</td>
+<td class="org-left">Paul Cornell</td>
+</tr>
+
+<tr>
+<td class="org-left">Y</td>
+<td class="org-right">44</td>
+<td class="org-right">8.4</td>
+<td class="org-right">35</td>
+<td class="org-right">99</td>
+<td class="org-left">Son of the Dragon</td>
+<td class="org-left">5th</td>
+<td class="org-right">2007</td>
+<td class="org-left">Peri, Erimem</td>
+<td class="org-left">Steve Lyons</td>
+</tr>
+
+<tr>
+<td class="org-left">Y</td>
+<td class="org-right">48</td>
+<td class="org-right">8.4</td>
+<td class="org-right">50</td>
+<td class="org-right">128</td>
+<td class="org-left">The Eternal Summer</td>
+<td class="org-left">5th</td>
+<td class="org-right">2009</td>
+<td class="org-left">Nyssa, Maxwell Edison</td>
+<td class="org-left">Matthew Sweet</td>
+</tr>
+
+<tr>
+<td class="org-left">Y</td>
+<td class="org-right">13</td>
+<td class="org-right">8.8</td>
+<td class="org-right">13</td>
+<td class="org-right">209</td>
+<td class="org-left">Aquitaine</td>
+<td class="org-left">5th</td>
+<td class="org-right">2016</td>
+<td class="org-left">Tegen, Nyssa</td>
+<td class="org-left">Simon Barnard and Paul Morris</td>
+</tr>
+
+<tr>
+<td class="org-left">-</td>
+<td class="org-right">35</td>
+<td class="org-right">8.5</td>
+<td class="org-right">36</td>
+<td class="org-right">224b</td>
+<td class="org-left">Dalek Soul</td>
+<td class="org-left">5th</td>
+<td class="org-right">2017</td>
+<td class="org-left">Nyssa, Daleks</td>
+<td class="org-left">Guy Adams</td>
+</tr>
+
+<tr>
+<td class="org-left">y</td>
+<td class="org-right">8</td>
+<td class="org-right">9.0</td>
+<td class="org-right">6</td>
+<td class="org-right">230</td>
+<td class="org-left">Time in Office</td>
+<td class="org-left">5th</td>
+<td class="org-right">2017</td>
+<td class="org-left">Tegan, Leela, Time Lords</td>
+<td class="org-left">Eddie Robson</td>
+</tr>
+
+<tr>
+<td class="org-left">Y</td>
+<td class="org-right">38</td>
+<td class="org-right">8.5</td>
+<td class="org-right">34</td>
+<td class="org-right">235</td>
+<td class="org-left">Ghost Walk</td>
+<td class="org-left">5th</td>
+<td class="org-right">2018</td>
+<td class="org-left">Adric, Nyssa, Tegan</td>
+<td class="org-left">James Goss</td>
+</tr>
+
+<tr>
+<td class="org-left">Y</td>
+<td class="org-right">37</td>
+<td class="org-right">8.5</td>
+<td class="org-right">31</td>
+<td class="org-right">236</td>
+<td class="org-left">Serpent in the Silver Mask</td>
+<td class="org-left">5th</td>
+<td class="org-right">2018</td>
+<td class="org-left">Adric, Nyssa, Tegan</td>
+<td class="org-left">David Llewellyn</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Y</td>
+<td class="org-right">28</td>
+<td class="org-right">8.6</td>
+<td class="org-right">26</td>
+<td class="org-right">6</td>
+<td class="org-left">The Marian Conspiracy</td>
+<td class="org-left">6th</td>
+<td class="org-right">2000</td>
+<td class="org-left">Evelyn</td>
+<td class="org-left">Jacqueline Rayner</td>
+</tr>
+
+<tr>
+<td class="org-left">Y</td>
+<td class="org-right">4</td>
+<td class="org-right">9.2</td>
+<td class="org-right">4</td>
+<td class="org-right">14</td>
+<td class="org-left">The Holy Terror</td>
+<td class="org-left">6th</td>
+<td class="org-right">2000</td>
+<td class="org-left">Frobisher</td>
+<td class="org-left">Robert Shearman</td>
+</tr>
+
+<tr>
+<td class="org-left">-</td>
+<td class="org-right">9</td>
+<td class="org-right">8.9</td>
+<td class="org-right">8</td>
+<td class="org-right">27</td>
+<td class="org-left">The One Doctor</td>
+<td class="org-left">6th</td>
+<td class="org-right">2001</td>
+<td class="org-left">Mel</td>
+<td class="org-left">Gareth Roberts / Clayton Hickman</td>
+</tr>
+
+<tr>
+<td class="org-left">y</td>
+<td class="org-right">6</td>
+<td class="org-right">9.1</td>
+<td class="org-right">7</td>
+<td class="org-right">40</td>
+<td class="org-left">Jubilee</td>
+<td class="org-left">6th</td>
+<td class="org-right">2003</td>
+<td class="org-left">Evelyn, Daleks</td>
+<td class="org-left">Robert Shearman</td>
+</tr>
+
+<tr>
+<td class="org-left">Y</td>
+<td class="org-right">11</td>
+<td class="org-right">8.8</td>
+<td class="org-right">14</td>
+<td class="org-right">43</td>
+<td class="org-left">Doctor Who and the Pirates</td>
+<td class="org-left">6th</td>
+<td class="org-right">2003</td>
+<td class="org-left">Evelyn</td>
+<td class="org-left">Jacqueline Rayner</td>
+</tr>
+
+<tr>
+<td class="org-left">Y</td>
+<td class="org-right">5</td>
+<td class="org-right">9.1</td>
+<td class="org-right">5</td>
+<td class="org-right">48</td>
+<td class="org-left">Davros</td>
+<td class="org-left">6th</td>
+<td class="org-right">2003</td>
+<td class="org-left">Davros</td>
+<td class="org-left">Lance Parkin</td>
+</tr>
+
+<tr>
+<td class="org-left">-</td>
+<td class="org-right">31</td>
+<td class="org-right">8.5</td>
+<td class="org-right">29</td>
+<td class="org-right">57</td>
+<td class="org-left">Arrangements for War</td>
+<td class="org-left">6th</td>
+<td class="org-right">2004</td>
+<td class="org-left">Evelyn, Rossiter</td>
+<td class="org-left">Paul Sutton</td>
+</tr>
+
+<tr>
+<td class="org-left">Y</td>
+<td class="org-right">12</td>
+<td class="org-right">8.8</td>
+<td class="org-right">11</td>
+<td class="org-right">94b</td>
+<td class="org-left">Urgent Calls</td>
+<td class="org-left">6th</td>
+<td class="org-right">2007</td>
+<td class="org-left">-</td>
+<td class="org-left">Eddie Robson</td>
+</tr>
+
+<tr>
+<td class="org-left">-</td>
+<td class="org-right">40</td>
+<td class="org-right">8.4</td>
+<td class="org-right">38</td>
+<td class="org-right">105</td>
+<td class="org-left">The Condemned</td>
+<td class="org-left">6th</td>
+<td class="org-right">2008</td>
+<td class="org-left">Charley, DI Menzies</td>
+<td class="org-left">Eddie Robson</td>
+</tr>
+
+<tr>
+<td class="org-left">-</td>
+<td class="org-right">54</td>
+<td class="org-right">8.3</td>
+<td class="org-right">?</td>
+<td class="org-right">124</td>
+<td class="org-left">Patient Zero</td>
+<td class="org-left">6th</td>
+<td class="org-right">2009</td>
+<td class="org-left">Viyrans</td>
+<td class="org-left">Nicholas Briggs</td>
+</tr>
+
+<tr>
+<td class="org-left">Y</td>
+<td class="org-right">41</td>
+<td class="org-right">8.4</td>
+<td class="org-right">44</td>
+<td class="org-right">135</td>
+<td class="org-left">Legend of the Cybermen</td>
+<td class="org-left">6th</td>
+<td class="org-right">2010</td>
+<td class="org-left">"Jamie", Zoe, Cybermen</td>
+<td class="org-left">Mike Maddox</td>
+</tr>
+
+<tr>
+<td class="org-left">-</td>
+<td class="org-right">50</td>
+<td class="org-right">8.4</td>
+<td class="org-right">47</td>
+<td class="org-right">150d</td>
+<td class="org-left">Question Marks</td>
+<td class="org-left">6th</td>
+<td class="org-right">2011</td>
+<td class="org-left">Peri</td>
+<td class="org-left">Philip Lawrence</td>
+</tr>
+
+<tr>
+<td class="org-left">-</td>
+<td class="org-right">20</td>
+<td class="org-right">8.7</td>
+<td class="org-right">17</td>
+<td class="org-right">188d</td>
+<td class="org-left">The Curious Incident of the Docotor in the Night-Time</td>
+<td class="org-left">6th</td>
+<td class="org-right">2014</td>
+<td class="org-left">Peri</td>
+<td class="org-left">Nev Fountain</td>
+</tr>
+
+<tr>
+<td class="org-left">-</td>
+<td class="org-right">29</td>
+<td class="org-right">8.6</td>
+<td class="org-right">23</td>
+<td class="org-right">192</td>
+<td class="org-left">The Widow's Assassin</td>
+<td class="org-left">6th</td>
+<td class="org-right">2014</td>
+<td class="org-left">Peri</td>
+<td class="org-left">Matt Fitton</td>
+</tr>
+
+<tr>
+<td class="org-left">-</td>
+<td class="org-right">22</td>
+<td class="org-right">8.6</td>
+<td class="org-right">25</td>
+<td class="org-right">193</td>
+<td class="org-left">Masters of Earth</td>
+<td class="org-left">6th</td>
+<td class="org-right">2014</td>
+<td class="org-left">Peri, Daleks</td>
+<td class="org-left">Mark Wright and Cavan Scott</td>
+</tr>
+
+<tr>
+<td class="org-left">-</td>
+<td class="org-right">51</td>
+<td class="org-right">8.3</td>
+<td class="org-right">?</td>
+<td class="org-right">232</td>
+<td class="org-left">The Middle</td>
+<td class="org-left">6th</td>
+<td class="org-right">2017</td>
+<td class="org-left">Constance, Flip</td>
+<td class="org-left">Chris Chapman</td>
+</tr>
+
+<tr>
+<td class="org-left">-</td>
+<td class="org-right">30</td>
+<td class="org-right">8.6</td>
+<td class="org-right">27</td>
+<td class="org-right">233</td>
+<td class="org-left">Static</td>
+<td class="org-left">6th</td>
+<td class="org-right">2017</td>
+<td class="org-left">Constance, Flip, Static</td>
+<td class="org-left">Jonathan Morris</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">-</td>
+<td class="org-right">45</td>
+<td class="org-right">8.4</td>
+<td class="org-right">42</td>
+<td class="org-right">12</td>
+<td class="org-left">The Fires of Vulcan</td>
+<td class="org-left">7th</td>
+<td class="org-right">2000</td>
+<td class="org-left">Mel</td>
+<td class="org-left">Steve Lyons</td>
+</tr>
+
+<tr>
+<td class="org-left">-</td>
+<td class="org-right">7</td>
+<td class="org-right">9.0</td>
+<td class="org-right">9</td>
+<td class="org-right">49</td>
+<td class="org-left">Master</td>
+<td class="org-left">7th</td>
+<td class="org-right">2003</td>
+<td class="org-left">The Master, Death</td>
+<td class="org-left">Joseph Lidster</td>
+</tr>
+
+<tr>
+<td class="org-left">Y</td>
+<td class="org-right">49</td>
+<td class="org-right">8.4</td>
+<td class="org-right">46</td>
+<td class="org-right">58</td>
+<td class="org-left">The Harvest</td>
+<td class="org-left">7th</td>
+<td class="org-right">2004</td>
+<td class="org-left">Ace, Hex, Cybermen</td>
+<td class="org-left">Dan Abnett</td>
+</tr>
+
+<tr>
+<td class="org-left">-</td>
+<td class="org-right">32</td>
+<td class="org-right">8.5</td>
+<td class="org-right">39</td>
+<td class="org-right">74</td>
+<td class="org-left">Live 34</td>
+<td class="org-left">7th</td>
+<td class="org-right">2005</td>
+<td class="org-left">Ace, Hex</td>
+<td class="org-left">James Parson / Andrew Stirling-Brown</td>
+</tr>
+
+<tr>
+<td class="org-left">-</td>
+<td class="org-right">24</td>
+<td class="org-right">8.6</td>
+<td class="org-right">24</td>
+<td class="org-right">115d</td>
+<td class="org-left">The Word Lord</td>
+<td class="org-left">7th</td>
+<td class="org-right">2008</td>
+<td class="org-left">Ace, Hex, Nobody No-One</td>
+<td class="org-left">Steven Hall</td>
+</tr>
+
+<tr>
+<td class="org-left">-</td>
+<td class="org-right">21</td>
+<td class="org-right">8.6</td>
+<td class="org-right">20</td>
+<td class="org-right">120</td>
+<td class="org-left">The Magic Mousetrap</td>
+<td class="org-left">7th</td>
+<td class="org-right">2009</td>
+<td class="org-left">Ace, Hex, Celestial Toymaker</td>
+<td class="org-left">Matthew Sweet</td>
+</tr>
+
+<tr>
+<td class="org-left">-</td>
+<td class="org-right">14</td>
+<td class="org-right">8.8</td>
+<td class="org-right">15</td>
+<td class="org-right">130</td>
+<td class="org-left">A Thousand Tiny Wings</td>
+<td class="org-left">7th</td>
+<td class="org-right">2010</td>
+<td class="org-left">Klein</td>
+<td class="org-left">Andy Lane</td>
+</tr>
+
+<tr>
+<td class="org-left">-</td>
+<td class="org-right">23</td>
+<td class="org-right">8.6</td>
+<td class="org-right">21</td>
+<td class="org-right">131a</td>
+<td class="org-left">Klein's Story</td>
+<td class="org-left">7th</td>
+<td class="org-right">2010</td>
+<td class="org-left">Klein</td>
+<td class="org-left">John Ainsworth / Lee Mansfield</td>
+</tr>
+
+<tr>
+<td class="org-left">-</td>
+<td class="org-right">17</td>
+<td class="org-right">8.7</td>
+<td class="org-right">16</td>
+<td class="org-right">132</td>
+<td class="org-left">The Architects of History</td>
+<td class="org-left">7th</td>
+<td class="org-right">2010</td>
+<td class="org-left">Klein, Selachians</td>
+<td class="org-left">Steve Lyons</td>
+</tr>
+
+<tr>
+<td class="org-left">-</td>
+<td class="org-right">1</td>
+<td class="org-right">9.5</td>
+<td class="org-right">1</td>
+<td class="org-right">140</td>
+<td class="org-left">A Death in the Family</td>
+<td class="org-left">7th</td>
+<td class="org-right">2010</td>
+<td class="org-left">Ace, Hex, Evelyn, Nobody No-One, the Forge</td>
+<td class="org-left">Steven Hall</td>
+</tr>
+
+<tr>
+<td class="org-left">-</td>
+<td class="org-right">43</td>
+<td class="org-right">8.4</td>
+<td class="org-right">41</td>
+<td class="org-right">149</td>
+<td class="org-left">Robophobia</td>
+<td class="org-left">7th</td>
+<td class="org-right">2011</td>
+<td class="org-left">Liv, Kaldor androids</td>
+<td class="org-left">Nicholas Briggs</td>
+</tr>
+
+<tr>
+<td class="org-left">Y</td>
+<td class="org-right">16</td>
+<td class="org-right">8.7</td>
+<td class="org-right">18</td>
+<td class="org-right">162</td>
+<td class="org-left">Protect and Survive</td>
+<td class="org-left">7th</td>
+<td class="org-right">2012</td>
+<td class="org-left">Ace, Hex</td>
+<td class="org-left">Jonathan Morris</td>
+</tr>
+
+<tr>
+<td class="org-left">-</td>
+<td class="org-right">47</td>
+<td class="org-right">8.4</td>
+<td class="org-right">48</td>
+<td class="org-right">164</td>
+<td class="org-left">Gods and Monsters</td>
+<td class="org-left">7th</td>
+<td class="org-right">2012</td>
+<td class="org-left">Ace, Hex, Sally, Lysandra, Fenric, the Forge</td>
+<td class="org-left">Mike Maddox and Alan Barnes</td>
+</tr>
+
+<tr>
+<td class="org-left">-</td>
+<td class="org-right">10</td>
+<td class="org-right">8.8</td>
+<td class="org-right">12</td>
+<td class="org-right">213</td>
+<td class="org-left">The Two Masters</td>
+<td class="org-left">7th</td>
+<td class="org-right">2016</td>
+<td class="org-left">The Old Master, The New Master</td>
+<td class="org-left">John Dorney</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Y</td>
+<td class="org-right">2</td>
+<td class="org-right">9.5</td>
+<td class="org-right">2</td>
+<td class="org-right">29</td>
+<td class="org-left">The Chimes of Midnight</td>
+<td class="org-left">8th</td>
+<td class="org-right">2002</td>
+<td class="org-left">Charley</td>
+<td class="org-left">Robert Shearman</td>
+</tr>
+
+<tr>
+<td class="org-left">Y</td>
+<td class="org-right">53</td>
+<td class="org-right">8.3</td>
+<td class="org-right">49</td>
+<td class="org-right">30</td>
+<td class="org-left">Seasons of Fear</td>
+<td class="org-left">8th</td>
+<td class="org-right">2002</td>
+<td class="org-left">Charley, Nimon</td>
+<td class="org-left">Paul Cornell and Caroline Symcox</td>
+</tr>
+
+<tr>
+<td class="org-left">Y</td>
+<td class="org-right">39</td>
+<td class="org-right">8.5</td>
+<td class="org-right">43</td>
+<td class="org-right">33</td>
+<td class="org-left">Neverland</td>
+<td class="org-left">8th</td>
+<td class="org-right">2002</td>
+<td class="org-left">Charley, Romana II, Rassilon, Time Lords</td>
+<td class="org-left">Alan Barnes</td>
+</tr>
+
+<tr>
+<td class="org-left">Y</td>
+<td class="org-right">25</td>
+<td class="org-right">8.6</td>
+<td class="org-right">28</td>
+<td class="org-right">52</td>
+<td class="org-left">Scherzo</td>
+<td class="org-left">8th</td>
+<td class="org-right">2003</td>
+<td class="org-left">Charley</td>
+<td class="org-left">Robert Shearman</td>
+</tr>
+
+<tr>
+<td class="org-left">-</td>
+<td class="org-right">36</td>
+<td class="org-right">8.5</td>
+<td class="org-right">37</td>
+<td class="org-right">54</td>
+<td class="org-left">The Natural History of Fear</td>
+<td class="org-left">8th</td>
+<td class="org-right">2004</td>
+<td class="org-left">Charley, C'rizz</td>
+<td class="org-left">Jim Mortimore</td>
+</tr>
+
+<tr>
+<td class="org-left">Y</td>
+<td class="org-right">46</td>
+<td class="org-right">8.4</td>
+<td class="org-right">40</td>
+<td class="org-right">103</td>
+<td class="org-left">The Girl Who Never Was</td>
+<td class="org-left">8th</td>
+<td class="org-right">2007</td>
+<td class="org-left">Charley, Cybermen</td>
+<td class="org-left">Alan Barnes</td>
+</tr>
+
+<tr>
+<td class="org-left">Y</td>
+<td class="org-right">42</td>
+<td class="org-right">8.4</td>
+<td class="org-right">32</td>
+<td class="org-right">123d</td>
+<td class="org-left">The Company of Friends - Mary's Story</td>
+<td class="org-left">8th</td>
+<td class="org-right">2009</td>
+<td class="org-left">Mary</td>
+<td class="org-left">Jonathan Morris</td>
+</tr>
+
+<tr>
+<td class="org-left">Y</td>
+<td class="org-right">27</td>
+<td class="org-right">8.6</td>
+<td class="org-right">22</td>
+<td class="org-right">153</td>
+<td class="org-left">The Silver Turk</td>
+<td class="org-left">8th</td>
+<td class="org-right">2011</td>
+<td class="org-left">Mary, Cybermen</td>
+<td class="org-left">Marc Platt</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">52</td>
+<td class="org-right">8.3</td>
+<td class="org-right">-</td>
+<td class="org-right">264</td>
+<td class="org-left">Scorched Earth</td>
+<td class="org-left">6th</td>
+<td class="org-right">2020</td>
+<td class="org-left">Flip, Constance</td>
+<td class="org-left">Chris Chapman</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">55</td>
+<td class="org-right">8.3</td>
+<td class="org-right">-</td>
+<td class="org-right">266A</td>
+<td class="org-left">Ghost Station</td>
+<td class="org-left">5th</td>
+<td class="org-right">2020</td>
+<td class="org-left">-</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">34</td>
+<td class="org-right">8.5</td>
+<td class="org-right">-</td>
+<td class="org-right">269c</td>
+<td class="org-left">The Bookshop at the End of the World</td>
+<td class="org-left">5th</td>
+<td class="org-right">2020</td>
+<td class="org-left">Daleks</td>
+<td class="org-left">Simon Guerrier</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">18</td>
+<td class="org-right">8.7</td>
+<td class="org-right">-</td>
+<td class="org-right">271</td>
+<td class="org-left">Plight of the Pimpernel</td>
+<td class="org-left">6th</td>
+<td class="org-right">2020</td>
+<td class="org-left">Ace, the Brig</td>
+<td class="org-left">Chris Chapman</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">19</td>
+<td class="org-right">8.7</td>
+<td class="org-right">-</td>
+<td class="org-right">275</td>
+<td class="org-left">The End of the Beginning</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">2021</td>
+<td class="org-left">Turlough, Constance, Charley</td>
+<td class="org-left">Robert Valentine</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2022-03-25 Fri 09:35</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

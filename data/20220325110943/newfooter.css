@@ -1,0 +1,29 @@
+/* Code tidied up by ScrapBook */
+* { margin: 0px; padding: 0px; }
+#all-deepin-footer ul, li { list-style: outside none none; }
+#all-deepin-footer a { text-decoration: none; cursor: pointer; }
+#all-deepin-footer { height: 60px; background: rgb(40, 40, 40) none repeat scroll 0% 0%; overflow: hidden; padding: 0px; }
+#all-deepin-footer .f-wrap { width: 1170px; margin: 0px auto; padding: 0px 30px; }
+#all-deepin-footer .f-nav { float: left; }
+#all-deepin-footer .f-item { float: left; line-height: 60px; margin-right: 22px; }
+#all-deepin-footer .f-item a { color: rgba(255, 255, 255, 0.4); font-size: 12px; transition: all 0.3s ease 0s; }
+#all-deepin-footer .deepin-copy { float: right; }
+#all-deepin-footer .deepin-copy p { line-height: 60px; color: rgba(255, 255, 255, 0.4); font-size: 12px; }
+#all-deepin-footer .f-item a:hover { color: rgb(255, 255, 255); }
+#all-deepin-footer .f-item a:visited { color: rgba(255, 255, 255, 0.4); }
+#hs-back-top:hover { background-color: rgb(44, 167, 248); }
+#hs-back-top { position: fixed; right: 30px; bottom: 20px; height: 45px; width: 45px; color: rgb(255, 255, 255); text-align: center; line-height: 36px; cursor: pointer; font-size: 20px; background: rgba(0, 0, 0, 0.3) url("icon_right.png") no-repeat scroll 10px -133px; }
+.animated { animation-duration: 1s; animation-fill-mode: both; }
+.bounceInRight { animation-name: bounceInRight; }
+@keyframes bounceInRight {
+60%, 75%, 90%, 0%, 100% { animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+0% { opacity: 0; transform: translate3d(3000px, 0px, 0px); }
+60% { opacity: 1; transform: translate3d(-25px, 0px, 0px); }
+75% { transform: translate3d(10px, 0px, 0px); }
+90% { transform: translate3d(-5px, 0px, 0px); }
+100% { transform: none; }
+}
+@keyframes bounceOutRight {
+20% { opacity: 1; transform: translate3d(-20px, 0px, 0px); }
+100% { opacity: 0; transform: translate3d(2000px, 0px, 0px); }
+}

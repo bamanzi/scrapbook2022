@@ -1,0 +1,12 @@
+/* Code tidied up by ScrapBook */
+.wrap, .wrap .search input, body { box-sizing: border-box; }
+* { margin: 0px; padding: 0px; }
+body, html { height: 100%; width: 100%; }
+body { background: rgb(249, 249, 249) none repeat scroll 0% 0%; font-family: "微软雅黑","Source Han Sans"; padding-top: 1px; }
+input { font-family: inherit; outline: 0px none; }
+.left { float: left; }
+.right { float: right; }
+.wrap { min-height: 780px; width: 1140px; margin: 100px auto 40px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; padding: 4.38596%; border-radius: 4px; }
+@media screen and (max-width: 1140px) {
+  .wrap { width: auto; }
+}
