@@ -1,0 +1,7 @@
+/* Code tidied up by ScrapBook */
+@font-face {
+  font-family: "toast";
+  font-style: normal;
+  font-weight: normal;
+  src: url("toast.eot") format("embedded-opentype"), url("toast.ttf") format("truetype"), url("toast.woff") format("woff"), url("toast.svg") format("svg");
+}

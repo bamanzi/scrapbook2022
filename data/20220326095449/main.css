@@ -1,0 +1,78 @@
+/* Code tidied up by ScrapBook */
+body { position: relative; overflow-x: hidden; font-family: "Microsoft Yahei",Helvetica,arial,Verdana,"Lantinghei SC","Hiragino Sans GB",宋体,sans-serif; }
+a { text-decoration: none; color: rgb(0, 102, 255); }
+a:hover { text-decoration: none; outline: 0px none; }
+.manual-header { margin-bottom: 0px; background-color: rgb(255, 255, 255); border-bottom: 1px solid rgb(239, 239, 239); }
+.manual-header .navbar-brand, .manual-header a { font-weight: normal; color: rgb(51, 51, 51); max-width: 300px; white-space: nowrap; }
+@media (max-width: 768px) {
+}
+.searchbar { padding: 12px 8px; }
+.searchbar .search-btn { display: inline-block; line-height: 100%; cursor: pointer; margin-top: -10px; margin-left: -45px; border: 0px none; background-color: transparent; }
+.searchbar .search-btn > i.fa { padding: 10px; }
+.navbar { min-height: 60px; }
+.navbar-brand { padding-left: 0px; }
+a { color: rgb(51, 51, 51); }
+.mgt-15px { margin-top: 15px; }
+.mgb-15px { margin-bottom: 15px; }
+.text-danger { color: red; }
+.none-listyle { list-style: outside none none; padding: 0px; }
+.btn-group.dropdown-menu-right.pull-right.slidebar.visible-xs-inline-block.visible-sm-inline-block { margin-top: 12px; margin-right: 0px; }
+.navbar-nav > li > a { font-size: 15px; line-height: 28px; }
+.border-cover-img { box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2); border-radius: 4px; }
+.navbar-brand > img.logo { height: 45px; margin-top: -7px; }
+#bookstack-intro { padding-top: 70px; }
+#bookstack-intro ul, #bookstack-intro li { list-style: outside none none; padding: 0px; }
+#bookstack-intro h1 { font-size: 24px; line-height: 150%; color: rgb(85, 85, 85); margin-top: 10px; }
+#bookstack-intro .none-listyle li { line-height: 250%; border-bottom: 1px dashed rgb(239, 239, 239); }
+#bookstack-intro .none-listyle li:last-child { border-bottom: 0px none; }
+#bookstack-intro .bookstack-info .col-sm-9 { padding-left: 0px; }
+#bookstack-intro .bookstack-info img { cursor: pointer; }
+#bookstack-intro .bookstack-info span { color: rgb(136, 136, 136); }
+#bookstack-intro .bookstack-info a span { color: rgb(255, 255, 255); }
+#bookstack-intro .bookstack-menu .none-listyle a { line-height: 250%; padding-left: 15px; display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; }
+#bookstack-intro .bookstack-menu .none-listyle a:hover { background-color: rgb(239, 239, 239); }
+.bookstack-star { display: inline-block; height: 15px; position: relative; top: 2px; width: 80px; }
+.star-49, .star-50 { background: transparent url("stars.png") no-repeat scroll 0px 0px; }
+li.bookstack-description { color: rgb(86, 86, 86); border-bottom: 0px none ! important; white-space: normal ! important; line-height: 1.8em ! important; }
+.visible-xs .bookstack-description div { padding: 0px 15px; }
+li.bookstack-labels { margin: 10px 0px; border: 0px none ! important; white-space: normal ! important; }
+li.bookstack-labels a { display: inline-block; font-size: 14px; border: 1px solid red; line-height: 1.8em; padding: 0px 8px; border-radius: 4px; }
+li.bookstack-labels a:hover { color: rgb(255, 255, 255); }
+li.bookstack-labels a:nth-child(n) { border-color: rgb(92, 184, 92); }
+li.bookstack-labels a:nth-child(n):hover { background-color: rgb(92, 184, 92); }
+li.bookstack-labels a:nth-child(2n) { border-color: rgb(91, 192, 222); }
+li.bookstack-labels a:nth-child(2n):hover { background-color: rgb(91, 192, 222); }
+li.bookstack-labels a:nth-child(3n) { border-color: rgb(240, 173, 78); }
+li.bookstack-labels a:nth-child(3n):hover { background-color: rgb(240, 173, 78); }
+.bookstack-labels a { margin-right: 10px; }
+.footer { margin-top: 45px; line-height: 1.7; }
+.footer a { display: inline-block; }
+@media (max-width: 768px) {
+}
+.recommend-book::before { content: url("recommend-red.png"); position: absolute; top: 5px; left: 22px; }
+@media (min-width: 1200px) {
+}
+.bookstack-info .recommend-book::before { top: 22px; }
+.book-metadata { font-size: 20px; color: rgb(52, 52, 52); font-weight: normal; border-bottom: 0px none ! important; }
+.book-metadata small { font-size: 14px; color: rgb(136, 136, 136); margin-right: 15px; }
+.manual-header .nav > li > a:focus, .manual-header .nav > li > a:hover { padding-bottom: 16px ! important; }
+.text-red { color: red ! important; }
+@media (max-width: 768px) {
+}
+@media (max-width: 768px) {
+}
+@media (min-width: 1200px) {
+}
+.related-source dl.manual-item-standard { max-width: 175px; margin: 0px auto 15px; }
+.subbookname > span { display: inline-block; }
+.bookstack-info .btn { border-radius: 4px ! important; border: 0px none; margin-right: 15px; }
+.mgl-10px { margin-left: 10px; }
+h1 em { font-style: normal; }
+@media (max-width: 768px) {
+  .manual-list .col-xs-3, .related-source .col-xs-3 { padding: 5px; font-size: 12px; }
+  .recommend-book::before, .pin-book::after { left: 10px ! important; }
+  .relate-bookname { height: 35px ! important; }
+  .related-source dl.manual-item-standard { margin-bottom: 0px; }
+}
+.related-source .border-cover-img { box-shadow: none; border-radius: 3px; border: 1px solid rgba(0, 0, 0, 0.08); }
+.related-source { padding: 0px 5px; }

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="../../sitemap.xsl" type="text/xsl" media="all"?>
+<site>
+<page file="index.html" text="Go语言圣经" title="前言 · Go语言圣经">
+<page file="ch0-01.html" text="                                                       Go语言起源                              " title="Go语言起源 · Go语言圣经"/>
+<page file="ch0-02.html" text="                                                       Go语言项目                              " title="Go语言项目 · Go语言圣经"/>
+<page file="ch0-03.html" text="                                                       本书的组织                              " title="本书的组织 · Go语言圣经"/>
+<page file="ch0-04.html" text="                                                       更多的信息                              " title="更多的信息 · Go语言圣经"/>
+<page file="ch0-05.html" text="                                                       致谢                              " title="致谢 · Go语言圣经"/>
+<page file="ch1.html" text="                                                       入门                              " title="入门 · Go语言圣经"/>
+<page file="ch1-01.html" text="                                                       Hello, World                              " title="Hello, World · Go语言圣经"/>
+<page file="ch1-02.html" text="                                                       命令行参数                              " title="命令行参数 · Go语言圣经"/>
+<page file="ch1-03.html" text="                                                       查找重复的行                              " title="查找重复的行 · Go语言圣经"/>
+<page file="ch1-04.html" text="                                                       GIF动画                              " title="GIF动画 · Go语言圣经"/>
+<page file="ch1-05.html" text="                                                       获取URL                              " title="获取URL · Go语言圣经"/>
+<page file="ch1-06.html" text="                                                       并发获取多个URL                              " title="并发获取多个URL · Go语言圣经"/>
+<page file="ch1-07.html" text="                                                       Web服务                              " title="Web服务 · Go语言圣经"/>
+<page file="ch1-08.html" text="                                                       本章要点                              " title="本章要点 · Go语言圣经"/>
+<page file="ch2.html" text="                                                       程序结构                              " title="程序结构 · Go语言圣经"/>
+<page file="ch2-01.html" text="                                                       命名                              " title="命名 · Go语言圣经"/>
+<page file="ch2-02.html" text="                                                       声明                              " title="声明 · Go语言圣经"/>
+<page file="ch2-03.html" text="                                                       变量                              " title="变量 · Go语言圣经"/>
+<page file="ch2-04.html" text="                                                       赋值                              " title="赋值 · Go语言圣经"/>
+<page file="ch2-05.html" text="                                                       类型                              " title="类型 · Go语言圣经"/>
+<page file="ch2-06.html" text="                                                       包和文件                              " title="包和文件 · Go语言圣经"/>
+<page file="ch2-07.html" text="                                                       作用域                              " title="作用域 · Go语言圣经"/>
+<page file="ch3.html" text="                                                       基础数据类型                              " title="基础数据类型 · Go语言圣经"/>
+<page file="ch3-01.html" text="                                                       整型                              " title="整型 · Go语言圣经"/>
+<page file="ch3-02.html" text="                                                       浮点数                              " title="浮点数 · Go语言圣经"/>
+<page file="ch3-03.html" text="                                                       复数                              " title="复数 · Go语言圣经"/>
+<page file="ch3-04.html" text="                                                       布尔型                              " title="布尔型 · Go语言圣经"/>
+<page file="ch3-05.html" text="                                                       字符串                              " title="字符串 · Go语言圣经"/>
+<page file="ch3-06.html" text="                                                       常量                              " title="常量 · Go语言圣经"/>
+<page file="ch4.html" text="                                                       复合数据类型                              " title="复合数据类型 · Go语言圣经"/>
+<page file="ch4-01.html" text="                                                       数组                              " title="数组 · Go语言圣经"/>
+<page file="ch4-02.html" text="                                                       Slice                              " title="Slice · Go语言圣经"/>
+<page file="ch4-03.html" text="                                                       Map                              " title="Map · Go语言圣经"/>
+<page file="ch4-04.html" text="                                                       结构体                              " title="结构体 · Go语言圣经"/>
+<page file="ch4-05.html" text="                                                       JSON                              " title="JSON · Go语言圣经"/>
+<page file="ch4-06.html" text="                                                       文本和HTML模板                              " title="文本和HTML模板 · Go语言圣经"/>
+<page file="ch5.html" text="                                                       函数                              " title="函数 · Go语言圣经"/>
+<page file="ch5-01.html" text="                                                       函数声明                              " title="函数声明 · Go语言圣经"/>
+<page file="ch5-02.html" text="                                                       递归                              " title="递归 · Go语言圣经"/>
+<page file="ch5-03.html" text="                                                       多返回值                              " title="多返回值 · Go语言圣经"/>
+<page file="ch5-04.html" text="                                                       错误                              " title="错误 · Go语言圣经"/>
+<page file="ch5-05.html" text="                                                       函数值                              " title="函数值 · Go语言圣经"/>
+<page file="ch5-06.html" text="                                                       匿名函数                              " title="匿名函数 · Go语言圣经"/>
+<page file="ch5-07.html" text="                                                       可变参数                              " title="可变参数 · Go语言圣经"/>
+<page file="ch5-08.html" text="                                                       Deferred函数                              " title="Deferred函数 · Go语言圣经"/>
+<page file="ch5-09.html" text="                                                       Panic异常                              " title="Panic异常 · Go语言圣经"/>
+<page file="ch5-10.html" text="                                                       Recover捕获异常                              " title="Recover捕获异常 · Go语言圣经"/>
+<page file="ch6.html" text="                                                       方法                              " title="方法 · Go语言圣经"/>
+<page file="ch6-01.html" text="                                                       方法声明                              " title="方法声明 · Go语言圣经"/>
+<page file="ch6-02.html" text="                                                       基于指针对象的方法                              " title="基于指针对象的方法 · Go语言圣经"/>
+<page file="ch6-03.html" text="                                                       通过嵌入结构体来扩展类型                              " title="通过嵌入结构体来扩展类型 · Go语言圣经"/>
+<page file="ch6-04.html" text="                                                       方法值和方法表达式                              " title="方法值和方法表达式 · Go语言圣经"/>
+<page file="ch6-05.html" text="                                                       示例: Bit数组                              " title="示例: Bit数组 · Go语言圣经"/>
+<page file="ch6-06.html" text="                                                       封装                              " title="封装 · Go语言圣经"/>
+<page file="ch7.html" text="                                                       接口                              " title="接口 · Go语言圣经"/>
+<page file="ch7-01.html" text="                                                       接口是合约                              " title="接口是合约 · Go语言圣经"/>
+<page file="ch7-02.html" text="                                                       接口类型                              " title="接口类型 · Go语言圣经"/>
+<page file="ch7-03.html" text="                                                       实现接口的条件                              " title="实现接口的条件 · Go语言圣经"/>
+<page file="ch7-04.html" text="                                                       flag.Value接口                              " title="flag.Value接口 · Go语言圣经"/>
+<page file="ch7-05.html" text="                                                       接口值                              " title="接口值 · Go语言圣经"/>
+<page file="ch7-06.html" text="                                                       sort.Interface接口                              " title="sort.Interface接口 · Go语言圣经"/>
+<page file="ch7-07.html" text="                                                       http.Handler接口                              " title="http.Handler接口 · Go语言圣经"/>
+<page file="ch7-08.html" text="                                                       error接口                              " title="error接口 · Go语言圣经"/>
+<page file="ch7-09.html" text="                                                       示例: 表达式求值                              " title="示例: 表达式求值 · Go语言圣经"/>
+<page file="ch7-10.html" text="                                                       类型断言                              " title="类型断言 · Go语言圣经"/>
+<page file="ch7-11.html" text="                                                       基于类型断言识别错误类型                              " title="基于类型断言识别错误类型 · Go语言圣经"/>
+<page file="ch7-12.html" text="                                                       通过类型断言查询接口                              " title="通过类型断言查询接口 · Go语言圣经"/>
+<page file="ch7-13.html" text="                                                       类型分支                              " title="类型分支 · Go语言圣经"/>
+<page file="ch7-14.html" text="                                                       示例: 基于标记的XML解码                              " title="示例: 基于标记的XML解码 · Go语言圣经"/>
+<page file="ch7-15.html" text="                                                       补充几点                              " title="补充几点 · Go语言圣经"/>
+<page file="ch8.html" text="                                                       Goroutines和Channels                              " title="Goroutines和Channels · Go语言圣经"/>
+<page file="ch8-01.html" text="                                                       Goroutines                              " title="Goroutines · Go语言圣经"/>
+<page file="ch8-02.html" text="                                                       示例: 并发的Clock服务                              " title="示例: 并发的Clock服务 · Go语言圣经"/>
+<page file="ch8-03.html" text="                                                       示例: 并发的Echo服务                              " title="示例: 并发的Echo服务 · Go语言圣经"/>
+<page file="ch8-04.html" text="                                                       Channels                              " title="Channels · Go语言圣经"/>
+<page file="ch8-05.html" text="                                                       并发的循环                              " title="并发的循环 · Go语言圣经"/>
+<page file="ch8-06.html" text="                                                       示例: 并发的Web爬虫                              " title="示例: 并发的Web爬虫 · Go语言圣经"/>
+<page file="ch8-07.html" text="                                                       基于select的多路复用                              " title="基于select的多路复用 · Go语言圣经"/>
+<page file="ch8-08.html" text="                                                       示例: 并发的目录遍历                              " title="示例: 并发的目录遍历 · Go语言圣经"/>
+<page file="ch8-09.html" text="                                                       并发的退出                              " title="并发的退出 · Go语言圣经"/>
+<page file="ch8-10.html" text="                                                       示例: 聊天服务                              " title="示例: 聊天服务 · Go语言圣经"/>
+<page file="ch9.html" text="                                                       基于共享变量的并发                              " title="基于共享变量的并发 · Go语言圣经"/>
+<page file="ch9-01.html" text="                                                       竞争条件                              " title="竞争条件 · Go语言圣经"/>
+<page file="ch9-02.html" text="                                                       sync.Mutex互斥锁                              " title="sync.Mutex互斥锁 · Go语言圣经"/>
+<page file="ch9-03.html" text="                                                       sync.RWMutex读写锁                              " title="sync.RWMutex读写锁 · Go语言圣经"/>
+<page file="ch9-04.html" text="                                                       内存同步                              " title="内存同步 · Go语言圣经"/>
+<page file="ch9-05.html" text="                                                       sync.Once惰性初始化                              " title="sync.Once惰性初始化 · Go语言圣经"/>
+<page file="ch9-06.html" text="                                                       竞争条件检测                              " title="竞争条件检测 · Go语言圣经"/>
+<page file="ch9-07.html" text="                                                       示例: 并发的非阻塞缓存                              " title="示例: 并发的非阻塞缓存 · Go语言圣经"/>
+<page file="ch9-08.html" text="                                                       Goroutines和线程                              " title="Goroutines和线程 · Go语言圣经"/>
+<page file="ch10.html" text="                                                       包和工具                              " title="包和工具 · Go语言圣经"/>
+<page file="ch10-01.html" text="                                                       包简介                              " title="包简介 · Go语言圣经"/>
+<page file="ch10-02.html" text="                                                       导入路径                              " title="导入路径 · Go语言圣经"/>
+<page file="ch10-03.html" text="                                                       包声明                              " title="包声明 · Go语言圣经"/>
+<page file="ch10-04.html" text="                                                       导入声明                              " title="导入声明 · Go语言圣经"/>
+<page file="ch10-05.html" text="                                                       包的匿名导入                              " title="包的匿名导入 · Go语言圣经"/>
+<page file="ch10-06.html" text="                                                       包和命名                              " title="包和命名 · Go语言圣经"/>
+<page file="ch10-07.html" text="                                                       工具                              " title="工具 · Go语言圣经"/>
+<page file="ch11.html" text="                                                       测试                              " title="测试 · Go语言圣经"/>
+<page file="ch11-01.html" text="                                                       go test                              " title="go test · Go语言圣经"/>
+<page file="ch11-02.html" text="                                                       测试函数                              " title="测试函数 · Go语言圣经"/>
+<page file="ch11-03.html" text="                                                       测试覆盖率                              " title="测试覆盖率 · Go语言圣经"/>
+<page file="ch11-04.html" text="                                                       基准测试                              " title="基准测试 · Go语言圣经"/>
+<page file="ch11-05.html" text="                                                       剖析                              " title="剖析 · Go语言圣经"/>
+<page file="ch11-06.html" text="                                                       示例函数                              " title="示例函数 · Go语言圣经"/>
+<page file="ch12.html" text="                                                       反射                              " title="反射 · Go语言圣经"/>
+<page file="ch12-01.html" text="                                                       为何需要反射?                              " title="为何需要反射? · Go语言圣经"/>
+<page file="ch12-02.html" text="                                                       reflect.Type和reflect.Value                              " title="reflect.Type和reflect.Value · Go语言圣经"/>
+<page file="ch12-03.html" text="                                                       Display递归打印                              " title="Display递归打印 · Go语言圣经"/>
+<page file="ch12-04.html" text="                                                       示例: 编码S表达式                              " title="示例: 编码S表达式 · Go语言圣经"/>
+<page file="ch12-05.html" text="                                                       通过reflect.Value修改值                              " title="通过reflect.Value修改值 · Go语言圣经"/>
+<page file="ch12-06.html" text="                                                       示例: 解码S表达式                              " title="示例: 解码S表达式 · Go语言圣经"/>
+<page file="ch12-07.html" text="                                                       获取结构体字段标签                              " title="获取结构体字段标签 · Go语言圣经"/>
+<page file="ch12-08.html" text="                                                       显示一个类型的方法集                              " title="显示一个类型的方法集 · Go语言圣经"/>
+<page file="ch12-09.html" text="                                                       几点忠告                              " title="几点忠告 · Go语言圣经"/>
+<page file="ch13.html" text="                                                       底层编程                              " title="底层编程 · Go语言圣经"/>
+<page file="ch13-01.html" text="                                                       unsafe.Sizeof, Alignof 和 Offsetof                              " title="unsafe.Sizeof, Alignof 和 Offsetof · Go语言圣经"/>
+<page file="ch13-02.html" text="                                                       unsafe.Pointer                              " title="unsafe.Pointer · Go语言圣经"/>
+<page file="ch13-03.html" text="                                                       示例: 深度相等判断                              " title="示例: 深度相等判断 · Go语言圣经"/>
+<page file="ch13-04.html" text="                                                       通过cgo调用C代码                              " title="通过cgo调用C代码 · Go语言圣经"/>
+<page file="ch13-05.html" text="                                                       几点忠告                              " title="几点忠告 · Go语言圣经"/>
+<page file="appendix.html" text="                                                       附录                              " title="附录 · Go语言圣经"/>
+<page file="appendix-a-errata.html" text="                                                       附录A：原文勘误                              " title="附录A：原文勘误 · Go语言圣经"/>
+<page file="appendix-b-author.html" text="                                                       附录B：作者译者                              " title="附录B：作者译者 · Go语言圣经"/>
+<page file="appendix-c-cpoyright.html" text="                                                       附录C：译文授权                              " title="附录C：译文授权 · Go语言圣经"/>
+<page file="appendix-d-translations.html" text="                                                       附录D：其它语言                              " title="附录D：其它语言 · Go语言圣经"/>
+</page>
+</site>
