@@ -769,7 +769,7 @@ table { border-collapse: collapse; border-spacing: 0px; }
 .dropdown-menu .buttons .button:focus, .dropdown-menu .buttons .button:hover { outline: 0px none; }
 .dropdown-menu .buttons .button.size-2 { width: 50%; }
 .dropdown-menu .buttons .button.size-3 { width: 33%; }
-.book-summary { font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; position: absolute; top: 0px; left: -300px; bottom: 0px; z-index: 1; overflow-y: auto; width: 300px; color: rgb(54, 65, 73); background: rgb(250, 250, 250) none repeat scroll 0% 0%; border-right: 1px solid rgba(0, 0, 0, 0.07); transition: left 250ms ease 0s; }
+.book-summary { font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; position: absolute; top: 0px; /* left: -300px */; bottom: 0px; z-index: 1; overflow-y: auto; width: 300px; color: rgb(54, 65, 73); background: rgb(250, 250, 250) none repeat scroll 0% 0%; border-right: 1px solid rgba(0, 0, 0, 0.07); transition: left 250ms ease 0s; }
 .book-summary ul.summary { list-style: outside none none; margin: 0px; padding: 0px; transition: top 0.5s ease 0s; }
 .book-summary ul.summary li { list-style: outside none none; }
 .book-summary ul.summary li.header { padding: 20px 15px 10px; text-transform: uppercase; color: rgb(147, 157, 163); }
@@ -796,7 +796,7 @@ table { border-collapse: collapse; border-spacing: 0px; }
   .book.with-summary .book-body { transform: translate(calc(100% - 60px), 0px); }
 }
 .book.without-animation .book-body { transition: none 0s ease 0s  ! important; }
-.book-body { position: absolute; top: 0px; right: 0px; left: 0px; bottom: 0px; overflow-y: auto; color: rgb(0, 0, 0); background: rgb(255, 255, 255) none repeat scroll 0% 0%; transition: left 250ms ease 0s; }
+.book-body { position: absolute; top: 0px; right: 0px; /* left: 0px; */ bottom: 0px; overflow-y: auto; color: rgb(0, 0, 0); background: rgb(255, 255, 255) none repeat scroll 0% 0%; transition: left 250ms ease 0s; }
 .book-body .body-inner { position: absolute; top: 0px; right: 0px; left: 0px; bottom: 0px; overflow-y: auto; }
 @media (max-width: 1240px) {
   .book-body { transition: transform 250ms ease 0s; padding-bottom: 20px; }
