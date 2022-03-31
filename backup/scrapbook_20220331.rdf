@@ -424,11 +424,11 @@
   <RDF:Description RDF:about="urn:scrapbook:item20190609094429"
                    NS1:id="20190609094429"
                    NS1:create="20190609094429"
-                   NS1:modify="20220331094125"
+                   NS1:modify="20220328102546"
                    NS1:type=""
                    NS1:title="List of Star Wars comics _ Wookieepedia"
                    NS1:chars="UTF-8"
-                   NS1:icon=""
+                   NS1:icon="resource://scrapbook/data/20190609094429/favicon.ico.bin"
                    NS1:source="https://starwars.fandom.com/wiki/List_of_comics"
                    NS1:comment=""
                    NS1:lock="" />
