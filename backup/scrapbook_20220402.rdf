@@ -523,14 +523,14 @@
   <RDF:Description RDF:about="urn:scrapbook:item20220327130713"
                    NS1:id="20220327130713"
                    NS1:create="20220327130713"
-                   NS1:modify="20220402140607"
                    NS1:type=""
                    NS1:title="List of Star Wars television series - Wikipedia"
                    NS1:chars="UTF-8"
-                   NS1:icon=""
+                   NS1:icon="resource://scrapbook/data/20220327130713/favicon.ico.bin"
                    NS1:source="https://en.m.wikipedia.org/wiki/List_of_Star_Wars_television_series"
                    NS1:comment=""
-                   NS1:lock="" />
+                   NS1:lock=""
+                   NS1:modify="20220402100438" />
   <NC:BookmarkSeparator RDF:about="urn:scrapbook:item20220310102510"
                    NS1:id="20220310102510"
                    NS1:create="20220310102510"
@@ -637,8 +637,8 @@
     <RDF:li RDF:resource="urn:scrapbook:item20190609094429"/>
     <RDF:li RDF:resource="urn:scrapbook:item20220328104256"/>
     <RDF:li RDF:resource="urn:scrapbook:item20220331093553"/>
-    <RDF:li RDF:resource="urn:scrapbook:item20220402093842"/>
     <RDF:li RDF:resource="urn:scrapbook:item20220328104804"/>
+    <RDF:li RDF:resource="urn:scrapbook:item20220402093842"/>
   </RDF:Seq>
   <RDF:Description RDF:about="urn:scrapbook:item20220328095259"
                    NS1:id="20220328095259"
