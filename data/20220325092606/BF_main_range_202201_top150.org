@@ -45,6 +45,10 @@
 |   |   52 |     8.3 | 235. Ghost Walk <^>                           | 5th      | 2018 | Adric, Nyssa, Tegan            | James Goss                     |                      | Y    |            |   |   |
 |   |   37 |     8.5 | 236. Serpent in the Silver Mask               | 5th      | 2018 | Adric, Nyssa, Tegan            | David Llewellyn                |                      | Y    |            |   |   |
 |   |   65 |     8.1 | 258A. Warzone                                 | 5th      | 2019 | Nyssa, Tegan, Marc             | Chris Chapman                  |                      | -    |            |   |   |
+
+** 6th Doctor
+|   | Rank |  Rating | No.. Title                                    | Doctor   | Year | Features                       | Writer                         | Story Ars            | PLOT |            |   |   |
+|   |      | 2022.01 | . <34>                                        |          |      | <30>                           | <30>                           |                      |      |            |   |   |
 |---+------+---------+-----------------------------------------------+----------+------+--------------------------------+--------------------------------+----------------------+------+------------+---+---|
 |   |   24 |     8.6 | 6. The Marian Conspiracy                      | 6th      | 2000 | Evelyn                         | Jacqueline Rayner              | Evelyn               | Y    |            |   |   |
 |   |   88 |     7.9 | 9. The Spectre of Lanyon Moor                 | 6th      | 2000 | Evelyn, the Brigadier          | Nicholas Pegg                  |                      |      |            |   |   |
@@ -88,6 +92,10 @@
 |   |   30 |     8.6 | 233. Static                                   | 6th      | 2017 | Constance, Flip, Static        | Jonathan Morris                | Flip                 | -    |            |   |   |
 |   |  136 |     7.5 | 239. Iron Bright                              | 6th      | 2018 | Isambard Kingdom Brunel        | Chris Chapman                  |                      |      |            |   |   |
 |   |  104 |     7.8 | 240. Hour of the Cybermen                     | 6th      | 2018 | Daniel Hopkins, UNIT, Cybermen | Andrew Smith                   |                      |      |            |   |   |
+
+** 7th Doctor
+|   | Rank |  Rating | No.. Title                                    | Doctor   | Year | Features                       | Writer                         | Story Ars            | PLOT |            |   |   |
+|   |      | 2022.01 | . <34>                                        |          |      | <30>                           | <30>                           |                      |      |            |   |   |
 |---+------+---------+-----------------------------------------------+----------+------+--------------------------------+--------------------------------+----------------------+------+------------+---+---|
 |   |   79 |     7.9 | 5. The Fearmonger                             | 7th      | 2000 | Ace                            | Jonathan Blum                  |                      |      |            |   |   |
 |   |   49 |     8.3 | 12. The Fires of Vulcan                       | 7th      | 2000 | Mel                            | Steve Lyons                    |                      | -    |            |   |   |
@@ -121,6 +129,11 @@
 |   |  106 |     7.8 | 226b. World Apart                             | 7th      | 2017 | Ace, Hex                       | Scott Handcock                 |                      |      |            |   |   |
 |   |  131 |     7.5 | 243. The Quantum Possibility Engine           | 7th      | 2018 | Ace, Mel                       | Guy Adams                      |                      |      |            |   |   |
 |   |   61 |     8.1 | 245. Muse of Fire                             | 7th      | 2018 | Ace, Hex, Iris, Panda          | Paul Magrs                     |                      | -    |            |   |   |
+
+
+** 8th Doctor
+|   | Rank |  Rating | No.. Title                                    | Doctor   | Year | Features                       | Writer                         | Story Ars            | PLOT |            |   |   |
+|   |      | 2022.01 | . <34>                                        |          |      | <30>                           | <30>                           |                      |      |            |   |   |
 |---+------+---------+-----------------------------------------------+----------+------+--------------------------------+--------------------------------+----------------------+------+------------+---+---|
 |   |  124 |     7.6 | 16. +Storm Warning+                           | 8th      | 2001 | Charley                        | Gary Russell                   | Charley              |      |            |   |   |
 |   |    2 |     9.5 | 29. +The Chimes of Midnight+                  | 8th      | 2002 | Charley                        | Robert Shearman                | Charley              | Y    |            |   |   |
@@ -136,6 +149,10 @@
 |   |   48 |     8.3 | 103. The Girl Who Never Was                   | 8th      | 2007 | Charley, Cybermen              | Alan Barnes                    | Charley              | Y    | #Cybermen  |   |   |
 |   |   41 |     8.4 | 123d. +The Company of Friends - Mary's Story+ | 8th      | 2009 | Mary                           | Jonathan Morris                |                      | Y    |            |   |   |
 |   |   27 |     8.6 | 153. +The Silver Turk+                        | 8th      | 2011 | Mary, Cybermen                 | Marc Platt                     |                      | Y    | #Cybermen  |   |   |
+
+** pending
+|   | Rank |  Rating | No.. Title                                    | Doctor   | Year | Features                       | Writer                         | Story Ars            | PLOT |            |   |   |
+|   |      | 2022.01 | . <34>                                        |          |      | <30>                           | <30>                           |                      |      |            |   |   |
 |---+------+---------+-----------------------------------------------+----------+------+--------------------------------+--------------------------------+----------------------+------+------------+---+---|
 |   |  157 |     7.4 | 46. Flip-flop                                 | 7th      | 2003 | Mel                            | Jonathan Morris                |                      |      |            |   |   |
 |   |  154 |     7.4 | 80. Time Works                                | 8th      | 2006 | Charley, C'rizz                | Steve Lyons                    |                      |      |            |   |   |
@@ -294,10 +311,267 @@
 
 * 1D
 ** 1DA
+| 7.9 | (64) | 1.1 - The Destination Wars           | First Doctor Adventures |   |
+| 7.6 | (61) | 1.2 - The Great White Hurricane      | First Doctor Adventures |   |
+| 9.2 | (44) | 2.1 - The Invention of Death         | First Doctor Adventures |   |
+| 8.8 | (35) | 2.2 - The Barbarians and the Samurai | First Doctor Adventures |   |
+| 7.7 | (30) | 3.1 - The Phoenicians                | First Doctor Adventures |   |
+| 8.6 | (29) | 3.2 - Tick-Tock World                | First Doctor Adventures |   |
+| 7.0 | (14) | 4.1 - Return to Skaro                | First Doctor Adventures |   |
+| 8.4 | (12) | 4.2 - Last of the Romanovs           | First Doctor Adventures |   |
+
 ** EA
-* 2D EA
-* 3DA
-* 4DA
+
+| 7.7 | (70) | 1.1 - Domain of the Voord            | Early Adventures |   |
+| 7.2 | (57) | 1.2 - The Doctor's Tale              | Early Adventures |   |
+| 7.8 | (54) | 1.3 - The Bounty of Ceres            | Early Adventures |   |
+| 7.8 | (59) | 1.4 - An Ordinary Life               | Early Adventures |   |
+|   ? | (?)  | 3.1.1 - Ship of Death                | Early Adventures |   |
+|   ? | (?)  | 3.1.2 - Hunters in the Breach        | Early Adventures |   |
+|   ? | (?)  | 3.1.3 - A Fight for Survival         | Early Adventures |   |
+| 6.2 | (29) | 3.1.4 - The End of Endurance         | Early Adventures |   |
+| 6.8 | (32) | 3.2 - The Fifth Traveller            | Early Adventures |   |
+| 8.0 | (40) | 3.3 - The Ravelli Conspiracy         | Early Adventures |   |
+| 8.0 | (46) | 3.4 - The Sontarans                  | Early Adventures |   |
+| 9.0 | (41) | 5.1 - The Dalek Occupation of Winter | Early Adventures |   |
+| 8.2 | (17) | 5.2 - An Ideal World                 | Early Adventures |   |
+| 7.8 | (12) | 5.3 - Entanglement                   | Early Adventures |   |
+| 8.8 | (18) | 5.4 - The Crash of the UK-201        | Early Adventures |   |
+| 9.2 | (30) | 6.2 - Daughter of the Gods           | Early Adventures |   |
+
+** CC
+
+| 9.1 | (136) | 3.5 - Home Truths                      | Companion Chronicles  |   |
+| 8.5 | (37)  | 9.4 - The Locked Room                  | Companion Chronicles  |   |
+| 8.5 | (112) | 5.1 - The Guardian of the Solar System | Companion Chronicles  |   |
+| 8.5 | (90)  | 5.12 The Cold Equations                | Companion Chronicles  |   |
+| 8.4 | (40)  | 11.2 - Across the Darkened City        | Companion Chronicles  |   |
+| 8.4 | (83)  | 6.5 - The First Wave                   | Companion Chronicles  |   |
+| 8.3 | (111) | 3.7 - The Transit of Venus             | Companion Chronicles  |   |
+| 8.3 | (110) | 6.2 - The Rocket Men                   | Companion Chronicles  |   |
+| 8.2 | (113) | 4.1 - The Drowned World                | Companion Chronicles  |   |
+| 8.2 | (70)  | 7.5 - Return of the Rocket Men         | Companion Chronicles  |   |
+| 8.1 | (90)  | 4.7 - The Suffering                    | Companion Chronicles  |   |
+| 8.1 | (40)  | 9.2 - The Unwinding World              | Companion Chronicles  |   |
+| 8.0 | (12)  | 13.3 - The Vardan Invasion of Mirth    | Companion Chronicles  |   |
+| 8.0 | (36)  | 11.4 - The Plague of Dreams            | Companion Chronicles  |   |
+| 8.0 | (68)  | 7.10 - The Library of Alexandria       | Companion Chronicles  |   |
+| 7.9 | (76)  | 6.7 - The Anachronauts                 | Companion Chronicles  |   |
+| 7.9 | (54)  | 8.10 - The War To End All Wars         | Companion Chronicles  |   |
+| 7.8 | (111) | 1.1 - Frostfire                        | Companion Chronicles  |   |
+| 7.8 | (60)  | 7.7 - The Flames of Cadiz              | Companion Chronicles  |   |
+| 7.8 | (103) | 5.8 - The Perpetual Bond               | Companion Chronicles  |   |
+| 7.8 | (111) | 2.1 - Mother Russia                    | Companion Chronicles  |   |
+| 7.7 | (69)  | 7.1 - The Time Museum                  | Companion Chronicles  |   |
+| 7.6 | (36)  | 9.3 - The Founding Fathers             | Companion Chronicles  |   |
+| 7.6 | (58)  | 8.2 - The Alchemists                   | Companion Chronicles  |   |
+| 7.5 | (83)  | 6.1 Tales From the Vault               | Companion Chronicles  |   |
+| 7.5 | (94)  | 5.6 - Quinnis                          | Companion Chronicles  |   |
+| 7.4 | (13)  | 13.4 - The Crumbling Magician          | Companion Chronicles  |   |
+| 7.3 | (32)  | 11.3 - The Bonfires of the Vanities    | Companion Chronicles  |   |
+| 7.3 | (70)  | 6.10 - The Wanderer                    | Companion Chronicles  |   |
+| 7.3 | (50)  | 8.3 - Upstairs                         | Companion Chronicles  |   |
+| 7.3 | (100) | 8.5 - The Beginning                    | Companion Chronicles  |   |
+| 7.2 | (44)  | 8.8 - The Sleeping City                | Companion Chronicles  |   |
+| 7.2 | (42)  | 8.9 - Starborn                         | Companion Chronicles  |   |
+| 7.2 | (35)  | 11.1 - Fields of Terror                | Companion Chronicles  |   |
+| 7.1 | (44)  | 9.1 - The Sleeping Blood               | Companion Chronicles  |   |
+| 6.8 | (84)  | 3.1 - Here There Be Monsters           | Companion Chronicles  |   |
+| 6.6 | (14)  | 13.2 - Daybreak                        | Companion Chronicles  |   |
+| 6.0 | (16)  | 13.1 - E is For...                     | Companion Chronicles  |   |
+
+** ST
+
+| 8.3 | (112) | 1.1 - Rise and Fall                    | Short Trips Audios     |   |
+| 7.9 | (12)  | 8.9 - A Small Semblance of Home        | Short Trips Audios     |   |
+| 7.8 | (22)  | 7.12 - O Tannenbaum                    | Short Trips Audios     |   |
+| 7.8 | (63)  | 2.1 - 1963                             | Short Trips Audios     |   |
+| 7.6 | (41)  | 3.1 - Seven to One                     | Short Trips Audios     |   |
+| 7.2 | (5)   | 9.12 - Peace in Our Time               | Short Trips Audios     |   |
+| 6.9 | (20)  | 7.5 - Falling                          | Short Trips Audios     |   |
+| 6.8 | (34)  | 5.1 - Flywheel Revolution              | Short Trips Audios     |   |
+| 6.8 | (17)  | 6.5 - This Sporting Life               | Short Trips Audios     |   |
+| 6.5 | (4)   | 10.6 - Out of the Deep                 | Short Trips Audios     |   |
+| 6.4 | (19)  | 5.9 - Etheria                          | Short Trips Audios     |   |
+| 6.4 | (38)  | 4.1 - A Star is Born                   | Short Trips Audios     |   |
+| 7.6 | (44)  | 4. The Little Drummer Boy              | Short Trips Rarities   |   |
+| 6.8 | (19)  | 11. The Horror at Bletchington Station | Short Trips Rarities   |   |
+| 9.4 | (5)   | Home Again, Home Again                 | Subscriber Short Trips |   |
+| 6.6 | (11)  | Helmstone                              | Subscriber Short Trips |   |
+
+** misc
+| 7.5 | (73)  | DWM448 - The Revenants                     | DWM Freebies          |   |
+| 7.3 | (83)  | 1. Hunters of Earth                        | Destiny of the Doctor |   |
+| 8.3 | (39)  | 6. Collision Course                        | The Legacy of Time    |   |
+| 9.2 | (130) | 2.1a - Farewell Great Macedon              | The Lost Stories      |   |
+| 7.5 | (106) | 2.1b - The Fragile Yellow Arc of Fragrance | The Lost Stories      |   |
+| 7.4 | (68)  | 3.7 - The Masters of Luxor                 | The Lost Stories      |   |
+| 7.2 | (48)  | 4.1 - The Dark Planet                      | The Lost Stories      |   |
+| 8.9 | (14)  | 4. The Shoreditch Intervention             | Worlds of Doctor Who  |   |
+
+* 2D
+
+** EA
+|  7.6 | (63)  | 2.1 - The Yes Men                                                 | Early Adventures                                 |
+|  7.3 | (60)  | 2.2 - The Forsaken                                                | Early Adventures                                 |
+|  8.1 | (69)  | 2.3 - The Black Hole                                              | Early Adventures                                 |
+|  6.4 | (58)  | 2.4 - The Isos Network                                            | Early Adventures                                 |
+|  7.8 | (33)  | 4.2 - The Outliers                                                | Early Adventures                                 |
+|  6.7 | (20)  | 4.3 - The Morton Legacy                                           | Early Adventures                                 |
+|  8.2 | (29)  | 4.4. The Wreck of the World                                       | Early Adventures                                 |
+|  7.1 | (22)  | 6.1 - The Home Guard                                              | Early Adventures                                 |
+|  9.2 | (30)  | 6.2 - Daughter of the Gods                                        | Early Adventures                                 |
+
+** CC
+|  8.5 | (42)  | 8.12 - Second Chances                                             | Companion Chronicles                             |
+|  8.1 | (107) | 4.2 - The Glorious Revolution                                     | Companion Chronicles                             |
+|  8.1 | (16)  | 12.4 - The Tactics of Defeat                                      | Companion Chronicles                             |
+|  7.9 | (22)  | 12.2 - Dumb Waiter                                                | Companion Chronicles                             |
+|  7.8 | (69)  | 6.11 - The Jigsaw War                                             | Companion Chronicles                             |
+|  7.8 | (71)  | 6.3 - The Memory Cheats                                           | Companion Chronicles                             |
+|  7.7 | (92)  | 3.9 - Resistance                                                  | Companion Chronicles                             |
+|  7.7 | (44)  | 10.1 - The Mouthless Dead                                         | Companion Chronicles                             |
+|  7.7 | (77)  | 6.8 - The Selachian Gambit                                        | Companion Chronicles                             |
+|  7.5 | (83)  | 6.1 Tales From the Vault                                          | Companion Chronicles                             |
+|  7.5 | (80)  | 5.9 - The Forbidden Time                                          | Companion Chronicles                             |
+|  7.4 | (49)  | 7.11 - The Apocalypse Mirror                                      | Companion Chronicles                             |
+|  7.4 | (36)  | 10.4 - The Edge                                                   | Companion Chronicles                             |
+|  7.2 | (38)  | 10.2 - The Story of Extinction                                    | Companion Chronicles                             |
+|  7.2 | (82)  | 5.2 - Echoes of Grey                                              | Companion Chronicles                             |
+|  7.1 | (21)  | 12.1 - The Curator's Egg                                          | Companion Chronicles                             |
+|  7.0 | (54)  | 7.8 - House of Cards                                              | Companion Chronicles                             |
+|  7.0 | (48)  | 7.2 - The Uncertainty Principle                                   | Companion Chronicles                             |
+|  6.8 | (61)  | 8.6 - The Dying Light                                             | Companion Chronicles                             |
+|  6.8 | (61)  | *The Three Companions                                             | Companion Chronicles                             |
+|  6.6 | (37)  | 10.3 - The Integral                                               | Companion Chronicles                             |
+|  6.4 | (85)  | 2.2 - Helicon Prime                                               | Companion Chronicles                             |
+|  6.3 | (86)  | 3.2 - The Great Space Elevator                                    | Companion Chronicles                             |
+|  6.1 | (73)  | 4.8 - The Emperor of Eternity                                     | Companion Chronicles                             |
+|  5.7 | (92)  | 1.2 - Fear of the Daleks                                          | Companion Chronicles                             |
+
+** ST
+|  8.1 | (28)  | 8.X - The Last Day At Work                                        | Short Trips Audios                               |
+|  8.0 | (10)  | 10.2 - Deleted Scenes                                             | Short Trips Audios                               |
+|  7.7 | (18)  | 7.8 - The British Invasion                                        | Short Trips Audios                               |
+|  7.6 | (41)  | 3.1 - Seven to One                                                | Short Trips Audios                               |
+|  7.3 | (20)  | 5.10 - The Way of the Empty Hand                                  | Short Trips Audios                               |
+|  7.2 | (49)  | 2.2 - The Way Forwards                                            | Short Trips Audios                               |
+|  7.1 | (17)  | 6.6 - Lost and Found                                              | Short Trips Audios                               |
+|  6.7 | (46)  | 3.2 - The Five Dimensional Man                                    | Short Trips Audios                               |
+|  6.5 | (23)  | 5.2 - Little Doctors                                              | Short Trips Audios                               |
+|  6.2 | (10)  | 9.4 - Year of the Drex Olympics                                   | Short Trips Audios                               |
+|  6.1 | (36)  | 4.2 - Penny Wise, Pound Foolish                                   | Short Trips Audios                               |
+|  5.8 | (64)  | 1.2 - A Stain of Red in the Sand                                  | Short Trips Audios                               |
+|  8.2 | (51)  | 3. Lepidoptery for Beginners                                      | Short Trips Rarities                             |
+|  6.7 | (29)  | One Small Step                                                    | Short Trips Rarities                             |
+|  7.2 | (9)   | The Horror of Hy-Brasil                                           | Subscriber Short Trips                           |
+|  6.1 | (7)   | The Piltdown Men                                                  | Subscriber Short Trips                           |
+
+** misc
+|  7.9 | (80)  | 2. Shadow of Death                                                | Destiny of the Doctor                            |
+|  8.3 | (39)  | 6. Collision Course                                               | The Legacy of Time                               |
+|  8.2 | (66)  | 4.3 - Lords of the Red Planet                                     | The Lost Stories                                 |
+|  7.4 | (61)  | 4.2 - The Queen of Time                                           | The Lost Stories                                 |
+|  7.0 | (61)  | 3.8 - The Rosemariners                                            | The Lost Stories                                 |
+|  6.4 | (76)  | 2.2a - Prison in Space                                            | The Lost Stories                                 |
+|  7.2 | (4)   | The Dark Path                                                     | The Missing Adventures                           |
+|  5.2 | (4)   | The Menagerie                                                     | The Missing Adventures                           |
+|  5.0 | (4)   | Twilight of the Gods                                              | The Missing Adventures                           |
+|  4.5 | (2)   | Invasion of the Cat-People                                        | The Missing Adventures                           |
+
+** short stories
+
+| 9.0 | (1) | Outstanding Balance                                               | Short Trips 26 : How the Doctor Changed My Life |
+| 9.0 | (1) | Lares Domestici                                                   | Short Trips 26 : How the Doctor Changed My Life |
+| 8.5 | (2) | The Glass Princess                                                | Short Trips 04 : The Muses                      |
+| 8.5 | (2) | The Astronomer’s Apprentice                                      | Short Trips 04 : The Muses                      |
+| 8.5 | (2) | The Man Who (Nearly) Killed Christmas                             | Short Trips 11 : A Christmas Treasury           |
+| 8.3 | (3) | That Time I Nearly Destroyed The World Whilst Looking For a Dress | Short Trips 06 : Past Tense                     |
+| 8.0 | (1) | The Steward's Story                                               | Short Trips 08 : Repercussions                  |
+| 8.0 | (1) | All of Beyond                                                     | Short Trips 21 : Snapshots                      |
+| 8.0 | (1) | Homework                                                          | Short Trips 26 : How the Doctor Changed My Life |
+| 7.5 | (2) | Father Figure                                                     | Short Trips 16 : Farewells                      |
+| 7.0 | (1) | The Age of Ambition                                               | Short Trips 07 : Life Science                   |
+| 7.0 | (1) | Golem                                                             | Short Trips 21 : Snapshots                      |
+| 6.5 | (2) | Goodwill Toward Men                                               | Short Trips 11 : A Christmas Treasury           |
+| 6.3 | (3) | Twin Piques                                                       | Short Trips 01 : Zodiak                         |
+| 6.3 | (3) | Constant Companion                                                | Short Trips 01 : Zodiak                         |
+| 6.3 | (3) | Face-Painter                                                      | Short Trips 03 : A Universe of Terrors          |
+| 6.0 | (3) | One Small Step...                                                 | Short Trips 06 : Past Tense                     |
+| 6.0 | (1) | The Juror's Story                                                 | Short Trips 08 : Repercussions                  |
+| 6.0 | (1) | The Farmer's Story                                                | Short Trips 08 : Repercussions                  |
+| 5.3 | (3) | Five Card Draw                                                    | Short Trips 01 : Zodiak                         |
+
+* 3D
+
+** 3DA
+ | 8.5 | (32) | 5.1 - Primord                     | Third Doctor Adventures |
+ | 8.4 | (16) | 6.1 - Poison of the Daleks        | Third Doctor Adventures |
+ | 8.1 | (46) | 4.1 - The Rise of the New Humans  | Third Doctor Adventures |
+ | 7.9 | (15) | 6.2 - Operation Hellfire          | Third Doctor Adventures |
+ | 7.7 | (37) | 2.1 - The Transcendence of Ephros | Third Doctor Adventures |
+ | 7.7 | (36) | 3.2 - Storm of the Horofax        | Third Doctor Adventures |
+ | 7.6 | (53) | 1.2 - The Havoc of Empires        | Third Doctor Adventures |
+ | 7.6 | (43) | 4.2 - The Tyrants of Logic        | Third Doctor Adventures |
+ | 7.5 | (33) | 2.2 - The Hidden Realm            | Third Doctor Adventures |
+ | 7.5 | (44) | 3.1 - The Conquest of Far         | Third Doctor Adventures |
+ | 7.4 | (27) | 5.2 - The Scream of Ghosts        | Third Doctor Adventures |
+ | 7.4 | (56) | 1.1 - Prisoners of the Lake       | Third Doctor Adventures |
+
+** CC
+ | 9.1 | (107) | 7.4 - The Last Post                  | Companion Chronicles |
+ | 8.7 | (93)  | 7.9 - The Scorchies                  | Companion Chronicles |
+ | 8.6 | (125) | 5.3 - Find and Replace               | Companion Chronicles |
+ | 8.1 | (54)  | 8.4 - Ghost in the Machine           | Companion Chronicles |
+ | 7.8 | (97)  | 4.9 - Shadow of the Past             | Companion Chronicles |
+ | 7.7 | (54)  | 7.12 - Council of War                | Companion Chronicles |
+ | 7.7 | (85)  | 4.3 - The Prisoner of Peladon        | Companion Chronicles |
+ | 7.6 | (84)  | 3.10 - The Magician's Oath           | Companion Chronicles |
+ | 7.5 | (108) | 2.3 - Old Soldiers                   | Companion Chronicles |
+ | 7.5 | (83)  | 6.1 Tales From the Vault             | Companion Chronicles |
+ | 7.5 | (117) | 1.3 - The Blue Tooth                 | Companion Chronicles |
+ | 7.3 | (59)  | 6.9 - Binary                         | Companion Chronicles |
+ | 7.2 | (65)  | 6.4 - The Many Deaths of Jo Grant    | Companion Chronicles |
+ | 7.2 | (74)  | 5.10 - The Sentinels of the New Dawn | Companion Chronicles |
+ | 7.2 | (72)  | 4.10 - The Time Vampire              | Companion Chronicles |
+ | 7.0 | (49)  | 6.12 - The Rings of Ikiria           | Companion Chronicles |
+ | 6.9 | (80)  | 3.3 - The Doll of Death              | Companion Chronicles |
+ | 6.8 | (42)  | 8.11 - The Elixir of Doom            | Companion Chronicles |
+ | 6.8 | (61)  | *The Three Companions                | Companion Chronicles |
+
+** ST
+
+ | 8.7 | (11) | 9.6 - The Same Face                   | Short Trips Audios     |
+ | 8.3 | (30) | 6.7 - The Blame Game                  | Short Trips Audios     |
+ | 8.3 | (28) | 6.8 - Damascus                        | Short Trips Audios     |
+ | 7.6 | (41) | 3.1 - Seven to One                    | Short Trips Audios     |
+ | 7.6 | (39) | 7.X - Landbound                       | Short Trips Audios     |
+ | 7.3 | (67) | 1.3 - A True Gentleman                | Short Trips Audios     |
+ | 7.1 | (23) | 5.3 - Time Tunnel                     | Short Trips Audios     |
+ | 7.1 | (49) | 2.3 - Walls of Confinement            | Short Trips Audios     |
+ | 6.9 | (17) | 7.2 - Gardeners' Worlds               | Short Trips Audios     |
+ | 6.5 | (42) | 3.3 - Pop Up                          | Short Trips Audios     |
+ | 6.1 | (33) | 4.3 - Lost in the Wakefield Triangle  | Short Trips Audios     |
+ | 5.9 | (20) | 5.11 - The Other Woman                | Short Trips Audios     |
+ | 4.2 | (12) | 10.3 - Decline of the Ancient Mariner | Short Trips Audios     |
+ | 7.4 | (48) | 6. The Switching                      | Short Trips Rarities   |
+ | 7.0 | (22) | 7. Waiting for Gadot                  | Short Trips Rarities   |
+ | 6.9 | (19) | 12. A Home From Home                  | Short Trips Rarities   |
+ | 9.3 | (7)  | Still Life                            | Subscriber Short Trips |
+ | 7.5 | (4)  | Taken For Granted                     | Subscriber Short Trips |
+ | 6.3 | (11) | Sphinx Lightning                      | Subscriber Short Trips |
+ | 5.6 | (19) | Neptune                               | Subscriber Short Trips |
+
+** misc
+
+| 7.4 | (69) | DWM411 - The Mists of Time   | DWM Freebies          |
+| 6.6 | (63) | 3. Vengeance of the Stones   | Destiny of the Doctor |
+| 9.0 | (49) | 3. The Sacrifice of Jo Grant | The Legacy of Time    |
+| 8.3 | (39) | 6. Collision Course          | The Legacy of Time    |
+| 7.6 | (53) | 4.4 - The Mega               | The Lost Stories      |
+
+* 4D
+** 4DA
 
 |   | 2021.07 | Prio. | 2020.07 |    # | Title                            | Author                         | Featuring                                | Released          |
 |   |         |       |         |      |                                  |                                | <40>                                     |                   |
@@ -374,18 +648,14 @@
 | ^ |     7.8 | [#C]  |         | 10.3 | The Tribulations of Tahdeus Nook | Andrew Smith                   | Leela                                    | 10 February 2021  |
 |   |     6.1 | [#E]  |         | 10.4 | The Primeval Design              | Helen Goldwyn                  | Leela, Mary Annin                        |                   |
 #+TBLFM: $3='(cond ((>= $2 8.5) "[#A]") ((>= $2 8.0) "[#B]") ((>= $2 7.5) "[#C]") ((>= $2 7.0) "[#D]") (t "[#E]"));N
+** misc
+
 * 8D
 
 ** 8DA
 
 |   |      |         # | Title                          | 2021.04 | Featuring                                       |   |
 |---+------+-----------+--------------------------------+---------+-------------------------------------------------+---|
-| ? | [#B] |   FALM1.4 | Island of the Fendahl          |     8.1 | Lucie, Fendahl                                  |   |
-|   | [#C] |   FALM1.3 | The House on the Edge of Chaos |     7.6 |                                                 |   |
-|   | [#C] |      VIII | An Earthly Child               |     7.5 | Susan, Alex                                     |   |
-|   | [#D] |    DWM337 | Living Legend                  |     7.4 | Charley                                         |   |
-|   | [#E] |   FALM1.2 | The Revolution Game            |     6.8 | Lucie                                           |   |
-|   | [#E] |   FALM1.1 | The Dalek Trap                 |     6.6 | Lucie, Daleks                                   |   |
 | # | [#C] | 1.1 / 1.2 | Blood of the Daleks            |     7.8 | Lucie, Daleks                                   |   |
 |   | [#C] |       1.3 | Horror of Glam Rock            |     7.5 | Lucie, Pat                                      |   |
 | / | [#D] |       1.4 | +Immortal Beloved+             |     7.3 | Lucie                                           |   |
@@ -393,6 +663,12 @@
 |   | [#D] |       1.6 | No More Lies                   |     7.1 | Lucie                                           |   |
 | ^ | [#A] |       1.7 | Human Resources /              |     8.7 | Lucie, Cybermen, the Headhunter, Karen, Straxus |   |
 | ^ | [#B] |       1.8 | Human Resources                |     8.3 |                                                 |   |
+|---+------+-----------+--------------------------------+---------+-------------------------------------------------+---|
+|   | [#E] |   FALM1.1 | The Dalek Trap                 |     6.6 | Lucie, Daleks                                   |   |
+|   | [#E] |   FALM1.2 | The Revolution Game            |     6.8 | Lucie                                           |   |
+|   | [#C] |   FALM1.3 | The House on the Edge of Chaos |     7.6 |                                                 |   |
+| ? | [#B] |   FALM1.4 | Island of the Fendahl          |     8.1 | Lucie, Fendahl                                  |   |
+|---+------+-----------+--------------------------------+---------+-------------------------------------------------+---|
 |   | [#E] |       2.1 | Dead London                    |     6.5 | Lucie                                           |   |
 |   | [#C] |       2.2 | Max Warp                       |     7.5 |                                                 |   |
 | # | [#C] |       2.3 | Brave New Town                 |     7.9 | Lucie, Nestene                                  |   |
@@ -401,6 +677,7 @@
 | # | [#C] |       2.6 | +The Zygon Who Fell to Earth+  |     7.9 | Lucie, Pat, Zygons                              |   |
 |   | [#C] |       2.7 | Sisters of the Flame           |     7.7 | Lucie, Morbius, Sisterhood of Karn, Straxus     |   |
 |   | [#D] |       2.8 | The Vengeance of Morbius       |     7.1 | Lucie, Morbius, Sisterhood of Karn, Straxus     |   |
+|---+------+-----------+--------------------------------+---------+-------------------------------------------------+---|
 |   | [#D] |       3.1 | Orbis                          |     7.1 | Lucie, the Headhunter                           |   |
 |   | [#E] |       3.2 | Hothouse                       |     6.8 | Lucie, Krynoids                                 |   |
 |   | [#C] |       3.3 | The Beast of Orlok             |     7.5 | Lucie                                           |   |
@@ -409,8 +686,9 @@
 |   | [#C] |       3.6 | The Cannibalists               |     7.5 | Lucie                                           |   |
 |   | [#C] |       3.7 | The Eight Truths               |     7.7 | Lucie, Karen, Eight Legs                        |   |
 |   | [#C] |       3.8 | Worldwide Web                  |     7.5 | Lucie, Karen, Eight Legs                        |   |
-|   | [#A] |      4.10 | +To the Death+                 |     9.1 | Daleks, Lucie, Susan, Alex, the Monk, Tamsin    |   |
+|---+------+-----------+--------------------------------+---------+-------------------------------------------------+---|
 | ^ | [#B] |       4.1 | +Death in Blackpool+           |     8.4 | Lucie, Pat, Zygons                              |   |
+|   | [#A] |      4.10 | +To the Death+                 |     9.1 | Daleks, Lucie, Susan, Alex, the Monk, Tamsin    |   |
 |   | [#C] |       4.2 | Situation Vacant               |     7.6 | Tamsin                                          |   |
 |   | [#E] |       4.3 | Nevermore                      |     6.6 | Tamsin                                          |   |
 | / | [#B] |       4.4 | +The Book of Kells+            |     8.1 | Tamsin, the Monk, Lucie                         |   |
@@ -418,10 +696,84 @@
 | / | [#B] |       4.6 | +[[https://tardis.fandom.com/wiki/The_Resurrection_of_Mars_(audio_story)][The Resurrection of Mars]]+     |     8.2 | Tamsin, Lucie, Ice Warriors, the Monk           |   |
 |   | [#C] |       4.7 | Relative Dimensions            |     7.6 | Susan, Alex, Lucie                              |   |
 |   | [#D] |       4.8 | Prisoner of the Sun            |     7.3 | Susan, Alex, Lucie                              |   |
+|   | [#C] |      VIII | An Earthly Child               |     7.5 | Susan, Alex                                     |   |
 |   | [#A] |       4.9 | +Lucie Miller+                 |     8.9 | Daleks, Lucie, Susan, Alex, the Monk, Tamsin    |   |
 #+TBLFM: $2='(cond ((>= $5 8.5) "[#A]") ((>= $5 8.0) "[#B]") ((>= $5 7.5) "[#C]") ((>= $5 7.0) "[#D]") (t "[#E]"));N
 
 ** Dark Eyes
+| 8.5 | (184) | 1.1 - The Great War        | Dark Eyes 1 |
+| 7.5 | (166) | 1.2 - Fugitives            | Dark Eyes 1 |
+| 8.0 | (164) | 1.3 - Tangled Web          | Dark Eyes 1 |
+| 7.7 | (159) | 1.4 - X and the Daleks     | Dark Eyes 1 |
+| 7.7 | (145) | 2.1 - The Traitor          | Dark Eyes 2 |
+| 7.4 | (136) | 2.2 - The White Room       | Dark Eyes 2 |
+| 8.3 | (138) | 2.3 - Time's Horizon       | Dark Eyes 2 |
+| 8.6 | (137) | 2.4 - Eyes of the Master   | Dark Eyes 2 |
+| 7.4 | (113) | 3.1 - The Death of Hope    | Dark Eyes 3 |
+| 7.1 | (108) | 3.2 - The Reviled          | Dark Eyes 3 |
+| 8.4 | (106) | 3.3 - Masterplan           | Dark Eyes 3 |
+| 7.3 | (104) | 3.4 - Rule of the Eminence | Dark Eyes 3 |
+| 9.0 | (116) | 4.1 - A Life in the Day                | Dark Eyes 4 |
+| 7.8 | (106) | 4.2 - The Monster of Montmartre        | Dark Eyes 4 |
+| 8.3 | (100) | 4.3 - Master of the Daleks             | Dark Eyes 4 |
+| 7.9 | (95)  | 4.4 - Eye of Darkness                  | Dark Eyes 4 |
+
+** Doom Coalition
+| 8.4 | (129) | 1.1 - The Eleven               | Doom Coalition 1 |
+| 9.3 | (136) | 1.2 - The Red Lady             | Doom Coalition 1 |
+| 6.8 | (108) | 1.3 - The Galileo Trap         | Doom Coalition 1 |
+| 6.5 | (110) | 1.4 - The Satanic Mill         | Doom Coalition 1 |
+| 7.1 | (95)  | 2.1 - Beachhead                | Doom Coalition 2 |
+| 7.5 | (95)  | 2.2 - Scenes from Her Life     | Doom Coalition 2 |
+| 6.8 | (96)  | 2.3 - The Gift                 | Doom Coalition 2 |
+| 7.0 | (94)  | 2.4 - The Sonomancer           | Doom Coalition 2 |
+| 9.1 | (103) | 3.1 - Absent Friends           | Doom Coalition 3 |
+| 7.7 | (87)  | 3.2 - The Eighth Piece         | Doom Coalition 3 |
+| 7.9 | (86)  | 3.3 - The Doomsday Chronometer | Doom Coalition 3 |
+| 8.8 | (83)  | 3.4 - The Crucible of Souls    | Doom Coalition 3 |
+| 8.4 | (86)  | 4.1 - Ship in a Bottle         | Doom Coalition 4 |
+| 7.9 | (81)  | 4.2 - Songs of Love            | Doom Coalition 4 |
+| 8.3 | (80)  | 4.3 - The Side of the Angels   | Doom Coalition 4 |
+| 8.1 | (80)  | 4.4 - Stop the Clock           | Doom Coalition 4 |
+
+** Ravenous
+| 7.0 | (75) | 1.1 - Their Finest Hour                    | Ravenous - Volume 1 |
+| 7.3 | (75) | 1.2 - How to Make a Killing in Time Travel | Ravenous - Volume 1 |
+| 7.1 | (72) | 1.3 - World of Damnation                   | Ravenous - Volume 1 |
+| 6.8 | (71) | 1.4 - Sweet Salvation                      | Ravenous - Volume 1 |
+| 7.2 | (67) | 2.1 - Escape from Kaldor                   | Ravenous - Volume 2 |
+| 8.2 | (67) | 2.2 - Better Watch Out                     | Ravenous - Volume 2 |
+| 8.3 | (67) | 2.3 - Fairytale of Salzburg                | Ravenous - Volume 2 |
+| 7.7 | (64) | 2.4 - Seizure                              | Ravenous - Volume 2 |
+| 7.6 | (59) | 3.1 - Deeptime Frontier                    | Ravenous - Volume 3 |
+| 8.9 | (62) | 3.2 - Companion Piece                      | Ravenous - Volume 3 |
+| 6.4 | (56) | 3.3 - L.E.G.E.N.D                          | Ravenous - Volume 3 |
+| 7.9 | (57) | 3.4 - The Odds Against                     | Ravenous - Volume 3 |
+| 7.3 | (55) | 4.1 - Whisper                              | Ravenous - Volume 4 |
+| 8.4 | (54) | 4.2 - Planet of Dust                       | Ravenous - Volume 4 |
+| 9.3 | (56) | 4.3 - Day of the Master - Part 1           | Ravenous - Volume 4 |
+| 9.6 | (58) | 4.4 - Day of the Master - Part 2           | Ravenous - Volume 4 |
+
+** Stranded
+| 7.7 | (58) | 1.1 - Lost Property           | Stranded 1 |
+| 8.6 | (57) | 1.2 - Wild Animals            | Stranded 1 |
+| 7.9 | (53) | 1.3 - Must-See TV             | Stranded 1 |
+| 7.9 | (52) | 1.4 - Divine Intervention     | Stranded 1 |
+| 7.3 | (38) | 2.1 - Dead Time               | Stranded 2 |
+| 8.7 | (36) | 2.2 - UNIT Dating             | Stranded 2 |
+| 7.7 | (35) | 2.3 - Baker Street Irregulars | Stranded 2 |
+| 9.0 | (36) | 2.4 - The Long Way Round      | Stranded 2 |
+| 8.7 | (27) | 3.1 - Patience                | Stranded 3 |
+| 7.8 | (25) | 3.2 - Twisted Folklore        | Stranded 3 |
+| 9.0 | (25) | 3.3 - Snow                    | Stranded 3 |
+| 9.0 | (25) | 3.4 - What Just Happened?     | Stranded 3 |
+
+** misc
+| 7.4 |      | Living Legend                                         | DWM337                                            | Charley |   |   |
+| 6.7 | (39) | Time Lord Victorious 1 - He Kills Me, He Kills Me Not | Time Lord Victorious Series                       |         |   |   |
+| 7.3 | (20) | Time Lord Victorious 3 - Mutually Assured Destruction | Time Lord Victorious Series                       |         |   |   |
+| 7.3 | (23) | Time Lord Victorious - Echoes of Extinction           | Time Lord Victorious Series                       |         |   |   |
+| 7.6 | (29) | Time Lord Victorious 2 - The Enemy of My Enemy        | Time Lord Victorious Series                       |         |   |   |
 
 
 * 10DA
@@ -460,4 +812,5 @@
 [fn:12] Rocket Men (CC 6.2/7.5, 4DA 4.3)
 
 [fn:11] Sarah Kingdom trilogy (CC3.5/4.1/5.1)
+
 
