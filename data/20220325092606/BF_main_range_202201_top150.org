@@ -1,13 +1,23 @@
-#+TITLE: Big Finish Main Range top 80
+#+TITLE: Big Finish Main Range top 150
+
+#+BEGIN_QUOTE
+Tip: bookmarklet for sort table columns: https://www.squarefree.com/bookmarklets/pagedata.html
+
+#+BEGIN_EXPORT html
+or, click this: <a href="javascript:function%20toArray%20(c){var%20a,%20k;a=new%20Array;for%20(k=0;%20k<c.length;%20++k)a[k]=c[k];return%20a;}function%20insAtTop(par,child){if(par.childNodes.length)%20par.insertBefore(child,%20par.childNodes[0]);else%20par.appendChild(child);}function%20countCols(tab){var%20nCols,%20i;nCols=0;for(i=0;i<tab.rows.length;++i)if(tab.rows[i].cells.length>nCols)nCols=tab.rows[i].cells.length;return%20nCols;}function%20makeHeaderLink(tableNo,%20colNo,%20ord){var%20link;link=document.createElement('a');link.href='javascript:sortTable('+tableNo+','+colNo+','+ord+');';link.appendChild(document.createTextNode((ord>0)?'a':'d'));return%20link;}function%20makeHeader(tableNo,nCols){var%20header,%20headerCell,%20i;header=document.createElement('tr');for(i=0;i<nCols;++i){headerCell=document.createElement('td');headerCell.appendChild(makeHeaderLink(tableNo,i,1));headerCell.appendChild(document.createTextNode('/'));headerCell.appendChild(makeHeaderLink(tableNo,i,-1));header.appendChild(headerCell);}return%20header;}g_tables=toArray(document.getElementsByTagName('table'));if(!g_tables.length)%20alert(%22This%20page%20doesn't%20contain%20any%20tables.%22);(function(){var%20j,%20thead;for(j=0;j<g_tables.length;++j){thead=g_tables[j].createTHead();insAtTop(thead,%20makeHeader(j,countCols(g_tables[j])))}})%20();function%20compareRows(a,b){if(a.sortKey==b.sortKey)return%200;return%20(a.sortKey%20<%20b.sortKey)%20?%20g_order%20:%20-g_order;}function%20sortTable(tableNo,%20colNo,%20ord){var%20table,%20rows,%20nR,%20bs,%20i,%20j,%20temp;g_order=ord;g_colNo=colNo;table=g_tables[tableNo];rows=new%20Array();nR=0;bs=table.tBodies;for(i=0;%20i<bs.length;%20++i)for(j=0;%20j<bs[i].rows.length;%20++j){rows[nR]=bs[i].rows[j];temp=rows[nR].cells[g_colNo];if(temp)%20rows[nR].sortKey=temp.innerHTML;else%20rows[nR].sortKey=%22%22;++nR;}rows.sort(compareRows);for%20(i=0;%20i%20<%20rows.length;%20++i)insAtTop(table.tBodies[0],%20rows[i]);}">sort tables</a>
+<p/>
+#+END_EXPORT
+#+END_QUOTE
+
 
 * BF Main Range top 150 (>=7.5)
 
-
+** 5th Doctor
 |   | Rank |  Rating | No.. Title                                    | Doctor   | Year | Features                       | Writer                         | Story Ars            | PLOT |            |   |   |
 |   |      | 2022.01 | . <34>                                        |          |      | <30>                           | <30>                           |                      |      |            |   |   |
 |---+------+---------+-----------------------------------------------+----------+------+--------------------------------+--------------------------------+----------------------+------+------------+---+---|
 |   |  122 |     7.7 | 20. Loups-Garoux                              | 5th      | 2001 | Turlough                       | Marc Platt                     |                      |      |            |   |   |
-|   |  120 |     7.7 | 24. +The Eye of the Scorpion+                 | 5th      | 2001 | Peri, Erimem                   | Iain McLaughlin                |                      |      |            |   |   |
+|   |  120 |     7.7 | [X] 24. +The Eye of the Scorpion+            | 5th      | 2001 | Peri, Erimem                   | Iain McLaughlin                |                      |      |            |   |   |
 |   |    4 |     9.1 | 34. +Spare Parts+                             | 5th      | 2002 | Nyssa, Cybermen                | Marc Platt                     | none                 | Y    | #Cybermen  |   |   |
 |   |  109 |     7.7 | 38. The Church and the Crown                  | 5th      | 2002 | Peri, Erimem                   | Cavan Scott and Mark Wright    |                      |      |            |   |   |
 | / |   62 |     8.2 | 44. Creatures of Beauty                       | 5th      | 2003 | Nyssa                          | Nicholas Briggs                | none                 | -    |            |   |   |
