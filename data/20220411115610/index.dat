@@ -1,0 +1,10 @@
+id	20220411115610
+create	20220411115610
+modify	20220411115640
+type	
+title	hangacs/VirtualDesktopSwitcher: A virtual desktop switcher appear on windows taskbar.
+chars	UTF-8
+icon	resource://scrapbook/data/20220411115610/favicon.svg
+source	https://github.com/hangacs/VirtualDesktopSwitcher
+comment	
+lock	
