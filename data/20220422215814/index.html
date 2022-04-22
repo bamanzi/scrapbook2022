@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en-US"><head><link rel="stylesheet" href="index.css" media="screen">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+
+    
+
+                            
+            
+        
+    
+    
+    
+
+    
+    
+            
+    
+                    
+                
+        
+    <!-- Google Analytics -->
+
+<!-- End Google Analytics -->
+        <!-- Google Tag Manager -->
+
+<!-- End Google Tag Manager -->
+    
+    
+    
+
+                
+    
+            
+    
+    
+
+    
+    
+    
+    
+                
+    
+
+    	
+	    	    	        
+	    
+	    	        
+	    
+	    	    	        
+	        	    
+	    <title>How to Run a Linux Desktop Using the Windows Subsystem for Linux</title>
+	    
+	    	        	        
+	    	    
+	    	
+        
+        
+            
+    
+
+            
+                    
+            
+                    
+
+                                                
+                        
+    
+    
+
+            
+    
+                        
+                            
+                                        
+            
+
+    
+            
+                
+        
+        
+                    
+            
+        
+
+		
+
+    <link rel="shortcut icon" sizes="48x48" href="favicon.png">
+    <link rel="shortcut icon" sizes="96x96" href="favicon.png">
+    <link rel="shortcut icon" sizes="144x144" href="favicon.png">
+    <link rel="shortcut icon" sizes="192x192" href="favicon.png">
+    <link rel="shortcut icon" sizes="240x240" href="favicon.png">
+
+    <link rel="shortcut icon" sizes="240x240" href="favicon.png">
+    <link rel="shortcut icon" href="favicon.png">
+
+                
+    
+        
+                                <!-- Using AdsNinja V10 -->
+                <!-- Ad Header Start -->
+                
+                
+
+
+
+
+                <!-- Ad Header End -->
+                
+    <!-- GLOABL JS VARIABLES -->
+    
+
+</head><body class="js-tldr "><div class="w-website"><div class="w-content "><article class="w-article   article"><header class="article_heading"><h1 class="heading_title">How to Run a Linux Desktop Using the Windows Subsystem for Linux</h1>
+<div class="heading_meta">
+ <a class="meta_txt author" href="/author/ccawley/">By Christian Cawley</a>
+ <span class="meta_txt date updated">Updated <time datetime="2021-10-19T13:46:00Z">Oct 19, 2021</time></span>
+</div>
+<div class="heading_sharing">
+<button class="sharing-btn btn-more" onclick="this.parentNode.classList.add('open')">
+ <span class="icon i-share"></span>
+ <span class="text">Share</span>
+</button>
+ <a class="sharing-btn btn-facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.makeuseof.com%2Ftag%2Flinux-desktop-windows-subsystem%2F%2F&amp;src=sdkpreparse">
+ <span class="icon i-facebook"></span>
+ <span class="text">Share</span>
+ </a>
+ <a class="sharing-btn btn-twitter" target="_blank" href="https://twitter.com/intent/tweet?text=How%20to%20Run%20a%20Linux%20Desktop%20Using%20the%20Windows%20Subsystem%20for%20Linux&amp;url=https%3A%2F%2Fwww.makeuseof.com%2Ftag%2Flinux-desktop-windows-subsystem%2F">
+ <span class="icon i-twitter"></span>
+ <span class="text">Tweet</span>
+ </a>
+ <a class="sharing-btn btn-linkedIn" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fwww.makeuseof.com%2Ftag%2Flinux-desktop-windows-subsystem%2F&amp;title=How%20to%20Run%20a%20Linux%20Desktop%20Using%20the%20Windows%20Subsystem%20for%20Linux&amp;source=www.makeuseof.com&amp;summary=Windows%20Subsystem%20for%20Linux%20comes%20without%20a%20desktop.%20Here%27s%20how%20to%20install%20a%20WSL%20desktop%20environment%20like%20GNOME%20or%20LXDE%20on%20Windows.">
+ <span class="icon i-linkedIn"></span>
+ <span class="text">Share</span>
+ </a>
+ <a class="sharing-btn btn-mail" href="mailto:?Subject=How to Run a Linux Desktop Using the Windows Subsystem for Linux&amp;Body=Check%20this%20out%21%0Ahttps%3A%2F%2Fhttps://www.makeuseof.com/tag/linux-desktop-windows-subsystem/">
+ <span class="icon i-mail-1"></span>
+ <span class="text">Email</span>
+ </a>
+ </div>
+<p class="heading_excerpt">Windows Subsystem for Linux comes without a desktop. Here's how to install a WSL desktop environment like GNOME or LXDE on Windows.</p>
+<div class="heading_image responsive-img img-size-heading-image " style="padding-bottom: 50%; cursor: pointer;">
+ <figure>
+ <picture>
+ <!--[if IE 9]>
+ <video style="display: none;"><![endif]-->
+ 
+ 
+ 
+ 
+ <!--[if IE 9]></video><![endif]-->
+<img alt="run-linux-windows-subsystem" data-img-url="https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2019/04/run-linux-windows-subsystem.jpg" width="1680" height="840">
+ </picture>
+ <figcaption class="item-img-caption"></figcaption>
+ </figure>
+</div>
+ <!-- No winning ad found for zone: below main pic! -->
+</header><section id="article-body" class="article-body" itemprop="articleBody"> 
+<p>Running Linux alongside Windows has proven to be increasingly useful over the years. But dual booting can be difficult to manage while setting up a virtual machine comes some stability issues.</p>
+ <!-- No winning ad found for zone: word count #1! --><!-- No winning ad found for zone: Below First Paragraph! --><!-- No winning ad found for zone: mid intro! --> 
+<p>One solution is to use the Windows Subsystem for Linux. Here's how to run a Linux desktop on Windows using the Windows Subsystem for Linux.</p>
+ <!-- Zone: native in content. -->
+<!-- No ads allowed! -->
+<h2 id="what-is-the-windows-subsystem-for-linux"> What Is the Windows Subsystem for Linux?</h2>
+<p>Windows Subsystem for Linux (WSL) is an optional feature for Windows 10 and 11 that supports the installation of the Linux operating systems available in the Windows Store.</p>
+<div class="body-img landscape">
+<div class="responsive-img img-article-item" style="padding-bottom: 56.5833%; cursor: pointer;">
+ <figure>
+ <picture>
+ <!--[if IE 9]>
+ <video style="display: none;"><![endif]-->
+ 
+ 
+ 
+ 
+ <!--[if IE 9]></video><![endif]-->
+<img class=" lazyloaded" alt="muo-windows-linux-wsl-store" data-img-url="https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2021/10/muo-windows-linux-wsl-store.png" width="1200" height="679">
+ </picture>
+ </figure>
+ </div>
+ </div>
+<p> It basically means that you can open a Linux terminal in Windows and install and run Linux software.</p>
+<!-- No repeatable ad for zone: character count repeatable. -->
+<p>There is no need to install any virtualization apps and there is no dual booting.</p>
+<p>The problem with Windows Subsystem for Linux, however, is that by default it is purely a command line experience. There is no desktop. For power users, this probably won't be a problem, but as Linux has a wide selection of desktop environments, it does seem a bit of an oversight.</p>
+ <!-- No winning ad found for zone: word count #2! --> 
+<p>Fortunately, you can install a Linux desktop in Windows with WSL.</p>
+<div class="ad-odd"><!-- No winning ad found for zone: every images #1! --></div>
+<h2 id="make-sure-windows-10-is-compatible"> Make Sure Windows 10 Is Compatible</h2>
+<p>Before proceeding, here's the important bit: you need to be running a 64-bit version of Windows.</p>
+<p>You can check this in <strong>Settings &gt; System &gt; About</strong>, where you'll find the <strong>System type</strong> entry. To proceed, this should read "64-bit operating system". If not, and you're running 64-bit hardware, you'll need to <a href="https://www.makeuseof.com/tag/upgrade-32-bit-64-bit-windows-10/">upgrade Windows 10 from 32-bit to 64-bit</a>.</p>
+<!-- Zone: character count repeatable. --><!-- No ads allowed! -->
+<div class="body-img landscape">
+<div class="responsive-img img-article-item" style="padding-bottom: 36.8844%; cursor: pointer;">
+ <figure>
+ <picture>
+ <!--[if IE 9]>
+ <video style="display: none;"><![endif]-->
+ 
+ 
+ 
+ 
+ <!--[if IE 9]></video><![endif]-->
+<img class=" lazyloaded" alt="Check if your Windows version is 64-bit" data-img-url="https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2021/10/muo-windows-linux-wsl-device-spec.png" width="995" height="367">
+ </picture>
+ </figure>
+ </div>
+ </div>
+<p> Another prerequisite is that you need to be running <strong>Windows 10 build 14393</strong> or later. You can check this in the same About screen, listed under <strong>Windows specifications</strong>. Look for the <strong>OS build</strong>---if it is higher than 14393, you can use the Windows Subsystem for Linux. If not, simply run a Windows Update.</p>
+<p>Once Windows 10 is compatible, it's time to follow our guide to installing the Windows Subsystem for Linux.</p>
+ <!-- No winning ad found for zone: word count #3! --> 
+<p><span class="related-single">Read More: <a href="http://www.makeuseof.com/tag/linux-bash-shell-on-windows-10/">Install Windows Subsystem for Linux</a></span></p>
+<p>With that set up, it's time to add a desktop.</p>
+<div class="ad-even"><!-- No winning ad found for zone: every images #2! --></div>
+<h2 id="install-a-wsl-desktop"> Install a WSL Desktop</h2>
+<p>If you have set up the Windows Subsystem for Linux already, click <strong>Start</strong> and enter <strong>bash</strong>. Click the first option (the bash run command) to start using Linux. The following steps assume you installed Ubuntu as your preferred Linux operating system.</p>
+<!-- Zone: character count repeatable. --><!-- No ads allowed! -->
+<p>Start by running an update and upgrading Ubuntu:</p>
+<pre><code class="hljs sql">sudo apt <span class="hljs-keyword">update</span><br>sudo apt upgrade</code></pre>
+<p>While this upgrade is running, head to Sourceforge to download and install the <a href="https://sourceforge.net/projects/vcxsrv/files/latest/download">VcXsrv Windows X Server utility</a>. (Other X Servers are available for Windows, including <a href="https://sourceforge.net/projects/xming/">Xming</a> and <a href="https://mobaxterm.mobatek.net/">MobaXterm</a>. For the remainder of this guide, we'll be using VcXsrv.)</p>
+<p>An X server lets you access a Linux application or desktop environment's graphic user interface (GUI). Linux systems rely on X for displaying the desktop, but it can also be used across a network.</p>
+ <!-- No winning ad found for zone: word count #4! --> 
+<p>Ensure your X window server is installed before proceeding. The next step is to install your Linux desktop environment (LDE).</p>
+<!-- Zone: character count repeatable. --><!-- No ads allowed! -->
+<p>Many <a href="https://www.makeuseof.com/tag/best-linux-desktop-environments">Linux desktop environments are available for WSL</a>. We're going to keep things simple and install a lightweight environment called LXDE. To install, input:</p>
+<pre><code class="hljs sql">sudo apt <span class="hljs-keyword">install</span> lxde</code></pre>
+<p>Following installation of LXDE, input this command</p>
+<pre><code class="hljs javascript"><span class="hljs-keyword">export</span> DISPLAY=:<span class="hljs-number">0</span><br><span class="hljs-keyword">export</span> LIBGL_ALWAYS_INDIRECT=<span class="hljs-number">1</span><br></code></pre>
+<p>This instructs Linux to display the desktop through the X server. So, when you run the X Server program you downloaded above, you'll see the Linux desktop environment.</p>
+<p>We used VcXsrv which features the XLaunch tool. Click this to view the <strong>X Display Settings</strong> window and select <strong>One large window</strong> or <strong>One large window without titlebar</strong>. Look for the <strong>Display number</strong> while you're there and set it to <strong>0</strong>.</p>
+<!-- Zone: character count repeatable. --><!-- No ads allowed! -->
+ <!-- No winning ad found for zone: word count #5! --> 
+<div class="body-img landscape">
+<div class="responsive-img img-article-item" style="padding-bottom: 78.3%; cursor: pointer;">
+ <figure>
+ <picture>
+ <!--[if IE 9]>
+ <video style="display: none;"><![endif]-->
+ 
+ 
+ 
+ 
+ <!--[if IE 9]></video><![endif]-->
+<img class=" lazyloaded" alt="Configure an X server in Windows" data-img-url="https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2021/10/muo-windows-linux-wsl-x-server-2021.png" width="1000" height="783">
+ </picture>
+ </figure>
+ </div>
+ </div>
+<p> Click <strong>Next</strong>, then select <strong>Start no client</strong> to ensure the XLaunch starts only the server, allowing you to start the Linux desktop later. Click <strong>Next</strong> again, then <strong>Finish</strong>. You might first like to click <strong>Save configuration</strong> to save it.</p>
+<div class="body-img landscape">
+<div class="responsive-img img-article-item" style="padding-bottom: 78.4%; cursor: pointer;">
+ <figure>
+ <picture>
+ <!--[if IE 9]>
+ <video style="display: none;"><![endif]-->
+ 
+ 
+ 
+ 
+ <!--[if IE 9]></video><![endif]-->
+<img class=" lazyloaded" alt="Configure X server with WSL on Windows" data-img-url="https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2021/10/muo-windows-linux-wsl-x-server-conf-2021.png" width="1000" height="784">
+ </picture>
+ </figure>
+ </div>
+ </div>
+<p> Ready to launch your Linux desktop? Enter the command to start your preferred LDE. For LXDE, for example, use:</p>
+<pre><code class="hljs ">startlxde</code></pre>
+<p>The Linux desktop environment should then appear!</p>
+<div class="body-img landscape">
+<div class="responsive-img img-article-item" style="padding-bottom: 55.7%; cursor: pointer;">
+ <figure>
+ <picture>
+ <!--[if IE 9]>
+ <video style="display: none;"><![endif]-->
+ 
+ 
+ 
+ 
+ <!--[if IE 9]></video><![endif]-->
+<img class=" lazyloaded" alt="LXDE running on Windows with WSL" data-img-url="https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2021/10/muo-windows-linux-wsl-lxde-2021.png" width="1000" height="557">
+ </picture>
+ </figure>
+ </div>
+ </div>
+<p> You can now run any of the preinstalled Linux software and even install new apps and utilities. Other WSL-compatible desktop environments include KDE. You can even install GNOME on Windows for a full Ubuntu desktop experience.</p>
+<div class="ad-odd"><!-- No winning ad found for zone: every images #3! --></div>
+<h2 id="don-39-t-want-a-wsl-desktop-environment-just-install-a-linux-app"> Don't Want a WSL Desktop Environment? Just Install a Linux App</h2>
+<p>In addition to installing a Linux desktop, you can simply install a Linux desktop app from Windows 10. This is useful if you consider installing a full desktop for one to be overkill.</p>
+ <!-- No winning ad found for zone: word count #6! --> 
+<p>For example, to install the Rhythmbox media player and run it in Linux on Windows, use:</p>
+<pre><code class="hljs sql">sudo apt <span class="hljs-keyword">install</span> rhythmbox</code></pre>
+<p>Ensure that you have set the export command:</p>
+<pre><code class="hljs javascript"><span class="hljs-keyword">export</span> DISPLAY=:<span class="hljs-number">0</span></code></pre>
+<!-- Zone: character count repeatable. --><!-- No ads allowed! -->
+<p>Then simply run the app from the bash prompt:</p>
+<pre><code class="hljs ">rhythmbox</code></pre>
+<p>The media player will launch, ready for you to browse for a library.</p>
+<div class="body-img landscape">
+<div class="responsive-img img-article-item" style="padding-bottom: 60.6%; cursor: pointer;">
+ <figure>
+ <picture>
+ <!--[if IE 9]>
+ <video style="display: none;"><![endif]-->
+ 
+ 
+ 
+ 
+ <!--[if IE 9]></video><![endif]-->
+<img class=" lazyloaded" alt="Linux app running in Windows with WSL" data-img-url="https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2021/10/muo-windows-linux-wsl-rhythmbox-2021.png" width="1000" height="606">
+ </picture>
+ </figure>
+ </div>
+ </div>
+<p> Now, in this case, you would obviously need to add some media files into the Linux environment on your computer. You might do this by installing a browser and downloading files, or simply by hooking up a USB drive with media files on.</p>
+<p>After connecting the USB drive, remember to mount it (this example uses D: as the drive letter):</p>
+<pre><code class="hljs javascript">sudo mount -t drvfs D: <span class="hljs-regexp">/mnt/</span>d</code></pre>
+<p>When you're done, you'll need to unmount the drive before removal. This ensures the integrity of the data on the drive.</p>
+<pre><code class="hljs ">sudo umount /mnt/d</code></pre>
+<!-- No winning ad found for zone: word count #7! --> 
+<p>While it's possible to browse your Windows folders from within the Linux apps, no actual files can be opened. This is a shortcoming of the Windows Subsystem for Linux, albeit one that protects both the Windows and Linux environments from damage.</p>
+<div class="ad-even"><!-- No winning ad found for zone: every images #4! --></div>
+<h2 id="run-a-linux-desktop-in-windows-the-ultimate-convergence"> Run a Linux Desktop in Windows: The Ultimate Convergence!</h2>
+<p>The Windows Subsystem for Linux makes it simple to run Linux software on a Windows PC. There's no need to worry about virtual machines or the pain of dual booting.</p>
+<!-- Zone: character count repeatable. --><!-- No ads allowed! -->
+<p>With a Linux desktop installed, the convergence is almost complete. It's a great way to get to grips with Linux from the comfort of the Windows desktop.</p>
+<p>Want to learn more? Now is the time to get started with Linux.</p>
+         <div id="article-waypoint"></div>
+                                                                                                    
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <!-- No winning ad found for zone: above next button! -->
+                                                                                            <a class="sentinel-article-nextArticle next-btn" data-content-id="823880" href="/tag/essential-android-tv-apps/">
+        <div class="next-btn-img">
+                            
+    
+    
+<div class="bc-img responsive-img img-article-next-btn">
+    <figure>
+        <picture>
+            <!--[if IE 9]>
+            <video style="display: none;"><![endif]-->
+                            
+                            
+            
+            <!--[if IE 9]></video><![endif]-->
+                            <img class=" lazyloaded" alt="android-tv-apps" width="1680" height="840">
+                    </picture>
+            </figure>
+</div>
+
+        </div>
+        <div class="next-btn-text lines-trim">
+            <div class="next-btn-text-title">The 20 Best Android TV Apps Worth Installing ASAP</div>
+                    </div>
+        <div class="next-btn-cta icon i-arrow-1">Read Next</div>
+    </a>
+                                        <div class="sharing bottom">
+                	
+<button class="sharing-btn btn-more" onclick="this.parentNode.classList.add('open')">
+	<span class="icon i-share"></span>
+	<span class="text">Share</span>
+</button>
+
+
+	<a class="sharing-btn btn-facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.makeuseof.com%2Ftag%2Flinux-desktop-windows-subsystem%2F%2F&amp;src=sdkpreparse">
+		<span class="icon i-facebook"></span>
+		<span class="text">Share</span>
+	</a>
+
+	<a class="sharing-btn btn-twitter" target="_blank" href="https://twitter.com/intent/tweet?text=How%20to%20Run%20a%20Linux%20Desktop%20Using%20the%20Windows%20Subsystem%20for%20Linux&amp;url=https%3A%2F%2Fwww.makeuseof.com%2Ftag%2Flinux-desktop-windows-subsystem%2F">
+		<span class="icon i-twitter"></span>
+		<span class="text">Tweet</span>
+	</a>
+
+	<a class="sharing-btn btn-linkedIn" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fwww.makeuseof.com%2Ftag%2Flinux-desktop-windows-subsystem%2F&amp;title=How%20to%20Run%20a%20Linux%20Desktop%20Using%20the%20Windows%20Subsystem%20for%20Linux&amp;source=www.makeuseof.com&amp;summary=Windows%20Subsystem%20for%20Linux%20comes%20without%20a%20desktop.%20Here%27s%20how%20to%20install%20a%20WSL%20desktop%20environment%20like%20GNOME%20or%20LXDE%20on%20Windows.">
+		<span class="icon i-linkedIn"></span>
+		<span class="text">Share</span>
+	</a>
+
+	<a class="sharing-btn btn-mail" href="mailto:?Subject=How to Run a Linux Desktop Using the Windows Subsystem for Linux&amp;Body=Check%20this%20out%21%0Ahttps%3A%2F%2Fhttps://www.makeuseof.com/tag/linux-desktop-windows-subsystem/">
+		<span class="icon i-mail-1"></span>
+		<span class="text">Email</span>
+	</a>
+
+            </div>
+                                        <div class="article-tags">
+	<div class="section-sub-title">Related Topics</div>
+    <ul>
+                                    <li><a href="/category/linux/">Linux</a></li>
+                            <li><a href="/category/windows/">Windows</a></li>
+                            <li><a href="/tag/linux-desktop-environment/">Linux Desktop Environment</a></li>
+                            <li><a href="/tag/linux/">Linux</a></li>
+                            <li><a href="/tag/linux-tips/">Linux Tips</a></li>
+                            <li><a href="/tag/windows-subsystem-for-linux/">Windows Subsystem for Linux</a></li>
+                        </ul>
+</div>        <!-- No winning ad found for zone: below next button! -->
+        <!-- No winning ad found for zone: below sharing options! -->
+                    
+
+    
+    <div class="section-sub-title">About The Author</div>
+    <div class="w-article-author-bio">
+                    <div class="author-bio-img">
+                                                                                                
+                                    <img data-src="https://static1.makeuseofimages.com/wordpress/wp-content/authors/ccawley-704.jpg?fit=crop&amp;w=100&amp;h=100" class=" lazyloaded" src="009dae8996d4b54.jpeg">
+                            </div>
+                <div class="author-bio-text">
+
+            <strong class="bio-title">Christian Cawley
+                                    <span class="amount">(1591 Articles Published)</span>
+                            </strong>
+
+                            <div class="bio-social">
+                                            <a href="https://twitter.com/thegadgetmonkey" rel="nofollow" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 338.39 277.15"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"></g></g></svg></a><a href="https://www.facebook.com/pages/The-Gadget-Monkey/183938094967036" rel="nofollow" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 155.14 311.63"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"></g></g></svg></a><a href="https://www.instagram.com/thegadgetmonkey/" rel="nofollow" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 356 356"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"></g></g></svg></a><a href="https://www.linkedin.com/in/christiancawley/" rel="nofollow" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 324.57 323.28"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"></g></g></svg></a><a href="http://gamingretro.co.uk/" rel="nofollow" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 302 236.63"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"></g></g></svg></a></div><div class="bio-desc">
+                <p>Deputy Editor for Security, Linux, DIY, Programming, and Tech Explained, and Really Useful Podcast producer, with extensive experience in desktop and software support.
+
+A contributor to Linux Format magazine, Christian is a Raspberry Pi tinkerer, Lego lover and retro gaming fan.</p>
+            </div>
+
+                            <a class="bio-btn icon i-arrow-5" href="/author/ccawley/">More
+                    From Christian Cawley</a></div></div></section></article></div></div></body></html>

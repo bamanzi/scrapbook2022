@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html dir="ltr" class="js" data-color-scheme="light" style="--scrollbar-width:12px;">
+<head><style>hcfy-result.__hcfy__result__loaded__.__hcfy__result__both__{border: 1px dotted}</style></head><body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-81298 node-type-article node-template-normal enable-ads section-help cc-cn wp geo-CN node-cat-help-how-to node-tag-linux node-tag-windows-10-help mona45 no-overflow header-top--scrolled header-top--scrolled-visible"><div><script type="text/javascript" src="about:blank"></script>
+</div>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<link rel="dns-prefetch" href="https://adservice.google.com/">
+<link rel="dns-prefetch" href="https://s.ytimg.com/">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com/">
+<link rel="dns-prefetch" href="https://www.google.com/">
+<link rel="dns-prefetch" href="https://www.google-analytics.com/">
+<link rel="dns-prefetch" href="https://www.youtube.com/">
+<link rel="dns-prefetch" href="https://secure.quantserve.com/">
+<link rel="dns-prefetch" href="https://sync.crwdcntrl.net/">
+<link rel="dns-prefetch" href="https://cds.taboola.com/">
+<link rel="dns-prefetch" href="https://passport.mobilenations.com/">
+<link rel="preload" as="image" href="https://www.windowscentral.com/sites/wpcentral.com/files/styles/large/public/field/image/2020/10/ubuntu-wsl-neofetch.jpg" imagesrcset="/sites/wpcentral.com/files/styles/larger/public/field/image/2020/10/ubuntu-wsl-neofetch.jpg 1200w,
+/sites/wpcentral.com/files/styles/large/public/field/image/2020/10/ubuntu-wsl-neofetch.jpg 800w,
+/sites/wpcentral.com/files/styles/mediumplus/public/field/image/2020/10/ubuntu-wsl-neofetch.jpg 600w,
+/sites/wpcentral.com/files/styles/medium/public/field/image/2020/10/ubuntu-wsl-neofetch.jpg 400w" imagesizes="(min-width: 1110px) 750px, (min-width: 780px) calc(91.58vw - 334px), 100vw">
+<link rel="preload" href="https://use.typekit.net/af/6d4bb2/00000000000000003b9acafc/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&amp;fvd=n7&amp;v=3" as="font">
+<link rel="preload" href="https://www.windowscentral.com/sites/all/fonts/fontawesome-min/fa-solid-900.woff2" as="font">
+<link rel="preload" href="https://www.windowscentral.com/sites/all/fonts/mona-icons.ttf" as="font">
+<meta http-equiv="x-dns-prefetch-control" content="on">
+<title>How to install Linux WSL2 on Windows 10 and Windows 11 | Windows Central</title>
+<link rel="alternate" type="application/rss+xml" title="Windows Central RSS" href="https://www.windowscentral.com/rss.xml">
+<style type="text/css" media="all">
+/* Code tidied up by ScrapBook */
+.article-body__aside::after, .article-body__best-answer::after, article.article::after { clear: both; content: ""; display: inline-block; }
+.block-topic__topics-list, .header-top__navigation-list { list-style-type: none; margin: 0px; padding: 0px; }
+.article-header__comments, .block-topic__submit, .header-top__drawer-toggle, .header-top__navigation-link, .header-top__search-button { -moz-appearance: none; background: rgba(0, 0, 0, 0) none repeat scroll 0px 0px; border: 0px none; margin: 0px; padding: 0px; }
+.article-header__comments:focus, .block-topic__submit:focus, .header-top__drawer-toggle:focus, .header-top__navigation-link:focus, .header-top__search-button:focus { outline: 0px none; }
+.article-header__comments:hover, .block-topic__submit:hover, .header-top__drawer-toggle:hover, .header-top__navigation-link:hover, .header-top__search-button:hover { cursor: pointer; }
+html { font-family: sans-serif; }
+body { margin: 0px; }
+article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary { display: block; }
+a { background-color: transparent; }
+a:active, a:hover { outline-width: 0px; }
+b, strong { font-weight: inherit; }
+b, strong { font-weight: bolder; }
+code, kbd, samp { font-family: monospace,monospace; font-size: 1em; }
+h1 { font-size: 2em; margin: 0.75em 0px; }
+img { border-style: none; }
+figure { margin: 1.5em 40px; }
+hr { box-sizing: content-box; height: 0px; overflow: visible; }
+pre { font-family: monospace,monospace; font-size: 1em; }
+button, input, optgroup, select, textarea { font: inherit; margin: 0px; }
+button { overflow: visible; }
+button, select { text-transform: none; }
+[type="reset"], [type="submit"], button, html [type="button"] { -moz-appearance: button; }
+[type="button"]::-moz-focus-inner, [type="reset"]::-moz-focus-inner, [type="submit"]::-moz-focus-inner, button::-moz-focus-inner { border-style: none; padding: 0px; }
+[type="button"]:-moz-focusring, [type="reset"]:-moz-focusring, [type="submit"]:-moz-focusring, button:-moz-focusring { outline: 1px dotted buttontext; }
+input { overflow: visible; }
+[type="checkbox"], [type="radio"] { box-sizing: border-box; padding: 0px; }
+@font-face {
+  font-family: "Campton Light";
+  font-style: normal;
+  font-weight: 400;
+  src: url("rene.bieder_campton.light-webfont.eot") format("embedded-opentype"), url("rene.bieder_campton.light-webfont.svg") format("svg"), url("rene.bieder_campton.light-webfont.ttf") format("truetype"), url("rene.bieder_campton.light-webfont.woff") format("woff");
+}
+@font-face {
+  font-family: "Campton Book";
+  font-style: normal;
+  font-weight: 400;
+  src: url("rene.bieder_campton.book-webfont.eot") format("embedded-opentype"), url("rene.bieder_campton.book-webfont.svg") format("svg"), url("rene.bieder_campton.book-webfont.ttf") format("truetype"), url("rene.bieder_campton.book-webfont.woff") format("woff");
+}
+@font-face {
+  font-family: "Kelson-Light";
+  font-style: normal;
+  font-weight: 400;
+  src: url("Kelson-Light.eot") format("embedded-opentype"), url("Kelson-Light.svg") format("svg"), url("Kelson-Light.ttf") format("truetype"), url("Kelson-Light.woff") format("woff");
+}
+@font-face {
+  font-family: "Kelson-Regular";
+  font-style: normal;
+  font-weight: 400;
+  src: url("Kelson-Regular.eot") format("embedded-opentype"), url("Kelson-Regular.svg") format("svg"), url("Kelson-Regular.ttf") format("truetype"), url("Kelson-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Kelson-Bold";
+  font-style: normal;
+  font-weight: 400;
+  src: url("Kelson-Bold.eot") format("embedded-opentype"), url("Kelson-Bold.svg") format("svg"), url("Kelson-Bold.ttf") format("truetype"), url("Kelson-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: "acumin-pro";
+  font-style: normal;
+  font-weight: 700;
+  src: url("l.dat") format("woff2"), url("d.woff") format("woff"), url("a_001.dat") format("opentype");
+}
+@font-face {
+  font-family: "acumin-pro";
+  font-style: normal;
+  font-weight: 400;
+  src: url("l_002.dat") format("woff2"), url("d_001.woff") format("woff"), url("a_002.dat") format("opentype");
+}
+@font-face {
+  font-family: "acumin-pro";
+  font-style: normal;
+  font-weight: 600;
+  src: url("l_001.dat") format("woff2"), url("d_002.woff") format("woff"), url("a.dat") format("opentype");
+}
+html { background:var(--body-background-color); box-sizing: border-box; font-size: 62.5%; min-height: 100%; display: flex; width: 100%; overflow-y: scroll; }
+html *, html *::after, html *::before { box-sizing: inherit; }
+*::-moz-selection { background-color: rgb(206, 14, 95); color: rgb(255, 255, 255); }
+*::selection { background-color: rgb(206, 14, 95); color: rgb(255, 255, 255); }
+body { font-family: acumin-pro,Helvetica,Arial,sans-serif; font-weight: 300; background:var(--body-background-color); color:var(--body-text-color); font-size: 1.6em; line-height: 1.4; display: flex; -moz-box-orient: vertical; -moz-box-direction: normal; flex-direction: column; min-height: 100%; width: 100%; overflow-x: hidden; }
+body.no-overflow { overflow-x: unset; }
+a { color: inherit; text-decoration: none; }
+a:hover { color: inherit; text-decoration: underline; }
+#page-wrap { margin: 0px auto; max-width: 1110px; position: relative; z-index: 2; }
+#page { background-color:var(--body-background-color); }
+.region-site-header { background: rgba(255, 255, 255, 0.1) none repeat scroll 0% 0%; display: flex; -moz-box-orient: vertical; -moz-box-direction: normal; flex-direction: column; }
+input, select, textarea { background-color:var(--body-background-color); color:var(--body-text-color); }
+.ir { overflow: hidden; text-indent: -999em; font-size: 0px; }
+.container { margin: 0px auto; max-width: 1230px; padding: 0px 15px; position: relative; width: 100%; }
+.panels-flexible-region-inside, .row { margin: 0px -15px; display: flex; flex-flow: row wrap; -moz-box-orient: horizontal; -moz-box-direction: normal; }
+.col-3of3 { margin: 0px 15px; width: 100%; }
+.content { -moz-box-flex: 1; flex-grow: 1; }
+.content:focus { outline: 0px none; }
+.adunit { overflow: hidden; text-align: center; }
+.adunit.inline-text { margin: 20px -15px; clear: both; }
+.adunit.adunit--bordeaux-sidebar { overflow: visible; }
+.adunit-wrap { overflow: hidden; }
+.adunit-wrap { font-size: 0px; line-height: 0; }
+.region-page-header > .adunit, .region-page-header > .adunit-wrap { -moz-box-align: center; align-items: center; display: flex; -moz-box-pack: center; justify-content: center; min-height: 300px; }
+#banneradspace { background-color: rgba(205, 205, 205, 0.1); }
+#banneradspace .adunit { padding: 25px 0px; }
+#topic-pencil-rt.adunit--rendered, body.enable-ads #topic-pencil-rt { min-width: 100%; width: 100vw; }
+#purch_Y_O_1_1, #purch_Y_O_O, .article-shop-bar, .header-drawer, .header-top__navigation-search-form { display: none; }
+.header-drawer { opacity: 0; }
+.header-drawer__inner { transform: translateX(-105%); }
+.header-top { font-family: acumin-pro,Helvetica,Arial,sans-serif; font-weight: 300; color:var(--header-top-text-color); height: 40px; width: 100%; top: 0px; right: 0px; left: 0px; order: -100; }
+.header-top-inner { height: 40px; z-index: 120; width: 100%; position: relative; }
+.header-top--scrolled .header-top-inner { background:var(--header-top-background-color--scrolled); box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25); transition: top 0.2s ease-in-out 0s; top: -40px; will-change: transform; }
+.header-top--scrolled-visible .header-top-inner { top: 0px; }
+.header-top-inner2 { display: flex; width: 100%; height: 40px; -moz-box-pack: justify; justify-content: space-between; z-index: initial; overflow: hidden; position: relative; }
+.header-top--scrolled .header-top-inner, .header-top--scrolled .header-top-inner2 { height: 40px; padding-top: 0px; position: fixed; }
+.header-top__drawer-toggle { cursor: pointer; background-color: rgb(206, 14, 95); outline: 0px none; height: 40px; line-height: 40px; width: 40px; font-size: 13px; padding-left: 40px; text-indent: 0px; color: rgb(255, 255, 255); -moz-box-flex: 0; flex: 0 0 auto; position: relative; z-index: 31; }
+.header-top__drawer-toggle i { position: absolute; left: 0px; width: 100%; text-align: center; top: 0px; line-height: 40px; font-size: 16px; }
+.header-top--scrolled .header-top__drawer-toggle { height: 40px; line-height: 40px; width: 40px; }
+.header-top--scrolled .header-top__drawer-toggle i { font-size: 16px; line-height: 40px; }
+.header-top__brand { background-image:var(--header-top-brand-image-url); background-repeat: no-repeat; background-position: left center; background-size: auto auto; width: 210px; height: 100%; display: block; -moz-box-flex: 0; flex: 0 0 auto; z-index: 31; text-align: center; left: 50%; margin: 0px; position: absolute; transform: translate(-50%, 0px); image-rendering: pixelated; }
+.header-top__navigation { white-space: nowrap; flex-shrink: 0; }
+.header-top__navigation-list { position: relative; }
+.header-top__navigation-item { float: left; vertical-align: top; display: none; font-size: inherit; }
+.header-top__navigation-link, .header-top__search-button { color:var(--header-top-navigation-item-text-color); height: 40px; line-height: 40px; width: 40px; padding: 0px 10px; text-align: center; display: block; }
+.header-top__navigation-link span, .header-top__search-button span { display: none; }
+.header-top__navigation-link:focus, .header-top__navigation-link:hover, .header-top__search-button:focus, .header-top__search-button:hover { color:var(--header-top-navigation-item-text-color--hover); background-color: rgb(206, 14, 95); }
+.header-top__search-button { color:var(--header-top-navigation-item-text-color--search); }
+.header-top__search-button:focus, .header-top__search-button:hover { color: rgb(255, 255, 255); }
+.header-top__navigation-item--search { display: inline-block; }
+.block-topic { font-family: acumin-pro,Helvetica,Arial,sans-serif; font-weight: 300; background-color: rgba(255, 255, 255, 0.1); color:var(--block-topic-text-color); top: 0px; padding: 0px; position: relative; width: 100%; display: flex; -moz-box-orient: vertical; -moz-box-direction: normal; flex-direction: column; box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.04); }
+.block-topic__topics-list { display: none; }
+.block-topic__topics-item { font-family: acumin-pro,Helvetica,Arial,sans-serif; font-weight: 600; font-size: 15px; margin: 0px; display: inline-block; height: 60px; line-height: 60px; }
+.block-topic__topics-item a { padding: 0px 15px; color: inherit; display: inline-block; }
+.block-topic__topics-item a:focus, .block-topic__topics-item a:hover { text-decoration: none; }
+.block-topic__pencil-ad { -moz-box-flex: 0; flex: 0 1 auto; margin-top: 0px; margin-left: auto; margin-right: auto; min-width: 100%; }
+.block-topic__pencil-ad #topic-pencil-rt-wrap { display: inline-block; vertical-align: top; min-height: 60px; }
+.sidebar { -moz-box-ordinal-group: 2; order: 1; display: flex; -moz-box-pack: justify; justify-content: space-between; -moz-box-orient: vertical; -moz-box-direction: normal; flex-direction: column; }
+.sidebar__section { text-align: center; -moz-box-flex: 1; flex-grow: 1; position: relative; display: flex; -moz-box-pack: center; justify-content: center; -moz-box-orient: horizontal; -moz-box-direction: normal; flex-direction: row; -moz-box-align: start; align-items: flex-start; }
+.sidebar__section:nth-child(n+2):last-of-type { -moz-box-flex: 0; flex-grow: 0; }
+.sidebar__section.sidebar__section--shrink { -moz-box-flex: 0; flex-grow: 0; }
+.article .sidebar__section, .topic .sidebar__section { margin-bottom: 15px; }
+.article .sidebar__section:last-of-type { margin-bottom: 0px; }
+.sidebar__section > div { top: 60px; position: sticky; align-self: flex-start; }
+.block-newsletter { margin: 20px 0px; text-align: left; }
+.block-newsletter h3 { margin: 0px; color:var(--body-heading-text-color); }
+.block-newsletter h3 i { margin-right: 5px; }
+.block-newsletter__message { margin: 5px 0px 15px; }
+.block-newsletter__error { display: none; color: rgb(192, 57, 43); font-size: 14px; }
+.block-newsletter__input { margin: 15px 0px; font-size: 14px; }
+.block-newsletter__input--email input { width: 100%; border-width: 0px; background-color: rgba(205, 205, 205, 0.2); padding: 10px; outline: 0px none; }
+.block-newsletter__input--radio { display: flex; flex-wrap: wrap; }
+.block-newsletter__input--radio p { margin: 0px 0px 5px; -moz-box-flex: 1; flex-grow: 1; flex-basis: 100%; }
+.block-newsletter__input--radio label { margin: 0px 30px 0px 0px; font-weight: 400; }
+.block-newsletter__input--radio label input { margin-right: 5px; }
+.block-newsletter__button { font-family: acumin-pro,Helvetica,Arial,sans-serif; font-weight: 600; background-color: rgb(206, 14, 95); color: rgb(255, 255, 255); border-width: 0px; padding: 5px; width: 100%; outline: 0px none; text-transform: uppercase; cursor: pointer; height: 2em; }
+.block-newsletter__button i { display: none; }
+.block-newsletter__pledge { font-size: 11px; margin: 5px 0px 0px; }
+.node-type-article .container { max-width: 1110px; }
+article.article { overflow-x: hidden; }
+article.article.article--amp, body.no-overflow article.article { overflow-x: unset; }
+.article-header { margin-top: 30px; margin-bottom: 10px; }
+.article-header:hover { text-decoration: none; }
+.article-header__breadcrumbs-list { color:var(--article-header-details-text-color); display: flex; list-style: outside none none; margin: 20px 0px; padding: 0px; }
+.article-header__tag { font-family: acumin-pro,Helvetica,Arial,sans-serif; font-weight: 300; display: block; font-size: 14px; padding: 0px; color: rgb(237, 64, 80); letter-spacing: 0.05em; text-transform: uppercase; }
+.article-header__breadcrumbs-list-divider { margin: 0px 10px; }
+.article-header__title { font-family: acumin-pro,Helvetica,Arial,sans-serif; font-weight: 700; color:var(--body-heading-text-color); font-size: 36px; line-height: 1.1; margin: 0px 0px 15px; letter-spacing: inherit; }
+.article-header__intro { font-family: acumin-pro,Helvetica,Arial,sans-serif; font-weight: 300; font-size: 16px; color: rgb(103, 103, 103); display: block; line-height: 1.2; margin: 5px 0px 20px; }
+.article-header__disclosure { font-family: acumin-pro,Helvetica,Arial,sans-serif; font-weight: 300; color: rgb(103, 103, 103); font-size: 12px; margin-top: 0px; }
+.article-header__disclosure a { text-decoration: underline; }
+.article-header__details { font-family: acumin-pro,Helvetica,Arial,sans-serif; font-weight: 300; border-top: 1px solid rgb(191, 191, 191); display: flex; -moz-box-orient: horizontal; -moz-box-direction: normal; flex-flow: row wrap; font-size: 10px; padding-top: 6px; color:var(--article-header-details-text-color); margin-bottom: 10px; }
+.article-header__authors { color: rgb(150, 150, 150); margin-right: 30px; }
+.article-header__author { text-transform: uppercase; }
+.article-header__author a { color: inherit; }
+.article-header__time { font-family: acumin-pro,Helvetica,Arial,sans-serif; font-weight: 300; -moz-box-flex: 1; flex-grow: 1; text-transform: none; color: rgb(206, 14, 95); margin-right: 30px; }
+.article-header__comments { color: inherit; }
+.article-body { font-size: 18px; }
+.article-body:hover { text-decoration: none; }
+.article-body .article-body__section { display: block; max-width: 728px; }
+.amp .article-body .article-body__section--wide, .article-body .article-body__section--wide { margin: 0px -15px; max-width: 100vw; overflow: hidden; }
+.article-body__section > * { margin: 0px auto 25px; }
+.article-body h1, .article-body h2, .article-body h3, .article-body h4 { font-family: acumin-pro,Helvetica,Arial,sans-serif; font-weight: 700; color:var(--body-heading-text-color); line-height: 1.21; }
+.article-body h1::before, .article-body h2::before, .article-body h3::before, .article-body h4::before { content: ""; clear: both; display: block; }
+.article-body h2 {  }
+.article-body h3 { font-size: 20px; }
+.article-body h4 { font-family: acumin-pro,Helvetica,Arial,sans-serif; font-weight: 600; font-size: 18px; }
+.article-body strong { font-weight: 600; }
+.article-body a { color: inherit; text-decoration: none; border-bottom: 2px solid rgb(237, 64, 80); }
+.article-body a:hover { text-decoration: inherit; color:var(--article-body-link-text-color--hover); }
+.article-body__drop-character::first-letter { font-family: acumin-pro,Helvetica,Arial,sans-serif; font-weight: 700; font-size: 46px; float: left; margin-right: 4px; line-height: 1; margin-top: -4px; }
+.article-body .caption { font-family: acumin-pro,Helvetica,Arial,sans-serif; font-weight: 300; color: rgb(111, 111, 111); display: block; font-size: 16px; font-style: italic; width: 100%; }
+.article-body .caption span .caption__source, .article-body .caption__source { font-family: acumin-pro,Helvetica,Arial,sans-serif; font-weight: 300; display: block; font-style: normal; font-size: 12px; }
+.article-body amp-img, .article-body img { display: block; height: auto; margin: 0px auto; max-width: 100%; }
+.article-body amp-img, .article-body img[class^="image"] { width: 100%; }
+.article-body .article-body__section--narrow amp-img, .article-body .article-body__section--narrow img { margin: 0px auto; }
+@media only screen and (min-width: 481px) {
+}
+@media only screen and (min-width: 761px) {
+  .row--no-wrap { flex-wrap: nowrap; }
+  .col-2of3\@tablet { margin: 0px 15px; width: calc(66.666% - 30px); }
+  .col-1of3\@tablet { margin: 0px 15px; width: calc(33.333% - 30px); }
+  #topic-pencil-rt.adunit--rendered, body.enable-ads #topic-pencil-rt { width: 385px; }
+  .header-top { -moz-box-ordinal-group: 1; order: 0; height: 60px; }
+  .header-top-inner { height: 60px; }
+  .header-top-inner2 { height: 60px; }
+  .header-top__drawer-toggle { height: 60px; line-height: 60px; width: 60px; }
+  .header-top__drawer-toggle i { line-height: 60px; font-size: 18px; }
+  .header-top__brand { width: 210px; background-size: auto auto; }
+  .header-top__navigation-item { display: inline-block; }
+  .header-top:not(.header-top--scrolled) .header-top__navigation-link, .header-top:not(.header-top--scrolled) .header-top__search-button { height: 60px; line-height: 60px; width: 60px; }
+  .header-top:not(.header-top--scrolled) .header-top__navigation-link i, .header-top:not(.header-top--scrolled) .header-top__search-button i { line-height: 60px; font-size: 18px; }
+  .block-topic { -moz-box-orient: horizontal; -moz-box-direction: normal; flex-direction: row; height: 60px; }
+  .block-topic__topics-list { -moz-box-flex: 1; flex: 1 1 auto; display: block; height: 60px; overflow: hidden; text-align: right; }
+  .block-topic__pencil-ad { display: block; min-width: auto; }
+  .block-topic__pencil-ad #topic-pencil-rt-wrap { min-width: 385px; }
+  .sidebar--fixed { width: 300px; -moz-box-flex: 0; flex: 0 0 300px; }
+  article.article { padding-bottom: 20px; }
+  .article-main { -moz-box-flex: 1; flex: 1 1 auto; }
+  .article-header { margin-left: 50px; }
+  .article-body { margin-left: 50px; }
+  .article--sidebar .article-body { width: auto; max-width: 830px; -moz-box-flex: 1; flex: 1 1 auto; }
+  .article-body .article-body__section--wide, .article-body .article-body__section--wide-desktop { margin: 0px; max-width: 728px; overflow: visible; }
+}
+@media only screen and (min-width: 761px) and (max-width: 1088px) {
+}
+@media only screen and (min-width: 1089px) {
+  .header-top__brand { width: 210px; background-size: auto auto; }
+  .sidebar { -moz-box-ordinal-group: 1; order: 0; }
+}
+@media only screen and (min-width: 1300px) {
+  .article-header { margin-left: 15px; }
+  .article-body { margin-left: 15px; }
+  .article--sidebar .article-body .article-body__section--narrow { margin: 0px auto; }
+  .article--sidebar .article-body .article-body__section--wide, .article--sidebar .article-body .article-body__section--wide-desktop { margin: 0px auto; max-width: 830px; }
+  .article-body__drop-character::first-letter { margin-left: -20px; }
+}
+@media only screen and (max-width: 760px) {
+}
+:root { --scrollbar-width:0; --body-background-color:#fff; --body-text-color:#101010; --body-heading-text-color:#101010; --body-grippie-color:#eee; --header-top-text-color:black; --header-top-background-color--scrolled:rgba(255,255,255,0.75); --header-top-brand-image-url:url(/sites/all/themes/mbn2_twig/assets/images/wc-logo-color.svg?reload); --header-top-brand-image-url--title:url(/sites/all/themes/mbn2_twig/assets/images/wc-logo-black-icon.svg?reload); --header-top-brand-image-url--title-alt:url(/sites/all/themes/mbn2_twig/assets/images/wc-logo-color.svg?reload); --header-top-brand-vpn-image-url:url(/sites/all/themes/mbn2_twig/assets/images/vpn-buyers-guide-logo--light.svg); --header-top-navigation-item-text-color:black; --header-top-navigation-item-text-color--hover:#fff; --header-top-navigation-item-text-color--search:black; --header-top-navigation-item-text-color--search-hover:black; --header-top-brand-image-url--sponsored:url(); --drupal-node-background-image-url--unpublished:url(/sites/all/themes/mbn2_twig/assets/images/draft.png); --block-topic-text-color:#4B4B4B; --block-topic-input-text-color: inherit; --block-topic-topics-sub-list-backdrop-filter:brightness(4) blur(15px) saturate(0.5); --block-header-text-color:#101010; --block-header-text-color--hover:#ce0e5f; --block-header-border-bottom:3px solid #2e0233; --bullet-title-text-color:#101010; --bullet-title-text-color--hover:#ed4050; --bullet-analysis-author-text-color:#000000; --article-header-details-text-color:#595959; --article-body-heading-emphasis-text-color:#727272; --article-body-paragraph-text-color--update:#7b7b7b; --article-body-paragraph-text-color--disclaimer:#696969; --article-body-link-text-color--hover:#ce0e5f; --article-body-blockquote-text-color:#6F6F6F; --article-body-blockquote-text-color--pull:#ce0e5f; --article-body-blockquote-quote-text-color:#ccc; --article-body-forum-embed-time-text-color:#5C5C5C; --article-body-forum-embed-reply-text-color:#5C5C5C; --article-body-tabs-container-border-color:#14213D; --article-body-tabs-label-text-color--active:#fafafa; --article-body-good-bad-list-item-bullet-text-color:#ccc; --article-body-list-item-bullet-text-color:#101010; --article-body-link-text-color--cta: inherit; --article-body-link-text-color--shop:#fff; --article-body-link-text-color--shop-hover:#fff; --article-body-link-background-color--shop-hover:#ed4050; --article-body-image-filter--lighten:none; --article-shop-bar-background-color:rgba(255,255,255,0.75); --article-shop-bar-logo-image-url:url(/sites/all/themes/mbn2_twig/assets/images/wc-logo-black-icon.svg?reload); --article-body-reco-block-collection-image-background-color:#fafafa; --article-body-reco-block-versus-dot-border-color:#fff; --rating-full-score-color: inherit; --article-comments-comment-content-text-color:#363636; --article-comments-comment-time-text-color:#797979; --article-comments-comment-background-color--unpublished:#fff4f4; --article-comments-comment-form-form-actions-text-color:#fff; --article-comments-comment-button-reply-text-color:#5c5c5c; --article-bio-border-color:#bfbfbf; --article-bio-bio-text-color:#a0a0a0; --article-bio-bio-link-text-color:#454545; --article-bio-name-text-color:#454545; --th-deal-embed-new-price-text-color:#ff0000; --th-deal-embed-save-price-text-color:#ff0000; --best-picks-award-frame-image-url:url(/sites/all/themes/mbn2_twig/assets/images/best-picks-badge-frame-wc.svg); --article-body-reco-block-product-text-color:#ce0e5f; --article-footer-taboola-link-color: inherit; --article-footer-taboola-desc-color:#101010; --article-body-reco-block-cta-background-color--hover:#2e0233; --article-body-reco-block-cta-text-color--hover:#fff; --article-body-reco-block-border-color:#2e0233; --article-body-reco-block-category-text-color:#fff; --article-body-reco-block-category-background-color:#2e0233; --article-body-reco-block-versus-h4-a-color: inherit; --article-body-reco-block-versus-h4-a-color--hover:#2e0233; --article-body-reco-block-versus-h4-a-border-width:0; }
+</style>
+<link type="text/css" rel="stylesheet" href="css__6Uwog9rDP_LyjBChMl65edelxMcXiiz8pBvY4cPTsxw__dFQ6AS_Sq8-8AzJDte5Uit_n4gOskvGxGalUo8JCGt4__-hrOzNKBWnRpd6oI03ihHywytuGoAB....css" media="all" class="lazycss">
+<noscript><link type="text/css" rel="stylesheet" href="/sites/wpcentral.com/files/advagg_css/css__6Uwog9rDP_LyjBChMl65edelxMcXiiz8pBvY4cPTsxw__dFQ6AS_Sq8-8AzJDte5Uit_n4gOskvGxGalUo8JCGt4__-hrOzNKBWnRpd6oI03ihHywytuGoABlgfyr1ULxhHPA.css" media="all" class="lazycss" /></noscript>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@windowscentral">
+<meta name="twitter:title" content="It's never been easier to set up WSL2 on Windows, here's how">
+<meta name="twitter:domain" content="https://www.windowscentral.com">
+<meta name="twitter:image" content="https://www.windowscentral.com/sites/wpcentral.com/files/styles/large/public/field/image/2020/10/ubuntu-wsl-neofetch.jpg">
+<meta name="twitter:app:name:googleplay" content="Windows Phone Central">
+<meta name="twitter:app:id:googleplay" content="com.wpcentral.app">
+<meta name="twitter:app:url:googleplay" content="https://www.windowscentral.com/how-install-wsl2-windows-10">
+<meta name="twitter:creator:id" content="123822572">
+<meta name="twitter:description" content="WSL2 is a significant upgrade over the initial version of the Windows Subsystem for Linux but installing it requires a bit of process. Whether you have WSL currently running or not, here's everything you need to know about installing and setting it up.">
+<meta name="description" content="WSL2 is a significant upgrade over the initial version of the Windows Subsystem for Linux but installing it requires a bit of process. Whether you have WSL currently running or not, here's everything you need to know about installing and setting it up.">
+<meta property="og:title" content="It's never been easier to set up WSL2 on Windows, here's how">
+<meta property="og:description" content="WSL2 is a significant upgrade over the initial version of the Windows Subsystem for Linux but installing it requires a bit of process. Whether you have WSL currently running or not, here's everything you need to know about installing and setting it up.">
+<meta property="og:url" content="https://www.windowscentral.com/how-install-wsl2-windows-10">
+<meta property="og:image" content="https://www.windowscentral.com/sites/wpcentral.com/files/styles/large/public/field/image/2020/10/ubuntu-wsl-neofetch.jpg">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Windows Central">
+<meta property="og:image:width" content="1920">
+<meta property="og:image:height" content="1280">
+<meta property="xray:uuid" content="UUwpUdUnU81298YYw">
+<meta property="fb:app_id" content="291830964262722">
+<meta property="fb:pages" content="174138022601372">
+<meta property="article:published_time" content="2021-10-04T04:20:03-04:00">
+<meta property="article:section" content="article">
+<meta property="article:tag" content="Help &amp; How To">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Windows 10 help">
+<meta name="msapplication-name" content="Windows Central">
+<meta name="msapplication-tooltip" content="Windows Central">
+<meta name="msapplication-navbutton-color" content="#ed2e8e">
+<meta name="msapplication-TileColor" content="#ed2e8e">
+<meta name="msapplication-square70x70logo" content="https://www.windowscentral.com/sites/wpcentral.com/files/images/tiles/tiny.png">
+<meta name="msapplication-square150x150logo" content="https://www.windowscentral.com/sites/wpcentral.com/files/images/tiles/square.png">
+<meta name="msapplication-wide310x150logo" content="https://www.windowscentral.com/sites/wpcentral.com/files/images/tiles/wide.png">
+<meta name="msapplication-square310x310logo" content="https://www.windowscentral.com/sites/wpcentral.com/files/images/tiles/large.png">
+<meta name="msapplication-notification" content="frequency=30;polling-uri=https://www.windowscentral.com/live-tile/0;polling-uri2=https://www.windowscentral.com/live-tile/1;polling-uri3=https://www.windowscentral.com/live-tile/2;polling-uri4=https://www.windowscentral.com/live-tile/3;polling-uri5=https://www.windowscentral.com/live-tile/4; cycle=1">
+<meta name="theme-color" content="#CE0E5F">
+<meta name="terms" content="Help &amp; How To,Linux,Windows 10 help">
+<link rel="apple-touch-icon" sizes="57x57" href="https://www.windowscentral.com/sites/wpcentral.com/files/images/icons/apple-touch-57x57.png">
+<link rel="apple-touch-icon" sizes="72x72" href="https://www.windowscentral.com/sites/wpcentral.com/files/images/icons/apple-touch-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="https://www.windowscentral.com/sites/wpcentral.com/files/images/icons/apple-touch-114x114.png">
+<meta name="robots" content="max-image-preview:large">
+<link rel="manifest" href="https://www.windowscentral.com/manifest.json">
+<script type="text/javascript" async="" src="about:blank"></script><script type="text/javascript" async="" src="about:blank"></script><script async="" src="about:blank"></script><script src="about:blank" defer="" type="text/javascript"></script><script id="facebook-jssdk" src="about:blank" defer=""></script><script type="text/javascript" async="" src="about:blank"></script><script defer="" src="about:blank"></script><script async="" src="about:blank"></script><script defer="" type="text/javascript" src="about:blank"></script><script defer="" src="about:blank" id="tb_loader_script"></script><script type="text/javascript">/* Code removed by ScrapBook */</script><script type="text/javascript">/* Code removed by ScrapBook */</script><script>/* Code removed by ScrapBook */</script>
+<script async="" src="about:blank"></script>
+<script src="about:blank" async=""></script>
+<script>/* Code removed by ScrapBook */</script><link rel="alternate" href="android-app://com.wpcentral.app/https/www.windowscentral.com/how-install-wsl2-windows-10">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="image_src" href="https://www.windowscentral.com/sites/wpcentral.com/files/styles/large/public/field/image/2020/10/ubuntu-wsl-neofetch.jpg">
+<link rel="canonical" href="https://www.windowscentral.com/how-install-wsl2-windows-10">
+<link rel="shortlink" href="https://www.windowscentral.com/node/81298">
+<script type="application/ld+json">/* Code removed by ScrapBook */</script><script type="text/javascript" src="about:blank"></script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script type="text/javascript" src="about:blank"></script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script type="text/javascript" defer="defer" src="about:blank"></script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script defer="" src="about:blank"></script><script type="text/javascript" async="" src="about:blank"></script><style>
+/* Code tidied up by ScrapBook */
+</style>
+
+<div class="region region-site-header">
+<script>/* Code removed by ScrapBook */</script><div class="header-top header-top--default header-top--navagation-items-2 header-top--scrolled header-top--scrolled-visible">
+<div class="header-top-inner">
+<div class="header-top-inner2">
+<button class="header-top__drawer-toggle ir js-header-drawer-toggle js-header-drawer-toggle--nav">
+<i class="fas fa-bars"></i>
+</button>
+<a href="https://www.windowscentral.com/" rel="index" class="header-top__brand ir "></a>
+<nav class="header-top__navigation">
+<ul class="header-top__navigation-list">
+<li class="header-top__navigation-item">
+<a href="https://forums.windowscentral.com/?utm_source=wc&amp;utm_medium=navbar&amp;utm_campaign=navigation" class="header-top__navigation-link">
+<i class="fas fa-comments"></i><span>Forums</span>
+</a>
+</li>
+<li class="header-top__navigation-item">
+<a href="https://www.thrifter.com//?utm_source=wc&amp;utm_medium=navbar&amp;utm_campaign=navigation" class="header-top__navigation-link">
+<i class="fas fa-shopping-cart fa-flip-horizontal"></i><span>Shop</span>
+</a>
+</li>
+<li class="header-top__navigation-item header-top__navigation-item--search">
+<button class="header-top__search-button js-header-top-search-toggle">
+<i class="fas fa-search"></i>
+<span>Toggle Search</span>
+</button>
+<form id="form-main-search" class="header-top__navigation-search-form" action="https://www.windowscentral.com/search">
+<button type="submit"></button>
+<input id="main-search" name="query" placeholder="Search..." type="text">
+</form>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<nav class="block block-topic" aria-hidden="true">
+<ul class="block-topic__topics-list">
+<li class="block-topic__topics-item">
+<a href="https://www.windowscentral.com/best-windows-laptop" title="Best Windows Laptops" class="block-topic__topics-btn">
+Best Laptops
+</a>
+</li>
+<li class="block-topic__topics-item">
+<a href="https://www.windowscentral.com/best-graphics-cards" title="Best Graphics Cards" class="block-topic__topics-btn">
+Best Graphics Cards
+</a>
+</li>
+<li class="block-topic__topics-item">
+<a href="https://www.windowscentral.com/best-motherboards" title="Best Motherboards" class="block-topic__topics-btn">
+Best Motherboards
+</a>
+</li>
+<li class="block-topic__topics-item">
+<a href="https://www.windowscentral.com/best-antivirus-software-2017" title="Best Antivirus" class="block-topic__topics-btn">
+Best Antivirus
+</a>
+</li>
+<li class="block-topic__topics-item">
+<a href="https://www.androidcentral.com/best-vpn?utm_source=wp&amp;utm_medium=topicblock&amp;utm_campaign=navigation" title="Best VPN" class="block-topic__topics-btn">
+Best VPN
+</a>
+</li>
+<li class="block-topic__topics-item">
+<a href="https://www.windowscentral.com/xbox-series-x/home" title="Xbox Series X" class="block-topic__topics-btn">
+Xbox Series X
+</a>
+</li>
+</ul>
+<div class="block-topic__pencil-ad"><div id="topic-pencil-rt-wrap" class="crumb-ad adunit-wrap adunit-gpt">
+<div class="adunit-wrap-inner">
+<div class="adunit" id="topic-pencil-rt">
+<script>/* Code removed by ScrapBook */</script>
+</div></div>
+</div></div>
+</nav> </div>
+<div id="ctBoc"> 
+<div id="page-wrap">
+<div class="page-header clearfix clearfixb">
+<div class="region region-page-header">
+ </div>
+</div>
+<div id="page">
+<main class="content" id="content" tabindex="0">
+<div class="container">
+<div class="clearfix">
+<div class="element-invisible"><a id="main-content"></a></div>
+<div class="region region-content">
+<div id="block-system-main" class="block block-system">
+<div class="content">
+<article class="article article--sidebar node node-article node-promoted node-tag-linux node-tag-windows-10-help node-cat-help--how-to article--normal node-cat-help-how-to node-tag-linux node-tag-windows-10-help not-ajaxed" id="article-81298" data-nid="81298" data-url="/how-install-wsl2-windows-10" data-canonical-url="https://www.windowscentral.com/how-install-wsl2-windows-10" data-site="wp">
+<div class="row">
+<header class="article-header col-3of3 ">
+<div class="article-header__disclosure-wrap">
+<p class="article-header__disclosure">
+We may earn a commission for purchases using our links. <a href="https://www.futureplc.com/terms-conditions/" rel="nofollow">Learn more</a>.
+</p>
+</div> <nav class="article-header__breadcrumbs">
+<ol class="article-header__breadcrumbs-list" itemscope="" itemtype="https://schema.org/BreadcrumbList">
+<li class="article-header__breadcrumbs-list-item" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+<a itemprop="item" href="https://www.windowscentral.com/">
+<span itemprop="name">Home</span></a>
+<meta itemprop="position" content="1">
+</li>
+<span class="article-header__breadcrumbs-list-divider">/</span>
+<li class="article-header__breadcrumbs-list-item" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+<a itemprop="item" href="https://www.windowscentral.com/category/how">
+<span itemprop="name">Help &amp; How To</span></a>
+<meta itemprop="position" content="2">
+</li>
+</ol>
+</nav> <span class="article-header__tag">Latest and greatest</span>
+<h1 class="article-header__title">How to install Linux WSL2 on Windows 10 and Windows 11</h1>
+<span class="article-header__intro">The latest version of the Windows Subsystem for Linux is a significant upgrade, and for most it's now easier then ever to install.</span>
+<div class="article-header__details">
+<div class="article-header__authors">
+<span class="article-header__author"><a href="https://www.windowscentral.com/author/Richard%20Devine">Richard Devine</a></span> </div>
+<time class="article-header__time" itemprop="datePublished" datetime="2021-10-04T04:20:03-04:00" title="Mon, 04 Oct 2021 04:20:03 -0400">
+4 Oct 2021
+</time>
+<button class="article-header__comments js-comments-jump">
+<i class="fas fa-comments" aria-hidden="true"></i>
+7
+</button>
+</div>
+</header>
+</div>
+<div class="row row--no-wrap">
+<div class="article-body col-3of3 col-2of3@tablet">
+<div class="article-body__section article-body__section--wide"><p class="caption"><img src="ubuntu-wsl-neofetch_001.jpg" alt="Ubuntu on Windows 10" title="" data-source="Windows Central" class="image-dark image-large fill " srcset="ubuntu-wsl-neofetch_002.jpg 1200w,
+ubuntu-wsl-neofetch_001.jpg 800w,
+ubuntu-wsl-neofetch.jpg 600w,
+ubuntu-wsl-neofetch_003.jpg 400w" data-size="large" sizes="(min-width: 1110px) 750px, (min-width: 780px) calc(91.58vw - 334px), 100vw" loading="eager" width="800" height="533"><span><em class="caption__source">Source: Windows Central</em></span></p></div><div class="article-body__section article-body__section--narrow narrow">
+<p class="article-body__drop-character article-body__first-paragraph">Microsoft dropped plenty of jaws when it launched the Windows Subsystem for Linux, a way to run actual Linux inside Windows without the need to set up a virtual machine. The project has seen a ton of support, and WSL2 is the latest and greatest.</p>
+<p>It takes things a little further and adds yet more awesomeness to the Linux experience on Windows 10 and <a href="https://www.windowscentral.com/windows-11">Windows 11</a>. If you haven't yet checked it out, here's how to get started.</p>
+<h2 class="separator">Simplifed setup of WSL2 on Windows 10 and Windows 11</h2>
+</div><div class="article-body__section article-body__section--wide"><p class="caption"><img src="wsl2-simple-install_002.jpg" alt="Wsl2" title="" data-source="Windows Central" class="image-dark image-large fill lazy-loaded" data-size="large" sizes="(min-width: 1110px) 750px, (min-width: 780px) calc(91.58vw - 334px), 100vw" loading="lazy" data-src="/sites/wpcentral.com/files/styles/large/public/field/image/2021/08/wsl2-simple-install.jpg" data-srcset="/sites/wpcentral.com/files/styles/larger/public/field/image/2021/08/wsl2-simple-install.jpg 1200w,
+/sites/wpcentral.com/files/styles/large/public/field/image/2021/08/wsl2-simple-install.jpg 800w,
+/sites/wpcentral.com/files/styles/mediumplus/public/field/image/2021/08/wsl2-simple-install.jpg 600w,
+/sites/wpcentral.com/files/styles/medium/public/field/image/2021/08/wsl2-simple-install.jpg 400w" srcset="wsl2-simple-install_001.jpg 1200w,
+wsl2-simple-install_002.jpg 800w,
+wsl2-simple-install.jpg 600w,
+wsl2-simple-install_003.jpg 400w" width="800" height="450"><noscript><img src="https://www.windowscentral.com/sites/wpcentral.com/files/styles/large/public/field/image/2021/08/wsl2-simple-install.jpg" width="800" height="450" alt="Wsl2" title="" data-source="Windows Central" class="image-dark image-large fill " srcset="/sites/wpcentral.com/files/styles/larger/public/field/image/2021/08/wsl2-simple-install.jpg 1200w,
+/sites/wpcentral.com/files/styles/large/public/field/image/2021/08/wsl2-simple-install.jpg 800w,
+/sites/wpcentral.com/files/styles/mediumplus/public/field/image/2021/08/wsl2-simple-install.jpg 600w,
+/sites/wpcentral.com/files/styles/medium/public/field/image/2021/08/wsl2-simple-install.jpg 400w" data-size="large" sizes="(min-width: 1110px) 750px, (min-width: 780px) calc(91.58vw - 334px), 100vw" loading="lazy"></noscript><span><em class="caption__source">Source: Windows Central</em></span></p></div><div class="article-body__section article-body__section--narrow narrow">
+<p>There is now a new, extremely simplified way to get WSL2 up and running on your Windows 10 and Windows 11 PC. The only requirement is that you're running version 2004 of Windows 10 and above. If this sounds like your system, ensure you've also downloaded the optional <strong>KB5004296</strong> update, too, as it's the one that enables this feature.</p><div class="adunit inline-text" id="purch_N_C_0_2" data-clone-id="" adonis-marker=""></div><div class="article-body__suppl_content article-body__suppl_content--inline-once article-body__suppl_content--taboola-mid-article  no-amazon"><div id="taboola-mid-article-thumbnails"></div>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<style>
+/* Code tidied up by ScrapBook */
+.article-body__suppl_content--taboola-mid-article { height: 0px; padding-bottom: 73%; position: relative; width: 100%; clear: both; overflow: hidden; }
+@media only screen and (min-width: 480px) {
+  .article-body__suppl_content--taboola-mid-article { padding-bottom: 64.25%; }
+}
+@media only screen and (min-width: 761px) {
+  .article-body__suppl_content--taboola-mid-article { padding-bottom: 63.25%; }
+}
+@media only screen and (min-width: 1089px) {
+  .article-body__suppl_content--taboola-mid-article { padding-bottom: 59.25%; }
+}
+#taboola-mid-article-thumbnails { height: 100%; width: 100%; position: absolute; left: 0px; top: 0px; margin: auto; }
+</style></div>
+<p>Once this is in place, open up PowerShell and enter this command:</p>
+<p><code>wsl --install</code></p>
+<p>That's it. The setup process will begin and you can relax until it's finished.</p>
+<p>If you don't have the necessary version of Windows 10 installed to follow the simplified setup, the existing, much longer method still works.</p>
+<h2 class="separator">How to enable Windows Subsystem for Linux</h2>
+<p>Before you can get WSL2, you need to have WSL. That may sound slightly strange, but the methods of enabling the first iteration and the second are quite different. But to have the newest version, you first need to have the first. There's no direct path to just installing WSL2.</p>
+<p>We have a <a href="https://www.windowscentral.com/install-windows-subsystem-linux-windows-10">full guide</a> on getting set up with the Windows Subsystem for Linux, which you should check out for a full primer on getting started, but if you're looking for the quickest route, there's a single line of code to enable it on your machine.</p>
+<p>Open PowerShell as administrator and enter this command:</p>
+<pre><code>dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+</code></pre>
+<p>Eventually, you will need to reboot your PC, but you can leave it until later if you're going straight to installing WSL2.</p>
+<h2>How to install WSL2 on Windows 10</h2>
+</div><div class="article-body__section article-body__section--wide"><p class="caption"><img src="wsl2-kernel-update_002.jpg" alt="WSL2" title="" data-source="Windows Central" class="image-neutral image-large fill lazy-loaded" data-size="large" sizes="(min-width: 1110px) 750px, (min-width: 780px) calc(91.58vw - 334px), 100vw" loading="lazy" data-src="/sites/wpcentral.com/files/styles/large/public/field/image/2020/10/wsl2-kernel-update.jpg" data-srcset="/sites/wpcentral.com/files/styles/larger/public/field/image/2020/10/wsl2-kernel-update.jpg 1200w,
+/sites/wpcentral.com/files/styles/large/public/field/image/2020/10/wsl2-kernel-update.jpg 800w,
+/sites/wpcentral.com/files/styles/mediumplus/public/field/image/2020/10/wsl2-kernel-update.jpg 600w,
+/sites/wpcentral.com/files/styles/medium/public/field/image/2020/10/wsl2-kernel-update.jpg 400w" srcset="wsl2-kernel-update_001.jpg 1200w,
+wsl2-kernel-update_002.jpg 800w,
+wsl2-kernel-update.jpg 600w,
+wsl2-kernel-update_003.jpg 400w" width="800" height="596"><noscript><img src="https://www.windowscentral.com/sites/wpcentral.com/files/styles/large/public/field/image/2020/10/wsl2-kernel-update.jpg" width="800" height="596" alt="WSL2" title="" data-source="Windows Central" class="image-neutral image-large fill " srcset="/sites/wpcentral.com/files/styles/larger/public/field/image/2020/10/wsl2-kernel-update.jpg 1200w,
+/sites/wpcentral.com/files/styles/large/public/field/image/2020/10/wsl2-kernel-update.jpg 800w,
+/sites/wpcentral.com/files/styles/mediumplus/public/field/image/2020/10/wsl2-kernel-update.jpg 600w,
+/sites/wpcentral.com/files/styles/medium/public/field/image/2020/10/wsl2-kernel-update.jpg 400w" data-size="large" sizes="(min-width: 1110px) 750px, (min-width: 780px) calc(91.58vw - 334px), 100vw" loading="lazy"></noscript><span><em class="caption__source">Source: Windows Central</em></span></p></div><div class="article-body__section article-body__section--narrow narrow">
+<p>Now you have the Windows Subsystem for Linux enabled. It's time to download and install WSL2. The latest iteration is essentially a tiny virtual machine that boots up in seconds and has a proper Linux kernel at its core. And that's why the installation differs a little from enabling regular old WSL.</p>
+<p>There are also a couple of pre-requisites for using WSL2 on Windows 10. You need to be on the following versions:</p>
+<ul>
+<li><strong>For x64 systems</strong>: Version 1903 or higher, with Build 18362 or higher.</li>
+<li><strong>For ARM64 systems</strong>: Version 2004 or higher, with Build 19041 or higher.</li>
+</ul>
+<p>If you have anything lower, you'll need to run Windows Update before going any further.</p>
+<p>Assuming that's all good, the rest is straightforward.</p>
+<h3>Enabling Virtual Machine</h3>
+<p>If you don't already have this enabled, you'll need to turn it on before installing WSL2. As already stated, WSL2 is a tiny virtual machine, so Windows needs to be prepared for that. If you have this enabled already, skip and go straight to rebooting your PC to make sure you're ready to install.</p>
+<p>The quickest way to do it is in PowerShell. Open PowerShell as administrator and enter this command:</p>
+<pre><code>dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+</code></pre>
+<p>Now reboot your PC and move to the next section.</p>
+<h3>Downloading and installing WSL2</h3>
+<p>The next part takes only a couple of steps.</p>
+<ol>
+<li>Download the <a href="https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi">WSL2 Kernel update</a>.</li>
+<li>Run the installer. </li>
+<li>When prompted for elevated permissions, click <strong>yes</strong>.</li>
+</ol>
+<p>Once the installer has done its thing, you'll now have WSL2 successfully installed on your PC.</p>
+<h2>Setting WSL2 for your Linux distros</h2>
+<p>The good thing about WSL2 is that it doesn't replace WSL. It just runs alongside it. This means you can run Linux installs with a combination of different versions. You're able to set either as default as well as setting a version specifically to each Linux distro you have on your PC.</p>
+<p>Let's break down some of the key commands to use in PowerShell that you'll need to know.</p>
+<h3>Setting WSL2 as default</h3>
+</div><div class="article-body__section article-body__section--wide"><p class="caption"><img src="wsl2-version-default_002.jpg" alt="WSL2" title="" data-source="Windows Central" class="image-dark image-large fill lazy-loaded" data-size="large" sizes="(min-width: 1110px) 750px, (min-width: 780px) calc(91.58vw - 334px), 100vw" loading="lazy" data-src="/sites/wpcentral.com/files/styles/large/public/field/image/2020/10/wsl2-version-default.jpg" data-srcset="/sites/wpcentral.com/files/styles/larger/public/field/image/2020/10/wsl2-version-default.jpg 1200w,
+/sites/wpcentral.com/files/styles/large/public/field/image/2020/10/wsl2-version-default.jpg 800w,
+/sites/wpcentral.com/files/styles/mediumplus/public/field/image/2020/10/wsl2-version-default.jpg 600w,
+/sites/wpcentral.com/files/styles/medium/public/field/image/2020/10/wsl2-version-default.jpg 400w" srcset="wsl2-version-default.jpg 1200w,
+wsl2-version-default_002.jpg 800w,
+wsl2-version-default_001.jpg 600w,
+wsl2-version-default_003.jpg 400w" width="800" height="460"><noscript><img src="https://www.windowscentral.com/sites/wpcentral.com/files/styles/large/public/field/image/2020/10/wsl2-version-default.jpg" width="800" height="460" alt="WSL2" title="" data-source="Windows Central" class="image-dark image-large fill " srcset="/sites/wpcentral.com/files/styles/larger/public/field/image/2020/10/wsl2-version-default.jpg 1200w,
+/sites/wpcentral.com/files/styles/large/public/field/image/2020/10/wsl2-version-default.jpg 800w,
+/sites/wpcentral.com/files/styles/mediumplus/public/field/image/2020/10/wsl2-version-default.jpg 600w,
+/sites/wpcentral.com/files/styles/medium/public/field/image/2020/10/wsl2-version-default.jpg 400w" data-size="large" sizes="(min-width: 1110px) 750px, (min-width: 780px) calc(91.58vw - 334px), 100vw" loading="lazy"></noscript><span><em class="caption__source">Source: Windows Central</em></span></p></div><div class="article-body__section article-body__section--narrow narrow">
+<p>If you want everything to run on WSL2 as soon as you install it, you can set it as the default version.</p>
+<pre><code>wsl --set-default-version 2
+</code></pre>
+<h3>Listing installed Linux distros and their WSL version</h3>
+</div><div class="article-body__section article-body__section--wide"><p class="caption"><img src="wsl2-version-list-powershell_002.jpg" alt="WSL2" title="" data-source="Windows Central" class="image-dark image-large fill lazy-loaded" data-size="large" sizes="(min-width: 1110px) 750px, (min-width: 780px) calc(91.58vw - 334px), 100vw" loading="lazy" data-src="/sites/wpcentral.com/files/styles/large/public/field/image/2020/10/wsl2-version-list-powershell.jpg" data-srcset="/sites/wpcentral.com/files/styles/larger/public/field/image/2020/10/wsl2-version-list-powershell.jpg 1200w,
+/sites/wpcentral.com/files/styles/large/public/field/image/2020/10/wsl2-version-list-powershell.jpg 800w,
+/sites/wpcentral.com/files/styles/mediumplus/public/field/image/2020/10/wsl2-version-list-powershell.jpg 600w,
+/sites/wpcentral.com/files/styles/medium/public/field/image/2020/10/wsl2-version-list-powershell.jpg 400w" srcset="wsl2-version-list-powershell.jpg 1200w,
+wsl2-version-list-powershell_002.jpg 800w,
+wsl2-version-list-powershell_001.jpg 600w,
+wsl2-version-list-powershell_003.jpg 400w" width="800" height="462"><noscript><img src="https://www.windowscentral.com/sites/wpcentral.com/files/styles/large/public/field/image/2020/10/wsl2-version-list-powershell.jpg" width="800" height="462" alt="WSL2" title="" data-source="Windows Central" class="image-dark image-large fill " srcset="/sites/wpcentral.com/files/styles/larger/public/field/image/2020/10/wsl2-version-list-powershell.jpg 1200w,
+/sites/wpcentral.com/files/styles/large/public/field/image/2020/10/wsl2-version-list-powershell.jpg 800w,
+/sites/wpcentral.com/files/styles/mediumplus/public/field/image/2020/10/wsl2-version-list-powershell.jpg 600w,
+/sites/wpcentral.com/files/styles/medium/public/field/image/2020/10/wsl2-version-list-powershell.jpg 400w" data-size="large" sizes="(min-width: 1110px) 750px, (min-width: 780px) calc(91.58vw - 334px), 100vw" loading="lazy"></noscript><span><em class="caption__source">Source: Windows Central</em></span></p></div><div class="article-body__section article-body__section--narrow narrow">
+<p>With WSL2 set as default, any Linux installs after that will use it automatically. You can easily check which version of WSL your installed Linux distros are using.</p>
+<pre><code>wsl --list --verbose 
+</code></pre>
+<p>Using the verbose flag will give you the breakdown of which version of WSL is attached to which Linux installation. Without it, you'll simply get a list of the versions of Linux you have installed.</p>
+<h3>Changing the version of WSL per Linux installation</h3>
+</div><div class="article-body__section article-body__section--wide"><p class="caption"><img src="wsl2-version-convert-powershell_001.jpg" alt="WSL2" title="" data-source="Windows Central" class="image-dark image-large fill lazy-loaded" data-size="large" sizes="(min-width: 1110px) 750px, (min-width: 780px) calc(91.58vw - 334px), 100vw" loading="lazy" data-src="/sites/wpcentral.com/files/styles/large/public/field/image/2020/10/wsl2-version-convert-powershell.jpg" data-srcset="/sites/wpcentral.com/files/styles/larger/public/field/image/2020/10/wsl2-version-convert-powershell.jpg 1200w,
+/sites/wpcentral.com/files/styles/large/public/field/image/2020/10/wsl2-version-convert-powershell.jpg 800w,
+/sites/wpcentral.com/files/styles/mediumplus/public/field/image/2020/10/wsl2-version-convert-powershell.jpg 600w,
+/sites/wpcentral.com/files/styles/medium/public/field/image/2020/10/wsl2-version-convert-powershell.jpg 400w" srcset="wsl2-version-convert-powershell_002.jpg 1200w,
+wsl2-version-convert-powershell_001.jpg 800w,
+wsl2-version-convert-powershell.jpg 600w,
+wsl2-version-convert-powershell_003.jpg 400w" width="800" height="460"><noscript><img src="https://www.windowscentral.com/sites/wpcentral.com/files/styles/large/public/field/image/2020/10/wsl2-version-convert-powershell.jpg" width="800" height="460" alt="WSL2" title="" data-source="Windows Central" class="image-dark image-large fill " srcset="/sites/wpcentral.com/files/styles/larger/public/field/image/2020/10/wsl2-version-convert-powershell.jpg 1200w,
+/sites/wpcentral.com/files/styles/large/public/field/image/2020/10/wsl2-version-convert-powershell.jpg 800w,
+/sites/wpcentral.com/files/styles/mediumplus/public/field/image/2020/10/wsl2-version-convert-powershell.jpg 600w,
+/sites/wpcentral.com/files/styles/medium/public/field/image/2020/10/wsl2-version-convert-powershell.jpg 400w" data-size="large" sizes="(min-width: 1110px) 750px, (min-width: 780px) calc(91.58vw - 334px), 100vw" loading="lazy"></noscript><span><em class="caption__source">Source: Windows Central</em></span></p></div><div class="article-body__section article-body__section--narrow narrow">
+<p>While setting WSL2 as default will apply it to anything you install afterward. If you're already set up, you'll need to manually convert. Likewise, if you wish to go between versions 1 and 2 or run a mixture on your system, you can do that.</p>
+<pre><code>wsl --set-version &lt;distribution name&gt; &lt;versionNumber&gt;
+</code></pre>
+<p>So, as an example, if you have a Debian installation on WSL that you need to convert to WSL2, you'd enter <code>wsl --set-version debian 2</code>.</p>
+<h3>Launch specific Linux installations in PowerShell</h3>
+</div><div class="article-body__section article-body__section--wide"><p class="caption"><img src="wsl2-linux-launch_001.jpg" alt="WSL2" title="" data-source="Windows Central" class="image-dark image-large fill lazy-loaded" data-size="large" sizes="(min-width: 1110px) 750px, (min-width: 780px) calc(91.58vw - 334px), 100vw" loading="lazy" data-src="/sites/wpcentral.com/files/styles/large/public/field/image/2020/10/wsl2-linux-launch.jpg" data-srcset="/sites/wpcentral.com/files/styles/larger/public/field/image/2020/10/wsl2-linux-launch.jpg 1200w,
+/sites/wpcentral.com/files/styles/large/public/field/image/2020/10/wsl2-linux-launch.jpg 800w,
+/sites/wpcentral.com/files/styles/mediumplus/public/field/image/2020/10/wsl2-linux-launch.jpg 600w,
+/sites/wpcentral.com/files/styles/medium/public/field/image/2020/10/wsl2-linux-launch.jpg 400w" srcset="wsl2-linux-launch_002.jpg 1200w,
+wsl2-linux-launch_001.jpg 800w,
+wsl2-linux-launch.jpg 600w,
+wsl2-linux-launch_003.jpg 400w" width="800" height="462"><noscript><img src="https://www.windowscentral.com/sites/wpcentral.com/files/styles/large/public/field/image/2020/10/wsl2-linux-launch.jpg" width="800" height="462" alt="WSL2" title="" data-source="Windows Central" class="image-dark image-large fill " srcset="/sites/wpcentral.com/files/styles/larger/public/field/image/2020/10/wsl2-linux-launch.jpg 1200w,
+/sites/wpcentral.com/files/styles/large/public/field/image/2020/10/wsl2-linux-launch.jpg 800w,
+/sites/wpcentral.com/files/styles/mediumplus/public/field/image/2020/10/wsl2-linux-launch.jpg 600w,
+/sites/wpcentral.com/files/styles/medium/public/field/image/2020/10/wsl2-linux-launch.jpg 400w" data-size="large" sizes="(min-width: 1110px) 750px, (min-width: 780px) calc(91.58vw - 334px), 100vw" loading="lazy"></noscript><span><em class="caption__source">Source: Windows Central</em></span></p></div><div class="article-body__section article-body__section--narrow narrow">
+<p>If you only have one version of Linux installed, simply typing <code>wsl</code> in PowerShell will launch you into the associated bash shell. But if you have multiple, you can launch a specific distro with this command.</p>
+<pre><code>wsl -d &lt;distribution name&gt;
+</code></pre>
+<p>Once you're done, typing <code>exit</code> will take you back into PowerShell.</p>
+</div><div class="article-body__section article-body__section--wide-desktop"><hr></div><div class="article-body__section article-body__section--narrow narrow">
+<p>From here on out, you're ready to go forth and install all the Linux you want. <a href="https://www.windowscentral.com/install-windows-subsystem-linux-windows-10">Our full guide</a> will help you along the way, but once WSL2 is set up how you like it, it just fades into the background.</p>
+<p>It's also worth grabbing the Windows Terminal app from the Microsoft Store if you're using WSL. While you can just use the standard terminal installed with each or launch through PowerShell as shown above, Windows Terminal has a neat tabbed interface that lets you run multiple shells at once. Have PowerShell, Linux, Azure Cloud Shell, even Command Prompt, all open together side-by-side in one window.</p>
+</div><div class="article-body__section article-body__section--wide-desktop"><div class="article-body__r3c0-bl0ck " id="windows-terminal" data-award="">
+<h3 class="article-body__r3c0-bl0ck-category">Fancy terminal</h3>
+<a href="https://www.windowscentral.com/e?link=https%3A%2F%2Fclick.linksynergy.com%2Fdeeplink%3Fid%3DkXQk6%252AivFEQ%26mid%3D24542%26u1%3DUUwpUdUnU81298YYwYwo5uw4zdpo5zwgzloorzgc3bomnxw2%26murl%3Dhttps%253A%252F%252Fwww.microsoft.com%252Fen-us%252Fp%252Fwindows-terminal%252F9n0dx20hk701&amp;token=RSId4o-r" rel="nofollow" data-source="Microsoft" class="article-body__r3c0-bl0ck-image norewrite" target="_blank">
+<img alt="Windows Terminal" src="windows-termina-logo-reco_001.jpg" class="image-neutral image-portrait fill ggnoads lazy-loaded" data-source="Microsoft" data-size="small" sizes="200px" loading="lazy" data-src="https://www.windowscentral.com/sites/wpcentral.com/files/styles/small/public/field/image/2020/10/windows-termina-logo-reco.jpg" data-srcset="https://www.windowscentral.com/sites/wpcentral.com/files/styles/mediumplus/public/field/image/2020/10/windows-termina-logo-reco.jpg 600w,
+https://www.windowscentral.com/sites/wpcentral.com/files/styles/medium/public/field/image/2020/10/windows-termina-logo-reco.jpg 400w,
+https://www.windowscentral.com/sites/wpcentral.com/files/styles/small/public/field/image/2020/10/windows-termina-logo-reco.jpg 150w" srcset="windows-termina-logo-reco_002.jpg 600w,
+windows-termina-logo-reco.jpg 400w,
+windows-termina-logo-reco_001.jpg 150w" width="200" height="300"><noscript><img alt="Windows Terminal" src="https://www.windowscentral.com/sites/wpcentral.com/files/styles/small/public/field/image/2020/10/windows-termina-logo-reco.jpg" class="image-neutral image-portrait fill ggnoads" data-source="Microsoft" width="200" height="300" srcset="https://www.windowscentral.com/sites/wpcentral.com/files/styles/mediumplus/public/field/image/2020/10/windows-termina-logo-reco.jpg 600w,
+https://www.windowscentral.com/sites/wpcentral.com/files/styles/medium/public/field/image/2020/10/windows-termina-logo-reco.jpg 400w,
+https://www.windowscentral.com/sites/wpcentral.com/files/styles/small/public/field/image/2020/10/windows-termina-logo-reco.jpg 150w" data-size="small" sizes="200px" loading="lazy"></noscript>
+</a>
+<h4 class="article-body__r3c0-bl0ck-product">Windows Terminal</h4>
+<p class="subtitle">Microsoft's new modern, open-source terminal application.</p>
+<div class="article-body__r3c0-bl0ck-description">
+<p>Whether you're into theming or just want to run a bunch of different shells side-by-side, the Windows Terminal application can do it all.</p>
+</div>
+<div class="article-body__r3c0-bl0ck-buttons">
+<ul class="cta shop">
+<li><a href="https://www.windowscentral.com/e?link=https%3A%2F%2Fclick.linksynergy.com%2Fdeeplink%3Fid%3DkXQk6%252AivFEQ%26mid%3D24542%26u1%3DUUwpUdUnU81298YYwYwo5uw4zdpo5zwgzloorzgc3bomnxw2%26murl%3Dhttps%253A%252F%252Fwww.microsoft.com%252Fen-us%252Fp%252Fwindows-terminal%252F9n0dx20hk701&amp;token=RSId4o-r" rel="nofollow" class="cta shop no-amazon norewrite" target="_blank">Free at Microsoft</a></li>
+</ul>
+</div>
+</div></div><div class="article-body__section article-body__section--narrow narrow">
+<div class="auto-disclosure-wrap">
+<p class="auto-disclosure">
+We may earn a commission for purchases using our links. <a href="https://www.futureplc.com/terms-conditions/" rel="nofollow">Learn more</a>.
+</p>
+</div> 
+</div><div id="purch_N_C_0_2-wrap-6262af98969ae" class="adunit-wrap adunit-purch">
+<div class="adunit-wrap-inner"><script type="text/javascript">/* Code removed by ScrapBook */</script></div>
+</div>
+</div>
+<aside class="sidebar col-3of3 sidebar--fixed col-1of3@tablet" role="complementary">
+<div class="sidebar__section sidebar__section--shrink">
+<div class="block block-newsletter">
+<h3><i class="far fa-envelope"></i> Keep in Touch</h3>
+<p class="block-newsletter__message">Sign up now to get the latest news, deals &amp; more from Windows Central!</p>
+<p class="block-newsletter__error"></p>
+<form>
+<div class="block-newsletter__input block-newsletter__input--email">
+<input name="email" value="" placeholder="Your Email Address" type="email">
+</div>
+<div class="block-newsletter__input block-newsletter__input--radio">
+<p>I would like to receive news and offers from other Future brands.</p>
+<label><input name="contact_other_brands" value="1" checked="checked" type="radio">Yes</label>
+<label><input name="contact_other_brands" value="0" type="radio">No</label>
+</div>
+<div class="block-newsletter__input block-newsletter__input--radio">
+<p>I would like to receive mail from Future partners.</p>
+<label><input name="contact_partners" value="1" checked="checked" type="radio">Yes</label>
+<label><input name="contact_partners" value="0" type="radio">No</label>
+</div>
+<button type="button" class="block-newsletter__button"><span>Sign Me Up </span><i class="fas fa-sync-alt fa-spin"></i></button>
+<p class="block-newsletter__pledge">No spam, we promise. You can unsubscribe at any time and we'll never share your details without your permission.</p>
+</form>
+</div>
+</div>
+
+
+
+
+
+
+<div class="sidebar__section ">
+<div class="adunit adunit--bordeaux-sidebar"></div>
+</div>
+</aside> </div>
+<div class="row">
+<footer class="article-meta col-3of3">
+<button class="article-meta__comments-toggle js-comments-toggle article-meta__comments-toggle--open">
+<span>View</span><span>Close</span> Comments (7)
+</button>
+<ul class="article-meta-tags">
+<li><a href="https://www.windowscentral.com/category/how">Help &amp; How To</a></li>
+<li><a href="https://www.windowscentral.com/tag/linux">Linux</a></li>
+</ul>
+</footer>
+</div>
+<div class="row">
+<section class="article-comments article-comments--loaded article-comments--visible col-3of3 " id="article-comments-81298">
+  <header class="article-comments__header">
+    <h3 class="article-comments__title">How to install Linux WSL2 on Windows 10 and Windows 11</h3>
+          <div class="article-comments__login-links">
+        <i class="fas fa-sign-in-alt"></i> <a href="https://passport.mobilenations.com/?u=eNpVTktuwyAQvQtdOwaMjZgsI_VcME33FgbcoPCxgIhKVe9eaLPp7s37jgQOXxkIBZSMtsmosj6SQ-cMnFwwupVyZBjHWuup2qBjzcqEkqQ7qejHW6yDDblI54aaHR2enoHgl6b7Zh32mHyvI8v_idXrufNTm142w3dFhdFcXFDJpl2yTUtGMGYT34TuPgYo22I6bIl6dNAqpSo2hn7MgFxc_LC_mGBAl-vb6_oe76YxG-BcJ2s-D5vkX8a2p2a8zAsVtMkC0GGSl86Ge4-Q8_cPr8pb5g,," class="article-comments__login-link">Log in </a> or <i class="fas fa-user"></i> <a href="https://passport.mobilenations.com/?u=eNpVTstOxCAU_RdcXDMFSou9szTxA0b3DQXqkOHRXDATTIz_Luhs3J17nleCgK8MlAFKRttkVFnvyaFzBkEBXUs5MgxDrfVUbdCxZmVCSdKdVPTDNVZsQy7SOVxcs2P44cGUPDXdNyveY_K9js7_XCdWr6fOj2163ozYFVuMFguTfNwl37TklBA-im3R3ccBZVtMhy1Rjw5apVTFxtCP597_YXMx6XePXDB6ebu8ru_xZpphA_Jgzedhk_yL2fbXROZpZgtr8gLoMMlLZ8OtR-j5-wfmXDBdNQ,," class="article-comments__login-link">Register</a> to Comment
+      </div>
+                      <ul class="article-comments__sort">
+          <li class="article-comment__sort-item">
+            <a href="#" class="article-comment__sort-link js-comments-sort" data-sort="new">By Date <i class="fas fa-sync-alt fa-spin"></i></a>
+          </li> 
+          <li class="article-comment__sort-item">
+            <a href="#" class="article-comment__sort-link js-comments-sort" data-sort="best">By Rating <i class="fas fa-sync-alt fa-spin"></i></a>
+          </li>
+        </ul>
+            </header>
+
+  <div class="article-comments__content" id="comment-wrapper-nid-81298">
+          <div class="ajax-comment-wrapper" id="comment-wrapper-3018506"><a id="comment-3018506"></a>
+<article class="comment comment comment-age-day">
+  <header class="comment__header">
+                      <span class="comment__author-avatar">
+              <img src="100x100_avatar-generic.jpg" alt="gedumer" class=" ">
+      </span>
+    
+          <span class="comment__author">
+                  gedumer
+          </span>
+  </header>
+
+  <div class="comment__content">
+          <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>When will we be able to actually run Linux GUI Apps on Windows 10 as promised by Microsoft some months ago?</p>
+</div></div></div>
+      </div>
+
+  <footer class="comment__footer">
+    <time class="comment__time" datetime="2020-10-26T11:54:35-04:00" title="2020-10-26T11:54:35-04:00">
+              Mon Oct 26, 2020 11:54am
+          </time>
+    <div class="comment__actions">
+              <ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://passport.mobilenations.com/?u=eNpVTktOBCEQvQsHGD4N3VCznMQDqPsO05RKhm4IYNAY7y6MblxcVPLqVb2PhQW-CnABJKPzGbe6vudAzgWUBvJWaypAaWvt1PzhYisbHjXbcNriTvvsfaUZU_ikmguj6cS4VmweDnz-77ruTg1-6mlswauZpJXo1ISGGS6XF6EWp6U1KNz4k0CKrzhgV7Q0QLe0W_XxuFcEEuKrv2POgFxcnh4f1ud4w85cXIH9sfiRfLa_Gt9L9XZqFkb0swGSMO82-OM2JPz8_QO72VSn">Reply</a></span></li></ul>
+        <div class="rate-widget-1 rate-widget clear-block rate-average rate-widget-thumbs_up rate-e4165e87857b4f7f2caf774b2fed0260 rate-comment-3018506-1-1 rate-processed" id="rate-comment-3018506-1-1"><a class="btn comment__btn-vote far fa-heart rate-button rate-thumbs-up-btn-up" id="rate-button-1" rel="nofollow" href="https://www.windowscentral.com/ajax/article/comments/81298?rate=4J64USrTDEffxtWqvG5nUqHV-nFI-MR1svPhBF96osg" aria-label="Love this comment"></a>
+</div>
+          </div>
+  </footer>
+</article><div class="ajax-comment-wrapper indented" id="comment-wrapper-3018511"><a id="comment-3018511"></a>
+<article class="comment comment comment-by-node-author comment-age-day">
+  <header class="comment__header">
+                      <span class="comment__author-avatar">
+              <img src="100x100_276524.jpg" alt="Richard Devine" class=" ">
+      </span>
+    
+          <span class="comment__author">
+                  Richard Devine
+          </span>
+  </header>
+
+  <div class="comment__content">
+          <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>That would be the old favorite</p>
+
+<p>Soon™</p></div></div></div>
+      </div>
+
+  <footer class="comment__footer">
+    <time class="comment__time" datetime="2020-10-26T12:46:02-04:00" title="2020-10-26T12:46:02-04:00">
+              Mon Oct 26, 2020 12:46pm
+          </time>
+    <div class="comment__actions">
+              <ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://passport.mobilenations.com/?u=eNpVTktuwyAQvQsHCMwYXFw8WUbqAZruLYxRi2IbBES0qnr3QtpNFyO9eTPvY-iJvjIBEktu9cnZMt_Txs6ZlCb2XkrMxHmt9VT9sYaarTtKMtvJhp232dvKk4vbXCfXgJPmg1wwrVwwugOM_13nfVWdH1qaNMMqUI4LAkoQWuEygJpGY9BJtNj_JLHsi-uwKWrsoFkaW3w4HhWJbeHNPzAIYpfry_P8Gm6uMQuJP9Z9RJ_Mr8a3UkqMasQJ23lcIhZd2s3mj1uXwPn7B1ECU-Q,">Reply</a></span></li></ul>
+        <div class="rate-widget-1 rate-widget clear-block rate-average rate-widget-thumbs_up rate-c435a3be3e56bf8f31f81ed1de684d5f rate-comment-3018511-1-1 rate-processed" id="rate-comment-3018511-1-1"><a class="btn comment__btn-vote far fa-heart rate-button rate-thumbs-up-btn-up" id="rate-button-2" rel="nofollow" href="https://www.windowscentral.com/ajax/article/comments/81298?rate=gncPWc-shmSHUG5qIvhdNYDBSzkmhbEjcTDADTYraos" aria-label="Love this comment"></a>
+</div>
+          </div>
+  </footer>
+</article><div class="ajax-comment-wrapper indented" id="comment-wrapper-3018546"><a id="comment-3018546"></a>
+<article class="comment comment comment-age-day">
+  <header class="comment__header">
+                      <span class="comment__author-avatar">
+              <img src="100x100_9025323.jpg" alt="coocooman3" class=" ">
+      </span>
+    
+          <span class="comment__author">
+                  coocooman3
+          </span>
+  </header>
+
+  <div class="comment__content">
+          <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>What they showed off at XDC last month was looking good, though I can't remember what the completion status and timeline were.</p>
+</div></div></div>
+      </div>
+
+  <footer class="comment__footer">
+    <time class="comment__time" datetime="2020-10-27T03:26:40-04:00" title="2020-10-27T03:26:40-04:00">
+              Tue Oct 27, 2020 3:26am
+          </time>
+    <div class="comment__actions">
+              <ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://passport.mobilenations.com/?u=eNpVTktuwyAQvQsHCB8bA5NlpB6g6d7CmLYo2CAgolHUuxeSbLoY6c2beR8NAu4ZKAOU7OqSNWW-Jo-OGbgE9F1KzIBxrfVQ3b6Gmo3dS9L-YMKG22xtxclGf8OSMiXxQKjk49Qd6PTfdd5W3vmhpZFBEjWKhXAhP9XABFNGcS6sYnwxgva_EVB2xXbYFDV20Cy1KS7sj4qAfPhyD0wJoNP5_W3-CBfbmAXIi7U_0SX91LhWipOJT0yxdlaAok2b9m6_dAk9_v4BP1ZTxQ,,">Reply</a></span></li></ul>
+        <div class="rate-widget-1 rate-widget clear-block rate-average rate-widget-thumbs_up rate-1023842e58b35ee41cc5c6eb74c43939 rate-comment-3018546-1-1 rate-processed" id="rate-comment-3018546-1-1"><a class="btn comment__btn-vote far fa-heart rate-button rate-thumbs-up-btn-up" id="rate-button-3" rel="nofollow" href="https://www.windowscentral.com/ajax/article/comments/81298?rate=7lGXMpoqAz3pl8WZj7XxR48HkCkWNgNHqYRbrfEfDTs" aria-label="Love this comment"></a>
+</div>
+          </div>
+  </footer>
+</article><div class="ajax-comment-wrapper indented" id="comment-wrapper-3018548"><a id="comment-3018548"></a>
+<article class="comment comment comment-by-node-author comment-age-day">
+  <header class="comment__header">
+                      <span class="comment__author-avatar">
+              <img src="100x100_276524.jpg" alt="Richard Devine" class=" ">
+      </span>
+    
+          <span class="comment__author">
+                  Richard Devine
+          </span>
+  </header>
+
+  <div class="comment__content">
+          <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Aye there's a workaround you can employ for now that essentially involves installing xfce and using the built in rdp software on Windows 10 to run a full Linux desktop, but it's definitely coming along officially.</p></div></div></div>
+      </div>
+
+  <footer class="comment__footer">
+    <time class="comment__time" datetime="2020-10-27T05:43:34-04:00" title="2020-10-27T05:43:34-04:00">
+              Tue Oct 27, 2020 5:43am
+          </time>
+    <div class="comment__actions">
+              <ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://passport.mobilenations.com/?u=eNpVjk1uwyAQhe_CAYIxhsBkWakHaLO3-EuLgg0CXCJaVb17we2mi5HevNH33ig4w1cBMgPKzvrsTF0fOaBLASZcML3Xmgpg3Fo7Nb_b2Ipxe80qnEzccJ-trzi7FD6xILMUmE5EsEWMBML_p66bZcOnve2sb5JQYanhC9XM3qTWjs9SS7twKQ5-AVR8dUN2oqUheqQy1cf9eBFQiG_-0GQC9PT68rxe4911R8P057qP5LP6ZXx_ik2c9aa5nyWg5PKmgt_vAyGX7x_mjFTu">Reply</a></span></li></ul>
+        <div class="rate-widget-1 rate-widget clear-block rate-average rate-widget-thumbs_up rate-3f93819e1bded25573f8a6422803ddcf rate-comment-3018548-1-1 rate-processed" id="rate-comment-3018548-1-1"><a class="btn comment__btn-vote far fa-heart rate-button rate-thumbs-up-btn-up" id="rate-button-4" rel="nofollow" href="https://www.windowscentral.com/ajax/article/comments/81298?rate=EQv9JAz1q67ALXyfpUZT5vzANHLwHX_uQ4ggMgZK0ac" aria-label="Love this comment"></a>
+</div>
+          </div>
+  </footer>
+</article><div class="ajax-comment-wrapper indented" id="comment-wrapper-3018616"><a id="comment-3018616"></a>
+<article class="comment comment comment-age-day">
+  <header class="comment__header">
+                      <span class="comment__author-avatar">
+              <img src="100x100_9025323.jpg" alt="coocooman3" class=" ">
+      </span>
+    
+          <span class="comment__author">
+                  coocooman3
+          </span>
+  </header>
+
+  <div class="comment__content">
+          <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>There's a well rated free app on the Microsoft Store called GWSL that seems to automate everything. Haven't tried it though. And several others with mixed reviews claiming similar capabilities.</p>
+</div></div></div>
+      </div>
+
+  <footer class="comment__footer">
+    <time class="comment__time" datetime="2020-10-27T22:32:43-04:00" title="2020-10-27T22:32:43-04:00">
+              Tue Oct 27, 2020 10:32pm
+          </time>
+    <div class="comment__actions">
+              <ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://passport.mobilenations.com/?u=eNpVTktuwyAQvQsHCGBiDJNlpR6gzd7CZtyiYIOAiFZV715Iu-lipDdv5n0MTPCVgQ9AElqXcC3zPXlyyTAqIO-lxAyU1lpP1R021LziUZLxpzXstM3eVpow-k-q-KAVFYwryWV34PK_67zbsfOipcnNLmxbENFMaLUWXFycpZg2tQjFpFX97wwku4IdNkWNHTRLsxYXjkdFID68uQfmDMjT68vzfA03bMwC7I_Fj-iS-dW4VmpkcpSDHtpZA4mYduPdcesSfvn-ARl0VT0,">Reply</a></span></li></ul>
+        <div class="rate-widget-1 rate-widget clear-block rate-average rate-widget-thumbs_up rate-a1b21b00c4eb8ae30f9481ca8eb0c396 rate-comment-3018616-1-1 rate-processed" id="rate-comment-3018616-1-1"><a class="btn comment__btn-vote far fa-heart rate-button rate-thumbs-up-btn-up" id="rate-button-5" rel="nofollow" href="https://www.windowscentral.com/ajax/article/comments/81298?rate=N24zWK7IMvr1gU9xkZ8r8LB3BgfS5gx0aNWz_FWs_ys" aria-label="Love this comment"></a>
+</div>
+          </div>
+  </footer>
+</article></div></div></div></div><div class="ajax-comment-wrapper indented" id="comment-wrapper-3018545"><a id="comment-3018545"></a>
+<article class="comment comment comment-age-day">
+  <header class="comment__header">
+                      <span class="comment__author-avatar">
+              <img src="100x100_9025323.jpg" alt="coocooman3" class=" ">
+      </span>
+    
+          <span class="comment__author">
+                  coocooman3
+          </span>
+  </header>
+
+  <div class="comment__content">
+          <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>It's actively being worked on right now, and Microsoft showed off a preview last month at the XDC (X Developers Conference I think?) last month. Don't know if links are allowed, but you can find it here (with timestamp):<br>
+<a href="https://www.youtube.com/watch?v=b2mnbyRgXkY&amp;t=7980s" rel="nofollow">https://www.youtube.com/watch?v=b2mnbyRgXkY&amp;t=7980s</a><br>
+Can't remember from the video if there's a projected release date/when it comes to insider builds if it's not there already.</p>
+</div></div></div>
+      </div>
+
+  <footer class="comment__footer">
+    <time class="comment__time" datetime="2020-10-27T03:25:25-04:00" title="2020-10-27T03:25:25-04:00">
+              Tue Oct 27, 2020 3:25am
+          </time>
+    <div class="comment__actions">
+              <ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://passport.mobilenations.com/?u=eNpVjk1OBCEQhe_CAYa_pgdqliYeQGffQbpUMnRDgAka492F1o2LSl69qu9VWTjDVwEugGRcXH1GV5d7DuRSQGkg77WmApS21k7N72tsxeFesw1cJxc32mvrLc2Ywlwn1VxcGE0l41pNaiTw-X_qsq2HL_s1Ljlz0gl2tk7oibFXFChtZ6010pixNwEpvuKQnWhpiB5pXfVxP14EEuKbPzRnQB6enx6Xa7xhd16A_bn4kXy2v4zvTyk2q1kY0ccGSMK82eD320D45fsHkBVUVw,,">Reply</a></span></li></ul>
+        <div class="rate-widget-1 rate-widget clear-block rate-average rate-widget-thumbs_up rate-3e773bc27d925810fff0de56df62cfa8 rate-comment-3018545-1-1 rate-processed" id="rate-comment-3018545-1-1"><a class="btn comment__btn-vote far fa-heart rate-button rate-thumbs-up-btn-up" id="rate-button-6" rel="nofollow" href="https://www.windowscentral.com/ajax/article/comments/81298?rate=l8udPCiEwPV9XHIIW-ayhtnytKWVyTaLKDelsbdrfx4" aria-label="Love this comment"></a>
+</div>
+          </div>
+  </footer>
+</article></div><div class="ajax-comment-wrapper indented" id="comment-wrapper-3031795"><a id="comment-3031795"></a>
+<article class="comment comment comment-age-day">
+  <header class="comment__header">
+                      <span class="comment__author-avatar">
+              <img src="100x100_5324971.jpg" alt="blahism" class=" ">
+      </span>
+    
+          <span class="comment__author">
+                  blahism
+          </span>
+  </header>
+
+  <div class="comment__content">
+          <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>It's available now with WSLg in the latest insider builds, hope it hits GA soon. It's pretty slick!  (Just mentioning this for anyone else finding this article)</p>
+</div></div></div>
+      </div>
+
+  <footer class="comment__footer">
+    <time class="comment__time" datetime="2021-05-12T19:35:52-04:00" title="2021-05-12T19:35:52-04:00">
+              Wed May 12, 2021 7:35pm
+          </time>
+    <div class="comment__actions">
+              <ul class="links inline"><li class="comment_forbidden first last"><span><a href="https://passport.mobilenations.com/?u=eNpVTktOBCEQvQsHGKCBbqhZmnhcMHXfYWhQMnRDXDCDxnh3oXXjopJXr-p9NCzwVYBOgLLdfLamru85oGsBIQG91ZoKYNxauzR_bLEVY4-adbiYuOM-e19xtil8YklcJyUxI4wuSgwHOv93Xfft5FlP44xJ52ZFHePEEmuE5nLZHNdKCHeT448DKr7aAbuipQG6pTbVx-OsCCjEV39iSlwwPTw_Pa4v8W47cwPyx9qP5LP-1fheSpBZzJOa-lkBSjbvOvjjPiT0-v0D139U3w,,">Reply</a></span></li></ul>
+        <div class="rate-widget-1 rate-widget clear-block rate-average rate-widget-thumbs_up rate-bf06ec39bb2fd722f2c21e3f5944d65f rate-comment-3031795-1-1 rate-processed" id="rate-comment-3031795-1-1"><a class="btn comment__btn-vote far fa-heart rate-button rate-thumbs-up-btn-up" id="rate-button-7" rel="nofollow" href="https://www.windowscentral.com/ajax/article/comments/81298?rate=QyhBBPFa_Kyu-15wlBpCuBedrupgqkCSSuQVdcBCuEQ" aria-label="Love this comment"></a>
+</div>
+          </div>
+  </footer>
+</article></div></div>
+      </div>
+
+  </section>
+</div>
+<div class="row row--no-wrap">
+<div class="article-main col-3of3 col-2of3@tablet">
+<div class="row">
+
+</div>
+</div>
+</div>
+</article>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<div class="clear"></div>
+<div id="banneradspace" align="center">
+<div id="Leaderboard_Footer_BTF-wrap-6262af989957b" class="adunit-wrap adunit-purch">
+<div class="adunit-wrap-inner"><div class="adunit" id="purch_Y_L_0_1" data-clone-id="" adonis-marker=""></div><script type="text/javascript">/* Code removed by ScrapBook */</script></div>
+</div> </div> 
+</div> 
+</div> 
+</div> 
+<div class="region region-site-footer">
+<nav class="header-drawer header-drawer--secondary js-header-drawer" aria-hidden="true" tabindex="-1">
+<div class="header-drawer__inner">
+<div class="header-drawer__nav">
+<ul class="header-drawer__navigation-list header-drawer__navigation-list--nav">
+<li class="header-drawer__navigation-item header-drawer__navigation-item--nav header-drawer__navigation-item--nav-nav">
+<button class="header-drawer__navigation-button header-drawer__navigation-button--nav ir js-header-drawer-toggle js-header-drawer-toggle--nav">
+<i class="fas fa-bars"></i>
+</button>
+</li>
+</ul>
+</div>
+<div class="header-drawer__navigation--main"> 
+<ul class="header-drawer__navigation-list header-drawer__navigation-list--main">
+<li class="header-drawer__navigation-item header-drawer__navigation-item--main">
+<a href="https://www.windowscentral.com/windows-11" class="header-drawer__navigation-link header-drawer__navigation-link--main">
+Windows 11
+</a>
+</li>
+<li class="header-drawer__navigation-item header-drawer__navigation-item--main">
+<a href="https://www.windowscentral.com/windows-10" class="header-drawer__navigation-link header-drawer__navigation-link--main">
+Windows 10
+</a>
+</li>
+<li class="header-drawer__navigation-item header-drawer__navigation-item--main">
+<a href="https://www.windowscentral.com/laptops" class="header-drawer__navigation-link header-drawer__navigation-link--main">
+Laptops
+</a>
+</li>
+<li class="header-drawer__navigation-item header-drawer__navigation-item--main">
+<a href="https://www.windowscentral.com/surface" class="header-drawer__navigation-link header-drawer__navigation-link--main">
+Surface
+</a>
+</li>
+<li class="header-drawer__navigation-item header-drawer__navigation-item--main">
+<a href="https://www.windowscentral.com/reviews" class="header-drawer__navigation-link header-drawer__navigation-link--main">
+Reviews
+</a>
+</li>
+<li class="header-drawer__navigation-item header-drawer__navigation-item--main">
+<a href="https://www.windowscentral.com/gaming" class="header-drawer__navigation-link header-drawer__navigation-link--main">
+Gaming &amp; Xbox
+</a>
+</li>
+<li class="header-drawer__navigation-item header-drawer__navigation-item--main">
+<a href="https://www.windowscentral.com/how-to" class="header-drawer__navigation-link header-drawer__navigation-link--main">
+How To
+</a>
+</li>
+<li class="header-drawer__navigation-item header-drawer__navigation-item--main">
+<a href="https://forums.windowscentral.com/?utm_source=wp&amp;utm_medium=drawer&amp;utm_campaign=navigation" class="header-drawer__navigation-link header-drawer__navigation-link--main">
+Forums
+</a>
+</li>
+<li class="header-drawer__navigation-item header-drawer__navigation-item--main">
+<a href="https://www.windowscentral.com/deals" class="header-drawer__navigation-link header-drawer__navigation-link--main">
+Deals
+</a>
+</li>
+<li class="header-drawer__navigation-item header-drawer__navigation-item--main">
+<a href="https://www.windowscentral.com/hardware" class="header-drawer__navigation-link header-drawer__navigation-link--main">
+PC Components
+</a>
+</li>
+</ul>
+</div>
+<div class="header-drawer__navigation--secondary"> 
+<h3 class="header-drawer__navigation-title">Other Categories</h3>
+<ul class="header-drawer__navigation-list header-drawer__navigation-list--secondary">
+<li class="header-drawer__navigation-item header-drawer__navigation-item--secondary">
+<a href="https://www.windowscentral.com/about" class="header-drawer__navigation-link header-drawer__navigation-link--secondary">
+About Us
+</a>
+</li>
+<li class="header-drawer__navigation-item header-drawer__navigation-item--secondary">
+<a href="https://www.mobilenations.com/licensing-reprints/?utm_source=wp&amp;utm_medium=drawer&amp;utm_campaign=navigation" class="header-drawer__navigation-link header-drawer__navigation-link--secondary">
+Licensing and Reprints
+</a>
+</li>
+<li class="header-drawer__navigation-item header-drawer__navigation-item--secondary">
+<a href="https://www.mobilenations.com/advertise?utm_source=wp&amp;utm_medium=drawer&amp;utm_campaign=navigation" class="header-drawer__navigation-link header-drawer__navigation-link--secondary">
+Advertise
+</a>
+</li>
+<li class="header-drawer__navigation-item header-drawer__navigation-item--secondary">
+<a href="https://www.windowscentral.com/newsletter" class="header-drawer__navigation-link header-drawer__navigation-link--secondary">
+Newsletter
+</a>
+</li>
+<li class="header-drawer__navigation-item header-drawer__navigation-item--secondary">
+<a href="https://www.windowscentral.com/windows-central-merch" class="header-drawer__navigation-link header-drawer__navigation-link--secondary">
+Windows Central Merch
+</a>
+</li>
+<li class="header-drawer__navigation-item header-drawer__navigation-item--secondary">
+<a href="https://www.futureplc.com/accessibility-statement/?utm_source=wp&amp;utm_medium=drawer&amp;utm_campaign=navigation" class="header-drawer__navigation-link header-drawer__navigation-link--secondary">
+Accessibility Statement
+</a>
+</li>
+</ul>
+</div>
+<div class="header-drawer__sites">
+<ul class="header-drawer__navigation-list header-drawer__navigation-list--sites">
+<li class="header-drawer__navigation-item header-drawer__navigation-item--sites ac">
+<a href="https://admin.androidcentral.com/?utm_source=wp&amp;utm_medium=drawer&amp;utm_campaign=navigation" class="header-drawer__navigation-link header-drawer__navigation-link--sites">
+Android Central
+</a>
+</li>
+<li class="header-drawer__navigation-item header-drawer__navigation-item--sites im">
+<a href="https://admin.imore.com/?utm_source=wp&amp;utm_medium=drawer&amp;utm_campaign=navigation" class="header-drawer__navigation-link header-drawer__navigation-link--sites">
+iMore
+</a>
+</li>
+<li class="header-drawer__navigation-item header-drawer__navigation-item--sites th">
+<a href="https://thrifter.com/?utm_source=wp&amp;utm_medium=drawer&amp;utm_campaign=navigation" class="header-drawer__navigation-link header-drawer__navigation-link--sites">
+Thrifter
+</a>
+</li>
+<li class="header-drawer__navigation-item header-drawer__navigation-item--sites tb">
+<a href="https://www.technobuffalo.com/?utm_source=wp&amp;utm_medium=drawer&amp;utm_campaign=navigation" class="header-drawer__navigation-link header-drawer__navigation-link--sites">
+TechnoBuffalo
+</a>
+</li>
+<li class="header-drawer__navigation-item header-drawer__navigation-item--sites mm">
+<a href="http://youtube.com/c/themrmobile?utm_source=wp&amp;utm_medium=drawer&amp;utm_campaign=navigation&amp;sub_confirmation=1" class="header-drawer__navigation-link header-drawer__navigation-link--sites">
+MrMobile
+</a>
+</li>
+</ul>
+</div>
+<div class="header-drawer__passport">
+
+<span class="header-drawer__passport-links">
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fas fa-sign-in-alt fa-stack-1x fa-inverse"></i>
+</span>
+<a href="https://passport.mobilenations.com/?u=eNpVjsFuwyAQRP-Fu2MgxiGbY6R-QNu7RVwwN6tgsICKSlH-PeDk0ttodt_MKDjAPQHjQKI1GK3O02905JRASCDXnNcEfV9K2RX0JpSkrc9RuZ0OS38NpUOfsnKuK8nx7v3TMdoS2Pg_dVqMaP6-ts2DPFxcZq0kN6MY50HtjTgazqk0sxjNxg9AEmbbZCXK2kSNVDpj8NtEIC784KYZBXL--vyYvsPNVucC9O3avxWjejFYRwlaG_kg6_kIZLVxUQ79rSHs9HgCTlwnVtM,">Log in</a>
+or
+<a href="https://passport.mobilenations.com/?utm_source=wp&amp;utm_medium=signup&amp;utm_campaign=passport&amp;u=eNpVjsGuwiAQRf-FfS3FUnFcXJq8D3i-fYNAdVIKDWB4ifHfBXXj7s7MveeOhB3cI3QMSDAag1FpvAVLDhG4XDByTWmN0LY5501Gp32OyrgUpN0ov7RXnxt0MUlrmxwtaz6epqOV0A3f1HHRvO63pW3qxe48KSmYHvgw9XKr-V4zRoWe-KBf-R5IxGSqLIm8VlGQUiX0rg6i8i8YkwmvPgrkePr9Gf_8bIrhDPSzNf8rBvmOYfmL01LKelHOeyCrCYu06OYa6Q6PXCd1IVhcIg%2C%2C">Sign up</a>
+</span>
+
+</div>
+<ul class="header-drawer__navigation-list header-drawer__navigation-list--social">
+<li class="header-drawer__navigation-item header-drawer__navigation-item--social">
+<a href="http://www.twitter.com/windowscentral?utm_source=wc&amp;utm_medium=burger&amp;utm_campaign=navigation" class="header-drawer__navigation-link header-drawer__navigation-link--social">
+<i class="fab fa-twitter"></i><span>t</span>
+</a>
+</li>
+<li class="header-drawer__navigation-item header-drawer__navigation-item--social">
+<a href="https://www.facebook.com/WindowsCentral?utm_source=wc&amp;utm_medium=burger&amp;utm_campaign=navigation" class="header-drawer__navigation-link header-drawer__navigation-link--social">
+<i class="fab fa-facebook-f"></i><span>f</span>
+</a>
+</li>
+<li class="header-drawer__navigation-item header-drawer__navigation-item--social">
+<a href="https://www.youtube.com/wmexperts?utm_source=wc&amp;utm_medium=burger&amp;utm_campaign=navigation" class="header-drawer__navigation-link header-drawer__navigation-link--social">
+<i class="fab fa-youtube"></i><span>p</span>
+</a>
+</li>
+<li class="header-drawer__navigation-item header-drawer__navigation-item--social">
+<a href="http://instagram.com/WindowsCentral?utm_source=wc&amp;utm_medium=burger&amp;utm_campaign=navigation" class="header-drawer__navigation-link header-drawer__navigation-link--social">
+<i class="fab fa-instagram"></i><span>i</span>
+</a>
+</li>
+<li class="header-drawer__navigation-item header-drawer__navigation-item--social">
+<a href="https://www.windowscentral.com/rss.xml?utm_medium=burger&amp;utm_campaign=navigation&amp;utm_source=wc" class="header-drawer__navigation-link header-drawer__navigation-link--social">
+<i class="fas fa-rss"></i><span>r</span>
+</a>
+</li>
+</ul>
+<div class="header-drawer__color-scheme" style="display: block;">
+<h3 class="header-drawer__navigation-title">Brightness</h3>
+<button class="header-drawer__color-scheme-button header-drawer__color-scheme-button--light js-color-scheme-toggle-dark" style="display: block;">Light Mode</button>
+<button class="header-drawer__color-scheme-button header-drawer__color-scheme-button--dark js-color-scheme-toggle-light" style="display: none;">Dark Mode</button>
+</div>
+<div class="header-drawer__navigation-item header-drawer__navigation--disclosures"> 
+<ul class="header-drawer__navigation-list header-drawer__navigation-list--disclosures">
+<li class="footer__nav-item">
+<a href="https://www.futureplc.com/?utm_source=wp&amp;utm_medium=drawer&amp;utm_campaign=navigation">
+© Future US, Inc.
+</a>
+</li>
+<li class="footer__nav-item">
+<a href="https://www.futureplc.com/terms-conditions/?utm_source=wp&amp;utm_medium=drawer&amp;utm_campaign=navigation">
+Terms &amp; Conditions
+</a>
+</li>
+<li class="footer__nav-item">
+<a href="https://www.futureplc.com/privacy-policy?utm_source=wp&amp;utm_medium=drawer&amp;utm_campaign=navigation">
+Privacy Policy
+</a>
+</li>
+<li class="footer__nav-item">
+<a href="https://www.futureplc.com/cookies-policy?utm_source=wp&amp;utm_medium=drawer&amp;utm_campaign=navigation">
+Cookie Policy
+</a>
+</li>
+<li class="footer__nav-item">
+<a href="https://www.windowscentral.com/about">
+About Us
+</a>
+</li>
+<li class="footer__nav-item">
+<a href="http://yourfuturejob.futureplc.com/?utm_source=wp&amp;utm_medium=drawer&amp;utm_campaign=navigation">
+Careers
+</a>
+</li>
+<li class="footer__nav-item">
+<a href="https://www.futureplc.com/services/endorsement-licensing/?utm_source=wp&amp;utm_medium=drawer&amp;utm_campaign=navigation">
+Licensing
+</a>
+</li>
+<li class="footer__nav-item">
+ <a href="https://www.futureplc.com/terms-conditions/?utm_source=wp&amp;utm_medium=drawer&amp;utm_campaign=navigation">
+External Links Disclosure
+</a>
+</li>
+<li class="footer__nav-item">
+<a href="https://www.futureplc.com/accessibility-statement?utm_source=wp&amp;utm_medium=drawer&amp;utm_campaign=navigation">
+Accessibility Statement
+</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<footer class="footer">
+
+<section class="footer__copyright">
+<div class="container">
+<ul class="footer__nav">
+<li class="footer__nav-item">
+<a href="https://www.futureplc.com/?utm_source=wp&amp;utm_medium=footer&amp;utm_campaign=navigation">© Future US, Inc.</a>
+</li>
+<li class="footer__nav-item">
+<a href="https://www.futureplc.com/terms-conditions/?utm_source=wp&amp;utm_medium=footer&amp;utm_campaign=navigation">Terms &amp; Conditions</a>
+</li>
+<li class="footer__nav-item">
+<a href="https://www.futureplc.com/privacy-policy?utm_source=wp&amp;utm_medium=footer&amp;utm_campaign=navigation">Privacy Policy</a>
+</li>
+<li class="footer__nav-item">
+<a href="https://www.futureplc.com/cookies-policy?utm_source=wp&amp;utm_medium=footer&amp;utm_campaign=navigation">Cookie Policy</a>
+</li>
+<li class="footer__nav-item">
+<a href="https://www.windowscentral.com/about">About Us</a>
+</li>
+<li class="footer__nav-item">
+<a href="http://yourfuturejob.futureplc.com/?utm_source=wp&amp;utm_medium=footer&amp;utm_campaign=navigation">Careers</a>
+</li>
+<li class="footer__nav-item">
+<a href="https://www.futureplc.com/services/endorsement-licensing/?utm_source=wp&amp;utm_medium=footer&amp;utm_campaign=navigation">Licensing</a>
+</li>
+<li class="footer__nav-item">
+<a href="https://www.futureplc.com/terms-conditions/?utm_source=wp&amp;utm_medium=footer&amp;utm_campaign=navigation">External Links Disclosure</a>
+</li>
+<li class="footer__nav-item">
+<a href="https://www.futureplc.com/accessibility-statement?utm_source=wp&amp;utm_medium=footer&amp;utm_campaign=navigation">Accessibility Statement</a>
+</li>
+</ul>
+<a href="https://www.futureplc.com/services/advertising/" class="footer__partner-logo">
+</a>
+</div>
+</section>
+</footer>
+
+</div>
+<script>/* Code removed by ScrapBook */</script><iframe style="display: none;" name="__tcfapiLocator" src="index_1.html"></iframe>
+<div id="fb-root"></div>
+<script>/* Code removed by ScrapBook */</script><script type="module">/* Code removed by ScrapBook */</script>
+<script>/* Code removed by ScrapBook */</script>
+
+<div id="parsely-root" style="display: none;">
+<div id="parsely-cfg" data-parsely-site="windowscentral.com"></div>
+<script id="parsely-script" defer="" src="about:blank"></script></div>
+<script>/* Code removed by ScrapBook */</script>
+<img style="display: none;" src="urn:scrapbook-download-error:https://www.facebook.com/tr?id=1765793593738454&amp;ev=PageView&amp;noscript=1" width="1" height="1"><img style="display: none;" src="urn:scrapbook-download-error:https://www.facebook.com/tr?id=1765793593738454&amp;ev=ViewContent&amp;noscript=1" width="1" height="1">
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script>/* Code removed by ScrapBook */</script>
+<noscript>
+  <img src="https://sb.scorecardresearch.com/p?c1=2&c2=10055482&cv=2.0&cj=1&cs_ucfr" />
+</noscript>
+
+<script>/* Code removed by ScrapBook */</script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<noscript>
+<div style="display:none;">
+  <img src="//pixel.quantserve.com/pixel?a.1=p-ebutdjFEkjMk-&a.2=p-8bC03lZwjgqy2" border="0" height="1" width="1" alt="Quantcast"/>
+</div>
+</noscript>
+
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-N9VHS7"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>/* Code removed by ScrapBook */</script>
+<script>/* Code removed by ScrapBook */</script><script src="about:blank" type="module"></script><script src="about:blank" type="nomodule"></script><div id="GPT_6262af989e9ea-wrap" class="adunit-wrap adunit-gpt">
+<div class="adunit-wrap-inner">
+<div class="adunit" id="GPT_6262af989e9ea">
+<script>/* Code removed by ScrapBook */</script>
+</div></div>
+</div><script>/* Code removed by ScrapBook */</script>
+<script async="" src="about:blank"></script><script>/* Code removed by ScrapBook */</script> <script type="text/javascript" src="about:blank" id="LOTCC_12464"></script>
+<script type="text/javascript" language="javascript">/* Code removed by ScrapBook */</script> <script>/* Code removed by ScrapBook */</script><script type="text/javascript">/* Code removed by ScrapBook */</script><script src="about:blank" async=""></script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script>/* Code removed by ScrapBook */</script>
+<script src="about:blank" async=""></script><script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script type="text/javascript" src="about:blank" async="async"></script>
+
+
+<div style="all: initial;"></div>
+
+</body><div style="all: initial;"></div></html>
