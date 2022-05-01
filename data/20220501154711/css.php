@@ -1,0 +1,109 @@
+/* Code tidied up by ScrapBook */
+@import url("css_001.php");
+@media screen {
+}
+@media screen {
+  div.dokuwiki table.pagelist, div.dokuwiki table.ul { border: 0px none; padding: 0px; border-spacing: 0px; margin-bottom: 1em; border-collapse: collapse; }
+  div.dokuwiki table.pagelist tr { border-top: 1px solid rgb(204, 204, 204); border-bottom: 1px solid rgb(204, 204, 204); }
+  div.dokuwiki table.pagelist th, div.dokuwiki table.pagelist td { padding: 1px 1em 1px 0px; border: 0px none; }
+  div.dokuwiki th.page, div.dokuwiki th.date, div.dokuwiki th.user, div.dokuwiki th.desc, div.dokuwiki th.comments, div.dokuwiki th.linkbacks, div.dokuwiki th.tags, div.dokuwiki th.diff, div.dokuwiki td.date, div.dokuwiki td.user, div.dokuwiki td.desc, div.dokuwiki td.comments, div.dokuwiki td.linkbacks, div.dokuwiki td.tags, div.dokuwiki td.diff { font-size: 100%; }
+  .dokuwiki form { border: medium none; display: inline; }
+  .dokuwiki button { vertical-align: middle; }
+}
+@media screen and (max-width: 480px) {
+}
+.mediacenter { display: block; margin-left: auto; margin-right: auto; }
+@media only screen and (max-width: 600px) {
+}
+@media print {
+}
+html {  }
+input, textarea, select { font-weight: 400; }
+body, main { position: relative; }
+header nav .navbar-brand { padding-top: 10px; padding-bottom: 10px; }
+header nav #dw__tagline { font-size: 0.6em; line-height: 0.6em; white-space: nowrap; }
+header nav.navbar-fixed-top .dw__actions { margin: 0px 15px 0px 5px; }
+article .page-header:first-child { margin-top: 10px; }
+#dw__badges li { padding-right: 0px; }
+#dw__pagetools { position: absolute; right: 30px; padding-top: 50px; z-index: 999; text-align: center; }
+#dw__pagetools ul li a { padding: 2px 4px; }
+#dw__pagetools ul li:not(.active) a:hover { background: transparent none repeat scroll 0% 0%; }
+#dw__pagetools .tools { position: fixed; }
+#dw__footer { z-index: 995; }
+.back-to-top { position: fixed; bottom: 10px; right: 10px; opacity: 0.8; display: none; z-index: 1024; }
+.img-responsive { display: inline; }
+.dokuwiki img.mediacenter { display: block; margin: 0.2em auto; }
+.dokuwiki article .page { min-height: 400px; }
+@media (max-width: 768px) {
+}
+.menuitem svg { fill: currentcolor; display: inline-block; vertical-align: middle; width: 1.3em; height: 1.3em; }
+#dw__pagetools .menuitem svg { fill: initial !important; }
+#dw__pagetools .menuitem span { display: none; }
+body.cyborg #dw__pagetools .menuitem svg, body.darkly #dw__pagetools .menuitem svg, body.slate #dw__pagetools .menuitem svg, body.superhero #dw__pagetools .menuitem svg, body.solar #dw__pagetools .menuitem svg { fill: rgb(255, 255, 255) !important; }
+@media screen and (max-width: 767px) {
+  .dokuwiki .dw-container.mx-5 { margin-left: 0px !important; margin-right: 0px !important; }
+}
+.d-flex { display: flex !important; }
+@media (min-width: 576px) {
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 992px) {
+}
+@media (min-width: 1200px) {
+}
+@media print {
+}
+.align-items-center { align-items: center !important; }
+@media (min-width: 576px) {
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 992px) {
+}
+@media (min-width: 1200px) {
+}
+@media (min-width: 576px) {
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 992px) {
+}
+@media (min-width: 1200px) {
+}
+.h-100 { height: 100% !important; }
+.mr-1, .mx-1 { margin-right: 0.25rem !important; }
+.ml-1, .mx-1 { margin-left: 0.25rem !important; }
+.mr-2, .mx-2 { margin-right: 0.5rem !important; }
+.mr-4, .mx-4 { margin-right: 1.5rem !important; }
+.mb-4, .my-4 { margin-bottom: 1.5rem !important; }
+.mt-5, .my-5 { margin-top: 3rem !important; }
+.mr-5, .mx-5 { margin-right: 3rem !important; }
+.ml-5, .mx-5 { margin-left: 3rem !important; }
+.pt-2, .py-2 { padding-top: 0.5rem !important; }
+.pb-2, .py-2 { padding-bottom: 0.5rem !important; }
+.pr-3, .px-3 { padding-right: 1rem !important; }
+.pb-3, .py-3 { padding-bottom: 1rem !important; }
+.pl-3, .px-3 { padding-left: 1rem !important; }
+.pt-5, .py-5 { padding-top: 3rem !important; }
+.pb-5, .py-5 { padding-bottom: 3rem !important; }
+@media (min-width: 576px) {
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 992px) {
+}
+@media (min-width: 1200px) {
+}
+@media screen and (max-width: 767px) {
+}
+@media print {
+}
+@media (max-width: 480px) {
+}
+a.tag { text-decoration: none !important; }
+@media print {
+  html, body { display: block; }
+  #dokuwiki__content { width: 100%; }
+  a[href]::after { content: "" !important; }
+}

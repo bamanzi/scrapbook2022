@@ -1,0 +1,24 @@
+/* Code tidied up by ScrapBook */
+.rich-content p, .note p, .rich-content blockquote, .note blockquote { margin: 0px 0px 20px; line-height: 1.8; font-size: 14px; color: rgb(17, 17, 17); overflow-wrap: break-word; white-space: pre-wrap; }
+.rich-content p a, .note p a, .rich-content blockquote a, .note blockquote a { word-break: break-all; }
+.rich-content h4, .note h4, .rich-content h3, .note h3, .rich-content h2, .note h2 { background-color: transparent; margin: 0px 0px 20px; padding-top: 15px; height: auto; font-weight: 600; color: rgb(17, 17, 17); }
+.rich-content h2, .note h2 { font-size: 22px; line-height: 28px; }
+.rich-content .separator, .note .separator { position: relative; overflow: hidden; margin-top: -20px; }
+.rich-content .separator hr, .note .separator hr { padding: 25px 0px; margin: 0px; border: 0px none; }
+.rich-content .separator hr::before, .note .separator hr::before { position: absolute; content: ""; font-size: 0px; width: 100px; top: 50%; left: 50%; margin: -2px 0px 0px -50px; border-top: 1px solid rgb(223, 223, 223); border-bottom: 1px solid rgb(223, 223, 223); }
+.rich-content, .note { font-size: 14px; }
+.rich-content h1, .note h1, .rich-content h2, .note h2, .rich-content h3, .note h3, .rich-content h4, .note h4, .rich-content h5, .note h5, .rich-content h6, .note h6 { height: auto; }
+.rich-content p:empty + p:empty, .note p:empty + p:empty { overflow: hidden; }
+.rich-content .market-group-buying-caption-wrapper, .note .market-group-buying-caption-wrapper, .rich-content .image-caption-wrapper, .note .image-caption-wrapper, .rich-content .video-card .video-caption-wrapper, .note .video-card .video-caption-wrapper, .rich-content .subject-caption-wrapper, .note .subject-caption-wrapper { text-align: center; }
+.rich-content .market-group-buying-caption, .note .market-group-buying-caption, .rich-content .image-caption, .note .image-caption, .rich-content .video-card .video-caption, .note .video-card .video-caption, .rich-content .subject-caption, .note .subject-caption { font-size: 14px; display: inline-block; color: rgb(17, 17, 17); line-height: 1.62; text-align: center; }
+.rich-content .introduction, .note .introduction { margin: 0px 0px 30px; padding: 15px 20px; line-height: 1.8; color: rgb(153, 153, 153); background: rgb(247, 247, 247) none repeat scroll 0% 0%; }
+.rich-content .introduction p, .note .introduction p { margin: 0px; color: rgb(153, 153, 153); }
+.rich-content, .note { width: 100%; overflow: hidden; margin-top: 30px; }
+.rich-content .image-container, .note .image-container { margin-bottom: 20px; }
+.rich-content .image-wrapper, .note .image-wrapper { text-align: center; font-size: 0px; line-height: 0; }
+.rich-content .image-wrapper img, .note .image-wrapper img { max-width: 100%; height: auto; }
+.rich-content .image-caption, .note .image-caption { margin-top: 10px; }
+.rich-content img, .note img { max-width: 100%; height: auto; }
+.note-container h1 { padding: 0px 0px 20px; color: rgb(17, 17, 17); line-height: 1.4; }
+.note { font-size: 14px; }
+.note-header-container .pub-date { color: rgb(153, 153, 153); font-size: 13px; }

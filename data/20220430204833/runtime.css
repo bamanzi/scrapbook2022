@@ -1,0 +1,4 @@
+/* Code tidied up by ScrapBook */
+.image-container img { display: block; }
+.image-container.image-float-center { text-align: center; }
+.image-container .image-wrapper { display: inline-block; position: relative; }

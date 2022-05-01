@@ -1,0 +1,23 @@
+/* Code tidied up by ScrapBook */
+.NumberBoard { display: flex; }
+.NumberBoard--divider .NumberBoard-item + .NumberBoard-item .NumberBoard-itemInner { border-left: 1px solid rgb(235, 235, 235); }
+.NumberBoard-item { -moz-box-flex: 1; flex: 1 1 0%; }
+.NumberBoard-item.Button { border: 0px none; line-height: unset; font-size: unset; }
+.NumberBoard-item.Button:hover { background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; }
+.NumberBoard-item.Button:hover .NumberBoard-itemName, .NumberBoard-item.Button:hover .NumberBoard-itemValue, .NumberBoard-itema:hover .NumberBoard-itemName, .NumberBoard-itema:hover .NumberBoard-itemValue { color: rgb(23, 81, 153); }
+.NumberBoard-itemInner { text-align: center; line-height: 1.6; }
+.NumberBoard-itemName { font-size: 14px; color: rgb(133, 144, 166); }
+.NumberBoard-itemValue { display: inline-block; font-size: 18px; color: rgb(18, 18, 18); font-weight: 600; font-synthesis: style; }
+.FollowButton { min-width: 96px; }
+.FollowButton-icon { margin-right: 8px; fill: currentcolor; }
+@keyframes spinnerBladeFade {
+0% { opacity: 0.85; }
+50% { opacity: 0.25; }
+100% { opacity: 0.25; }
+}
+@keyframes spinnerBladeFade {
+0% { opacity: 0.85; }
+50% { opacity: 0.25; }
+100% { opacity: 0.25; }
+}
+.MemberButtonGroup .Button + .Button { margin-left: 16px; }

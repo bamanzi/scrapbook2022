@@ -1,0 +1,46 @@
+/* Code tidied up by ScrapBook */
+@media (min-width: 768px) {
+}
+@font-face {
+  font-family: "ZHVipFont";
+  src: url("ZHVipFont.e6f344c2.ttf");
+}
+.CircleLoadingBar { position: absolute; top: 50%; left: 50%; margin: -15px 0px 0px -15px; animation: 1s linear 0s normal none infinite running CircleLoadingBarRotator; }
+.CircleLoadingBar .path { stroke: rgb(0, 132, 255); stroke-dasharray: 187; stroke-dashoffset: 0; transform-origin: center center 0px; animation: 1s ease-in-out 0s normal none infinite running CircleLoadingBarDash; }
+@keyframes CircleLoadingBarRotator {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(270deg); }
+}
+@keyframes CircleLoadingBarRotator {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(270deg); }
+}
+@keyframes CircleLoadingBarDash {
+0% { stroke-dashoffset: 187; }
+50% { stroke-dashoffset: 46.75; transform: rotate(135deg); }
+100% { stroke-dashoffset: 187; transform: rotate(450deg); }
+}
+@keyframes CircleLoadingBarDash {
+0% { stroke-dashoffset: 187; }
+50% { stroke-dashoffset: 46.75; transform: rotate(135deg); }
+100% { stroke-dashoffset: 187; transform: rotate(450deg); }
+}
+@supports not ((-webkit-backdrop-filter:blur(16px)) or (backdrop-filter:blur(16px))) {
+  .VideoCardPlayButton-withFileSize--outer .VideoCardPlayButton-withFileSize { background-color: rgba(18, 18, 18, 0.8); }
+}
+@media (max-width: 320px) {
+}
+@media not all {
+}
+@keyframes fxRichTextFadeIn {
+0% { opacity: 0; }
+100% { opacity: 1; }
+}
+@keyframes fxRichTextFadeIn {
+0% { opacity: 0; }
+100% { opacity: 1; }
+}
+.RichText a.UserLink-link { color: rgb(23, 81, 153); }
+.RichText a.UserLink-link:hover { border-bottom: 1px solid rgb(23, 81, 153); }
+.RichText .lazy[data-lazy-status] { background-color: rgb(246, 246, 246); }
+.RichText .lazy[data-lazy-status="ok"] { background-color: transparent; animation: 0.5s ease-in 0s normal none 1 running fxRichTextFadeIn; }
