@@ -1,0 +1,93 @@
+/* Code tidied up by ScrapBook */
+@font-face {
+  font-family: "DINAlternate-Bold";
+  font-style: normal;
+  font-weight: 400;
+  src: url("DINAlternate-Boldc88.woff") format("woff"), url("DINAlternate-Bold4e1.ttf") format("truetype"), url("DINAlternate-Bold11a10de89748ef2d60f70613a23909a7.svg") format("svg");
+}
+.com-markdown-collpase-main { transition: all 0.3s ease-in-out 0s; }
+.com-markdown-collpase-toggle { display: none; margin-top: -135px; position: relative; z-index: 2; padding-top: 111px; text-align: center; box-sizing: border-box; }
+.com-markdown-collpase-toggle::before { content: ""; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; background-image: linear-gradient(180deg, rgba(238, 238, 238, 0) 0px, rgb(255, 255, 255) 65%); }
+.com-markdown-collpase-toggle .toggle-link { position: relative; display: inline-block; vertical-align: middle; font-size: 14px; line-height: 24px; color: rgb(0, 164, 255); text-decoration: none; }
+.com-markdown-collpase-toggle .toggle-link::after { content: ""; display: inline-block; vertical-align: 1px; margin-left: 4px; width: 10px; height: 6px; background-image: url("Packs-202101051447.svg"); background-position: 63.24% 63.97%; background-size: 1460% 2366.67%; background-repeat: no-repeat; }
+.com-markdown-collpase-toggle .toggle-link:hover { color: rgb(0, 164, 255); text-decoration: none; }
+@keyframes bouncedelay {
+0%, 100%, 80% { transform: scale(0.5); opacity: 1; }
+40% { transform: scale(1); opacity: 0.8; }
+}
+@keyframes bouncedelay {
+0%, 100%, 80% { transform: scale(0.5); opacity: 1; }
+40% { transform: scale(1); opacity: 0.8; }
+}
+@keyframes modal-point {
+0% { transform: scale(0.2); }
+70% { transform: scale(1.2); }
+100% {  }
+}
+@keyframes modal-point {
+0% { transform: scale(0.2); }
+70% { transform: scale(1.2); }
+100% {  }
+}
+@media screen and (max-width: 600px) {
+}
+@media (min-width: 769px) {
+}
+@media (min-width: 601px) and (max-width: 768px) {
+}
+@media (max-width: 600px) {
+}
+@media (min-width: 769px) {
+}
+@media (min-width: 601px) and (max-width: 768px) {
+}
+@media (max-width: 600px) {
+}
+@media (min-width: 601px) and (max-width: 768px) {
+}
+@media (max-width: 600px) {
+}
+@media (min-width: 769px) {
+}
+@media (min-width: 601px) and (max-width: 768px) {
+}
+@media (max-width: 600px) {
+}
+@media screen and (max-width: 1367px) {
+}
+@media screen and (max-height: 769px) {
+}
+@media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 1220px) {
+}
+@media not all {
+}
+@media (max-width: 600px) {
+}
+@media all and (max-width: 768px) {
+}
+@media screen and (max-width: 600px) {
+}
+@media (min-width: 769px) {
+}
+@media (min-width: 601px) and (max-width: 768px) {
+}
+@media (max-width: 600px) {
+}
+@media (max-width: 1200px) {
+}
+@media (max-width: 1024px) {
+}
+@media (max-width: 768px) {
+}
+@media (max-width: 600px) {
+}
+@media (max-width: 1200px) {
+}
+@media (max-width: 1024px) {
+}
+@media (max-width: 768px) {
+}
+@media (max-width: 600px) {
+}

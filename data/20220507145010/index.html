@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Python 编程 5 年后，我转向了 Go！ - 云+社区 - 腾讯云</title><meta name="keywords" content="Python,JSON,GitHub,Git"><meta name="description" content="我喜欢Python。在过去的五年里，它一直是我的首选语言。Python非常友好并且易于学习，同时还保持着超级的效率。"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover"><meta name="format-detection" content="telephone=no"><link rel="canonical" href="https://cloud.tencent.com/developer/article/1423324"><link rel="stylesheet" href="global-201911291451.css"><link rel="stylesheet" href="AskDialog-202204021635.css"><link rel="stylesheet" href="base-202204151747.css"><link rel="stylesheet" href="Column-202204081839.css"><link rel="stylesheet" href="Packs-202101051447.css"><link rel="stylesheet" href="markdown-201810241044.css"><link rel="stylesheet" href="draft-master-v1.4.41.d4s2ddo9sb.css"><script src="about:blank"></script><style media="screen">
+/* Code tidied up by ScrapBook */
+@supports (padding:max(0px)) {
+  .set-safe-area .com-main {  }
+  .set-safe-area .com-main-simple-sec, .set-safe-area .com-main.without-tab-ft, .set-safe-area .com-main.without-ft {  }
+  .set-safe-area .com-main-sec {  }
+  .set-safe-area .com-m-footer, .set-safe-area .sa-fixed-btns {  }
+  .set-safe-area .com-mobile-body {  }
+}
+@supports (padding:max(0px)) {
+  .set-safe-area .support-wrap, .set-safe-area div.body {  }
+  .set-safe-area .com-responsive-no-ft div.body {  }
+}
+</style><style id="menu">
+/* Code tidied up by ScrapBook */
+</style></head>
+<body class="bg-color"><div id="react-root"><div class=""><div class="J-body col-body pg-2-article"><div class="com-3-layout"><div class="layout-main"><section class="com-2-panel col-2-article J-articlePanel"><!--DOCUMENT_FRAGMENT--><div class="col-2-article-header"><h1 class="article-title J-articleTitle"><span>Python 编程 5 年后，我转向了 Go！</span></h1><div class="article-infos-wrap"><div class="article-infos"><span class="article-info"><time datetime="2019-05-09 16:56:35" title="2019-05-09 16:56:35"> 2019-05-09<span class="com-v-box">2019-05-09 16:56:35</span></time></span><span class="article-info">阅读 <!-- -->414</span>0</div><div class="article-infos-extra"></div></div></div><div class="com-markdown-collpase"><div class="com-markdown-collpase-main"><div class="rno-markdown J-articleContent"><figure><div class="image-block"><span class="lazy-image-holder" dataurl="https://ask.qcloudimg.com/http-save/yehe-1283928/wnt2w92uz6.jpeg"></span></div></figure><h1 id="%E4%BD%9C%E8%80%85-%7C-Elad-Leev--%E8%AF%91%E8%80%85-%7C-%E5%A7%9C%E6%9D%BE%E6%B5%A9-%E8%B4%A3%E7%BC%96-%7C-%E5%B1%A0%E6%95%8F-%E6%9C%AC%E6%96%87%E8%BD%AC%E8%87%AA-CSDN%EF%BC%88ID%EF%BC%9ACSDNNews%EF%BC%89" name="%E4%BD%9C%E8%80%85-%7C-Elad-Leev--%E8%AF%91%E8%80%85-%7C-%E5%A7%9C%E6%9D%BE%E6%B5%A9-%E8%B4%A3%E7%BC%96-%7C-%E5%B1%A0%E6%95%8F-%E6%9C%AC%E6%96%87%E8%BD%AC%E8%87%AA-CSDN%EF%BC%88ID%EF%BC%9ACSDNNews%EF%BC%89">作者 | Elad Leev  译者 | 姜松浩 责编 | 屠敏 本文转自 CSDN（ID：CSDNNews）</h1><p>
+</p><blockquote><p>作为如今火了半边天的动态语言 Python ，凭借着较强的灵活性、可移植、可扩展等特性广受开发者喜爱。但是和 Google 的第二款开源编程语言 Go 相比，Python 的性能完全处于较弱一方。 在此局面下，“弃 Python 而拥抱 Go”的言论不绝于耳，但是我们究竟该怎么做才能迁移成功？其中又有哪些值得关注的点？在本文中，作者不论语言好坏，只谈从 Python 到 Go 的经验分享，希望对大家有所裨益。</p></blockquote><p>
+</p><h1 id="" name=""> </h1><p>
+</p><p><strong>以下为译文：</strong></p><p>
+</p><p>我喜欢Python。在过去的五年里，它一直是我的首选语言。Python非常友好并且易于学习，同时还保持着超级的效率。</p><p>
+</p><p>从创建简单的脚本和Web开发，到数据可视化和机器学习，你几乎可以随时使用它。</p><p>
+</p><p>但随着Go的逐渐成熟、强大的用户基础，以及越来越多的公司在经过成功的基准测试后决定转向Go的事实，使我更加广泛地阅读了Go，同时思考如何将其添加到我的工具集中并将它的好处应用到我的工作当中。</p><p>
+</p><p></p><figure><div class="image-block"><span class="lazy-image-holder" dataurl="https://ask.qcloudimg.com/http-save/yehe-1283928/9wy7teeuln.jpeg"></span></div></figure><p>这篇文章不会讨论Python或Go哪种编程语言更好，线上有很多关于这个主题的帖子和比较，而且我认为这种问题在很大程度上取决于项目。</p><p>
+</p><p>在这篇文章中，我将告诉你我从Python到Go的旅程，并为你提供一些技巧，让你了解一些帮助我在这次旅程中取得成功的资源。</p><p>
+</p><p>01</p><p>
+</p><p><strong>我遇到的主要差异</strong></p><p>
+</p><p>当然，作为第一步，我浏览了令人叹为观止的官方“Tour Of Go”（https://tour.golang.org/welcome/），这确实让我有了良好的关于Go语法的基础知识。</p><p>
+</p><p>为了加强这些知识，我阅读了电子书Go for Python Programmers（https://golang-for-python-programmers.readthedocs.io/），这使我能够继续下一步，尝试和失败，我认为这是最具教育意义的。</p><p>
+</p><p>我使用了以前在Python中使用的常用函数，如JSON序列化或使用HTTP调用，并尝试在Go中编写它们。</p><p>
+</p><p>通过在Go中应用来自Python中的类似概念，同时仍然包含语言的静态特性，我遇到了Go和Python之间的一些关键性的差异。</p><p>
+</p><p><strong>1.项目布局</strong></p><p>
+</p><p>首先，Python典型的不需要特定的目录层次结构，而Go则另外需要。</p><p>
+</p><p>Go使用“标准”布局，这种布局稍微复杂一点，这使得增加了更多的工作，但好处是拥有结构良好的代码基础。这种代码基础鼓励模块化代码，并在项目规模扩大时仍能保持有序性。</p><p>
+</p><p>官方的“How to Write Go Code”（https://golang.org/doc/code.html）有一个部分可以解释如何构建你的工作区。</p><p>
+</p><p><strong>2.静态和强类型</strong></p><p>
+</p><p>Go是一种静态类型的语言，由于你习惯使用Python或Ruby等动态类型语言，因此最初会让你感到不舒服。</p><p>
+</p><p>毫无疑问，动态语言更容易出错，并且在输入验证方面需要花费更多精力来防止常见语法错误或解析错误。思考一个函数，他是计算两个整数之和的函数，但实际上你并不能保证使用此函数的用户不会将字符串传递给函数，因此这就会导致TypeError。</p><p>
+</p><p>这种情况不会发生在Go中，因为你需要声明每个变量的类型，也就是说你的函数可以获得哪种类型的变量，以及函数将返回哪种类型的变量。</p><p>
+</p><p>起初它有点烦人，感觉它让我的编码速度慢了很多，但是在很短的时间的阅读和编写Go的代码后，你发现已经习惯它了，它实际上可以节省时间，并使你的代码更加的鲁棒。</p><p>
+</p><p><strong>3.天生的并发性</strong></p><p>
+</p><p>Go具有天生的并发特性它支持使用goroutines和channel，这些可以使并发非常的方便。</p><p>
+</p><p>首先，channel的概念可能有点棘手，并且很容易将其视为某种数据结构或排队实现。但是，经过一些阅读后，它们变得更加直白，你可以真正享受它们带来的价值，并充分利用它们。</p><p>
+</p><p>如下是，一个简单的可视化的goroutines和channel：</p><p>
+</p><div class="developer-code-block"><pre class="prism-token token language-javascript"><code class="line-numbers language-javascript" style="margin-left: 0px;">package main
+func main() {
+    // create new channel of type int
+    ch := make(chan int)
+// start new anonymous goroutine
+    go func() {
+        // send 42 to channel
+        ch &lt;- 42
+    }()
+    // read from channel
+    &lt;-ch
+}</code></pre></div></div></div></div><!--/DOCUMENT_FRAGMENT--><div class="com-markdown-collpase"><div class="com-markdown-collpase-main"><div class="rno-markdown J-articleContent"><!--DOCUMENT_FRAGMENT--><p>
+</p><p></p><figure><div class="image-block"><span class="lazy-image-holder" dataurl="https://ask.qcloudimg.com/http-save/yehe-1283928/9u2b4nzzwq.gif"></span></div></figure><p>有关更多示例，请查看Hootsuite real life implementation（http://code.hootsuite.com/golang-routines-and-channels/），或者查看这个（https://www.ardanlabs.com/blog/2017/10/the-behavior-of-channels.html），一个来自ArdanLabs的优秀解释。 </p><p>
+</p><p><strong>4.使用JSON</strong></p><p>
+</p><p>好吧，不再有json.loads()给你使用。</p><p>
+</p><p>在Python中，反序列化JSON对象非常简单，只需使用json.loads就可以了！</p><p>
+</p><p>但是在Go中，作为一种静态类型语言，这种简单的操作可能会更复杂。</p><p>
+</p><p>在Go中，你将JSON解析为之前定义的结构。任何不适合结构的字段都将被忽略，这是一件好事。这可以将其视为双方之间的一种预定义协议。这种方式下，你不需要对JSON中收到的数据感到“吃惊”，并且JSON字段和类型需要由双方“同意”。</p><p>
+</p><div class="developer-code-block"><pre class="prism-token token language-javascript"><code class="line-numbers language-javascript" style="margin-left: 0px;">{
+  “first”: “Elad”,
+  “last”: “Leev”,
+  “location”:”IL”,
+  “id”: “93”
+}</code></pre></div><!--/DOCUMENT_FRAGMENT--><!--DOCUMENT_FRAGMENT--><p>
+</p><div class="developer-code-block"><pre class="prism-token token language-javascript"><code class="line-numbers language-javascript" style="margin-left: 0px;">type AccountData struct {
+ First    string `json:"first"`
+ Last     string `json:"last"`
+ Location string `json:"location"`
+ ID       string `json:"id"`
+}</code></pre></div><!--/DOCUMENT_FRAGMENT--><!--DOCUMENT_FRAGMENT--><p>
+</p><p>当然，你仍然可以在没有结构的情况下反序列化JSON，但是如果可能的话应该避免使用它，毕竟拥抱语言的静态性总归是更好的。</p><p>
+</p><p>为了更好地理解Go中的JSON编码，你可以查看这篇文章（https://gobyexample.com/json），或使用“Go By Example”（https://gobyexample.com/json），“Go By Example”是你将拥有的终极备忘资源。</p><p>
+</p><p>太懒了，不愿意把你的JSON转换成Go结构？没问题 - 这个工具会帮你做（https://mholt.github.io/json-to-go/）。</p><p>
+</p><p><strong>5.清洁的代码</strong></p><p>
+</p><p>Go编译器将始终尽力保持代码清洁。</p><p>
+</p><p>Go编译器将未使用的变量视为编译错误，而且，Go采用了独特的方法让机器处理大多数格式问题。</p><p>
+</p><p>Go将在保存或编译时运行gofmt程序，它将处理大多数格式问题。</p><p>
+</p><p>你不关心其中一个变量？再次 - 没问题！只需使用_（下划线）并将其分配给空标识符就可以了。</p><p>
+</p><p>包含Go格式信息的必读文档是“Effective Go”（https://golang.org/doc/effective_go.html）。</p><p>
+</p><p></p><figure><div class="image-block"><span class="lazy-image-holder" dataurl="https://ask.qcloudimg.com/http-save/yehe-1283928/3tj6f0wpwp.jpeg"></span></div></figure><p>我的旅程还在继续</p><p>
+</p><p>02</p><p>
+</p><p><strong>找到合适的库和框架</strong></p><p>
+</p><p>我真的习惯了我的Python框架和库，如Flask，Jinja2，Requests还有Kazoo，我真的很担心我找不到一个适合Go的。</p><p>
+</p><p>但是你可以猜到，Go这个伟大的社区拥有自己独特的库，甚至可以让你完全忘记以前的库。</p><p>
+</p><p>以下是我的一些偏好-</p><p>
+</p><ul class="ul-level-0"><li>Python Requests =&gt; net / http 内置的net / http 提供了非常棒的HTTP客户端和服务器实现，而且非常易于使用。</li><li>Flask + Jinja2=&gt; Gin Gin是一个HTTP Web框架，其中包含非常简单的API  - 路径中的参数，上传文件，分组路径（/ api / v1，/ api / v2），自定义日志格式，服务静态文件，HTML转化以及功能强大的自定义中间件。 可以看看这个benchmark（https://github.com/gin-gonic/gin/blob/master/BENCHMARKS.md）。</li><li>CLI Creation=&gt; Cobra Cobra是一个用于创建功能强大的CLI应用程序的库，同时也是用于生成应用程序和命令文件的程序。 最广泛使用的Go项目中许多都是使用Cobra构建的，包括Kubernetes、etcd还有OpenShift。</li></ul><p>我强烈推荐的其他一些库是：Viper，Gonfig还有Awsome-Go。</p><p>
+</p><p>03</p><p>
+</p><p><strong>其他资源</strong></p><p>
+</p><p>以下是一些其他的资源，这些资源在我的Go之旅中能够显著的帮助到我。</p><p>
+</p><ol class="ol-level-0"><li>Francesc Campoy（https://twitter.com/francesc）- 你肯定需要查看他的YouTube频道和GitHub资料（https://github.com/campoy）。 Francesc也有一些很多伟大的工作，例如Go Tooling in Action（https://github.com/campoy/go-tooling-workshop）和Web Applications Workshop（https://github.com/campoy/go-web-workshop）。</li><li>GopherCon Videos（https://www.youtube.com/channel/UCx9QVEApa5BKLw9r8cnOFEA/playlists，需访问外国网站）</li><li>Go Web Examples（https://gowebexamples.com/）</li><li>Golang Weekly（https://twitter.com/golangweekly）, Gopher Academy（https://twitter.com/GopherAcademy）, Golang News（https://twitter.com/golangnews）的 Twitter账户（需访问外国网站）。</li></ol><p>04</p><p>
+</p><p><strong>总结</strong></p><p>
+</p><p>作为一名使用五年Python的狂热分子，我担心过渡到Go会很痛苦。</p><p>
+</p><p>但我真的很兴奋，看到有一个真正强大的社区，能够贡献和维护优秀的资源。这样的社区可以帮助你顺利过渡到Go。</p><p>
+</p><p>Go是当今发展最快的编程语言之一，我希望将来Go能够成为Google编写云应用程序和基础架构的首选语言。</p><p>
+</p><p>对Go来说这是一个激动人心的时刻，我鼓励大家去看看，并且成为Gophers！</p><p>
+</p><p>本文转自 CSDN（ID：CSDNNews）</p><p>
+</p><p>原文：</p><p>
+</p><p>https://medium.com/appsflyer/my-journey-from-python-to-go-3859783c6b3c</p><!--/DOCUMENT_FRAGMENT--></div></div></div></section></div></div></div></div></div></body>
+</html>
