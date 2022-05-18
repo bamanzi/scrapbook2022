@@ -17,22 +17,22 @@ or, click this: <a href="javascript:function%20toArray%20(c){var%20a,%20k;a=new%
 |   |      | 2022.01 | . <34>                                |     |        | <30>                           | <30>                           |          |           |           |
 |---+------+---------+---------------------------------------+-----+--------+--------------------------------+--------------------------------+----------+-----------+-----------|
 |   |  122 |     7.7 | [[https://tardis.fandom.com/wiki/Loups-Garoux_(audio_story)][20. Loups-Garoux]]                      | 5th |   2001 | Turlough                       | Marc Platt                     |          |           |           |
-| * |  120 |     7.7 | [[https://tardis.fandom.com/wiki/The_Eye_of_the_Scorpion_(audio_story)][24. The Eye of the Scorpion]]           | 5th |   2001 | Peri, Erimem                   | Iain McLaughlin                |          |           |           |
+| X |  120 |     7.7 | [[https://tardis.fandom.com/wiki/The_Eye_of_the_Scorpion_(audio_story)][24. The Eye of the Scorpion]]           | 5th |   2001 | Peri, Erimem                   | Iain McLaughlin                |          |           |           |
 |   |    4 |     9.1 | [[https://tardis.fandom.com/wiki/Spare_Parts_(audio_story)][34. Spare Parts]]                       | 5th |   2002 | Nyssa, Cybermen                | Marc Platt                     | none     | Y         | #Cybermen |
 |   |  109 |     7.7 | [[https://tardis.fandom.com/wiki/The_Church_and_the_Crown_(audio_story)][38. The Church and the Crown]]          | 5th |   2002 | Peri, Erimem                   | Cavan Scott and Mark Wright    |          |           |           |
-| * |   62 |     8.2 | [[https://tardis.fandom.com/wiki/Creatures_of_Beauty_(audio_story)][44. Creatures of Beauty]]               | 5th |   2003 | Nyssa                          | Nicholas Briggs                | none     | -         |           |
+| X |   62 |     8.2 | [[https://tardis.fandom.com/wiki/Creatures_of_Beauty_(audio_story)][44. Creatures of Beauty]]               | 5th |   2003 | Nyssa                          | Nicholas Briggs                | none     | -         |           |
 |   |  103 |     7.8 | [[https://tardis.fandom.com/wiki/Omega_(audio_story)][47. Omega]]                             | 5th |   2003 | Omega                          | Nov Fountain                   |          |           |           |
 |   |  115 |     7.7 | [[https://tardis.fandom.com/wiki/The_Council_of_Nicaea_(audio_story)][71. The Council of Nicaea]]             | 5th |   2005 | Peri, Erimem                   | Caroline Symcox                |          |           |           |
 |   |   14 |     8.8 | [[https://tardis.fandom.com/wiki/The_Kingmaker_(audio_story)][81. The Kingmaker]]                     | 5th |   2006 | Peri, Erimem, Fourth Doctor    | Nev Fountain                   |          | -         |           |
 |   |  110 |     7.7 | [[https://tardis.fandom.com/wiki/Circular_Time_-_Summer_(audio_story)][91b. Circular Time - Summer]]           | 5th |   2007 | Nyssa                          | Mike Maddox / Paul Cornell     | none     |           |           |
 |   |   26 |     8.6 | [[https://tardis.fandom.com/wiki/Circular_Time_-_Autumn_(audio_story)][91c. Circular Time - Autumn]]           | 5th |   2007 | Nyssa                          | Paul Cornell                   | none     | Y         |           |
 |   |   35 |     8.5 | [[https://tardis.fandom.com/wiki/Circular_Time_-_Winter_(audio_story)][91d. Circular Time - Winter]]           | 5th |   2007 | Nyssa, Kamelion                | Paul Cornell                   | none     | Y         | #Master   |
-| * |   42 |     8.4 | [[https://tardis.fandom.com/wiki/Son_of_the_Dragon_(audio_story)][99. Son of the Dragon]]                 | 5th |   2007 | Peri, Erimem                   | Steve Lyons                    |          | Y         |           |
+| X |   42 |     8.4 | [[https://tardis.fandom.com/wiki/Son_of_the_Dragon_(audio_story)][99. Son of the Dragon]]                 | 5th |   2007 | Peri, Erimem                   | Steve Lyons                    |          | Y         |           |
 |   |  116 |     7.7 | [[https://tardis.fandom.com/wiki/The_Bride_of_Peladon_(audio_story)][104. The Bride of Peladon]]             | 5th |   2008 | Peri, Erimem, Peladonians, Ice Warriors | Barnaby Edwards                |          |           |           |
-| * |   95 |     7.9 | [[https://tardis.fandom.com/wiki/The_Haunting_of_Thomas_Brewster_(audio_story)][107. The Haunting of Thomas Brewster]]  | 5th |   2008 | Nyssa, Brewster                | Jonathan Morris                | Brewster |           |           |
+| X |   95 |     7.9 | [[https://tardis.fandom.com/wiki/The_Haunting_of_Thomas_Brewster_(audio_story)][107. The Haunting of Thomas Brewster]]  | 5th |   2008 | Nyssa, Brewster                | Jonathan Morris                | Brewster |           |           |
 |   |  137 |     7.5 | [[https://tardis.fandom.com/wiki/Castle_of_Fear_(audio_story)][127. Castle of Fear]]                   | 5th |   2009 | Nyssa, Rutans                  | Castle of Fear                 |          |           |           |
-| * |   46 |     8.4 | [[https://tardis.fandom.com/wiki/The_Eternal_Summer_(audio_story)][128. The Eternal Summer]]               | 5th |   2009 | Nyssa, Maxwell Edison          | Matthew Sweet                  |          | Y         |           |
-| * |   66 |     8.1 | [[https://tardis.fandom.com/wiki/Cobwebs_(audio_story)][136. Cobwebs]]                          | 5th |   2010 | Nyssa, Tegan, Turlough         | Jonathan Morris                |          | Y         |           |
+| X |   46 |     8.4 | [[https://tardis.fandom.com/wiki/The_Eternal_Summer_(audio_story)][128. The Eternal Summer]]               | 5th |   2009 | Nyssa, Maxwell Edison          | Matthew Sweet                  |          | Y         |           |
+| X |   66 |     8.1 | [[https://tardis.fandom.com/wiki/Cobwebs_(audio_story)][136. Cobwebs]]                          | 5th |   2010 | Nyssa, Tegan, Turlough         | Jonathan Morris                |          | Y         |           |
 |   |  142 |     7.5 | [[https://tardis.fandom.com/wiki/Doing_Time_(audio_story)][142c. Doing Time]]                      | 5th |   2010 | Nyssa                          | William Gallagher              |          |           |           |
 |   |   53 |     8.3 | [[https://tardis.fandom.com/wiki/Special_Features_(audio_story)][142d. Special Features]]                | 5th |   2010 | Nyssa                          | John Dorney                    |          | Y         |           |
 |   |   58 |     8.2 | [[https://tardis.fandom.com/wiki/The_Emerald_Tiger_(audio_story)][159. The Emerald Tiger]]                | 5th |   2012 | Nyssa, Tegan, Turlough         | Barnaby Edwards                |          | Y         |           |
@@ -40,17 +40,17 @@ or, click this: <a href="javascript:function%20toArray%20(c){var%20a,%20k;a=new%
 |   |   80 |     7.9 | [[https://tardis.fandom.com/wiki/The_Burning_Prince_(audio_story)][165. The Burning Prince]]               | 5th |   2012 | Kylo Sorsha                    | John Dorney                    |          |           |           |
 |   |  114 |     7.7 | [[https://tardis.fandom.com/wiki/The_Lady_of_Mercia_(audio_story)][173. The Lady of Mercia]]               | 5th |   2013 | Nyssa, Tegan, Turlough         | Paul Magrs                     |          |           |           |
 |   |   55 |     8.2 | [[https://tardis.fandom.com/wiki/Prisoners_of_Fate_(audio_story)][174. Prisoners of Fate]]                | 5th |   2013 | Nyssa, Tegan, Turlough, Eldrad | Jonathan Morris                |          | Y         |           |
-| * |   51 |     8.3 | [[https://tardis.fandom.com/wiki/1963:_Fanfare_for_the_Common_Me_(audio_story)][178. 1963: Fanfare for the Common Men]] | 5th |   2013 | Nyssa                          | Eddie Robson                   |          | Y         |           |
+| X |   51 |     8.3 | [[https://tardis.fandom.com/wiki/1963:_Fanfare_for_the_Common_Me_(audio_story)][178. 1963: Fanfare for the Common Men]] | 5th |   2013 | Nyssa                          | Eddie Robson                   |          | Y         |           |
 |   |  123 |     7.7 | [[https://tardis.fandom.com/wiki/Equilibrium_(audio_story)][196. Equilibrium]]                      | 5th |   2015 | Nyssa, Tegan, Turlough         | Matt Fitton                    |          |           |           |
 |   |   68 |     8.1 | [[https://tardis.fandom.com/wiki/The_Entropy_Plague_(audio_story)][197. The Entropy Plague]]               | 5th |   2015 | Nyssa, Tegan, Turlough         | Jonathan Morris                |          | -         |           |
-| * |   54 |     8.3 | [[https://tardis.fandom.com/wiki/The_Secret_History_(audio_story)][200. The Secret History]]               | 5th |   2015 | Steven, Vicki, the Monk        | Eddie Robson                   |          | Y         |           |
+| X |   54 |     8.3 | [[https://tardis.fandom.com/wiki/The_Secret_History_(audio_story)][200. The Secret History]]               | 5th |   2015 | Steven, Vicki, the Monk        | Eddie Robson                   |          | Y         |           |
 |   |   81 |     7.9 | [[https://tardis.fandom.com/wiki/The_Waters_of_Amsterdam_(audio_story)][208. The Waters of Amsterdam]]          | 5th |   2016 | Tegan, Nyssa                   | Jonathan Morris	            |          |           |           |
-| * |   12 |     8.8 | [[https://tardis.fandom.com/wiki/Aquitaine_(audio_story)][209. Aquitaine]]                        | 5th |   2016 | Tegen, Nyssa                   | Simon Barnard and Paul Morris  |          | Y         |           |
+| X |   12 |     8.8 | [[https://tardis.fandom.com/wiki/Aquitaine_(audio_story)][209. Aquitaine]]                        | 5th |   2016 | Tegen, Nyssa                   | Simon Barnard and Paul Morris  |          | Y         |           |
 |   |   60 |     8.2 | [[https://tardis.fandom.com/wiki/The_Peterloo_Massacre_(audio_story)][210. The Peterloo Massacre]]            | 5th |   2016 | Tegan, Nyssa                   | Paul Magrs                     |          | Y         |           |
-| * |  140 |     7.5 | [[https://tardis.fandom.com/wiki/Vampire_of_the_Mind_(audio_story)][212. Vampire of the Mind]]              | 5th |   2016 | The Master                     | Justin Richards                |          |           |           |
+| X |  140 |     7.5 | [[https://tardis.fandom.com/wiki/Vampire_of_the_Mind_(audio_story)][212. Vampire of the Mind]]              | 5th |   2016 | The Master                     | Justin Richards                |          |           |           |
 |   |   74 |     8.0 | [[https://tardis.fandom.com/wiki/Repeat_Offender_(audio_story)][217c. Repeat Offender]]                 | 5th |   2016 | Turlough                       | Eddie Robson                   |          | Y         |           |
 |   |   33 |     8.5 | [[https://tardis.fandom.com/wiki/Dalek_Soul_(audio_story)][224b. Dalek Soul]]                      | 5th |   2017 | Nyssa, Daleks                  | Guy Adams                      |          | -         | #Daleks   |
-| * |   16 |     8.9 | [[https://tardis.fandom.com/wiki/Time_in_Office_(audio_story)][230. Time in Office]]                   | 5th |   2017 | Tegan, Leela, Time Lords       | Eddie Robson                   |          | y         |           |
+| X |   16 |     8.9 | [[https://tardis.fandom.com/wiki/Time_in_Office_(audio_story)][230. Time in Office]]                   | 5th |   2017 | Tegan, Leela, Time Lords       | Eddie Robson                   |          | y         |           |
 |   |  141 |     7.5 | [[https://tardis.fandom.com/wiki/Kingdom_of_Lies_(audio_story)][234. Kingdom of Lies]]                  | 5th |   2018 | Adric, Tegan, Nyssa            | Robert Khan, Tom Salinsky      |          |           |           |
 |   |   52 |     8.3 | [[https://tardis.fandom.com/wiki/Ghost_Walk_(audio_story)][235. Ghost Walk]]                       | 5th |   2018 | Adric, Nyssa, Tegan            | James Goss                     |          | Y         |           |
 |   |   37 |     8.5 | [[https://tardis.fandom.com/wiki/Serpent_in_the_Silver_Mask_(audio_story)][236. Serpent in the Silver Mask]]       | 5th |   2018 | Adric, Nyssa, Tegan            | David Llewellyn                |          | Y         |           |
@@ -62,20 +62,20 @@ or, click this: <a href="javascript:function%20toArray%20(c){var%20a,%20k;a=new%
 |---+------+---------+-----------------------------------------------+----------+------+--------------------------------+--------------------------------+-----------------+------+-----------+---+---+---|
 |   |   24 |     8.6 | [[https://tardis.fandom.com/wiki/The_Marian_Conspiracy_(audio_story)][6. The Marian Conspiracy]]                      | 6th      | 2000 | Evelyn                         | Jacqueline Rayner              | Evelyn          | Y    |           |   |   |   |
 |   |   88 |     7.9 | [[https://tardis.fandom.com/wiki/The_Spectre_of_Lanyon_Moor_(audio_story)][9. The Spectre of Lanyon Moor]]                 | 6th      | 2000 | Evelyn, the Brigadier          | Nicholas Pegg                  |                 |      |           |   |   |   |
-| * |    3 |     9.2 | [[https://tardis.fandom.com/wiki/The_Holy_Terror_(audio_story)][14. The Holy Terror]]                           | 6th      | 2000 | Frobisher                      | Robert Shearman                | none            | Y    |           |   |   |   |
-| * |  105 |     7.8 | [[https://tardis.fandom.com/wiki/Project_:_Twilight_(audio_story)][23. Project : Twilight]]                        | 6th      | 2001 | Evelyn, Nimrod, the Forge      | Cavan Scott and Mark Wright    | Evelyn          |      |           |   |   |   |
+| X |    3 |     9.2 | [[https://tardis.fandom.com/wiki/The_Holy_Terror_(audio_story)][14. The Holy Terror]]                           | 6th      | 2000 | Frobisher                      | Robert Shearman                | none            | Y    |           |   |   |   |
+| X |  105 |     7.8 | [[https://tardis.fandom.com/wiki/Project:_Twilight_(audio_story)][23. Project: Twilight]]                         | 6th      | 2001 | Evelyn, Nimrod, the Forge      | Cavan Scott and Mark Wright    | Evelyn          |      |           |   |   |   |
 |   |    9 |     8.9 | [[https://tardis.fandom.com/wiki/The_One_Doctor_(audio_story)][27. The One Doctor]]                            | 6th      | 2001 | Mel                            | Gareth Roberts / Clayton Hickman | none            | -    |           |   |   |   |
 |   |  129 |     7.6 | [[https://tardis.fandom.com/wiki/The_Maltese_Penguin_(audio_story)][33½ - The Maltese Penguin]]                     | 6th      | 2002 | Frobisher                      | Robert Shearman                |                 |      |           |   |   |   |
-| * |    6 |     9.1 | [[https://tardis.fandom.com/wiki/Jubilee_(audio_story)][40. Jubilee]]                                   | 6th      | 2003 | Evelyn, Daleks                 | Robert Shearman                | Evelyn          | y    | #Daleks   |   |   |   |
+| X |    6 |     9.1 | [[https://tardis.fandom.com/wiki/Jubilee_(audio_story)][40. Jubilee]]                                   | 6th      | 2003 | Evelyn, Daleks                 | Robert Shearman                | Evelyn          | y    | #Daleks   |   |   |   |
 |   |   15 |     8.8 | [[https://tardis.fandom.com/wiki/Doctor_Who_and_the_Pirates_(audio_story)][43. Doctor Who and the Pirates]]                | 6th      | 2003 | Evelyn                         | Jacqueline Rayner              | Evelyn          | Y    |           |   |   |   |
-| * |  111 |     7.7 | [[https://tardis.fandom.com/wiki/Project_Lazarus_(audio_story)][45. Project Lazarus]]                           | 6th, 7th | 2003 | Evelyn, Nimrod, the Forge      | Cavan Scott / Mark Wright      | Evelyn          |      |           |   |   |   |
-| * |    5 |     9.1 | [[https://tardis.fandom.com/wiki/Davros_(audio_story)][48. Davros]]                                    | 6th      | 2003 | Davros                         | Lance Parkin                   | none            | Y    |           |   |   |   |
+| X |  111 |     7.7 | [[https://tardis.fandom.com/wiki/Project_Lazarus_(audio_story)][45. Project Lazarus]]                           | 6th, 7th | 2003 | Evelyn, Nimrod, the Forge      | Cavan Scott / Mark Wright      | Evelyn          |      |           |   |   |   |
+| X |    5 |     9.1 | [[https://tardis.fandom.com/wiki/Davros_(audio_story)][48. Davros]]                                    | 6th      | 2003 | Davros                         | Lance Parkin                   | none            | Y    |           |   |   |   |
 |   |  143 |     7.5 | [[https://tardis.fandom.com/wiki/The_Wormery_(audio_story)][51. The Wormery]]                               | 6th      | 2003 | Iris Wildthyme                 | Paul Magrs, Stephen Cole       | none            |      |           |   |   |   |
 |   |   28 |     8.6 | [[https://tardis.fandom.com/wiki/Arrangements_for_War_(audio_story)][57. Arrangements for War]]                      | 6th      | 2004 | Evelyn, Rossiter               | Paul Sutton                    | Evelyn          | -    |           |   |   |   |
-| * |   91 |     7.8 | [[https://tardis.fandom.com/wiki/The_Juggernauts_(audio_story)][65. The Juggernauts]]                           | 6th      | 2005 | Mel, Daleks, Davros, Mechanoids | Scott Alan Woodard             |                 |      |           |   |   |   |
+| X |   91 |     7.8 | [[https://tardis.fandom.com/wiki/The_Juggernauts_(audio_story)][65. The Juggernauts]]                           | 6th      | 2005 | Mel, Daleks, Davros, Mechanoids | Scott Alan Woodard             |                 |      |           |   |   |   |
 |   |   84 |     7.9 | [[https://tardis.fandom.com/wiki/Thicker_than_Water_(audio_story)][73. Thicker than Water]]                        | 6th      | 2005 | Mel, Evelyn, Rossiter          | Paul Sutton                    | Evelyn          |      |           |   |   |   |
-| * |  125 |     7.6 | [[https://tardis.fandom.com/wiki/The_Nowhere_Place_(audio_story)][84. The Nowhere Place]]                         | 6th      | 2006 | Evelyn                         | Nicholas Briggs                |                 |      |           |   |   |   |
-| * |   98 |     7.8 | [[https://tardis.fandom.com/wiki/The_Reaping_(audio_story)][86. The Reaping]]                               | 6th      | 2006 | Peri, Cybermen                 | Joseph Lidster                 |                 |      |           |   |   |   |
+| X |  125 |     7.6 | [[https://tardis.fandom.com/wiki/The_Nowhere_Place_(audio_story)][84. The Nowhere Place]]                         | 6th      | 2006 | Evelyn                         | Nicholas Briggs                |                 |      |           |   |   |   |
+| X |   98 |     7.8 | [[https://tardis.fandom.com/wiki/The_Reaping_(audio_story)][86. The Reaping]]                               | 6th      | 2006 | Peri, Cybermen                 | Joseph Lidster                 |                 |      |           |   |   |   |
 |   |  126 |     7.6 | [[https://tardis.fandom.com/wiki/Year_of_the_Pig_(audio_story)][90. Year of the Pig]]                           | 6th      | 2006 | Peri                           | Matthew Sweet                  |                 |      |           |   |   |   |
 |   |   13 |     8.8 | [[https://tardis.fandom.com/wiki/Urgent_Calls_(audio_story)][94b. Urgent Calls]]                             | 6th      | 2007 | -                              | Eddie Robson                   | none            | Y    | #Viyrans  |   |   |   |
 |   |   70 |     8.1 | [[https://tardis.fandom.com/wiki/My_Own_Private_Wolfgang_(audio_story)][100b. My Own Private Wolfgang]]                 | 6th      | 2007 | Evelyn                         | Robert Shearman                |                 | -    |           |   |   |   |
@@ -83,18 +83,18 @@ or, click this: <a href="javascript:function%20toArray%20(c){var%20a,%20k;a=new%
 |   |   45 |     8.4 | [[https://tardis.fandom.com/wiki/The_Condemned_(audio_story)][105. The Condemned]]                            | 6th      | 2008 | Charley, DI Menzies            | Eddie Robson                   | Charley         | -    |           |   |   |   |
 |   |  139 |     7.5 | [[https://tardis.fandom.com/wiki/Brotherhood_of_the_Daleks_(audio_story)][114. Brotherhood of the Daleks]]                | 6th      | 2008 | Charley, Thals, Daleks         | Alan Barnes                    | Charley         |      |           |   |   |   |
 |   |   89 |     7.9 | [[https://tardis.fandom.com/wiki/The_Raincloud_Man_(audio_story)][116. The Raincloud Man]]                        | 6th      | 2008 | Charley, DI Menzies            | Eddie Robson                   | Charley         |      |           |   |   |   |
-| * |   57 |     8.2 | [[https://tardis.fandom.com/wiki/Patient_Zero_(audio_story)][124. Patient Zero]]                             | 6th      | 2009 | Charley, Viyrans               | Nicholas Briggs                | Charley         | -    | #Viyrans  |   |   |   |
+| X |   57 |     8.2 | [[https://tardis.fandom.com/wiki/Patient_Zero_(audio_story)][124. Patient Zero]]                             | 6th      | 2009 | Charley, Viyrans               | Nicholas Briggs                | Charley         | -    | #Viyrans  |   |   |   |
 |   |   69 |     8.1 | [[https://tardis.fandom.com/wiki/Blue_Forgotten_Planet_(audio_story)][126. Blue Forgotten Planet]]                    | 6th      | 2009 | Mila, Charley, Viyrans         | Nicholas Briggs                | Charley         | -    | #Viyrans  |   |   |   |
 |   |  135 |     7.6 | [[https://tardis.fandom.com/wiki/The_Wreck_of_the_Titan_(audio_story)][134. The Wreck of the Titan]]                   | 6th      | 2010 | "Jamie"                        | Barnaby Edwards                |                 |      |           |   |   |   |
 |   |   34 |     8.5 | [[https://tardis.fandom.com/wiki/Legend_of_the_Cybermen_(audio_story)][135. Legend of the Cybermen]]                   | 6th      | 2010 | "Jamie", Zoe, Cybermen         | Mike Maddox                    |                 | Y    | #Cybermen |   |   |   |
 |   |  138 |     7.5 | [[https://tardis.fandom.com/wiki/The_Feast_of_Axos_(audio_story)][144. The Feast of Axos]]                        | 6th      | 2011 | Evelyn, Brewster, Axons        | Mike Maddox                    | Evelyn/Brewster |      |           |   |   |   |
 |   |   47 |     8.3 | [[https://tardis.fandom.com/wiki/Question_Marks_(audio_story)][150d. Question Marks]]                          | 6th      | 2011 | Peri                           | Philip Lawrence                |                 | -    |           |   |   |   |
-| * |   82 |     7.9 | [[https://tardis.fandom.com/wiki/The_Curse_of_Davros_(audio_story)][156. The Curse of Davros]]                      | 6th      | 2012 | Flip, Davros, Daleks           | Jonathan Morris                | Flip            | -    | #Daleks   |   |   |   |
+| X |   82 |     7.9 | [[https://tardis.fandom.com/wiki/The_Curse_of_Davros_(audio_story)][156. The Curse of Davros]]                      | 6th      | 2012 | Flip, Davros, Daleks           | Jonathan Morris                | Flip            | -    | #Daleks   |   |   |   |
 |   |  132 |     7.6 | [[https://tardis.fandom.com/wiki/The_Fourth_Wall_(audio_story)][157. The Fourth Wall]]                          | 6th      | 2012 | Flip                           | John Dorney                    | Flip            |      |           |   |   |   |
 |   |   83 |     7.9 | [[https://tardis.fandom.com/wiki/The_Wrong_Doctors_(audio_story)][169. The Wrong Doctors]]                        | 6th      | 2013 | Mel                            | Matt Fitton                    | none            |      |           |   |   |   |
 |   |   22 |     8.6 | [[https://tardis.fandom.com/wiki/The_Curious_Incident_of_the_Docotor_in_the_Night-Time_(audio_story)][188d. The Curious Incident of the Docotor... ]] | 6th      | 2014 | Peri                           | Nev Fountain                   |                 | -    |           |   |   |   |
-| * |   29 |     8.6 | [[https://tardis.fandom.com/wiki/The_Widow's_Assassin_(audio_story)][192. The Widow's Assassin]]                     | 6th      | 2014 | Peri                           | Matt Fitton                    |                 | -    |           |   |   |   |
-| * |   25 |     8.6 | [[https://tardis.fandom.com/wiki/Masters_of_Earth_(audio_story)][193. Masters of Earth]]                         | 6th      | 2014 | Peri, Daleks                   | Mark Wright and Cavan Scott    |                 | -    | #Daleks   |   |   |   |
+| X |   29 |     8.6 | [[https://tardis.fandom.com/wiki/The_Widow's_Assassin_(audio_story)][192. The Widow's Assassin]]                     | 6th      | 2014 | Peri                           | Matt Fitton                    |                 | -    |           |   |   |   |
+| X |   25 |     8.6 | [[https://tardis.fandom.com/wiki/Masters_of_Earth_(audio_story)][193. Masters of Earth]]                         | 6th      | 2014 | Peri, Daleks                   | Mark Wright and Cavan Scott    |                 | -    | #Daleks   |   |   |   |
 |   |   96 |     7.8 | [[https://tardis.fandom.com/wiki/The_Rani_Elite_(audio_story)][194. The Rani Elite]]                           | 6th      | 2014 | Peri, Second Rani              | Justin Richards                |                 |      |           |   |   |   |
 |   |  100 |     7.8 | [[https://tardis.fandom.com/wiki/Criss-Cross_(audio_story)][204. Criss-Cross]]                              | 6th      | 2015 | Constance                      | Matt Fitton                    |                 |      |           |   |   |   |
 |   |   86 |     7.9 | [[https://tardis.fandom.com/wiki/Quicksilver_(audio_story)][220. Quicksilver]]                              | 6th      | 2016 | Constance, Flip                | Matt Fitton                    | Flip            |      |           |   |   |   |
@@ -110,56 +110,55 @@ or, click this: <a href="javascript:function%20toArray%20(c){var%20a,%20k;a=new%
 |---+------+---------+-------------------------------------+--------+------+--------------------------------+--------------------------------+--------------------+------+------------+---+---+---|
 |   |   79 |     7.9 | [[https://tardis.fandom.com/wiki/The_Fearmonger_(audio_story)][5. The Fearmonger]]                   | 7th    | 2000 | Ace                            | Jonathan Blum                  |                    |      |            |   |   |   |
 |   |   49 |     8.3 | [[https://tardis.fandom.com/wiki/The_Fires_of_Vulcan_(audio_story)][12. The Fires of Vulcan]]             | 7th    | 2000 | Mel                            | Steve Lyons                    |                    | -    |            |   |   |   |
-| * |   76 |     8.0 | [[https://tardis.fandom.com/wiki/Colditz_(audio_story)][25. Colditz]]                         | 7th    | 2001 | Peri, Klein                    | Steve Lyons                    | Klein              |      |            |   |   |   |
-| * |    7 |     9.0 | [[https://tardis.fandom.com/wiki/Master_(audio_story)][49. Master]]                          | 7th    | 2003 | The Master, Death              | Joseph Lidster                 | none               | Y    | #Master    |   |   |   |
-| * |   50 |     8.3 | [[https://tardis.fandom.com/wiki/The_Harvest_(audio_story)][58. The Harvest]]                     | 7th    | 2004 | Ace, Hex, Cybermen             | Dan Abnett                     | Hex                | Y    | #Cybermen  |   |   |   |
-| * |   31 |     8.5 | [[https://tardis.fandom.com/wiki/Live_34_(audio_story)][74. Live 34]]                         | 7th    | 2005 | Ace, Hex                       | James Parson / Andrew Stirling-Brown | Hex                | -    |            |   |   |   |
+| X |   76 |     8.0 | [[https://tardis.fandom.com/wiki/Colditz_(audio_story)][25. Colditz]]                         | 7th    | 2001 | Peri, Klein                    | Steve Lyons                    | Klein              |      |            |   |   |   |
+| X |    7 |     9.0 | [[https://tardis.fandom.com/wiki/Master_(audio_story)][49. Master]]                          | 7th    | 2003 | The Master, Death              | Joseph Lidster                 | none               | Y    | #Master    |   |   |   |
+| X |   50 |     8.3 | [[https://tardis.fandom.com/wiki/The_Harvest_(audio_story)][58. The Harvest]]                     | 7th    | 2004 | Ace, Hex, Cybermen             | Dan Abnett                     | Hex                | Y    | #Cybermen  |   |   |   |
+| X |   31 |     8.5 | [[https://tardis.fandom.com/wiki/Live_34_(audio_story)][74. Live 34]]                         | 7th    | 2005 | Ace, Hex                       | James Parson / Andrew Stirling-Brown | Hex                | -    |            |   |   |   |
 |   |   71 |     8.0 | [[https://tardis.fandom.com/wiki/Night_Thoughts_(audio_story)][79. Night Thoughts]]                  | 7th    | 2006 | Ace, Hex                       | Gary Russell                   |                    | -    |            |   |   |   |
 |   |  107 |     7.7 | [[https://tardis.fandom.com/wiki/The_Settling_(audio_story)][82. The Settling]]                    | 7th    | 2006 | Ace, Hex                       | Simon Guerrier                 |                    |      |            |   |   |   |
 |   |  119 |     7.7 | [[https://tardis.fandom.com/wiki/No_Man's_Land_(audio_story)][89. No Man's Land]]                   | 7th    | 2006 | Ace, Hex, the Forge            | Martin Day                     | Forge              |      |            |   |   |   |
 |   |   20 |     8.6 | [[https://tardis.fandom.com/wiki/The_Word_Lord_(audio_story)][115d. The Word Lord]]                 | 7th    | 2008 | Ace, Hex, Nobody No-One        | Steven Hall                    |                    | -    |            |   |   |   |
 |   |   23 |     8.6 | [[https://tardis.fandom.com/wiki/The_Magic_Mousetrap_(audio_story)][120. The Magic Mousetrap]]            | 7th    | 2009 | Ace, Hex, Celestial Toymaker   | Matthew Sweet                  |                    | -    | #OldOnes   |   |   |   |
 |   |   64 |     8.2 | [[https://tardis.fandom.com/wiki/The_Angel_of_Scutari_(audio_story)][122. The Angel of Scutari]]           | 7th    | 2009 | Ace, Hex                       | Paul Sutton                    | Hex                | -    |            |   |   |   |
-| * |   11 |     8.8 | [[https://tardis.fandom.com/wiki/A_Thousand_Tiny_Wings_(audio_story)][130. A Thousand Tiny Wings]]          | 7th    | 2010 | Klein                          | Andy Lane                      | Klein              | -    | #Klein     |   |   |   |
-| * |   19 |     8.6 | [[https://tardis.fandom.com/wiki/Klein's_Story_(audio_story)][131a. Klein's Story]]                 | 7th    | 2010 | Klein                          | John Ainsworth / Lee Mansfield | Klein              | y    | #Klein     |   |   |   |
-| * |   87 |     7.9 | [[https://tardis.fandom.com/wiki/Survival_of_the_Fittest_(audio_story)][131b. Survival of the Fittest]]       | 7th    | 2010 | Klein                          | Jonathan Clements              | Klein              |      |            |   |   |   |
-| * |   18 |     8.7 | [[https://tardis.fandom.com/wiki/The_Architects_of_History_(audio_story)][132. The Architects of History]]      | 7th    | 2010 | Klein, Selachians              | Steve Lyons                    | Klein              | -    | #Klein     |   |   |   |
+| X |   11 |     8.8 | [[https://tardis.fandom.com/wiki/A_Thousand_Tiny_Wings_(audio_story)][130. A Thousand Tiny Wings]]          | 7th    | 2010 | Klein                          | Andy Lane                      | Klein              | -    | #Klein     |   |   |   |
+| X |   19 |     8.6 | [[https://tardis.fandom.com/wiki/Klein's_Story_(audio_story)][131a. Klein's Story]]                 | 7th    | 2010 | Klein                          | John Ainsworth / Lee Mansfield | Klein              | y    | #Klein     |   |   |   |
+| X |   87 |     7.9 | [[https://tardis.fandom.com/wiki/Survival_of_the_Fittest_(audio_story)][131b. Survival of the Fittest]]       | 7th    | 2010 | Klein                          | Jonathan Clements              | Klein              |      |            |   |   |   |
+| X |   18 |     8.7 | [[https://tardis.fandom.com/wiki/The_Architects_of_History_(audio_story)][132. The Architects of History]]      | 7th    | 2010 | Klein, Selachians              | Steve Lyons                    | Klein              | -    | #Klein     |   |   |   |
 |   |   73 |     8.0 | [[https://tardis.fandom.com/wiki/Project_Destiny_(audio_story)][139. Project Destiny]]                | 7th    | 2010 | Ace, Hex, Nimrod, the Forge    | Cavan Scott and Mark Wright    | Hex, Forge         | -    | #The_Forge |   |   |   |
 |   |    1 |     9.5 | [[https://tardis.fandom.com/wiki/A_Death_in_the_Family_(audio_story)][140. A Death in the Family]]          | 7th    | 2010 | Ace, Hex, Evelyn, Nobody No-One, the Forge | Steven Hall                    | Evelyn, Hex, Forge | -    | #OldOnes   |   |   |   |
-| * |   40 |     8.4 | [[https://tardis.fandom.com/wiki/Robophobia_(audio_story)][149. Robophobia]]                     | 7th    | 2011 | Liv, Kaldor androids           | Nicholas Briggs                |                    | -    |            |   |   |   |
-| * |  112 |     7.7 | [[https://tardis.fandom.com/wiki/House_of_Blue_Fire_(audio_story)][152. House of Blue Fire]]             | 7th    | 2011 | Sally                          | Mark Morris                    | Hex                |      |            |   |   |   |
-| * |   10 |     8.8 | [[https://tardis.fandom.com/wiki/Protect_and_Survive_(audio_story)][162. Protect and Survive]]            | 7th    | 2012 | Ace, Hex                       | Jonathan Morris                | Hex                | Y    | #OldOnes   |   |   |   |
+| X |   40 |     8.4 | [[https://tardis.fandom.com/wiki/Robophobia_(audio_story)][149. Robophobia]]                     | 7th    | 2011 | Liv, Kaldor androids           | Nicholas Briggs                |                    | -    |            |   |   |   |
+| X |  112 |     7.7 | [[https://tardis.fandom.com/wiki/House_of_Blue_Fire_(audio_story)][152. House of Blue Fire]]             | 7th    | 2011 | Sally                          | Mark Morris                    | Hex                |      |            |   |   |   |
+| X |   10 |     8.8 | [[https://tardis.fandom.com/wiki/Protect_and_Survive_(audio_story)][162. Protect and Survive]]            | 7th    | 2012 | Ace, Hex                       | Jonathan Morris                | Hex                | Y    | #OldOnes   |   |   |   |
 |   |  121 |     7.7 | [[https://tardis.fandom.com/wiki/Black_and_White_(audio_story)][163. Black and White]]                | 7th    | 2013 | Ace, Hex, Sally, Lysandra, Garundel, the Forge | Matt Fitton                    | Hex                |      |            |   |   |   |
 |   |   43 |     8.4 | [[https://tardis.fandom.com/wiki/Gods_and_Monsters_(audio_story)][164. Gods and Monsters]]              | 7th    | 2013 | Ace, Hex, Sally, Lysandra, Fenric, the Forge | Mike Maddox and Alan Barnes    | Hex/Sally          | -    | #OldOnes   |   |   |   |
 |   |   97 |     7.8 | [[https://tardis.fandom.com/wiki/Starlight_Robbery_(audio_story)][176. Starlight Robbery]]              | 7th    | 2013 | Klein, Will, Sontarans, Garundel | Matt Fitton                    | Klein              |      |            |   |   |   |
 |   |   77 |     8.0 | [[https://tardis.fandom.com/wiki/1963:_The_Assassination_Games_(audio_story)][180. 1963: The Assassination Games]]  | 7th    | 2013 | Ace, Counter-Measures          | John Dorney                    |                    | -    |            |   |   |   |
 |   |   56 |     8.2 | [[https://tardis.fandom.com/wiki/Afterlife_(audio_story)][181. Afterlife]]                      | 7th    | 2013 | Ace, Hex, Sally                | Matt Fitton                    | Hex/Sally          | -    |            |   |   |   |
-| * |  113 |     7.7 | [[https://tardis.fandom.com/wiki/We_Are_the_Daleks_(audio_story)][201. We Are the Daleks]]              | 7th    | 2015 | Mel, Daleks                    | Jonathan Morris                | none               |      |            |   |   |   |
-| * |   67 |     8.1 | [[https://tardis.fandom.com/wiki/You_Are_the_Doctor_(audio_story)][207a. You Are the Doctor]]            | 7th    | 2015 | Ace                            | John Dorney                    |                    | -    |            |   |   |   |
-| * |    8 |     8.9 | [[https://tardis.fandom.com/wiki/The_Two_Masters_(audio_story)][213. The Two Masters]]                | 7th    | 2016 | The Old Master, The New Master | John Dorney                    |                    | -    | #Master    |   |   |   |
+| X |  113 |     7.7 | [[https://tardis.fandom.com/wiki/We_Are_the_Daleks_(audio_story)][201. We Are the Daleks]]              | 7th    | 2015 | Mel, Daleks                    | Jonathan Morris                | none               |      |            |   |   |   |
+| X |   67 |     8.1 | [[https://tardis.fandom.com/wiki/You_Are_the_Doctor_(audio_story)][207a. You Are the Doctor]]            | 7th    | 2015 | Ace                            | John Dorney                    |                    | -    |            |   |   |   |
+| X |    8 |     8.9 | [[https://tardis.fandom.com/wiki/The_Two_Masters_(audio_story)][213. The Two Masters]]                | 7th    | 2016 | The Old Master, The New Master | John Dorney                    |                    | -    | #Master    |   |   |   |
 |   |  106 |     7.8 | [[https://tardis.fandom.com/wiki/World_Apart_(audio_story)][226b. World Apart]]                   | 7th    | 2017 | Ace, Hex                       | Scott Handcock                 |                    |      |            |   |   |   |
 |   |  131 |     7.5 | [[https://tardis.fandom.com/wiki/The_Quantum_Possibility_Engine_(audio_story)][243. The Quantum Possibility Engine]] | 7th    | 2018 | Ace, Mel                       | Guy Adams                      |                    |      |            |   |   |   |
 |   |   61 |     8.1 | [[https://tardis.fandom.com/wiki/Muse_of_Fire_(audio_story)][245. Muse of Fire]]                   | 7th    | 2018 | Ace, Hex, Iris, Panda          | Paul Magrs                     |                    | -    |            |   |   |   |
-
 
 ** 8th Doctor
 |   | Rank |  Rating | No.. Title                                  | Doctor | Year | Features                       | Writer                         | Story Ars            | PLOT |           |   |   |
 |   |      | 2022.01 | . <34>                                      |        |      | <30>                           | <30>                           |                      |      |           |   |   |
 |---+------+---------+---------------------------------------------+--------+------+--------------------------------+--------------------------------+----------------------+------+-----------+---+---|
-| * |  124 |     7.6 | [[https://tardis.fandom.com/wiki/Storm_Warning_(audio_story)][16. Storm Warning]]                           | 8th    | 2001 | Charley                        | Gary Russell                   | Charley              |      |           |   |   |
-| * |    2 |     9.5 | [[https://tardis.fandom.com/wiki/The_Chimes_of_Midnight_(audio_story)][29. The Chimes of Midnight]]                  | 8th    | 2002 | Charley                        | Robert Shearman                | Charley              | Y    |           |   |   |
-| * |   59 |     8.2 | [[https://tardis.fandom.com/wiki/Seasons_of_Fear_(audio_story)][30. Seasons of Fear]]                         | 8th    | 2002 | Charley, Nimon                 | Paul Cornell and Caroline Symcox |                      | Y    |           |   |   |
+| X |  124 |     7.6 | [[https://tardis.fandom.com/wiki/Storm_Warning_(audio_story)][16. Storm Warning]]                           | 8th    | 2001 | Charley                        | Gary Russell                   | Charley              |      |           |   |   |
+| X |    2 |     9.5 | [[https://tardis.fandom.com/wiki/The_Chimes_of_Midnight_(audio_story)][29. The Chimes of Midnight]]                  | 8th    | 2002 | Charley                        | Robert Shearman                | Charley              | Y    |           |   |   |
+| X |   59 |     8.2 | [[https://tardis.fandom.com/wiki/Seasons_of_Fear_(audio_story)][30. Seasons of Fear]]                         | 8th    | 2002 | Charley, Nimon                 | Paul Cornell and Caroline Symcox |                      | Y    |           |   |   |
 |   |   39 |     8.4 | [[https://tardis.fandom.com/wiki/Neverland_(audio_story)][33. Neverland]]                               | 8th    | 2002 | Charley, Romana II, Rassilon, Time Lords | Alan Barnes                    | Charley, Di-Universe | Y    |           |   |   |
 |   |   17 |     8.6 | [[https://tardis.fandom.com/wiki/Scherzo_(audio_story)][52. Scherzo]]                                 | 8th    | 2003 | Charley                        | Robert Shearman                | Di-Universe          | Y    |           |   |   |
-| * |   38 |     8.4 | [[https://tardis.fandom.com/wiki/The_Natural_History_of_Fear_(audio_story)][54. The Natural History of Fear]]             | 8th    | 2004 | Charley, C'rizz                | Jim Mortimore                  | Charley              | -    |           |   |   |
+| X |   38 |     8.4 | [[https://tardis.fandom.com/wiki/The_Natural_History_of_Fear_(audio_story)][54. The Natural History of Fear]]             | 8th    | 2004 | Charley, C'rizz                | Jim Mortimore                  | Charley              | -    |           |   |   |
 |   |  130 |     7.6 | [[https://tardis.fandom.com/wiki/The_Last_(audio_story)][62. The Last]]                                | 8th    | 2004 | Charley, C'rizz, Kro'ka        | Gary Hopkins                   | Di-Universe          |      |           |   |   |
 |   |  127 |     7.6 | [[https://tardis.fandom.com/wiki/Caerdroia_(audio_story)][63. Caerdroia]]                               | 8th    | 2004 | Charley, C'rizz, Kro'ka        | LIoyd Rose                     | Di-Universe          |      |           |   |   |
-| * |  102 |     7.8 | [[https://tardis.fandom.com/wiki/Terror_Firma_(audio_story)][72. Terror Firma]]                            | 8th    | 2005 | Charley, Charley, Daleks, Davros | Joseph Lidster                 |                      |      | #Davros   |   |   |
-| * |  118 |     7.7 | [[https://tardis.fandom.com/wiki/Other_Lives_(audio_story)][77. Other Lives]]                             | 8th    | 2005 | Charley, C'rizz                | Gary Hopkins                   |                      |      |           |   |   |
-| * |   85 |     7.9 | [[https://tardis.fandom.com/wiki/Memory_Lane_(audio_story)][88. Memory Lane]]                             | 8th    | 2005 | Charley, C'rizz                | Eddie Robson                   |                      |      |           |   |   |
+| X |  102 |     7.8 | [[https://tardis.fandom.com/wiki/Terror_Firma_(audio_story)][72. Terror Firma]]                            | 8th    | 2005 | Charley, Charley, Daleks, Davros | Joseph Lidster                 |                      |      | #Davros   |   |   |
+| X |  118 |     7.7 | [[https://tardis.fandom.com/wiki/Other_Lives_(audio_story)][77. Other Lives]]                             | 8th    | 2005 | Charley, C'rizz                | Gary Hopkins                   |                      |      |           |   |   |
+| X |   85 |     7.9 | [[https://tardis.fandom.com/wiki/Memory_Lane_(audio_story)][88. Memory Lane]]                             | 8th    | 2005 | Charley, C'rizz                | Eddie Robson                   |                      |      |           |   |   |
 |   |   48 |     8.3 | [[https://tardis.fandom.com/wiki/The_Girl_Who_Never_Was_(audio_story)][103. The Girl Who Never Was]]                 | 8th    | 2007 | Charley, Cybermen              | Alan Barnes                    | Charley              | Y    | #Cybermen |   |   |
 |   |   41 |     8.4 | [[https://tardis.fandom.com/wiki/Mary's_Story_(audio_story)][123d. The Company of Friends - Mary's Story]] | 8th    | 2009 | Mary                           | Jonathan Morris                |                      | Y    |           |   |   |
-| * |   27 |     8.6 | [[https://tardis.fandom.com/wiki/The_Silver_Turk_(audio_story)][153. The Silver Turk]]                        | 8th    | 2011 | Mary, Cybermen                 | Marc Platt                     |                      | Y    | #Cybermen |   |   |
+| X |   27 |     8.6 | [[https://tardis.fandom.com/wiki/The_Silver_Turk_(audio_story)][153. The Silver Turk]]                        | 8th    | 2011 | Mary, Cybermen                 | Marc Platt                     |                      | Y    | #Cybermen |   |   |
 
 ** pending
 |   | Rank |  Rating | No.. Title                                 | Doctor | Year | Features                       | Writer                         | Story Ars | PLOT |   |   |   |
@@ -173,7 +172,7 @@ or, click this: <a href="javascript:function%20toArray%20(c){var%20a,%20k;a=new%
 |   |  150 |     7.4 | [[https://tardis.fandom.com/wiki/Casualties_of_War_(audio_story)][115c. Casualties of War]]                    | 7th    | 2008 | Ace, Hex, the Forge            | Mark Michalowsk                |           |      |   |   |   |
 |   |  144 |     7.4 | [[https://tardis.fandom.com/wiki/Enemy_of_the_Daleks_(audio_story)][121. Enemy of the Daleks]]                   | 7th    | 2009 | Ace, Hex, Daleks               | David Bishop                   | Hex       |      |   |   |   |
 |   |  147 |     7.4 | [[https://tardis.fandom.com/wiki/The_Crimes_of_Thomas_Brewster_(audio_story)][143. The Crimes of Thomas Brewster]]         | 6th    | 2011 | Evelyn, Brewster, Flip, DI Menzies | Jonathan Morris                |           |      |   |   |   |
-| * |  145 |     7.4 | [[https://tardis.fandom.com/wiki/Come_Die_With_Me_(audio_story)][207b. Come Die With Me]]                     | 7th    | 2015 | Ace                            |                                |           |      |   |   |   |
+| X |  145 |     7.4 | [[https://tardis.fandom.com/wiki/Come_Die_With_Me_(audio_story)][207b. Come Die With Me]]                     | 7th    | 2015 | Ace                            |                                |           |      |   |   |   |
 |   |  148 |     7.4 | [[https://tardis.fandom.com/wiki/Tartarus_(audio_story)][256. Tartarus]]                              | 5th    | 2019 | Nyssa, Tegan, Marc             | David Liewellyn                |           |      |   |   |   |
 |   |  151 |     7.4 | [[https://tardis.fandom.com/wiki/Conversion_(audio_story)][258B. Conversion]]                           | 5th    | 2019 | Nyssa, Tegan, Marc, Cybermen   | Guy Adams                      | Cybermen  |      |   |   |   |
 |---+------+---------+--------------------------------------------+--------+------+--------------------------------+--------------------------------+-----------+------+---+---+---|
@@ -191,7 +190,7 @@ or, click this: <a href="javascript:function%20toArray%20(c){var%20a,%20k;a=new%
 |   |      |     6.8 | [[https://tardis.fandom.com/wiki/Madquake_(audio_story)][267B. Madquake]]                             | 5th    | 2020 | Nyssa, Tegan, Marc, Slitheen   |                                |           |      |   |   |   |
 |   |      |     6.7 | [[https://tardis.fandom.com/wiki/The_Flying_Dutchman_(audio_story)][268A. The Flying Dutchman]]                  | 7th    | 2020 | Ace, Hex                       |                                |           |      |   |   |   |
 |   |  101 |     7.8 | [[https://tardis.fandom.com/wiki/Displaced_(audio_story)][268B. Displaced]]                            | 7th    | 2020 | Ace, Hex                       | Katharine Armitage             |           |      |   |   |   |
-|   |  128 |     7.6 | [[https://tardis.fandom.com/wiki/Aimed_at_the_Body_(audio_story)][269A. Aimed at the Body]]                | 5th    | 2020 | Daleks                         |                                | Time War  |      |   |   |   |
+|   |  128 |     7.6 | [[https://tardis.fandom.com/wiki/Aimed_at_the_Body_(audio_story)][269A. Aimed at the Body]]                    | 5th    | 2020 | Daleks                         |                                | Time War  |      |   |   |   |
 |   |      |     6.5 | [[https://tardis.fandom.com/wiki/Lightspeed_(audio_story)][269B. Lightspeed]]                           | 5th    | 2020 | Daleks                         |                                | Time War  |      |   |   |   |
 |   |   44 |     8.4 | [[https://tardis.fandom.com/wiki/The_Bookshop_at_the_End_of_the_World_(audio_story)][269c. The Bookshop at the End of the World]] | 5th    | 2020 | Daleks                         | Simon Guerrier                 | Time War  |      |   |   |   |
 |   |      |     6.6 | [[https://tardis.fandom.com/wiki/Interlude_(audio_story)][269d. Interlude]]                            | 5th    | 2020 | Daleks                         |                                | Time War  |      |   |   |   |
@@ -225,28 +224,28 @@ or, click this: <a href="javascript:function%20toArray%20(c){var%20a,%20k;a=new%
 |   |   16 |    8.3 | (113)   | [[https://tardis.fandom.com/wiki/The_Transit_of_Venus_(audio_story)][3.7 - The Transit of Venus]]             | 1st      | 2009 | Ian, Barbara, Susan                          |                      |   |
 |   |   18 |    8.2 | (119)   | [[https://tardis.fandom.com/wiki/The_Drowned_World_(audio_story)][4.1 - The Drowned World]]                | 1st      | 2009 | Sara, Steven, Robert                         | Sara Kingdom trilogy |   |
 |   |   20 |    8.1 | (93)    | [[https://tardis.fandom.com/wiki/The_Suffering_(audio_story)][4.7 - The Suffering]]                    | 1st      | 2010 | Vicki, Steven    February                    |                      |   |
-| * |   11 |    8.5 | (115)   | [[https://tardis.fandom.com/wiki/The_Guardian_of_the_Solar_System_(audio_story)][5.1 - The Guardian of the Solar System]] | 1st      | 2010 | Sara, Steven, Bret, Mavic Chen, Robert       | Sara Kingdom trilogy |   |
+| X |   11 |    8.5 | (115)   | [[https://tardis.fandom.com/wiki/The_Guardian_of_the_Solar_System_(audio_story)][5.1 - The Guardian of the Solar System]] | 1st      | 2010 | Sara, Steven, Bret, Mavic Chen, Robert       | Sara Kingdom trilogy |   |
 |   |    8 |    8.5 | (97)    | [[https://tardis.fandom.com/wiki/The_Cold_Equations_(audio_story)][5.12 The Cold Equations]]                | 1st      | 2011 | Steven, Oliver                               |                      |   |
 |   |   34 |    7.8 | (111)   | [[https://tardis.fandom.com/wiki/The_Perpetual_Bond_(audio_story)][5.8 - The Perpetual Bond]]               | 1st      | 2011 | Steven, Oliver                               |                      |   |
-| * |   14 |    8.3 | (114)   | [[https://tardis.fandom.com/wiki/The_Rocket_Men_(audio_story)][6.2 - The Rocket Men]]                   | 1st      | 2011 | Ian, Barbara, Vicki, Rocket Men              | Rocket Man           |   |
+| X |   14 |    8.3 | (114)   | [[https://tardis.fandom.com/wiki/The_Rocket_Men_(audio_story)][6.2 - The Rocket Men]]                   | 1st      | 2011 | Ian, Barbara, Vicki, Rocket Men              | Rocket Man           |   |
 |   |   13 |    8.4 | (89)    | [[https://tardis.fandom.com/wiki/The_First_Wave_(audio_story)][6.5 - The First Wave]]                   | 1st      | 2011 | Steven, Oliver, Vardans                      |                      |   |
 |   |   29 |    7.9 | (78)    | [[https://tardis.fandom.com/wiki/The_Anachronauts_(audio_story)][6.7 - The Anachronauts]]                 | 1st      | 2012 | Steven, Sara                                 |                      |   |
 |   |   40 |    7.7 | (70)    | [[https://tardis.fandom.com/wiki/The_Time_Museum_(audio_story)][7.1 - The Time Museum]]                  | 1st      | 2012 | Ian                                          |                      |   |
 |   |   28 |    7.9 | (70)    | [[https://tardis.fandom.com/wiki/The_Library_of_Alexandria_(audio_story)][7.10 - The Library of Alexandria]]       | 1st      | 2013 | Ian, Barbara, Susan, The Mim                 |                      |   |
-| * |   17 |    8.2 | (71)    | [[https://tardis.fandom.com/wiki/Return_of_the_Rocket_Men_(audio_story)][7.5 - Return of the Rocket Men]]         | 1st      | 2012 | Steven, Dodo, Rocket Men                     | Rocket Man           |   |
+| X |   17 |    8.2 | (71)    | [[https://tardis.fandom.com/wiki/Return_of_the_Rocket_Men_(audio_story)][7.5 - Return of the Rocket Men]]         | 1st      | 2012 | Steven, Dodo, Rocket Men                     | Rocket Man           |   |
 |   |   35 |    7.8 | (62)    | [[https://tardis.fandom.com/wiki/The_Flames_of_Cadiz_(audio_story)][7.7 - The Flames of Cadiz]]              | 1st      | 2013 | Ian, Susan, Barbara                          |                      |   |
-| * |   27 |    7.9 | (57)    | [[https://tardis.fandom.com/wiki/The_War_To_End_All_Wars_(audio_story)][8.10 - The War To End All Wars]]         | 1st      | 2014 | Steven, Dodo, Sida                           | Old Steven trilogy   |   |
+| X |   27 |    7.9 | (57)    | [[https://tardis.fandom.com/wiki/The_War_To_End_All_Wars_(audio_story)][8.10 - The War To End All Wars]]         | 1st      | 2014 | Steven, Dodo, Sida                           | Old Steven trilogy   |   |
 |   |   46 |    7.5 | (60)    | [[https://tardis.fandom.com/wiki/The_Alchemists_(audio_story)][8.2 - The Alchemists]]                   | 1st      | 2013 | Susan                                        |                      |   |
 |   |   24 |    8.0 | (42)    | [[https://tardis.fandom.com/wiki/The_Unwinding_World_(audio_story)][9.2 - The Unwinding World]]              | 1st      | 2015 | Vicki, Ian, Barbara                          |                      |   |
 |   |   47 |    7.5 | (38)    | [[https://tardis.fandom.com/wiki/The_Founding_Fathers_(audio_story)][9.3 - The Founding Fathers]]             | 1st      | 2015 | Steven, Vicki, 1st Doctor's mind copy, Sida  | Old Steven trilogy   |   |
 |   |   10 |    8.5 | (39)    | [[https://tardis.fandom.com/wiki/The_Locked_Room_(audio_story)][9.4 - The Locked Room]]                  | 1st      | 2015 | Steven, 1st Doctor's mind copy, Sida, Vardan | Old Steven trilogy   |   |
 |---+------+--------+---------+----------------------------------------+----------+------+----------------------------------------------+----------------------+---|
-| * |   12 |    8.5 | (44)    | [[https://tardis.fandom.com/wiki/Second_Chances_(audio_story)][8.12 - Second Chances]]                  | 2nd      | 2014 | Zoe, Jamie, The Company                      | The Company          |   |
-| * |   19 |    8.1 | (109)   | [[https://tardis.fandom.com/wiki/The_Glorious_Revolution_(audio_story)][4.2 - The Glorious Revolution]]          | 2nd      | 2009 | Jamie, Zoe                                   |                      |   |
+| X |   12 |    8.5 | (44)    | [[https://tardis.fandom.com/wiki/Second_Chances_(audio_story)][8.12 - Second Chances]]                  | 2nd      | 2014 | Zoe, Jamie, The Company                      | The Company          |   |
+| X |   19 |    8.1 | (109)   | [[https://tardis.fandom.com/wiki/The_Glorious_Revolution_(audio_story)][4.2 - The Glorious Revolution]]          | 2nd      | 2009 | Jamie, Zoe                                   |                      |   |
 |   |   22 |    8.0 | (18)    | [[https://tardis.fandom.com/wiki/The_Tactics_of_Defeat_(audio_story)][12.4 - The Tactics of Defeat]]           | 2nd      | 2018 | Jamie, Zoe, Ruth                             |                      |   |
-| * |   31 |    7.8 | (24)    | [[https://tardis.fandom.com/wiki/Dumb_Waiter_(audio_story)][12.2 - Dumb Waiter]]                     | 2nd      | 2018 | Jamie, Victoria, Leela                       |                      |   |
+| X |   31 |    7.8 | (24)    | [[https://tardis.fandom.com/wiki/Dumb_Waiter_(audio_story)][12.2 - Dumb Waiter]]                     | 2nd      | 2018 | Jamie, Victoria, Leela                       |                      |   |
 |   |   32 |    7.8 | (72)    | [[https://tardis.fandom.com/wiki/The_Jigsaw_War_(audio_story)][6.11 - The Jigsaw War]]                  | 2nd      | 2012 | Jamie, Zoe                                   |                      |   |
-| * |   37 |    7.7 | (74)    | [[https://tardis.fandom.com/wiki/The_Memory_Cheats_(audio_story)][6.3 - The Memory Cheats]]                | 2nd      | 2011 | Zoe, Jamie, The Company                      | The Company          |   |
+| X |   37 |    7.7 | (74)    | [[https://tardis.fandom.com/wiki/The_Memory_Cheats_(audio_story)][6.3 - The Memory Cheats]]                | 2nd      | 2011 | Zoe, Jamie, The Company                      | The Company          |   |
 |   |   39 |    7.7 | (95)    | [[https://tardis.fandom.com/wiki/Resistance_(audio_story)][3.9 - Resistance]]                       | 2nd      | 2009 | Polly, Ben, Jamie                            |                      |   |
 |   |   42 |    7.7 | (46)    | [[https://tardis.fandom.com/wiki/The_Mouthless_Dead_(audio_story)][10.1 - The Mouthless Dead]]              | 2nd      | 2016 | Jamie, Polly, Ben                            |                      |   |
 |   |   44 |    7.6 | (79)    | [[https://tardis.fandom.com/wiki/The_Selachian_Gambit_(audio_story)][6.8 - The Selachian Gambit]]             | 2nd      | 2012 | Jamie, Polly, Ben, Selachians                |                      |   |
@@ -254,20 +253,20 @@ or, click this: <a href="javascript:function%20toArray%20(c){var%20a,%20k;a=new%
 |   |   50 |    7.5 | (82)    | [[https://tardis.fandom.com/wiki/The_Forbidden_Time_(audio_story)][5.9 - The Forbidden Time]]               | 2nd      | 2011 | Polly, Ben, Jamie                            |                      |   |
 |---+------+--------+---------+----------------------------------------+----------+------+----------------------------------------------+----------------------+---|
 |   |    6 |    8.7 | (95)    | [[https://tardis.fandom.com/wiki/The_Scorchies_(audio_story)][7.9 - The Scorchies]]                    | 3rd      | 2013 | Jo, the Brig, Scorchies                      |                      |   |
-| * |    7 |    8.6 | (127)   | [[https://tardis.fandom.com/wiki/Find_and_Replace_(audio_story)][5.3 - Find and Replace]]                 | 3rd      | 2010 | Jo, Iris Wildthyme, Huxley, the Brig, Benton |                      |   |
-| * |   21 |    8.0 | (54)    | [[https://tardis.fandom.com/wiki/Ghost_in_the_Machine_(audio_story)][8.4 - Ghost in the Machine]]             | 3rd      | 2013 | Jo                                           |                      |   |
-| * |   33 |    7.8 | (98)    | [[https://tardis.fandom.com/wiki/Shadow_of_the_Past_(audio_story)][4.9 - Shadow of the Past]]               | 3rd      | 2010 | Liz, the Brig, Yates, the Mim                |                      |   |
+| X |    7 |    8.6 | (127)   | [[https://tardis.fandom.com/wiki/Find_and_Replace_(audio_story)][5.3 - Find and Replace]]                 | 3rd      | 2010 | Jo, Iris Wildthyme, Huxley, the Brig, Benton |                      |   |
+| X |   21 |    8.0 | (54)    | [[https://tardis.fandom.com/wiki/Ghost_in_the_Machine_(audio_story)][8.4 - Ghost in the Machine]]             | 3rd      | 2013 | Jo                                           |                      |   |
+| X |   33 |    7.8 | (98)    | [[https://tardis.fandom.com/wiki/Shadow_of_the_Past_(audio_story)][4.9 - Shadow of the Past]]               | 3rd      | 2010 | Liz, the Brig, Yates, the Mim                |                      |   |
 |   |   41 |    7.7 | (55)    | [[https://tardis.fandom.com/wiki/Council_of_War_(audio_story)][7.12 - Council of War]]                  | 3rd      | 2013 | Benton, the Brig                             |                      |   |
 |   |   43 |    7.6 | (86)    | [[https://tardis.fandom.com/wiki/The_Prisoner_of_Peladon_(audio_story)][4.3 - The Prisoner of Peladon]]          | 3rd      | 2009 | King Peladon, Alpha Centauri, Ice Warriors   |                      |   |
 |   |   45 |    7.6 | (85)    | [[https://tardis.fandom.com/wiki/The_Magician's_Oath_(audio_story)][3.10 - The Magician's Oath]]             | 3rd      | 2009 | ates, Jo, the Brig, Benton                   |                      |   |
-| * |   48 |    7.5 | (109)   | [[https://tardis.fandom.com/wiki/Old_Soldiers_(audio_story)][2.3 - Old Soldiers]]                     | 3rd      | 2007 | The Brig                                     |                      |   |
-| * |    3 |    9.1 | (110)   | [[https://tardis.fandom.com/wiki/The_Last_Post_(audio_story)][7.4 - The Last Post]]                    | 3th      | 2012 | Liz, Emily, the Brig                         |                      |   |
+| X |   48 |    7.5 | (109)   | [[https://tardis.fandom.com/wiki/Old_Soldiers_(audio_story)][2.3 - Old Soldiers]]                     | 3rd      | 2007 | The Brig                                     |                      |   |
+| X |    3 |    9.1 | (110)   | [[https://tardis.fandom.com/wiki/The_Last_Post_(audio_story)][7.4 - The Last Post]]                    | 3th      | 2012 | Liz, Emily, the Brig                         |                      |   |
 |---+------+--------+---------+----------------------------------------+----------+------+----------------------------------------------+----------------------+---|
 |   |   30 |    7.9 | (103)   | [[https://tardis.fandom.com/wiki/The_Catalyst_(audio_story)][2.4 - The Catalyst]]                     | 4th      | 2008 | Leela                                        |                      |   |
 |   |   25 |    8.0 | (86)    | [[https://tardis.fandom.com/wiki/Ringpullworld_(audio_story)][4.5 - Ringpullworld]]                    | 5th      | 2009 | Turlough, Tegan, Huxley  12                  |                      |   |
 |   |    1 |    9.2 | (151)   | [[https://tardis.fandom.com/wiki/Peri_and_the_Piscon_Paradox_(audio_story)][5.7 - Peri and the Piscon Paradox]]      | 5th, 6th | 2011 | Peri                                         |                      |   |
 |   |    2 |    9.2 | (183)   | [[https://tardis.fandom.com/wiki/Solitaire_(audio_story)][4.12 - Solitaire]]                       | 8th      | 2010 | Charley, Celestial Toymaker                  | #OldOnes             |   |
-| * |      |    7.5 | (83)    | [[https://tardis.fandom.com/wiki/Tales_From_the_Vault_(audio_story)][6.1 - Tales From the Vault]]             |          |      |                                              |                      |   |
+| X |      |    7.5 | (83)    | [[https://tardis.fandom.com/wiki/Tales_From_the_Vault_(audio_story)][6.1 - Tales From the Vault]]             |          |      |                                              |                      |   |
 
 * BF Short Trips top 30
 
@@ -321,12 +320,12 @@ or, click this: <a href="javascript:function%20toArray%20(c){var%20a,%20k;a=new%
 ** 1DA
 https://tardis.fandom.com/wiki/The_First_Doctor_Adventures
 
-| * | 7.7 | (88) | [[https://tardis.fandom.com/wiki/The_Destination_Wars_(audio_story)][1.1 - The Destination Wars]]           | Susan, Ian, Barbara, the Master               | P2017 |
+| X | 7.7 | (88) | [[https://tardis.fandom.com/wiki/The_Destination_Wars_(audio_story)][1.1 - The Destination Wars]]           | Susan, Ian, Barbara, the Master               | P2017 |
 |   | 7.5 | (79) | [[https://tardis.fandom.com/wiki/The_Great_White_Hurricane_(audio_story)][1.2 - The Great White Hurricane]]      | Susan, Ian, Barbara                           | P2017 |
-| * | 9.3 | (77) | [[https://tardis.fandom.com/wiki/The_Invention_of_Death_(audio_story)][2.1 - The Invention of Death]]         | Susan, Ian, Barbara                           | P2018 |
+| X | 9.3 | (77) | [[https://tardis.fandom.com/wiki/The_Invention_of_Death_(audio_story)][2.1 - The Invention of Death]]         | Susan, Ian, Barbara                           | P2018 |
 |   | 8.4 | (62) | [[https://tardis.fandom.com/wiki/The_Barbarians_and_the_Samurai_(audio_story)][2.2 - The Barbarians and the Samurai]] | Susan, Ian, Barbara                           | P2018 |
 |   | 7.4 | (46) | [[https://tardis.fandom.com/wiki/The_Phoenicians_(audio_story)][3.1 - The Phoenicians]]                | Susan, Ian, Barbara                           | P2019 |
-| * | 8.6 | (43) | [[https://tardis.fandom.com/wiki/Tick-Tock_World_(audio_story)][3.2 - Tick-Tock World]]                | Susan, Ian, Barbara                           | P2019 |
+| X | 8.6 | (43) | [[https://tardis.fandom.com/wiki/Tick-Tock_World_(audio_story)][3.2 - Tick-Tock World]]                | Susan, Ian, Barbara                           | P2019 |
 |   | 6.3 | (31) | [[https://tardis.fandom.com/wiki/Return_to_Skaro_(audio_story)][4.1 - Return to Skaro]]                | Susan, Ian, Barbara, Daleks                   | P2020 |
 |   | 8.0 | (27) | [[https://tardis.fandom.com/wiki/Last_of_the_Romanovs_(audio_story)][4.2 - Last of the Romanovs]]           | Susan, Ian, Barbara, Nicholas II              | P2020 |
 |   | 8.6 | (18) | [[https://tardis.fandom.com/wiki/For_the_Glory_of_Urth_(audio_story)][5.1 - For the Glory of Urth]]          | Susan, Ian, Barbara                           | P2021 |
@@ -345,16 +344,16 @@ https://tardis.fandom.com/wiki/The_First_Doctor_Adventures
 |   |      ? | (?)     | [[https://tardis.fandom.com/wiki/The_Age_of_Endurance_(audio_story)][3.1 - The Age of Endurance]]           | Susan, Ian, Barbara                                | [[https://tardis.fandom.com/wiki/Series_3_(EA)][Early Adventures S3]] | P2016 |
 |   |    6.8 | (32)    | [[https://tardis.fandom.com/wiki/The_Fifth_Traveller_(audio_story)][3.2 - The Fifth Traveller]]            | Ian, Barbara, Vicki                                | Early Adventures S3 | P2016 |
 |   |    8.1 | (40)    | [[https://tardis.fandom.com/wiki/The_Ravelli_Conspiracy_(audio_story)][3.3 - The Ravelli Conspiracy]]         | Vicki, Steven                                      | Early Adventures S3 | P2016 |
-| * |    8.1 | (46)    | [[https://tardis.fandom.com/wiki/The_Sontarans_(audio_story)][3.4 - The Sontarans]]                  | Steven, Sara, Sontarans                            | Early Adventures S3 | P2016 |
+| X |    8.1 | (46)    | [[https://tardis.fandom.com/wiki/The_Sontarans_(audio_story)][3.4 - The Sontarans]]                  | Steven, Sara, Sontarans                            | Early Adventures S3 | P2016 |
 |---+--------+---------+--------------------------------------+----------------------------------------------------+---------------------+-------|
 |   |    9.1 | (41)    | [[https://tardis.fandom.com/wiki/The_Dalek_Occupation_of_Winter_(audio_story)][5.1 - The Dalek Occupation of Winter]] | Steven, Vicki, Daleks                              | [[https://tardis.fandom.com/wiki/Series_5_(EA)][Early Adventures S5]] | P2018 |
 |   |    7.9 | (17)    | [[https://tardis.fandom.com/wiki/An_Ideal_World_(audio_story)][5.2 - An Ideal World]]                 | Steven, Vicki                                      | Early Adventures S5 | P2018 |
 |   |    7.2 | (12)    | [[https://tardis.fandom.com/wiki/Entanglement_(audio_story)][5.3 - Entanglement]]                   | Steven, Vicki                                      | Early Adventures S5 | P2018 |
 |   |    8.8 | (18)    | [[https://tardis.fandom.com/wiki/The_Crash_of_the_UK-201_(audio_story)][5.4 - The Crash of the UK-201]]        | Steven, Vicki                                      | Early Adventures S5 | P2018 |
 |---+--------+---------+--------------------------------------+----------------------------------------------------+---------------------+-------|
-| * |    9.2 | (30)    | [[https://tardis.fandom.com/wiki/Daughter_of_the_Gods_(audio_story)][6.2 - Daughter of the Gods]]           | Jamie, Zoe, First Doctor, Steven, Katarina, Daleks | [[https://tardis.fandom.com/wiki/Series_6_(EA)][Early Adventures S6]] | P2019 |
+| X |    9.2 | (30)    | [[https://tardis.fandom.com/wiki/Daughter_of_the_Gods_(audio_story)][6.2 - Daughter of the Gods]]           | Jamie, Zoe, First Doctor, Steven, Katarina, Daleks | [[https://tardis.fandom.com/wiki/Series_6_(EA)][Early Adventures S6]] | P2019 |
 |---+--------+---------+--------------------------------------+----------------------------------------------------+---------------------+-------|
-| * |    7.8 |         | 7.1 - After the Daleks               | Susan, David, Daleks                               | [[https://tardis.fandom.com/wiki/Series_7_(EA)][Early Adventures S7]] | P2021 |
+| X |    7.8 |         | 7.1 - After the Daleks               | Susan, David, Daleks                               | [[https://tardis.fandom.com/wiki/Series_7_(EA)][Early Adventures S7]] | P2021 |
 |   |    7.8 |         | 7.2 - The Secrets of Det-Sen         | Steven, Dodo                                       | Early Adventures S7 | P2021 |
 
 ** CC
@@ -366,24 +365,24 @@ https://tardis.fandom.com/wiki/The_First_Doctor_Adventures
 |   | 16 | 8.3 | (113) | [[https://tardis.fandom.com/wiki/The_Transit_of_Venus_(audio_story)][3.7 - The Transit of Venus]]             | 2009 | Ian, Barbara, Susan                    |                      |   |
 |   | 18 | 8.2 | (119) | [[https://tardis.fandom.com/wiki/The_Drowned_World_(audio_story)][4.1 - The Drowned World]]                | 2009 | Sara, Steven, Robert                   | Sara Kingdom trilogy |   |
 |   | 20 | 8.1 | (93)  | [[https://tardis.fandom.com/wiki/The_Suffering_(audio_story)][4.7 - The Suffering]]                    | 2010 | Vicki, Steven                          |                      |   |
-| * | 11 | 8.5 | (115) | [[https://tardis.fandom.com/wiki/The_Guardian_of_the_Solar_System_(audio_story)][5.1 - The Guardian of the Solar System]] | 2010 | Sara, Steven, Bret, Mavic Chen, Robert | Sara Kingdom trilogy |   |
+| X | 11 | 8.5 | (115) | [[https://tardis.fandom.com/wiki/The_Guardian_of_the_Solar_System_(audio_story)][5.1 - The Guardian of the Solar System]] | 2010 | Sara, Steven, Bret, Mavic Chen, Robert | Sara Kingdom trilogy |   |
 |   |  8 | 8.5 | (97)  | [[https://tardis.fandom.com/wiki/The_Cold_Equations_(audio_story)][5.12 The Cold Equations]]                | 2011 | Steven, Oliver                         |                      |   |
 |   |    | 7.4 | (94)  | [[https://tardis.fandom.com/wiki/Quinnis_(audio_story)][5.6 - Quinnis]]                          | 2011 |                                        |                      |   |
 |   | 34 | 7.8 | (111) | [[https://tardis.fandom.com/wiki/The_Perpetual_Bond_(audio_story)][5.8 - The Perpetual Bond]]               | 2011 | Steven, Oliver                         |                      |   |
 |   |    | 7.3 | (70)  | [[https://tardis.fandom.com/wiki/The_Wanderer_(audio_story)][6.10 - The Wanderer]]                    | 2011 |                                        |                      |   |
-| * | 14 | 8.3 | (114) | [[https://tardis.fandom.com/wiki/The_Rocket_Men_(audio_story)][6.2 - The Rocket Men]]                   | 2011 | Ian, Barbara, Vicki, Rocket Men        | Rocket Man           |   |
+| X | 14 | 8.3 | (114) | [[https://tardis.fandom.com/wiki/The_Rocket_Men_(audio_story)][6.2 - The Rocket Men]]                   | 2011 | Ian, Barbara, Vicki, Rocket Men        | Rocket Man           |   |
 |   | 13 | 8.4 | (89)  | [[https://tardis.fandom.com/wiki/The_First_Wave_(audio_story)][6.5 - The First Wave]]                   | 2011 | Steven, Oliver, Vardans                |                      |   |
 |   | 29 | 7.9 | (78)  | [[https://tardis.fandom.com/wiki/The_Anachronauts_(audio_story)][6.7 - The Anachronauts]]                 | 2012 | Steven, Sara                           |                      |   |
 |   | 40 | 7.7 | (70)  | [[https://tardis.fandom.com/wiki/The_Time_Museum_(audio_story)][7.1 - The Time Museum]]                  | 2012 | Ian                                    |                      |   |
 |   | 28 | 7.9 | (70)  | [[https://tardis.fandom.com/wiki/The_Library_of_Alexandria_(audio_story)][7.10 - The Library of Alexandria]]       | 2013 | Ian, Barbara, Susan, The Mim           |                      |   |
-| * | 17 | 8.2 | (71)  | [[https://tardis.fandom.com/wiki/Return_of_the_Rocket_Men_(audio_story)][7.5 - Return of the Rocket Men]]         | 2012 | Steven, Dodo, Rocket Men               | Rocket Man           |   |
+| X | 17 | 8.2 | (71)  | [[https://tardis.fandom.com/wiki/Return_of_the_Rocket_Men_(audio_story)][7.5 - Return of the Rocket Men]]         | 2012 | Steven, Dodo, Rocket Men               | Rocket Man           |   |
 |   | 35 | 7.8 | (62)  | [[https://tardis.fandom.com/wiki/The_Flames_of_Cadiz_(audio_story)][7.7 - The Flames of Cadiz]]              | 2013 | Ian, Susan, Barbara                    |                      |   |
 |   | 46 | 7.5 | (60)  | [[https://tardis.fandom.com/wiki/The_Alchemists_(audio_story)][8.2 - The Alchemists]]                   | 2012 | Susan                                  |                      |   |
 |   |    | 7.3 | (50)  | [[https://tardis.fandom.com/wiki/Upstairs_(audio_story)][8.3 - Upstairs]]                         | 2012 |                                        |                      |   |
 |   |    | 7.3 | (100) | [[https://tardis.fandom.com/wiki/The_Beginning_(audio_story)][8.5 - The Beginning]]                    | 2012 |                                        |                      |   |
 |   |    | 7.2 | (44)  | [[https://tardis.fandom.com/wiki/The_Sleeping_City_(audio_story)][8.8 - The Sleeping City]]                | 2012 |                                        |                      |   |
 |   |    | 7.2 | (42)  | [[https://tardis.fandom.com/wiki/Starborn_(audio_story)][8.9 - Starborn]]                         | 2012 |                                        |                      |   |
-| * | 27 | 7.9 | (57)  | [[https://tardis.fandom.com/wiki/The_War_To_End_All_Wars_(audio_story)][8.10 - The War To End All Wars]]         | 2013 | Steven, Dodo, Sida                     | Old Steven trilogy   |   |
+| X | 27 | 7.9 | (57)  | [[https://tardis.fandom.com/wiki/The_War_To_End_All_Wars_(audio_story)][8.10 - The War To End All Wars]]         | 2013 | Steven, Dodo, Sida                     | Old Steven trilogy   |   |
 
 |   | rating | reviews | title                               | featuring                          | series                                   | year  |
 |---+--------+---------+-------------------------------------+------------------------------------+------------------------------------------+-------|
@@ -436,18 +435,18 @@ https://tardis.fandom.com/wiki/The_First_Doctor_Adventures
 ** EA
 |   | rating | reviews | title                        | featuring                                          | series              | year  |
 |---+--------+---------+------------------------------+----------------------------------------------------+---------------------+-------|
-| * |    7.6 | (63)    | [[https://tardis.fandom.com/wiki/The_Yes_Men_(audio_story)][2.1 - The Yes Men]]            | Ben, Polly, Jamie                                  | [[https://tardis.fandom.com/wiki/Series_2_(EA)][Early Adventures S2]] | P2015 |
+| X |    7.6 | (63)    | [[https://tardis.fandom.com/wiki/The_Yes_Men_(audio_story)][2.1 - The Yes Men]]            | Ben, Polly, Jamie                                  | [[https://tardis.fandom.com/wiki/Series_2_(EA)][Early Adventures S2]] | P2015 |
 |   |    7.1 | (60)    | [[https://tardis.fandom.com/wiki/The_Forsaken_(audio_story)][2.2 - The Forsaken]]           | Ben, Polly, Jamie                                  | Early Adventures S2 | P2015 |
-| * |    8.1 | (69)    | [[https://tardis.fandom.com/wiki/The_Black_Hole_(audio_story)][2.3 - The Black Hole]]         | Jamie, Victoria, the Monk                          | Early Adventures S2 | P2015 |
+| X |    8.1 | (69)    | [[https://tardis.fandom.com/wiki/The_Black_Hole_(audio_story)][2.3 - The Black Hole]]         | Jamie, Victoria, the Monk                          | Early Adventures S2 | P2015 |
 |   |    6.3 | (58)    | [[https://tardis.fandom.com/wiki/The_Isos_Network_(audio_story)][2.4 - The Isos Network]]       | Jamie, Zoe, Cybermen                               | Early Adventures S2 | P2015 |
 |---+--------+---------+------------------------------+----------------------------------------------------+---------------------+-------|
 |   |    7.6 | (49)    | [[https://tardis.fandom.com/wiki/The_Night_Witches_(audio_story)][4.1 - The Night Witches]]      | Ben, Polly, Jamie                                  | [[https://tardis.fandom.com/wiki/Series_4_(EA)][Early Adventures S4]] | P2017 |
 |   |    7.6 | (33)    | [[https://tardis.fandom.com/wiki/The_Outliers_(audio_story)][4.2 - The Outliers]]           | Ben, Polly, Jamie                                  | Early Adventures S4 | P2017 |
 |   |    6.7 | (20)    | [[https://tardis.fandom.com/wiki/The_Morton_Legacy_(audio_story)][4.3 - The Morton Legacy]]      | Ben, Polly, Jamie                                  | Early Adventures S4 | P2017 |
-| ? |    8.2 | (29)    | [[https://tardis.fandom.com/wiki/The_Wreck_of_the_World_(audio_story)][4.4 - The Wreck of the World]] | Jamie, Zoe                                         | Early Adventures S4 | P2017 |
+| - |    8.2 | (29)    | [[https://tardis.fandom.com/wiki/The_Wreck_of_the_World_(audio_story)][4.4 - The Wreck of the World]] | Jamie, Zoe                                         | Early Adventures S4 | P2017 |
 |---+--------+---------+------------------------------+----------------------------------------------------+---------------------+-------|
-| * |    7.1 | (22)    | [[https://tardis.fandom.com/wiki/The_Home_Guard_(audio_story)][6.1 - The Home Guard]]         | Ben, Polly, Jamie, the Master                      | [[https://tardis.fandom.com/wiki/Series_6_(EA)][Early Adventures S6]] | P2019 |
-| * |    9.2 | (30)    | [[https://tardis.fandom.com/wiki/Daughter_of_the_Gods_(audio_story)][6.2 - Daughter of the Gods]]   | Jamie, Zoe, First Doctor, Steven, Katarina, Daleks | Early Adventures S6 | P2019 |
+| X |    7.1 | (22)    | [[https://tardis.fandom.com/wiki/The_Home_Guard_(audio_story)][6.1 - The Home Guard]]         | Ben, Polly, Jamie, the Master                      | [[https://tardis.fandom.com/wiki/Series_6_(EA)][Early Adventures S6]] | P2019 |
+| X |    9.2 | (30)    | [[https://tardis.fandom.com/wiki/Daughter_of_the_Gods_(audio_story)][6.2 - Daughter of the Gods]]   | Jamie, Zoe, First Doctor, Steven, Katarina, Daleks | Early Adventures S6 | P2019 |
 
 
 
@@ -457,18 +456,20 @@ https://tardis.fandom.com/wiki/The_First_Doctor_Adventures
 |   |    | 6.4 | (85)  | [[https://tardis.fandom.com/wiki/Helicon_Prime_(audio_story)][2.2 - Helicon Prime]]             |      |                               |             |   |
 |   |    | 6.3 | (86)  | [[https://tardis.fandom.com/wiki/The_Great_Space_Elevator_(audio_story)][3.2 - The Great Space Elevator]]  |      |                               |             |   |
 |   | 39 | 7.7 | (95)  | [[https://tardis.fandom.com/wiki/Resistance_(audio_story)][3.9 - Resistance]]                | 2009 | Polly, Ben, Jamie             |             |   |
-| * | 19 | 8.1 | (109) | [[https://tardis.fandom.com/wiki/The_Glorious_Revolution_(audio_story)][4.2 - The Glorious Revolution]]   | 2009 | Jamie, Zoe                    |             |   |
+| X | 19 | 8.1 | (109) | [[https://tardis.fandom.com/wiki/The_Glorious_Revolution_(audio_story)][4.2 - The Glorious Revolution]]   | 2009 | Jamie, Zoe                    |             |   |
 |   |    | 6.1 | (73)  | [[https://tardis.fandom.com/wiki/The_Emperor_of_Eternity_(audio_story)][4.8 - The Emperor of Eternity]]   |      |                               |             |   |
-| * |    | 7.2 | (82)  | [[https://tardis.fandom.com/wiki/Echoes_of_Grey_(audio_story)][5.2 - Echoes of Grey]]            |      |                               |             |   |
+| X |    | 7.2 | (82)  | [[https://tardis.fandom.com/wiki/Echoes_of_Grey_(audio_story)][5.2 - Echoes of Grey]]            |      |                               |             |   |
 |   | 50 | 7.5 | (82)  | [[https://tardis.fandom.com/wiki/The_Forbidden_Time_(audio_story)][5.9 - The Forbidden Time]]        | 2011 | Polly, Ben, Jamie             |             |   |
 |   | 32 | 7.8 | (72)  | [[https://tardis.fandom.com/wiki/The_Jigsaw_War_(audio_story)][6.11 - The Jigsaw War]]           | 2012 | Jamie, Zoe                    |             |   |
-| * | 37 | 7.7 | (74)  | [[https://tardis.fandom.com/wiki/The_Memory_Cheats_(audio_story)][6.3 - The Memory Cheats]]         | 2011 | Zoe, Jamie, The Company       | The Company |   |
+| X | 37 | 7.7 | (74)  | [[https://tardis.fandom.com/wiki/The_Memory_Cheats_(audio_story)][6.3 - The Memory Cheats]]         | 2011 | Zoe, Jamie, The Company       | The Company |   |
 |   | 44 | 7.6 | (79)  | [[https://tardis.fandom.com/wiki/The_Selachian_Gambit_(audio_story)][6.8 - The Selachian Gambit]]      | 2012 | Jamie, Polly, Ben, Selachians |             |   |
 |   |    | 7.0 | (48)  | [[https://tardis.fandom.com/wiki/The_Uncertainty_Principle_(audio_story)][7.2 - The Uncertainty Principle]] |      |                               |             |   |
 |   |    | 7.0 | (54)  | [[https://tardis.fandom.com/wiki/House_of_Cards_(audio_story)][7.8 - House of Cards]]            |      |                               |             |   |
 |   |    | 7.4 | (49)  | [[https://tardis.fandom.com/wiki/The_Apocalypse_Mirror_(audio_story)][7.11 - The Apocalypse Mirror]]    |      |                               |             |   |
 |   |    | 6.8 | (61)  | [[https://tardis.fandom.com/wiki/The_Dying_Light_(audio_story)][8.6 - The Dying Light]]           |      |                               |             |   |
-| * | 12 | 8.5 | (44)  | [[https://tardis.fandom.com/wiki/Second_Chances_(audio_story)][8.12 - Second Chances]]           | 2014 | Zoe, Jamie, The Company       | The Company |   |
+| X | 12 | 8.5 | (44)  | [[https://tardis.fandom.com/wiki/Second_Chances_(audio_story)][8.12 - Second Chances]]           | 2014 | Zoe, Jamie, The Company       | The Company |   |
+
+
 
 |   | rating | reviews | title                          | featuring              | series                                  | year  |
 |---+--------+---------+--------------------------------+------------------------+-----------------------------------------+-------|
@@ -478,14 +479,14 @@ https://tardis.fandom.com/wiki/The_First_Doctor_Adventures
 |   |    7.4 | (36)    | [[https://tardis.fandom.com/wiki/The_Edge_(audio_story)][10.4 - The Edge]]                | Jamie, Zoe             | Companion Chronicles - 2nd Doctor Vol.1 | P2016 |
 |---+--------+---------+--------------------------------+------------------------+-----------------------------------------+-------|
 |   |    7.1 | (21)    | [[https://tardis.fandom.com/wiki/The_Curator's_Egg_(audio_story)][12.1 - The Curator's Egg]]       | Ben, Polly             | [[https://tardis.fandom.com/wiki/The_Second_Doctor:_Volume_Two][Companion Chronicles - 2nd Doctor Vol.2]] | P2018 |
-|   |    7.9 | (22)    | [[https://tardis.fandom.com/wiki/Dumb_Waiter_(audio_story)][12.2 - Dumb Waiter]]             | Jamie, Victoria, Leela | Companion Chronicles - 2nd Doctor Vol.2 | P2018 |
+| - |    7.9 | (22)    | [[https://tardis.fandom.com/wiki/Dumb_Waiter_(audio_story)][12.2 - Dumb Waiter]]             | Jamie, Victoria, Leela | Companion Chronicles - 2nd Doctor Vol.2 | P2018 |
 |   |    7.3 |         | [[https://tardis.fandom.com/wiki/The_Iron_Maid_(audio_story)][12.3 - The Iron Maid]]           | Jamie, Zoe             | Companion Chronicles - 2nd Doctor Vol.2 | P2018 |
 |   |    8.1 | (16)    | [[https://tardis.fandom.com/wiki/The_Tactics_of_Defeat_(audio_story)][12.4 - The Tactics of Defeat]]   | Jamie, Zoe, Ruth       | Companion Chronicles - 2nd Doctor Vol.2 | P2018 |
 |---+--------+---------+--------------------------------+------------------------+-----------------------------------------+-------|
-|   |        |         | 14.1 - The Death of the Daleks | Jamie, Daleks          | Companion Chronicles - 2nd Doctor Vol.3 | P2022 |
-|   |        |         | 14.2 - The Phantom Piper       | Jamie                  | Companion Chronicles - 2nd Doctor Vol.3 | P2022 |
-|   |        |         | 14.3 - The Prints of Denmark   | Jamie, Zoe, the Monk   | Companion Chronicles - 2nd Doctor Vol.3 | P2022 |
-|   |        |         | 14.4 - The Deepest Tragedian   | Jamie, Zoe             | Companion Chronicles - 2nd Doctor Vol.3 | P2022 |
+|   |        |         | 14.1 - [[https://tardis.fandom.com/wiki/The_Death_of_the_Daleks_(audio_story)][The Death of the Daleks]] | Jamie, Daleks          | Companion Chronicles - 2nd Doctor Vol.3 | P2022 |
+|   |        |         | 14.2 - [[https://tardis.fandom.com/wiki/The_Phantom_Piper_(audio_story)][The Phantom Piper]]       | Jamie                  | Companion Chronicles - 2nd Doctor Vol.3 | P2022 |
+|   |        |         | 14.3 - [[https://tardis.fandom.com/wiki/The_Prints_of_Denmark_(audio_story)][The Prints of Denmark]]   | Jamie, Zoe, the Monk   | Companion Chronicles - 2nd Doctor Vol.3 | P2022 |
+|   |        |         | 14.4 - [[https://tardis.fandom.com/wiki/The_Deepest_Tragedian_(audio_story)][The Deepest Tragedian]]   | Jamie, Zoe             | Companion Chronicles - 2nd Doctor Vol.3 | P2022 |
 
 ** ST
 | 5.8 | (64) | 1.2 - A Stain of Red in the Sand | Short Trips Audios     |
@@ -548,14 +549,14 @@ https://tardis.fandom.com/wiki/The_First_Doctor_Adventures
 |---+--------+---------+-----------------------------------+-------------------------------+-------|
 |   |    7.1 | (70)    | [[https://tardis.fandom.com/wiki/Prisoners_of_the_Lake_(audio_story)][1.1 - Prisoners of the Lake]]       | Jo, Yates, The Brig           | P2015 |
 |   |    7.6 | (68)    | [[https://tardis.fandom.com/wiki/The_Havoc_of_Empires_(audio_story)][1.2 - The Havoc of Empires]]        | Jo, Yates                     | P2015 |
-| * |    7.9 | (50)    | [[https://tardis.fandom.com/wiki/The_Transcendence_of_Ephros_(audio_story)][2.1 - The Transcendence of Ephros]] | Jo                            | P2016 |
+| X |    7.9 | (50)    | [[https://tardis.fandom.com/wiki/The_Transcendence_of_Ephros_(audio_story)][2.1 - The Transcendence of Ephros]] | Jo                            | P2016 |
 |   |    7.2 | (45)    | [[https://tardis.fandom.com/wiki/The_Hidden_Realm_(audio_story)][2.2 - The Hidden Realm]]            | Jo                            | P2016 |
 |   |    7.5 | (56)    | [[https://tardis.fandom.com/wiki/The_Conquest_of_Far_(audio_story)][3.1 - The Conquest of Far]]         | Jo, Daleks                    | P2017 |
 |   |    7.7 | (47)    | [[https://tardis.fandom.com/wiki/Storm_of_the_Horofax_(audio_story)][3.2 - Storm of the Horofax]]        | Jo                            | P2017 |
-| * |    8.1 | (61)    | [[https://tardis.fandom.com/wiki/The_Rise_of_the_New_Humans_(audio_story)][4.1 - The Rise of the New Humans]]  | Jo, the Monk                  | P2018 |
-| * |    7.4 | (55)    | [[https://tardis.fandom.com/wiki/The_Tyrants_of_Logic_(audio_story)][4.2 - The Tyrants of Logic]]        | Jo, Cybermen                  | P2018 |
+| X |    8.1 | (61)    | [[https://tardis.fandom.com/wiki/The_Rise_of_the_New_Humans_(audio_story)][4.1 - The Rise of the New Humans]]  | Jo, the Monk                  | P2018 |
+| X |    7.4 | (55)    | [[https://tardis.fandom.com/wiki/The_Tyrants_of_Logic_(audio_story)][4.2 - The Tyrants of Logic]]        | Jo, Cybermen                  | P2018 |
 |---+--------+---------+-----------------------------------+-------------------------------+-------|
-| * |    8.5 | (40)    | [[https://tardis.fandom.com/wiki/Primord_(audio_story)][5.1 - Primord]]                     | Jo, Liz, The Brig, Primords   | P2019 |
+| X |    8.5 | (40)    | [[https://tardis.fandom.com/wiki/Primord_(audio_story)][5.1 - Primord]]                     | Jo, Liz, The Brig, Primords   | P2019 |
 |   |    7.4 | (33)    | [[https://tardis.fandom.com/wiki/The_Scream_of_Ghosts_(audio_story)][5.2 - The Scream of Ghosts]]        | Jo, The Brig, Benton, Vardans | P2019 |
 |   |    7.9 | (29)    | [[https://tardis.fandom.com/wiki/Poison_of_the_Daleks_(audio_story)][6.1 - Poison of the Daleks]]        | Jo, The Brig, Benton, Daleks  | P2020 |
 |   |    7.3 | (26)    | [[https://tardis.fandom.com/wiki/Operation_Hellfire_(audio_story)][6.2 - Operation Hellfire]]          | Jo, Churchill                 | P2020 |
@@ -566,24 +567,24 @@ https://tardis.fandom.com/wiki/The_First_Doctor_Adventures
 |   |        |         | 9 - The Annihilators              | Liz, The Brig, 2nd Dr., Jamie | P2022 |
 
 ** CC
-|   |    | 7.4 | (117) | [[https://tardis.fandom.com/wiki/The_Blue_Tooth_(audio_story)][1.3 - The Blue Tooth]]                 |      | Liz, Cybermen                                |   |   |
-| * | 48 | 7.5 | (109) | [[https://tardis.fandom.com/wiki/Old_Soldiers_(audio_story)][2.3 - Old Soldiers]]                   | 2007 | The Brig                                     |   |   |
+|   |    | 6.8 | (42)  | [[https://tardis.fandom.com/wiki/The_Elixir_of_Doom_(audio_story)][8.11 - The Elixir of Doom]]            |      |                                              |   |   |
+|   |    | 6.8 | (61)  | [[https://tardis.fandom.com/wiki/The_Three_Companions_(audio_story)][The Three Companions]]                 |      |                                              |   |   |
 |   |    | 6.9 | (80)  | [[https://tardis.fandom.com/wiki/The_Doll_of_Death_(audio_story)][3.3 - The Doll of Death]]              |      |                                              |   |   |
-|   | 45 | 7.6 | (85)  | [[https://tardis.fandom.com/wiki/The_Magician's_Oath_(audio_story)][3.10 - The Magician's Oath]]           | 2009 | Yates, Jo, the Brig, Benton                  |   |   |
-|   | 43 | 7.6 | (86)  | [[https://tardis.fandom.com/wiki/The_Prisoner_of_Peladon_(audio_story)][4.3 - The Prisoner of Peladon]]        | 2009 | King Peladon, Alpha Centauri, Ice Warriors   |   |   |
-| * | 33 | 7.8 | (98)  | [[https://tardis.fandom.com/wiki/Shadow_of_the_Past_(audio_story)][4.9 - Shadow of the Past]]             | 2010 | Liz, the Brig, Yates, the Mim                |   |   |
+|   |    | 7.0 | (49)  | [[https://tardis.fandom.com/wiki/The_Rings_of_Ikiria_(audio_story)][6.12 - The Rings of Ikiria]]           |      |                                              |   |   |
 |   |    | 7.2 | (72)  | [[https://tardis.fandom.com/wiki/The_Time_Vampire_(audio_story)][4.10 - The Time Vampire]]              |      |                                              |   |   |
-| * |  7 | 8.6 | (127) | [[https://tardis.fandom.com/wiki/Find_and_Replace_(audio_story)][5.3 - Find and Replace]]               | 2010 | Jo, Iris Wildthyme, Huxley, the Brig, Benton |   |   |
 |   |    | 7.2 | (74)  | [[https://tardis.fandom.com/wiki/The_Sentinels_of_the_New_Dawn_(audio_story)][5.10 - The Sentinels of the New Dawn]] |      |                                              |   |   |
 |   |    | 7.2 | (65)  | [[https://tardis.fandom.com/wiki/The_Many_Deaths_of_Jo_Grant_(audio_story)][6.4 - The Many Deaths of Jo Grant]]    |      |                                              |   |   |
 |   |    | 7.3 | (59)  | [[https://tardis.fandom.com/wiki/Binary_(audio_story)][6.9 - Binary]]                         |      |                                              |   |   |
-|   |    | 7.0 | (49)  | [[https://tardis.fandom.com/wiki/The_Rings_of_Ikiria_(audio_story)][6.12 - The Rings of Ikiria]]           |      |                                              |   |   |
-| * |  3 | 9.1 | (110) | [[https://tardis.fandom.com/wiki/The_Last_Post_(audio_story)][7.4 - The Last Post]]                  | 2012 | Liz, Emily, the Brig                         |   |   |
-|   |  6 | 8.7 | (95)  | [[https://tardis.fandom.com/wiki/The_Scorchies_(audio_story)][7.9 - The Scorchies]]                  | 2013 | Jo, the Brig, Scorchies                      |   |   |
+|   |    | 7.4 | (117) | [[https://tardis.fandom.com/wiki/The_Blue_Tooth_(audio_story)][1.3 - The Blue Tooth]]                 |      | Liz, Cybermen                                |   |   |
+| X | 48 | 7.5 | (109) | [[https://tardis.fandom.com/wiki/Old_Soldiers_(audio_story)][2.3 - Old Soldiers]]                   | 2007 | The Brig                                     |   |   |
+|   | 45 | 7.6 | (85)  | [[https://tardis.fandom.com/wiki/The_Magician's_Oath_(audio_story)][3.10 - The Magician's Oath]]           | 2009 | Yates, Jo, the Brig, Benton                  |   |   |
+|   | 43 | 7.6 | (86)  | [[https://tardis.fandom.com/wiki/The_Prisoner_of_Peladon_(audio_story)][4.3 - The Prisoner of Peladon]]        | 2009 | King Peladon, Alpha Centauri, Ice Warriors   |   |   |
 |   | 41 | 7.7 | (55)  | [[https://tardis.fandom.com/wiki/Council_of_War_(audio_story)][7.12 - Council of War]]                | 2013 | Benton, the Brig                             |   |   |
-| * | 21 | 8.0 | (54)  | [[https://tardis.fandom.com/wiki/Ghost_in_the_Machine_(audio_story)][8.4 - Ghost in the Machine]]           | 2013 | Jo                                           |   |   |
-|   |    | 6.8 | (42)  | [[https://tardis.fandom.com/wiki/The_Elixir_of_Doom_(audio_story)][8.11 - The Elixir of Doom]]            |      |                                              |   |   |
-|   |    | 6.8 | (61)  | [[https://tardis.fandom.com/wiki/The_Three_Companions_(audio_story)][The Three Companions]]                 |      |                                              |   |   |
+| X | 33 | 7.8 | (98)  | [[https://tardis.fandom.com/wiki/Shadow_of_the_Past_(audio_story)][4.9 - Shadow of the Past]]             | 2010 | Liz, the Brig, Yates, the Mim                |   |   |
+| X | 21 | 8.0 | (54)  | [[https://tardis.fandom.com/wiki/Ghost_in_the_Machine_(audio_story)][8.4 - Ghost in the Machine]]           | 2013 | Jo                                           |   |   |
+| X |  7 | 8.6 | (127) | [[https://tardis.fandom.com/wiki/Find_and_Replace_(audio_story)][5.3 - Find and Replace]]               | 2010 | Jo, Iris Wildthyme, Huxley, the Brig, Benton |   |   |
+|   |  6 | 8.7 | (95)  | [[https://tardis.fandom.com/wiki/The_Scorchies_(audio_story)][7.9 - The Scorchies]]                  | 2013 | Jo, the Brig, Scorchies                      |   |   |
+| X |  3 | 9.1 | (110) | [[https://tardis.fandom.com/wiki/The_Last_Post_(audio_story)][7.4 - The Last Post]]                  | 2012 | Liz, Emily, the Brig                         |   |   |
 
 ** ST
 
@@ -624,43 +625,43 @@ https://tardis.fandom.com/wiki/The_First_Doctor_Adventures
 |---+---------+-------+---------+-----------------------------------------+--------------------------------+------------------------------------------+-------------------|
 |   |     6.3 | [#E]  |         | 1.1 - [[https://tardis.fandom.com/wiki/Destination:_Nerva_(audio_story)][Destination: Nerva]]                | Nicholas Briggs                | Leela                                    | 9 January 2012    |
 |   |     7.5 | [#C]  |         | 1.2 - [[https://tardis.fandom.com/wiki/The_Renaissance_Man_(audio_story)][The Renaissance Man]]               | Justin Richards                | Leela                                    | February 2012     |
-| * |     8.4 | [#B]  |         | 1.3 - [[https://tardis.fandom.com/wiki/The_Wrath_of_the_Iceni_(audio_story)][The Wrath of the Iceni]]            | John Dorney                    | Leela                                    | March 2012        |
+| X |     8.4 | [#B]  |         | 1.3 - [[https://tardis.fandom.com/wiki/The_Wrath_of_the_Iceni_(audio_story)][The Wrath of the Iceni]]            | John Dorney                    | Leela                                    | March 2012        |
 |   |     6.6 | [#E]  |         | 1.4 - [[https://tardis.fandom.com/wiki/Energy_of_the_Daleks_(audio_story)][Energy of the Daleks]]              | Nicholas Briggs                | Leela, Daleks                            | April 2012        |
 |   |     7.3 | [#D]  |         | 1.5 - [[https://tardis.fandom.com/wiki/Trail_of_the_White_Worm_(audio_story)][Trail of the White Worm /]]         | Alan Barnes                    | Leela, The Master                        | May 2012          |
 |   |     7.2 | [#D]  |         | 1.6 - [[https://tardis.fandom.com/wiki/The_Oseidon_Adventure_(audio_story)][The Oseidon Adventure]]             | Alan Barnes                    | Leela, The Master, Kraals                | June 2012         |
 |---+---------+-------+---------+-----------------------------------------+--------------------------------+------------------------------------------+-------------------|
-| * |     8.2 | [#B]  |         | 2.1 - [[https://tardis.fandom.com/wiki/The_Auntie_Matter_(audio_story)][The Auntie Matter]]                 | Jonathan Morris                | Romana I                                 | 14 January 2013   |
+| X |     8.2 | [#B]  |         | 2.1 - [[https://tardis.fandom.com/wiki/The_Auntie_Matter_(audio_story)][The Auntie Matter]]                 | Jonathan Morris                | Romana I                                 | 14 January 2013   |
 |   |     6.8 | [#E]  |         | 2.2 - [[https://tardis.fandom.com/wiki/The_Sands_of_Life_(audio_story)][The Sands of Life /]]               | Nicholas Briggs                | Romana I, K9 Mark II, Cuthbert, Laan     | 11 February 2013  |
 |   |     6.3 | [#E]  |         | 2.3 - [[https://tardis.fandom.com/wiki/War_Against_the_Laan_(audio_story)][War Against the Laan]]              | Nicholas Briggs                | Romana I, Cuthbert, Laan                 | 11 March 2013     |
-| * |     8.1 | [#B]  |         | 2.4 - [[https://tardis.fandom.com/wiki/The_Justice_of_Jalxar_(audio_story)][The Justice of Jalxar]]             | John Dorney                    | Romana I, Jago, Litefoot                 | March 2013        |
-| * |     7.6 | [#C]  |         | 2.5 - [[https://tardis.fandom.com/wiki/Phantoms_of_the_Deep_(audio_story)][Phantoms of the Deep]]              | Jonathan Morris                | Romana I, K9 Mark II                     | May 2013          |
+| X |     8.1 | [#B]  |         | 2.4 - [[https://tardis.fandom.com/wiki/The_Justice_of_Jalxar_(audio_story)][The Justice of Jalxar]]             | John Dorney                    | Romana I, Jago, Litefoot                 | March 2013        |
+| X |     7.6 | [#C]  |         | 2.5 - [[https://tardis.fandom.com/wiki/Phantoms_of_the_Deep_(audio_story)][Phantoms of the Deep]]              | Jonathan Morris                | Romana I, K9 Mark II                     | May 2013          |
 |   |     7.0 | [#D]  |         | 2.6 - [[https://tardis.fandom.com/wiki/The_Dalek_Contract_(audio_story)][The Dalek Contract /]]              | Nicholas Briggs                | Romana I, K9 Mark II, Daleks, Cuthbert   | June 2013         |
 |   |     7.0 | [#D]  |         | 2.7 - [[https://tardis.fandom.com/wiki/The_Final_Phase_(audio_story)][The Final Phase]]                   | Nicholas Briggs                | Romana I, K9 Mark II, Daleks, Cuthbert   | July 2013         |
 |---+---------+-------+---------+-----------------------------------------+--------------------------------+------------------------------------------+-------------------|
-| * |     7.7 | [#C]  |         | 3.1 - [[https://tardis.fandom.com/wiki/The_King_of_Sontar_(audio_story)][The King of Sontar]]                | John Dorney                    | Leela, Sontarans                         | 15 January 2014   |
+| X |     7.7 | [#C]  |         | 3.1 - [[https://tardis.fandom.com/wiki/The_King_of_Sontar_(audio_story)][The King of Sontar]]                | John Dorney                    | Leela, Sontarans                         | 15 January 2014   |
 |   |     7.4 | [#D]  |         | 3.2 - [[https://tardis.fandom.com/wiki/White_Ghosts_(audio_story)][White Ghosts]]                      | Alan Barnes                    | Leela                                    | 14 February 2014  |
-| * |     8.2 | [#B]  |         | 3.3 - [[https://tardis.fandom.com/wiki/The_Crooked_Man_(audio_story)][The Crooked Man]]                   | John Dorney                    | Leela                                    | 14 March 2014     |
+| X |     8.2 | [#B]  |         | 3.3 - [[https://tardis.fandom.com/wiki/The_Crooked_Man_(audio_story)][The Crooked Man]]                   | John Dorney                    | Leela                                    | 14 March 2014     |
 |   |     6.2 | [#E]  |         | 3.4 - [[https://tardis.fandom.com/wiki/The_Evil_One_(audio_story)][The Evil One]]                      | Nicholas Briggs                | Leela, The Master                        | 11 April 2014     |
-| * |     7.8 | [#C]  |         | 3.5 - [[https://tardis.fandom.com/wiki/Last_of_the_Colophon_(audio_story)][Last of the Colophon]]              | Jonathan Morris                | Leela                                    | 14 May 2014       |
+| X |     7.8 | [#C]  |         | 3.5 - [[https://tardis.fandom.com/wiki/Last_of_the_Colophon_(audio_story)][Last of the Colophon]]              | Jonathan Morris                | Leela                                    | 14 May 2014       |
 |   |     6.9 | [#E]  |         | 3.6 - [[https://tardis.fandom.com/wiki/Destroy_the_Infinite_(audio_story)][Destroy the Infinite]]              | Nicholas Briggs                | Leela, The Eminence                      | 18 June 2014      |
 |   |     6.3 | [#E]  |         | 3.7 - [[https://tardis.fandom.com/wiki/The_Abandoned_(audio_story)][The Abandoned]]                     | Louise Jameson and Nigel Fairs | Leela                                    | 11 July 2014      |
 |   |     7.0 | [#D]  |         | 3.8 - [[https://tardis.fandom.com/wiki/Zygon_Hunt_(audio_story)][Zygon Hunt]]                        | Nicholas Briggs                | Leela, Zygons                            | 15 August 2014    |
 |---+---------+-------+---------+-----------------------------------------+--------------------------------+------------------------------------------+-------------------|
 |   |     6.5 | [#E]  |         | 4.1 - [[https://tardis.fandom.com/wiki/The_Exxilons_(audio_story)][The Exxilons]]                      | Nicholas Briggs                | Leela, K9 Mark I, Exxilons               | 15 January 2015   |
 |   |     7.5 | [#C]  |         | 4.2 - [[https://tardis.fandom.com/wiki/The_Darkness_of_Glass_(audio_story)][The Darkness of Glass]]             | Justin Richards                | Leela                                    | 12 February 2015  |
-| * |     8.4 | [#B]  |         | 4.3 - [[https://tardis.fandom.com/wiki/Requiem_for_the_Rocket_Men_(audio_story)][Requiem for the Rocket Men]]        | John Dorney                    | Leela, K9 Mark I, Rocket Men, The Master | 13 March 2015     |
+| X |     8.4 | [#B]  |         | 4.3 - [[https://tardis.fandom.com/wiki/Requiem_for_the_Rocket_Men_(audio_story)][Requiem for the Rocket Men]]        | John Dorney                    | Leela, K9 Mark I, Rocket Men, The Master | 13 March 2015     |
 |   |     7.3 | [#D]  |         | 4.4 - [[https://tardis.fandom.com/wiki/Death_Match_(audio_story)][Death Match]]                       | Matt Fitton                    | Leela, K9 Mark I, The Master             | 16 April 2015     |
-| * |     7.7 | [#C]  |         | 4.5 - [[https://tardis.fandom.com/wiki/Suburban_Hell_(audio_story)][Suburban Hell]]                     | Alan Barnes                    | Leela                                    | 21 May 2015       |
+| X |     7.7 | [#C]  |         | 4.5 - [[https://tardis.fandom.com/wiki/Suburban_Hell_(audio_story)][Suburban Hell]]                     | Alan Barnes                    | Leela                                    | 21 May 2015       |
 |   |     7.4 | [#D]  |         | 4.6 - [[https://tardis.fandom.com/wiki/The_Cloisters_of_Terror_(audio_story)][The Cloisters of Terror]]           | Jonathan Morris                | Leela, Emily Shaw                        | 4 June 2015       |
 |   |     7.2 | [#D]  |         | 4.7 - [[https://tardis.fandom.com/wiki/The_Fate_of_Krelos_(audio_story)][The Fate of Krelos /]]              | Nicholas Briggs                | Leela, K9 Mark I                         | 8 July 2015       |
 |   |     6.0 | [#E]  |     5.8 | 4.8 - [[https://tardis.fandom.com/wiki/Return_to_Telos_(audio_story)][Return to Telos]]                   | Nicholas Briggs                | Leela, K9 Mark I, Jamie, Cybermen        | 11 August 2015    |
 |---+---------+-------+---------+-----------------------------------------+--------------------------------+------------------------------------------+-------------------|
 |   |     7.1 | [#D]  |         | 5.1 - [[https://tardis.fandom.com/wiki/Wave_of_Destruction_(audio_story)][Wave of Destruction]]               | Justin Richards                | Romana II, K9 Mark II, Vardans           | 12 January 2016   |
 |   |     7.1 | [#D]  |         | 5.2 - [[https://tardis.fandom.com/wiki/The_Labyrinth_of_Buda_Castle_(audio_story)][The Labyrinth of Buda Castle]]      | Eddie Robson                   | Romana II                                | 18 February 2016  |
-| * |     7.6 | [#C]  |         | 5.3 - [[https://tardis.fandom.com/wiki/The_Paradox_Planet_(audio_story)][The Paradox Planet /]]              | Jonathan Morris                | Ronama II, K9 Mark II                    | 16 March 2016     |
-| * |     7.6 | [#C]  |         | 5.4 - [[https://tardis.fandom.com/wiki/Legacy_of_Death_(audio_story)][Legacy of Death]]                   | Jonathan Morris                | Ronama II, K9 Mark II                    | 13 April 2016     |
+| X |     7.6 | [#C]  |         | 5.3 - [[https://tardis.fandom.com/wiki/The_Paradox_Planet_(audio_story)][The Paradox Planet /]]              | Jonathan Morris                | Ronama II, K9 Mark II                    | 16 March 2016     |
+| X |     7.6 | [#C]  |         | 5.4 - [[https://tardis.fandom.com/wiki/Legacy_of_Death_(audio_story)][Legacy of Death]]                   | Jonathan Morris                | Ronama II, K9 Mark II                    | 13 April 2016     |
 |   |     7.2 | [#D]  |         | 5.5 - [[https://tardis.fandom.com/wiki/Gallery_of_Ghouls_(audio_story)][Gallery of Ghouls]]                 | Alan Barnes                    | Romana II                                | 10 May 2016       |
-| * |     8.7 | [#A]  |         | 5.6 - [[https://tardis.fandom.com/wiki/The_Trouble_with_Drax_(audio_story)][The Trouble with Drax]]             | John Dorney                    | Romana II, K9 Mark II, Drax              | 14 June 2016      |
+| X |     8.7 | [#A]  |         | 5.6 - [[https://tardis.fandom.com/wiki/The_Trouble_with_Drax_(audio_story)][The Trouble with Drax]]             | John Dorney                    | Romana II, K9 Mark II, Drax              | 14 June 2016      |
 |   |     7.4 | [#D]  |         | 5.7 - [[https://tardis.fandom.com/wiki/The_Pursuit_of_History_(audio_story)][The Pursuit of History /]]          | Nicholas Briggs                | Roaman II, K9 Mark II, Black Guardian, White Guardian, Cuthbert, Laan | 13 July 2016      |
 |   |     7.3 | [#D]  |         | 5.8 - [[https://tardis.fandom.com/wiki/Casualties_of_Time_(audio_story)][Casualties of Time]]                | Nicholas Briggs                | Roaman II, K9 Mark II, Black Guardian, White Guardian, Cuthbert, Laan | 10 August 2016    |
 |---+---------+-------+---------+-----------------------------------------+--------------------------------+------------------------------------------+-------------------|
@@ -674,33 +675,33 @@ https://tardis.fandom.com/wiki/The_First_Doctor_Adventures
 |   |     7.4 | [#D]  |     7.2 | 6.8 - [[https://tardis.fandom.com/wiki/The_Skin_of_the_Sleek_(audio_story)][The Skin of the Sleek /]]           | Marc Platt                     | Romana II                                | 16 August 2017    |
 |   |     7.1 | [#D]  |         | 6.9 - [[https://tardis.fandom.com/wiki/The_Thief_Who_Stole_Time_(audio_story)][The Thief Who Stole Time]]          | Marc Platt                     | Romana II                                | 13 September 2017 |
 |---+---------+-------+---------+-----------------------------------------+--------------------------------+------------------------------------------+-------------------|
-| * |     7.7 | [#C]  |         | 7.1 - [[https://tardis.fandom.com/wiki/The_Sons_of_Kaldor_(audio_story)][The Sons of Kaldor]]                | Andrew Smith                   | Leela, Kaldor androids                   | 18 January 2018   |
+| X |     7.7 | [#C]  |         | 7.1 - [[https://tardis.fandom.com/wiki/The_Sons_of_Kaldor_(audio_story)][The Sons of Kaldor]]                | Andrew Smith                   | Leela, Kaldor androids                   | 18 January 2018   |
 |   |     7.5 | [#C]  |         | 7.2 - [[https://tardis.fandom.com/wiki/The_Crowmarsh_Experiment_(audio_story)][The Crowmarsh Experiment]]          | David Llewellyn                | Leela                                    | 18 January 2018   |
 |   |     7.4 | [#D]  |         | 7.3 - [[https://tardis.fandom.com/wiki/The_Mind_Runners_(audio_story)][The Mind Runners /]]                | John Dorney                    | K9 Mark I                                | 18 January 2018   |
 |   |     7.4 | [#D]  |         | 7.4 - [[https://tardis.fandom.com/wiki/The_Demon_Rises_(audio_story)][The Demon Rises]]                   | John Dorney                    | K9 Mark I                                | 18 January 2018   |
 |   |     7.0 | [#D]  |         | 7.5 - [[https://tardis.fandom.com/wiki/The_Shadow_of_London_(audio_story)][The Shadow of London]]              | Justin Richards                | Leela                                    | 16 May 2018       |
 |   |     7.2 | [#D]  |     7.5 | 7.6 - [[https://tardis.fandom.com/wiki/The_Bad_Penny_(audio_story)][The Bad Penny]]                     | Dan Starkey                    | Leela                                    | 16 May 2018       |
-| * |     7.8 | [#C]  |         | 7.7 - [[https://tardis.fandom.com/wiki/Kill_the_Doctor!_(audio_story)][Kill the Doctor! /]]                | Guy Adams                      | Leela, Sutekh                            | 16 May 2018       |
+| X |     7.8 | [#C]  |         | 7.7 - [[https://tardis.fandom.com/wiki/Kill_the_Doctor!_(audio_story)][Kill the Doctor! /]]                | Guy Adams                      | Leela, Sutekh                            | 16 May 2018       |
 |   |     7.0 | [#D]  |         | 7.8 - [[https://tardis.fandom.com/wiki/The_Age_of_Sutekh_(audio_story)][The Age of Sutekh]]                 | Guy Adams                      | Leela, Sutekh                            | 16 May 2018       |
 |---+---------+-------+---------+-----------------------------------------+--------------------------------+------------------------------------------+-------------------|
 |   |     6.8 | [#E]  |         | 8.1 - [[https://tardis.fandom.com/wiki/The_Sinestran_Kill_(audio_story)][The Sinestran Kill]]                | Andrew Smith                   | Ann                                      | 16 January 2019   |
 |   |     6.7 | [#E]  |     6.9 | 8.2 - [[https://tardis.fandom.com/wiki/Planet_of_the_Drashigs_(audio_story)][Planet of the Drashigs]]            | Phil Mulryne                   | Ann, K9 Mark II, Drashigs                | 16 January 2019   |
-| * |     7.7 | [#C]  |     7.9 | 8.3 - [[https://tardis.fandom.com/wiki/The_Enchantress_of_Numbers_(audio_story)][The Enchantress of Numbers]]        | Simon Barnard, Paul Morris     | Ann, Ada Lovelace                        | 16 January 2019   |
+| X |     7.7 | [#C]  |     7.9 | 8.3 - [[https://tardis.fandom.com/wiki/The_Enchantress_of_Numbers_(audio_story)][The Enchantress of Numbers]]        | Simon Barnard, Paul Morris     | Ann, Ada Lovelace                        | 16 January 2019   |
 |   |     7.2 | [#D]  |         | 8.4 - [[https://tardis.fandom.com/wiki/The_False_Guardian_(audio_story)][The False Guardian /]]              | Guy Adams                      | Ann, K9 Mark II, Zephon, Varga plants    | 16 January 2019   |
 |   |     6.8 | [#E]  |         | 8.5 - [[https://tardis.fandom.com/wiki/Time's_Assassin_(audio_story)][Time's Assassin]]                   | Guy Adams                      | Ann, K9 Mark II, Zephon, Varga plants    | 13 February 2019  |
 |   |     7.3 | [#D]  |         | 8.6 - [[https://tardis.fandom.com/wiki/Fever_Island_(audio_story)][Fever Island]]                      | Jonathan Barnes                | Ann                                      | 13 February 2019  |
-| * |     8.2 | [#B]  |         | 8.7 - [[https://tardis.fandom.com/wiki/The_Perfect_Prisoners_(audio_story)][The Perfect Prisoners /]]           | John Dorney                    | Ann, K9 Mark II, Malpha, Sentreal, Trantis, Beaus, Celation, Gearon | 13 February 2019  |
-| * |     8.3 | [#B]  |         | 8.8 - [[https://tardis.fandom.com/wiki/The_Perfect_Prisoners_(audio_story)][The Perfect Prisoners (part 2)]]    | John Dorney                    | Ann, K9 Mark II, Malpha, Sentreal, Trantis, Beaus, Celation, Gearon | 13 February 2019  |
+| X |     8.2 | [#B]  |         | 8.7 - [[https://tardis.fandom.com/wiki/The_Perfect_Prisoners_(audio_story)][The Perfect Prisoners /]]           | John Dorney                    | Ann, K9 Mark II, Malpha, Sentreal, Trantis, Beaus, Celation, Gearon | 13 February 2019  |
+| X |     8.3 | [#B]  |         | 8.8 - [[https://tardis.fandom.com/wiki/The_Perfect_Prisoners_(audio_story)][The Perfect Prisoners (part 2)]]    | John Dorney                    | Ann, K9 Mark II, Malpha, Sentreal, Trantis, Beaus, Celation, Gearon | 13 February 2019  |
 |---+---------+-------+---------+-----------------------------------------+--------------------------------+------------------------------------------+-------------------|
-| * |     8.2 | [#B]  |     8.6 | 9SP1 - [[https://tardis.fandom.com/wiki/Shadow_of_the_Sun_(audio_story)][Shadow of the Sun]]                | Robert Valentine               | Leela, K9 Mark I                         | 12 May 2020       |
-| * |     7.7 | [#C]  |         | 9.1 - [[https://tardis.fandom.com/wiki/Purgatory_12_(audio_story)][Purgatory 12]]                      | Marc Platt                     | Romana II, Adric, K9 Mark II             | 22 January 2020   |
-| ? |     8.3 | [#B]  |         | 9.2 - [[https://tardis.fandom.com/wiki/Chase_the_Night_(audio_story)][Chase the Night]]                   | Jonathan Morris                | Romana II, Adric, K9 Mark II             | 22 January 2020   |
+| X |     8.2 | [#B]  |     8.6 | 9SP1 - [[https://tardis.fandom.com/wiki/Shadow_of_the_Sun_(audio_story)][Shadow of the Sun]]                | Robert Valentine               | Leela, K9 Mark I                         | 12 May 2020       |
+| X |     7.7 | [#C]  |         | 9.1 - [[https://tardis.fandom.com/wiki/Purgatory_12_(audio_story)][Purgatory 12]]                      | Marc Platt                     | Romana II, Adric, K9 Mark II             | 22 January 2020   |
+|   |     8.3 | [#B]  |         | 9.2 - [[https://tardis.fandom.com/wiki/Chase_the_Night_(audio_story)][Chase the Night]]                   | Jonathan Morris                | Romana II, Adric, K9 Mark II             | 22 January 2020   |
 |   |     7.2 | [#D]  |     7.5 | 9.3 - [[https://tardis.fandom.com/wiki/The_Planet_of_Witches_(audio_story)][The Planet of Witches]]             | Alan Barnes                    | Romana II, Adric, K9 Mark II             | 12 February 2020  |
-| * |     8.0 | [#B]  |     8.4 | 9.4 - [[https://tardis.fandom.com/wiki/The_Quest_of_the_Engineer_(audio_story)][The Quest of the Engineer]]         | Andrew Smith                   | Romana II, Adric, K9 Mark II             | 12 February 2020  |
+| X |     8.0 | [#B]  |     8.4 | 9.4 - [[https://tardis.fandom.com/wiki/The_Quest_of_the_Engineer_(audio_story)][The Quest of the Engineer]]         | Andrew Smith                   | Romana II, Adric, K9 Mark II             | 12 February 2020  |
 |---+---------+-------+---------+-----------------------------------------+--------------------------------+------------------------------------------+-------------------|
-| * |     7.6 | [#C]  |         | 10.1 - [[https://tardis.fandom.com/wiki/The_World_Traders_(audio_story)][The World Traders]]                | Guy Adams                      | Leela, Usurians                          | 20 January 2021   |
-| * |     7.8 | [#C]  |         | 10.2 - [[https://tardis.fandom.com/wiki/The_Day_of_the_Comet_(audio_story)][The Day of the Comet]]             | Jonathan Morris                | Leela                                    | 20 January 2021   |
-| * |     7.8 | [#C]  |         | 10.3 - [[https://tardis.fandom.com/wiki/The_Tribulations_of_Tahdeus_Nook_(audio_story)][The Tribulations of Tahdeus Nook]] | Andrew Smith                   | Leela                                    | 10 February 2021  |
+| X |     7.6 | [#C]  |         | 10.1 - [[https://tardis.fandom.com/wiki/The_World_Traders_(audio_story)][The World Traders]]                | Guy Adams                      | Leela, Usurians                          | 20 January 2021   |
+| X |     7.8 | [#C]  |         | 10.2 - [[https://tardis.fandom.com/wiki/The_Day_of_the_Comet_(audio_story)][The Day of the Comet]]             | Jonathan Morris                | Leela                                    | 20 January 2021   |
+| X |     7.8 | [#C]  |         | 10.3 - [[https://tardis.fandom.com/wiki/The_Tribulations_of_Tahdeus_Nook_(audio_story)][The Tribulations of Tahdeus Nook]] | Andrew Smith                   | Leela                                    | 10 February 2021  |
 |   |     6.1 | [#E]  |         | 10.4 - [[https://tardis.fandom.com/wiki/The_Primeval_Design_(audio_story)][The Primeval Design]]              | Helen Goldwyn                  | Leela, Mary Annin                        |                   |
 #+TBLFM: $3='(cond ((>= $2 8.5) "[#A]") ((>= $2 8.0) "[#B]") ((>= $2 7.5) "[#C]") ((>= $2 7.0) "[#D]") (t "[#E]"));N
 ** misc
@@ -711,25 +712,25 @@ https://tardis.fandom.com/wiki/The_First_Doctor_Adventures
 
 |   |      |         # | Title                          | 2021.04 | Featuring                                       |   |
 |---+------+-----------+--------------------------------+---------+-------------------------------------------------+---|
-| # | [#C] | 1.1 / 1.2 | Blood of the Daleks            |     7.8 | Lucie, Daleks                                   |   |
+| - | [#C] | 1.1 / 1.2 | Blood of the Daleks            |     7.8 | Lucie, Daleks                                   |   |
 |   | [#C] |       1.3 | Horror of Glam Rock            |     7.5 | Lucie, Pat                                      |   |
-| * | [#D] |       1.4 | +Immortal Beloved+             |     7.3 | Lucie                                           |   |
+| X | [#D] |       1.4 | Immortal Beloved               |     7.3 | Lucie                                           |   |
 |   | [#E] |       1.5 | Phobos                         |     6.5 | Lucie                                           |   |
 |   | [#D] |       1.6 | No More Lies                   |     7.1 | Lucie                                           |   |
-| * | [#A] |       1.7 | Human Resources /              |     8.7 | Lucie, Cybermen, the Headhunter, Karen, Straxus |   |
-| * | [#B] |       1.8 | Human Resources                |     8.3 |                                                 |   |
+| X | [#A] |       1.7 | Human Resources /              |     8.7 | Lucie, Cybermen, the Headhunter, Karen, Straxus |   |
+| X | [#B] |       1.8 | Human Resources                |     8.3 |                                                 |   |
 |---+------+-----------+--------------------------------+---------+-------------------------------------------------+---|
 |   | [#E] |   FALM1.1 | The Dalek Trap                 |     6.6 | Lucie, Daleks                                   |   |
 |   | [#E] |   FALM1.2 | The Revolution Game            |     6.8 | Lucie                                           |   |
 |   | [#C] |   FALM1.3 | The House on the Edge of Chaos |     7.6 |                                                 |   |
-| ? | [#B] |   FALM1.4 | Island of the Fendahl          |     8.1 | Lucie, Fendahl                                  |   |
+|   | [#B] |   FALM1.4 | Island of the Fendahl          |     8.1 | Lucie, Fendahl                                  |   |
 |---+------+-----------+--------------------------------+---------+-------------------------------------------------+---|
 |   | [#E] |       2.1 | Dead London                    |     6.5 | Lucie                                           |   |
 |   | [#C] |       2.2 | Max Warp                       |     7.5 |                                                 |   |
-| # | [#C] |       2.3 | Brave New Town                 |     7.9 | Lucie, Nestene                                  |   |
+|   | [#C] |       2.3 | Brave New Town                 |     7.9 | Lucie, Nestene                                  |   |
 |   | [#E] |       2.4 | The Skull of Sobek             |     5.5 | Lucie                                           |   |
-| # | [#C] |       2.5 | Grand Theft Cosmos             |     7.9 | Lucie, the Headhunter, Karen                    |   |
-| # | [#C] |       2.6 | +The Zygon Who Fell to Earth+  |     7.9 | Lucie, Pat, Zygons                              |   |
+|   | [#C] |       2.5 | Grand Theft Cosmos             |     7.9 | Lucie, the Headhunter, Karen                    |   |
+| X | [#C] |       2.6 | The Zygon Who Fell to Earth    |     7.9 | Lucie, Pat, Zygons                              |   |
 |   | [#C] |       2.7 | Sisters of the Flame           |     7.7 | Lucie, Morbius, Sisterhood of Karn, Straxus     |   |
 |   | [#D] |       2.8 | The Vengeance of Morbius       |     7.1 | Lucie, Morbius, Sisterhood of Karn, Straxus     |   |
 |---+------+-----------+--------------------------------+---------+-------------------------------------------------+---|
@@ -742,17 +743,17 @@ https://tardis.fandom.com/wiki/The_First_Doctor_Adventures
 |   | [#C] |       3.7 | The Eight Truths               |     7.7 | Lucie, Karen, Eight Legs                        |   |
 |   | [#C] |       3.8 | Worldwide Web                  |     7.5 | Lucie, Karen, Eight Legs                        |   |
 |---+------+-----------+--------------------------------+---------+-------------------------------------------------+---|
-| * | [#B] |       4.1 | +Death in Blackpool+           |     8.4 | Lucie, Pat, Zygons                              |   |
-|   | [#A] |      4.10 | +To the Death+                 |     9.1 | Daleks, Lucie, Susan, Alex, the Monk, Tamsin    |   |
+| X | [#B] |       4.1 | Death in Blackpool             |     8.4 | Lucie, Pat, Zygons                              |   |
 |   | [#C] |       4.2 | Situation Vacant               |     7.6 | Tamsin                                          |   |
 |   | [#E] |       4.3 | Nevermore                      |     6.6 | Tamsin                                          |   |
-| * | [#B] |       4.4 | +The Book of Kells+            |     8.1 | Tamsin, the Monk, Lucie                         |   |
-| * | [#C] |       4.5 | +[[https://tardis.fandom.com/wiki/Deimos_(audio_story)][Deimos]]+                       |     7.8 | Tamsin, Ice Warriors                            |   |
-| * | [#B] |       4.6 | +[[https://tardis.fandom.com/wiki/The_Resurrection_of_Mars_(audio_story)][The Resurrection of Mars]]+     |     8.2 | Tamsin, Lucie, Ice Warriors, the Monk           |   |
+| X | [#B] |       4.4 | The Book of Kells              |     8.1 | Tamsin, the Monk, Lucie                         |   |
+| X | [#C] |       4.5 | [[https://tardis.fandom.com/wiki/Deimos_(audio_story)][Deimos]]                         |     7.8 | Tamsin, Ice Warriors                            |   |
+| X | [#B] |       4.6 | [[https://tardis.fandom.com/wiki/The_Resurrection_of_Mars_(audio_story)][The Resurrection of Mars]]       |     8.2 | Tamsin, Lucie, Ice Warriors, the Monk           |   |
 |   | [#C] |       4.7 | Relative Dimensions            |     7.6 | Susan, Alex, Lucie                              |   |
 |   | [#D] |       4.8 | Prisoner of the Sun            |     7.3 | Susan, Alex, Lucie                              |   |
 |   | [#C] |      VIII | An Earthly Child               |     7.5 | Susan, Alex                                     |   |
-|   | [#A] |       4.9 | +Lucie Miller+                 |     8.9 | Daleks, Lucie, Susan, Alex, the Monk, Tamsin    |   |
+| X | [#A] |       4.9 | Lucie Miller                   |     8.9 | Daleks, Lucie, Susan, Alex, the Monk, Tamsin    |   |
+| X | [#A] |      4.10 | To the Death                   |     9.1 | Daleks, Lucie, Susan, Alex, the Monk, Tamsin    |   |
 #+TBLFM: $2='(cond ((>= $5 8.5) "[#A]") ((>= $5 8.0) "[#B]") ((>= $5 7.5) "[#C]") ((>= $5 7.0) "[#D]") (t "[#E]"));N
 
 ** Dark Eyes
@@ -830,33 +831,83 @@ https://tardis.fandom.com/wiki/The_First_Doctor_Adventures
 | 7.3 | (23) | Time Lord Victorious - Echoes of Extinction           | Time Lord Victorious Series                       |         |   |   |
 | 7.6 | (29) | Time Lord Victorious 2 - The Enemy of My Enemy        | Time Lord Victorious Series                       |         |   |   |
 
+* 9DA
 
+** 9DA Series 1
+
+/Main article: [[https://tardis.fandom.com/wiki/Series_1_(9DA)][Series 1 (9DA)]]/
+
+/Main article: [[https://tardis.fandom.com/wiki/Ravagers_(audio_anthology)][Ravagers (audio anthology)]]/
+
+/Main article: [[https://tardis.fandom.com/wiki/Respond_to_All_Calls_(audio_anthology)][Respond to All Calls (audio anthology)]]/
+
+/Main article: [[https://tardis.fandom.com/wiki/Lost_Warriors_(audio_anthology)][Lost Warriors (audio anthology)]]/
+
+/Main article: [[https://tardis.fandom.com/wiki/Old_Friends_(audio_anthology)][Old Friends (audio anthology)]]/
+
+
+|   | Rating |   # | Title                       | Author          | Featuring                      | Released         |
+|---+--------+-----+-----------------------------+-----------------+--------------------------------+------------------|
+|   |    7.2 | 1.1 | /[[https://tardis.fandom.com/wiki/Sphere_of_Freedom_(audio_story)][Sphere of Freedom]]/         | [[https://tardis.fandom.com/wiki/Nicholas_Briggs][Nicholas Briggs]] | [[https://tardis.fandom.com/wiki/Nova_(Sphere_of_Freedom)][Nova]], [[https://tardis.fandom.com/wiki/Audrey_Mohinson][Audrey]]                   | [[https://tardis.fandom.com/wiki/13_May_(releases)][13 May]] [[https://tardis.fandom.com/wiki/2021_(releases)][2021]]      |
+|   |    7.0 | 1.2 | /[[https://tardis.fandom.com/wiki/Cataclysm_(audio_story)][Cataclysm]]/                 |                 | Nova                           |                  |
+|   |    7.0 | 1.3 | /[[https://tardis.fandom.com/wiki/Food_Fight_(audio_story)][Food Fight]]/                |                 | Audrey                         |                  |
+|   |    7.6 | 2.1 | /[[https://tardis.fandom.com/wiki/Girl,_Deconstructed_(audio_story)][Girl, Deconstructed]]/       | [[https://tardis.fandom.com/wiki/Lisa_McMullin][Lisa McMullin]]   |                                | [[https://tardis.fandom.com/wiki/11_August_(releases)][11 August]] [[https://tardis.fandom.com/wiki/2021_(releases)][2021]]   |
+|   |    7.0 | 2.2 | /[[https://tardis.fandom.com/wiki/Fright_Motif_(audio_story)][Fright Motif]]/              | [[https://tardis.fandom.com/wiki/Tim_Foley][Tim Foley]]       |                                |                  |
+|   |    8.2 | 2.3 | /[[https://tardis.fandom.com/wiki/Planet_of_the_End_(audio_story)][Planet of the End]]/         | [[https://tardis.fandom.com/wiki/Timothy_X_Atack][Timothy X Atack]] |                                |                  |
+|   |    6.7 | 3.1 | /[[https://tardis.fandom.com/wiki/The_Hunting_Season_(audio_story)][The Hunting Season]]/        | [[https://tardis.fandom.com/wiki/James_Kettle][James Kettle]]    |                                | [[https://tardis.fandom.com/wiki/23_November_(releases)][23 November]] [[https://tardis.fandom.com/wiki/2021_(releases)][2021]] |
+|   |    6.5 | 3.2 | /[[https://tardis.fandom.com/wiki/The_Curse_of_Lady_Macbeth_(audio_story)][The Curse of Lady Macbeth]]/ | [[https://tardis.fandom.com/wiki/Lizzie_Hopley][Lizzie Hopley]]   |                                |                  |
+|   |    8.8 | 3.3 | /[[https://tardis.fandom.com/wiki/Monsters_in_Metropolis_(audio_story)][Monsters in Metropolis]]/    | [[https://tardis.fandom.com/wiki/John_Dorney][John Dorney]]     | [[https://tardis.fandom.com/wiki/Cybermen][Cyberman]]                       |                  |
+|   |    7.6 | 4.1 | /[[https://tardis.fandom.com/wiki/Fond_Farewell_(audio_story)][Fond Farewell]]/             | [[https://tardis.fandom.com/wiki/David_K_Barnes][David K Barnes]]  |                                | [[https://tardis.fandom.com/wiki/16_February_(releases)][16 February]] [[https://tardis.fandom.com/wiki/2022_(releases)][2022]] |
+|   |    8.1 | 4.2 | /[[https://tardis.fandom.com/wiki/Way_of_the_Burryman_(audio_story)][Way of the Burryman]]/       | [[https://tardis.fandom.com/wiki/Roy_Gill][Roy Gill]]        | [[https://tardis.fandom.com/wiki/Alistair_Gordon_Lethbridge-Stewart][The Brig]], [[https://tardis.fandom.com/wiki/Sam_Bishop][Sam Bishop]], [[https://tardis.fandom.com/wiki/Cyberman][Cybermen]] |                  |
+|   |    8.2 | 4.3 | /[[https://tardis.fandom.com/wiki/The_Forth_Generation_(audio_story)][The Forth Generation]]/      |                 |                                |                  |
+
+** 9DA Series 2
+
+/Main article: [[https://tardis.fandom.com/wiki/Series_2_(9DA)][Series 2 (9DA)]]/
+
+*** /Back to Earth/
+
+/Main article: [[https://tardis.fandom.com/wiki/Back_to_Earth_(audio_anthology)][Back to Earth (audio anthology)]]/
+
+|   |   |   # | Title                | Author           | Featuring | Released   |
+|---+---+-----+----------------------+------------------+-----------+------------|
+|   |   | 2.1 | /[[https://tardis.fandom.com/wiki/Station_to_Station_(audio_story)][Station to Station]]/ | [[https://tardis.fandom.com/wiki/Robert_Valentine][Robert Valentine]] |           | [[https://tardis.fandom.com/wiki/4_May_(releases)][4 May]] [[https://tardis.fandom.com/wiki/2022_(releases)][2022]] |
+|   |   | 2.2 | /[[https://tardis.fandom.com/wiki/The_False_Dimitry_(audio_story)][The False Dimitry]]/  | [[https://tardis.fandom.com/wiki/Sarah_Grochala][Sarah Grochala]]   |           |            |
+|   |   | 2.3 | /[[https://tardis.fandom.com/wiki/Auld_Lang_Syne_(audio_story)][Auld Lang Syne]]/     | [[https://tardis.fandom.com/wiki/Tim_Foley][Tim Foley]]        |           |            |
 * 10DA
 
-|     |       # | Title                             | Author       | Doctor | Featuring          | Released         |
-|-----+---------+-----------------------------------+--------------+--------+--------------------+------------------|
-| 7.7 |     1.1 | /[[https://tardis.fandom.com/wiki/Technophobia_(audio_story)][Technophobia]]/                    | Matt_Fitton  | 10th   | Donna              | 16 May 2016      |
-| 7.1 |     1.2 | /[[https://tardis.fandom.com/wiki/Time_Reaver_(audio_story)][Time Reaver]]/                     | Jenny_Colgan |        | Donna, [[https://tardis.fandom.com/wiki/Gully_(In_the_Blood)][Gully]]       |                  |
-| 8.5 |     1.3 | /[[https://tardis.fandom.com/wiki/Death_and_the_Queen_(audio_story)][Death and the Queen]]/             | James_Goss   |        | Donna              |                  |
-|-----+---------+-----------------------------------+--------------+--------+--------------------+------------------|
-| 7.5 |     2.1 | /[[https://tardis.fandom.com/wiki/Infamy_of_the_Zaross_(audio_story)][Infamy of the Zaross]]/            | John_Dorney  | 10th   | Rose, [[https://tardis.fandom.com/wiki/Jackie_Tyler][Jackie]]       | 23 November 2017 |
-| 7.1 |     2.2 | /[[https://tardis.fandom.com/wiki/The_Sword_of_the_Chevalier_(audio_story)][The Sword of the Chevalier]]/      | [[https://tardis.fandom.com/wiki/Guy_Adams][Guy Adams]]    |        | Rose               |                  |
-| 6.3 |     2.3 | /[[https://tardis.fandom.com/wiki/Cold_Vengeance_(audio_story)][Cold Vengeance]]/                  | Matt_Fitton  |        | Rose, [[https://tardis.fandom.com/wiki/Ice_Warrior][Ice Warriors]] |                  |
-|-----+---------+-----------------------------------+--------------+--------+--------------------+------------------|
-| 8.3 |     3.1 | No Place                          |              |        |                    |                  |
-| 7.6 |     3.2 | One Mile Down                     |              |        |                    |                  |
-| 7.2 |     3.3 | The Creeping Death                |              |        |                    |                  |
-|-----+---------+-----------------------------------+--------------+--------+--------------------+------------------|
-| 8.5 | 10&RS 1 | +Expiry Dating+                   |              |        |                    |                  |
-| 6.5 | 10&RS 2 | Precious Annihilation             |              |        |                    |                  |
-| 8.3 | 10&RS 3 | Ghosts                            |              |        |                    |                  |
-|-----+---------+-----------------------------------+--------------+--------+--------------------+------------------|
-| 8.5 |  DU 1.1 | +Buying Time+                     |              |        | Anya, Mark Seven   |                  |
-| 8.8 |  DU 1.2 | The Wrong Woman                   |              |        | Anya, Mark Seven   |                  |
-| 7.9 |  DU 1.3 | The House of Kingdom              |              |        | Anya, Mark Seven   |                  |
-|-----+---------+-----------------------------------+--------------+--------+--------------------+------------------|
-| 7.8 |   OoT 1 | +Out of Time+                     |              |        | 4th Dr.            |                  |
-| 7.5 |   OoT 2 | Out of Time 2 - The Gates of Hell |              |        |                    |                  |
+|   |     | #       | Title                      | Author           | Featuring                       | Released         |   |
+|---+-----+---------+----------------------------+------------------+---------------------------------+------------------+---|
+| X | 7.7 | 1.1     | [[https://tardis.fandom.com/wiki/Technophobia_(audio_story)][Technophobia]]               | Matt_Fitton      | Donna                           | 16 May 2016      |   |
+|   | 7.1 | 1.2     | [[https://tardis.fandom.com/wiki/Time_Reaver_(audio_story)][Time Reaver]]                | Jenny_Colgan     | Donna, [[https://tardis.fandom.com/wiki/Gully_(In_the_Blood)][Gully]]                    |                  |   |
+| X | 8.5 | 1.3     | [[https://tardis.fandom.com/wiki/Death_and_the_Queen_(audio_story)][Death and the Queen]]        | James_Goss       | Donna                           |                  |   |
+|---+-----+---------+----------------------------+------------------+---------------------------------+------------------+---|
+| - | 7.5 | 2.1     | [[https://tardis.fandom.com/wiki/Infamy_of_the_Zaross_(audio_story)][Infamy of the Zaross]]       | John_Dorney      | Rose, [[https://tardis.fandom.com/wiki/Jackie_Tyler][Jackie]]                    | 23 November 2017 |   |
+|   | 7.1 | 2.2     | [[https://tardis.fandom.com/wiki/The_Sword_of_the_Chevalier_(audio_story)][The Sword of the Chevalier]] | [[https://tardis.fandom.com/wiki/Guy_Adams][Guy Adams]]        | Rose                            |                  |   |
+|   | 6.3 | 2.3     | [[https://tardis.fandom.com/wiki/Cold_Vengeance_(audio_story)][Cold Vengeance]]             | Matt_Fitton      | Rose, [[https://tardis.fandom.com/wiki/Ice_Warrior][Ice Warriors]]              |                  |   |
+|---+-----+---------+----------------------------+------------------+---------------------------------+------------------+---|
+| - | 8.3 | 3.1     | [[https://tardis.fandom.com/wiki/No_Place_(audio_story)][No Place]]                   | James_Goss       | Donna, Sylvia, Wilf             | 16 May 2019      |   |
+|   | 7.6 | 3.2     | [[https://tardis.fandom.com/wiki/One_Mile_Down_(audio_story)][One Mile Down]]              | Jenny T Colgan   | Donna, Judoon                   |                  |   |
+|   | 7.2 | 3.3     | [[https://tardis.fandom.com/wiki/The_Creeping_(audio_story)][The Creeping Death]]         | Roy Gill         | Donna                           |                  |   |
+|---+-----+---------+----------------------------+------------------+---------------------------------+------------------+---|
+| X | 8.5 | 10&RS 1 | [[https://tardis.fandom.com/wiki/Expiry_Dating_(audio_story)][Expiry Dating]]              | Matt Fitton      | River, 5th Dr., 6th Dr.         | 25 November 2020 |   |
+|   | 6.5 | 10&RS 2 | [[https://tardis.fandom.com/wiki/Precious_Annihilation_(audio_story)][Precious Annihilation ]]     | Lizzie Hopley    | River                           |                  |   |
+|   | 8.3 | 10&RS 3 | [[https://tardis.fandom.com/wiki/Ghosts_(audio_story)][Ghosts]]                     | Jonathan Morris  | River                           |                  |   |
+|---+-----+---------+----------------------------+------------------+---------------------------------+------------------+---|
+| X | 8.5 | DU 1.1  | [[https://tardis.fandom.com/wiki/Buying_Time_(audio_story)][Buying Time]]                | John Dorney      | Anya, Mark Seven                | 14 Aprial 2021   |   |
+| - | 8.8 | DU 1.2  | [[https://tardis.fandom.com/wiki/The_Wrong_Woman_(audio_story)][The Wrong Woman]]            | John Dorney      | Anya, Mark Seven, the Nun       |                  |   |
+| - | 7.9 | DU 1.3  | [[https://tardis.fandom.com/wiki/The_House_of_Kingdom_(audio_story)][The House of Kingdom]]       | Andrew Smith     | Anya, Mark Seven, Mechonoids    |                  |   |
+|---+-----+---------+----------------------------+------------------+---------------------------------+------------------+---|
+|   | 7.0 | DU 2.1  | [[https://tardis.fandom.com/wiki/Cycle_of_Destruction_(audio_story)][Cycle of Destruction]]       | Roy Grill        | Anya, Mark, Daleks              | 14 July 2021     |   |
+|   | 8.4 | DU 2.2  | [[https://tardis.fandom.com/wiki/The_Trojan_Dalek_(audio_story)][The Trojan Dalek]]           | John Dorney      | Anya, Mark, Daleks              |                  |   |
+|   | 8.5 | DU 2.3  | [[https://tardis.fandom.com/wiki/The_Lost_(audio_story)][The Lost]]                   | Robert Valentine | Anya                            |                  |   |
+|---+-----+---------+----------------------------+------------------+---------------------------------+------------------+---|
+|   | 6.7 | DU 3.1  | [[https://tardis.fandom.com/wiki/The_First_Son_(audio_story)][The First Son]]              | Lizzie Hopley    | Anya, River, Movellans          | 13 October 2021  |   |
+|   | 7.7 | DU 3.2  | [[https://tardis.fandom.com/wiki/The_Dalek_Defence_(audio_story)][The Dalek Defence]]          | Matt Fitton      | Anya, Daleks, Davros, Movellans |                  |   |
+|   | 8.2 | DU 3.3  | [[https://tardis.fandom.com/wiki/The_Triumph_of_Davros_(audio_story)][The Triumph of Davros]]      | Matt Fitton      | Anya, Daleks, Davros, Movellans |                  |   |
+|---+-----+---------+----------------------------+------------------+---------------------------------+------------------+---|
+| X | 7.8 | OoT 1   | [[https://tardis.fandom.com/wiki/Out_of_Time_(audio_story)][Out of Time]]                | Matt Fitton      | 4th Dr., Daleks                 | 26 August 2020   |   |
+| X | 7.5 | OoT 2   | [[https://tardis.fandom.com/wiki/The_Gates_of_Hell_(audio_story)][The Gates of Hell]]          | David LIewellyn  | 5th Dr., Cybermen               | 2 Jun 2021       |   |
 
 * Footnotes
 
@@ -867,5 +918,17 @@ https://tardis.fandom.com/wiki/The_First_Doctor_Adventures
 [fn:12] Rocket Men (CC 6.2/7.5, 4DA 4.3)
 
 [fn:11] Sarah Kingdom trilogy (CC3.5/4.1/5.1)
+
+
+#+BEGIN_SRC emacs-lisp
+  (defun org-insert-url-tardis-fandom-audio ()
+    (interactive)
+    (let* ((title (funcall region-extract-function nil))
+           (url (concat
+                 "https://tardis.fandom.com/wiki/"
+                 (replace-regexp-in-string " " "_" title)
+                 "_(audio_story)")))
+      (org-insert-link nil url title)))
+#+END_SRC
 
 
