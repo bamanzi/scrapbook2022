@@ -1,0 +1,43 @@
+/* Code tidied up by ScrapBook */
+@keyframes Bounce {
+0%, 100% { transform: translateY(-100%); }
+50% { transform: translateY(100%); }
+}
+@keyframes Bounce {
+0%, 100% { transform: translateY(-100%); }
+50% { transform: translateY(100%); }
+}
+@media (max-width: 320px) {
+}
+@keyframes linear-double {
+0% { transform: translateX(-56%); }
+100% { transform: translateX(56%); }
+}
+@keyframes linear-double {
+0% { transform: translateX(-56%); }
+100% { transform: translateX(56%); }
+}
+@media (min-width: 768px) {
+}
+.LoadingBar { background: rgb(5, 109, 232) none repeat scroll 0% 0%; display: none; height: 2px; left: 0px; pointer-events: none; position: fixed; right: 0px; top: 0px; transform: translateX(-100%); z-index: 101; }
+@keyframes LoadingBarForward {
+0% { transform: translateX(-100%); }
+40% { transform: translateX(0px); }
+60% { transform: translateX(0px); }
+100% { transform: translateX(100%); }
+}
+@keyframes LoadingBarForward {
+0% { transform: translateX(-100%); }
+40% { transform: translateX(0px); }
+60% { transform: translateX(0px); }
+100% { transform: translateX(100%); }
+}
+@keyframes fxRichTextFadeIn {
+0% { opacity: 0; }
+100% { opacity: 1; }
+}
+@keyframes fxRichTextFadeIn {
+0% { opacity: 0; }
+100% { opacity: 1; }
+}
+.RichText--clearBoth::after, .RichText--clearBoth::before { clear: both; content: ""; display: block; }

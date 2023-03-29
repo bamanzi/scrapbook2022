@@ -1,0 +1,72 @@
+/* Code tidied up by ScrapBook */
+@media screen and (max-width: 1360px) {
+}
+@media screen and (max-width: 1124px) {
+  #page, .container { max-width: 100%; }
+  .main-container, .container { max-width: 96%; }
+  .secondary-navigation .container { max-width: 100%; }
+}
+@media screen and (max-width: 1000px) {
+  #header h1, #header h2, .site-description { float: left; text-align: center; max-width: 100%; padding: 0px; }
+  #header h1, #header h2 { font-size: 40px; }
+  #logo a, #logo img { float: none; letter-spacing: 0px; }
+  .logo-wrap, .widget-header { width: 100%; float: left; display: block; max-width: 100%; text-align: center; }
+  .widget-header form#searchform { float: none; margin: 10px auto 0px; }
+}
+@media screen and (max-width: 960px) {
+}
+@media screen and (max-width: 865px) {
+  .main-container-wrap { position: relative; left: 0px; transition: left 500ms ease 0s; }
+  #navigation { display: none; }
+  #navigation ul ul { visibility: visible ! important; opacity: 1 ! important; position: relative; left: 0px ! important; border: 0px none; width: 100%; }
+  #navigation.mobile-menu-wrapper { display: block; position: fixed; top: 0px; left: -300px; width: 300px; height: 100%; border-right: 1px solid rgba(0, 0, 0, 0.15); overflow: auto; transition: left 500ms ease 0s; backface-visibility: hidden; box-sizing: border-box; }
+  #navigation ul li { width: 100%; display: block; border-bottom: 1px solid rgba(0, 0, 0, 0.2); }
+  #navigation ul li:hover { background: transparent none repeat scroll 0% 0%; }
+  #navigation ul li a, #navigation ul ul a { padding: 9px 18px; width: 100%; border: medium none; }
+  #navigation ul ul { position: static; width: 100%; border: medium none; }
+  #navigation ul ul li { background: transparent none repeat scroll 0% 0%; width: 100%; }
+  #navigation ul ul li:first-child { border-top: 1px solid rgba(0, 0, 0, 0.2); }
+  #navigation i { display: inline; }
+  #navigation ul ul a { padding: 9px 18px 9px 25px ! important; width: 100% ! important; }
+  #navigation .menu-item-has-children > a::after { content: ""; }
+  a#pull { display: block; width: 100%; margin: auto; position: relative; color: rgb(255, 255, 255); text-align: left; z-index: 1; padding: 0px 20px; }
+  a.toggle-mobile-menu::before { font-family: FontAwesome; content: ""; position: relative; font-size: 18px; line-height: 42px; margin-right: 10px; }
+}
+@media screen and (min-width: 865px) {
+}
+@media screen and (max-width: 830px) {
+  .article { width: 100%; }
+  #content_box { padding-right: 0px; padding-left: 0px ! important; }
+  .sidebar.c-4-12 { float: none; width: 100% ! important; margin: 0px auto; padding-left: 0px; padding-right: 0px; overflow: hidden; max-width: 345px; }
+}
+@media screen and (min-width: 424px) and (max-width: 830px) {
+}
+@media screen and (max-width: 782px) {
+}
+@media screen and (max-width: 720px) {
+  .f-widget, .widgets-num-4 .f-widget { width: 44%; margin-right: 5.75%; }
+  .f-widget-2 { margin-right: 0px ! important; }
+  .f-widget-3 { clear: left; }
+}
+@media screen and (max-width: 650px) {
+}
+@media screen and (max-width: 600px) {
+  .post-img img { width: 100%; }
+}
+@media screen and (max-width: 560px) {
+}
+@media screen and (max-width: 550px) {
+  .sbutton { float: right; }
+  .f-widget, .widgets-num-4 .f-widget { float: none; width: 100%; margin: 0px auto ! important; display: inline-block; }
+}
+@media screen and (max-width: 480px) {
+  nav { border-bottom: 0px none; }
+  #navigation { margin-top: 0px; margin-bottom: 0px; }
+  .secondary-navigation { height: 35px; width: 100% ! important; background: transparent none repeat scroll 0% 0%; }
+  .related-posts li { width: 100% ! important; float: left ! important; max-width: 100%; }
+  .copyrights { text-align: center; }
+  #copyright-note > span { width: 100%; }
+  #copyright-note .right { margin-right: 0px; float: none; }
+}
+@media screen and (max-width: 423px) {
+}

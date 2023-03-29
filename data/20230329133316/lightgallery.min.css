@@ -1,0 +1,33 @@
+/* Code tidied up by ScrapBook */
+@font-face {
+  font-family: "lg";
+  font-style: normal;
+  font-weight: 400;
+  src: url("lg.ttf") format("truetype"), url("lg.woff") format("woff"), url("lg.svg") format("svg");
+}
+@keyframes lg-right-end {
+0%, 100% { left: 0px; }
+50% { left: -30px; }
+}
+@keyframes lg-right-end {
+0%, 100% { left: 0px; }
+50% { left: -30px; }
+}
+@keyframes lg-right-end {
+0%, 100% { left: 0px; }
+50% { left: -30px; }
+}
+@keyframes lg-left-end {
+0%, 100% { left: 0px; }
+50% { left: 30px; }
+}
+@keyframes lg-left-end {
+0%, 100% { left: 0px; }
+50% { left: 30px; }
+}
+@keyframes lg-left-end {
+0%, 100% { left: 0px; }
+50% { left: 30px; }
+}
+@media (min-width: 1025px) {
+}

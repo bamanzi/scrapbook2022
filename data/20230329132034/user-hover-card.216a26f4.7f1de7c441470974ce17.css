@@ -1,0 +1,11 @@
+/* Code tidied up by ScrapBook */
+@keyframes spinnerBladeFade {
+0% { opacity: 0.85; }
+50% { opacity: 0.25; }
+100% { opacity: 0.25; }
+}
+@keyframes spinnerBladeFade {
+0% { opacity: 0.85; }
+50% { opacity: 0.25; }
+100% { opacity: 0.25; }
+}

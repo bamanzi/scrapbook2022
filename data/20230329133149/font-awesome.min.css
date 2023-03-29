@@ -1,0 +1,36 @@
+/* Code tidied up by ScrapBook */
+@font-face {
+  font-family: "FontAwesome";
+  font-style: normal;
+  font-weight: 400;
+  src: url("fontawesome-webfont.eot") format("embedded-opentype"), url("fontawesome-webfont.woff2") format("woff2"), url("fontawesome-webfont.woff") format("woff"), url("fontawesome-webfont.ttf") format("truetype"), url("fontawesome-webfont.svg") format("svg");
+}
+.fa { display: inline-block; font-family: FontAwesome; font-style: normal; font-weight: normal; line-height: 1; font-size-adjust: none; font-stretch: normal; font-feature-settings: normal; font-language-override: normal; font-kerning: auto; font-synthesis: weight style; font-variant: normal; font-size: inherit; text-rendering: auto; }
+.fa-search::before { content: ""; }
+.fa-heart::before { content: ""; }
+.fa-star::before { content: ""; }
+.fa-user::before { content: ""; }
+.fa-home::before { content: ""; }
+.fa-clock-o::before { content: ""; }
+.fa-tags::before { content: ""; }
+.fa-plus::before { content: ""; }
+.fa-comments::before { content: ""; }
+.fa-twitter::before { content: ""; }
+.fa-facebook::before { content: ""; }
+.fa-rss::before { content: ""; }
+.fa-bullhorn::before { content: ""; }
+.fa-globe::before { content: ""; }
+.fa-users::before { content: ""; }
+.fa-caret-right::before { content: ""; }
+.fa-linkedin::before { content: ""; }
+.fa-desktop::before { content: ""; }
+.fa-tablet::before { content: ""; }
+.fa-mobile::before { content: ""; }
+.fa-gamepad::before { content: ""; }
+.fa-ellipsis-h::before { content: ""; }
+.fa-apple::before { content: ""; }
+.fa-windows::before { content: ""; }
+.fa-android::before { content: ""; }
+.fa-dribbble::before { content: ""; }
+.fa-soundcloud::before { content: ""; }
+.fa-chrome::before { content: ""; }

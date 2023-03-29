@@ -1,0 +1,103 @@
+/* Code tidied up by ScrapBook */
+.Button { background: transparent none repeat scroll 0% 0%; border: 1px solid; border-radius: 3px; cursor: pointer; display: inline-block; font-size: 14px; line-height: 32px; padding: 0px 16px; text-align: center; }
+.Button, html[data-theme="dark"] .Button { color: rgb(133, 144, 166); }
+.Button::-moz-focus-inner { border: 0px none; padding: 0px; }
+.Button:focus { outline: medium none; transition: box-shadow 0.3s ease 0s, -webkit-box-shadow 0.3s ease 0s; }
+.Button:disabled { cursor: default; opacity: 0.5; pointer-events: none; }
+.Button--grey { border-color: rgb(133, 144, 166); color: rgb(133, 144, 166); }
+.Button--grey:hover, html[data-theme="dark"] .Button--grey:hover { background-color: rgba(133, 144, 166, 0.06); }
+.Button--blue { border-color: rgb(5, 109, 232); color: rgb(5, 109, 232); }
+.Button--blue:hover { background-color: rgba(5, 109, 232, 0.06); }
+.Button--primary.Button--blue { background-color: rgb(5, 109, 232); color: rgb(255, 255, 255); }
+.Button--primary.Button--blue:hover { background-color: rgb(4, 97, 207); border-color: rgb(4, 97, 207); }
+.Button--secondary, html[data-theme="dark"] .Button--secondary { border-color: transparent; }
+.Button--secondary.Button--grey { background: rgba(133, 144, 166, 0.1) none repeat scroll 0% 0%; color: rgb(133, 144, 166); }
+.Button--secondary.Button--grey:hover, html[data-theme="dark"] .Button--secondary.Button--grey:hover { background-color: rgba(133, 144, 166, 0.15); }
+.Button--link, .Button--plain { background-color: transparent; border: medium none; border-radius: 0px; height: auto; line-height: inherit; padding: 0px; }
+.Button--link:hover, .Button--plain:hover { background-color: transparent; }
+.Button--plain:hover, html[data-theme="dark"] .Button--plain:hover { color: rgb(118, 131, 155); }
+.Button--grey.Button--plain:hover, html[data-theme="dark"] .Button--grey.Button--plain:hover { color: rgb(118, 131, 155); }
+.Button--withIcon.Button--iconOnly { padding: 0px 4px; }
+.Button--withIcon.Button--link, .Button--withIcon.Button--plain { padding: 0px; }
+.Button--withIcon.Button--withLabel .Button-zi { margin-right: 4px; }
+@media (max-width: 768px) {
+}
+@media (min-width: 769px) {
+}
+@media (max-width: 768px) {
+}
+@keyframes spring-in {
+0% { opacity: 0.01; transform: translate(-50%, -20px); }
+100% { opacity: 1; transform: translate(-50%); }
+}
+@keyframes spring-in {
+0% { opacity: 0.01; transform: translate(-50%, -20px); }
+100% { opacity: 1; transform: translate(-50%); }
+}
+@keyframes spring-out {
+0% { opacity: 1; transform: translate(-50%); }
+100% { opacity: 0; transform: translate(-50%, -20px); }
+}
+@keyframes spring-out {
+0% { opacity: 1; transform: translate(-50%); }
+100% { opacity: 0; transform: translate(-50%, -20px); }
+}
+.InputLike { background: rgb(255, 255, 255) none repeat scroll 0% 0%; border: 1px solid rgb(235, 235, 235); border-radius: 3px; box-sizing: border-box; padding: 4px 10px; transition: background 0.2s ease 0s, border 0.2s ease 0s; }
+.Popover { display: inline-block; position: relative; }
+.Input-wrapper { -moz-box-align: center; align-items: center; background: rgb(255, 255, 255) none repeat scroll 0% 0%; border: 1px solid rgb(235, 235, 235); border-radius: 3px; box-sizing: border-box; display: flex; font-size: 14px; height: 34px; padding: 4px 10px; position: relative; transition: background 0.2s ease 0s, border 0.2s ease 0s; width: 180px; }
+.Input { -moz-box-flex: 1; background: transparent none repeat scroll 0% 0%; border: medium none; flex: 1 1 0%; font-family: inherit; font-size: inherit; font-weight: inherit; overflow: hidden; padding: 0px; resize: none; }
+.Input:disabled { color: rgb(191, 191, 191); }
+.Input:focus { outline: medium none; }
+input.Input { color: rgb(18, 18, 18); height: 24px; line-height: 24px; }
+.Input:not(input) { line-height: 24px; }
+.Input::-moz-placeholder { color: rgb(133, 144, 166); }
+.Input::placeholder { color: rgb(133, 144, 166); }
+.Sticky.is-fixed { position: fixed; z-index: 2; }
+.Sticky.is-absolute, .Sticky.is-fixed { box-sizing: border-box; }
+.Sticky--holder { visibility: hidden; }
+.ztext { line-height: 1.6; }
+.ztext > :first-child { margin-top: 0px; }
+.ztext > :last-child { margin-bottom: 0px; }
+.ztext b { font-synthesis: style; font-weight: 600; }
+.ztext a:focus { outline: medium none; transition: box-shadow 0.3s ease 0s, -webkit-box-shadow 0.3s ease 0s; }
+.ztext a.external, .ztext a.internal, .ztext a.ztext-link { border-bottom: 1px solid grey; cursor: pointer; text-decoration: none; }
+.ztext a.external:hover, .ztext a.internal:hover, .ztext a.ztext-link:hover { border-bottom: 1px solid rgb(23, 81, 153); color: rgb(23, 81, 153); }
+.ztext p { margin: 1.4em 0px; }
+.ztext p.ztext-empty-paragraph { margin: -0.8em 0px; }
+.ztext figure { margin: 1.4em 0px; }
+.ztext figure .content_image, .ztext figure .origin_image { margin: 0px auto; }
+.ztext figure figcaption { color: rgb(153, 153, 153); font-size: 0.9em; line-height: 1.5; margin-top: 0.66667em; padding: 0px 1em; text-align: center; }
+.ztext .content_image, .ztext .origin_image { display: block; margin: 1.4em auto; max-width: 100%; }
+.ztext .content_image.zh-lightbox-thumb, .ztext .origin_image.zh-lightbox-thumb { cursor: zoom-in; }
+.Avatar { background: rgb(255, 255, 255) none repeat scroll 0% 0%; border-radius: 2px; }
+@supports not ((-webkit-backdrop-filter:blur(16px)) or (backdrop-filter:blur(16px))) {
+  .VideoCardPlayButton-withFileSize--outer .VideoCardPlayButton-withFileSize { background-color: rgba(17, 17, 17, 0.8); }
+}
+@media (max-width: 660px) {
+}
+@media (max-width: 660px) {
+}
+@media not all {
+}
+@font-face {
+  font-family: "ZHVipFont";
+  src: url("ZHVipFont.569d27c8.ttf");
+}
+@keyframes CircleLoadingBarRotator {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(270deg); }
+}
+@keyframes CircleLoadingBarRotator {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(270deg); }
+}
+@keyframes CircleLoadingBarDash {
+0% { stroke-dashoffset: 187; }
+50% { stroke-dashoffset: 46.75; transform: rotate(135deg); }
+100% { stroke-dashoffset: 187; transform: rotate(450deg); }
+}
+@keyframes CircleLoadingBarDash {
+0% { stroke-dashoffset: 187; }
+50% { stroke-dashoffset: 46.75; transform: rotate(135deg); }
+100% { stroke-dashoffset: 187; transform: rotate(450deg); }
+}

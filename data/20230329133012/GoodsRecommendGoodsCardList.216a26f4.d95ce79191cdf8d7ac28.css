@@ -1,0 +1,22 @@
+/* Code tidied up by ScrapBook */
+@font-face {
+  font-family: "ZHVipFont";
+  src: url("ZHVipFont.8fbf6bfb.otf"), url("ZHVipFont.569d27c8.ttf");
+}
+img:not([src]), img[src=""] { opacity: 0; }
+@keyframes skeleton-wave {
+0% { transform: translateX(-8000%); }
+100% { transform: translateX(10000%); }
+}
+@keyframes skeleton-wave {
+0% { transform: translateX(-8000%); }
+100% { transform: translateX(10000%); }
+}
+@keyframes linear-double {
+0% { transform: translateX(-56%); }
+100% { transform: translateX(56%); }
+}
+@keyframes linear-double {
+0% { transform: translateX(-56%); }
+100% { transform: translateX(56%); }
+}

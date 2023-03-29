@@ -1,0 +1,26 @@
+/* Code tidied up by ScrapBook */
+.wpulike { display: block; position: relative; line-height: normal; margin: 0px; padding: 10px 0px; }
+.wpulike .wp_ulike_general_class { display: inline-flex; align-items: center; }
+.wpulike button.wp_ulike_btn { margin: 0px; position: relative; display: inline-block; vertical-align: middle; border-radius: 0.25em; box-shadow: none; padding: 1em; border: medium none; text-align: center; transition: none 0s ease 0s ; cursor: pointer; }
+.wpulike button.wp_ulike_btn:active, .wpulike button.wp_ulike_btn:focus, .wpulike button.wp_ulike_btn:hover { outline: 0px none; }
+.wpulike button.wp_ulike_btn::-moz-focus-inner { border: 0px none; }
+.wpulike button.wp_ulike_btn:disabled:active, .wpulike button.wp_ulike_btn:disabled:focus, .wpulike button.wp_ulike_btn:disabled:hover, .wpulike button.wp_ulike_btn[disabled="disabled"]:active, .wpulike button.wp_ulike_btn[disabled="disabled"]:focus, .wpulike button.wp_ulike_btn[disabled="disabled"]:hover { outline: 0px none; background-color: initial; }
+.wpulike .count-box:empty { display: none; }
+@keyframes popHearts {
+0% { left: calc(50% - 7px); top: 10px; }
+20% { opacity: 1; }
+80% { top: -20px; }
+100% { opacity: 0; }
+}
+@keyframes wpUlikeNotifitcationsAnimation {
+0% { opacity: 0; transform: translateY(100%); }
+100% { opacity: 0.8; transform: translateY(0px); }
+}
+@media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 320px) {
+}
+@media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 320px) {
+}

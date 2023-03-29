@@ -1,0 +1,14 @@
+/* Code tidied up by ScrapBook */
+.Dropzone { position: relative; }
+@media print {
+}
+.Editable-languageSuggestions { position: fixed; z-index: 1; }
+.Editable-languageSuggestionsInput { cursor: pointer; }
+.Editable-languageSuggestionsInput input { cursor: inherit; }
+.Editable-languageSuggestionsInput input:focus { cursor: text; }
+.Editable { padding: 0px; position: relative; }
+.Editable-content { cursor: text; padding: 6px 12px; }
+.Editable .public-DraftEditorPlaceholder-root { color: rgb(133, 144, 166); pointer-events: none; position: absolute; }
+.Editable-styled, .Editable-unstyled { margin: 0px 0px 1.4em; }
+.Editable-styled:first-child, .Editable-unstyled:first-child { margin-top: 0px; }
+.Editable-styled:last-child, .Editable-unstyled:last-child { margin-bottom: 0px; }

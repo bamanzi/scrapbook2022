@@ -1,0 +1,125 @@
+/* Code tidied up by ScrapBook */
+.wp-dark-mode-wobble { animation: 3s ease 0s normal both 1 running wobble; }
+@keyframes vibrate {
+0%, 100% { transform: translate(0px); }
+20% { transform: translate(-2px, 2px); }
+40% { transform: translate(-2px, -2px); }
+60% { transform: translate(2px, 2px); }
+80% { transform: translate(2px, -2px); }
+}
+@keyframes flicker {
+0%, 41.99%, 43.01%, 47.99%, 49.01%, 100% { opacity: 1; }
+42%, 43%, 48%, 49% { opacity: 0; }
+}
+@keyframes shake {
+0%, 100% { transform: translateX(0px); }
+10%, 30%, 50%, 70% { transform: translateX(-5px); }
+20%, 40%, 60% { transform: translateX(5px); }
+80% { transform: translateX(4px); }
+90% { transform: translateX(-4px); }
+}
+@keyframes jello {
+0%, 100% { transform: scale3d(1, 1, 1); }
+30% { transform: scale3d(1.15, 0.75, 1); }
+40% { transform: scale3d(0.75, 1.15, 1); }
+50% { transform: scale3d(1.15, 0.85, 1); }
+65% { transform: scale3d(0.95, 1.05, 1); }
+75% { transform: scale3d(1.05, 0.95, 1); }
+}
+@keyframes wobble {
+0%, 100% { transform: translateX(0%); transform-origin: 50% 50% 0px; }
+15% { transform: translateX(-15px) rotate(-4deg); }
+30% { transform: translateX(8px) rotate(4deg); }
+45% { transform: translateX(-8px) rotate(-2.6deg); }
+60% { transform: translateX(5px) rotate(1.4deg); }
+75% { transform: translateX(-3px) rotate(-0.5deg); }
+}
+@keyframes bounce {
+0% { transform: translateY(-15px); animation-timing-function: ease-in; opacity: 1; }
+24% { opacity: 1; }
+40% { transform: translateY(-12px); animation-timing-function: ease-in; }
+65% { transform: translateY(-6px); animation-timing-function: ease-in; }
+82% { transform: translateY(-3px); animation-timing-function: ease-in; }
+93% { transform: translateY(-2px); animation-timing-function: ease-in; }
+25%, 55%, 75%, 87% { transform: translateY(0px); animation-timing-function: ease-out; }
+100% { transform: translateY(0px); animation-timing-function: ease-out; opacity: 1; }
+}
+@keyframes heartbeat {
+0% { transform: scale(1); transform-origin: center center 0px; animation-timing-function: ease-out; }
+10% { transform: scale(0.91); animation-timing-function: ease-in; }
+17% { transform: scale(0.98); animation-timing-function: ease-out; }
+33% { transform: scale(0.87); animation-timing-function: ease-in; }
+45% { transform: scale(1); animation-timing-function: ease-out; }
+}
+@keyframes wp-dark-mode-blink {
+0%, 50%, 100% { opacity: 1; }
+25%, 75% { opacity: 0; }
+}
+@keyframes wp-dark-mode-fadein {
+0% { opacity: 0; }
+100% { opacity: 1; }
+}
+@keyframes wp-dark-mode-inactive-fadein {
+0% { opacity: 0; }
+100% { opacity: 1; }
+}
+@keyframes wp-dark-mode-slide-left {
+0% { transform: translateX(25%); }
+100% { transform: translateX(0px); }
+}
+@keyframes wp-dark-mode-slide-top {
+0% { transform: translateY(25%); }
+100% { transform: translateY(0px); }
+}
+@keyframes wp-dark-mode-slide-right {
+0% { transform: translateX(-25%); }
+100% { transform: translateX(0px); }
+}
+@keyframes wp-dark-mode-slide-bottom {
+0% { transform: translateY(-25%); }
+100% { transform: translateY(0px); }
+}
+@keyframes active-pulse {
+0% { transform: scale3d(1, 1, 1); }
+50% { transform: scale3d(1.05, 1.05, 1.05); }
+100% { transform: scale3d(1, 1, 1); }
+}
+@keyframes inactive-pulse {
+0% { transform: scale3d(1, 1, 1); }
+50% { transform: scale3d(1.05, 1.05, 1.05); }
+100% { transform: scale3d(1, 1, 1); }
+}
+@keyframes active-flip {
+0% { transform: rotate3d(0, 1, 0, 90deg); animation-timing-function: ease-in; opacity: 0; perspective: 0px; }
+40% { transform: rotate3d(0, 1, 0, -20deg); animation-timing-function: ease-in; }
+60% { transform: rotate3d(0, 1, 0, 10deg); opacity: 1; }
+80% { transform: rotate3d(0, 1, 0, -5deg); }
+100% { perspective: 0px; }
+}
+@keyframes inactive-flip {
+0% { transform: rotate3d(0, 1, 0, 90deg); animation-timing-function: ease-in; opacity: 0; perspective: 0px; }
+40% { transform: rotate3d(0, 1, 0, -20deg); animation-timing-function: ease-in; }
+60% { transform: rotate3d(0, 1, 0, 10deg); opacity: 1; }
+80% { transform: rotate3d(0, 1, 0, -5deg); }
+100% { perspective: 0px; }
+}
+@keyframes active-roll {
+0% { opacity: 0; transform: translate3d(-100%, 0px, 0px) rotate3d(0, 0, 1, -120deg); }
+100% { opacity: 1; transform: translate3d(0px, 0px, 0px); }
+}
+@keyframes inactive-roll {
+0% { opacity: 1; }
+100% { opacity: 0; transform: translate3d(100%, 0px, 0px) rotate3d(0, 0, 1, 120deg); }
+}
+.wp-dark-mode-switcher, .wp-dark-mode-side-toggle-wrap { --wp-dark-mode-cta-bg:  #555; display: inline-flex; align-items: center; z-index: 9999; position: relative; background: transparent none repeat scroll 0% 0% ! important; text-align: left; }
+.wp-dark-mode-switcher label, .wp-dark-mode-switcher .toggle, .wp-dark-mode-side-toggle-wrap label, .wp-dark-mode-side-toggle-wrap .toggle { height: calc(26px * var(--wp-dark-mode-scale)); border-radius: calc(100px * var(--wp-dark-mode-scale)); display: inline-block; }
+.wp-dark-mode-switcher label, .wp-dark-mode-side-toggle-wrap label { background-color: rgb(238, 238, 238); position: relative; cursor: pointer; width: calc(100px * var(--wp-dark-mode-scale)); }
+.wp-dark-mode-switcher .toggle, .wp-dark-mode-side-toggle-wrap .toggle { position: absolute; width: 50%; background-color: rgb(255, 255, 255); box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.15); transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s; }
+.wp-dark-mode-switcher.floating, .wp-dark-mode-side-toggle-wrap.floating { position: fixed; bottom: 20px; }
+.wp-dark-mode-switcher.left_bottom, .wp-dark-mode-side-toggle-wrap.left_bottom { left: 26px; flex-flow: row-reverse nowrap; }
+.wp-dark-mode-switcher.style-3 { display: inline-flex ! important; }
+.wp-dark-mode-switcher.style-3 img { max-height: calc(18px * var(--wp-dark-mode-scale)); max-width: calc(18px * var(--wp-dark-mode-scale)); }
+.wp-dark-mode-switcher.style-3 label { height: calc(30px * var(--wp-dark-mode-scale)); width: calc(60px * var(--wp-dark-mode-scale)); background: rgb(57, 57, 61) none repeat scroll 0% 0%; margin: 0px 7px; display: flex; align-items: center; justify-content: space-around; }
+.wp-dark-mode-switcher.style-3 .toggle { height: calc(25px * var(--wp-dark-mode-scale)); width: calc(25px * var(--wp-dark-mode-scale)); top: 50%; transform: translateY(-50%) ! important; transition: all 0.2s ease 0s; left: calc(2px * var(--wp-dark-mode-scale)); background: rgb(255, 255, 255) none repeat scroll 0% 0%; }
+:root { --wp-dark-mode-zoom:  150%; }
+.wp-dark-mode-ignore, .wp-dark-mode-include {  }

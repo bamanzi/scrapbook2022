@@ -1,0 +1,17 @@
+/* Code tidied up by ScrapBook */
+@keyframes Bounce {
+0%, 100% { transform: translateY(-100%); }
+50% { transform: translateY(100%); }
+}
+@keyframes Bounce {
+0%, 100% { transform: translateY(-100%); }
+50% { transform: translateY(100%); }
+}
+@keyframes linear-double {
+0% { transform: translateX(-56%); }
+100% { transform: translateX(56%); }
+}
+@keyframes linear-double {
+0% { transform: translateX(-56%); }
+100% { transform: translateX(56%); }
+}
