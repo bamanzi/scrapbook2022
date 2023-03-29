@@ -1,0 +1,10 @@
+/* Code tidied up by ScrapBook */
+pre, code, ol.linenums { background-color: rgb(22, 27, 32); background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAICAYAAAA4GpVBAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB90GBgMqHcZ0EYUAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAAF0lEQVQI12NgYGAwZsAECDEWBgYGBgYACpwAazfG694AAAAASUVORK5CYII="); }
+pre:hover, pre li:hover, pre code:hover { background-color: rgb(17, 17, 17); }
+pre { font-size: 14px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5); text-shadow: 0px 1px 1px rgb(0, 0, 0); border-radius: 6px; color: rgb(184, 255, 184); margin: 10px; padding: 1em 1em 1em 2em; white-space: pre-wrap; border: 1px solid rgb(0, 0, 0); }
+pre.prettyprint { font-size: 14px; border: 1px solid rgb(0, 0, 0); }
+pre code { background: transparent none repeat scroll 0% 0%; border: medium none ! important; padding: 0px 0px 0px 10px ! important; border-radius: 0px ! important; margin: 1em 0px ! important; }
+code { padding: 2px 4px; border-radius: 4px; margin: 0px 4px; color: rgb(33, 150, 243); background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+code:hover { color: rgb(33, 150, 243); }
+@media print {
+}

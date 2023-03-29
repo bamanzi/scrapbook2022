@@ -1,0 +1,384 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>技术|Ubuntu 的前 Snap 倡导者创建了一个工具，帮助你从 Snap 迁移到 Flatpak</title>
+ 
+<meta name="keywords" content="Ubuntu 的前 Snap 倡导者创建了一个工具，帮助你从 Snap 迁移到 Flatpak">
+<meta name="description" content="震惊！Canonical 的前 Snap 倡导者开发了一个工具，帮助你快速抛弃 Snap 并使用 Flatpak。 ">
+<meta name="copyright" content="2005-2019 Linux.cn">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="applicable-device" content="pc,mobile">
+<meta name="referrer" content="always">
+<base href=""><link rel="stylesheet" type="text/css" href="style_1_common.css">
+<link rel="stylesheet" type="text/css" href="style_1_portal_view.css">
+<link href="responsive.css" rel="stylesheet">
+
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script src="about:blank" type="text/javascript"></script>
+<script src="about:blank" type="text/javascript"></script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script src="about:blank" type="text/javascript"></script>
+<script src="about:blank" type="text/javascript"></script>
+<link rel="alternate" type="application/rss+xml" title="Linux 中国◆开源社区 RSS" href="https://linux.cn/rss.xml">
+<link rel="shortcut icon" href="favicon.ico" sizes="32x32">
+<link rel="canonical" href="https://linux.cn/article-14482-1.html">
+<script src="about:blank" type="text/javascript"></script>
+</head>
+
+<body id="nv_portal" class="pg_view">
+<div id="append_parent"></div><div id="ajaxwaitid"></div>
+<div id="hd">
+<div class="wp" style="box-shadow: 1px 1px 2px rgb(102, 102, 102);">
+<h1 id="linuxcn_logo"><a href="https://linux.cn/" title="Linux.中国 - 开源社区"></a><style type="text/css">
+/* Code tidied up by ScrapBook */
+@keyframes spin {
+100% { transform: rotate(360deg); }
+}
+@keyframes spin {
+100% { transform: rotate(360deg); }
+}
+</style></h1>
+<div class="p_pop h_pop" id="mn_userapp_menu" style="display: none;"></div><div id="topmenu_wrapper">
+<div id="topmenu">
+<div id="nv">
+<ul><li id="mn_N6666"><a href="https://linux.cn/" hidefocus="true" style="font-weight: bold;">Linux 中国</a></li><li id="mn_P3"><a href="https://linux.cn/tech/" hidefocus="true" style="color: rgb(255, 250, 229);">技术</a></li><li id="mn_P1"><a href="https://linux.cn/news/" hidefocus="true" style="color: rgb(255, 250, 229);">新闻</a></li><li id="mn_P4"><a href="https://linux.cn/talk/" hidefocus="true" style="color: rgb(255, 250, 229);">观点</a></li><li id="mn_P8"><a href="https://linux.cn/share/" hidefocus="true" style="color: rgb(255, 250, 229);">分享</a></li><li id="mn_N1fa1"><a href="https://linux.cn/lctt/" hidefocus="true" target="_blank">LCTT</a></li></ul>
+</div>
+<div id="mu" class="cl">
+<ul class="cl " id="snav_mn_P3" style="display: none;">
+<li><a href="https://linux.cn/tech/desktop/" hidefocus="true">桌面应用</a></li><li><a href="https://linux.cn/tech/sa/" hidefocus="true">系统运维</a></li><li><a href="https://linux.cn/tech/program/" hidefocus="true">软件开发</a></li><li><a href="https://linux.cn/tech/raspberrypi/" hidefocus="true">树莓派</a></li><li><a href="https://linux.cn/tech/container/" hidefocus="true">容器与云</a></li><li><a href="https://linux.cn/portal.php?mod=list&amp;catid=27" hidefocus="true">区块链</a></li></ul>
+<ul class="cl " id="snav_mn_P1" style="display: none;">
+<li><a href="https://linux.cn/news/express/" hidefocus="true">硬核观察</a></li></ul>
+<ul class="cl " id="snav_mn_P4" style="display: none;">
+<li><a href="https://linux.cn/talk/comic/" hidefocus="true">极客漫画</a></li><li><a href="https://linux.cn/talk/ossip/" hidefocus="true">开源智慧</a></li><li><a href="https://linux.cn/talk/interview/" hidefocus="true">穿山甲专访</a></li><li><a href="https://linux.cn/talk/ocselected/" hidefocus="true">开源之道</a></li><li><a href="https://linux.cn/talk/clh/" hidefocus="true">代码英雄</a></li></ul>
+<ul class="cl " id="snav_mn_P8" style="display: none;">
+<li><a href="https://linux.cn/share/distro/" hidefocus="true">Linux 发行版</a></li></ul>
+<ul class="cl " id="snav_mn_userapp" style="display: none;">
+</ul>
+</div>
+</div>
+</div>
+<div id="scbar" class="cl">
+<form id="scbar_form" method="post" autocomplete="off" action="https://linux.cn/search.php?searchsubmit=yes" target="_blank">
+<input name="mod" id="scbar_mod" value="search" type="hidden">
+<input name="formhash" value="c7db8738" type="hidden">
+<input name="srchtype" value="title" type="hidden">
+<input name="srhfid" value="0" type="hidden">
+<input name="srhlocality" value="portal::view" type="hidden">
+<table id="scbar_table" style="float: right;" cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td class="scbar_icon_td"></td>
+<td class="scbar_txt_td"><input name="srchtxt" id="scbar_txt" value="请注册后再搜索" autocomplete="off" speech="" type="text"></td>
+<td class="scbar_type_td"><a id="scbar_type" class="xg1" hidefocus="true">搜索</a></td>
+<td class="scbar_btn_td"><button type="submit" name="searchsubmit" id="scbar_btn" sc="1" class="pn pnc" value="true"><strong class="xi2">搜索</strong></button></td>
+<td class="scbar_hot_td">
+<div id="scbar_hot">
+</div>
+</td>
+</tr>
+</tbody></table>
+</form>
+<span class="z titletext" style="padding: 0px 10px 0px 20px;">❏ 站外平台：</span>
+<ul class="cl mutag z">
+<li><a class="hidefocus tsina" hidefocus="true" href="https://weibo.com/linuxcn" target="_blank" title="微博认证号：Linux中国"></a></li>
+<li><a class="hidefocus tticon" hidefocus="true" href="https://www.toutiao.com/c/user/52889878622/" target="_blank" title="今日头条：Linux中国"></a></li>
+<li><a class="hidefocus tticon" hidefocus="true" href="http://www.toutiao.com/c/user/3357852467/" target="_blank" title="今日头条：Linux技术"></a></li>
+<li><a class="hidefocus wyicon" hidefocus="true" href="http://dy.163.com/v2/article/detail/D282EJLD0511CPOJ.html" target="_blank" title="网易号：Linux"></a></li>
+<li><a class="hidefocus fbicon" hidefocus="true" href="https://www.facebook.com/linux.china/" target="_blank" title="Facebook Page：Linux中国"></a></li>
+<li><a class="hidefocus zhicon" hidefocus="true" href="https://www.zhihu.com/org/linuxzhong-guo/" target="_blank" title="知乎机构号：Linux中国"></a></li>
+<li><a class="hidefocus twicon" hidefocus="true" href="https://twitter.com/linux_cn" target="_blank" title="Twitter：Linux中国"></a></li>
+<li><a class="hidefocus tgicon" hidefocus="true" href="https://t.me/linuxdotcn" target="_blank" title="Telegram Channel：Linux中国"></a></li>
+</ul>
+    <form><label class="y" style="border: 1px solid rgb(221, 221, 221); line-height: 24px; margin: 8px; padding: 2px 6px; background-color: rgb(255, 255, 255);"><input id="textmode" value="1" style="vertical-align: middle;" type="checkbox"> 文本模式</label></form>
+
+</div>
+<br class="clear">
+<ul id="scbar_type_menu" class="p_pop" style="display: none;"><li><a rel="article" class="curtype">文章</a></li></ul>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+
+</div>
+</div>
+<div id="wp" class="wp">
+
+<style type="text/css">
+/* Code tidied up by ScrapBook */
+#nv_portal .vw .h.hm { background: rgb(255, 255, 255) url("071613rgs1jfasxlkjejes.png") repeat scroll center center / cover ; border-radius: 0px; height: 640px; position: relative; padding: 10px; margin-bottom: 0px; }
+#nv_portal .vw .h.hm h1 { background-color: rgba(33, 33, 33, 0.8); border-radius: 0px; position: absolute; margin: 10px 20px 20px; padding: 15px 10px; bottom: 0px; width: 90%; }
+</style>
+<div style="margin: 2px 0px;"></div>
+<div id="ct" class="ct2 wp cl">
+<div class="mn">
+<article class="vw">
+<div class="h hm bm" style="margin-top: 0px;">
+<h1 class="ph" id="article_title">Ubuntu 的前 Snap 倡导者创建了一个工具，帮助你从 Snap 迁移到 Flatpak </h1>
+</div>
+
+<div class="d" style="width: 100%; margin: 0px;">
+<div id="article_content" style="border-radius: 0px;">
+<div class="ph" id="article_copyright">
+<span>作者： 
+    	 
+    		    			<span class="textcut"><a href="https://news.itsfoss.com/unsnap-migrate-snap-to-flatpak/" target="_blank">Ankush Das</a></span>
+    		    	    	<span>译者： 
+<a href="https://linux.cn/lctt/" target="_blank">LCTT</a>&nbsp;<a href="https://linux.cn/lctt/geekpi" target="_blank">geekpi</a></span>
+<p id="article_date">
+| 2022-04-17 07:16&nbsp;&nbsp;
+评论: <a href="https://linux.cn/portal.php?mod=comment&amp;id=14482&amp;idtype=aid" title="查看全部评论"><em id="_commentnum">3</em></a>&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
+</span></div>
+<blockquote>
+<p>震惊！Canonical 的前 Snap 倡导者开发了一个工具，帮助你快速抛弃 Snap 并使用 Flatpak。</p>
+</blockquote>
+
+<p>不喜欢使用 Snap？</p>
+<p>好吧，你可以一直坚持使用传统的二进制包（deb/rpm），或者选择&nbsp;<a href="https://itsfoss.com/flatpak-guide/">Flatpak</a>。</p>
+<p>但是，如果你已经用上了 Snap 商店的应用，怎么办？</p>
+<p>手动删除 Snap 应用，和 Snap 说再见，安装 Flatpak，并安装所有 Flatpak 需要的软件包，这将是非常耗时的。</p>
+<p>这就是 “Unsnap” 派上用场的地方。</p>
+<p>Unsnap 是一个开源工具，由 Canonical 的前 Snap 倡导者&nbsp;<strong>Alan Pope</strong>&nbsp;开发，帮助你从Snap 快速迁移到 Flatpak。</p>
+<h3 id="unsnap%E5%AE%83%E6%98%AF%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C%E7%9A%84" class="mume-header">Unsnap：它是如何工作的</h3>
+<blockquote>
+<p>请注意，该工具仍处于前 alpha 阶段，你可以测试它，但如果你想实际使用并帮助改进，你可能要做一些研究。</p>
+</blockquote>
+<p>基本上，该工具生成的脚本可以帮助你做以下事情（按特定顺序）：</p>
+<ul>
+<li>备份现有的 Snap 软件包。</li>
+<li>安装 Flatpak（如果尚未存在）。</li>
+<li>启用 Flathub。</li>
+<li>为 Snap 应用安装相同的 Flatpak 应用。</li>
+<li>移除已安装的 Flatpak 应用的 Snap 应用。</li>
+<li>删除所有 Snap 软件包。</li>
+</ul>
+<p>虽然脚本是在你运行工具时自动生成的，但你可以选择手动或自动逐个运行这些脚本来切换到 Flatpak 应用。</p>
+<h3 id="%E5%A6%82%E4%BD%95%E6%B5%8B%E8%AF%95-unsnap" class="mume-header">如何测试 Unsnap？</h3>
+<p><img src="071614ck794ys0llk43wu7.png" alt=""></p>
+<p>看了上面的截图，你可能对它的实现方式有了一个模糊的概念。你也可以参考它的&nbsp;<a href="https://github.com/popey/unsnap">GitHub 页面</a>&nbsp;了解最新信息。</p>
+<p>作为参考，让我为你强调一下步骤：</p>
+<h4 id="1-%E5%85%8B%E9%9A%86-github-%E4%BB%93%E5%BA%93" class="mume-header">1、克隆 GitHub 仓库</h4>
+<p>请确保你已经&nbsp;<a href="https://itsfoss.com/install-git-ubuntu/">在你的 Linux 发行版上安装了 Git</a>。完成后，你可以输入以下命令：</p>
+<pre class="prettyprint linenums"><code>git clone https://github.com/popey/unsnap
+</code></pre>
+<h4 id="2-%E5%88%87%E6%8D%A2%E5%88%B0%E8%AF%A5%E7%9B%AE%E5%BD%95" class="mume-header">2、切换到该目录</h4>
+<p>当你克隆了仓库，你的系统上就会有&nbsp;<code>unsnap</code>&nbsp;目录。</p>
+<p>输入以下命令切换到目录：</p>
+<pre class="prettyprint linenums"><code>cd unsnap
+</code></pre>
+<h4 id="3-%E8%BF%90%E8%A1%8C%E8%AF%A5%E5%B7%A5%E5%85%B7" class="mume-header">3、运行该工具</h4>
+<p>在切换到目标目录后，只需使用命令运行&nbsp;<code>unsnap</code>&nbsp;工具：</p>
+<pre class="prettyprint linenums"><code>./unsnap
+</code></pre>
+<p>它将检查现有的 Snap 和 Flatpak 软件包等等，进行设置。</p>
+<p>正如你在上面的截图中注意到的，它已经检测到我的系统有了 Flatpak 环境，所以它跳过了为这些任务生成脚本。</p>
+<p>在这个过程中，它还会了解你系统上安装的 Snap 应用，以便在你运行生成的脚本时找到相应的 Flatpak 应用。</p>
+<p>如果你想立即运行所有的脚本，你可以输入：</p>
+<pre class="prettyprint linenums"><code>./unsnap auto
+</code></pre>
+<p><img src="071614ck794ys0llk43wu7.png" alt=""></p>
+<p>如果你想要不使用自动选项进行控制，你可以发现生成的脚本驻留在一个日志目录内，如下图所示：</p>
+<p><img src="071614pai4aaat4a4c4ax4.png" alt=""></p>
+<p>下面是你应该遵循的脚本的执行顺序：</p>
+<ul>
+<li><code>00-backup</code></li>
+<li><code>01-install-flatpak</code></li>
+<li><code>02-enable-flathub</code></li>
+<li><code>03-install-flatpaks</code></li>
+<li><code>04-remove-snaps</code></li>
+<li><code>99-remove-snapd</code></li>
+</ul>
+<p>在我的例子中，我已经设置了 Flatpak，所以我继续运行备份脚本，然后安装 Flatpak 软件包，如此循环。下面是它看起来的样子：</p>
+<p><img src="071615yykb3w0bb7y2xgwx.png" alt=""></p>
+<p>你应该记住，这个工具正在积极开发中，可能不会像预期那样工作。所以，你如果依赖众多的 Snap 应用，你应该在虚拟机或测试机上试验使用该工具，并等待该工具随着稳定版本的推出而改进。</p>
+<p>请在下面的评论中告诉我你对 Unsnap 的看法。</p>
+<hr>
+<p>via:&nbsp;<a href="https://news.itsfoss.com/unsnap-migrate-snap-to-flatpak/">https://news.itsfoss.com/unsnap-migrate-snap-to-flatpak/</a></p>
+<p>作者：<a href="https://news.itsfoss.com/author/ankush/">Ankush Das</a>&nbsp;选题：<a href="https://github.com/lujun9972">lujun9972</a>&nbsp;译者：<a href="https://github.com/geekpi">geekpi</a>&nbsp;校对：<a href="https://github.com/wxy">wxy</a></p>
+<p>本文由&nbsp;<a href="https://github.com/LCTT/TranslateProject">LCTT</a>&nbsp;原创编译，<a href="https://linux.cn/">Linux中国</a>&nbsp;荣誉推出</p>  					<section><img style="width: 24px; height: 24px; float: right;" src="linisi.svg"><br class="clear"></section>
+</div>
+</div>
+<br class="clear">
+<div class="vw">
+<div id="add_comment" class="h bm" style="display: none;">
+<div class="bm_h cl">
+<h3>发表评论</h3>
+</div>
+<div class="bm_c pbn">
+<form id="cform" name="cform" action="https://linux.cn/portal.php?mod=portalcp&amp;ac=comment" method="post" autocomplete="off">
+<div class="tedt">
+<div class="area">
+<textarea name="message" rows="10" class="pt" id="message"></textarea>
+</div>
+</div>
+
+<div class="mtm z"><span id="seccode_cSq98665"></span>		
+<script type="text/javascript" reload="1">/* Code removed by ScrapBook */</script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+</div>
+<input name="portal_referer" value="https://linux.cn/article-14482-1.html#comment" type="hidden">
+<input name="referer" value="https://linux.cn/article-14482-1.html#comment" type="hidden">
+<input name="id" value="0" type="hidden">
+<input name="idtype" value="" type="hidden">
+<input name="aid" value="14482" type="hidden">
+<input id="reppid" name="reppid" value="" type="hidden">
+<input name="formhash" value="c7db8738" type="hidden">
+<input name="replysubmit" value="true" type="hidden">
+<input name="commentsubmit" value="true" type="hidden">
+<p class="mtm" style="text-align: center;"><button type="submit" name="commentsubmit_btn" id="commentsubmit_btn" value="true" class="pn"><strong>评论</strong></button></p>
+<br class="clear">
+</form>
+</div>
+</div>
+<div id="comment" class="bm h">
+<div class="bm_h cl">
+<h3 class="z"><a name="comment"></a>最新评论</h3>
+</div>
+<div id="comment_ul" class="bm_c">
+<div style="text-align: center;"><button type="button" class="pnc" style="font-size: 24px; width: 160px;" id="c_add"><strong>发表评论</strong></button></div><a name="comment_anchor_51225"></a>
+<dl id="comment_51225_li" class="pbm bbda cl">
+<dt class="mbm  ">
+<span class=" xw0 vm">来自广东广州的 Chrome 101.0|GNU/Linux 用户</span>
+<span class=" xw0 vm">2022-04-29 18:04</span>
+<span class="y xw0 xi2 opt" style="margin-right: 5px;">
+<a class="replyadd" href="https://linux.cn/portal.php?mod=review&amp;action=postreview&amp;do=support&amp;idtype=aid&amp;tid=14482&amp;pid=51225&amp;hash=c7db8738"><span id="review_support_51225"></span> 赞</a> 
+<!--<a href="javascript:;" onclick="portal_comment_reppost(51225, '14482');">回复</a> --><a id="reply_51225" href="https://linux.cn/portal.php?mod=portalcp&amp;ac=comment&amp;op=reply&amp;cid=51225&amp;aid=14482&amp;idtype=">回复</a> </span>	
+</dt>
+<dd>
+安装好ubuntu22.04第一件事就是卸载snap</dd>
+</dl><a name="comment_anchor_51137"></a>
+<dl id="comment_51137_li" class="pbm bbda cl">
+<dd class="list"><blockquote id="replist_51137_51135" class="replist"><dt class="mbm s3"><span class="info">
+<div class="z count">[1] </div>来自四川成都的 Mobile Safari 13.1|iOS 13.4 用户 发表于 2022-04-17 08:01 的评论：
+</span>
+<div id="opt_51137_51135" class="y opt"><a href="https://linux.cn/portal.php?mod=review&amp;action=postreview&amp;do=support&amp;idtype=aid&amp;tid=14482&amp;pid=51135&amp;hash=c7db8738"><span name="review_support_rep_51135">10</span> 赞</a> <a id="reply_51135" href="https://linux.cn/portal.php?mod=portalcp&amp;ac=comment&amp;op=reply&amp;cid=51135&amp;aid=14482&amp;idtype=">回复</a>   </div></dt>
+<div class="msg">哈哈，让我想起了一两年前，"Emacs 台湾" 的推特账号维护者，发文说 Emacs 危害世人，请各位善男信女及早回头用 VSCode。</div>
+</blockquote></dd>
+<dt class="mbm user ">
+<a href="https://linux.cn/space/1/" class="xi2 xw1 vm" c="1" target="_blank">linux [Chrome 100.0|Mac 10.15]</a>
+<span class=" xw0 vm">2022-04-17 08:52</span>
+<span class="y xw0 xi2 opt" style="margin-right: 5px;">
+<a class="replyadd" href="https://linux.cn/portal.php?mod=review&amp;action=postreview&amp;do=support&amp;idtype=aid&amp;tid=14482&amp;pid=51137&amp;hash=c7db8738"><span id="review_support_51137">1</span> 赞</a> 
+<!--<a href="javascript:;" onclick="portal_comment_reppost(51137, '14482');">回复</a> --><a id="reply_51137" href="https://linux.cn/portal.php?mod=portalcp&amp;ac=comment&amp;op=reply&amp;cid=51137&amp;aid=14482&amp;idtype=">回复</a> </span>	
+</dt>
+<dd>
+背刺啊！</dd>
+</dl><div class="ptm pbm cl">
+</div>
+</div>
+</div>
+</div>
+<div class="h bm_c bm z" id="footer_info">
+<p class="copyright">
+    	 
+    		    			    			<span class="z textcut">译自：<a href="https://news.itsfoss.com/unsnap-migrate-snap-to-flatpak/" target="_blank">news.itsfoss.com</a></span>
+    			    		    		<span class="y">作者： Ankush Das</span>    		<br class="clear">
+    	    	<span class="z">原创：<a href="https://linux.cn/lctt/" target="_blank">LCTT</a> <a href="#" target="_blank">https://linux.cn/article-14482-1.html</a></span>
+            			<span class="y">译者： geekpi</span>    		<br class="clear">
+    	    	<br>
+    	    		<span>本文由 LCTT 原创翻译，<a href="#">Linux 中国首发</a>。也想加入译者行列，为开源做一些自己的贡献么？欢迎加入 <a href="https://linux.cn/lctt/" target="_blank">LCTT</a>！<br>翻译工作和译文发表仅用于学习和交流目的，翻译工作遵照 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank">CC-BY-SA 协议规定</a>，如果我们的工作有侵犯到您的权益，请及时联系我们。</span>
+    		    		<br class="clear">
+    		<span style="color: red;">欢迎遵照 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank">CC-BY-SA 协议规定</a> 转载，敬请在正文中标注并保留原文/译文链接和作者/译者等信息。</span>
+                		<br class="clear">
+    	    	<span>文章仅代表作者的知识和看法，如有不同观点，请楼下排队<a>吐槽</a> :D</span>
+    	<br class="clear">
+</p>
+
+
+
+<div class="o cl ptm pbm">
+<a href="https://linux.cn/home.php?mod=spacecp&amp;ac=favorite&amp;type=article&amp;id=14482&amp;handlekey=favoritearticlehk_14482" id="a_favorite" class="favorite z" title="收藏"></a>
+<!-- <a href="misc.php?mod=invite&amp;action=article&amp;id=14482" id="a_invite" onclick="showWindow('invite', this.href, 'get', 0);" class="invite z" title="邀请"></a> -->
+<a href="https://linux.cn/article-14482-1.html?pr" class="print z" title="打印"></a>
+				
+</div>
+<div class="pren pbm cl">
+<em>上一篇：<a href="https://linux.cn/article-14480-1.html">在 Linux 终端里管理你的密码</a></em><em>下一篇：<a href="https://linux.cn/article-14488-1.html">新式 Linux 命令行工具大全</a></em></div>
+</div>
+<div><div id="translator_info" class="bm" style="position: relative; margin: 8px 4px 8px 0px ! important; float: right;">
+<div class="bm_h cl">
+LCTT 译者
+</div>
+<div class="bm_c">
+<div>
+<a href="https://linux.cn/lctt/geekpi" target="_blank"><img class="avatar" src="3888598.png" style="max-width: 64px; float: left; margin-top: 10px;"></a>
+<div style="float: left; margin-left: 10px; font-size: 12px; line-height: 1.5em;">
+<div>
+<a href="https://github.com/geekpi" target="_blank"><img src="github_icon.png" style="vertical-align: middle;"></a> <a href="https://linux.cn/lctt/geekpi" target="_blank" style="font-weight: bold;">geekpi</a> 💎💎💎💎</div>
+<div class="addfiles">共计翻译： <span class="num" style="color: rgb(255, 0, 0); font-weight: 700;">1892.5</span> 篇
+| 共计贡献： <span class="num" style="color: rgb(255, 0, 0); font-weight: 700;">3430</span> 天</div>
+<div>贡献时间：2013-10-25 -&gt; 2023-03-17</div><a href="https://linux.cn/lctt/geekpi" target="_blank">访问我的 LCTT 主页</a> | <a href="https://github.com/geekpi" target="_blank">在 GitHub 上关注我</a>
+</div>
+<br class="clear">
+</div>
+</div>
+</div>
+</div>
+
+<div id="related" class="bm block z">
+<div class="bm_h cl">
+<h3>相关阅读</h3>
+</div>
+<div class="bm_c pbn" id="related_tag">
+<ul class="xl xl2 cl bbs pbm" id="tag"><li><a href="https://linux.cn/tag-snap.html">snap</a></li>
+<li><a href="https://linux.cn/tag-Flatpak.html">Flatpak</a></li>
+</ul>
+</div>
+<div class="bm_c xl xl1 cl" id="related_article">
+<ul><li><em>2016-06-24</em><a href="https://linux.cn/article-7505-1-rel.html" target="_blank">下一代独立式 GNU/Linux 应用打包格式 Flatpak 发布</a> </li>
+<li><em>2016-06-25</em><a href="https://linux.cn/article-7506-1-rel.html" target="_blank">Canonical 并不指望别的发行版也从 Ubuntu 商店下载 Snap 软件包</a> </li>
+<li><em>2016-09-17</em><a href="https://linux.cn/article-7783-1-rel.html" target="_blank">Snap、Flatpak 这种通吃所有发行版的打包方式真的有用吗？</a> </li>
+<li><em>2016-09-21</em><a href="https://linux.cn/article-7796-1-rel.html" target="_blank">适用于所有发行版的 Linux 应用程序——是否真的有好处呢？</a> </li>
+<li><em>2022-11-13</em><a href="https://linux.cn/article-15247-1-rel.html" target="_blank">如何从 Ubuntu 21.10 及以后版本中删除 Firefox Snap</a> </li>
+</ul>
+</div>
+</div>
+<br class="clear">
+</article>
+</div>
+
+</div>
+
+
+<input id="portalview" value="1" type="hidden">
+
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<link rel="stylesheet" href="prettify.css" type="text/css">
+<script src="about:blank" type="text/javascript"></script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>	</div>
+    <div id="footer">
+        <p>
+            <span>Linux 中国 © 2003 - 2022</span>
+        </p>
+        <p>
+            <a href="http://www.miitbeian.gov.cn/" target="_blank">京ICP备2021020457</a>            京公网安备110105001595
+        </p>
+        <p>
+        <a href="https://linux.cn/legal.html">服务条款</a> |
+        除特别申明外，本站原创内容版权遵循 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank">CC-BY-SA 协议规定</a></p>
+        <p>
+</p></div>
+
+<div id="ft" class="cl"></div>
+<div id="scrolltop">
+<span>
+<a class="wxicon"></a>
+<a title="分享到微博" class="tsina"></a>
+<a title="收藏" href="https://linux.cn/home.php?mod=spacecp&amp;ac=favorite&amp;type=article&amp;id=14482&amp;handlekey=favoritearticlehk_14482" id="a_favorite" class="favorite"></a>
+    	<a href="https://linux.cn/article-14482-1.html?pr" class="print" title="!print!"></a>
+
+</span>
+<span hidefocus="true"><a title="返回顶部" class="scrolltopa"><b>返回顶部</b></a></span>
+</div>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<div id="qrcode">
+<p>分享到微信</p>
+<div id="canvas"></div>
+<p><em>打开微信，点击顶部的“╋”，<br>
+使用“扫一扫”将网页分享至微信。</em></p></div>
+<!-- script type="text/javascript" src="https://img.linux.net.cn/static/js/ads.js?FBX"></script -->
+<!-- div id="LFBXCisOsS" style="display: none; background-color: #A00; position: fixed; top: 0; width: 100%; z-index: 9999; left: 0; font-size: 16px; color: #fff; text-align: center; padding: 10px; opacity: 0.8;">请将我们加入您的广告过滤器的白名单，请支持开源站点。谢谢您。</div -->
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+
+
+</body>
+</html>

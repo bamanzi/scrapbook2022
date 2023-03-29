@@ -1,0 +1,411 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>观点|Snap、Flatpak 这种通吃所有发行版的打包方式真的有用吗？</title>
+ 
+<meta name="keywords" content="Snap、Flatpak 这种通吃所有发行版的打包方式真的有用吗？">
+<meta name="description" content="这种 Linux 新技术方向似乎自然会让人脑海中浮现这样的问题：独立包的优点/缺点是什么？这是否让我们拥有更好的 Linux 系统？其背后的动机是什么？ ">
+<meta name="copyright" content="2005-2019 Linux.cn">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="applicable-device" content="pc,mobile">
+<meta name="referrer" content="always">
+<base href=""><link rel="stylesheet" type="text/css" href="style_1_common.css">
+<link rel="stylesheet" type="text/css" href="style_1_portal_view.css">
+<link href="responsive.css" rel="stylesheet">
+
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script src="about:blank" type="text/javascript"></script>
+<script src="about:blank" type="text/javascript"></script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script src="about:blank" type="text/javascript"></script>
+<script src="about:blank" type="text/javascript"></script>
+<link rel="alternate" type="application/rss+xml" title="Linux 中国◆开源社区 RSS" href="https://linux.cn/rss.xml">
+<link rel="shortcut icon" href="favicon.ico" sizes="32x32">
+<link rel="canonical" href="https://linux.cn/article-7783-1.html">
+<script src="about:blank" type="text/javascript"></script>
+</head>
+
+<body id="nv_portal" class="pg_view">
+<div id="append_parent"></div><div id="ajaxwaitid"></div>
+<div id="hd">
+<div class="wp" style="box-shadow: 1px 1px 2px rgb(102, 102, 102);">
+<h1 id="linuxcn_logo"><a href="https://linux.cn/" title="Linux.中国 - 开源社区"></a><style type="text/css">
+/* Code tidied up by ScrapBook */
+@keyframes spin {
+100% { transform: rotate(360deg); }
+}
+@keyframes spin {
+100% { transform: rotate(360deg); }
+}
+</style></h1>
+<div class="p_pop h_pop" id="mn_userapp_menu" style="display: none;"></div><div id="topmenu_wrapper">
+<div id="topmenu">
+<div id="nv">
+<ul><li id="mn_N6666"><a href="https://linux.cn/" hidefocus="true" style="font-weight: bold;">Linux 中国</a></li><li id="mn_P3"><a href="https://linux.cn/tech/" hidefocus="true" style="color: rgb(255, 250, 229);">技术</a></li><li id="mn_P1"><a href="https://linux.cn/news/" hidefocus="true" style="color: rgb(255, 250, 229);">新闻</a></li><li id="mn_P4"><a href="https://linux.cn/talk/" hidefocus="true" style="color: rgb(255, 250, 229);">观点</a></li><li id="mn_P8"><a href="https://linux.cn/share/" hidefocus="true" style="color: rgb(255, 250, 229);">分享</a></li><li id="mn_N1fa1"><a href="https://linux.cn/lctt/" hidefocus="true" target="_blank">LCTT</a></li></ul>
+</div>
+<div id="mu" class="cl">
+<ul class="cl " id="snav_mn_P3" style="display: none;">
+<li><a href="https://linux.cn/tech/desktop/" hidefocus="true">桌面应用</a></li><li><a href="https://linux.cn/tech/sa/" hidefocus="true">系统运维</a></li><li><a href="https://linux.cn/tech/program/" hidefocus="true">软件开发</a></li><li><a href="https://linux.cn/tech/raspberrypi/" hidefocus="true">树莓派</a></li><li><a href="https://linux.cn/tech/container/" hidefocus="true">容器与云</a></li><li><a href="https://linux.cn/portal.php?mod=list&amp;catid=27" hidefocus="true">区块链</a></li></ul>
+<ul class="cl " id="snav_mn_P1" style="display: none;">
+<li><a href="https://linux.cn/news/express/" hidefocus="true">硬核观察</a></li></ul>
+<ul class="cl " id="snav_mn_P4" style="display: none;">
+<li><a href="https://linux.cn/talk/comic/" hidefocus="true">极客漫画</a></li><li><a href="https://linux.cn/talk/ossip/" hidefocus="true">开源智慧</a></li><li><a href="https://linux.cn/talk/interview/" hidefocus="true">穿山甲专访</a></li><li><a href="https://linux.cn/talk/ocselected/" hidefocus="true">开源之道</a></li><li><a href="https://linux.cn/talk/clh/" hidefocus="true">代码英雄</a></li></ul>
+<ul class="cl " id="snav_mn_P8" style="display: none;">
+<li><a href="https://linux.cn/share/distro/" hidefocus="true">Linux 发行版</a></li></ul>
+<ul class="cl " id="snav_mn_userapp" style="display: none;">
+</ul>
+</div>
+</div>
+</div>
+<div id="scbar" class="cl">
+<form id="scbar_form" method="post" autocomplete="off" action="https://linux.cn/search.php?searchsubmit=yes" target="_blank">
+<input name="mod" id="scbar_mod" value="search" type="hidden">
+<input name="formhash" value="c7db8738" type="hidden">
+<input name="srchtype" value="title" type="hidden">
+<input name="srhfid" value="0" type="hidden">
+<input name="srhlocality" value="portal::view" type="hidden">
+<table id="scbar_table" style="float: right;" cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td class="scbar_icon_td"></td>
+<td class="scbar_txt_td"><input name="srchtxt" id="scbar_txt" value="请注册后再搜索" autocomplete="off" speech="" type="text"></td>
+<td class="scbar_type_td"><a id="scbar_type" class="xg1" hidefocus="true">搜索</a></td>
+<td class="scbar_btn_td"><button type="submit" name="searchsubmit" id="scbar_btn" sc="1" class="pn pnc" value="true"><strong class="xi2">搜索</strong></button></td>
+<td class="scbar_hot_td">
+<div id="scbar_hot">
+</div>
+</td>
+</tr>
+</tbody></table>
+</form>
+<span class="z titletext" style="padding: 0px 10px 0px 20px;">❏ 站外平台：</span>
+<ul class="cl mutag z">
+<li><a class="hidefocus tsina" hidefocus="true" href="https://weibo.com/linuxcn" target="_blank" title="微博认证号：Linux中国"></a></li>
+<li><a class="hidefocus tticon" hidefocus="true" href="https://www.toutiao.com/c/user/52889878622/" target="_blank" title="今日头条：Linux中国"></a></li>
+<li><a class="hidefocus tticon" hidefocus="true" href="http://www.toutiao.com/c/user/3357852467/" target="_blank" title="今日头条：Linux技术"></a></li>
+<li><a class="hidefocus wyicon" hidefocus="true" href="http://dy.163.com/v2/article/detail/D282EJLD0511CPOJ.html" target="_blank" title="网易号：Linux"></a></li>
+<li><a class="hidefocus fbicon" hidefocus="true" href="https://www.facebook.com/linux.china/" target="_blank" title="Facebook Page：Linux中国"></a></li>
+<li><a class="hidefocus zhicon" hidefocus="true" href="https://www.zhihu.com/org/linuxzhong-guo/" target="_blank" title="知乎机构号：Linux中国"></a></li>
+<li><a class="hidefocus twicon" hidefocus="true" href="https://twitter.com/linux_cn" target="_blank" title="Twitter：Linux中国"></a></li>
+<li><a class="hidefocus tgicon" hidefocus="true" href="https://t.me/linuxdotcn" target="_blank" title="Telegram Channel：Linux中国"></a></li>
+</ul>
+    <form><label class="y" style="border: 1px solid rgb(221, 221, 221); line-height: 24px; margin: 8px; padding: 2px 6px; background-color: rgb(255, 255, 255);"><input id="textmode" value="1" style="vertical-align: middle;" type="checkbox"> 文本模式</label></form>
+
+</div>
+<br class="clear">
+<ul id="scbar_type_menu" class="p_pop" style="display: none;"><li><a rel="article" class="curtype">文章</a></li></ul>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+
+</div>
+</div>
+<div id="wp" class="wp">
+
+<style type="text/css">
+/* Code tidied up by ScrapBook */
+#nv_portal .vw .h.hm { border-radius: 0px; height: 100px; position: relative; padding: 10px; margin-bottom: 0px; }
+</style>
+<div style="margin: 2px 0px;"></div>
+<div id="ct" class="ct2 wp cl">
+<div class="mn">
+<article class="vw">
+<div class="h hm bm" style="margin-top: 0px;">
+<h1 class="ph" id="article_title">Snap、Flatpak 这种通吃所有发行版的打包方式真的有用吗？ </h1>
+</div>
+
+<div class="d" style="width: 100%; margin: 0px;">
+<div id="article_content" style="border-radius: 0px;">
+<div class="ph" id="article_copyright">
+<span>作者： 
+    	 
+    		    			<span class="textcut"><a href="http://www.iwillfolo.com/ubuntus-snap-red-hats-flatpack-and-is-one-fits-all-linux-packages-useful/" target="_blank">Liron</a></span>
+    		    	    	<span>译者： 
+<a href="https://linux.cn/lctt/" target="_blank">LCTT</a>&nbsp;<a href="https://linux.cn/lctt/Chao-zhi" target="_blank">insidentally</a></span>
+<p id="article_date">
+| 2016-09-17 23:10&nbsp;&nbsp;
+评论: <a href="https://linux.cn/portal.php?mod=comment&amp;id=7783&amp;idtype=aid" title="查看全部评论"><em id="_commentnum">6</em></a>&nbsp;收藏: <em id="_favtimes">2</em>&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
+</span></div>
+<p><img src="230943wvgur99cvbpvcec9.jpg" alt=""></p>
+<p><strong>对新一代的打包格式开始渗透到 Linux 生态系统中的深入观察</strong></p>
+<p>最近我们听到越来越多的有关于 Ubuntu 的 Snap 包和由 Red Hat 员工 Alexander Larsson 创造的 Flatpak （曾经叫做 xdg-app）的消息。</p>
+<p>这两种下一代打包方法在本质上拥有相同的目标和特点：即不依赖于第三方系统功能库的独立包装。</p>
+<p>这种 Linux 新技术方向似乎自然会让人脑海中浮现这样的问题：独立包的优点/缺点是什么？这是否让我们拥有更好的 Linux 系统？其背后的动机是什么？</p>
+<p>为了回答这些问题，让我们先深入了解一下 Snap 和 Flatpak。</p>
+<h3 id="toc_1">动机</h3>
+<p>根据 <a href="http://flatpak.org/press/2016-06-21-flatpak-released.html">Flatpak</a> 和 <a href="https://insights.ubuntu.com/2016/06/14/universal-snap-packages-launch-on-multiple-linux-distros">Snap</a> 的声明，背后的主要动机是使同一版本的应用程序能够运行在多个 Linux 发行版。</p>
+<blockquote>
+<p>“从一开始它的主要目标是允许相同的应用程序运行在各种 Linux 发行版和操作系统上。” —— Flatpak</p>
+</blockquote>
+<blockquote>
+<p>“……‘snap’ 通用 Linux 包格式，使简单的二进制包能够完美的、安全的运行在任何 Linux 桌面、服务器、云和设备上。” —— Snap</p>
+</blockquote>
+<p>说得更具体一点，站在 Snap 和 Flatpak （以下称之为 S&amp;F）背后的人认为，Linux 平台存在碎片化的问题。</p>
+<p>这个问题导致了开发者们需要做许多不必要的工作来使他的软件能够运行在各种不同的发行版上，这影响了整个平台的前进。</p>
+<p>所以，作为 Linux 发行版（Ubuntu 和 Red Hat）的领导者，他们希望消除这个障碍，推动平台发展。</p>
+<p>但是，是否是更多的个人收益刺激了 S&amp;F 的开发？</p>
+<h4 id="toc_2">个人收益？</h4>
+<p>虽然没有任何官方声明，但是试想一下，如果能够创造这种可能会被大多数发行版（即便不是全部）所采用的打包方式，那么这个项目的领导者将可能成为一个能够决定 Linux 大船航向的重要人物。</p>
+<h3 id="toc_3">优势</h3>
+<p>这种独立包的好处多多，并且取决于不同的因素。</p>
+<p>这些因素基本上可以归为两类：</p>
+<h4 id="toc_4">用户角度</h4>
+<p><strong>+</strong> 从 Liunx 用户的观点来看：Snap 和 Flatpak 带来了将任何软件包（软件或应用）安装在用户使用的任何发行版上的可能性。</p>
+<p>例如你在使用一个不是很流行的发行版，由于开发工作的缺乏，它的软件仓库只有很稀少的包。现在，通过 S&amp;F 你就可以显著的增加包的数量，这是一个多么美好的事情。</p>
+<p><strong>+</strong> 同样，对于使用流行的发行版的用户，即使该发行版的软件仓库上有很多的包，他也可以在不改变它现有的功能库的同时安装一个新的包。</p>
+<p>比方说, 一个 Debian 的用户想要安装一个 “测试分支” 的包，但是他又不想将他的整个系统变成测试版（来让该包运行在更新的功能库上）。现在，他就可以简单的想安装哪个版本就安装哪个版本，而不需要考虑库的问题。</p>
+<p>对于持后者观点的人，可能基本上都是使用源文件编译他们的包的人，然而，除非你使用类似 Gentoo 这样基于源代码的发行版，否则大多数用户将从头编译视为是一个恶心到吐的事情。</p>
+<p><strong>+</strong> 高级用户，或者称之为 “拥有安全意识的用户” 可能会觉得更容易接受这种类型的包，只要它们来自可靠来源，这种包倾向于提供另一层隔离，因为它们通常是与系统包想隔离的。</p>
+<p>* 不论是 Snap 还是 Flatpak 都在不断努力增强它们的安全性，通常他们都使用 “沙盒化” 来隔离，以防止它们可能携带病毒感染整个系统，就像微软 Windows 系统中的 .exe 程序一样。（关于微软和 S&amp;F 后面还会谈到）</p>
+<h4 id="toc_5">开发者角度</h4>
+<p>与普通用户相比，对于开发者来说，开发 S&amp;F 包的优点可能更加清楚。这一点已经在上一节有所提示。</p>
+<p>尽管如此，这些优点有：</p>
+<p><strong>+</strong> S&amp;F 通过统一开发的过程，将多发行版的开发变得简单了起来。对于需要将他的应用运行在多个发行版的开发者来说，这大大的减少了他们的工作量。</p>
+<p><strong>++</strong> 因此，开发者能够更容易的使他的应用运行在更多的发行版上。</p>
+<p><strong>+</strong> S&amp;F 允许开发者私自发布他的包，不需要依靠发行版维护者在每一个/每一次发行版中发布他的包。</p>
+<p><strong>++</strong> 通过上述方法，开发者可以不依赖发行版而直接获取到用户安装和卸载其软件的统计数据。</p>
+<p><strong>++</strong> 同样是通过上述方法，开发者可以更好的直接与用户互动，而不需要通过中间媒介，比如发行版这种中间媒介。</p>
+<h3 id="toc_6">缺点</h3>
+<p><strong>–</strong> 膨胀。就是这么简单。Flatpak 和 Snap 并不是凭空变出来它的依赖关系。相反，它是通过将依赖关系预构建在其中来代替使用系统中的依赖关系。</p>
+<p>就像谚语说的：“山不来就我，我就去就山”。</p>
+<p><strong>–</strong> 之前提到安全意识强的用户会喜欢 S&amp;F 提供的额外的一层隔离，只要该应用来自一个受信任的来源。但是从另外一个角度看，对这方面了解较少的用户，可能会从一个不靠谱的地方弄来一个包含恶意软件的包从而导致危害。</p>
+<p>上面提到的观点可以说是有很有意义的，虽说今天的流行方法，像 PPA、overlay 等也可能是来自不受信任的来源。</p>
+<p>但是，S&amp;F 包更加增加这个风险，因为恶意软件开发者只需要开发一个版本就可以感染各种发行版。相反，如果没有 S&amp;F，恶意软件的开发者就需要创建不同的版本以适应不同的发行版。</p>
+<h3 id="toc_7">原来微软一直是正确的吗？</h3>
+<p>考虑到上面提到的，很显然，在大多数情况下，使用 S&amp;F 包的优点超过缺点。</p>
+<p>至少对于二进制发行版的用户，或者重点不是轻量级的发行版的用户来说是这样的。</p>
+<p>这促使我问出这个问题，可能微软一直是正确的吗？如果是的，那么当 S&amp;F 变成 Linux 的标准后，你还会一如既往的使用 Linux 或者类 Unix 系统吗？</p>
+<p>很显然，时间会是这个问题的最好答案。</p>
+<p>不过，我认为，即使不完全正确，但是微软有些地方也是值得赞扬的，并且以我的观点来看，所有这些方式在 Linux 上都立马能用也确实是一个亮点。</p>
+<hr>
+<p>via: <a href="http://www.iwillfolo.com/ubuntus-snap-red-hats-flatpack-and-is-one-fits-all-linux-packages-useful/">http://www.iwillfolo.com/ubuntus-snap-red-hats-flatpack-and-is-one-fits-all-linux-packages-useful/</a></p>
+<p>作者：Liron&nbsp;译者：<a href="https://github.com/Chao-zhi">Chao-zhi</a> 校对：<a href="https://github.com/wxy">wxy</a></p>
+<p>本文由 <a href="https://github.com/LCTT/TranslateProject">LCTT</a> 原创翻译，<a href="https://linux.cn/">Linux中国</a> 荣誉推出</p>  					<section><img style="width: 24px; height: 24px; float: right;" src="linisi.svg"><br class="clear"></section>
+</div>
+</div>
+<br class="clear">
+<div class="vw">
+<div id="add_comment" class="h bm" style="display: none;">
+<div class="bm_h cl">
+<h3>发表评论</h3>
+</div>
+<div class="bm_c pbn">
+<form id="cform" name="cform" action="https://linux.cn/portal.php?mod=portalcp&amp;ac=comment" method="post" autocomplete="off">
+<div class="tedt">
+<div class="area">
+<textarea name="message" rows="10" class="pt" id="message"></textarea>
+</div>
+</div>
+
+<div class="mtm z"><span id="seccode_cSnp54m4"></span>		
+<script type="text/javascript" reload="1">/* Code removed by ScrapBook */</script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+</div>
+<input name="portal_referer" value="https://linux.cn/article-7783-1.html#comment" type="hidden">
+<input name="referer" value="https://linux.cn/article-7783-1.html#comment" type="hidden">
+<input name="id" value="0" type="hidden">
+<input name="idtype" value="" type="hidden">
+<input name="aid" value="7783" type="hidden">
+<input id="reppid" name="reppid" value="" type="hidden">
+<input name="formhash" value="c7db8738" type="hidden">
+<input name="replysubmit" value="true" type="hidden">
+<input name="commentsubmit" value="true" type="hidden">
+<p class="mtm" style="text-align: center;"><button type="submit" name="commentsubmit_btn" id="commentsubmit_btn" value="true" class="pn"><strong>评论</strong></button></p>
+<br class="clear">
+</form>
+</div>
+</div>
+<div id="comment" class="bm h">
+<div class="bm_h cl">
+<h3 class="z"><a name="comment"></a>最新评论</h3>
+</div>
+<div id="comment_ul" class="bm_c">
+<div style="text-align: center;"><button type="button" class="pnc" style="font-size: 24px; width: 160px;" id="c_add"><strong>发表评论</strong></button></div><a name="comment_anchor_51242"></a>
+<dl id="comment_51242_li" class="pbm bbda cl">
+<dt class="mbm  ">
+<span class=" xw0 vm">来自美国的 Chrome 100.0|Windows 10 用户</span>
+<span class=" xw0 vm">2022-05-04 16:31</span>
+<span class="y xw0 xi2 opt" style="margin-right: 5px;">
+<a class="replyadd" href="https://linux.cn/portal.php?mod=review&amp;action=postreview&amp;do=support&amp;idtype=aid&amp;tid=7783&amp;pid=51242&amp;hash=c7db8738"><span id="review_support_51242">1</span> 赞</a> 
+<!--<a href="javascript:;" onclick="portal_comment_reppost(51242, '7783');">回复</a> --><a id="reply_51242" href="https://linux.cn/portal.php?mod=portalcp&amp;ac=comment&amp;op=reply&amp;cid=51242&amp;aid=7783&amp;idtype=">回复</a> </span>	
+</dt>
+<dd>
+为的是解决动态链接和关联依赖,这个在Linux中几乎会让人崩溃的应用安装障碍.但大多数时候,这个问题正在被各大发行版处理的越来越好.有了snap和flatpak的出现,又多了一种选择,总是幸福的,但不希望是唯一的选项.这并不是我希望看到的,虽然我的发声可能于事无补,但我要发出自己的声音.这就是开源的意义.</dd>
+</dl><a name="comment_anchor_42265"></a>
+<dl id="comment_42265_li" class="pbm bbda cl">
+<dt class="mbm  s2">
+<span class=" xw0 vm">来自上海的 Chrome 55.0|Chrome OS 8798.0 用户</span>
+<span class=" xw0 vm">2016-09-25 16:25</span>
+<span class="y xw0 xi2 opt" style="margin-right: 5px;">
+<a class="replyadd" href="https://linux.cn/portal.php?mod=review&amp;action=postreview&amp;do=support&amp;idtype=aid&amp;tid=7783&amp;pid=42265&amp;hash=c7db8738"><span id="review_support_42265">5</span> 赞</a> 
+<!--<a href="javascript:;" onclick="portal_comment_reppost(42265, '7783');">回复</a> --><a id="reply_42265" href="https://linux.cn/portal.php?mod=portalcp&amp;ac=comment&amp;op=reply&amp;cid=42265&amp;aid=7783&amp;idtype=">回复</a> </span>	
+</dt>
+<dd>
+势不可挡的趋势，只看谁能成为最后的标准</dd>
+</dl><a name="comment_anchor_42187"></a>
+<dl id="comment_42187_li" class="pbm bbda cl">
+<dt class="mbm  s3">
+<span class=" xw0 vm">来自四川成都的 Firefox 48.0|Windows 10 用户</span>
+<span class=" xw0 vm">2016-09-20 09:57</span>
+<span class="y xw0 xi2 opt" style="margin-right: 5px;">
+<a class="replyadd" href="https://linux.cn/portal.php?mod=review&amp;action=postreview&amp;do=support&amp;idtype=aid&amp;tid=7783&amp;pid=42187&amp;hash=c7db8738"><span id="review_support_42187">9</span> 赞</a> 
+<!--<a href="javascript:;" onclick="portal_comment_reppost(42187, '7783');">回复</a> --><a id="reply_42187" href="https://linux.cn/portal.php?mod=portalcp&amp;ac=comment&amp;op=reply&amp;cid=42187&amp;aid=7783&amp;idtype=">回复</a> </span>	
+</dt>
+<dd>
+依赖的确是linux安装软件最蛋疼的事情，特别是没有网络的情况下。</dd>
+</dl><a name="comment_anchor_42182"></a>
+<dl id="comment_42182_li" class="pbm bbda cl">
+<dt class="mbm user s1">
+<a href="https://linux.cn/space/3304/" class="xi2 xw1 vm" c="1" target="_blank">绿色圣光 [Firefox 45.0|GNU/Linux]</a>
+<span class=" xw0 vm">2016-09-19 21:48</span>
+<span class="y xw0 xi2 opt" style="margin-right: 5px;">
+<a class="replyadd" href="https://linux.cn/portal.php?mod=review&amp;action=postreview&amp;do=support&amp;idtype=aid&amp;tid=7783&amp;pid=42182&amp;hash=c7db8738"><span id="review_support_42182">3</span> 赞</a> 
+<!--<a href="javascript:;" onclick="portal_comment_reppost(42182, '7783');">回复</a> --><a id="reply_42182" href="https://linux.cn/portal.php?mod=portalcp&amp;ac=comment&amp;op=reply&amp;cid=42182&amp;aid=7783&amp;idtype=">回复</a> </span>	
+</dt>
+<dd>
+我不喜欢，但我觉得这是趋势。</dd>
+</dl><a name="comment_anchor_42177"></a>
+<dl id="comment_42177_li" class="pbm bbda cl">
+<dt class="mbm user s2">
+<a href="https://linux.cn/space/18985/" class="xi2 xw1 vm" c="1" target="_blank">zxciddee [Maxthon 4.0|Windows XP]</a>
+<span class=" xw0 vm">2016-09-19 20:21</span>
+<span class="y xw0 xi2 opt" style="margin-right: 5px;">
+<a class="replyadd" href="https://linux.cn/portal.php?mod=review&amp;action=postreview&amp;do=support&amp;idtype=aid&amp;tid=7783&amp;pid=42177&amp;hash=c7db8738"><span id="review_support_42177">5</span> 赞</a> 
+<!--<a href="javascript:;" onclick="portal_comment_reppost(42177, '7783');">回复</a> --><a id="reply_42177" href="https://linux.cn/portal.php?mod=portalcp&amp;ac=comment&amp;op=reply&amp;cid=42177&amp;aid=7783&amp;idtype=">回复</a> </span>	
+</dt>
+<dd>
+连windows这种好几年才发布一个版本的系统都采用这种模式，更何况一年发布几百种不同版本的linux。"依赖"阻碍Linux发展多少年了，至今只能在服务器领域有所发展！</dd>
+</dl><a name="comment_anchor_42166"></a>
+<dl id="comment_42166_li" class="pbm bbda cl">
+<dt class="mbm  s1">
+<span class=" xw0 vm">来自江苏南京的 Chrome 53.0|Windows 10 用户</span>
+<span class=" xw0 vm">2016-09-19 12:51</span>
+<span class="y xw0 xi2 opt" style="margin-right: 5px;">
+<a class="replyadd" href="https://linux.cn/portal.php?mod=review&amp;action=postreview&amp;do=support&amp;idtype=aid&amp;tid=7783&amp;pid=42166&amp;hash=c7db8738"><span id="review_support_42166">3</span> 赞</a> 
+<!--<a href="javascript:;" onclick="portal_comment_reppost(42166, '7783');">回复</a> --><a id="reply_42166" href="https://linux.cn/portal.php?mod=portalcp&amp;ac=comment&amp;op=reply&amp;cid=42166&amp;aid=7783&amp;idtype=">回复</a> </span>	
+</dt>
+<dd>
+我个人认为，snap 的移动版的沙盒安全机制的设计还是不错的，可以有效杜绝流氓和病毒软件等非法行为。但是，桌面版的 snap 却可以轻松绕过这一机制，只要 linux 的发行版本还在使用 x window，那么它就无法避免这一点。是时候进行一场革命了！</dd>
+</dl><div class="ptm pbm cl">
+</div>
+</div>
+</div>
+</div>
+<div class="h bm_c bm z" id="footer_info">
+<p class="copyright">
+    	 
+    		    			    			<span class="z textcut">译自：<a href="http://www.iwillfolo.com/ubuntus-snap-red-hats-flatpack-and-is-one-fits-all-linux-packages-useful/" target="_blank">iwillfolo.com</a></span>
+    			    		    		<span class="y">作者： Liron</span>    		<br class="clear">
+    	    	<span class="z">原创：<a href="https://linux.cn/lctt/" target="_blank">LCTT</a> <a href="#" target="_blank">https://linux.cn/article-7783-1.html</a></span>
+            			<span class="y">译者： insidentally</span>    		<br class="clear">
+    	    	<br>
+    	    		<span>本文由 LCTT 原创翻译，<a href="#">Linux 中国首发</a>。也想加入译者行列，为开源做一些自己的贡献么？欢迎加入 <a href="https://linux.cn/lctt/" target="_blank">LCTT</a>！<br>翻译工作和译文发表仅用于学习和交流目的，翻译工作遵照 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank">CC-BY-SA 协议规定</a>，如果我们的工作有侵犯到您的权益，请及时联系我们。</span>
+    		    		<br class="clear">
+    		<span style="color: red;">欢迎遵照 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank">CC-BY-SA 协议规定</a> 转载，敬请在正文中标注并保留原文/译文链接和作者/译者等信息。</span>
+                		<br class="clear">
+    	    	<span>文章仅代表作者的知识和看法，如有不同观点，请楼下排队<a>吐槽</a> :D</span>
+    	<br class="clear">
+</p>
+
+
+
+<div class="o cl ptm pbm">
+<a href="https://linux.cn/home.php?mod=spacecp&amp;ac=favorite&amp;type=article&amp;id=7783&amp;handlekey=favoritearticlehk_7783" id="a_favorite" class="favorite z" title="收藏"></a>
+<!-- <a href="misc.php?mod=invite&amp;action=article&amp;id=7783" id="a_invite" onclick="showWindow('invite', this.href, 'get', 0);" class="invite z" title="邀请"></a> -->
+<a href="https://linux.cn/article-7783-1.html?pr" class="print z" title="打印"></a>
+				
+</div>
+<div class="pren pbm cl">
+<em>上一篇：<a href="https://linux.cn/article-7777-1.html">Docker正方登场——未来正在远方……</a></em><em>下一篇：<a href="https://linux.cn/article-7786-1.html">Torvalds 2.0： Linus 之女谈计算机、大学、女权主义和提升技术界的多元化</a></em></div>
+</div>
+<div><div id="translator_info" class="bm" style="position: relative; margin: 8px 4px 8px 0px ! important; float: right;">
+<div class="bm_h cl">
+LCTT 译者
+</div>
+<div class="bm_c">
+<div>
+<a href="https://linux.cn/lctt/Chao-zhi" target="_blank"><img class="avatar" src="21298975.jpg" style="max-width: 64px; float: left; margin-top: 10px;"></a>
+<div style="float: left; margin-left: 10px; font-size: 12px; line-height: 1.5em;">
+<div>
+<a href="https://github.com/Chao-zhi" target="_blank"><img src="github_icon.png" style="vertical-align: middle;"></a> <a href="https://linux.cn/lctt/Chao-zhi" target="_blank" style="font-weight: bold;">insidentally</a> 🌟🌟🌟🌟</div>
+<div class="addfiles">共计翻译： <span class="num" style="color: rgb(255, 0, 0); font-weight: 700;">36.0</span> 篇
+| 共计贡献： <span class="num" style="color: rgb(255, 0, 0); font-weight: 700;">2376</span> 天</div>
+<div>贡献时间：2016-09-11 -&gt; 2023-03-15</div><a href="https://linux.cn/lctt/Chao-zhi" target="_blank">访问我的 LCTT 主页</a> | <a href="https://github.com/Chao-zhi" target="_blank">在 GitHub 上关注我</a>
+</div>
+<br class="clear">
+</div>
+</div>
+</div>
+</div>
+
+<div id="related" class="bm block z">
+<div class="bm_h cl">
+<h3>相关阅读</h3>
+</div>
+<div class="bm_c pbn" id="related_tag">
+<ul class="xl xl2 cl bbs pbm" id="tag"><li><a href="https://linux.cn/tag-%E8%BD%AF%E4%BB%B6%E5%8C%85.html">软件包</a></li>
+<li><a href="https://linux.cn/tag-snap.html">snap</a></li>
+<li><a href="https://linux.cn/tag-Flatpak.html">Flatpak</a></li>
+</ul>
+</div>
+<div class="bm_c xl xl1 cl" id="related_article">
+<ul><li><em>2016-09-21</em><a href="https://linux.cn/article-7796-1-rel.html" target="_blank">适用于所有发行版的 Linux 应用程序——是否真的有好处呢？</a> </li>
+<li><em>2016-06-24</em><a href="https://linux.cn/article-7505-1-rel.html" target="_blank">下一代独立式 GNU/Linux 应用打包格式 Flatpak 发布</a> </li>
+<li><em>2016-06-25</em><a href="https://linux.cn/article-7506-1-rel.html" target="_blank">Canonical 并不指望别的发行版也从 Ubuntu 商店下载 Snap 软件包</a> </li>
+<li><em>2022-04-17</em><a href="https://linux.cn/article-14482-1-rel.html" target="_blank">Ubuntu 的前 Snap 倡导者创建了一个工具，帮助你从 Snap 迁移到 Flatpak</a> </li>
+<li><em>2022-09-06</em><a href="https://linux.cn/article-15007-1-rel.html" target="_blank">如何成为专业的 Flatpak 用户</a> </li>
+</ul>
+</div>
+</div>
+<br class="clear">
+</article>
+</div>
+
+</div>
+
+
+<input id="portalview" value="1" type="hidden">
+
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<link rel="stylesheet" href="prettify.css" type="text/css">
+<script src="about:blank" type="text/javascript"></script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>	</div>
+    <div id="footer">
+        <p>
+            <span>Linux 中国 © 2003 - 2022</span>
+        </p>
+        <p>
+            <a href="http://www.miitbeian.gov.cn/" target="_blank">京ICP备2021020457</a>            京公网安备110105001595
+        </p>
+        <p>
+        <a href="https://linux.cn/legal.html">服务条款</a> |
+        除特别申明外，本站原创内容版权遵循 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank">CC-BY-SA 协议规定</a></p>
+        <p>
+</p></div>
+
+<div id="ft" class="cl"></div>
+<script src="about:blank" type="text/javascript"></script>
+<div id="scrolltop">
+<span>
+<a class="wxicon"></a>
+<a title="分享到微博" class="tsina"></a>
+<a title="收藏" href="https://linux.cn/home.php?mod=spacecp&amp;ac=favorite&amp;type=article&amp;id=7783&amp;handlekey=favoritearticlehk_7783" id="a_favorite" class="favorite"></a>
+    	<a href="https://linux.cn/article-7783-1.html?pr" class="print" title="!print!"></a>
+
+</span>
+<span hidefocus="true"><a title="返回顶部" class="scrolltopa"><b>返回顶部</b></a></span>
+</div>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<div id="qrcode">
+<p>分享到微信</p>
+<div id="canvas"></div>
+<p><em>打开微信，点击顶部的“╋”，<br>
+使用“扫一扫”将网页分享至微信。</em></p></div>
+<!-- script type="text/javascript" src="https://img.linux.net.cn/static/js/ads.js?FBX"></script -->
+<!-- div id="LFBXCisOsS" style="display: none; background-color: #A00; position: fixed; top: 0; width: 100%; z-index: 9999; left: 0; font-size: 16px; color: #fff; text-align: center; padding: 10px; opacity: 0.8;">请将我们加入您的广告过滤器的白名单，请支持开源站点。谢谢您。</div -->
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+
+
+</body>
+</html>

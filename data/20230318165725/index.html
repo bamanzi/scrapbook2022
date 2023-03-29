@@ -1,0 +1,348 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>分享|bauh：在一个界面中管理 Snap、Flatpak 和 AppImage</title>
+ 
+<meta name="keywords" content="bauh：在一个界面中管理 Snap、Flatpak 和 AppImage">
+<meta name="description" content="幸运的是，我偶然发现了一个支持这几种通用包格式的应用程序。 ">
+<meta name="copyright" content="2005-2019 Linux.cn">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="applicable-device" content="pc,mobile">
+<meta name="referrer" content="always">
+<base href=""><link rel="stylesheet" type="text/css" href="style_1_common.css">
+<link rel="stylesheet" type="text/css" href="style_1_portal_view.css">
+<link href="responsive.css" rel="stylesheet">
+
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script src="about:blank" type="text/javascript"></script>
+<script src="about:blank" type="text/javascript"></script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script src="about:blank" type="text/javascript"></script>
+<script src="about:blank" type="text/javascript"></script>
+<link rel="alternate" type="application/rss+xml" title="Linux 中国◆开源社区 RSS" href="https://linux.cn/rss.xml">
+<link rel="shortcut icon" href="favicon.ico" sizes="32x32">
+<link rel="canonical" href="https://linux.cn/article-11617-1.html">
+<script src="about:blank" type="text/javascript"></script>
+</head>
+
+<body id="nv_portal" class="pg_view">
+<div id="append_parent"></div><div id="ajaxwaitid"></div>
+<div id="hd">
+<div class="wp" style="box-shadow: 1px 1px 2px rgb(102, 102, 102);">
+<h1 id="linuxcn_logo"><a href="https://linux.cn/" title="Linux.中国 - 开源社区"></a><style type="text/css">
+/* Code tidied up by ScrapBook */
+@keyframes spin {
+100% { transform: rotate(360deg); }
+}
+@keyframes spin {
+100% { transform: rotate(360deg); }
+}
+</style></h1>
+<div class="p_pop h_pop" id="mn_userapp_menu" style="display: none;"></div><div id="topmenu_wrapper">
+<div id="topmenu">
+<div id="nv">
+<ul><li id="mn_N6666"><a href="https://linux.cn/" hidefocus="true" style="font-weight: bold;">Linux 中国</a></li><li id="mn_P3"><a href="https://linux.cn/tech/" hidefocus="true" style="color: rgb(255, 250, 229);">技术</a></li><li id="mn_P1"><a href="https://linux.cn/news/" hidefocus="true" style="color: rgb(255, 250, 229);">新闻</a></li><li id="mn_P4"><a href="https://linux.cn/talk/" hidefocus="true" style="color: rgb(255, 250, 229);">观点</a></li><li id="mn_P8"><a href="https://linux.cn/share/" hidefocus="true" style="color: rgb(255, 250, 229);">分享</a></li><li id="mn_N1fa1"><a href="https://linux.cn/lctt/" hidefocus="true" target="_blank">LCTT</a></li></ul>
+</div>
+<div id="mu" class="cl">
+<ul class="cl " id="snav_mn_P3" style="display: none;">
+<li><a href="https://linux.cn/tech/desktop/" hidefocus="true">桌面应用</a></li><li><a href="https://linux.cn/tech/sa/" hidefocus="true">系统运维</a></li><li><a href="https://linux.cn/tech/program/" hidefocus="true">软件开发</a></li><li><a href="https://linux.cn/tech/raspberrypi/" hidefocus="true">树莓派</a></li><li><a href="https://linux.cn/tech/container/" hidefocus="true">容器与云</a></li><li><a href="https://linux.cn/portal.php?mod=list&amp;catid=27" hidefocus="true">区块链</a></li></ul>
+<ul class="cl " id="snav_mn_P1" style="display: none;">
+<li><a href="https://linux.cn/news/express/" hidefocus="true">硬核观察</a></li></ul>
+<ul class="cl " id="snav_mn_P4" style="display: none;">
+<li><a href="https://linux.cn/talk/comic/" hidefocus="true">极客漫画</a></li><li><a href="https://linux.cn/talk/ossip/" hidefocus="true">开源智慧</a></li><li><a href="https://linux.cn/talk/interview/" hidefocus="true">穿山甲专访</a></li><li><a href="https://linux.cn/talk/ocselected/" hidefocus="true">开源之道</a></li><li><a href="https://linux.cn/talk/clh/" hidefocus="true">代码英雄</a></li></ul>
+<ul class="cl " id="snav_mn_P8" style="display: none;">
+<li><a href="https://linux.cn/share/distro/" hidefocus="true">Linux 发行版</a></li></ul>
+<ul class="cl " id="snav_mn_userapp" style="display: none;">
+</ul>
+</div>
+</div>
+</div>
+<div id="scbar" class="cl">
+<form id="scbar_form" method="post" autocomplete="off" action="https://linux.cn/search.php?searchsubmit=yes" target="_blank">
+<input name="mod" id="scbar_mod" value="search" type="hidden">
+<input name="formhash" value="c7db8738" type="hidden">
+<input name="srchtype" value="title" type="hidden">
+<input name="srhfid" value="0" type="hidden">
+<input name="srhlocality" value="portal::view" type="hidden">
+<table id="scbar_table" style="float: right;" cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td class="scbar_icon_td"></td>
+<td class="scbar_txt_td"><input name="srchtxt" id="scbar_txt" value="请注册后再搜索" autocomplete="off" speech="" type="text"></td>
+<td class="scbar_type_td"><a id="scbar_type" class="xg1" hidefocus="true">搜索</a></td>
+<td class="scbar_btn_td"><button type="submit" name="searchsubmit" id="scbar_btn" sc="1" class="pn pnc" value="true"><strong class="xi2">搜索</strong></button></td>
+<td class="scbar_hot_td">
+<div id="scbar_hot">
+</div>
+</td>
+</tr>
+</tbody></table>
+</form>
+<span class="z titletext" style="padding: 0px 10px 0px 20px;">❏ 站外平台：</span>
+<ul class="cl mutag z">
+<li><a class="hidefocus tsina" hidefocus="true" href="https://weibo.com/linuxcn" target="_blank" title="微博认证号：Linux中国"></a></li>
+<li><a class="hidefocus tticon" hidefocus="true" href="https://www.toutiao.com/c/user/52889878622/" target="_blank" title="今日头条：Linux中国"></a></li>
+<li><a class="hidefocus tticon" hidefocus="true" href="http://www.toutiao.com/c/user/3357852467/" target="_blank" title="今日头条：Linux技术"></a></li>
+<li><a class="hidefocus wyicon" hidefocus="true" href="http://dy.163.com/v2/article/detail/D282EJLD0511CPOJ.html" target="_blank" title="网易号：Linux"></a></li>
+<li><a class="hidefocus fbicon" hidefocus="true" href="https://www.facebook.com/linux.china/" target="_blank" title="Facebook Page：Linux中国"></a></li>
+<li><a class="hidefocus zhicon" hidefocus="true" href="https://www.zhihu.com/org/linuxzhong-guo/" target="_blank" title="知乎机构号：Linux中国"></a></li>
+<li><a class="hidefocus twicon" hidefocus="true" href="https://twitter.com/linux_cn" target="_blank" title="Twitter：Linux中国"></a></li>
+<li><a class="hidefocus tgicon" hidefocus="true" href="https://t.me/linuxdotcn" target="_blank" title="Telegram Channel：Linux中国"></a></li>
+</ul>
+    <form><label class="y" style="border: 1px solid rgb(221, 221, 221); line-height: 24px; margin: 8px; padding: 2px 6px; background-color: rgb(255, 255, 255);"><input id="textmode" value="1" style="vertical-align: middle;" type="checkbox"> 文本模式</label></form>
+
+</div>
+<br class="clear">
+<ul id="scbar_type_menu" class="p_pop" style="display: none;"><li><a rel="article" class="curtype">文章</a></li></ul>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+
+</div>
+</div>
+<div id="wp" class="wp">
+
+<style type="text/css">
+/* Code tidied up by ScrapBook */
+#nv_portal .vw .h.hm { background: rgb(255, 255, 255) url("092926pzzdtytda80yaany.jpg") repeat scroll center center / cover ; border-radius: 0px; height: 640px; position: relative; padding: 10px; margin-bottom: 0px; }
+#nv_portal .vw .h.hm h1 { background-color: rgba(33, 33, 33, 0.8); border-radius: 0px; position: absolute; margin: 10px 20px 20px; padding: 15px 10px; bottom: 0px; width: 90%; }
+</style>
+<div style="margin: 2px 0px;"></div>
+<div id="ct" class="ct2 wp cl">
+<div class="mn">
+<article class="vw">
+<div class="h hm bm" style="margin-top: 0px;">
+<h1 class="ph" id="article_title">bauh：在一个界面中管理 Snap、Flatpak 和 AppImage </h1>
+</div>
+
+<div class="d" style="width: 100%; margin: 0px;">
+<div id="article_content" style="border-radius: 0px;">
+<div class="ph" id="article_copyright">
+<span>作者： 
+    	 
+    		    			<span class="textcut"><a href="https://itsfoss.com/bauh-package-manager/" target="_blank">John Paul</a></span>
+    		    	    	<span>译者： 
+<a href="https://linux.cn/lctt/" target="_blank">LCTT</a>&nbsp;<a href="https://linux.cn/lctt/wxy" target="_blank">Xingyu.Wang</a></span>
+<p id="article_date">
+| 2019-11-27 09:30&nbsp;&nbsp;
+评论: <a href="https://linux.cn/portal.php?mod=comment&amp;id=11617&amp;idtype=aid" title="查看全部评论"><em id="_commentnum">1</em></a>&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
+</span></div>
+
+<p><a href="https://snapcraft.io/">Snap</a>、<a href="https://flatpak.org/">Flatpak</a> 和 <a href="https://appimage.org/">AppImage</a> 等通用软件包的最大问题之一就是管理它们。大多数内置的软件包管理器都不能全部支持这些新格式。</p>
+<p>幸运的是，我偶然发现了一个支持这几种通用包格式的应用程序。</p>
+<h3 id="toc_1">bauh：多包装需求的管理器</h3>
+<p><a href="https://github.com/vinifmor/bauh">bauh</a>（LCTT：我给该软件建议一个中文名：“包豪”）最初名为 fpakman，旨在处理 Flatpak、Snap、<a href="https://itsfoss.com/use-appimage-linux/">AppImage</a> 和 <a href="https://itsfoss.com/best-aur-helpers/">AUR</a> 软件包。创建者 <a href="https://github.com/vinifmor">vinifmor</a> 在 2019 年 6 月启动了该项目，<a href="https://forum.manjaro.org/t/bauh-formerly-known-as-fpakman-a-gui-for-flatpak-and-snap-management/96180">意图</a>“为 Manjaro 用户提供管理 Flatpak 的图形界面”。此后，他扩展了该应用程序，以添加对基于 Debian 的系统的支持。</p>
+<p><img src="093003z3kzkpz5hvre5uze.jpg" alt="Bauh About"></p>
+<p>首次打开 bauh 时，它将扫描已安装的应用程序并检查更新。如果有任何需要更新的内容，它们将列在前面并居中。更新所有软件包后，你将看到已安装的软件包列表。你可以取消选择不需要更新的软件包，以防止其被更新。你也可以选择安装该应用程序的早期版本。</p>
+<p><img src="093005qbd4wi54djbuuf5k.jpg" alt="With Bauh you can manage various types of packages from one application"></p>
+<p>你也可以搜索应用程序。bauh 提供了有关已安装和已搜索软件包的详细信息。如果你对一种（或多种）软件包类型不感兴趣，则可以在设置中取消选择它们。</p>
+<p><img src="093007sz87nqm8dwnwt1qq.jpg" alt="Bauh Package Info"></p>
+<p><img src="093008ui7xzzzfaa3yai33.jpg" alt="Bauh Updating"></p>
+<p><img src="093011mgbebkr9ooyrbmbb.png" alt="Bauh Search"></p>
+<h3 id="toc_2">在你的 Linux 发行版上安装 bauh</h3>
+<p>让我们看看如何安装 bauh。</p>
+<h4 id="toc_3">基于 Arch 的发行版</h4>
+<p>如果你安装的是最近的 <a href="https://manjaro.org/">Manjaro</a>，则应该一切已经就绪。bauh 默认情况下已安装。如果你安装的是较早版本的 Manjaro（如我一样）或其他基于 Arch 的发行版，则可以在终端中输入以下内容从 <a href="https://aur.archlinux.org/packages/bauh">AUR</a> 中进行安装：</p>
+<pre class="prettyprint linenums"><code>sudo pacman -S bauh</code></pre>
+<h4 id="toc_4">基于 Debian/Ubuntu 的发行版</h4>
+<p>如果你拥有基于 Debian 或 Ubuntu 的 Linux 发行版，则可以使用 <code>pip</code> 安装 bauh。首先，请确保<a href="https://itsfoss.com/install-pip-ubuntu/">在 Ubuntu 上安装了 pip</a>。</p>
+<pre class="prettyprint linenums"><code>sudo apt install python3-pip</code></pre>
+<p>然后使用它来安装 bauh：</p>
+<pre class="prettyprint linenums"><code>pip3 install bauh</code></pre>
+<p>但是，该软件的创建者建议<a href="https://github.com/vinifmor/bauh#manual-installation">手动</a>安装它，以避免弄乱系统的库。</p>
+<p>要手动安装 bauh，你必须先下载其<a href="https://github.com/vinifmor/bauh/releases">最新版本</a>。下载后，可以<a href="https://itsfoss.com/unzip-linux/">使用图形工具</a>或 <a href="https://linuxhandbook.com/unzip-command/">unzip 命令</a>解压缩。接下来，在终端中打开该文件夹。你将需要使用以下步骤来完成安装。</p>
+<p>首先，在名为 <code>env</code> 的文件夹中创建一个虚拟环境：</p>
+<pre class="prettyprint linenums"><code>python3 -m venv env</code></pre>
+<p>现在在该环境中安装该应用程序的代码：</p>
+<pre class="prettyprint linenums"><code>env/bin/pip install .</code></pre>
+<p>启动该应用程序：</p>
+<pre class="prettyprint linenums"><code>env/bin/bauh</code></pre>
+<p>一旦完成了 bauh 的安装，就可以通过更改环境设置和参数来对其进行<a href="https://github.com/vinifmor/bauh#general-settings">微调</a>。</p>
+<h3 id="toc_5">bauh 的未来之路</h3>
+<p>bauh 在短短的几个月中增长了很多。它有计划继续增长。当前的<a href="https://github.com/vinifmor/bauh#roadmap">路线图</a>包括：</p>
+<ul>
+<li>支持其他打包技术</li>
+<li>每种打包技术一个单独模块</li>
+<li>内存和性能改进</li>
+<li>改善用户体验&nbsp; &nbsp;&nbsp;</li>
+</ul>
+<h3 id="toc_6">结语</h3>
+<p>当我尝试 bauh 时，遇到了两个问题。当我第一次打开它时，它告诉我尚未安装 Snap，如果要使用 Snap 软件包，则必须安装它。我知道我已经安装了 Snap，因为我在终端中运行了 <code>snap list</code>，并且可以正常工作。我重新启动系统，Snap 才工作正常。</p>
+<p>我遇到的另一个问题是我的一个 AUR 软件包无法更新。我可以用 <code>yay</code> 更新软件包，而没有任何问题。可能是我的 Manjaro 有问题，我已经使用了它 3 到 4 年。</p>
+<p>总体而言，bauh 可以工作。它做到了宣称的功能。我不能要求更多。</p>
+<p>你有没有用过 hauh？如果有的话，你最喜欢的用于管理不同打包格式的工具是什么？在下面的评论中让我们知道。</p>
+<hr>
+<p>via: <a href="https://itsfoss.com/bauh-package-manager/">https://itsfoss.com/bauh-package-manager/</a></p>
+<p>作者：<a href="https://itsfoss.com/author/john/">John Paul</a> 选题：<a href="https://github.com/lujun9972">lujun9972</a> 译者：<a href="https://github.com/wxy">wxy</a> 校对：<a href="https://github.com/wxy">wxy</a></p>
+<p>本文由 <a href="https://github.com/LCTT/TranslateProject">LCTT</a> 原创编译，<a href="https://linux.cn/">Linux中国</a> 荣誉推出</p>  					<section><img style="width: 24px; height: 24px; float: right;" src="linisi.svg"><br class="clear"></section>
+</div>
+</div>
+<br class="clear">
+<div class="vw">
+<div id="add_comment" class="h bm" style="display: none;">
+<div class="bm_h cl">
+<h3>发表评论</h3>
+</div>
+<div class="bm_c pbn">
+<form id="cform" name="cform" action="https://linux.cn/portal.php?mod=portalcp&amp;ac=comment" method="post" autocomplete="off">
+<div class="tedt">
+<div class="area">
+<textarea name="message" rows="10" class="pt" id="message"></textarea>
+</div>
+</div>
+
+<div class="mtm z"><span id="seccode_cSq98665"></span>		
+<script type="text/javascript" reload="1">/* Code removed by ScrapBook */</script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+</div>
+<input name="portal_referer" value="https://linux.cn/article-11617-1.html#comment" type="hidden">
+<input name="referer" value="https://linux.cn/article-11617-1.html#comment" type="hidden">
+<input name="id" value="0" type="hidden">
+<input name="idtype" value="" type="hidden">
+<input name="aid" value="11617" type="hidden">
+<input id="reppid" name="reppid" value="" type="hidden">
+<input name="formhash" value="c7db8738" type="hidden">
+<input name="replysubmit" value="true" type="hidden">
+<input name="commentsubmit" value="true" type="hidden">
+<p class="mtm" style="text-align: center;"><button type="submit" name="commentsubmit_btn" id="commentsubmit_btn" value="true" class="pn"><strong>评论</strong></button></p>
+<br class="clear">
+</form>
+</div>
+</div>
+<div id="comment" class="bm h">
+<div class="bm_h cl">
+<h3 class="z"><a name="comment"></a>最新评论</h3>
+</div>
+<div id="comment_ul" class="bm_c">
+<div style="text-align: center;"><button type="button" class="pnc" style="font-size: 24px; width: 160px;" id="c_add"><strong>发表评论</strong></button></div><a name="comment_anchor_49346"></a>
+<dl id="comment_49346_li" class="pbm bbda cl">
+<dt class="mbm  s1">
+<span class=" xw0 vm">来自四川成都的 Firefox 88.0|GNU/Linux 用户</span>
+<span class=" xw0 vm">2021-04-23 14:36</span>
+<span class="y xw0 xi2 opt" style="margin-right: 5px;">
+<a class="replyadd" href="https://linux.cn/portal.php?mod=review&amp;action=postreview&amp;do=support&amp;idtype=aid&amp;tid=11617&amp;pid=49346&amp;hash=c7db8738"><span id="review_support_49346">2</span> 赞</a> 
+<!--<a href="javascript:;" onclick="portal_comment_reppost(49346, '11617');">回复</a> --><a id="reply_49346" href="https://linux.cn/portal.php?mod=portalcp&amp;ac=comment&amp;op=reply&amp;cid=49346&amp;aid=11617&amp;idtype=">回复</a> </span>	
+</dt>
+<dd>
+我使用manjaro或Arco安装后，打开bauh需要输入密码，然后点击继续，无响应。无法进入软件主界面。</dd>
+</dl><div class="ptm pbm cl">
+</div>
+</div>
+</div>
+</div>
+<div class="h bm_c bm z" id="footer_info">
+<p class="copyright">
+    	 
+    		    			    			<span class="z textcut">译自：<a href="https://itsfoss.com/bauh-package-manager/" target="_blank">itsfoss.com</a></span>
+    			    		    		<span class="y">作者： John Paul</span>    		<br class="clear">
+    	    	<span class="z">原创：<a href="https://linux.cn/lctt/" target="_blank">LCTT</a> <a href="#" target="_blank">https://linux.cn/article-11617-1.html</a></span>
+            			<span class="y">译者： Xingyu.Wang</span>    		<br class="clear">
+    	    	<br>
+    	    		<span>本文由 LCTT 原创翻译，<a href="#">Linux 中国首发</a>。也想加入译者行列，为开源做一些自己的贡献么？欢迎加入 <a href="https://linux.cn/lctt/" target="_blank">LCTT</a>！<br>翻译工作和译文发表仅用于学习和交流目的，翻译工作遵照 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank">CC-BY-SA 协议规定</a>，如果我们的工作有侵犯到您的权益，请及时联系我们。</span>
+    		    		<br class="clear">
+    		<span style="color: red;">欢迎遵照 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank">CC-BY-SA 协议规定</a> 转载，敬请在正文中标注并保留原文/译文链接和作者/译者等信息。</span>
+                		<br class="clear">
+    	    	<span>文章仅代表作者的知识和看法，如有不同观点，请楼下排队<a>吐槽</a> :D</span>
+    	<br class="clear">
+</p>
+
+
+
+<div class="o cl ptm pbm">
+<a href="https://linux.cn/home.php?mod=spacecp&amp;ac=favorite&amp;type=article&amp;id=11617&amp;handlekey=favoritearticlehk_11617" id="a_favorite" class="favorite z" title="收藏"></a>
+<!-- <a href="misc.php?mod=invite&amp;action=article&amp;id=11617" id="a_invite" onclick="showWindow('invite', this.href, 'get', 0);" class="invite z" title="邀请"></a> -->
+<a href="https://linux.cn/article-11617-1.html?pr" class="print z" title="打印"></a>
+				
+</div>
+<div class="pren pbm cl">
+<em>上一篇：<a href="https://linux.cn/article-11610-1.html">Linux 平台上的写作者必备工具</a></em><em>下一篇：<a href="https://linux.cn/article-11641-1.html">23 款开源的声音、视觉生产工具</a></em></div>
+</div>
+<div><div id="translator_info" class="bm" style="position: relative; margin: 8px 4px 8px 0px ! important; float: right;">
+<div class="bm_h cl">
+LCTT 译者
+</div>
+<div class="bm_c">
+<div>
+<a href="https://linux.cn/lctt/wxy" target="_blank"><img class="avatar" src="128338.jpg" style="max-width: 64px; float: left; margin-top: 10px;"></a>
+<div style="float: left; margin-left: 10px; font-size: 12px; line-height: 1.5em;">
+<div>
+<a href="https://github.com/wxy" target="_blank"><img src="github_icon.png" style="vertical-align: middle;"></a> <a href="https://linux.cn/lctt/wxy" target="_blank" style="font-weight: bold;">Xingyu.Wang</a> 💎💎💎</div>
+<div class="addfiles">共计翻译： <span class="num" style="color: rgb(255, 0, 0); font-weight: 700;">972.0</span> 篇
+| 共计贡献： <span class="num" style="color: rgb(255, 0, 0); font-weight: 700;">3157</span> 天</div>
+<div>贡献时间：2014-07-25 -&gt; 2023-03-17</div><a href="https://linux.cn/lctt/wxy" target="_blank">访问我的 LCTT 主页</a> | <a href="https://github.com/wxy" target="_blank">在 GitHub 上关注我</a>
+</div>
+<br class="clear">
+</div>
+</div>
+</div>
+</div>
+
+<div id="related" class="bm block z">
+<div class="bm_h cl">
+<h3>相关阅读</h3>
+</div>
+<div class="bm_c pbn" id="related_tag">
+<ul class="xl xl2 cl bbs pbm" id="tag"><li><a href="https://linux.cn/tag-%E8%BD%AF%E4%BB%B6%E5%8C%85.html">软件包</a></li>
+</ul>
+</div>
+<div class="bm_c xl xl1 cl" id="related_article">
+<ul><li><em>2020-03-13</em><a href="https://linux.cn/article-11992-1-rel.html" target="_blank">从 apt 升级中排除/保留/阻止特定软件包的三种方法</a> </li>
+<li><em>2020-04-23</em><a href="https://linux.cn/article-12143-1-rel.html" target="_blank">如何为 Linux 打包 Python 应用</a> </li>
+<li><em>2020-06-15</em><a href="https://linux.cn/article-12317-1-rel.html" target="_blank">使用 AppImage 进行 Linux 软件包管理</a> </li>
+<li><em>2021-01-06</em><a href="https://linux.cn/article-12987-1-rel.html" target="_blank">如何在基于 Ubuntu 或 Debian 的 Linux 发行版中查看一个软件包的依赖</a> </li>
+<li><em>2022-05-11</em><a href="https://linux.cn/article-14578-1-rel.html" target="_blank">软件包分析项目实时检查开源仓库中的包</a> </li>
+</ul>
+</div>
+</div>
+<br class="clear">
+</article>
+</div>
+
+</div>
+
+
+<input id="portalview" value="1" type="hidden">
+
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<link rel="stylesheet" href="prettify.css" type="text/css">
+<script src="about:blank" type="text/javascript"></script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>	</div>
+    <div id="footer">
+        <p>
+            <span>Linux 中国 © 2003 - 2022</span>
+        </p>
+        <p>
+            <a href="http://www.miitbeian.gov.cn/" target="_blank">京ICP备2021020457</a>            京公网安备110105001595
+        </p>
+        <p>
+        <a href="https://linux.cn/legal.html">服务条款</a> |
+        除特别申明外，本站原创内容版权遵循 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank">CC-BY-SA 协议规定</a></p>
+        <p>
+</p></div>
+
+<div id="ft" class="cl"></div>
+<script src="about:blank" type="text/javascript"></script>
+<div id="scrolltop">
+<span>
+<a class="wxicon"></a>
+<a title="分享到微博" class="tsina"></a>
+<a title="收藏" href="https://linux.cn/home.php?mod=spacecp&amp;ac=favorite&amp;type=article&amp;id=11617&amp;handlekey=favoritearticlehk_11617" id="a_favorite" class="favorite"></a>
+    	<a href="https://linux.cn/article-11617-1.html?pr" class="print" title="!print!"></a>
+
+</span>
+<span hidefocus="true"><a title="返回顶部" class="scrolltopa"><b>返回顶部</b></a></span>
+</div>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<div id="qrcode">
+<p>分享到微信</p>
+<div id="canvas"></div>
+<p><em>打开微信，点击顶部的“╋”，<br>
+使用“扫一扫”将网页分享至微信。</em></p></div>
+<!-- script type="text/javascript" src="https://img.linux.net.cn/static/js/ads.js?FBX"></script -->
+<!-- div id="LFBXCisOsS" style="display: none; background-color: #A00; position: fixed; top: 0; width: 100%; z-index: 9999; left: 0; font-size: 16px; color: #fff; text-align: center; padding: 10px; opacity: 0.8;">请将我们加入您的广告过滤器的白名单，请支持开源站点。谢谢您。</div -->
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+/* Code tidied up by ScrapBook */
+.slick-slider { box-sizing: border-box; -moz-user-select: none; touch-action: pan-y; }
+.slick-list, .slick-slider { position: relative; display: block; }
+.slick-list { overflow: hidden; margin: 0px; padding: 0px; }
+.slick-list:focus { outline: medium none; }
+.slick-slider .slick-list, .slick-slider .slick-track { transform: translateZ(0px); }
+.slick-track { position: relative; top: 0px; left: 0px; display: block; margin-left: auto; margin-right: auto; }
+.slick-track::after, .slick-track::before { display: table; content: ""; }
+.slick-track::after { clear: both; }
+.slick-slide { display: none; float: left; height: 100%; min-height: 1px; }
+.slick-slide img { display: block; }
+.slick-initialized .slick-slide { display: block; }

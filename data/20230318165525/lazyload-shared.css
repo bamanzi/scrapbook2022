@@ -1,0 +1,7 @@
+/* Code tidied up by ScrapBook */
+@keyframes pulse {
+0% { transform: scale(1); }
+35% { transform: scale(1.1); }
+60% { transform: scale(1.05); }
+100% { transform: scale(1); }
+}

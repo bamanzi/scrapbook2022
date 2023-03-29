@@ -1,0 +1,23 @@
+/* Code tidied up by ScrapBook */
+@keyframes fadein {
+0% { opacity: 0; }
+100% { opacity: 1; }
+}
+.entry-content.post-content img { animation: 1s ease 0s normal none 1 running fadein; }
+.home--with-atf .header::before, .post--with-banner .header::before, .single .header::before { height: 100%; }
+.post-title { font-size: 2.9rem; letter-spacing: -1.5px; line-height: 1.1; margin: 0px 0px 0.75rem; }
+@media screen and (max-width: 800px) {
+}
+@media screen and (max-width: 600px) {
+}
+@media screen and (max-width: 500px) {
+  .post-title { font-size: 2.25rem; }
+  .footer-copyright p { font-size: 0.75rem; }
+}
+@media screen and (max-width: 700px) {
+}
+@media screen and (max-width: 1024px) {
+}
+.sidebar .jetpack-display-remote-posts > a img { border-radius: 0.25rem; }
+.sidebar .jetpack-display-remote-posts h4 { color:  var(--color-grey-33); font-weight: 500; font-size: 15px; font-family:  var(--text-headers); }
+.sidebar .jetpack-display-remote-posts h4:not(:first-child), .sidebar .jetpack-display-remote-posts > a:not(:nth-child(2)) { margin-top: 0rem; }

@@ -1,0 +1,412 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>观点|传统的 Linux 软件包格式不适合现代应用</title>
+ 
+<meta name="keywords" content="传统的 Linux 软件包格式不适合现代应用">
+<meta name="description" content="开源贡献者 Hari Rana 表达了他对传统 Linux 软件包格式不再适合现代应用的看法。 ">
+<meta name="copyright" content="2005-2019 Linux.cn">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="applicable-device" content="pc,mobile">
+<meta name="referrer" content="always">
+<base href=""><link rel="stylesheet" type="text/css" href="style_1_common.css">
+<link rel="stylesheet" type="text/css" href="style_1_portal_view.css">
+<link href="responsive.css" rel="stylesheet">
+
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script src="about:blank" type="text/javascript"></script>
+<script src="about:blank" type="text/javascript"></script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script src="about:blank" type="text/javascript"></script>
+<script src="about:blank" type="text/javascript"></script>
+<link rel="alternate" type="application/rss+xml" title="Linux 中国◆开源社区 RSS" href="https://linux.cn/rss.xml">
+<link rel="shortcut icon" href="favicon.ico" sizes="32x32">
+<link rel="canonical" href="https://linux.cn/article-15027-1.html">
+<script src="about:blank" type="text/javascript"></script>
+<style data-sb-obj="stylesheet-temp" media="screen" type="text/css" id="scrapbook-eraser-style">
+/* Code tidied up by ScrapBook */
+* { cursor: crosshair ! important; }
+</style></head>
+
+<body id="nv_portal" class="pg_view">
+<div id="append_parent"></div><div id="ajaxwaitid"></div>
+<div id="hd">
+<div class="wp" style="box-shadow: 1px 1px 2px rgb(102, 102, 102);">
+<h1 id="linuxcn_logo"><a href="https://linux.cn/" title="Linux.中国 - 开源社区"></a><style type="text/css">
+/* Code tidied up by ScrapBook */
+@keyframes spin {
+100% { transform: rotate(360deg); }
+}
+@keyframes spin {
+100% { transform: rotate(360deg); }
+}
+</style></h1>
+<div class="p_pop h_pop" id="mn_userapp_menu" style="display: none;"></div><div id="topmenu_wrapper">
+<div id="topmenu">
+<div id="nv">
+<ul><li id="mn_N6666"><a href="https://linux.cn/" hidefocus="true" style="font-weight: bold;">Linux 中国</a></li><li id="mn_P3"><a href="https://linux.cn/tech/" hidefocus="true" style="color: rgb(255, 250, 229);">技术</a></li><li id="mn_P1"><a href="https://linux.cn/news/" hidefocus="true" style="color: rgb(255, 250, 229);">新闻</a></li><li id="mn_P4"><a href="https://linux.cn/talk/" hidefocus="true" style="color: rgb(255, 250, 229);">观点</a></li><li id="mn_P8"><a href="https://linux.cn/share/" hidefocus="true" style="color: rgb(255, 250, 229);">分享</a></li><li id="mn_N1fa1"><a href="https://linux.cn/lctt/" hidefocus="true" target="_blank">LCTT</a></li></ul>
+</div>
+<div id="mu" class="cl">
+<ul class="cl " id="snav_mn_P3" style="display: none;">
+<li><a href="https://linux.cn/tech/desktop/" hidefocus="true">桌面应用</a></li><li><a href="https://linux.cn/tech/sa/" hidefocus="true">系统运维</a></li><li><a href="https://linux.cn/tech/program/" hidefocus="true">软件开发</a></li><li><a href="https://linux.cn/tech/raspberrypi/" hidefocus="true">树莓派</a></li><li><a href="https://linux.cn/tech/container/" hidefocus="true">容器与云</a></li><li><a href="https://linux.cn/portal.php?mod=list&amp;catid=27" hidefocus="true">区块链</a></li></ul>
+<ul class="cl " id="snav_mn_P1" style="display: none;">
+<li><a href="https://linux.cn/news/express/" hidefocus="true">硬核观察</a></li></ul>
+<ul class="cl " id="snav_mn_P4" style="display: none;">
+<li><a href="https://linux.cn/talk/comic/" hidefocus="true">极客漫画</a></li><li><a href="https://linux.cn/talk/ossip/" hidefocus="true">开源智慧</a></li><li><a href="https://linux.cn/talk/interview/" hidefocus="true">穿山甲专访</a></li><li><a href="https://linux.cn/talk/ocselected/" hidefocus="true">开源之道</a></li><li><a href="https://linux.cn/talk/clh/" hidefocus="true">代码英雄</a></li></ul>
+<ul class="cl " id="snav_mn_P8" style="display: none;">
+<li><a href="https://linux.cn/share/distro/" hidefocus="true">Linux 发行版</a></li></ul>
+<ul class="cl " id="snav_mn_userapp" style="display: none;">
+</ul>
+</div>
+</div>
+</div>
+<div id="scbar" class="cl">
+<form id="scbar_form" method="post" autocomplete="off" action="https://linux.cn/search.php?searchsubmit=yes" target="_blank">
+<input name="mod" id="scbar_mod" value="search" type="hidden">
+<input name="formhash" value="c7db8738" type="hidden">
+<input name="srchtype" value="title" type="hidden">
+<input name="srhfid" value="0" type="hidden">
+<input name="srhlocality" value="portal::view" type="hidden">
+<table id="scbar_table" style="float: right;" cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td class="scbar_icon_td"><br></td>
+<td class="scbar_txt_td"><input name="srchtxt" id="scbar_txt" value="请注册后再搜索" autocomplete="off" speech="" type="text"></td>
+<td class="scbar_type_td"><a id="scbar_type" class="xg1" hidefocus="true">搜索</a></td>
+<td class="scbar_btn_td"><button type="submit" name="searchsubmit" id="scbar_btn" sc="1" class="pn pnc" value="true"><strong class="xi2">搜索</strong></button></td>
+<td class="scbar_hot_td">
+<div id="scbar_hot">
+</div>
+<br></td>
+</tr>
+</tbody></table>
+</form>
+<span class="z titletext" style="padding: 0px 10px 0px 20px;">❏ 站外平台：</span>
+<ul class="cl mutag z">
+<li><a class="hidefocus tsina" hidefocus="true" href="https://weibo.com/linuxcn" target="_blank" title="微博认证号：Linux中国"></a><br></li>
+<li><a class="hidefocus tticon" hidefocus="true" href="https://www.toutiao.com/c/user/52889878622/" target="_blank" title="今日头条：Linux中国"></a><br></li>
+<li><a class="hidefocus tticon" hidefocus="true" href="http://www.toutiao.com/c/user/3357852467/" target="_blank" title="今日头条：Linux技术"></a><br></li>
+<li><a class="hidefocus wyicon" hidefocus="true" href="http://dy.163.com/v2/article/detail/D282EJLD0511CPOJ.html" target="_blank" title="网易号：Linux"></a><br></li>
+<li><a class="hidefocus fbicon" hidefocus="true" href="https://www.facebook.com/linux.china/" target="_blank" title="Facebook Page：Linux中国"></a><br></li>
+<li><a class="hidefocus zhicon" hidefocus="true" href="https://www.zhihu.com/org/linuxzhong-guo/" target="_blank" title="知乎机构号：Linux中国"></a><br></li>
+<li><a class="hidefocus twicon" hidefocus="true" href="https://twitter.com/linux_cn" target="_blank" title="Twitter：Linux中国"></a><br></li>
+<li><a class="hidefocus tgicon" hidefocus="true" href="https://t.me/linuxdotcn" target="_blank" title="Telegram Channel：Linux中国"></a><br></li>
+</ul>
+    <form><label class="y" style="border: 1px solid rgb(221, 221, 221); line-height: 24px; margin: 8px; padding: 2px 6px; background-color: rgb(255, 255, 255);"><input id="textmode" value="1" style="vertical-align: middle;" type="checkbox"> 文本模式</label></form>
+
+</div>
+<br class="clear">
+<ul id="scbar_type_menu" class="p_pop" style="display: none;"><li><a rel="article" class="curtype">文章</a></li></ul>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+
+</div>
+</div>
+<div id="wp" class="wp">
+
+<style type="text/css">
+/* Code tidied up by ScrapBook */
+</style>
+<div style="margin: 2px 0px;"></div>
+<div id="ct" class="ct2 wp cl">
+<div class="mn">
+<article class="vw">
+
+
+<div class="d" style="width: 100%; margin: 0px;">
+<div id="article_content" style="border-radius: 0px; outline: 2px solid rgb(255, 0, 0);">
+<div class="ph" id="article_copyright">
+<span>作者： 
+    	 
+    		    			<span class="textcut"><a href="https://news.itsfoss.com/traditional-packaging-modern-applications/" target="_blank">Hari Rana</a></span>
+    		    	    	<span>译者： 
+<a href="https://linux.cn/lctt/" target="_blank">LCTT</a>&nbsp;<a href="https://linux.cn/lctt/gpchn" target="_blank">gpchn</a></span>
+<p id="article_date">
+| 2022-09-14 11:02&nbsp;&nbsp;
+评论: <a href="https://linux.cn/portal.php?mod=comment&amp;id=15027&amp;idtype=aid" title="查看全部评论"><em id="_commentnum">4</em></a>&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
+</span></div>
+<blockquote>
+<p>开源贡献者 Hari Rana 表达了他对传统 Linux 软件包格式不再适合现代应用的看法。</p>
+</blockquote>
+
+<p><em>图片来源：来自&nbsp;<a href="https://unsplash.com/?utm_source=ghost&amp;utm_medium=referral&amp;utm_campaign=api-credit">Unsplash</a>&nbsp;的&nbsp;<a href="https://unsplash.com/es/@kelli_mcclintock?utm_source=ghost&amp;utm_medium=referral&amp;utm_campaign=api-credit">Kelli McClintock</a></em></p>
+<p>我多次遇到用户抱怨 LTS 和稳定版的应用软件包有问题，但又声称开发版从来没有发生过这种事情。然而，以我在软件包技术方面的经验和知识，我不能不强调，这是不对的。</p>
+<p>发行模式不是问题的根源所在，根本的问题是传统的软件包格式不适合现代的图形应用，不管是什么发行版。那么像 Nix 和 Flatpak 这样的格式是如何解决这些基本问题的？有趣的是，大多数服务器确实利用了容器化（即 Docker），因为它提高了可重复性并增强了可维护性。我们可以从中得到启发，采用一个适用于 Linux 桌面的类似标准。</p>
+<h3 id="%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" class="mume-header">免责声明</h3>
+<ol>
+<li>“传统软件包”是指使用包管理器发布的图形应用程序，而不使用容器，如&nbsp;<code>apt</code>、<code>dnf</code>、<code>pacman</code>&nbsp;等。</li>
+<li>“发行模式”是指发行过程，如长期支持版（LTS）、稳定版和开发版等。</li>
+<li>“类似的应用程序”是指两个在技术上真正相似的应用程序，如&nbsp;<a href="https://code.visualstudio.com/">Visual Studio Code</a>&nbsp;和&nbsp;<a href="https://github.com/microsoft/vscode">Code - OSS</a>。</li>
+<li>在这些例子中，我将使用 Arch Linux 作为参考。然而，这些行为与那些大量采用传统软件包格式的发行版是一致的。</li>
+<li>Nix 不使用容器，它也不是一种容器格式。但为了简单起见，我暂时把它称为一种容器格式。</li>
+</ol>
+<h3 id="%E6%A0%B9%E6%9C%AC%E9%97%AE%E9%A2%98" class="mume-header">根本问题</h3>
+<p></p>
+<p><em>图片来源：来自&nbsp;<a href="https://unsplash.com/?utm_source=ghost&amp;utm_medium=referral&amp;utm_campaign=api-credit">Unsplash</a>&nbsp;的&nbsp;<a href="https://unsplash.com/@simmerdownjpg?utm_source=ghost&amp;utm_medium=referral&amp;utm_campaign=api-credit">Jackson Simmer</a></em></p>
+<p>大多数（或许不是全部）大量采用传统软件包格式的发行版都有这个共同的问题：它们都没有利用容器或其他方便的方法来分离依赖关系。用通俗的话说，容器是一个盒子，我们可以把东西放在里面，在不影响主系统（主机）的情况下单独使用它们。</p>
+<p>容器通常不会影响“盒子”外的任何东西。并且它们是可移植的，因为它们可以安装在其他发行版上，同时提供一致的体验。利用容器的包管理器会将每个软件包安装在不同的容器中，这提供了一个额外的安全层。这给了开发者更多的控制权和灵活性，他们可以决定在软件包内捆绑什么。</p>
+<p>传统的软件包格式产生了一些问题，比如依赖性和包的冲突，这些问题通常需要解决，而不同的发行版有不同的解决办法。</p>
+<h4 id="%E4%BE%9D%E8%B5%96%E6%80%A7%E5%92%8C%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%9A%84%E5%86%B2%E7%AA%81" class="mume-header">依赖性和软件包的冲突</h4>
+<p>如果我们试图安装&nbsp;<a href="https://code.visualstudio.com/">Visual Studio Code</a>（<a href="https://aur.archlinux.org/packages/visual-studio-code-bin">visual-studio-code-bin</a>），而&nbsp;<a href="https://github.com/microsoft/vscode">Code - OSS</a>（<a href="https://archlinux.org/packages/community/x86_64/code/">code</a>） 已经安装在 Arch Linux 上，我们会遇到这个问题：</p>
+<pre class="prettyprint linenums"><code>$ paru -S visual-studio-code-bin
+[...]
+:: Conflicts found:
+    visual-studio-code-bin: code  
+:: Conflicting packages will have to be confirmed manually
+Aur (1)                     Old Version  New Version  Make Only
+aur/visual-studio-code-bin               1.70.1-1     No
+</code></pre>
+<p>这就是所谓的软件包冲突，即两个或多个软件包不能共存。在这种情况下，我们不能同时安装 Visual Studio Code 和 Code - OSS。</p>
+<p>当两个应用程序或软件包提供相同的文件，具有相同的名称，并被放置在同一目录下，那么它们实际上是不能共存的，因为这些文件会发生冲突。在这个例子中，Visual Studio Code 和 Code - OSS 都提供了一个名为&nbsp;<code>code</code>&nbsp;的文件，它们都被放在&nbsp;<code>/usr/bin</code>&nbsp;中。Visual Studio Code 提供的&nbsp;<code>code</code>&nbsp;文件用于启动 Visual Studio Code，而 Code - OSS 的&nbsp;<code>code</code>&nbsp;文件则用于启动 Code - OSS。 虽然这个例子只展示了 Visual Studio Code 和 Code - OSS，但这种情况经常发生在不同的应用程序、库和其他软件中。</p>
+<h4 id="%E6%97%A0%E6%B3%95%E9%80%89%E6%8B%A9%E4%BE%9D%E8%B5%96%E9%A1%B9" class="mume-header">无法选择依赖项</h4>
+<p></p>
+<p><em>图片来源：来自&nbsp;<a href="https://unsplash.com/@priscilladupreez?utm_source=ghost&amp;utm_medium=referral&amp;utm_campaign=api-credit">Unsplash</a>&nbsp;的&nbsp;<a href="https://unsplash.com/?utm_source=ghost&amp;utm_medium=referral&amp;utm_campaign=api-credit">Priscilla Du Preez</a></em></p>
+<p>传统软件包格式的最大问题之一是，打包者不能选择依赖项。</p>
+<p>例如，如果一个应用程序最近更新，需要依赖版本 1 的程序 A，但发行版只提供了版本 0.9 的程序 A，那么对于升级该应用程序来说就不太理想，因为发行版无法满足要求。这意味着打包者将不得不暂缓打包，直到该发行版发布新的依赖项，或者采用变通的方法。</p>
+<p>同样，如果一个应用程序需要依赖 0.8.1 版本的程序 A，但发行版却只提供了 0.9 版本的程序 A，那么这个应用程序就会表现失常，甚至完全不能运行。</p>
+<h5 id="%E5%B8%A6%E8%A1%A5%E4%B8%81%E7%9A%84%E5%BA%93%E5%92%8C%E7%BC%96%E8%AF%91%E9%85%8D%E7%BD%AE" class="mume-header">带补丁的库和编译配置</h5>
+<p>为了扩展，一些应用程序需要带补丁的库或额外的编译配置才能正常运行。例如，OBS Studio 需要一个&nbsp;<a href="https://github.com/obsproject/obs-studio/blob/fe889ec28ebd2f323b5933b7b11c5a9207539c59/CI/flatpak/com.obsproject.Studio.json#L259-L261">打了补丁的 FFmpeg</a>&nbsp;来与 OBS Studio 更好地整合。</p>
+<p>在传统的软件包格式下，一次只能安装一个依赖项的变体。如果发行版提供的是未打过补丁的 FFmpeg，那么就没有办法安装打过补丁的 FFmpeg，除非打包者能解决这个问题。如果安装了打过补丁的 FFmpeg，但另一个程序高度依赖未打过补丁的 FFmpeg、打过其他补丁的 FFmpeg、内置或删除了其他功能的 FFmpeg，那么其他程序就会出现 bug。</p>
+<p>现代应用程序本质上是脆弱的。依赖关系树中的一个小错误或不一致，就会导致应用程序的 bug，使用户体验恶化，甚至会让人觉得是应用程序的问题，而不是软件包本身的问题，这就会妨碍应用程序的声誉。</p>
+<h4 id="%E5%8F%98%E9%80%9A%E6%96%B9%E6%B3%95" class="mume-header">变通方法</h4>
+<p>让我们看看目前开发者用来打包应用程序的变通方法：</p>
+<ol>
+<li>第一种解决方法是在不同的目录中安装依赖库。例如，Electron 是一个巨大的框架，开发者用它来构建应用程序，然后将它们捆绑起来。然而，基于 Electron 的应用程序是不同的，因为它们是建立在不同版本的 Electron 之上的。Discord 捆绑了 Electron 13，而 Element 捆绑了 Electron 19。对于 Arch Linux 上的 Electron 打包，某些目录需要安装在&nbsp;<code>/opt/APPLICATION_NAME</code>&nbsp;中，所以这些 Electron 版本&nbsp;<a href="https://wiki.archlinux.org/index.php?title=Electron_package_guidelines&amp;oldid=661963#Directory_structure">不会相互冲突</a>。</li>
+<li>第二种解决方法是篡改应用程序。例如，给应用程序打上补丁，使其在没有某些依赖库或功能的情况下编译，这可以使应用程序成功编译，但不能保证该应用程序能够启动或按预期工作。</li>
+<li>第三种解决方法是在编译应用程序时禁用许多编译选项，这也可能禁用一些功能。例如，在 Arch Linux 上，OBS Studio 在编译时禁用了许多基本功能，这&nbsp;<a href="https://www.youtube.com/watch?v=FPjEdrik-eQ">导致了不合格的体验</a>。</li>
+</ol>
+<p>这些解决方法因人而异，有些会限制应用程序的功能，有些会引入稳定性问题等等。</p>
+<h4 id="%E4%B8%8D%E4%B8%80%E8%87%B4%E7%9A%84%E4%BD%93%E9%AA%8C" class="mume-header">不一致的体验</h4>
+<p></p>
+<p><em>图片来源：来自&nbsp;<a href="https://unsplash.com/?utm_source=ghost&amp;utm_medium=referral&amp;utm_campaign=api-credit">Unsplash</a>&nbsp;的&nbsp;<a href="https://unsplash.com/@alevisionco?utm_source=ghost&amp;utm_medium=referral&amp;utm_campaign=api-credit">alevision.co</a></em></p>
+<p>虽然这些技术限制在整个传统软件包格式中是一致的，但用户体验往往不是这样。由于软件包的发布方式，发行模式与传统软件包格式相结合会影响用户体验。</p>
+<p>一些发行版，如 Arch Linux，接近于开发版，因此有最新版本的软件包。然而 Debian 和 Ubuntu LTS 是 LTS 长期支持版，所以它们的很多软件包都落后几个版本。同时，Fedora Linux 和 Ubuntu 稳定版处于 Debian / Ubuntu LTS 和 Arch Linux 之间。</p>
+<p>一些软件包格式喜欢尽可能少地给软件包打补丁，以保持它们最接近原版；而另一些格式打补丁是为了增加更多的功能，使用旧库或进行其他类型的更改，以改善用户体验。一些格式喜欢使软件更加轻量化；而另一些格式更喜欢尽可能地添加更多内置功能。软件包有各种各样的习惯和偏好。</p>
+<p>正如我们所看到的，一个应用程序在不同的发行版中的构建方式非常不同。此外，不同的发行版的依赖关系也是不同的。传统软件包格式的许多技术限制需要根据发行模式和打包策略采取不同的解决方法。这些微小的变化往往给用户带来不完整的、不合格的体验和错误的印象。一些应用程序可能在某些发行版上运行得更好，但在其他发行版上运行得很差，而其他一些应用程序则运行得更好。即使一个应用程序在每个发行版上的构建方式不同，但其名称和品牌却保持原样，给用户留下错误的印象。</p>
+<h3 id="%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88" class="mume-header">解决方案</h3>
+<p></p>
+<p><em>图片来源：来自&nbsp;<a href="https://unsplash.com/?utm_source=ghost&amp;utm_medium=referral&amp;utm_campaign=api-credit">Unsplash</a>&nbsp;的&nbsp;<a href="https://unsplash.com/@pavement_special?utm_source=ghost&amp;utm_medium=referral&amp;utm_campaign=api-credit">Riccardo Annandale</a></em></p>
+<p>如上所述，解决这些问题的方法是使用容器。</p>
+<p>容器被设计用来分离系统的几个方面。通过使用容器，打包者可以挑选依赖项而不受主机上的库限制。因此，打包者可以发布最新的、功能完整的软件包，同时保持发行的稳定性。</p>
+<p>这一点非常重要，因为这些容器格式可以将应用程序和发行版发挥出最大的作用，而不会对系统造成破坏性的影响。</p>
+<h4 id="nix-%E5%92%8C-flatpak" class="mume-header">Nix 和 Flatpak</h4>
+<p><a href="https://github.com/NixOS/Nix">Nix</a>&nbsp;是一个跨平台的包管理器，可以在类 Unix 操作系统中运行，如 Linux 发行版、BSD 和 macOS。Nix 有几个&nbsp;<a href="https://nixos.wiki/wiki/Nix_channels">通道</a>（分支）供用户使用。</p>
+<p>另一方面，<a href="https://flatpak.org/">Flatpak</a>&nbsp;是一个用于 Linux 桌面的通用软件包格式，它也利用容器，但另外还有沙盒来隔离它们。它旨在以后可以供普通人使用，并被设计为与软件商店（如 GNOME “<ruby>软件<rt>Software</rt></ruby>” 和 KDE “<ruby>发现<rt>Discover</rt></ruby>）集成。换句话说，Flatpak 更像是发行版的一个扩展，而不是一个软件包格式的替代品，因为它的设计初衷不是为了取代系统包管理器。</p>
+<p>如果使用 NixOS 等发行版，Nix 也可以作为一种扩展或单独使用。</p>
+<h4 id="%E7%B1%BB%E4%BC%BC%E7%9A%84%E5%BA%94%E7%94%A8" class="mume-header">类似的应用</h4>
+<p>Nix 和 Flatpak 解决了传统软件包格式的许多基本问题。由于应用程序的分离，这些格式可以安装类似的应用程序，如 Visual Studio Code 和 Code - OSS，而不会冲突。</p>
+<h4 id="%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC" class="mume-header">多个版本</h4>
+<p>Nix 和 Flatpak 可以安装同一个应用程序的多个版本。使用 Nix，我可以从&nbsp;<code>nixpkgs-stable</code>（LTS）安装应用程序，同时也可以从&nbsp;<code>nixpkgs-unstable</code>（开发版）安装同一个应用程序。</p>
+<p>同样地，使用 Flatpak，我可以同时从&nbsp;<code>stable</code>&nbsp;和&nbsp;<code>beta</code>&nbsp;分支安装应用程序。我可以从更多的途径和分支继续安装同一个应用程序，而不会遇到冲突。</p>
+<h4 id="%E6%8C%91%E5%89%94%E7%9A%84%E4%BE%9D%E8%B5%96%E9%A1%B9" class="mume-header">挑剔的依赖项</h4>
+<p></p>
+<p><em>图片来源：来自&nbsp;<a href="https://unsplash.com/?utm_source=ghost&amp;utm_medium=referral&amp;utm_campaign=api-credit">Unsplash</a>&nbsp;的&nbsp;<a href="https://unsplash.com/@ishphotos_?utm_source=ghost&amp;utm_medium=referral&amp;utm_campaign=api-credit">Ish de loyola</a></em></p>
+<p>此外，打包者可以将应用程序与不同变体的库捆绑在一起，从而有机会启用更多的构建选项，并使用打过补丁或特定版本的库，从而为用户提供完整的体验。</p>
+<p>这意味着打包者可以将打了补丁的 FFmpeg 与 OBS Studio 捆绑在一起，只为了用在 OBS Studio 中。如果我在主机上安装了普通的 FFmpeg，那么 OBS Studio 的补丁 FFmpeg 就不会与主机的 FFmpeg 发生干扰或冲突。</p>
+<h4 id="%E5%90%84%E4%B8%AA%E5%8F%91%E8%A1%8C%E7%89%88%E7%9A%84%E7%8E%AF%E5%A2%83%E9%83%BD%E6%98%AF%E4%B8%80%E8%87%B4%E7%9A%84" class="mume-header">各个发行版的环境都是一致的</h4>
+<p>如上所述，各发行版使用不同的补丁、构建选项和环境构建应用程序。这导致了应用程序的碎片化，每个应用程序的构建方式和工作方式往往不尽相同。由于 Nix 和 Flatpak 是为跨发行版运行而设计的，它们在每个发行版中为应用程序提供一致的环境，前提是发行版提供了 Nix 或 Flatpak 的支持版本。</p>
+<h4 id="%E7%BC%BA%E7%82%B9" class="mume-header">缺点</h4>
+<p>就像所有事物一样，Nix 和 Flatpak 不是完美的。由于最近在 Linux 桌面上容器技术得到了推崇，它们可能为许多应用程序提供了不寻常的环境。</p>
+<p>Flatpak 不仅包含了应用程序，还对它们进行沙盒处理。Flatpak 的开发者已经实施了一个短期的变通方案，“在沙盒上打洞”，即所谓的静态权限。他们正在开发适当的长期解决方案，称为&nbsp;<a href="https://github.com/flatpak/xdg-desktop-portal">XDG 门户</a>，以解决有关沙盒的许多问题，并使其像 Android 的安全模型一样。</p>
+<p>唯一的短期问题是，工具包、框架和应用程序必须采用这些标准。GTK 和 Qt 这样的工具包集成了其中一些<ruby>门户<rt>portal</rt></ruby>，但它们也需要时间来集成其他的门户。同时，许多其他的工具箱还没有真正集成任何门户。</p>
+<p>工具包、框架和应用程序采用这些新标准是一个时间问题，因为在 XDG 门户之前没有任何适当的标准。应用程序可以直接访问文件系统和 API，所以静态权限保持这种 “标准”。</p>
+<h3 id="%E7%BB%93%E8%AE%BA" class="mume-header">结论</h3>
+<p>传统软件包格式的根本问题是它没有利用容器。许多图形化的应用程序本质上是复杂的，需要非常具体的依赖关系才能按预期运行。许多发行版通过使用变通的方法在不同的环境中构建同一个应用程序，例如给应用程序打补丁或禁用某些构建选项。这导致了一个应用程序的不同变体、不一致的行为和不合格的用户体验。</p>
+<p>当然，发行版的维护者不可能在几天内现实地重写他们的包管理器并使用容器。这些重写会破坏许多脚本、功能等，而且还需要很长时间才能投入生产环境。</p>
+<p>我个人的建议是使用和推广 Flatpak，因为它只是为了扩展现有的发行版，而不是取代它。打包者不必担心打包应用程序，以及诉诸变通的问题，因为 Flatpak 已经在处理这些问题了。</p>
+<p>作者 Hari Rana&nbsp;<a href="https://theevilskeleton.gitlab.io/2022/08/29/traditional-packaging-is-not-suitable-for-modern-applications.html">最初发表于此博客</a>。</p>
+<p>Hari 是 Fedora 杂志的 Fedora 编辑委员会的成员。他也是 Fedoea 质量保证（QA）的一员。Hari 希望通过推广各种技术和帮助需要帮助的人，为 Linux 桌面的采用作出贡献。</p>
+<p><strong>本文所表达的观点和意见是作者本人的，并不代表我们的观点。</strong></p>
+<hr>
+<p>via:&nbsp;<a href="https://news.itsfoss.com/traditional-packaging-modern-applications/">https://news.itsfoss.com/traditional-packaging-modern-applications/</a></p>
+<p>作者：<a href="https://news.itsfoss.com/author/team/">Community</a>&nbsp;选题：<a href="https://github.com/lkxed">lkxed</a>&nbsp;译者：<a href="https://github.com/gpchn">gpchn</a>&nbsp;校对：<a href="https://github.com/%E6%A0%A1%E5%AF%B9%E8%80%85ID">校对者ID</a></p>
+<p>本文由&nbsp;<a href="https://github.com/LCTT/TranslateProject">LCTT</a>&nbsp;原创编译，<a href="https://linux.cn/">Linux中国</a>&nbsp;荣誉推出</p>  					<section><img style="width: 24px; height: 24px; float: right;" src="linisi.svg"><br class="clear"></section>
+</div>
+</div>
+<br class="clear">
+<div class="vw">
+<div id="add_comment" class="h bm" style="display: none;">
+<div class="bm_h cl">
+<h3>发表评论</h3>
+</div>
+<div class="bm_c pbn">
+<form id="cform" name="cform" action="https://linux.cn/portal.php?mod=portalcp&amp;ac=comment" method="post" autocomplete="off">
+<div class="tedt">
+<div class="area">
+<textarea name="message" rows="10" class="pt" id="message"></textarea>
+</div>
+</div>
+
+<div class="mtm z"><span id="seccode_cSnp54m4"></span>		
+<script type="text/javascript" reload="1">/* Code removed by ScrapBook */</script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+</div>
+<input name="portal_referer" value="https://linux.cn/article-15027-1.html#comment" type="hidden">
+<input name="referer" value="https://linux.cn/article-15027-1.html#comment" type="hidden">
+<input name="id" value="0" type="hidden">
+<input name="idtype" value="" type="hidden">
+<input name="aid" value="15027" type="hidden">
+<input id="reppid" name="reppid" value="" type="hidden">
+<input name="formhash" value="c7db8738" type="hidden">
+<input name="replysubmit" value="true" type="hidden">
+<input name="commentsubmit" value="true" type="hidden">
+<p class="mtm" style="text-align: center;"><button type="submit" name="commentsubmit_btn" id="commentsubmit_btn" value="true" class="pn"><strong>评论</strong></button></p>
+<br class="clear">
+</form>
+</div>
+</div>
+<div id="comment" class="bm h">
+<div class="bm_h cl">
+<h3 class="z"><a name="comment"></a>最新评论</h3>
+</div>
+<div id="comment_ul" class="bm_c">
+<div style="text-align: center;"><button type="button" class="pnc" style="font-size: 24px; width: 160px;" id="c_add"><strong>发表评论</strong></button></div><a name="comment_anchor_51850"></a>
+<dl id="comment_51850_li" class="pbm bbda cl">
+<dd class="list"><blockquote id="replist_51850_51848" class="replist"><dt class="mbm s2"><span class="info">
+<div class="z count">[1] </div>来自北京的 Firefox 104.0|GNU/Linux 用户 发表于 2022-09-14 23:29 的评论：
+</span>
+<div id="opt_51850_51848" class="y opt"><a href="https://linux.cn/portal.php?mod=review&amp;action=postreview&amp;do=support&amp;idtype=aid&amp;tid=15027&amp;pid=51848&amp;hash=c7db8738"><span name="review_support_rep_51848">7</span> 赞</a> <a id="reply_51848" href="https://linux.cn/portal.php?mod=portalcp&amp;ac=comment&amp;op=reply&amp;cid=51848&amp;aid=15027&amp;idtype=">回复</a>   </div></dt>
+<div class="msg">传统的软件包管理的作用不只是让用户安装一个软件，还附带了发行版发布和签名软件包的功能，这意味着通过传统包管理系统发布的包是发行版官方支持，维护者自己构建，并通过签名担保的，如果出了问题可以找到负责的打包人员。<br>
+Android的应用市场F-Droid有类似的性质：由F-Droid的服务器构建并签名，为保证信任问题，还提供了可重现构建的方法。和传统包管理不同的是，Android的应用打好包之后应用市场基本上不管理依赖，依赖的问题在打包的时候解决，所以应用市场不是传统的包管理。<br>
+传统包管理的一个优点是一个应用的所有依赖都可以通过包</div>
+</blockquote></dd>
+<dt class="mbm  s2">
+<span class=" xw0 vm">来自北京的 Firefox 104.0|GNU/Linux 用户</span>
+<span class=" xw0 vm">2022-09-14 23:37</span>
+<span class="y xw0 xi2 opt" style="margin-right: 5px;">
+<a class="replyadd" href="https://linux.cn/portal.php?mod=review&amp;action=postreview&amp;do=support&amp;idtype=aid&amp;tid=15027&amp;pid=51850&amp;hash=c7db8738"><span id="review_support_51850">7</span> 赞</a> 
+<!--<a href="javascript:;" onclick="portal_comment_reppost(51850, '15027');">回复</a> --><a id="reply_51850" href="https://linux.cn/portal.php?mod=portalcp&amp;ac=comment&amp;op=reply&amp;cid=51850&amp;aid=15027&amp;idtype=">回复</a> </span>	
+</dt>
+<dd>
+另外容器并不意味着安全，例如 flatkill.org 提到的很多flatpak应用并没隔离主目录。Android除了搞容器化和应用权限之外，还配套了很多安全设施，这个不一定适用于大多数GNU/Linux发行版。</dd>
+</dl><a name="comment_anchor_51847"></a>
+<dl id="comment_51847_li" class="pbm bbda cl">
+<dt class="mbm  s1">
+<span class=" xw0 vm">来自巴勒斯坦的 Firefox 104.0|GNU/Linux 用户</span>
+<span class=" xw0 vm">2022-09-14 17:59</span>
+<span class="y xw0 xi2 opt" style="margin-right: 5px;">
+<a class="replyadd" href="https://linux.cn/portal.php?mod=review&amp;action=postreview&amp;do=support&amp;idtype=aid&amp;tid=15027&amp;pid=51847&amp;hash=c7db8738"><span id="review_support_51847">2</span> 赞</a> 
+<!--<a href="javascript:;" onclick="portal_comment_reppost(51847, '15027');">回复</a> --><a id="reply_51847" href="https://linux.cn/portal.php?mod=portalcp&amp;ac=comment&amp;op=reply&amp;cid=51847&amp;aid=15027&amp;idtype=">回复</a> </span>	
+</dt>
+<dd>
+依赖版本不匹配的问题确实非常头痛。</dd>
+</dl><a name="comment_anchor_51845"></a>
+<dl id="comment_51845_li" class="pbm bbda cl">
+<dt class="mbm  s1">
+<span class=" xw0 vm">来自广东韶关的 Firefox 105.0|GNU/Linux 用户</span>
+<span class=" xw0 vm">2022-09-14 14:26</span>
+<span class="y xw0 xi2 opt" style="margin-right: 5px;">
+<a class="replyadd" href="https://linux.cn/portal.php?mod=review&amp;action=postreview&amp;do=support&amp;idtype=aid&amp;tid=15027&amp;pid=51845&amp;hash=c7db8738"><span id="review_support_51845">2</span> 赞</a> 
+<!--<a href="javascript:;" onclick="portal_comment_reppost(51845, '15027');">回复</a> --><a id="reply_51845" href="https://linux.cn/portal.php?mod=portalcp&amp;ac=comment&amp;op=reply&amp;cid=51845&amp;aid=15027&amp;idtype=">回复</a> </span>	
+</dt>
+<dd>
+用 nix 装系统，用 flatpak 装应用，用 appimage 预览应用，除了学习成本高，占用空间多，效率较低等问题，好像也不错。</dd>
+</dl><div class="ptm pbm cl">
+</div>
+</div>
+</div>
+</div>
+<div class="h bm_c bm z" id="footer_info">
+<p class="copyright">
+    	 
+    		    			    			<span class="z textcut">译自：<a href="https://news.itsfoss.com/traditional-packaging-modern-applications/" target="_blank">news.itsfoss.com</a></span>
+    			    		    		<span class="y">作者： Hari Rana</span>    		<br class="clear">
+    	    	<span class="z">原创：<a href="https://linux.cn/lctt/" target="_blank">LCTT</a> <a href="#" target="_blank">https://linux.cn/article-15027-1.html</a></span>
+            			<span class="y">译者： gpchn</span>    		<br class="clear">
+    	    	<br>
+    	    		<span>本文由 LCTT 原创翻译，<a href="#">Linux 中国首发</a>。也想加入译者行列，为开源做一些自己的贡献么？欢迎加入 <a href="https://linux.cn/lctt/" target="_blank">LCTT</a>！<br>翻译工作和译文发表仅用于学习和交流目的，翻译工作遵照 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank">CC-BY-SA 协议规定</a>，如果我们的工作有侵犯到您的权益，请及时联系我们。</span>
+    		    		<br class="clear">
+    		<span style="color: red;">欢迎遵照 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank">CC-BY-SA 协议规定</a> 转载，敬请在正文中标注并保留原文/译文链接和作者/译者等信息。</span>
+                		<br class="clear">
+    	    	<span>文章仅代表作者的知识和看法，如有不同观点，请楼下排队<a>吐槽</a> :D</span>
+    	<br class="clear">
+</p>
+
+
+
+<div class="o cl ptm pbm">
+<a href="https://linux.cn/home.php?mod=spacecp&amp;ac=favorite&amp;type=article&amp;id=15027&amp;handlekey=favoritearticlehk_15027" id="a_favorite" class="favorite z" title="收藏"></a>
+<!-- <a href="misc.php?mod=invite&amp;action=article&amp;id=15027" id="a_invite" onclick="showWindow('invite', this.href, 'get', 0);" class="invite z" title="邀请"></a> -->
+<a href="https://linux.cn/article-15027-1.html?pr" class="print z" title="打印"></a>
+				
+</div>
+<div class="pren pbm cl">
+<em>上一篇：<a href="https://linux.cn/article-15024-1.html">Unix 历史：一个伟大作品的诞生</a></em><em>下一篇：<a href="https://linux.cn/article-15039-1.html">Linus Torvalds 谈工作与生活、Rust 和他的 M2 MacBook Air</a></em></div>
+</div>
+<div><div id="translator_info" class="bm" style="position: relative; margin: 8px 4px 8px 0px ! important; float: right;">
+<div class="bm_h cl">
+LCTT 译者
+</div>
+<div class="bm_c">
+<div>
+<a href="https://linux.cn/lctt/gpchn" target="_blank"><img class="avatar" src="99541536.jpg" style="max-width: 64px; float: left; margin-top: 10px;"></a>
+<div style="float: left; margin-left: 10px; font-size: 12px; line-height: 1.5em;">
+<div>
+<a href="https://github.com/gpchn" target="_blank"><img src="github_icon.png" style="vertical-align: middle;"></a> <a href="https://linux.cn/lctt/gpchn" target="_blank" style="font-weight: bold;">gpchn</a> 🌟🌟</div>
+<div class="addfiles">共计翻译： <span class="num" style="color: rgb(255, 0, 0); font-weight: 700;">6.0</span> 篇
+| 共计贡献： <span class="num" style="color: rgb(255, 0, 0); font-weight: 700;">158</span> 天</div>
+<div>贡献时间：2022-09-11 -&gt; 2023-02-16</div><a href="https://linux.cn/lctt/gpchn" target="_blank">访问我的 LCTT 主页</a> | <a href="https://github.com/gpchn" target="_blank">在 GitHub 上关注我</a>
+</div>
+<br class="clear">
+</div>
+</div>
+</div>
+</div>
+
+<div id="related" class="bm block z">
+<div class="bm_h cl">
+<h3>相关阅读</h3>
+</div>
+</div>
+<br class="clear">
+</article>
+</div>
+
+</div>
+
+
+<input id="portalview" value="1" type="hidden">
+
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<link rel="stylesheet" href="prettify.css" type="text/css">
+<script src="about:blank" type="text/javascript"></script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>	</div>
+    <div id="footer">
+        <p>
+            <span>Linux 中国 © 2003 - 2022</span>
+        </p>
+        <p>
+            <a href="http://www.miitbeian.gov.cn/" target="_blank">京ICP备2021020457</a>            京公网安备110105001595
+        </p>
+        <p>
+        <a href="https://linux.cn/legal.html">服务条款</a> |
+        除特别申明外，本站原创内容版权遵循 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank">CC-BY-SA 协议规定</a></p>
+        <p>
+</p></div>
+
+<div id="ft" class="cl"></div>
+<div id="scrolltop">
+<span>
+<a class="wxicon"></a>
+<a title="分享到微博" class="tsina"></a>
+<a title="收藏" href="https://linux.cn/home.php?mod=spacecp&amp;ac=favorite&amp;type=article&amp;id=15027&amp;handlekey=favoritearticlehk_15027" id="a_favorite" class="favorite"></a>
+    	<a href="https://linux.cn/article-15027-1.html?pr" class="print" title="!print!"></a>
+
+</span>
+<span hidefocus="true"><a title="返回顶部" class="scrolltopa"><b>返回顶部</b></a></span>
+</div>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<div id="qrcode">
+<p>分享到微信</p>
+<div id="canvas"></div>
+<p><em>打开微信，点击顶部的“╋”，<br>
+使用“扫一扫”将网页分享至微信。</em></p></div>
+<!-- script type="text/javascript" src="https://img.linux.net.cn/static/js/ads.js?FBX"></script -->
+<!-- div id="LFBXCisOsS" style="display: none; background-color: #A00; position: fixed; top: 0; width: 100%; z-index: 9999; left: 0; font-size: 16px; color: #fff; text-align: center; padding: 10px; opacity: 0.8;">请将我们加入您的广告过滤器的白名单，请支持开源站点。谢谢您。</div -->
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+
+
+<div style="background-color: rgb(255, 240, 204); border: 2px solid black; font-family: arial; text-align: left; color: rgb(0, 0, 0); font-size: 12px; position: absolute; padding: 2px 5px; border-radius: 6px; z-index: 2147483647; left: 35px; top: 775px;"><b style="color: rgb(0, 0, 0);">div</b>, id: article_content</div></body>
+</html>

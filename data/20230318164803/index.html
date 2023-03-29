@@ -1,0 +1,403 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>技术|使用 Snapcraft 构建、测试并发布 Snap 软件包</title>
+ 
+<meta name="keywords" content="使用 Snapcraft 构建、测试并发布 Snap 软件包">
+<meta name="description" content="snapcraft 是一个正在为其在 Linux 中的地位而奋斗的包管理系统，它为你重新设想了分发软件的方式。这套新的跨发行版的工具可以用来帮助你构建和发布 snap 软件包。接下来我们将会讲述怎么使用 CircleCI 2.0 来加速这个过程以及一些在这个过程中的可能遇到的问题。 ">
+<meta name="copyright" content="2005-2019 Linux.cn">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="applicable-device" content="pc,mobile">
+<meta name="referrer" content="always">
+<base href=""><link rel="stylesheet" type="text/css" href="style_1_common.css">
+<link rel="stylesheet" type="text/css" href="style_1_portal_view.css">
+<link href="responsive.css" rel="stylesheet">
+
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script src="about:blank" type="text/javascript"></script>
+<script src="about:blank" type="text/javascript"></script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script src="about:blank" type="text/javascript"></script>
+<script src="about:blank" type="text/javascript"></script>
+<link rel="alternate" type="application/rss+xml" title="Linux 中国◆开源社区 RSS" href="https://linux.cn/rss.xml">
+<link rel="shortcut icon" href="favicon.ico" sizes="32x32">
+<link rel="canonical" href="https://linux.cn/article-8788-1.html">
+<script src="about:blank" type="text/javascript"></script>
+</head>
+
+<body id="nv_portal" class="pg_view">
+<div id="append_parent"></div><div id="ajaxwaitid"></div>
+<div id="hd">
+<div class="wp" style="box-shadow: 1px 1px 2px rgb(102, 102, 102);">
+<h1 id="linuxcn_logo"><a href="https://linux.cn/" title="Linux.中国 - 开源社区"></a><style type="text/css">
+/* Code tidied up by ScrapBook */
+@keyframes spin {
+100% { transform: rotate(360deg); }
+}
+@keyframes spin {
+100% { transform: rotate(360deg); }
+}
+</style></h1>
+<div class="p_pop h_pop" id="mn_userapp_menu" style="display: none;"></div><div id="topmenu_wrapper">
+<div id="topmenu">
+<div id="nv">
+<ul><li id="mn_N6666"><a href="https://linux.cn/" hidefocus="true" style="font-weight: bold;">Linux 中国</a></li><li id="mn_P3"><a href="https://linux.cn/tech/" hidefocus="true" style="color: rgb(255, 250, 229);">技术</a></li><li id="mn_P1"><a href="https://linux.cn/news/" hidefocus="true" style="color: rgb(255, 250, 229);">新闻</a></li><li id="mn_P4"><a href="https://linux.cn/talk/" hidefocus="true" style="color: rgb(255, 250, 229);">观点</a></li><li id="mn_P8"><a href="https://linux.cn/share/" hidefocus="true" style="color: rgb(255, 250, 229);">分享</a></li><li id="mn_N1fa1"><a href="https://linux.cn/lctt/" hidefocus="true" target="_blank">LCTT</a></li></ul>
+</div>
+<div id="mu" class="cl">
+<ul class="cl " id="snav_mn_P3" style="display: none;">
+<li><a href="https://linux.cn/tech/desktop/" hidefocus="true">桌面应用</a></li><li><a href="https://linux.cn/tech/sa/" hidefocus="true">系统运维</a></li><li><a href="https://linux.cn/tech/program/" hidefocus="true">软件开发</a></li><li><a href="https://linux.cn/tech/raspberrypi/" hidefocus="true">树莓派</a></li><li><a href="https://linux.cn/tech/container/" hidefocus="true">容器与云</a></li><li><a href="https://linux.cn/portal.php?mod=list&amp;catid=27" hidefocus="true">区块链</a></li></ul>
+<ul class="cl " id="snav_mn_P1" style="display: none;">
+<li><a href="https://linux.cn/news/express/" hidefocus="true">硬核观察</a></li></ul>
+<ul class="cl " id="snav_mn_P4" style="display: none;">
+<li><a href="https://linux.cn/talk/comic/" hidefocus="true">极客漫画</a></li><li><a href="https://linux.cn/talk/ossip/" hidefocus="true">开源智慧</a></li><li><a href="https://linux.cn/talk/interview/" hidefocus="true">穿山甲专访</a></li><li><a href="https://linux.cn/talk/ocselected/" hidefocus="true">开源之道</a></li><li><a href="https://linux.cn/talk/clh/" hidefocus="true">代码英雄</a></li></ul>
+<ul class="cl " id="snav_mn_P8" style="display: none;">
+<li><a href="https://linux.cn/share/distro/" hidefocus="true">Linux 发行版</a></li></ul>
+<ul class="cl " id="snav_mn_userapp" style="display: none;">
+</ul>
+</div>
+</div>
+</div>
+<div id="scbar" class="cl">
+<form id="scbar_form" method="post" autocomplete="off" action="https://linux.cn/search.php?searchsubmit=yes" target="_blank">
+<input name="mod" id="scbar_mod" value="search" type="hidden">
+<input name="formhash" value="c7db8738" type="hidden">
+<input name="srchtype" value="title" type="hidden">
+<input name="srhfid" value="0" type="hidden">
+<input name="srhlocality" value="portal::view" type="hidden">
+<table id="scbar_table" style="float: right;" cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td class="scbar_icon_td"></td>
+<td class="scbar_txt_td"><input name="srchtxt" id="scbar_txt" value="请注册后再搜索" autocomplete="off" speech="" type="text"></td>
+<td class="scbar_type_td"><a id="scbar_type" class="xg1" hidefocus="true">搜索</a></td>
+<td class="scbar_btn_td"><button type="submit" name="searchsubmit" id="scbar_btn" sc="1" class="pn pnc" value="true"><strong class="xi2">搜索</strong></button></td>
+<td class="scbar_hot_td">
+<div id="scbar_hot">
+</div>
+</td>
+</tr>
+</tbody></table>
+</form>
+<span class="z titletext" style="padding: 0px 10px 0px 20px;">❏ 站外平台：</span>
+<ul class="cl mutag z">
+<li><a class="hidefocus tsina" hidefocus="true" href="https://weibo.com/linuxcn" target="_blank" title="微博认证号：Linux中国"></a></li>
+<li><a class="hidefocus tticon" hidefocus="true" href="https://www.toutiao.com/c/user/52889878622/" target="_blank" title="今日头条：Linux中国"></a></li>
+<li><a class="hidefocus tticon" hidefocus="true" href="http://www.toutiao.com/c/user/3357852467/" target="_blank" title="今日头条：Linux技术"></a></li>
+<li><a class="hidefocus wyicon" hidefocus="true" href="http://dy.163.com/v2/article/detail/D282EJLD0511CPOJ.html" target="_blank" title="网易号：Linux"></a></li>
+<li><a class="hidefocus fbicon" hidefocus="true" href="https://www.facebook.com/linux.china/" target="_blank" title="Facebook Page：Linux中国"></a></li>
+<li><a class="hidefocus zhicon" hidefocus="true" href="https://www.zhihu.com/org/linuxzhong-guo/" target="_blank" title="知乎机构号：Linux中国"></a></li>
+<li><a class="hidefocus twicon" hidefocus="true" href="https://twitter.com/linux_cn" target="_blank" title="Twitter：Linux中国"></a></li>
+<li><a class="hidefocus tgicon" hidefocus="true" href="https://t.me/linuxdotcn" target="_blank" title="Telegram Channel：Linux中国"></a></li>
+</ul>
+    <form><label class="y" style="border: 1px solid rgb(221, 221, 221); line-height: 24px; margin: 8px; padding: 2px 6px; background-color: rgb(255, 255, 255);"><input id="textmode" value="1" style="vertical-align: middle;" type="checkbox"> 文本模式</label></form>
+
+</div>
+<br class="clear">
+<ul id="scbar_type_menu" class="p_pop" style="display: none;"><li><a rel="article" class="curtype">文章</a></li></ul>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+
+</div>
+</div>
+<div id="wp" class="wp">
+
+<style type="text/css">
+/* Code tidied up by ScrapBook */
+#nv_portal .vw .h.hm { background: rgb(255, 255, 255) url("222938ba28a8i27q99ifa9.jpg") repeat scroll center center / cover ; border-radius: 0px; height: 640px; position: relative; padding: 10px; margin-bottom: 0px; }
+#nv_portal .vw .h.hm h1 { background-color: rgba(33, 33, 33, 0.8); border-radius: 0px; position: absolute; margin: 10px 20px 20px; padding: 15px 10px; bottom: 0px; width: 90%; }
+</style>
+<div style="margin: 2px 0px;"></div>
+<div id="ct" class="ct2 wp cl">
+<div class="mn">
+<article class="vw">
+<div class="h hm bm" style="margin-top: 0px;">
+<h1 class="ph" id="article_title">使用 Snapcraft 构建、测试并发布 Snap 软件包 </h1>
+</div>
+
+<div class="d" style="width: 100%; margin: 0px;">
+<div id="article_content" style="border-radius: 0px;">
+<div class="ph" id="article_copyright">
+<span>作者： 
+    	 
+    		    			<span class="textcut"><a href="https://insights.ubuntu.com/2017/06/28/build-test-and-publish-snap-packages-using-snapcraft/" target="_blank">Ricardo Feliciano</a></span>
+    		    	    	<span>译者： 
+<a href="https://linux.cn/lctt/" target="_blank">LCTT</a>&nbsp;<a href="https://linux.cn/lctt/Snapcrafter" target="_blank">Snapcrafter</a></span>
+<p id="article_date">
+| 2017-08-18 08:42&nbsp;&nbsp;
+评论: <a href="https://linux.cn/portal.php?mod=comment&amp;id=8788&amp;idtype=aid" title="查看全部评论"><em id="_commentnum">1</em></a>&nbsp;收藏: <em id="_favtimes">1</em>&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
+</span></div>
+
+<p>snapcraft 是一个正在为其在 Linux 中的地位而奋斗的包管理系统，它为你重新设想了分发软件的方式。这套新的跨发行版的工具可以用来帮助你构建和发布 snap 软件包。接下来我们将会讲述怎么使用 CircleCI 2.0 来加速这个过程以及一些在这个过程中的可能遇到的问题。</p>
+<h3 id="toc_1">snap 软件包是什么？snapcraft 又是什么？</h3>
+<p>snap 是用于 Linux 发行版的软件包，它们在设计的时候吸取了像 Android 这样的移动平台和物联网设备上分发软件的经验教训。snapcraft 这个名字涵盖了 snap 和用来构建它们的命令行工具、这个 <a href="https://snapcraft.io/">snapcraft.io</a> 网站，以及在这些技术的支撑下构建的几乎整个生态系统。</p>
+<p>snap 软件包被设计成用来隔离并封装整个应用程序。这些概念使得 snapcraft 提高软件安全性、稳定性和可移植性的目标得以实现，其中可移植性允许单个 snap 软件包不仅可以在 Ubuntu 的多个版本中安装，而且也可以在 Debian、Fedora 和 Arch 等发行版中安装。snapcraft 网站对其的描述如下：</p>
+<blockquote>
+<p>为每个 Linux 桌面、服务器、云端或设备打包任何应用程序，并且直接交付更新。</p>
+</blockquote>
+<h3 id="toc_2">在 CircleCI 2.0 上构建 snap 软件包</h3>
+<p>在 CircleCI 上使用 <a href="https://circleci.com/docs/2.0/">CircleCI 2.0 语法</a> 来构建 snap 和在本地机器上基本相同。在本文中，我们将会讲解一个示例配置文件。如果您对 CircleCI 还不熟悉，或者想了解更多有关 2.0 的入门知识，您可以从 <a href="https://circleci.com/docs/2.0/first-steps/">这里</a> 开始。</p>
+<h3 id="toc_3">基础配置</h3>
+<pre class="prettyprint linenums"><code>version: 2
+jobs:
+  build:
+    machine: true
+    working_directory: ~/project
+    steps:
+      - checkout
+      - run:
+          command: |
+            sudo apt update &amp;&amp; sudo apt install -y snapd
+            sudo snap install snapcraft --edge --classic
+            /snap/bin/snapcraft
+</code></pre>
+<p>这个例子使用了 <code>machine</code> 执行器来安装用于管理运行 snap 的可执行程序 <code>snapd</code> 和制作 snap 的 <code>snapcraft</code> 工具。</p>
+<p>由于构建过程需要使用比较新的内核，所以我们使用了 <code>machine</code> 执行器而没有用 <code>docker</code> 执行器。在这里，Linux v4.4 已经足够满足我们的需求了。</p>
+<h3 id="toc_4">用户空间的依赖关系</h3>
+<p>上面的例子使用了 <code>machine</code> 执行器，它实际上是一个内核为 Linux v4.4 的 <a href="https://circleci.com/docs/1.0/differences-between-trusty-and-precise/">Ubuntu 14.04 (Trusty) 虚拟机</a>。如果 Trusty 仓库可以满足你的 project/snap 构建依赖，那就没问题。如果你的构建依赖需要其他版本，比如 Ubuntu 16.04 (Xenial)，我们仍然可以在 <code>machine</code> 执行器中使用 Docker 来构建我们的 snap 软件包 。</p>
+<pre class="prettyprint linenums"><code>version: 2
+jobs:
+  build:
+    machine: true
+    working_directory: ~/project
+    steps:
+      - checkout
+      - run:
+          command: |
+            sudo apt update &amp;&amp; sudo apt install -y snapd
+            docker run -v $(pwd):$(pwd) -t ubuntu:xenial sh -c "apt update -qq &amp;&amp; apt install snapcraft -y &amp;&amp; cd $(pwd) &amp;&amp; snapcraft"
+
+</code></pre>
+<p>这个例子中，我们再次在 <code>machine</code> 执行器的虚拟机中安装了 <code>snapd</code>，但是我们决定将 snapcraft 安装在 Ubuntu Xenial 镜像构建的 Docker 容器中，并使用它来构建我们的 snap。这样，在 <code>snapcraft</code> 运行的过程中就可以使用在 Ubuntu 16.04 中可用的所有 <code>apt</code> 包。</p>
+<h3 id="toc_5">测试</h3>
+<p>在我们的<a href="https://circleci.com/blog/">博客</a>、<a href="https://circleci.com/docs/">文档</a>以及互联网上已经有很多讲述如何对软件代码进行单元测试的内容。搜索你的语言或者框架和单元测试或者 CI 可以找到大量相关的信息。在 CircleCI 上构建 snap 软件包，我们最终会得到一个 <code>.snap</code> 的文件，这意味着除了创造它的代码外我们还可以对它进行测试。</p>
+<h3 id="toc_6">工作流</h3>
+<p>假设我们构建的 snap 软件包是一个 webapp，我们可以通过测试套件来确保构建的 snap 可以正确的安装和运行，我们也可以试着安装它或者使用 <a href="http://www.seleniumhq.org/">Selenium</a> 来测试页面加载、登录等功能正常工作。但是这里有一个问题，由于 snap 是被设计成可以在多个 Linux 发行版上运行，这就需要我们的测试套件可以在 Ubuntu 16.04、Fedora 25 和 Debian 9 等发行版中可以正常运行。这个问题我们可以通过 CircleCI 2.0 的工作流来有效地解决。</p>
+<p>工作流是在最近的 CircleCI 2.0 测试版中加入的，它允许我们通过特定的逻辑流程来运行离散的任务。这样，使用单个任务构建完 snap 后，我们就可以开始并行的运行 snap 的发行版测试任务，每个任务对应一个不同的发行版的 <a href="https://circleci.com/docs/2.0/building-docker-images/">Docker 镜像</a> (或者在将来，还会有其他可用的执行器)。</p>
+<p>这里有一个简单的例子：</p>
+<pre class="prettyprint linenums"><code>workflows:
+  version: 2
+  build-test-and-deploy:
+    jobs:
+      - build
+      - acceptance_test_xenial:
+          requires:
+            - build
+      - acceptance_test_fedora_25:
+          requires:
+            - build
+      - acceptance_test_arch:
+          requires:
+            - build
+      - publish:
+          requires:
+            - acceptance_test_xenial
+            - acceptance_test_fedora_25
+            - acceptance_test_arch
+
+</code></pre>
+<p>在这个例子中首先构建了 snap，然后在四个不同的发行版上运行验收测试。如果所有的发行版都通过测试了，那么我们就可以运行发布 <code>job</code>，以便在将其推送到 snap 商店之前完成剩余的 snap 任务。</p>
+<h3 id="toc_7">留着 .snap 包</h3>
+<p>为了测试我们在工作流示例中使用的 .snap 软件包，我们需要一种在构建的时候持久保存 snap 的方法。在这里我将提供两种方法：</p>
+<ol>
+<li><strong>artifact</strong> —— 在运行 <code>build</code> 任务的时候我们可以将 snaps 保存为一个 CircleCI 的 artifact（LCTT 译注：artifact 是 <code>snapcraft.yaml</code> 中的一个 <code>Plugin-specific</code> 关键字），然后在接下来的任务中检索它。CircleCI 工作流有自己处理共享 artifact 的方式，相关信息可以在 <a href="https://circleci.com/docs/2.0/workflows/#using-workspaces-to-share-artifacts-among-jobs">这里</a> 找到。</li>
+<li><strong>snap 商店通道</strong> —— 当发布 snap 软件包到 snap 商店时，有多种通道可供我们选择。将 snap 的主分支发布到 edge 通道以供内部或者用户测试已经成为一种常见做法。我们可以在 <code>build</code> 任务中完成这些工作，然后接下来的的任务就可以从 edge 通道来安装构建好的 snap 软件包。</li>
+</ol>
+<p>第一种方法速度更快，并且它还可以在 snap 软包上传到 snap 商店供用户甚至是测试用户使用之前对 snap 进行验收测试。第二种方法的好处是我们可以从 snap 商店安装 snap，这也是 CI 运行期间的测试项之一。</p>
+<h3 id="toc_8">snap 商店的身份验证</h3>
+<p><a href="https://gist.github.com/3v1n0/479ad142eccdd17ad7d0445762dea755">snapcraft-config-generator.py</a> 脚本可以生成商店证书并将其保存到 <code>.snapcraft/snapcraft.cfg</code> 中（注意：在运行公共脚本之前一定要对其进行检查）。如果觉得在你仓库中使用明文来保存这个文件不安全，你可以用 <code>base64</code> 编码该文件，并将其存储为一个<a href="https://circleci.com/docs/1.0/environment-variables/#setting-environment-variables-for-all-commands-without-adding-them-to-git">私有环境变量</a>，或者你也可以对文件 <a href="https://github.com/circleci/encrypted-files">进行加密</a>，并将密钥存储在一个私有环境变量中。</p>
+<p>下面是一个示例，将商店证书放在一个加密的文件中，并在 <code>deploy</code> 环节中使用它将 snap 发布到 snap 商店中。</p>
+<pre class="prettyprint linenums"><code>- deploy:
+    name: Push to Snap Store
+    command: |
+      openssl aes-256-cbc -d -in .snapcraft/snapcraft.encrypted -out .snapcraft/snapcraft.cfg -k $KEY
+      /snap/bin/snapcraft push *.snap
+
+</code></pre>
+<p>除了 <code>deploy</code> 任务之外，工作流示例同之前的一样， <code>deploy</code> 任务只有当验收测试任务通过时才会运行。</p>
+<h3 id="toc_9">更多的信息</h3>
+<ul>
+<li>Alan Pope 在 <a href="https://forum.snapcraft.io/t/building-and-pushing-snaps-using-circleci/789">论坛中发的帖子</a>：“popey” 是 Canonical 的员工，他在 snapcraft 的论坛上写了这篇文章，并启发作者写了这篇博文。</li>
+<li><a href="https://snapcraft.io/">snapcraft 网站</a>： snapcraft 官方网站。</li>
+<li><a href="https://bugs.launchpad.net/snapcraft/+bug/1693451">snapcraft 的 CircleCI Bug 报告</a>：在 Launchpad 上有一个开放的 bug 报告页面，用来改善 CircleCI 对 snapcraft 的支持。同时这将使这个过程变得更简单并且更“正式”。期待您的支持。</li>
+<li>怎么使用 CircleCI 构建 <a href="https://nextcloud.com/">Nextcloud</a> 的 snap：这里有一篇题为 <a href="https://kyrofa.com/posts/continuous-acceptance-tests-for-complex-applications">“复杂应用的持续验收测试”</a> 的博文，它同时也影响了这篇博文。</li>
+</ul>
+<p>这篇客座文章的作者是 Ricardo Feliciano —— CircleCi 的开发者传道士。如果您也有兴趣投稿，请联系 <a href="mailto:ubuntu-iot@canonical.com">ubuntu-iot@canonical.com</a>。原始文章可以从 <a href="https://circleci.com/blog/build-test-publish-snap-packages?utm_source=insightsubuntu&amp;utm_medium=syndicatedblogpost">这里</a> 找到。</p>
+<hr>
+<p>via: <a href="https://insights.ubuntu.com/2017/06/28/build-test-and-publish-snap-packages-using-snapcraft/">https://insights.ubuntu.com/2017/06/28/build-test-and-publish-snap-packages-using-snapcraft/</a></p>
+<p>译者简介：</p>
+<blockquote>
+<p>常年混迹于 snapcraft.io，对 Ubuntu Core、snaps 和 snapcraft 有浓厚的兴趣，并致力于将这些还在快速发展的新技术通过翻译或原创的方式介绍到中文世界。有兴趣的小伙伴也可以关注译者个人的公众号： <code>Snapcraft</code></p>
+</blockquote>
+<p>作者：Ricardo Feliciano 译者：<a href="https://github.com/Snapcrafter">Snapcrafter</a> 校对：<a href="https://github.com/wxy">wxy</a></p>
+<p>本文由 <a href="https://github.com/LCTT/TranslateProject">LCTT</a> 原创编译，<a href="https://linux.cn/">Linux中国</a> 荣誉推出</p>  					<section><img style="width: 24px; height: 24px; float: right;" src="linisi.svg"><br class="clear"></section>
+</div>
+</div>
+<br class="clear">
+<div class="vw">
+<div id="add_comment" class="h bm" style="display: none;">
+<div class="bm_h cl">
+<h3>发表评论</h3>
+</div>
+<div class="bm_c pbn">
+<form id="cform" name="cform" action="https://linux.cn/portal.php?mod=portalcp&amp;ac=comment" method="post" autocomplete="off">
+<div class="tedt">
+<div class="area">
+<textarea name="message" rows="10" class="pt" id="message"></textarea>
+</div>
+</div>
+
+<div class="mtm z"><span id="seccode_cSnp54m4"></span>		
+<script type="text/javascript" reload="1">/* Code removed by ScrapBook */</script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+</div>
+<input name="portal_referer" value="https://linux.cn/article-8788-1.html#comment" type="hidden">
+<input name="referer" value="https://linux.cn/article-8788-1.html#comment" type="hidden">
+<input name="id" value="0" type="hidden">
+<input name="idtype" value="" type="hidden">
+<input name="aid" value="8788" type="hidden">
+<input id="reppid" name="reppid" value="" type="hidden">
+<input name="formhash" value="c7db8738" type="hidden">
+<input name="replysubmit" value="true" type="hidden">
+<input name="commentsubmit" value="true" type="hidden">
+<p class="mtm" style="text-align: center;"><button type="submit" name="commentsubmit_btn" id="commentsubmit_btn" value="true" class="pn"><strong>评论</strong></button></p>
+<br class="clear">
+</form>
+</div>
+</div>
+<div id="comment" class="bm h">
+<div class="bm_h cl">
+<h3 class="z"><a name="comment"></a>最新评论</h3>
+</div>
+<div id="comment_ul" class="bm_c">
+<div style="text-align: center;"><button type="button" class="pnc" style="font-size: 24px; width: 160px;" id="c_add"><strong>发表评论</strong></button></div><a name="comment_anchor_46473"></a>
+<dl id="comment_46473_li" class="pbm bbda cl">
+<dt class="mbm  s2">
+<span class=" xw0 vm">来自北京中央财经大学的 Chrome 60.0|GNU/Linux 用户</span>
+<span class=" xw0 vm">2017-08-20 17:40</span>
+<span class="y xw0 xi2 opt" style="margin-right: 5px;">
+<a class="replyadd" href="https://linux.cn/portal.php?mod=review&amp;action=postreview&amp;do=support&amp;idtype=aid&amp;tid=8788&amp;pid=46473&amp;hash=c7db8738"><span id="review_support_46473">5</span> 赞</a> 
+<!--<a href="javascript:;" onclick="portal_comment_reppost(46473, '8788');">回复</a> --><a id="reply_46473" href="https://linux.cn/portal.php?mod=portalcp&amp;ac=comment&amp;op=reply&amp;cid=46473&amp;aid=8788&amp;idtype=">回复</a> </span>	
+</dt>
+<dd>
+这玩意本身不是个自由开源软件</dd>
+</dl><div class="ptm pbm cl">
+</div>
+</div>
+</div>
+</div>
+<div class="h bm_c bm z" id="footer_info">
+<p class="copyright">
+    	 
+    		    			    			<span class="z textcut">译自：<a href="https://insights.ubuntu.com/2017/06/28/build-test-and-publish-snap-packages-using-snapcraft/" target="_blank">insights.ubuntu.com</a></span>
+    			    		    		<span class="y">作者： Ricardo Feliciano</span>    		<br class="clear">
+    	    	<span class="z">原创：<a href="https://linux.cn/lctt/" target="_blank">LCTT</a> <a href="#" target="_blank">https://linux.cn/article-8788-1.html</a></span>
+            			<span class="y">译者： Snapcrafter</span>    		<br class="clear">
+    	    	<br>
+    	    		<span>本文由 LCTT 原创翻译，<a href="#">Linux 中国首发</a>。也想加入译者行列，为开源做一些自己的贡献么？欢迎加入 <a href="https://linux.cn/lctt/" target="_blank">LCTT</a>！<br>翻译工作和译文发表仅用于学习和交流目的，翻译工作遵照 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank">CC-BY-SA 协议规定</a>，如果我们的工作有侵犯到您的权益，请及时联系我们。</span>
+    		    		<br class="clear">
+    		<span style="color: red;">欢迎遵照 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank">CC-BY-SA 协议规定</a> 转载，敬请在正文中标注并保留原文/译文链接和作者/译者等信息。</span>
+                		<br class="clear">
+    	    	<span>文章仅代表作者的知识和看法，如有不同观点，请楼下排队<a>吐槽</a> :D</span>
+    	<br class="clear">
+</p>
+
+
+
+<div class="o cl ptm pbm">
+<a href="https://linux.cn/home.php?mod=spacecp&amp;ac=favorite&amp;type=article&amp;id=8788&amp;handlekey=favoritearticlehk_8788" id="a_favorite" class="favorite z" title="收藏"></a>
+<!-- <a href="misc.php?mod=invite&amp;action=article&amp;id=8788" id="a_invite" onclick="showWindow('invite', this.href, 'get', 0);" class="invite z" title="邀请"></a> -->
+<a href="https://linux.cn/article-8788-1.html?pr" class="print z" title="打印"></a>
+				
+</div>
+<div class="pren pbm cl">
+<em>上一篇：<a href="https://linux.cn/article-8782-1.html">Linux 包管理基础：apt、yum、dnf 和 pkg</a></em><em>下一篇：<a href="https://linux.cn/article-8795-1.html">了解 7z 命令开关（一）</a></em></div>
+</div>
+<div><div id="translator_info" class="bm" style="position: relative; margin: 8px 4px 8px 0px ! important; float: right;">
+<div class="bm_h cl">
+LCTT 译者
+</div>
+<div class="bm_c">
+<div>
+<a href="https://linux.cn/lctt/Snapcrafter" target="_blank"><img class="avatar" src="30320680.jpg" style="max-width: 64px; float: left; margin-top: 10px;"></a>
+<div style="float: left; margin-left: 10px; font-size: 12px; line-height: 1.5em;">
+<div>
+<a href="https://github.com/Snapcrafter" target="_blank"><img src="github_icon.png" style="vertical-align: middle;"></a> <a href="https://linux.cn/lctt/Snapcrafter" target="_blank" style="font-weight: bold;">Snapcrafter</a> 🌟🌟</div>
+<div class="addfiles">共计翻译： <span class="num" style="color: rgb(255, 0, 0); font-weight: 700;">6.5</span> 篇
+| 共计贡献： <span class="num" style="color: rgb(255, 0, 0); font-weight: 700;">27</span> 天</div>
+<div>贡献时间：2017-08-03 -&gt; 2017-08-30</div><a href="https://linux.cn/lctt/Snapcrafter" target="_blank">访问我的 LCTT 主页</a> | <a href="https://github.com/Snapcrafter" target="_blank">在 GitHub 上关注我</a>
+</div>
+<br class="clear">
+</div>
+</div>
+</div>
+</div>
+
+<div id="related" class="bm block z">
+<div class="bm_h cl">
+<h3>相关阅读</h3>
+</div>
+<div class="bm_c pbn" id="related_tag">
+<ul class="xl xl2 cl bbs pbm" id="tag"><li><a href="https://linux.cn/tag-snap.html">snap</a></li>
+</ul>
+</div>
+<div class="bm_c xl xl1 cl" id="related_article">
+<ul><li><em>2022-02-24</em><a href="https://linux.cn/article-14302-1-rel.html" target="_blank">如何在 Linux 中清理 Snap 包的版本</a> </li>
+<li><em>2022-04-17</em><a href="https://linux.cn/article-14482-1-rel.html" target="_blank">Ubuntu 的前 Snap 倡导者创建了一个工具，帮助你从 Snap 迁移到 Flatpak</a> </li>
+<li><em>2022-05-09</em><a href="https://linux.cn/article-14567-1-rel.html" target="_blank">怎样在 Ubuntu Linux 中移除 Snap 软件包</a> </li>
+<li><em>2022-07-11</em><a href="https://linux.cn/article-14815-1-rel.html" target="_blank">修复 Ubuntu 中的 “cannot find signatures with metadata for snap” 错误</a> </li>
+<li><em>2022-08-07</em><a href="https://linux.cn/article-14904-1-rel.html" target="_blank">如何清理 Snap 保留的旧软件包以释放磁盘空间</a> </li>
+</ul>
+</div>
+</div>
+<br class="clear">
+</article>
+</div>
+
+</div>
+
+
+<input id="portalview" value="1" type="hidden">
+
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<link rel="stylesheet" href="prettify.css" type="text/css">
+<script src="about:blank" type="text/javascript"></script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>	</div>
+    <div id="footer">
+        <p>
+            <span>Linux 中国 © 2003 - 2022</span>
+        </p>
+        <p>
+            <a href="http://www.miitbeian.gov.cn/" target="_blank">京ICP备2021020457</a>            京公网安备110105001595
+        </p>
+        <p>
+        <a href="https://linux.cn/legal.html">服务条款</a> |
+        除特别申明外，本站原创内容版权遵循 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank">CC-BY-SA 协议规定</a></p>
+        <p>
+</p></div>
+
+<div id="ft" class="cl"></div>
+<div id="scrolltop">
+<span>
+<a class="wxicon"></a>
+<a title="分享到微博" class="tsina"></a>
+<a title="收藏" href="https://linux.cn/home.php?mod=spacecp&amp;ac=favorite&amp;type=article&amp;id=8788&amp;handlekey=favoritearticlehk_8788" id="a_favorite" class="favorite"></a>
+    	<a href="https://linux.cn/article-8788-1.html?pr" class="print" title="!print!"></a>
+
+</span>
+<span hidefocus="true"><a title="返回顶部" class="scrolltopa"><b>返回顶部</b></a></span>
+</div>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<div id="qrcode">
+<p>分享到微信</p>
+<div id="canvas"></div>
+<p><em>打开微信，点击顶部的“╋”，<br>
+使用“扫一扫”将网页分享至微信。</em></p></div>
+<!-- script type="text/javascript" src="https://img.linux.net.cn/static/js/ads.js?FBX"></script -->
+<!-- div id="LFBXCisOsS" style="display: none; background-color: #A00; position: fixed; top: 0; width: 100%; z-index: 9999; left: 0; font-size: 16px; color: #fff; text-align: center; padding: 10px; opacity: 0.8;">请将我们加入您的广告过滤器的白名单，请支持开源站点。谢谢您。</div -->
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+
+
+</body>
+</html>

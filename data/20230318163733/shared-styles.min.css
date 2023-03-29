@@ -1,0 +1,127 @@
+/* Code tidied up by ScrapBook */
+.mc-field-group label { display: block; font-size: 1.5rem; font-weight: 800; text-transform: uppercase; letter-spacing: -1px; margin: 10px 0px; }
+.styled-separator { background-image: linear-gradient(270deg, currentcolor calc(50% - 16px), transparent calc(50% - 16px), transparent calc(50% + 16px), currentcolor calc(50% + 16px)); background-repeat: repeat; background-attachment: scroll; background-clip: border-box; background-origin: padding-box; background-position: 0% 0%; background-size: auto auto; background-color: transparent ! important; border: medium none; height: 1px; overflow: visible; position: relative; color: rgb(109, 109, 109); }
+.styled-separator::after, .styled-separator::before { background: currentcolor none repeat scroll 0% 0%; content: ""; display: block; height: 1.6rem; position: absolute; top: calc(50% - 0.8rem); transform: rotate(22.5deg); width: 0.1rem; }
+.styled-separator::after { left: calc(50% - 0.5rem); }
+.styled-separator::before { right: calc(50% - 0.5rem); }
+.section-inner { margin-left: auto; margin-right: auto; max-width: 100%; }
+.pagination-single { font-size: 1.8rem; margin-top: 5rem; }
+@media (min-width: 700px) {
+  .pagination-single { font-size: 1.4rem; }
+}
+.pagination-single-inner { display: flex; flex-direction: column; }
+@media (min-width: 700px) {
+  .pagination-single-inner { flex-direction: row; justify-content: space-between; }
+}
+.pagination-single hr:first-child { margin: 0px 0px 2.8rem; }
+@media (min-width: 700px) {
+  .pagination-single hr:first-child { margin: 0px 0px 4rem; }
+}
+.pagination-single hr:last-child { margin: 2.8rem 0px 0.8rem; }
+@media (min-width: 700px) {
+  .pagination-single hr:last-child { margin: 4rem 0px 0.8rem; }
+}
+.pagination-single a { align-items: baseline; display: flex; font-weight: 600; letter-spacing: -0.0275em; text-decoration: none; flex: 1 1 0%; }
+.pagination-single a + a { margin-top: 1rem; }
+@media (min-width: 700px) {
+  .pagination-single a + a { margin: 0px 0px 0px 4rem; }
+}
+.pagination-single a .arrow { margin-right: 1rem; }
+@media (min-width: 700px) {
+  .pagination-single a .arrow { margin: 0px 2rem 0px 0px; }
+}
+.pagination-single a:focus .title, .pagination-single a:hover .title { text-decoration: underline; }
+@media (min-width: 700px) {
+  .pagination-single .next-post { flex-direction: row-reverse; text-align: right; }
+  .pagination-single .next-post .arrow { margin: 0px 0px 0px 2rem; }
+}
+article.post .post-content-wrapper .post-content h1, article.post .post-content-wrapper .post-content h2, article.post .post-content-wrapper .post-content h3, article.post .post-content-wrapper .post-content h4, article.post .post-content-wrapper .post-content h5 { color: rgb(51, 51, 51); font-family: -apple-system,BlinkMacSystemFont,segoe ui,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol; }
+@media (min-width: 1024px) {
+}
+article.post .post-content-wrapper .post-content h2 { font-size: 21px; }
+@media (min-width: 1024px) {
+  article.post .post-content-wrapper .post-content h2 { font-size: 1.875rem; }
+}
+@media (min-width: 1024px) {
+}
+@media (max-width: 450px) {
+}
+@media (min-width: 1024px) {
+}
+@media screen and (max-width: 480px) {
+}
+@media screen and (max-width: 450px) {
+}
+@media (max-width: 450px) {
+}
+@font-face {
+  font-family: "FontAwesome";
+  font-style: normal;
+  font-weight: 400;
+  src: url("fontawesome-webfont.eot") format("embedded-opentype"), url("fontawesome-webfont.woff2") format("woff2"), url("fontawesome-webfont.woff") format("woff"), url("fontawesome-webfont.ttf") format("truetype"), url("fontawesome-webfont.svg") format("svg");
+}
+@media (min-width: 1280px) {
+}
+@media (min-width: 1920px) {
+}
+@media (min-width: 48rem) {
+}
+@media (min-width: 48rem) {
+}
+@media (min-width: 48rem) {
+}
+@media (min-width: 48rem) {
+}
+@media (min-width: 90rem) {
+}
+@media (min-width: 48rem) {
+}
+@media (min-width: 80rem) {
+}
+@media (max-width: 450px) {
+}
+section#comments { margin-top: 50px; }
+#comments input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, input[type="tel"]:focus, input[type="url"]:focus, textarea:focus { border-color: rgb(3, 102, 214); outline: 0px none; color: rgb(36, 41, 46); }
+#comments button[type="submit"], .theme-button, button[type="button"], input[type="button"], input[type="submit"] { position: relative; overflow: hidden; font-family: inherit; display: inline-block; line-height: normal; padding: 14px 22px; color: rgb(255, 255, 255); -moz-appearance: none; background: rgb(3, 102, 214) none repeat scroll 0% 0%; font-size: 12px; letter-spacing: 0.5px; cursor: pointer; font-weight: 400; border: 0px none; text-transform: uppercase; text-decoration: none; border-radius: 4px; transition: opacity 0.15s ease 0s; }
+@media only screen and (max-width: 480px) {
+  #comments button[type="submit"], .theme-button, button[type="button"], input[type="button"], input[type="submit"] { max-width: 100%; }
+}
+@media only screen and (max-width: 750px) {
+}
+@media only screen and (max-width: 500px) {
+}
+.newsletter { background: rgba(126, 211, 33, 0.5) none repeat scroll 0% 0%; margin-bottom: 40px; padding: 30px; }
+.newsletter .container { display: flex; flex-direction: column; gap: 1rem; }
+@media (min-width: 768px) {
+  .newsletter .container { flex-direction: row; }
+}
+.newsletter .container .action input[type="submit"] { padding: 1rem; margin: 0px; line-height: 1; max-width: 100%; }
+@media (min-width: 1280px) {
+  .newsletter { padding: 60px 30px; flex-direction: row; }
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 1440px) {
+}
+.newsletter .input { position: relative; }
+.newsletter .input input { padding-left: 40px; margin: 0px 0px 10px; width: 100%; max-width: 100%; }
+.newsletter .input svg { fill: rgb(204, 204, 204); position: absolute; left: 0px; margin: 12px; top: 0px; height: 14px; width: auto; }
+.newsletter .newsletter-form { margin: 20px 0px 0px; flex: 1 1 0%; }
+.newsletter .container .email { flex: 1 1 0%; min-width: 240px; }
+@media screen and (max-width: 480px) {
+  .newsletter .container .email { min-width: 50%; }
+}
+.newsletter .container .email small { color: rgb(86, 145, 23); }
+div#mc_embed_signup { flex: 1 1 0%; }
+div.page-extra { width: 100%; max-width: 1400px; margin: 0px auto; }
+@media (min-width: 768px) {
+}
+@media (min-width: 1024px) {
+}
+blockquote, code, pre, table { white-space: pre-wrap ! important; }
+blockquote, code, h1, h2, h3, h4, h5, h6, li, p, pre, span, strong, table { word-break: normal; overflow-wrap: anywhere; }
+@media only screen and (max-width: 480px) {
+  #comments #cancel-comment-reply-link, #comments .comment-author, #comments .comment-form input[type="submit"], #comments .comment-form label, #comments a, #comments a.comment-reply-link, #comments button[type="submit"], #comments ol.commentlist li .comment-content p, #comments p.akismet_comment_form_privacy_notice, #comments p.akismet_comment_form_privacy_notice a, #comments p.comment-notes, .author, .author strong, .tocdeal, .vpndeal, .vpndeal span#dealcolor, article.post .post-content-wrapper .post-content dd, article.post .post-content-wrapper .post-content dt, article.post .post-content-wrapper .post-content h3.border-top, article.post .post-content-wrapper .post-content h4, article.post .post-content-wrapper .post-content li, article.post .post-content-wrapper .post-content p, button[type="button"], input[type="button"], input[type="submit"], section.main-content .more-aricles, section.main-content .more-aricles-wrapper a { font-size: 1.125rem; line-height: 1.6; }
+}

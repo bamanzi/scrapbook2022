@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html data-color-scheme="system" lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>How to Use AppImage in Linux [Complete Guide]</title>
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#00B6BA">
+<link rel="preload" href="https://itsfoss.com/assets/dist/app.min.js?v=40bbbaafdf" as="script">
+<link rel="preload" href="https://itsfoss.com/assets/dist/app.min.css?v=40bbbaafdf" as="style">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/">
+<link rel="stylesheet" href="css2.css" as="style">
+<style>
+/* Code tidied up by ScrapBook */
+body { --font-body:  'Figtree', sans-serif; --font-headings:  'Figtree', sans-serif; }
+</style>
+<script async="" type="text/javascript" src="about:blank"></script><script async="" defer="" src="about:blank"></script>
+<link rel="stylesheet" type="text/css" href="app.min.css">
+<link rel="preconnect" href="https://a.pub.network/">
+<link rel="preconnect" href="https://b.pub.network/">
+<link rel="preconnect" href="https://c.pub.network/">
+<link rel="preconnect" href="https://d.pub.network/">
+<link rel="preconnect" href="https://c.amazon-adsystem.com/">
+<link rel="preconnect" href="https://s.amazon-adsystem.com/">
+<link rel="preconnect" href="https://btloader.com/">
+<link rel="preconnect" href="https://api.btloader.com/">
+<link rel="preconnect" href="https://confiant-integrations.global.ssl.fastly.net/">
+<link rel="stylesheet" href="cls.css">
+<script data-cfasync="false" type="text/javascript">/* Code removed by ScrapBook */</script><style class="fslightbox-styles">
+/* Code tidied up by ScrapBook */
+@keyframes fslightbox-fade-in {
+0% { opacity: 0.65; }
+100% { opacity: 1; }
+}
+@keyframes fslightbox-fade-out {
+0% { opacity: 0.35; }
+100% { opacity: 0; }
+}
+@keyframes fslightbox-fade-in-strong {
+0% { opacity: 0.3; }
+100% { opacity: 1; }
+}
+@keyframes fslightbox-fade-out-strong {
+0% { opacity: 1; }
+100% { opacity: 0; }
+}
+@media (min-width: 476px) {
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 1600px) {
+}
+@media (max-width: 475.99px) {
+}
+@media (min-width: 476px) {
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 476px) {
+}
+@keyframes fslightbox-loader {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+</style>
+<script src="about:blank" data-cfasync="false" async=""></script>
+<style>
+/* Code tidied up by ScrapBook */
+:root { --global-max-width:  1320px; --global-content-width:  680px; --global-wide-width:  960px; --global-post-hero-content-max-width:  768px; --global-radius:  5px; --global-gallery-gap:  1em; --global-hyphens:  none; --global-header-height:  72px; --global-theme-notifications:  visible; --global-progress-bar:  visible; --global-content-preview-fading:  0%; --global-hero-img-filter:  ; --global-scroll-behavior:  auto; }
+</style>
+<script>/* Code removed by ScrapBook */</script><style>
+/* Code tidied up by ScrapBook */
+:root { --color-brand-contrast:  #000; --color-brand-h:  181; --color-brand-s:  100%; --color-brand-l:  36%; --color-brand-hsl:  181 100% 36%; }
+</style>
+<meta name="description" content="What is AppImage? How to run it? How does it work? Here's the complete guide about using AppImage in Linux.">
+<link rel="icon" href="android-chrome-192x192.webp" type="image/png">
+<link rel="canonical" href="https://itsfoss.com/use-appimage-linux/">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta property="og:site_name" content="It's FOSS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Use AppImage in Linux [Complete Guide]">
+<meta property="og:description" content="What is AppImage? How to run it? How does it work? Here's the complete guide about using AppImage in Linux.">
+<meta property="og:url" content="https://itsfoss.com/use-appimage-linux/">
+<meta property="og:image" content="https://itsfoss.com/content/images/wordpress/2017/07/use-appimage-linux.png">
+<meta property="article:published_time" content="2017-08-02T14:00:20.000Z">
+<meta property="article:modified_time" content="2022-12-29T03:44:45.000Z">
+<meta property="article:tag" content="Guide">
+<meta property="article:publisher" content="https://www.facebook.com/itsfoss">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Use AppImage in Linux [Complete Guide]">
+<meta name="twitter:description" content="What is AppImage? How to run it? How does it work? Here's the complete guide about using AppImage in Linux.">
+<meta name="twitter:url" content="https://itsfoss.com/use-appimage-linux/">
+<meta name="twitter:image" content="https://itsfoss.com/content/images/wordpress/2017/07/use-appimage-linux.png">
+<meta name="twitter:label1" content="Written by">
+<meta name="twitter:data1" content="Abhishek Prakash">
+<meta name="twitter:label2" content="Filed under">
+<meta name="twitter:data2" content="Guide">
+<meta name="twitter:site" content="@itsfoss2">
+<meta name="twitter:creator" content="@abhishek_foss">
+<meta property="og:image:width" content="800">
+<meta property="og:image:height" content="450">
+<script type="application/ld+json">/* Code removed by ScrapBook */</script>
+<meta name="generator" content="Ghost 5.37">
+<link rel="alternate" type="application/rss+xml" title="It's FOSS" href="https://itsfoss.com/rss/">
+<script defer="" src="about:blank" data-ghost="https://itsfoss.com/" data-key="121ee4fb8f9bf181b8f07c52f6" data-api="https://itsfoss.com/ghost/api/content/"></script><style id="gh-members-styles">
+/* Code tidied up by ScrapBook */
+</style><script async="" src="about:blank"></script>
+<script defer="" src="about:blank" data-key="121ee4fb8f9bf181b8f07c52f6" data-styles="https://cdn.jsdelivr.net/ghost/sodo-search@~1.1/umd/main.css" data-sodo-search="https://itsfoss.com/"></script>
+<link href="https://itsfoss.com/webmentions/receive/" rel="webmention">
+<script defer="" src="about:blank"></script>
+<link rel="stylesheet" type="text/css" href="cards.min.css">
+<script defer="" src="about:blank"></script>
+<style>
+/* Code tidied up by ScrapBook */
+body { --global-max-width:  1500px; --global-content-width:  70rem; }
+</style>
+<style>
+/* Code tidied up by ScrapBook */
+@media only screen and (max-width: 600px) {
+  .hide-mobile { display: none; }
+}
+</style>
+
+<script type="text/javascript" async="true">/* Code removed by ScrapBook */</script>
+
+<script type="text/javascript" src="about:blank" async=""></script>
+<script async="" defer="" data-domain="itsfoss.com" src="about:blank"></script>
+
+<script async="" src="about:blank"></script>
+<script>/* Code removed by ScrapBook */</script>
+
+<script>/* Code removed by ScrapBook */</script><script type="text/javascript" src="about:blank" async="" data-user="447" data-account="1947"></script>
+
+<script type="text/javascript" async="" src="about:blank"></script>
+<style>
+/* Code tidied up by ScrapBook */
+:root { --ghost-accent-color:  #00B6BA; }
+</style>
+<style id="fit-vids-style">
+/* Code tidied up by ScrapBook */
+</style></head>
+<body class="post-template tag-guide tag-hash-abhishek-2" data-hero-image="">
+<div class="progress-bar"></div>
+<header class="header js-header" data-header="normal">
+<div class="container wrapper flex is-rel header__inner">
+<a class="header__brand" href="https://itsfoss.com/"> <picture class="">
+<source srcset="itsfoss-logo.png 300w," data-sizes="auto" type="image/webp">
+<img class="header__logo" data-srcset="/content/images/size/w300/2023/01/itsfoss-logo.png 300w," srcset="itsfoss-logo.webp" data-sizes="auto" data-src="/content/images/size/w100/2023/01/itsfoss-logo.png" src="itsfoss-logo.webp" alt="It's FOSS" loading="eager">
+</picture></a>
+<nav class="header__menu items-center">
+<ul class="nav">
+<li class="nav-home" data-label="Home" data-length="4">
+<a href="https://itsfoss.com/">
+<span>Home</span>
+</a>
+<ul></ul></li>
+<li class="nav-about is-mainitem" data-label="About" data-length="5">
+<a href="https://itsfoss.com/about/">
+<span>About</span>
+</a>
+<ul class="nav submenu"><li class="nav-contact-us is-subitem" data-label="- Contact us" data-length="12">
+<a href="https://itsfoss.com/contact-us/">
+<span> Contact us</span>
+</a>
+</li></ul></li>
+
+<li class="nav-news" data-label="News" data-length="4">
+<a href="https://news.itsfoss.com/">
+<span>News</span>
+</a>
+<ul></ul></li>
+<li class="nav-policies is-mainitem" data-label="Policies" data-length="8">
+<a href="https://itsfoss.com/#">
+<span>Policies</span>
+</a>
+<ul class="nav submenu"><li class="nav-copyright is-subitem" data-label="- Copyright" data-length="11">
+<a href="https://itsfoss.com/copyright/">
+<span> Copyright</span>
+</a>
+</li><li class="nav-privacy is-subitem" data-label="- Privacy" data-length="9">
+<a href="https://itsfoss.com/privacy-policy/">
+<span> Privacy</span>
+</a>
+</li><li class="nav-affiliate is-subitem" data-label="- Affiliate" data-length="11">
+<a href="https://itsfoss.com/affiliate-policy/">
+<span> Affiliate</span>
+</a>
+</li></ul></li>
+
+
+
+</ul>
+<div class="header__menu--sub items-center">
+<button class="header__menu--more is-mainitem" aria-label="Menu"><i class="icon icon-dots">
+<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+<circle cx="5" cy="12" r="1"></circle>
+<circle cx="12" cy="12" r="1"></circle>
+<circle cx="19" cy="12" r="1"></circle>
+</svg>
+</i></button>
+<ul class="nav secondary submenu">
+<li class="nav-linux-server-side" data-label="Linux Server Side" data-length="17">
+<a href="https://linuxhandbook.com/">
+<span>Linux Server Side</span>
+</a>
+</li>
+<li class="nav-community-forum" data-label="Community Forum" data-length="15">
+<a href="https://itsfoss.community/">
+<span>Community Forum</span>
+</a>
+</li>
+<li class="nav-its-foss-en-espanol" data-label="It's FOSS en Español" data-length="20">
+<a href="https://itsfoss.com/es/">
+<span>It's FOSS en Español</span>
+</a>
+</li>
+</ul>
+</div>
+</nav>
+<span class="header--spacer"></span>
+<button class="btn-toggle header-search__toggle" data-ghost-search="" title="Search" aria-label="Search">
+<i class="icon icon-search">
+<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+<circle cx="10" cy="10" r="7"></circle>
+<line x1="21" y1="21" x2="15" y2="15"></line>
+</svg>
+</i> </button>
+<a href="https://itsfoss.com/signup/" class="btn signup-link btn--brand radius" data-portal="signup">Subscribe</a>
+<div class="member-menu js-member-menu">
+<a href="https://itsfoss.com/signup/" data-portal="signup" class="signup-link">
+<i class="icon icon-arrow-up-right icon--sm">
+<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-up-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+<line x1="17" y1="7" x2="7" y2="17"></line>
+<polyline points="8 7 17 7 17 16"></polyline>
+</svg>
+</i>Sign up
+</a>
+<a href="https://itsfoss.com/signin/" data-portal="signin" class="signin-link">
+<i class="icon icon-login icon--sm">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-in">
+<path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+<polyline points="10 17 15 12 10 7"></polyline>
+<line x1="15" y1="12" x2="3" y2="12"></line>
+</svg>
+</i>Sign in
+</a>
+</div>
+<button class="btn-toggle menu__toggle js-menu-open" type="button" title="Menu" aria-label="Menu">
+<span></span>
+<span></span>
+</button>
+</div>
+</header>
+<div class="menu js-menu">
+<div class="menu__header flex content-end">
+<button class="btn-toggle menu__toggle is-active js-menu-close" type="button" title="Menu" aria-label="Menu">
+<span></span>
+<span></span>
+</button>
+</div>
+<nav class="menu__navigation">
+<ul class="nav">
+<li class="nav-home" data-label="Home" data-length="4">
+<a href="https://itsfoss.com/">
+<span>Home</span>
+</a>
+</li>
+<li class="nav-about" data-label="About" data-length="5">
+<a href="https://itsfoss.com/about/">
+<span>About</span>
+</a>
+</li>
+<li class="nav-contact-us is-subitem" data-label="- Contact us" data-length="12">
+<a href="https://itsfoss.com/contact-us/">
+<span> Contact us</span>
+</a>
+</li>
+<li class="nav-news" data-label="News" data-length="4">
+<a href="https://news.itsfoss.com/">
+<span>News</span>
+</a>
+</li>
+<li class="nav-policies" data-label="Policies" data-length="8">
+<a href="https://itsfoss.com/#">
+<span>Policies</span>
+</a>
+</li>
+<li class="nav-copyright is-subitem" data-label="- Copyright" data-length="11">
+<a href="https://itsfoss.com/copyright/">
+<span> Copyright</span>
+</a>
+</li>
+<li class="nav-privacy is-subitem" data-label="- Privacy" data-length="9">
+<a href="https://itsfoss.com/privacy-policy/">
+<span> Privacy</span>
+</a>
+</li>
+<li class="nav-affiliate is-subitem" data-label="- Affiliate" data-length="11">
+<a href="https://itsfoss.com/affiliate-policy/">
+<span> Affiliate</span>
+</a>
+</li>
+</ul>
+<ul class="nav secondary submenu">
+<li class="nav-linux-server-side" data-label="Linux Server Side" data-length="17">
+<a href="https://linuxhandbook.com/">
+<span>Linux Server Side</span>
+</a>
+</li>
+<li class="nav-community-forum" data-label="Community Forum" data-length="15">
+<a href="https://itsfoss.community/">
+<span>Community Forum</span>
+</a>
+</li>
+<li class="nav-its-foss-en-espanol" data-label="It's FOSS en Español" data-length="20">
+ <a href="https://itsfoss.com/es/">
+<span>It's FOSS en Español</span>
+</a>
+</li>
+</ul>
+</nav>
+<div class="menu__actions flex w-100">
+<a href="https://itsfoss.com/signin/" data-portal="signin" class="btn signin-link btn--bordered radius m-r">
+Log in
+</a>
+<a href="https://itsfoss.com/signup/" data-portal="signup" class="btn signup-link btn--brand radius">
+Subscribe
+</a>
+</div>
+</div>
+<main class="main">
+<div class="container wrapper m-0-auto">
+<div class="post-hero is-post" data-feature-image="true" data-image-style="max-width">
+<div class="post-hero__content flex flex-col">
+<h1 class="post-hero__title">How to Use AppImage in Linux [Complete Guide]</h1>
+<div class="post-hero__excerpt text-acc">What is AppImage? How to run it? How does it work? Here's the complete guide about using AppImage in Linux.</div>
+<div class="post-info text-acc m-t">
+<ul class="post-info__avatars">
+<li class="author-avatar has-image">
+<a href="https://itsfoss.com/author/abhishek/" title="Abhishek Prakash" aria-label="Abhishek Prakash">
+<picture class="">
+<source data-srcset="https://www.gravatar.com/avatar/84de387e32f72af3e12bf434a82ea8e8?s=250&amp;r=x&amp;d=mp 30w,https://www.gravatar.com/avatar/84de387e32f72af3e12bf434a82ea8e8?s=250&amp;r=x&amp;d=mp 100w," data-sizes="auto" type="image/webp" sizes="41px" srcset="84de387e32f72af3e12bf434a82ea8e8.jpeg 30w,84de387e32f72af3e12bf434a82ea8e8.jpeg 100w,">
+<img class="lazyautosizes ls-is-cached lazyloaded" data-srcset="https://www.gravatar.com/avatar/84de387e32f72af3e12bf434a82ea8e8?s=250&amp;r=x&amp;d=mp 30w,https://www.gravatar.com/avatar/84de387e32f72af3e12bf434a82ea8e8?s=250&amp;r=x&amp;d=mp 100w," srcset="84de387e32f72af3e12bf434a82ea8e8.jpeg 30w,84de387e32f72af3e12bf434a82ea8e8.jpeg 100w," data-sizes="auto" data-src="https://www.gravatar.com/avatar/84de387e32f72af3e12bf434a82ea8e8?s=250&amp;r=x&amp;d=mp" src="84de387e32f72af3e12bf434a82ea8e8.jpeg" alt="Abhishek Prakash" sizes="41px">
+</picture> </a>
+</li>
+</ul>
+<div class="post-info__detail">
+<span class="post-info__author"><a href="https://itsfoss.com/author/abhishek/">Abhishek Prakash</a></span>
+<div class="post-info__dr">
+<time datetime="2017-08-02">29 Dec 2022</time>
+<span class="post-info__readtime">8 min read</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row m-b-lg">
+<div class="col-xs-12 col-lg-3">
+<div class="post-toc js-post-toc is-aside is-active">
+<div class="post-toc__header flex items-center">
+<button class="post-toc__toggle js-toc-toggle">
+<span class="m-r-sm uppercase">On this page</span>
+<i class="icon icon-list icon--sm">
+<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-list" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+<line x1="9" y1="6" x2="20" y2="6"></line>
+<line x1="9" y1="12" x2="20" y2="12"></line>
+<line x1="9" y1="18" x2="20" y2="18"></line>
+<line x1="5" y1="6" x2="5" y2="6.01"></line>
+<line x1="5" y1="12" x2="5" y2="12.01"></line>
+<line x1="5" y1="18" x2="5" y2="18.01"></line>
+</svg>
+</i> </button>
+</div>
+<div class="post-toc__content js-toc"></div>
+</div>
+</div>
+<div class="col-xs-12 col-lg-6">
+<article class="post tag-guide tag-hash-abhishek-2 content post-access-public no-overflow">
+<div data-freestar-ad="__300x250 __728x90" id="itsfoss_728x90_320x50_ATF" align="center">
+<script data-cfasync="false" type="text/javascript">/* Code removed by ScrapBook */</script>
+</div>
+<p><strong><em><em>Brief</em></em></strong><em><em>: This AppImage tutorial shows you how to use AppImage to install software and how to remove the applications it installed.</em></em></p><p>There are ways to <a href="https://itsfoss.com/remove-install-software-ubuntu/" rel="noopener">install the software in Ubuntu</a> or any other Linux distribution. Downloading .deb or .rpm files and double click on them to install software is one of the most convenient ways to do that.</p><p>Recently, you might have noticed that some applications are downloaded with an extension .appimage. And you may wonder what are these .appimage files.</p><p>In this tutorial, I’ll show you what an AppImage is and how to use AppImage to install applications in Linux. In addition, I’ll also tell you a few things you should keep in mind while using AppImage.</p><h2 id="what-is-appimage">What is AppImage?</h2><p>AppImage is a relatively new packaging format that gives you a click-to-run way of running applications in Linux. Unlike traditional DEB/RPM packages, AppImages can be used on any distribution and this is what makes them so attractive to the Linux users.</p><p>For years, we have DEB packages for Debian/Ubuntu-based Linux distributions and RPM packages for Fedora/SUSE-based Linux distributions.</p><p>While these packages provide a convenient way of installing software to their respective distribution users, it is not the most convenient for the application developer. The developers have to create multiple packages for multiple distributions. This is where AppImage comes into the picture.</p><p><a href="https://appimage.org/?ref=its-foss" rel="noopener">AppImage</a> is a universal software package format. By packaging the software in AppImage, the developer provides just one file ‘to rule them all.’ End-user, i.e., you can use it in most (if not all) modern Linux distributions.</p><h3 id="appimage-doesn-t-install-the-software-in-the-traditional-way">AppImage doesn’t install the software in the traditional way</h3><p>A typical Linux software will create files at various places, requiring root permission to make these changes to the system.</p><p>AppImage doesn’t do it. In fact, AppImage doesn’t really install the software. It is a compressed image with all the dependencies and libraries needed to run the desired software.</p><p>You execute the AppImage file, you run the software. There is no extraction, no installation. You delete the AppImage file, and the software is removed (we’ll see about it later). You can compare it to .exe files in Windows that allow you to run the software without actually going through the installation procedure.</p><p>Let me list some of the features or benefits of AppImage.</p><h3 id="appimage-features">AppImage features</h3><ul><li>Distribution agnostic: Can run on various different Linux distributions</li><li>No need of installing and compiling software: Just click and play</li><li>No need for root permission: System files are not touched</li><li>Portability: Can be run anywhere including live disks</li><li>Apps are in read-only mode</li><li>Software is removed just by deleting the AppImage file</li><li>Applications packaged in AppImage are not <a href="https://en.wikipedia.org/wiki/Sandbox_(computer_security)?ref=its-foss">sandboxed</a> by default.</li></ul><h2 id="how-to-use-appimage-in-linux">How to use AppImage in Linux</h2><p>Using AppImage is pretty simple. It is done in these three simple steps:</p><ul><li>Download AppImage file</li><li>Make it executable</li><li>Run it</li></ul><p>Don’t worry, I’ll show you how to run AppImage in detail. I am using Ubuntu 22.04 in this AppImage tutorial, but you can also use the same steps on other Linux distributions. After all, the entire point of AppImage is to be independent of the distributions.</p><h3 id="step-1-download-the-appimage-package">Step 1: Download the .appimage package</h3><p>There is plenty of software that is available in AppImage format. Krita, Kdenlive, and OpenShot are just a few names. You can find an extensive list of applications available in AppImage format <a href="https://github.com/AppImage/AppImageKit/wiki/AppImages?ref=its-foss">here</a>.</p><p>I will be using the OpenShot video editor in this tutorial. You can download it from its <a href="https://www.openshot.org/download/?ref=its-foss">website</a>.</p><h3 id="step-2-make-it-executable">Step 2: Make it executable</h3><p>By default, the downloaded AppImage file won’t have execution permission. You’ll have to change the permission on the file to make it executable. You don’t need root privilege to do that.</p><p>If you prefer the graphical way, just right-click on the downloaded .appimage file and select Properties.</p><figure class="kg-card kg-image-card kg-card-hascaption"><a data-no-swup="" data-fslightbox="" href="https://itsfoss.com/content/images/wordpress/2022/11/right-click-on-appimage-file-and-select-properties.png" aria-label="Click for Lightbox"><img src="right-click-on-appimage-file-and-select-properties_001.png" class="kg-image" alt="right click on appimage file and select properties" loading="lazy" srcset="right-click-on-appimage-file-and-select-properties.png 600w, right-click-on-appimage-file-and-select-properties.webp 1000w, right-click-on-appimage-file-and-select-properties_001.png 1185w" sizes="(min-width: 720px) 720px" width="1185" height="705"></a><figcaption>Right-click on AppImage file and select Properties</figcaption></figure><p>In the next screen, go to the Permissions tab and check the box that says “Allow executing file as program”.</p><figure class="kg-card kg-image-card kg-card-hascaption"><a data-no-swup="" data-fslightbox="" href="https://itsfoss.com/content/images/wordpress/2022/11/make-the-appimage-file-executable.png" aria-label="Click for Lightbox"><img src="make-the-appimage-file-executable.png" class="kg-image" alt="make the appimage file executable" loading="lazy" srcset="make-the-appimage-file-executable_001.png 600w, make-the-appimage-file-executable.webp 1000w, make-the-appimage-file-executable.png 1192w" sizes="(min-width: 720px) 720px" width="1192" height="702"></a><figcaption>Make the AppImage file executable</figcaption></figure><p>Alternatively, if you prefer the command line, you can simply use the below command to make an AppImage file executable:</p><pre><code>chmod u+x &lt;AppImage File&gt;</code></pre><h3 id="step-3-run-the-appimage-file">Step 3: Run the AppImage file</h3><p>Once you have made the AppImage file executable, just double-click on it to run it. It will see the software running as you would have installed it on your system. Cool, isn’t it?</p><p>If you are facing issues with AppImage in Ubuntu, this <a href="https://itsfoss.com/cant-run-appimage-ubuntu/" rel="noopener">troubleshooting article</a> may help you.</p><h2 id="how-to-uninstall-appimage-software">How to uninstall AppImage software</h2><p>Since the software is never installed, there is no need to ‘uninstall’ it. For AppImages used according to Method 1, just delete the associated AppImage file and your software is removed from the system.</p><p>If you integrated the AppImage through AppImage Launcher, you can right-click on the application and select <strong>Remove AppImage from the system</strong> option.</p><figure class="kg-card kg-image-card kg-card-hascaption"><a data-no-swup="" data-fslightbox="" href="https://itsfoss.com/content/images/wordpress/2022/11/remove-appimage-from-the-system.png" aria-label="Click for Lightbox"><img src="remove-appimage-from-the-system.png" class="kg-image" alt="remove appimage from the system" loading="lazy" srcset="remove-appimage-from-the-system_001.png 600w, remove-appimage-from-the-system.webp 1000w, remove-appimage-from-the-system.png 1093w" sizes="(min-width: 720px) 720px" width="1093" height="352"></a><figcaption>Remove AppImage from the system</figcaption></figure><p>This will ask you for confirmation.</p><figure class="kg-card kg-image-card kg-card-hascaption"><a data-no-swup="" data-fslightbox="" href="https://itsfoss.com/content/images/wordpress/2022/11/confirm-removal-of-appimage.png" aria-label="Click for Lightbox"><img src="confirm-removal-of-appimage.webp" class="kg-image" alt="confirm removal of appimage" loading="lazy" srcset="confirm-removal-of-appimage.png 600w, confirm-removal-of-appimage.webp 882w" sizes="(min-width: 720px) 720px" width="882" height="236"></a><figcaption>Confirm removal of AppImage</figcaption></figure><p>Pressing OK will remove the AppImage and associated files from the system.</p><h2 id="optional-use-appimage-launcher-to-to-enhance-your-experience">Optional: Use AppImage Launcher to to enhance your experience</h2><p>In the previous method, in order to run an AppImage, you need to know the location of the AppImage file, and each time, you should go there and open it. This is a time-consuming process.</p><p>So there is a utility called <a href="https://github.com/TheAssassin/AppImageLauncher?ref=its-foss" rel="noopener">AppImage Launcher</a> for Linux, which allows you to manage the AppImage.</p><p>AppImage Launcher integrates your AppImage software with the application launcher. This means that the apps will now be available to be searched through the system application menu and you don’t need to go to the AppImage file each time.</p><p>For Ubuntu, there is a stable PPA available to install the AppImage Launcher.</p><pre><code>sudo add-apt-repository ppa:appimagelauncher-team/stable
+sudo apt update
+sudo apt install appimagelauncher</code></pre><p>Once installed, you can open any AppImage file you downloaded by double-clicking. AppImage Launcher interface will be popped up and ask permission to integrate the AppImage with the system menu.</p><figure class="kg-card kg-image-card kg-card-hascaption"><a data-no-swup="" data-fslightbox="" href="https://itsfoss.com/content/images/wordpress/2022/11/appimage-launcher-first-run.png" aria-label="Click for Lightbox"><img src="appimage-launcher-first-run_001.png" class="kg-image" alt="appimage launcher first run" loading="lazy" srcset="appimage-launcher-first-run.png 600w, appimage-launcher-first-run.webp 1000w, appimage-launcher-first-run_001.png 1178w" sizes="(min-width: 720px) 720px" width="1178" height="700"></a><figcaption>AppImage Launcher first run</figcaption></figure><p>You can change the centralized AppImage file location to your liking by pressing the <strong>customize</strong> button. Also, in the above screenshots, you can toggle off the checkbox, which will automatically move the new AppImage to the specified location. Pressing the OK button will ask permission to either <strong>run once</strong> or <strong>integrate and run</strong>.</p><figure class="kg-card kg-image-card kg-card-hascaption"><a data-no-swup="" data-fslightbox="" href="https://itsfoss.com/content/images/wordpress/2022/11/confirm-integration-of-appimage-in-appimage-launcher.png" aria-label="Click for Lightbox"><img src="confirm-integration-of-appimage-in-appimage-launcher.png" class="kg-image" alt="confirm integration of appimage in appimage launcher" loading="lazy" srcset="confirm-integration-of-appimage-in-appimage-launcher_001.png 600w, confirm-integration-of-appimage-in-appimage-launcher.webp 1000w, confirm-integration-of-appimage-in-appimage-launcher.png 1178w" sizes="(min-width: 720px) 720px" width="1178" height="698"></a><figcaption>Confirm integration of AppImage in AppImage launcher</figcaption></figure><p>If you press run once<strong>, </strong>the application will run<strong>,</strong> but will not be integrated. So, in order to get the benefit, press “<strong>integrate and run”</strong>. This will move the AppImage to the specified location and the app will now be accessible from the system menu and can also be pinned to your dash or dock.</p><figure class="kg-card kg-image-card kg-card-hascaption"><a data-no-swup="" data-fslightbox="" href="https://itsfoss.com/content/images/wordpress/2022/11/openshot-application-in-ubuntu-activities-overview.png" aria-label="Click for Lightbox"><img src="openshot-application-in-ubuntu-activities-overview.png" class="kg-image" alt="openshot application in ubuntu activities overview" loading="lazy" srcset="openshot-application-in-ubuntu-activities-overview_001.png 600w, openshot-application-in-ubuntu-activities-overview.webp 1000w, openshot-application-in-ubuntu-activities-overview.png 1078w" sizes="(min-width: 720px) 720px" width="1078" height="351"></a><figcaption>OpenShot application in Ubuntu Activities Overview</figcaption></figure><p>One convenience here is, you don’t even need to make the file executable. Everything will be done by AppImage Launcher.</p><h2 id="things-to-remember-while-using-appimage-in-linux">Things to remember while using AppImage in Linux</h2><p>There are a few additional things about AppImage that you should know.</p><h3 id="1-poorly-packaged-appimage-won-t-run-even-with-execution-permission">1. Poorly packaged AppImage won’t run even with execution permission</h3><p>The concept of AppImage is to have all the dependencies inside the package itself. But what if the developer thought that he had packaged all the dependencies but that didn’t really happen?</p><p>In such cases, you’ll see that even giving execute permission to the AppImage does nothing. You click on the AppImage and nothing happens.</p><p>You can check if there is such an error by opening a terminal and running the AppImage like you run a shell script. Here’s an example:</p><pre><code>abhishek@itsfoss:~/Downloads$ ./compress-pdf-v0.1-x86_64\ \(1\).AppImage 
+/tmp/.mount_compreWhr2rq/check: line 3: xterm: command not found
+Traceback (most recent call last):
+  File "compress-pdf_Qt.py", line 5, in &lt;module&gt;
+    from PyQt5 import QtCore, QtGui, QtWidgets
+ModuleNotFoundError: No module named 'PyQt5'</code></pre><p>As you can see, the AppImage I was trying to run had some packaging issues. If you encounter something like this, you should contact the developer and inform her/him about the issue.</p><h3 id="2-desktop-integration-without-appimage-launcher">2. Desktop integration without AppImage Launcher</h3><p>When you run an AppImage file, <em><em>some software</em></em> may prompt you to ‘install a desktop file’. &nbsp;If you select yes, your AppImage will be integrated with your Linux system like a regularly installed application.</p><figure class="kg-card kg-image-card kg-card-hascaption"><a data-no-swup="" data-fslightbox="" href="https://itsfoss.com/content/images/wordpress/2022/11/create-a-desktop-file-for-the-application-dialog-box.png" aria-label="Click for Lightbox"><img src="create-a-desktop-file-for-the-application-dialog-box.png" class="kg-image" alt="create a desktop file for the application dialog box" loading="lazy" srcset="create-a-desktop-file-for-the-application-dialog-box_001.png 600w, create-a-desktop-file-for-the-application-dialog-box.webp 1000w, create-a-desktop-file-for-the-application-dialog-box.png 1014w" sizes="(min-width: 720px) 720px" width="1014" height="331"></a><figcaption>Create a desktop file for the application dialog box</figcaption></figure><p>Your software will be searchable through GNOME or any application launcher. You can find it in the menu and lock it to the dash or Launcher.</p><p>You can, however, make (most) AppImage applications integrate with the desktop by using AppImage Launcher discussed above.</p><h3 id="3-desktop-integration-without-appimage-launcher-may-require-manual-cleanup-post-removal">3. Desktop integration without AppImage Launcher may require manual cleanup post removal</h3><p>If you choose desktop integration, you’ll have a few files created in your system. The file size will only be in a few Kb, though. Unlike the AppImage Launcher, when you delete the AppImage file, these desktop files remain in your system. You may leave it as it is or delete it manually.</p><h3 id="4-choose-where-you-put-the-appimage-files">4. Choose where you put the AppImage files</h3><p>The downloaded AppImage files should arrive in the Download folder. But this might not be the best place to keep it as it gets cluttered over time. It is better to keep them in a separate directory for easier management.</p><p>Also, remember that if you chose desktop integration and then moved the AppImage file to another location, you’ll have to remove the desktop files first. Else the desktop integration might not work.</p><h3 id="5-update-is-not-always-an-option">5. Update is not always an option</h3><p>Maybe some software will check for updates automatically and notify you about the availability of a newer version. But that’s not going to happen most of the time.</p><figure class="kg-card kg-image-card kg-card-hascaption"><a data-no-swup="" data-fslightbox="" href="https://itsfoss.com/content/images/wordpress/2022/11/openshot-application-prompting-an-update-inside-the-application.png" aria-label="Click for Lightbox"><img src="openshot-application-prompting-an-update-inside-the-application.png" class="kg-image" alt="openshot application prompting an update inside the application" loading="lazy" srcset="openshot-application-prompting-an-update-inside-the-application_001.png 600w, openshot-application-prompting-an-update-inside-the-application.webp 1000w, openshot-application-prompting-an-update-inside-the-application.png 1276w" sizes="(min-width: 720px) 720px" width="1276" height="709"></a><figcaption>OpenShot application prompting an update inside the application</figcaption></figure><p>There is a command line option to check and update the software, but that also depends on whether the developer provided this option.</p><p>In short, automatic updates are not always possible. It depends on whether the developer has added that feature or not. Most of the time, you’ll have to find on your own if a newer version of the software is available.</p><h2 id="conclusion"><strong>Conclusion</strong></h2><p>There are other “universal Linux apps” such as Snap by Ubuntu and Flatpak by Fedora. &nbsp;Since this article was about using AppImage, I didn’t go into the Snap vs Flatpak vs AppImage debate.</p><p>To me, AppImage is a nice way to use software across Linux distributions. I do hope that the update process improves here to make it much more useful for end users.</p><p>What do you think of AppImage? Do you prefer to use AppImage in Linux over other formats? Share your views in the comments below.</p>
+<interaction data-token="5caa056167b3b4fc52f9ace9" data-context="true" data-tags="" data-fallback="true"></interaction>
+</article>
+<div id="hyvor-talk-view"></div>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script async="" type="text/javascript" src="about:blank"></script>
+<div class="post-tags content-width">
+<a href="https://itsfoss.com/tag/guide/">Guide</a>
+</div>
+<div class="social-share content-width m-b-lg">
+<a class="social-share__item twitter js-share" target="_blank" href="https://twitter.com/share?text=How%20to%20Use%20AppImage%20in%20Linux%20%5BComplete%20Guide%5D&amp;url=https://itsfoss.com/use-appimage-linux/" title="Share on Twitter" aria-label="Share on Twitter">
+<i class="icon icon-twitter icon--sm">
+<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+<path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z"></path>
+</svg>
+</i> <span>Tweet</span>
+</a>
+<a class="social-share__item facebook js-share" target="_blank" href="https://www.facebook.com/sharer.php?u=https://itsfoss.com/use-appimage-linux/" title="Share on Facebook" aria-label="Share on Facebook">
+<i class="icon icon-facebook icon--sm">
+<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+<path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"></path>
+</svg>
+</i> <span>Share</span>
+</a>
+<a class="social-share__item linkedin js-share" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://itsfoss.com/use-appimage-linux/&amp;title=How%20to%20Use%20AppImage%20in%20Linux%20%5BComplete%20Guide%5D&amp;summary=How%20to%20Use%20AppImage%20in%20Linux%20%5BComplete%20Guide%5D" title="Share on Linkedin" aria-label="Share on Linkedin">
+<i class="icon icon-linkedin icon--sm">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin">
+<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+<rect x="2" y="9" width="4" height="12"></rect>
+<circle cx="4" cy="4" r="2"></circle>
+</svg>
+</i> <span>Share</span>
+</a>
+<a class="social-share__item mail" href="mailto:?subject=How%20to%20Use%20AppImage%20in%20Linux%20%5BComplete%20Guide%5D&amp;body=https://itsfoss.com/use-appimage-linux/&nbsp;How%20to%20Use%20AppImage%20in%20Linux%20%5BComplete%20Guide%5D" title="Share by email" aria-label="Share by email">
+<i class="icon icon-mail icon--sm">
+<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+<rect x="3" y="5" width="18" height="14" rx="2"></rect>
+<polyline points="3 7 12 13 21 7"></polyline>
+</svg>
+</i> <span>Email</span>
+</a>
+<button class="copy-link copy js-copy-link" data-url="https://itsfoss.com/use-appimage-linux/" title="Copy to clipboard" data-label="Copied!" aria-label="Copy to clipboard">
+<i class="icon icon-copy icon--sm">
+<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copy" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+<rect x="8" y="8" width="12" height="12" rx="2"></rect>
+<path d="M16 8v-2a2 2 0 0 0 -2 -2h-8a2 2 0 0 0 -2 2v8a2 2 0 0 0 2 2h2"></path>
+</svg>
+</i> <span>Copy</span>
+</button>
+</div>
+</div>
+<div class="col-xs-12 col-lg-3">
+<aside class="sidebar">
+<span class="section-title sm">Featured</span>
+<div class="sidebar__section">
+<a class="sidebar-story" href="https://itsfoss.com/open-source-android-apps/"> <figure class="sidebar-story__media m-r">
+<picture class="">
+<source data-srcset="/content/images/size/w100/format/webp/2023/02/best-foss-android-apps.png 100w,/content/images/size/w300/format/webp/2023/02/best-foss-android-apps.png 300w," data-sizes="auto" type="image/webp" sizes="64px" srcset="best-foss-android-apps.png 100w,best-foss-android-apps_001.png 300w,">
+<img class="lazyautosizes lazyloaded" data-srcset="/content/images/size/w100/2023/02/best-foss-android-apps.png 100w,/content/images/size/w300/2023/02/best-foss-android-apps.png 300w," srcset="best-foss-android-apps_002.png 100w,best-foss-android-apps_003.png 300w," data-sizes="auto" data-src="/content/images/size/w100/2023/02/best-foss-android-apps.png" src="best-foss-android-apps_002.png" alt="tux avatar holding an android mobile phone" sizes="64px">
+</picture> </figure>
+<div class="sidebar-story__content">
+<h3 class="sidebar-story__title">40+ Best Open Source Android Apps</h3>
+</div>
+</a><a class="sidebar-story" href="https://itsfoss.com/android-distributions-roms/"> <figure class="sidebar-story__media m-r">
+<picture class="">
+<source data-srcset="/content/images/size/w100/format/webp/2023/02/de-googled-android-based-os.png 100w,/content/images/size/w300/format/webp/2023/02/de-googled-android-based-os.png 300w," data-sizes="auto" type="image/webp" sizes="64px" srcset="de-googled-android-based-os.png 100w,de-googled-android-based-os_001.png 300w,">
+<img class="lazyautosizes lazyloaded" data-srcset="/content/images/size/w100/2023/02/de-googled-android-based-os.png 100w,/content/images/size/w300/2023/02/de-googled-android-based-os.png 300w," srcset="de-googled-android-based-os_002.png 100w,de-googled-android-based-os_003.png 300w," data-sizes="auto" data-src="/content/images/size/w100/2023/02/de-googled-android-based-os.png" src="de-googled-android-based-os_002.png" alt="image with an android logo on a smartphone with google logo distorted in the background" sizes="64px">
+</picture> </figure>
+<div class="sidebar-story__content">
+<h3 class="sidebar-story__title">5 De-Googled Android-based Operating Systems to Free Your Smartphone from Google and other Big Tech</h3>
+</div>
+</a><a class="sidebar-story" href="https://itsfoss.com/open-source-alternatives-android/"> <figure class="sidebar-story__media m-r">
+<picture class="">
+<source data-srcset="/content/images/size/w100/format/webp/wordpress/2015/07/open-source-mobile-os-alternative-android.jpeg 100w,/content/images/size/w300/format/webp/wordpress/2015/07/open-source-mobile-os-alternative-android.jpeg 300w," data-sizes="auto" type="image/webp" sizes="64px" srcset="open-source-mobile-os-alternative-android.jpeg 100w,open-source-mobile-os-alternative-android_001.jpeg 300w,">
+<img class="lazyautosizes lazyloaded" data-srcset="/content/images/size/w100/wordpress/2015/07/open-source-mobile-os-alternative-android.jpeg 100w,/content/images/size/w300/wordpress/2015/07/open-source-mobile-os-alternative-android.jpeg 300w," srcset="open-source-mobile-os-alternative-android_002.jpeg 100w,open-source-mobile-os-alternative-android_003.jpeg 300w," data-sizes="auto" data-src="/content/images/size/w100/wordpress/2015/07/open-source-mobile-os-alternative-android.jpeg" src="open-source-mobile-os-alternative-android_002.jpeg" alt="Open Source Mobile OS Alternatives To Android" sizes="64px">
+</picture> </figure>
+<div class="sidebar-story__content">
+<h3 class="sidebar-story__title">Open Source Mobile OS Alternatives To Android</h3>
+</div>
+</a> </div>
+<span class="section-title sm">Latest</span>
+<div class="sidebar__section">
+<a class="sidebar-story" href="https://itsfoss.com/foss-weekly-23-11/"> <figure class="sidebar-story__media m-r">
+<picture class="">
+<source data-srcset="/content/images/size/w100/format/webp/2023/03/foss-weekly-23-11--1-.png 100w,/content/images/size/w300/format/webp/2023/03/foss-weekly-23-11--1-.png 300w," data-sizes="auto" type="image/webp" sizes="64px" srcset="foss-weekly-23-11--1-.png 100w,foss-weekly-23-11--1-_001.png 300w,">
+<img class="lazyautosizes lazyloaded" data-srcset="/content/images/size/w100/2023/03/foss-weekly-23-11--1-.png 100w,/content/images/size/w300/2023/03/foss-weekly-23-11--1-.png 300w," srcset="foss-weekly-23-11--1-_002.png 100w,foss-weekly-23-11--1-_003.png 300w," data-sizes="auto" data-src="/content/images/size/w100/2023/03/foss-weekly-23-11--1-.png" src="foss-weekly-23-11--1-_002.png" alt="FOSS Weekly 23.11" sizes="64px">
+</picture> </figure>
+<div class="sidebar-story__content">
+<h3 class="sidebar-story__title">FOSS Weekly #23.11: Ubuntu 23.04 Features, 2 New Distros, Terminal Basics and More Linux Stuff</h3>
+<div class="sidebar-story__info">
+<time datetime="2023-03-16" class="sidebar-story__date">
+16 Mar 2023
+</time>
+</div>
+</div>
+</a><a class="sidebar-story" href="https://itsfoss.com/view-file-contents/"> <figure class="sidebar-story__media m-r">
+<picture class="">
+<source data-srcset="/content/images/size/w100/format/webp/2023/03/view-file-contents.png 100w,/content/images/size/w300/format/webp/2023/03/view-file-contents.png 300w," data-sizes="auto" type="image/webp" sizes="64px" srcset="view-file-contents.png 100w,view-file-contents_001.png 300w,">
+<img class="lazyautosizes lazyloaded" data-srcset="/content/images/size/w100/2023/03/view-file-contents.png 100w,/content/images/size/w300/2023/03/view-file-contents.png 300w," srcset="view-file-contents_002.png 100w,view-file-contents_003.png 300w," data-sizes="auto" data-src="/content/images/size/w100/2023/03/view-file-contents.png" src="view-file-contents_002.png" alt="View file contents in Linux command line" sizes="64px">
+</picture> </figure>
+<div class="sidebar-story__content">
+<h3 class="sidebar-story__title">Terminal Basics Series #5: View the File Contents in Linux</h3>
+<div class="sidebar-story__info">
+<time datetime="2023-03-16" class="sidebar-story__date">
+16 Mar 2023
+</time>
+</div>
+</div>
+</a><a class="sidebar-story" href="https://itsfoss.com/check-proxy-server/"> <figure class="sidebar-story__media m-r">
+<picture class="">
+<source data-srcset="/content/images/size/w100/format/webp/2023/03/how-to-know-if-you-are-behind-proxy-server.png 100w,/content/images/size/w300/format/webp/2023/03/how-to-know-if-you-are-behind-proxy-server.png 300w," data-sizes="auto" type="image/webp" sizes="64px" srcset="how-to-know-if-you-are-behind-proxy-server.png 100w,how-to-know-if-you-are-behind-proxy-server_001.png 300w,">
+<img class="lazyautosizes lazyloaded" data-srcset="/content/images/size/w100/2023/03/how-to-know-if-you-are-behind-proxy-server.png 100w,/content/images/size/w300/2023/03/how-to-know-if-you-are-behind-proxy-server.png 300w," srcset="how-to-know-if-you-are-behind-proxy-server_002.png 100w,how-to-know-if-you-are-behind-proxy-server_003.png 300w," data-sizes="auto" data-src="/content/images/size/w100/2023/03/how-to-know-if-you-are-behind-proxy-server.png" src="how-to-know-if-you-are-behind-proxy-server_002.png" alt="proxy server" sizes="64px">
+</picture> </figure>
+<div class="sidebar-story__content">
+<h3 class="sidebar-story__title">How to know if You are Behind a Proxy Server?</h3>
+<div class="sidebar-story__info">
+<time datetime="2023-03-15" class="sidebar-story__date">
+15 Mar 2023
+</time>
+</div>
+</div>
+</a> </div>
+<div class="sidebar__section hide-mobile flex flex-cc">
+<div class="sidebar__subscribe">
+<h4 class="text-acc fw-800">
+Become a Better Linux User
+</h4>
+<div class="m-b text-acc" id="sidebar-input-label">
+With the FOSS Weekly Newsletter, you learn useful Linux tips, discover applications, explore new distros and stay updated with the latest from Linux world
+</div>
+<form class="subscribe-form" data-members-form="subscribe" data-style="">
+<input data-members-email="" class="" autocomplete="email" placeholder="Your email address" aria-labelledby="sidebar-input-label" required="" type="email">
+<button class="btn btn--brand" type="submit">
+<span>Subscribe</span>
+</button>
+<div class="msg-success">Great! Check your inbox and click the link.</div>
+<div class="msg-error">Sorry, something went wrong. Please try again.</div>
+</form> </div>
+</div>
+<div class="sidebar__section flex flex-cc hide-mobile">
+<div data-freestar-ad="__300x250 __300x600" id="itsfoss_300x250_Sidebar1" align="center">
+<script data-cfasync="false" type="text/javascript">/* Code removed by ScrapBook */</script>
+</div>
+</div>
+<div class="sidebar__section is-sticky flex flex-cc hide-mobile">
+<div data-freestar-ad="__300x250__300x600" id="itsfoss_300x250_300x600_Sidebar2" align="center">
+<script data-cfasync="false" type="text/javascript">/* Code removed by ScrapBook */</script>
+</div>
+</div>
+</aside>
+</div>
+</div>
+<div class="flex flex-wrap gap-lg m-b-lg">
+<div class="related-posts radius-double p-lg flex-1 self-align-start">
+<span class="section-title sm m-b uppercase">Read next</span>
+<div class="post-list m-b-sm">
+<a class="post-list-item" href="https://itsfoss.com/which-ubuntu-install/">
+<h3 class="post-list-item__title">Explained: Which Ubuntu Version Should I Use?</h3>
+<i class="icon icon-chevron-right">
+<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+<polyline points="9 6 15 12 9 18"></polyline>
+</svg>
+</i> </a>
+<a class="post-list-item" href="https://itsfoss.com/recover-deleted-files-linux/">
+<h3 class="post-list-item__title">How To Recover Deleted Files In Linux [Beginner's Guide]</h3>
+<i class="icon icon-chevron-right">
+<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+<polyline points="9 6 15 12 9 18"></polyline>
+</svg>
+</i> </a>
+<a class="post-list-item" href="https://itsfoss.com/c-plus-plus-ubuntu/">
+<h3 class="post-list-item__title">How to Run C/C++ Programs in Linux [Terminal &amp; Eclipse]</h3>
+<i class="icon icon-chevron-right">
+<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+<polyline points="9 6 15 12 9 18"></polyline>
+</svg>
+</i> </a>
+<a class="post-list-item" href="https://itsfoss.com/install-windows-10-virtualbox-linux/">
+<h3 class="post-list-item__title">How to Install Windows 10 in VirtualBox in Linux</h3>
+<i class="icon icon-chevron-right">
+<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+<polyline points="9 6 15 12 9 18"></polyline>
+</svg>
+</i> </a>
+<a class="post-list-item" href="https://itsfoss.com/install-linux-chromebook/">
+<h3 class="post-list-item__title">Complete Guide to Installing Linux on Chromebook</h3>
+<i class="icon icon-chevron-right">
+<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+<polyline points="9 6 15 12 9 18"></polyline>
+</svg>
+</i> </a>
+</div>
+</div>
+</div>
+</div>
+</main><iframe style="display: none;" name="__tcfapiLocator" src="index_1.html"></iframe>
+<section class="container wrapper section cta m-b-0 is-post">
+<div class="cta__inner radius-double is-rel w-100 p-t-lg p-b-lg has-img">
+<div class="cta__content flex flex-col is-rel z-index-1">
+<h2 class="cta__title">Become a Better Linux User</h2>
+<p id="cta-input-label" class="cta__description opacity-075">With the FOSS Weekly Newsletter, you learn useful Linux tips, discover applications, explore new distros and stay updated with the latest from Linux world </p>
+<form class="subscribe-form" data-members-form="signup" data-style="inline-joined">
+<input data-members-email="" class="" autocomplete="email" placeholder="Your email address" aria-labelledby="cta-input-label" required="" type="email">
+<button class="btn btn--brand btn--gradient uppercase" type="submit">
+<span>Subscribe</span>
+</button>
+<div class="msg-success">Great! Check your inbox and click the link.</div>
+<div class="msg-error">Sorry, something went wrong. Please try again.</div>
+</form> </div>
+<figure class="cta__media">
+<picture class="">
+<source data-srcset="/content/images/size/w300/format/webp/2023/01/homepage-featured-image.png 300w,/content/images/size/w600/format/webp/2023/01/homepage-featured-image.png 600w,/content/images/size/w1000/format/webp/2023/01/homepage-featured-image.png 1000w,/content/images/size/w2000/format/webp/2023/01/homepage-featured-image.png 2000w" data-sizes="auto" type="image/webp">
+<img class="lazyload cta__img" data-srcset="/content/images/size/w300/2023/01/homepage-featured-image.png 300w,/content/images/size/w600/2023/01/homepage-featured-image.png 600w,/content/images/size/w1000/2023/01/homepage-featured-image.png 1000w,/content/images/size/w2000/2023/01/homepage-featured-image.png 2000w" srcset="homepage-featured-image.webp" data-sizes="auto" data-src="/content/images/size/w100/2023/01/homepage-featured-image.png" src="homepage-featured-image.webp" alt="It's FOSS">
+</picture> </figure>
+</div>
+</section>
+<footer class="footer">
+<div class="container wrapper">
+<div class="row m-b">
+<div class="col-xs-12 col-md-4">
+<div class="footer__brand flex items-center">
+<picture class="">
+<source data-srcset="/content/images/size/w300/format/webp/2023/01/itsfoss-logo.png 300w," data-sizes="auto" type="image/webp">
+<img class="footer__logo m-r lazyload" data-srcset="/content/images/size/w300/2023/01/itsfoss-logo.png 300w," srcset="itsfoss-logo.webp" data-sizes="auto" data-src="/content/images/size/w100/2023/01/itsfoss-logo.png" src="itsfoss-logo.webp" alt="It's FOSS">
+</picture> </div>
+<div class="footer__description" id="footer-input-label">
+Making You a Better Linux User
+</div>
+<form class="subscribe-form radius-rounded m-b" data-members-form="subscribe" data-style="inline-joined">
+<input data-members-email="" class="w-100 radius-rounded" autocomplete="email" placeholder="Your email address" aria-labelledby="footer-input-label" required="" type="email">
+<button class="btn btn--primary radius-rounded" type="submit">
+<span>Subscribe</span>
+</button>
+<div class="msg-success">Great! Check your inbox and click the link.</div>
+<div class="msg-error">Sorry, something went wrong. Please try again.</div>
+</form> </div>
+<div class="col-xs-12 col-md-4 m-b footer-nav">
+<span class="fw-700 m-b-sm display-block text-acc">Navigation</span>
+<div class="grid col-2">
+<ul class="nav">
+<li class="nav-home" data-label="Home" data-length="4">
+<a href="https://itsfoss.com/">
+<span>Home</span>
+</a>
+</li>
+<li class="nav-about" data-label="About" data-length="5">
+<a href="https://itsfoss.com/about/">
+<span>About</span>
+</a>
+</li>
+<li class="nav-contact-us is-subitem" data-label="- Contact us" data-length="12">
+<a href="https://itsfoss.com/contact-us/">
+<span> Contact us</span>
+</a>
+</li>
+<li class="nav-news" data-label="News" data-length="4">
+<a href="https://news.itsfoss.com/">
+<span>News</span>
+</a>
+</li>
+<li class="nav-policies" data-label="Policies" data-length="8">
+<a href="https://itsfoss.com/#">
+<span>Policies</span>
+</a>
+</li>
+<li class="nav-copyright is-subitem" data-label="- Copyright" data-length="11">
+<a href="https://itsfoss.com/copyright/">
+<span> Copyright</span>
+</a>
+</li>
+<li class="nav-privacy is-subitem" data-label="- Privacy" data-length="9">
+<a href="https://itsfoss.com/privacy-policy/">
+<span> Privacy</span>
+</a>
+</li>
+<li class="nav-affiliate is-subitem" data-label="- Affiliate" data-length="11">
+<a href="https://itsfoss.com/affiliate-policy/">
+<span> Affiliate</span>
+</a>
+</li>
+</ul>
+<ul class="nav secondary submenu">
+<li class="nav-linux-server-side" data-label="Linux Server Side" data-length="17">
+<a href="https://linuxhandbook.com/">
+<span>Linux Server Side</span>
+</a>
+</li>
+<li class="nav-community-forum" data-label="Community Forum" data-length="15">
+<a href="https://itsfoss.community/">
+<span>Community Forum</span>
+</a>
+</li>
+<li class="nav-its-foss-en-espanol" data-label="It's FOSS en Español" data-length="20">
+<a href="https://itsfoss.com/es/">
+<span>It's FOSS en Español</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-xs-12 col-sm-6 col-md-2 m-b">
+<span class="fw-700 m-b-sm display-block text-acc">Resources</span>
+<ul class="nav">
+<li><a href="https://itsfoss.com/tag/alternatives/">Alternatives</a></li>
+<li><a href="https://itsfoss.com/tag/distro-resources/">Distro Resources</a></li>
+<li><a href="https://itsfoss.com/tag/software-recommendation/">Software Recommendation</a></li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-6 col-md-2 m-b">
+<span class="fw-700 m-b-sm display-block text-acc">Social</span>
+<div class="social-links flex flex-col">
+<a href="https://www.facebook.com/itsfoss" class="facebook" aria-label="Facebook"><i class="icon icon-facebook icon--sm">
+<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+<path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"></path>
+</svg>
+</i><span>Facebook</span></a>
+<a href="https://twitter.com/itsfoss2" class="twitter" aria-label="Twitter"><i class="icon icon-twitter icon--sm">
+<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+<path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z"></path>
+</svg>
+</i><span>Twitter</span></a>
+<a href="https://itsfoss.com/rss" class="rss" aria-label="RSS"><i class="icon icon-rss icon--sm">
+<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-rss" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+<circle cx="5" cy="19" r="1"></circle>
+<path d="M4 4a16 16 0 0 1 16 16"></path>
+<path d="M4 11a9 9 0 0 1 9 9"></path>
+</svg>
+</i><span>RSS</span></a>
+<a href="https://www.instagram.com/itsfoss/" class="instagram" aria-label="Instagram"><i class="icon icon-instagram icon--sm">
+<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<desc>Download more icon variants from https://tabler-icons.io/i/brand-instagram</desc>
+<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+<rect x="4" y="4" width="16" height="16" rx="4"></rect>
+<circle cx="12" cy="12" r="3"></circle>
+<line x1="16.5" y1="7.5" x2="16.5" y2="7.501"></line>
+</svg>
+</i><span>Instagram</span></a>
+<a href="https://t.me/itsfoss_official" class="telegram" aria-label="Telegram"><i class="icon icon-telegram icon--sm">
+<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-telegram" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<desc>Download more icon variants from https://tabler-icons.io/i/brand-telegram</desc>
+<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+<path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4"></path>
+</svg>
+</i><span>Telegram</span></a>
+<a href="https://www.youtube.com/@Itsfoss" class="youtube" aria-label="Youtube"><i class="icon icon-youtube icon--sm">
+<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-youtube" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<desc>Download more icon variants from https://tabler-icons.io/i/brand-youtube</desc>
+<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+<rect x="3" y="5" width="18" height="14" rx="4"></rect>
+<path d="M10 9l5 3l-5 3z"></path>
+</svg>
+</i><span>Youtube</span></a>
+</div>
+</div>
+</div>
+<div class="footer__bottom">
+<div class="footer__copy">
+<span>©2023&nbsp;<a href="https://itsfoss.com/">It's FOSS</a>.</span>
+<span>Published with&nbsp;<a href="https://ghost.org/">Ghost</a>&nbsp;&amp;&nbsp;<a href="https://bironthemes.com/themes/rinne-ghost/">Rinne</a>.</span>
+</div>
+<div class="color-scheme flex flex-cc radius-half">
+<div class="color-scheme-symbol">
+<span class="accent-bg"></span>
+</div>
+<select class="color-scheme-select radius-half js-color-scheme-select" aria-label="Change color scheme">
+<option value="system" selected="">System</option>
+<option value="light">Light</option>
+<option value="dark">Dark</option>
+</select>
+<i class="icon icon-select">
+<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-select" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path d="M17 8.517L12 3 7 8.517M7 15.48l5 5.517 5-5.517"></path>
+</svg>
+</i></div> </div>
+</div>
+</footer>
+<dialog class="notification">
+<i class="icon icon-success notification-icon">
+<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-check" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+<circle cx="12" cy="12" r="9"></circle>
+<path d="M9 12l2 2l4 -4"></path>
+</svg>
+</i> <i class="icon icon-error notification-icon">
+<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-alert-octagon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+<path d="M8.7 3h6.6c.3 0 .5 .1 .7 .3l4.7 4.7c.2 .2 .3 .4 .3 .7v6.6c0 .3 -.1 .5 -.3 .7l-4.7 4.7c-.2 .2 -.4 .3 -.7 .3h-6.6c-.3 0 -.5 -.1 -.7 -.3l-4.7 -4.7c-.2 -.2 -.3 -.4 -.3 -.7v-6.6c0 -.3 .1 -.5 .3 -.7l4.7 -4.7c.2 -.2 .4 -.3 .7 -.3z"></path>
+<line x1="12" y1="8" x2="12" y2="12"></line>
+<line x1="12" y1="16" x2="12.01" y2="16"></line>
+</svg>
+</i> <i class="icon icon-warning notification-icon">
+<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-alert-triangle" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+<path d="M12 9v2m0 4v.01"></path>
+<path d="M5 19h14a2 2 0 0 0 1.84 -2.75l-7.1 -12.25a2 2 0 0 0 -3.5 0l-7.1 12.25a2 2 0 0 0 1.75 2.75"></path>
+</svg>
+</i> <p class="notification-msg signup-success">Great! You’ve successfully signed up.</p>
+<p class="notification-msg signin-success">Welcome back! You've successfully signed in.</p>
+<p class="notification-msg subscribe-success">You've successfully subscribed to It's FOSS.</p>
+<p class="notification-msg link-expired">Your link has expired.</p>
+<p class="notification-msg checkout-success">Success! Check your email for magic link to sign-in.</p>
+<p class="notification-msg billing-success">Success! Your billing info has been updated.</p>
+<p class="notification-msg billing-cancel">Your billing was not updated.</p>
+<button class="notification-close js-notification-close" aria-label="Close">
+<i class="icon icon-x">
+<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+<line x1="18" y1="6" x2="6" y2="18"></line>
+<line x1="6" y1="6" x2="18" y2="18"></line>
+</svg>
+</i> </button>
+</dialog>
+<script>/* Code removed by ScrapBook */</script>
+<script>/* Code removed by ScrapBook */</script>
+<script>/* Code removed by ScrapBook */</script>
+<script>/* Code removed by ScrapBook */</script>
+<script defer="" src="about:blank" data-cf-beacon="{&quot;rayId&quot;:&quot;7a9c3fc539fc10a0&quot;,&quot;token&quot;:&quot;6d27b61e4f4d41019b514b8b73374672&quot;,&quot;version&quot;:&quot;2023.2.0&quot;,&quot;si&quot;:100}"></script>
+
+
+</body>
+</html>
