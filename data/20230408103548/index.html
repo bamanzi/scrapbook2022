@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html class="hasSidebar hasPageActions hasBreadcrumb conceptual has-default-focus theme-light" dir="ltr" data-css-variable-support="true" data-authenticated="false" data-auth-status-determined="true" data-target="docs" x-ms-format-detection="none" lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta property="og:title" content="Get started mounting a Linux disk in WSL 2">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://learn.microsoft.com/en-us/windows/wsl/wsl2-mount-disk">
+			<meta property="og:description" content="Learn how to set up a disk mount in WSL 2 and how to access it.">
+
+	<meta property="og:image" content="https://learn.microsoft.com/en-us/media/logos/logo-ms-social.png">
+
+	<meta property="og:image:alt" content="Microsoft Logo">
+
+	<meta name="twitter:card" content="summary">
+
+	<meta name="twitter:site" content="@docsmsft">
+
+	<meta name="color-scheme" content="light dark">
+
+
+	<meta name="adobe-target" content="true">
+<meta name="author" content="craigloewen-msft">
+<meta name="breadcrumb_path" content="/windows/wsl/breadcrumb/toc.json">
+<meta name="depot_name" content="WS.wsl">
+<meta name="description" content="Learn how to set up a disk mount in WSL 2 and how to access it.">
+<meta name="document_id" content="17e255b0-71c7-adc6-cac0-6df3b76a971f">
+<meta name="document_version_independent_id" content="a9d73ca3-7026-5b5a-f3fe-3511e976cde4">
+<meta name="gitcommit" content="https://github.com/MicrosoftDocs/WSL/blob/f9f9210315ac96c815448719d5da0e3330ee719c/WSL/wsl2-mount-disk.md">
+<meta name="locale" content="en-us">
+<meta name="ms.author" content="crloewen">
+<meta name="ms.date" content="03/04/2022">
+<meta name="ms.prod" content="dev-environment">
+<meta name="ms.technology" content="windows-subsystem-for-linux">
+<meta name="ms.topic" content="article">
+<meta name="original_content_git_url" content="https://github.com/MicrosoftDocs/WSL/blob/live/WSL/wsl2-mount-disk.md">
+<meta name="page_type" content="conceptual">
+<meta name="pdf_url_template" content="https://learn.microsoft.com/pdfstore/en-us/WS.wsl/{branchName}{pdfName}">
+<meta name="recommendations" content="true">
+<meta name="schema" content="Conceptual">
+<meta name="site_name" content="Docs">
+<meta name="toc_rel" content="toc.json">
+<meta name="uhfHeaderId" content="MSDocsHeader-Windows">
+<meta name="updated_at" content="2023-03-20 08:56 PM">
+<meta name="word_count" content="1239">
+
+
+	<meta name="persistent_id" content="c4e22fa9-10e1-fc8f-2b97-27be460799f5">
+	
+
+
+	<meta name="cmProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8" data-source="generated">
+
+	
+
+	<meta name="scope" content="WSL">
+	<meta name="github_feedback_content_git_url" content="https://github.com/MicrosoftDocs/wsl/blob/main/WSL/wsl2-mount-disk.md">
+<link href="https://learn.microsoft.com/en-us/windows/wsl/wsl2-mount-disk" rel="canonical">
+	<title>Get started mounting a Linux disk in WSL 2 | Microsoft Learn</title>
+
+		<link rel="stylesheet" href="9030462.site-ltr.css">
+
+	
+
+	<script id="msdocs-script">/* Code removed by ScrapBook */</script>
+	<script src="about:blank"></script>
+	<script src="about:blank"></script>
+
+	<script src="about:blank"></script>
+		<link rel="preconnect" href="https://mscom.demdex.net/">
+		<link rel="dns-prefetch" href="https://target.microsoft.com/">
+		<link rel="dns-prefetch" href="https://microsoftmscompoc.tt.omtrdc.net/">
+		<script src="about:blank"></script>
+		<script src="about:blank"></script>
+		<script src="about:blank"></script><style>
+/* Code tidied up by ScrapBook */
+</style>
+<style id="ms-consent-banner-main-styles">
+/* Code tidied up by ScrapBook */
+@media only screen and (max-width: 768px) {
+}
+@media only screen and (max-width: 768px) and (orientation: landscape), only screen and (max-height: 260px), only screen and (max-width: 340px) {
+}
+@media only screen and (max-height: 260px), only screen and (max-width: 340px) {
+}
+</style><style type="text/css" id="ms-consent-banner-theme-styles">
+/* Code tidied up by ScrapBook */
+</style><script type="application/ld+json">/* Code removed by ScrapBook */</script></head>
+
+<body dir="ltr" lang="en-us">
+	<div class="header-holder has-default-focus">
+		<a href="#main" class="skip-to-main-link has-outline-color-text visually-hidden-until-focused position-fixed has-inner-focus focus-visible top-0 left-0 right-0 padding-xs has-text-centered has-body-background" tabindex="1">Skip to main content</a>
+
+		<div id="cookie-consent-holder"></div>
+
+		
+		<!-- liquid-tag banners global -->
+		<div id="headerAreaHolder" data-bi-name="header">
+<header role="banner" itemscope="itemscope" itemtype="http://schema.org/Organization"><!---->   <!----></header>		</div>
+
+
+			<div id="content-header" class="content-header uhf-container has-padding has-default-focus border-bottom-none" data-bi-name="content-header">
+				<div class="content-header-controls margin-xxs margin-inline-sm-tablet">
+					<button type="button" class="contents-button button button-sm margin-right-xxs" data-bi-name="contents-expand" aria-haspopup="true" data-contents-button="">
+						<span class="icon"><span class="docon docon-menu" aria-hidden="true"></span></span>
+						<span class="contents-expand-title">
+Table of contents						</span>
+					</button>
+					<button type="button" class="ap-collapse-behavior ap-expanded button button-sm" data-bi-name="ap-collapse" aria-controls="action-panel">
+						<span class="icon"><span class="docon docon-exit-mode" aria-hidden="true"></span></span>
+						<span>Exit focus mode</span>
+					</button>
+				</div>
+			</div>
+
+		<div id="disclaimer-holder" class="has-overflow-hidden has-default-focus">
+			<!-- liquid-tag banners sectional -->
+		</div>
+	</div>
+
+	<div class="mainContainer  uhf-container has-default-focus" data-bi-name="body">
+
+		<div class="columns has-large-gaps is-gapless-mobile ">
+
+			<div id="left-container" class="left-container is-hidden-mobile column is-one-third-tablet is-one-quarter-desktop">
+				<nav id="affixed-left-container" class="margin-top-sm-tablet position-fixed display-flex flex-direction-column" role="navigation" aria-label="Primary" style="width: 246.6px; top: 24px; bottom: 24px;" data-bi-name="left toc"><form action="javascript:" role="search" aria-label="Search" class="margin-bottom-xxs"><label class="visually-hidden" for="ax-40">Search</label><div class="autocomplete display-block" data-bi-name="autocomplete"><!---->
+			<div class="field-body control has-icons-left">
+				<input role="combobox" maxlength="100" aria-autocomplete="list" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" id="ax-40" data-test-id="ax-40" class="autocomplete-input input input-sm
+						control has-icons-left
+						width-full" aria-expanded="false" aria-owns="ax-41-listbox" aria-controls="ax-41-listbox" aria-activedescendant="" aria-describedby="ms--ax-40-description" placeholder="Filter by title" pattern=".*" type="text">
+
+				<span aria-hidden="true" class="icon is-small is-left">
+					<span class="has-text-primary docon docon-filter-settings"></span>
+				</span>
+
+				<span aria-hidden="true" class="autocomplete-loader loader has-text-primary " hidden=""></span>
+
+				<span id="ms--ax-40-description" hidden="">
+					Suggestions will filter as you type
+				</span>
+			</div>
+
+			<ul role="listbox" id="ax-41-listbox" data-test-id="ax-40-listbox" class="autocomplete-suggestions is-vertically-scrollable padding-xs " aria-label="Suggestions" hidden="">
+				
+				
+			</ul>
+		<!----></div></form><ul class="tree table-of-contents is-vertically-scrollable flex-grow-1 flex-shrink-1" role="tree" aria-label="Table of contents" data-bi-name="tree" data-is-collapsible="true"><li role="none"><a aria-setsize="9" aria-level="1" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/windows/wsl/">WSL Documentation</a></li><li class="tree-item" aria-setsize="9" aria-level="1" aria-posinset="2" role="treeitem" tabindex="-1" id="title-2-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Overview</span></li><li class="tree-item" aria-setsize="9" aria-level="1" aria-posinset="3" role="treeitem" tabindex="-1" id="title-3-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Install</span></li><li class="tree-item" aria-setsize="9" aria-level="1" aria-posinset="4" role="treeitem" tabindex="-1" id="title-4-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Tutorials</span></li><li class="tree-item" aria-setsize="9" aria-level="1" aria-posinset="5" role="treeitem" tabindex="-1" id="title-5-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Concepts</span></li><li class="tree-item is-expanded" aria-setsize="9" aria-level="1" aria-posinset="6" role="treeitem" tabindex="-1" id="title-6-1" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>How-to</span><ul class="tree-group" role="group"><li role="none"><a aria-setsize="7" aria-level="2" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/windows/wsl/enterprise">Set up WSL for your company</a></li><li role="none"><a aria-setsize="7" aria-level="2" aria-posinset="2" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/windows/wsl/use-custom-distro">Import any Linux distribution</a></li><li role="none"><a aria-setsize="7" aria-level="2" aria-posinset="3" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/windows/wsl/build-custom-distro">Build a custom distribution</a></li><li role="none"><a aria-setsize="7" aria-level="2" aria-posinset="4" role="treeitem" tabindex="0" class="tree-item is-leaf has-external-link-indicator is-selected" data-bi-name="tree-leaf" href="#" aria-current="page">Mount a disk in WSL 2</a></li><li role="none"><a aria-setsize="7" aria-level="2" aria-posinset="5" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/windows/wsl/connect-usb">Connect USB devices</a></li><li role="none"><a aria-setsize="7" aria-level="2" aria-posinset="6" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/windows/wsl/case-sensitivity">Adjust case sensitivity</a></li><li role="none"><a aria-setsize="7" aria-level="2" aria-posinset="7" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/windows/wsl/disk-space">Manage available disk space</a></li></ul></li><li role="none"><a aria-setsize="9" aria-level="1" aria-posinset="7" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/windows/wsl/faq">Frequently Asked Questions</a></li><li role="none"><a aria-setsize="9" aria-level="1" aria-posinset="8" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/windows/wsl/troubleshooting">Troubleshooting</a></li><li class="tree-item" aria-setsize="9" aria-level="1" aria-posinset="9" role="treeitem" tabindex="-1" id="title-9-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Release Notes</span></li></ul><div class="padding-xxs padding-none-tablet border-top border-bottom-tablet"><button class="button button-sm button-clear button-block inner-focus justify-content-flex-start-tablet" data-bi-name="download-pdf" rel="nofollow"><!---->
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-dictionary-download"></span>
+			</span>
+			<span><!---->Download PDF<!----></span>
+		<!----></button></div></nav>
+			</div>
+
+			<!-- .primary-holder -->
+			<section class="primary-holder column is-two-thirds-tablet is-three-quarters-desktop">
+				<!--div.columns -->
+				<div class="columns is-gapless-mobile has-large-gaps ">
+
+
+					<div id="main-column" class="column  is-full is-8-desktop">
+
+						<main id="main" class="" role="main" data-bi-name="content" dir="ltr" lang="en-us">
+							<!-- article-header -->
+							<div id="article-header" class="background-color-body margin-top-sm-tablet margin-bottom-xs display-none-print">
+								<div class="display-flex align-items-center ">
+									<details id="article-header-breadcrumbs-overflow-popover" class="popover" data-for="article-header-breadcrumbs" hidden="">
+										<summary class="button button-clear button-primary button-sm inner-focus" aria-label="All breadcrumbs">
+											<span class="icon">
+												<span class="docon docon-more"></span>
+											</span>
+										</summary>
+										<div id="article-header-breadcrumbs-overflow" class="popover-content padding-none"><!---->
+			<nav>
+				<ol class="list-style-none">
+					<!---->
+								<li class="line-clamp-1">
+									<a class="display-block has-inner-focus padding-inline-xs padding-block-xxs border-radius font-size-sm" href="https://learn.microsoft.com/en-us/">
+										Learn
+									</a>
+								</li>
+							<!----><!---->
+								<li class="line-clamp-1">
+									<a class="display-block has-inner-focus padding-inline-xs padding-block-xxs border-radius font-size-sm" href="https://learn.microsoft.com/en-us/windows/">
+										Windows
+									</a>
+								</li>
+							<!----><!---->
+								<li class="line-clamp-1">
+									<a class="display-block has-inner-focus padding-inline-xs padding-block-xxs border-radius font-size-sm" href="https://learn.microsoft.com/en-us/windows/dev-environment/overview">
+										Development environment
+									</a>
+								</li>
+							<!----><!---->
+								<li class="line-clamp-1">
+									<a class="display-block has-inner-focus padding-inline-xs padding-block-xxs border-radius font-size-sm" href="https://learn.microsoft.com/en-us/windows/wsl/">
+										WSL
+									</a>
+								</li>
+							<!----><!---->
+								<li class="line-clamp-1">
+									<a class="display-block has-inner-focus padding-inline-xs padding-block-xxs border-radius font-size-sm" href="https://learn.microsoft.com/en-us/windows/wsl/enterprise">
+										How-to
+									</a>
+								</li>
+							<!----><!----><!---->
+				</ol>
+			</nav>
+			
+		<!----></div>
+									</details>
+									<bread-crumbs id="article-header-breadcrumbs" class="overflow-hidden flex-grow-1 margin-right-sm margin-right-md-tablet margin-right-lg-desktop margin-left-negative-xxs padding-left-xxs" style="display: block; white-space: nowrap; overflow: hidden;"><!---->
+			<nav>
+				<ol class="breadcrumbs">
+					<!---->
+								<li class="breadcrumbs-item" data-bread-crumbs-collapse-target="">
+									<a href="https://learn.microsoft.com/en-us/"><!---->Learn<!----></a>
+								</li>
+							<!----><!---->
+								<li class="breadcrumbs-item" data-bread-crumbs-collapse-target="">
+									<a href="https://learn.microsoft.com/en-us/windows/"><!---->Windows<!----></a>
+								</li>
+							<!----><!---->
+								<li class="breadcrumbs-item" data-bread-crumbs-collapse-target="">
+									<a href="https://learn.microsoft.com/en-us/windows/dev-environment/overview"><!---->Development environment<!----></a>
+								</li>
+							<!----><!---->
+								<li class="breadcrumbs-item" data-bread-crumbs-collapse-target="">
+									<a href="https://learn.microsoft.com/en-us/windows/wsl/"><!---->WSL<!----></a>
+								</li>
+							<!----><!---->
+								<li class="breadcrumbs-item" data-bread-crumbs-collapse-target="" style="">
+									<a href="https://learn.microsoft.com/en-us/windows/wsl/enterprise" style=""><!---->How-to<!----></a>
+								</li>
+							<!----><!----><!---->
+				</ol>
+			</nav>
+		<!----></bread-crumbs>
+
+									<div id="article-header-page-actions" class="margin-left-auto display-flex flex-wrap-no-wrap align-items-stretch">
+
+										<a id="lang-link-tablet" class="button button-primary button-clear button-sm display-none display-inline-flex-tablet" title="Read in English" data-bi-name="language-toggle" data-read-in-link="" href="#" data-bi="{&quot;cN&quot;:&quot;language-toggle&quot;,&quot;value&quot;:&quot;off&quot;}" hidden="">
+											<span class="icon margin-none" aria-hidden="true" data-read-in-link-icon="">
+												<span class="docon docon-locale-globe"></span>
+											</span>
+											<span class="is-visually-hidden" data-read-in-link-text="">Read in English</span>
+										</a>
+
+											<button type="button" class="collection button button-clear button-sm button-primary display-none display-inline-flex-tablet" data-list-type="collection" data-bi-name="collection" title="Add Get started mounting a Linux disk in WSL 2 | Microsoft Learn to a collection" data-pressed="false">
+												<span class="icon margin-none" aria-hidden="true">
+													<span class="docon docon-circle-addition"></span>
+												</span>
+												<span class="collection-status is-visually-hidden">Add</span>
+											</button>
+										
+
+											<a data-contenteditbtn="" class="button button-clear button-sm text-decoration-none button-primary display-none display-inline-flex-tablet" aria-label="Edit" title="Edit This Document" data-bi-name="edit" href="https://github.com/MicrosoftDocs/wsl/blob/main/WSL/wsl2-mount-disk.md" data-original_content_git_url="https://github.com/MicrosoftDocs/WSL/blob/live/WSL/wsl2-mount-disk.md" data-original_content_git_url_template="{repo}/blob/{branch}/WSL/wsl2-mount-disk.md" data-pr_repo="" data-pr_branch="">
+												<span class="icon margin-none" aria-hidden="true">
+													<span class="docon docon-edit-outline"></span>
+												</span>
+											</a>
+										
+
+
+										
+										<details class="popover popover-right" id="article-header-page-actions-overflow">
+											<summary class="justify-content-flex-start button button-clear button-sm button-primary" aria-label="More actions">
+												<span class="icon" aria-hidden="true">
+													<span class="docon docon-more-vertical"></span>
+												</span>
+											</summary>
+											<div class="popover-content padding-none">
+													<button data-page-action-item="overflow-mobile" type="button" class="justify-content-flex-start button-block button-sm has-inner-focus button button-clear display-none-tablet" data-bi-name="contents-expand" data-contents-button="" data-popover-close="">
+														<span class="icon">
+															<span class="docon docon-editor-list-bullet" aria-hidden="true"></span>
+														</span>
+															<span class="contents-expand-title">Table of contents</span>
+													</button>
+
+												<a id="lang-link-overflow" class="justify-content-flex-start button-sm has-inner-focus button button-clear button-block display-none-tablet" title="Read in English" data-bi-name="language-toggle" data-page-action-item="overflow-mobile" data-check-hidden="true" data-read-in-link="" href="#" data-bi="{&quot;cN&quot;:&quot;language-toggle&quot;,&quot;value&quot;:&quot;off&quot;}" hidden="">
+													<span class="icon" aria-hidden="true" data-read-in-link-icon="">
+														<span class="docon docon-locale-globe"></span>
+													</span>
+													<span data-read-in-link-text="">Read in English</span>
+												</a>
+
+													<button type="button" class="collection justify-content-flex-start button button-clear button-sm has-inner-focus button-block display-none-tablet" data-list-type="collection" data-bi-name="collection" title="Add Get started mounting a Linux disk in WSL 2 | Microsoft Learn to a collection" data-page-action-item="overflow-mobile" data-check-hidden="true" data-popover-close="" data-pressed="false">
+														<span class="icon" aria-hidden="true">
+															<span class="docon docon-circle-addition"></span>
+														</span>
+														<span class="collection-status">Add</span>
+													</button>
+
+													<a data-contenteditbtn="" class="button button-clear button-block button-sm has-inner-focus justify-content-flex-start text-decoration-none display-none-tablet" aria-label="Edit" title="Edit This Document" data-bi-name="edit" href="https://github.com/MicrosoftDocs/wsl/blob/main/WSL/wsl2-mount-disk.md" data-original_content_git_url="https://github.com/MicrosoftDocs/WSL/blob/live/WSL/wsl2-mount-disk.md" data-original_content_git_url_template="{repo}/blob/{branch}/WSL/wsl2-mount-disk.md" data-pr_repo="" data-pr_branch="">
+														<span class="icon" aria-hidden="true">
+															<span class="docon docon-edit-outline"></span>
+														</span>
+														<span>Edit</span>
+													</a>
+
+													<button class="button button-block button-clear button-sm justify-content-flex-start has-inner-focus" title="Print" type="button" aria-label="Print" data-bi-name="print" data-page-action-item="overflow-all" data-popover-close="" data-print-page="" data-check-hidden="true">
+														<span class="icon" aria-hidden="true">
+															<span class="docon docon-print"></span>
+														</span>
+														<span>Print</span>
+													</button>
+
+													<div aria-hidden="true" class="margin-none
+														border-top" data-page-action-item="overflow-all"></div>
+
+													
+														<a class="button button-clear button-sm has-inner-focus button-block text-decoration-none justify-content-flex-start share-twitter" data-bi-name="twitter" data-page-action-item="overflow-all" href="https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Flearn.microsoft.com%2Fen-us%2Fwindows%2Fwsl%2Fwsl2-mount-disk%3FWT.mc_id%3Dtwitter&amp;text=Get%20started%20mounting%20a%20Linux%20disk%20in%20WSL%202%20%7C%20Microsoft%20Learn&amp;tw_p=tweetbutton&amp;url=https%3A%2F%2Flearn.microsoft.com%2Fen-us%2Fwindows%2Fwsl%2Fwsl2-mount-disk%3FWT.mc_id%3Dtwitter">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-brand-twitter"></span>
+															</span>
+															<span>Twitter</span>
+														</a>
+														<a class="button button-clear button-sm has-inner-focus button-block text-decoration-none justify-content-flex-start share-linkedin" data-bi-name="linkedin" data-page-action-item="overflow-all" href="https://www.linkedin.com/cws/share?url=https%3A%2F%2Flearn.microsoft.com%2Fen-us%2Fwindows%2Fwsl%2Fwsl2-mount-disk%3FWT.mc_id%3Dlinkedin">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-brand-linkedin"></span>
+															</span>
+															<span>LinkedIn</span>
+														</a>
+														<a class="button button-clear button-sm button-block has-inner-focus text-decoration-none justify-content-flex-start share-facebook" data-bi-name="facebook" data-page-action-item="overflow-all" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flearn.microsoft.com%2Fen-us%2Fwindows%2Fwsl%2Fwsl2-mount-disk%3FWT.mc_id%3Dfacebook">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-brand-facebook"></span>
+															</span>
+															<span>Facebook</span>
+														</a>
+														<a class="button button-clear button-sm button-block has-inner-focus text-decoration-none justify-content-flex-start share-email" data-bi-name="email" data-page-action-item="overflow-all" href="mailto:?subject=%5BShared%20Article%5D%20Get%20started%20mounting%20a%20Linux%20disk%20in%20WSL%202%20%7C%20Microsoft%20Learn&amp;body=Get%20started%20mounting%20a%20Linux%20disk%20in%20WSL%202%20%7C%20Microsoft%20Learn%0A%0Ahttps%3A%2F%2Flearn.microsoft.com%2Fen-us%2Fwindows%2Fwsl%2Fwsl2-mount-disk%3FWT.mc_id%3Demail">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-mail-message-fill"></span>
+															</span>
+															<span>Email</span>
+														</a>
+												
+											</div>
+										</details>
+										
+									</div>
+								</div>
+							</div>
+							<!-- end article-header -->
+
+
+							<div>
+								<button type="button" class="border contents-button button button-clear button-sm is-hidden-tablet has-inner-focus" data-bi-name="contents-expand" data-contents-button="" hidden="">
+									<span class="icon">
+										<span class="docon docon-editor-list-bullet" aria-hidden="true"></span>
+									</span>
+										<span class="contents-expand-title">Table of contents</span>
+								</button>
+							</div>
+
+							<!-- end mobile-contents button  -->
+
+							<div class="content ">
+
+
+								<h1 id="mount-a-linux-disk-in-wsl-2">Mount a Linux disk in WSL 2</h1>
+
+
+									<div class="display-flex justify-content-space-between align-items-center flex-wrap-wrap page-metadata-container">
+										<div class="margin-right-xxs">
+											<ul class="metadata page-metadata" data-bi-name="page info" dir="ltr" lang="en-us">
+													<li>
+Article													</li>
+
+													<li class="visibility-hidden-visual-diff">
+														<time class="" data-article-date="" aria-label="Article review date" datetime="2023-03-20T00:00:00.000Z" data-article-date-source="calculated">03/20/2023</time>
+													</li>
+															<li class="readingTime">6 minutes to read</li>
+														<li class="contributors-holder display-none-print">
+															<button aria-label="View all contributors" class="contributors-button link-button" data-bi-name="contributors" title="View all contributors">
+																	12 contributors
+															</button>
+														</li>
+											</ul>
+										</div>
+
+<div id="user-feedback" class="margin-block-xxs display-none-print" data-hide-on-archived="">
+	<button id="user-feedback-button" data-test-id="conceptual-feedback-button" class="button button-sm button-clear button-primary" type="button" data-bi-name="user-feedback-button" data-user-feedback-button="">
+		<span class="icon" aria-hidden="true">
+			<span class="docon docon-like"></span>
+		</span>
+		<span>Feedback</span>
+	</button>
+</div>
+									</div>
+
+										<nav id="center-doc-outline" class="doc-outline is-hidden-desktop display-none-print margin-bottom-sm" data-bi-name="intopic toc" role="navigation" aria-label="In this article"><!---->
+		<h2 id="ms--in-this-article" class="title is-6 margin-block-xs"><!---->In this article<!----></h2>
+		<ol>
+			<!---->
+					<li>
+						<a href="#prerequisites"><!---->Prerequisites<!----></a>
+					</li>
+				<!---->
+					<li>
+						<a href="#mounting-an-unpartitioned-disk"><!---->Mounting an unpartitioned disk<!----></a>
+					</li>
+				<!---->
+					<li>
+						<a href="#mounting-a-partitioned-disk"><!---->Mounting a partitioned disk<!----></a>
+					</li>
+				<!---->
+					<li>
+						<a href="#unmount-the-disk"><!---->Unmount the disk<!----></a>
+					</li>
+				<!---->
+					<li>
+						<a href="#mount-a-vhd-in-wsl"><!---->Mount a VHD in WSL<!----></a>
+					</li>
+				<!---->
+					<li>
+						<a href="#command-line-reference"><!---->Command line reference<!----></a>
+					</li>
+				<!---->
+					<li>
+						<a href="#limitations"><!---->Limitations<!----></a>
+					</li>
+				<!---->
+		</ol>
+	<!----></nav>
+
+								<!-- <content> -->
+									<p>If you want to access a Linux disk format that isn't supported by Windows, you can use WSL 2 to mount your disk and access its content. This tutorial will cover the steps to identify the disk and partition to attach to WSL2, how to mount them, and how to access them.</p>
+<p>If you are looking for guidance on how to connect a USB device (flash drive, SD card reader, etc), see <a href="https://learn.microsoft.com/en-us/windows/wsl/connect-usb" data-linktype="relative-path">Connect USB devices</a>.</p>
+<div class="alert is-info">
+<p class="alert-title"><span class="docon docon-status-error-outline" aria-hidden="true"></span> Note</p>
+<p>Administrator access is required to attach a disk to WSL 2.
+The WSL 2 <code>mount</code> command does not support mounting a disk (or partitions that belong to the disk) that is currently in use. <code>wsl --mount</code> always attaches the entire disk even if only a partition is requested. You can't mount the Windows installation disk.</p>
+</div>
+<div class="heading-wrapper" data-heading-level="h2"><a class="anchor-link docon docon-link" href="#prerequisites" aria-label="Section titled: Prerequisites"></a><h2 id="prerequisites" class="heading-anchor">Prerequisites</h2></div>
+<p>You will need to be on Windows 11 Build 22000 or later, or be running the Microsoft Store version of WSL. You can join the <a href="https://insider.windows.com/" data-linktype="external">Windows Insiders Program</a> to get the latest preview builds.</p>
+<div class="heading-wrapper" data-heading-level="h2"><a class="anchor-link docon docon-link" href="#mounting-an-unpartitioned-disk" aria-label="Section titled: Mounting an unpartitioned disk"></a><h2 id="mounting-an-unpartitioned-disk" class="heading-anchor">Mounting an unpartitioned disk</h2></div>
+<p>In this simplest case, if you have a disk that doesn't have any partitions, you can mount it directly using the <code>wsl --mount</code> command. First you need to identify the disk.</p>
+<ol>
+<li><p><strong>Identify the disk</strong> - To list the available disks in Windows, run:</p>
+<div class="codeHeader" id="code-try-0" data-bi-name="code-header"><span class="language">PowerShell</span>
+		<button type="button" class="action position-relative display-none-print" data-bi-name="copy">
+			<span class="icon margin-right-xxs" aria-hidden="true">
+				<span class="docon docon-edit-copy"></span>
+			</span>
+			<span>Copy</span>
+			<div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+				<span class="icon font-size-lg">
+					<span class="docon docon-check-mark"></span>
+				</span>
+			</div>
+		</button>
+	</div><pre tabindex="0" class="has-inner-focus"><code class="lang-powershell" data-author-content="GET-CimInstance -query &quot;SELECT * from Win32_DiskDrive&quot;
+"><span><span class="hljs-pscommand">GET-CimInstance</span><span class="hljs-parameter"> -query</span> <span class="hljs-string">"SELECT * from Win32_DiskDrive"</span>
+</span></code></pre>
+<p>The disks paths are available under the 'DeviceID' columns. Usually under the <code>\\.\PHYSICALDRIVE*</code> format.</p>
+</li>
+<li><p><strong>Mount the disk</strong> - Using PowerShell, you can mount the disk using the Disk path discovered above, run:</p>
+<div class="codeHeader" id="code-try-1" data-bi-name="code-header"><span class="language">PowerShell</span>
+		<button type="button" class="action position-relative display-none-print" data-bi-name="copy">
+			<span class="icon margin-right-xxs" aria-hidden="true">
+				<span class="docon docon-edit-copy"></span>
+			</span>
+			<span>Copy</span>
+			<div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+				<span class="icon font-size-lg">
+					<span class="docon docon-check-mark"></span>
+				</span>
+			</div>
+		</button>
+	</div><pre tabindex="0" class="has-inner-focus"><code class="lang-powershell" data-author-content="wsl --mount <DiskPath>
+"><span>wsl<span class="hljs-parameter"> --mount</span> &lt;DiskPath&gt;
+</span></code></pre>
+<p><img src="wslmountsimple.png" alt="Mounting a drive in WSL" data-linktype="relative-path"></p>
+</li>
+</ol>
+<div class="heading-wrapper" data-heading-level="h2"><a class="anchor-link docon docon-link" href="#mounting-a-partitioned-disk" aria-label="Section titled: Mounting a partitioned disk"></a><h2 id="mounting-a-partitioned-disk" class="heading-anchor">Mounting a partitioned disk</h2></div>
+<p>If you have a disk that you aren't sure what file format it is in, or what partitions it has, you can follow the steps below to mount it.</p>
+<ol>
+<li><p><strong>Identify the disk</strong> - To list the available disks in Windows, run:</p>
+<div class="codeHeader" id="code-try-2" data-bi-name="code-header"><span class="language">PowerShell</span>
+		<button type="button" class="action position-relative display-none-print" data-bi-name="copy">
+			<span class="icon margin-right-xxs" aria-hidden="true">
+				<span class="docon docon-edit-copy"></span>
+			</span>
+			<span>Copy</span>
+			<div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+				<span class="icon font-size-lg">
+					<span class="docon docon-check-mark"></span>
+				</span>
+			</div>
+		</button>
+	</div><pre tabindex="0" class="has-inner-focus"><code class="lang-powershell" data-author-content="GET-CimInstance -query &quot;SELECT * from Win32_DiskDrive&quot;
+"><span><span class="hljs-pscommand">GET-CimInstance</span><span class="hljs-parameter"> -query</span> <span class="hljs-string">"SELECT * from Win32_DiskDrive"</span>
+</span></code></pre>
+<p>The disks paths are listed after 'DeviceID', usually in the <code>\\.\PHYSICALDRIVE*</code> format.</p>
+</li>
+<li><p><strong>List and select the partitions to mount in WSL 2</strong> - Once the disk is identified, run:</p>
+<div class="codeHeader" id="code-try-3" data-bi-name="code-header"><span class="language">PowerShell</span>
+		<button type="button" class="action position-relative display-none-print" data-bi-name="copy">
+			<span class="icon margin-right-xxs" aria-hidden="true">
+				<span class="docon docon-edit-copy"></span>
+			</span>
+			<span>Copy</span>
+			<div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+				<span class="icon font-size-lg">
+					<span class="docon docon-check-mark"></span>
+				</span>
+			</div>
+		</button>
+	</div><pre tabindex="0" class="has-inner-focus"><code class="lang-powershell" data-author-content="wsl --mount <DiskPath> --bare
+"><span>wsl<span class="hljs-parameter"> --mount</span> &lt;DiskPath&gt;<span class="hljs-parameter"> --bare</span>
+</span></code></pre>
+<p>This will make the disk available in WSL 2. (In the case of our example, the <code>&lt;DiskPath&gt;</code> is <code>\\.\PHYSICALDRIVE*</code>.</p>
+</li>
+<li><p>Once attached, the partition can be listed by running the following command inside WSL 2:</p>
+<div class="codeHeader" id="code-try-4" data-bi-name="code-header"><span class="language">Bash</span>
+		<button type="button" class="action position-relative display-none-print" data-bi-name="copy">
+			<span class="icon margin-right-xxs" aria-hidden="true">
+				<span class="docon docon-edit-copy"></span>
+			</span>
+			<span>Copy</span>
+			<div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+				<span class="icon font-size-lg">
+					<span class="docon docon-check-mark"></span>
+				</span>
+			</div>
+		</button>
+	</div><pre tabindex="0" class="has-inner-focus"><code class="lang-bash" data-author-content="lsblk
+"><span>lsblk
+</span></code></pre>
+<p>This will display the available block devices and their partitions.</p>
+</li>
+</ol>
+<p>Inside Linux, a block device is identified as  <code>/dev/&lt;Device&gt;&lt;Partition&gt;</code>. For example, /dev/sdb3, is the partition number 3 of disk <code>sdb</code>.</p>
+<p>Example output:</p>
+<div class="codeHeader" id="code-try-5" data-bi-name="code-header"><span class="language">Bash</span>
+		<button type="button" class="action position-relative display-none-print" data-bi-name="copy">
+			<span class="icon margin-right-xxs" aria-hidden="true">
+				<span class="docon docon-edit-copy"></span>
+			</span>
+			<span>Copy</span>
+			<div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+				<span class="icon font-size-lg">
+					<span class="docon docon-check-mark"></span>
+				</span>
+			</div>
+		</button>
+	</div><pre tabindex="0" class="has-inner-focus"><code class="lang-bash" data-author-content="NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sdb      8:16   0    1G  0 disk
+├─sdb2   8:18   0   50M  0 part
+├─sdb3   8:19   0  873M  0 part
+└─sdb1   8:17   0  100M  0 part
+sdc      8:32   0  256G  0 disk /
+sda      8:0    0  256G  0 disk
+"><span>NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sdb      8:16   0    1G  0 disk
+├─sdb2   8:18   0   50M  0 part
+├─sdb3   8:19   0  873M  0 part
+└─sdb1   8:17   0  100M  0 part
+sdc      8:32   0  256G  0 disk /
+sda      8:0    0  256G  0 disk
+</span></code></pre>
+<div class="heading-wrapper" data-heading-level="h3"><a class="anchor-link docon docon-link" href="#identifying-the-filesystem-type" aria-label="Section titled: Identifying the filesystem type"></a><h3 id="identifying-the-filesystem-type" class="heading-anchor">Identifying the filesystem type</h3></div>
+<p>If you don't know the type of filesystem of a disk or partition, you can use this command:</p>
+<div class="codeHeader" id="code-try-6" data-bi-name="code-header"><span class="language">Bash</span>
+		<button type="button" class="action position-relative display-none-print" data-bi-name="copy">
+			<span class="icon margin-right-xxs" aria-hidden="true">
+				<span class="docon docon-edit-copy"></span>
+			</span>
+			<span>Copy</span>
+			<div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+				<span class="icon font-size-lg">
+					<span class="docon docon-check-mark"></span>
+				</span>
+			</div>
+		</button>
+	</div><pre tabindex="0" class="has-inner-focus"><code class="lang-bash" data-author-content="blkid <BlockDevice>
+"><span>blkid &lt;BlockDevice&gt;
+</span></code></pre>
+<p>This will output the detected filesystem type (under the <code>TYPE="&lt;Filesystem&gt;"</code> format).</p>
+<div class="heading-wrapper" data-heading-level="h3"><a class="anchor-link docon docon-link" href="#mount-the-selected-partitions" aria-label="Section titled: Mount the selected partitions"></a><h3 id="mount-the-selected-partitions" class="heading-anchor">Mount the selected partitions</h3></div>
+<p>Once you have identified the partitions you want to mount, run this command on each partition:</p>
+<div class="codeHeader" id="code-try-7" data-bi-name="code-header"><span class="language">PowerShell</span>
+		<button type="button" class="action position-relative display-none-print" data-bi-name="copy">
+			<span class="icon margin-right-xxs" aria-hidden="true">
+				<span class="docon docon-edit-copy"></span>
+			</span>
+			<span>Copy</span>
+			<div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+				<span class="icon font-size-lg">
+					<span class="docon docon-check-mark"></span>
+				</span>
+			</div>
+		</button>
+	</div><pre tabindex="0" class="has-inner-focus"><code class="lang-powershell" data-author-content="wsl --mount <DiskPath> --partition <PartitionNumber> --type <Filesystem>
+"><span>wsl<span class="hljs-parameter"> --mount</span> &lt;DiskPath&gt;<span class="hljs-parameter"> --partition</span> &lt;PartitionNumber&gt;<span class="hljs-parameter"> --type</span> &lt;Filesystem&gt;
+</span></code></pre>
+<div class="alert is-info">
+<p class="alert-title"><span class="docon docon-status-error-outline" aria-hidden="true"></span> Note</p>
+<p>If you wish to mount the entire disk as a single volume (i.e. if the disk isn't partitioned), <code>--partition</code> can be omitted.</p>
+<p>If omitted, the default filesystem type is "ext4".</p>
+</div>
+<div class="heading-wrapper" data-heading-level="h3"><a class="anchor-link docon docon-link" href="#access-the-disk-content" aria-label="Section titled: Access the disk content"></a><h3 id="access-the-disk-content" class="heading-anchor">Access the disk content</h3></div>
+<p>Once mounted, the disk can be accessed under the path pointed to by the config value: <code>automount.root</code>. The default value is <code>/mnt/wsl</code>.</p>
+<p>From Windows, the disk can be accessed from File Explorer by navigating to: <code>\\wsl$\\&lt;Distro&gt;\\&lt;Mountpoint&gt;</code> (pick any Linux distribution).</p>
+<div class="heading-wrapper" data-heading-level="h2"><a class="anchor-link docon docon-link" href="#unmount-the-disk" aria-label="Section titled: Unmount the disk"></a><h2 id="unmount-the-disk" class="heading-anchor">Unmount the disk</h2></div>
+<p>If you want to unmount and detach the disk from WSL 2, run:</p>
+<div class="codeHeader" id="code-try-8" data-bi-name="code-header"><span class="language">PowerShell</span>
+		<button type="button" class="action position-relative display-none-print" data-bi-name="copy">
+			<span class="icon margin-right-xxs" aria-hidden="true">
+				<span class="docon docon-edit-copy"></span>
+			</span>
+			<span>Copy</span>
+			<div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+				<span class="icon font-size-lg">
+					<span class="docon docon-check-mark"></span>
+				</span>
+			</div>
+		</button>
+	</div><pre tabindex="0" class="has-inner-focus"><code class="lang-powershell" data-author-content="wsl --unmount <DiskPath>
+"><span>wsl<span class="hljs-parameter"> --unmount</span> &lt;DiskPath&gt;
+</span></code></pre>
+<div class="heading-wrapper" data-heading-level="h2"><a class="anchor-link docon docon-link" href="#mount-a-vhd-in-wsl" aria-label="Section titled: Mount a VHD in WSL"></a><h2 id="mount-a-vhd-in-wsl" class="heading-anchor">Mount a VHD in WSL</h2></div>
+<div class="alert is-info">
+<p class="alert-title"><span class="docon docon-status-error-outline" aria-hidden="true"></span> Note</p>
+<p><a href="https://devblogs.microsoft.com/commandline/a-preview-of-wsl-in-the-microsoft-store-is-now-available/" data-linktype="external">WSL from the Microsoft Store</a> introduces a new argument to directly mount a VHD: <code>wsl --mount --vhd &lt;pathToVHD&gt;</code></p>
+</div>
+<p>You can also mount virtual hard disk files (VHD) into WSL using <code>wsl --mount</code>. To do this, you first need to mount the VHD into Windows using the <a href="https://learn.microsoft.com/en-us/powershell/module/hyper-v/mount-vhd" data-linktype="absolute-path"><code>Mount-VHD</code></a> command in Windows. Be sure to run this command with administrator privileges. Below is an example where we use this command, and also output the disk path. Be sure to replace <code>&lt;pathToVHD&gt;</code> with your actual VHD path.</p>
+<div class="codeHeader" id="code-try-9" data-bi-name="code-header"><span class="language">PowerShell</span>
+		<button type="button" class="action position-relative display-none-print" data-bi-name="copy">
+			<span class="icon margin-right-xxs" aria-hidden="true">
+				<span class="docon docon-edit-copy"></span>
+			</span>
+			<span>Copy</span>
+			<div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+				<span class="icon font-size-lg">
+					<span class="docon docon-check-mark"></span>
+				</span>
+			</div>
+		</button>
+	</div><pre tabindex="0" class="has-inner-focus"><code class="lang-powershell" data-author-content="Write-Output &quot;\\.\PhysicalDrive$((Mount-VHD -Path <pathToVHD> -PassThru | Get-Disk).Number)&quot;
+"><span><span class="hljs-pscommand">Write-Output</span> <span class="hljs-string">"\\.\PhysicalDrive$((Mount-VHD -Path &lt;pathToVHD&gt; -PassThru | Get-Disk).Number)"</span>
+</span></code></pre>
+<p>You can use the output above to obtain the disk path for this VHD and mount that into WSL following the instructions in the previous section.</p>
+<p>You can also use this technique to mount and interact with the virtual hard disks of other WSL distros, as each WSL 2 distro is stored via a virtual hard disk file called: <code>ext4.vhdx</code>. By default the VHDs for WSL 2 distros are stored in this path: <code>C:\Users\[user]\AppData\Local\Packages\[distro]\LocalState\[distroPackageName]</code>, please exercise caution accessing these system files, this is a power user workflow. Make sure to run <code>wsl --shutdown</code> before interacting with this disk to ensure the disk is not in use.</p>
+<p><img src="wslmountvhd.png" alt="Mounting WSL VHD" data-linktype="relative-path"></p>
+<div class="heading-wrapper" data-heading-level="h2"><a class="anchor-link docon docon-link" href="#command-line-reference" aria-label="Section titled: Command line reference"></a><h2 id="command-line-reference" class="heading-anchor">Command line reference</h2></div>
+<div class="heading-wrapper" data-heading-level="h3"><a class="anchor-link docon docon-link" href="#mounting-a-specific-filesystem" aria-label="Section titled: Mounting a specific filesystem"></a><h3 id="mounting-a-specific-filesystem" class="heading-anchor">Mounting a specific filesystem</h3></div>
+<p>By default, WSL 2 will attempt to mount the device as ext4. To specify another filesystem, run:</p>
+<div class="codeHeader" id="code-try-10" data-bi-name="code-header"><span class="language">PowerShell</span>
+		<button type="button" class="action position-relative display-none-print" data-bi-name="copy">
+			<span class="icon margin-right-xxs" aria-hidden="true">
+				<span class="docon docon-edit-copy"></span>
+			</span>
+			<span>Copy</span>
+			<div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+				<span class="icon font-size-lg">
+					<span class="docon docon-check-mark"></span>
+				</span>
+			</div>
+		</button>
+	</div><pre tabindex="0" class="has-inner-focus"><code class="lang-powershell" data-author-content="wsl --mount <DiskPath> -t <FileSystem>
+"><span>wsl<span class="hljs-parameter"> --mount</span> &lt;DiskPath&gt;<span class="hljs-parameter"> -t</span> &lt;FileSystem&gt;
+</span></code></pre>
+<p>For example, to mount a disk as fat, run:</p>
+<div class="codeHeader" id="code-try-11" data-bi-name="code-header"><span class="language"></span>
+		<button type="button" class="action position-relative display-none-print" data-bi-name="copy">
+			<span class="icon margin-right-xxs" aria-hidden="true">
+				<span class="docon docon-edit-copy"></span>
+			</span>
+			<span>Copy</span>
+			<div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+				<span class="icon font-size-lg">
+					<span class="docon docon-check-mark"></span>
+				</span>
+			</div>
+		</button>
+	</div><pre tabindex="0" class="has-inner-focus"><code data-author-content="wsl --mount <Diskpath> -t vfat
+">wsl --mount &lt;Diskpath&gt; -t vfat
+</code></pre>
+<div class="alert is-info">
+<p class="alert-title"><span class="docon docon-status-error-outline" aria-hidden="true"></span> Note</p>
+<p>To list the available filesystems in WSL2, run: <code>cat /proc/filesystems</code> <br>
+When a disk has been mounted via WSL2 (Linux file system), it is no longer available to mount via an ext4 driver on the Windows file system.</p>
+</div>
+<div class="heading-wrapper" data-heading-level="h3"><a class="anchor-link docon docon-link" href="#mounting-a-specific-partition" aria-label="Section titled: Mounting a specific partition"></a><h3 id="mounting-a-specific-partition" class="heading-anchor">Mounting a specific partition</h3></div>
+<p>By default, WSL 2 attempts to mount the entire disk. To mount a specific partition, run:</p>
+<div class="codeHeader" id="code-try-12" data-bi-name="code-header"><span class="language"></span>
+		<button type="button" class="action position-relative display-none-print" data-bi-name="copy">
+			<span class="icon margin-right-xxs" aria-hidden="true">
+				<span class="docon docon-edit-copy"></span>
+			</span>
+			<span>Copy</span>
+			<div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+				<span class="icon font-size-lg">
+					<span class="docon docon-check-mark"></span>
+				</span>
+			</div>
+		</button>
+	</div><pre tabindex="0" class="has-inner-focus"><code data-author-content="wsl --mount <Diskpath> -p <PartitionIndex>
+">wsl --mount &lt;Diskpath&gt; -p &lt;PartitionIndex&gt;
+</code></pre>
+<p>This only works if the disk is either MBR (Master Boot Record) or GPT (GUID Partition Table). <a href="https://learn.microsoft.com/en-us/windows-server/storage/disk-management/initialize-new-disks#about-partition-styles---gpt-and-mbr" data-linktype="absolute-path">Read about partition styles - MBR and GPT</a>.</p>
+<div class="heading-wrapper" data-heading-level="h3"><a class="anchor-link docon docon-link" href="#specifying-mount-options" aria-label="Section titled: Specifying mount options"></a><h3 id="specifying-mount-options" class="heading-anchor">Specifying mount options</h3></div>
+<p>To specify mount options, run:</p>
+<div class="codeHeader" id="code-try-13" data-bi-name="code-header"><span class="language">PowerShell</span>
+		<button type="button" class="action position-relative display-none-print" data-bi-name="copy">
+			<span class="icon margin-right-xxs" aria-hidden="true">
+				<span class="docon docon-edit-copy"></span>
+			</span>
+			<span>Copy</span>
+			<div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+				<span class="icon font-size-lg">
+					<span class="docon docon-check-mark"></span>
+				</span>
+			</div>
+		</button>
+	</div><pre tabindex="0" class="has-inner-focus"><code class="lang-powershell" data-author-content="wsl --mount <DiskPath> -o <MountOptions>
+"><span>wsl<span class="hljs-parameter"> --mount</span> &lt;DiskPath&gt;<span class="hljs-parameter"> -o</span> &lt;MountOptions&gt;
+</span></code></pre>
+<p>Example:</p>
+<div class="codeHeader" id="code-try-14" data-bi-name="code-header"><span class="language">PowerShell</span>
+		<button type="button" class="action position-relative display-none-print" data-bi-name="copy">
+			<span class="icon margin-right-xxs" aria-hidden="true">
+				<span class="docon docon-edit-copy"></span>
+			</span>
+			<span>Copy</span>
+			<div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+				<span class="icon font-size-lg">
+					<span class="docon docon-check-mark"></span>
+				</span>
+			</div>
+		</button>
+	</div><pre tabindex="0" class="has-inner-focus"><code class="lang-powershell" data-author-content="wsl --mount <DiskPath> -o &quot;data=ordered&quot;
+"><span>wsl<span class="hljs-parameter"> --mount</span> &lt;DiskPath&gt;<span class="hljs-parameter"> -o</span> <span class="hljs-string">"data=ordered"</span>
+</span></code></pre>
+<div class="alert is-info">
+<p class="alert-title"><span class="docon docon-status-error-outline" aria-hidden="true"></span> Note</p>
+<p>Only filesystem specific options are supported at this time. Generic options such as <code>ro, rw, noatime, ...</code> are not supported.</p>
+</div>
+<div class="heading-wrapper" data-heading-level="h3"><a class="anchor-link docon docon-link" href="#attaching-the-disk-without-mounting-it" aria-label="Section titled: Attaching the disk without mounting it"></a><h3 id="attaching-the-disk-without-mounting-it" class="heading-anchor">Attaching the disk without mounting it</h3></div>
+<p>If the disk scheme isn't supported by any of the above options, you can attach the disk to WSL 2 without mounting it by running:</p>
+<div class="codeHeader" id="code-try-15" data-bi-name="code-header"><span class="language">PowerShell</span>
+		<button type="button" class="action position-relative display-none-print" data-bi-name="copy">
+			<span class="icon margin-right-xxs" aria-hidden="true">
+				<span class="docon docon-edit-copy"></span>
+			</span>
+			<span>Copy</span>
+			<div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+				<span class="icon font-size-lg">
+					<span class="docon docon-check-mark"></span>
+				</span>
+			</div>
+		</button>
+	</div><pre tabindex="0" class="has-inner-focus"><code class="lang-powershell" data-author-content="wsl --mount <DiskPath> --bare
+"><span>wsl<span class="hljs-parameter"> --mount</span> &lt;DiskPath&gt;<span class="hljs-parameter"> --bare</span>
+</span></code></pre>
+<p>This will make the block device available inside WSL 2 so it can be mounted manually from there. Use <code>lsblk</code> to list the available block devices inside WSL 2.</p>
+<div class="heading-wrapper" data-heading-level="h3"><a class="anchor-link docon docon-link" href="#specifying-the-mount-name" aria-label="Section titled: Specifying the mount name"></a><h3 id="specifying-the-mount-name" class="heading-anchor">Specifying the mount name</h3></div>
+<div class="alert is-info">
+<p class="alert-title"><span class="docon docon-status-error-outline" aria-hidden="true"></span> Note</p>
+<p>This option is only available with <a href="https://devblogs.microsoft.com/commandline/a-preview-of-wsl-in-the-microsoft-store-is-now-available/" data-linktype="external">WSL from the Microsoft Store</a></p>
+</div>
+<p>By default the mountpoint name is generated based on the physical disk or VHD name. This can be overriden with <code>--name</code>. Example:</p>
+<div class="codeHeader" id="code-try-16" data-bi-name="code-header"><span class="language">PowerShell</span>
+		<button type="button" class="action position-relative display-none-print" data-bi-name="copy">
+			<span class="icon margin-right-xxs" aria-hidden="true">
+				<span class="docon docon-edit-copy"></span>
+			</span>
+			<span>Copy</span>
+			<div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+				<span class="icon font-size-lg">
+					<span class="docon docon-check-mark"></span>
+				</span>
+			</div>
+		</button>
+	</div><pre tabindex="0" class="has-inner-focus"><code class="lang-powershell" data-author-content="wsl --mount <DiskPath> --name myDisk
+"><span>wsl<span class="hljs-parameter"> --mount</span> &lt;DiskPath&gt;<span class="hljs-parameter"> --name</span> myDisk
+</span></code></pre>
+<div class="heading-wrapper" data-heading-level="h3"><a class="anchor-link docon docon-link" href="#detaching-a-disk" aria-label="Section titled: Detaching a disk"></a><h3 id="detaching-a-disk" class="heading-anchor">Detaching a disk</h3></div>
+<p>To detach a disk from WSL 2, run:</p>
+<div class="codeHeader" id="code-try-17" data-bi-name="code-header"><span class="language">PowerShell</span>
+		<button type="button" class="action position-relative display-none-print" data-bi-name="copy">
+			<span class="icon margin-right-xxs" aria-hidden="true">
+				<span class="docon docon-edit-copy"></span>
+			</span>
+			<span>Copy</span>
+			<div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+				<span class="icon font-size-lg">
+					<span class="docon docon-check-mark"></span>
+				</span>
+			</div>
+		</button>
+	</div><pre tabindex="0" class="has-inner-focus"><code class="lang-powershell" data-author-content="wsl --unmount [DiskPath]
+"><span>wsl<span class="hljs-parameter"> --unmount</span> [DiskPath]
+</span></code></pre>
+<p>If <code>Diskpath</code> is omitted, all attached disks are unmounted and detached.</p>
+<div class="alert is-info">
+<p class="alert-title"><span class="docon docon-status-error-outline" aria-hidden="true"></span> Note</p>
+<p>If one disk fails to unmount, WSL 2 can be forced to exit by running <code>wsl --shutdown</code>, which will detach the disk.</p>
+</div>
+<div class="heading-wrapper" data-heading-level="h2"><a class="anchor-link docon docon-link" href="#limitations" aria-label="Section titled: Limitations"></a><h2 id="limitations" class="heading-anchor">Limitations</h2></div>
+<ul>
+<li><p>At this time, only entire disks can be attached to WSL 2, meaning that it's not possible to attach only a partition. Concretely, this means that it's not possible to use <code>wsl --mount</code> to read a partition on the boot device, because that device can't be detached from Windows.</p>
+</li>
+<li><p>Only filesystems that are natively supported in the kernel can be mounted by <code>wsl --mount</code>. This means that it's not possible to use installed filesystem drivers (such as ntfs-3g for example) by calling <code>wsl --mount</code>.</p>
+</li>
+<li><p>Filesystems not directly supported by the kernel can be mounted via a <code>--bare</code> attach and then invoking the relevant FUSE driver.</p>
+</li>
+</ul>
+
+							</div>
+
+							<div id="assertive-live-region" role="alert" aria-live="assertive" class="visually-hidden" aria-relevant="additions" aria-atomic="true"></div>
+							<div id="polite-live-region" role="status" aria-live="polite" class="visually-hidden" aria-relevant="additions" aria-atomic="true"></div>
+							<!-- </content> -->
+
+						</main>
+
+
+
+
+						<!-- recommendations section -->
+							<section id="recommendations-section" data-bi-name="recommendations" class="display-none-print margin-bottom-md margin-bottom-none-desktop"><!---->
+			<hr class="hr">
+			<h2 class="title is-3 margin-top-sm" id="recommended-content"><!---->Recommended content<!----></h2>
+			
+		<ul id="recommendations-list" aria-live="polite" aria-relevant="additions" aria-labelledby="recommended-content" class="margin-bottom-sm">
+			<!---->
+					<li class="margin-top-xs ">
+						<article class="card">
+							<div class="card-content">
+								<a class="card-content-title stretched-link" href="https://learn.microsoft.com/en-us/windows/wsl/troubleshooting?source=recommendations" data-bi-name="recommendation-item-0">
+									<h3><!---->Troubleshooting Windows Subsystem for Linux<!----></h3>
+								</a>
+								<p class="card-content-description line-clamp-3"><!---->Provides detailed information about common errors and issues people run into while running Linux on the Windows Subsystem for Linux.<!----></p>
+							</div>
+						</article>
+					</li>
+				<!---->
+					<li class="margin-top-xs ">
+						<article class="card">
+							<div class="card-content">
+								<a class="card-content-title stretched-link" href="https://learn.microsoft.com/en-us/windows/wsl/tutorials/gui-apps?source=recommendations" data-bi-name="recommendation-item-1">
+									<h3><!---->Run Linux GUI apps with WSL<!----></h3>
+								</a>
+								<p class="card-content-description line-clamp-3"><!---->Learn how WSL support running Linux GUI apps.<!----></p>
+							</div>
+						</article>
+					</li>
+				<!---->
+					<li class="margin-top-xs ">
+						<article class="card">
+							<div class="card-content">
+								<a class="card-content-title stretched-link" href="https://learn.microsoft.com/en-us/windows/wsl/connect-usb?source=recommendations" data-bi-name="recommendation-item-2">
+									<h3><!---->Connect USB devices<!----></h3>
+								</a>
+								<p class="card-content-description line-clamp-3"><!---->Learn how to connect a USB device to your WSL 2 Linux distribution using usbipd-win.<!----></p>
+							</div>
+						</article>
+					</li>
+				<!---->
+					<li class="margin-top-xs ">
+						<article class="card">
+							<div class="card-content">
+								<a class="card-content-title stretched-link" href="https://learn.microsoft.com/en-us/windows/wsl/faq?source=recommendations" data-bi-name="recommendation-item-3">
+									<h3><!---->FAQ's about Windows Subsystem for Linux<!----></h3>
+								</a>
+								<p class="card-content-description line-clamp-3"><!---->Find answers to frequently asked questions (FAQs) about the Windows Subsystem for Linux, such as 'What can I do with WSL?'.<!----></p>
+							</div>
+						</article>
+					</li>
+				<!---->
+					<li class="margin-top-xs expandable">
+						<article class="card">
+							<div class="card-content">
+								<a class="card-content-title stretched-link" href="https://learn.microsoft.com/en-us/windows/wsl/basic-commands?source=recommendations" data-bi-name="recommendation-item-4">
+									<h3><!---->Basic commands for WSL<!----></h3>
+								</a>
+								<p class="card-content-description line-clamp-3"><!---->Reference for the basic commands included with Windows Subsystem for Linux (WSL).<!----></p>
+							</div>
+						</article>
+					</li>
+				<!---->
+					<li class="margin-top-xs expandable">
+						<article class="card">
+							<div class="card-content">
+								<a class="card-content-title stretched-link" href="https://learn.microsoft.com/en-us/windows/wsl/use-custom-distro?source=recommendations" data-bi-name="recommendation-item-5">
+									<h3><!---->Import any Linux distribution to use with WSL<!----></h3>
+								</a>
+								<p class="card-content-description line-clamp-3"><!---->Learn how to import any Linux distribution to use with the Windows Subsystem for Linux.<!----></p>
+							</div>
+						</article>
+					</li>
+				<!---->
+					<li class="margin-top-xs expandable">
+						<article class="card">
+							<div class="card-content">
+								<a class="card-content-title stretched-link" href="https://learn.microsoft.com/en-us/windows/wsl/compare-versions?source=recommendations" data-bi-name="recommendation-item-6">
+									<h3><!---->Comparing WSL Versions<!----></h3>
+								</a>
+								<p class="card-content-description line-clamp-3"><!---->WSL 2 provides the benefits of WSL 1, but uses an actual Linux kernel, rather than a translation layer like WSL 1, resulting in faster performance.<!----></p>
+							</div>
+						</article>
+					</li>
+				<!---->
+					<li class="margin-top-xs expandable">
+						<article class="card">
+							<div class="card-content">
+								<a class="card-content-title stretched-link" href="https://learn.microsoft.com/en-us/windows/wsl/disk-space?source=recommendations" data-bi-name="recommendation-item-7">
+									<h3><!---->How to manage WSL disk space<!----></h3>
+								</a>
+								<p class="card-content-description line-clamp-3"><!---->Learn how to check the amount of disk space available, expand the size of the Virtual Hard Disk (VHD), repair a VHD mounting or read-only error, and locate the .vhdx file and disk path for Linux distributions installed with WSL 2.<!----></p>
+							</div>
+						</article>
+					</li>
+				<!---->
+		</ul>
+		
+				<div class="buttons buttons-centered has-background-linethrough">
+					
+		<button type="button" aria-expanded="false" data-show-more="" class="button button-sm margin-bottom-none show-more-button" aria-controls="recommendations-list" data-title="Show more" data-bi-name="show-more-btn">
+			<span class="show-more-text"><!---->Show more<!----></span>
+			
+						<span class="icon align-items-baseline" aria-hidden="true">
+							<span class="expanded-indicator docon docon-chevron-down-light"></span>
+						</span>
+				  
+		</button>
+	
+				</div>
+		  
+	
+		<!----></section>
+						<!-- end recommendations section -->
+
+						<!-- feedback section -->
+<section class="feedback-section position-relative" data-bi-name="feedback-section">
+    <h2 id="feedback" class="title is-3 margin-top-sm">Feedback</h2>
+
+    <div class="alert choose-feedback-type padding-bottom-sm">
+        <p id="send-feedback-about">Submit and view feedback for</p>
+
+        <div class="choose-feedback-buttons buttons margin-top-xs">
+                <a class="button has-external-link-indicator feedback-type-product" aria-label="Send feedback about this product" href="https://github.com/Microsoft/WSL/issues" data-bi-name="product-feedback">
+                    <span>This product</span>
+                </a>
+			<a class="button feedback-type-product github-link" aria-label="Send feedback about this page" data-bi-name="create-issue-on-github" href="https://github.com/MicrosoftDocs/WSL/issues/new?title=&amp;body=%0A%0A%5BEnter%20feedback%20here%5D%0A%0A%0A---%0A%23%23%23%23%20Document%20Details%0A%0A%E2%9A%A0%20*Do%20not%20edit%20this%20section.%20It%20is%20required%20for%20learn.microsoft.com%20%E2%9E%9F%20GitHub%20issue%20linking.*%0A%0A*%20ID%3A%2017e255b0-71c7-adc6-cac0-6df3b76a971f%0A*%20Version%20Independent%20ID%3A%20a9d73ca3-7026-5b5a-f3fe-3511e976cde4%0A*%20Content%3A%20%5BGet%20started%20mounting%20a%20Linux%20disk%20in%20WSL%202%5D(https%3A%2F%2Flearn.microsoft.com%2Fen-us%2Fwindows%2Fwsl%2Fwsl2-mount-disk)%0A*%20Content%20Source%3A%20%5BWSL%2Fwsl2-mount-disk.md%5D(https%3A%2F%2Fgithub.com%2FMicrosoftDocs%2Fwsl%2Fblob%2Fmain%2FWSL%2Fwsl2-mount-disk.md)%0A*%20Product%3A%20**dev-environment**%0A*%20Technology%3A%20**windows-subsystem-for-linux**%0A*%20GitHub%20Login%3A%20%40craigloewen-msft%0A*%20Microsoft%20Alias%3A%20**crloewen**">
+				<span class="icon" aria-hidden="true">
+					<span class="docon docon-brand-github"></span>
+				</span>
+				<span>This page</span>
+			</a>
+        </div>
+    </div>
+
+    <div class="action-container display-flex justify-content-flex-end margin-block-xxs">
+        <a class="view-on-github has-external-link-indicator" data-bi-name="view-on-github" href="https://github.com/MicrosoftDocs/WSL/issues?utf8=%E2%9C%93&amp;q=%22a9d73ca3-7026-5b5a-f3fe-3511e976cde4%22&amp;in=body">
+            <span aria-hidden="true" class="docon docon-brand-github"></span>
+            <span>View all page feedback</span>
+        </a>
+    </div>
+</section>
+						<!-- end feedback section -->
+
+						<!-- feedback report section -->
+						<!-- end feedback report section -->
+
+							<div id="ms--additional-resources-mobile" role="complementary" aria-label="Additional resources" class="display-none-desktop display-none-print">
+								<hr class="hr" hidden="">
+								<h2 id="ms--additional-resources-mobile-heading" class="title is-3" hidden="">Additional resources</h2>
+									<section id="right-rail-recommendations-mobile" data-bi-name="recommendations" hidden=""></section>
+								<section id="right-rail-training-mobile" data-bi-name="learning-resources-card" hidden=""></section>
+								<section id="right-rail-events-mobile" data-bi-name="events-card" hidden=""></section>
+								<section id="right-rail-qna-mobile" data-bi-name="qna-link-card" hidden=""></section>
+							</div>
+
+						<div class="border-top is-visible-interactive has-default-focus margin-top-sm ">
+
+
+
+	<footer id="footer-interactive" data-bi-name="footer" class="footer-layout">
+	<div class="display-flex is-full-height padding-right-lg-desktop">
+			<a data-mscc-ic="false" class="locale-selector-link button button-sm button-clear flex-shrink-0" href="https://learn.microsoft.com/en-us/locale?target=https%3A%2F%2Flearn.microsoft.com%2Fen-us%2Fwindows%2Fwsl%2Fwsl2-mount-disk" data-bi-name="select-locale" aria-label="Content language selector. Currently set to English (United States).">
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-world"></span>
+					</span>
+					<span class="local-selector-link-text">English (United States)</span></a>
+		<div class="margin-inline-xs flex-shrink-0">
+<div class="dropdown has-caret-up">
+	<button class="dropdown-trigger button button-clear button-sm has-inner-focus theme-dropdown-trigger" aria-controls="theme-menu-interactive" aria-expanded="false" title="Theme" data-bi-name="theme">
+		<span class="icon">
+			<span class="docon docon-sun" aria-hidden="true"></span>
+		</span>
+		<span>Theme</span>
+		<span class="icon expanded-indicator" aria-hidden="true">
+			<span class="docon docon-chevron-down-light"></span>
+		</span>
+	</button>
+	<div class="dropdown-menu" id="theme-menu-interactive" role="menu">
+		<ul class="theme-selector padding-xxs" role="none">
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start is-selected" data-theme-to="light" aria-pressed="true">
+					<span class="theme-light margin-right-xxs">
+						<span class="theme-selector-icon css-variable-support border display-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span>
+Light					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start" data-theme-to="dark" aria-pressed="false">
+					<span class="theme-dark margin-right-xxs">
+						<span class="border theme-selector-icon css-variable-support display-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span>
+Dark					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start" data-theme-to="high-contrast" aria-pressed="false">
+					<span class="theme-high-contrast margin-right-xxs">
+						<span class="border theme-selector-icon css-variable-support display-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span>
+High contrast					</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</div>
+		</div>
+	</div>
+	<ul class="links" data-bi-name="footerlinks">
+		<li class="manage-cookies-holder"><button data-bi-name="manageCookies">Manage cookies</button></li>
+				<li><a data-mscc-ic="false" href="https://learn.microsoft.com/en-us/previous-versions/" data-bi-name="archivelink">Previous Versions</a></li>
+				<li><a data-mscc-ic="false" href="https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog" data-bi-name="bloglink">Blog</a></li>
+				<li><a data-mscc-ic="false" href="https://learn.microsoft.com/en-us/contribute/" data-bi-name="contributorGuide">Contribute</a></li>
+					<li><a data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">Privacy</a></li>
+				<li><a data-mscc-ic="false" href="https://learn.microsoft.com/en-us/legal/termsofuse" data-bi-name="termsofuse">Terms of Use</a></li>
+				<li><a data-mscc-ic="false" href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">Trademarks</a></li>
+		<li>© Microsoft 2023</li>
+	</ul>
+</footer>
+						</div>
+
+					</div>
+
+						<div id="ms--additional-resources" class="right-container column is-4-desktop display-none display-block-desktop" data-bi-name="pageactions" role="complementary" aria-label="Additional resources">
+							<div id="affixed-right-container" class="margin-top-sm-tablet" data-bi-name="right-column">
+								<h2 id="ms--additional-resources-heading" class="title is-6 margin-top-md" hidden="">Additional resources</h2>
+								<section id="right-rail-events" data-bi-name="events-card" hidden=""></section>
+								<section id="right-rail-training" data-bi-name="learning-resources-card" hidden=""></section>
+								<section id="right-rail-recommendations" data-bi-name="recommendations" hidden=""></section>
+								<nav id="side-doc-outline" class="doc-outline" data-bi-name="intopic toc" role="navigation" aria-label="In this article"><!---->
+		<article class="border border-radius-lg overflow-hidden">
+			
+		<div class="padding-block-xxs padding-inline-xs border-bottom background-color-body-medium">
+			<p class="font-weight-semibold font-size-md display-flex align-items-center">
+				<span class="icon margin-right-xxs" aria-hidden="true">
+					<span class="docon docon-bulleted-list-three-items"></span>
+				</span>
+				In this article
+			</p>
+		</div>
+	 
+		<ul id="right-rail-in-this-article-list" aria-live="polite" aria-relevant="additions" class="padding-xxs">
+			<!---->
+					<li class="">
+						<a href="#prerequisites"><!---->Prerequisites<!----></a>
+					</li>
+				<!---->
+					<li class="">
+						<a href="#mounting-an-unpartitioned-disk"><!---->Mounting an unpartitioned disk<!----></a>
+					</li>
+				<!---->
+					<li class="">
+						<a href="#mounting-a-partitioned-disk"><!---->Mounting a partitioned disk<!----></a>
+					</li>
+				<!---->
+					<li class="">
+						<a href="#unmount-the-disk"><!---->Unmount the disk<!----></a>
+					</li>
+				<!---->
+					<li class="expandable">
+						<a href="#mount-a-vhd-in-wsl"><!---->Mount a VHD in WSL<!----></a>
+					</li>
+				<!---->
+					<li class="expandable">
+						<a href="#command-line-reference"><!---->Command line reference<!----></a>
+					</li>
+				<!---->
+					<li class="expandable">
+						<a href="#limitations"><!---->Limitations<!----></a>
+					</li>
+				<!---->
+		</ul>
+	
+			<div class="border-top"><!---->
+		<button type="button" aria-expanded="false" data-show-more="" class="button button-clear button-block inner-focus" aria-controls="right-rail-in-this-article-list" data-title="Show more" data-bi-name="show-more-btn">
+			<span class="show-more-text"><!---->Show more<!----></span>
+			
+						<span class="icon align-items-baseline" aria-hidden="true">
+							<span class="expanded-indicator docon docon-chevron-down-light"></span>
+						</span>
+				  
+		</button>
+	<!----></div>
+		</article>
+	<!----></nav>
+								<section id="right-rail-qna" class="margin-top-xxs" data-bi-name="qna-link-card" hidden=""></section>
+							</div>
+						</div>
+
+				</div>
+				<!--end of div.columns -->
+
+			</section>
+			<!--end of .primary-holder -->
+
+			<!-- interactive container -->
+			<aside id="interactive-container" class="interactive-container is-visible-interactive column has-body-background-dark ">
+			</aside>
+			<!-- end of interactive container -->
+		</div>
+
+	</div>
+	<!--end of .mainContainer -->
+
+	<section class="border-top has-default-focus is-hidden-interactive margin-top-sm ">
+
+
+
+	<footer id="footer" data-bi-name="footer" class="footer-layout uhf-container has-padding" role="contentinfo">
+	<div class="display-flex is-full-height padding-right-lg-desktop">
+			<a data-mscc-ic="false" class="locale-selector-link button button-sm button-clear flex-shrink-0" href="https://learn.microsoft.com/en-us/locale?target=https%3A%2F%2Flearn.microsoft.com%2Fen-us%2Fwindows%2Fwsl%2Fwsl2-mount-disk" data-bi-name="select-locale" aria-label="Content language selector. Currently set to English (United States).">
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-world"></span>
+					</span>
+					<span class="local-selector-link-text">English (United States)</span></a>
+		<div class="margin-inline-xs flex-shrink-0">
+<div class="dropdown has-caret-up">
+	<button class="dropdown-trigger button button-clear button-sm has-inner-focus theme-dropdown-trigger" aria-controls="theme-menu" aria-expanded="false" title="Theme" data-bi-name="theme">
+		<span class="icon">
+			<span class="docon docon-sun" aria-hidden="true"></span>
+		</span>
+		<span>Theme</span>
+		<span class="icon expanded-indicator" aria-hidden="true">
+			<span class="docon docon-chevron-down-light"></span>
+		</span>
+	</button>
+	<div class="dropdown-menu" id="theme-menu" role="menu">
+		<ul class="theme-selector padding-xxs" role="none">
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start is-selected" data-theme-to="light" aria-pressed="true">
+					<span class="theme-light margin-right-xxs">
+						<span class="theme-selector-icon css-variable-support border display-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span>
+Light					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start" data-theme-to="dark" aria-pressed="false">
+					<span class="theme-dark margin-right-xxs">
+						<span class="border theme-selector-icon css-variable-support display-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span>
+Dark					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start" data-theme-to="high-contrast" aria-pressed="false">
+					<span class="theme-high-contrast margin-right-xxs">
+						<span class="border theme-selector-icon css-variable-support display-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span>
+High contrast					</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</div>
+		</div>
+	</div>
+	<ul class="links" data-bi-name="footerlinks">
+		<li class="manage-cookies-holder"><button data-bi-name="manageCookies">Manage cookies</button></li>
+				<li><a data-mscc-ic="false" href="https://learn.microsoft.com/en-us/previous-versions/" data-bi-name="archivelink">Previous Versions</a></li>
+				<li><a data-mscc-ic="false" href="https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog" data-bi-name="bloglink">Blog</a></li>
+				<li><a data-mscc-ic="false" href="https://learn.microsoft.com/en-us/contribute/" data-bi-name="contributorGuide">Contribute</a></li>
+					<li><a data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">Privacy</a></li>
+				<li><a data-mscc-ic="false" href="https://learn.microsoft.com/en-us/legal/termsofuse" data-bi-name="termsofuse">Terms of Use</a></li>
+				<li><a data-mscc-ic="false" href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">Trademarks</a></li>
+		<li>© Microsoft 2023</li>
+	</ul>
+</footer>
+	</section>
+
+	<div id="action-panel" role="region" aria-label="Action Panel" class="action-panel has-default-focus" tabindex="-1"></div>
+
+
+</body>
+</html>

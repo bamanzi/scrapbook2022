@@ -1,0 +1,13 @@
+/* Code tidied up by ScrapBook */
+@font-face {
+  font-family: "FabricIcons";
+  font-style: normal;
+  font-weight: normal;
+  src: url("FabricIcons.woff") format("woff");
+}
+.fabric-icon::before { font-family: "FabricIcons"; font-style: normal; font-variant: normal; font-weight: normal; text-decoration: none; text-transform: none; }
+.fabric-icon--ChevronDown::before { content: ""; }
+.fabric-icon--Link::before { content: ""; }
+.fabric-icon--ChevronRight::before { content: ""; }
+.fabric-icon--Message::before { content: ""; }
+.fabric-icon--SortUp::before { content: ""; }

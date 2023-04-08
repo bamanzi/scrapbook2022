@@ -1,0 +1,176 @@
+/* Code tidied up by ScrapBook */
+@keyframes lightbulb {
+0%, 8%, 14% { opacity: 0.1; }
+0%, 10%, 25% { opacity: 0.25; }
+5%, 30%, 50%, 70% { opacity: 0.5; }
+16%, 60%, 80% { opacity: 0.75; }
+90% { opacity: 0.8; }
+94% { opacity: 0.5; }
+100% { opacity: 1; }
+}
+@keyframes pull-string {
+50% { transform: translate3d(0px, 12px, 0px); }
+75% { opacity: 1; transform: none; }
+100% { opacity: 0; }
+}
+@media not all, not all, not all, only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 768px) {
+}
+@media (max-width: 544px) {
+}
+@media (min-width: 544px) {
+}
+@media (max-width: 544px) {
+}
+@media (min-width: 544px) {
+}
+@keyframes development-menu-component-dialog-animation--sm {
+0% { opacity: 0; transform: translateX(16px); }
+}
+@media (min-width: 544px) {
+}
+@media (min-width: 1012px) {
+}
+@media (min-width: 1012px) {
+}
+@media (min-width: 1012px) {
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 768px) {
+}
+@media (prefers-color-scheme: light) {
+}
+@media (prefers-color-scheme: light) and (min-width: 768px) {
+}
+@media (prefers-color-scheme: dark) {
+}
+@media (prefers-color-scheme: dark) and (min-width: 768px) {
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 768px) {
+}
+@media not all, not all, not all, only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 768px) {
+}
+.ClipboardButton { position: relative; }
+@media (min-width: 768px) {
+}
+@media (max-width: 544px) {
+}
+@media (min-width: 544px) {
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 1012px) {
+}
+@media (min-width: 1280px) {
+}
+@media (min-width: 544px) {
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 1012px) {
+}
+@media (min-width: 544px) {
+}
+@media (min-width: 768px) {
+}
+@media print {
+  #serverstats, .Header-old, .Header, .header-search, .reponav, .comment::before, .comment::after, .footer, .pagehead-actions, .discussion-timeline-actions, .timeline-comment-actions, .timeline-new-comment, .thread-subscription-status, .lock-toggle-link, .header, .file-actions, .js-expandable-line, .gh-header-sticky, .pr-toolbar.is-placeholder, .language-color { display: none ! important; }
+  .btn:not(.btn-outline) { color: var(--color-fg-default)  ! important; background: transparent none repeat scroll 0% 0%; }
+  p, .comment h2 { page-break-inside: avoid; }
+  .markdown-body h2 { page-break-after: avoid; }
+  .topic-tag { padding: 0px; }
+  .topic-tag::before { margin-right: -2px; content: "#"; }
+}
+@media (min-width: 544px) {
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 768px) {
+}
+@media (prefers-color-scheme: light) and (min-width: 768px) {
+}
+@media (prefers-color-scheme: dark) and (min-width: 768px) {
+}
+@media (min-width: 544px) {
+}
+@media (min-width: 544px) {
+}
+@media (min-width: 544px) {
+}
+@keyframes show-pane {
+0% { transform: translateX(390px); }
+100% { transform: translateX(0px); }
+}
+@media (min-width: 544px) {
+}
+@media (min-width: 1150px) {
+}
+.line-clamp-2 { display: -webkit-box; -moz-box-orient: vertical; overflow: hidden; }
+@media (min-width: 768px) {
+}
+@keyframes toggle-color {
+0% { background-color: transparent; }
+50% { color: rgb(76, 74, 66); background-color: rgb(255, 249, 234); border-color: rgb(223, 216, 194); }
+100% { background-color: transparent; }
+}
+@keyframes sponsors-progress-animation {
+0% { background-position: 100% center; }
+100% { background-position: 0% center; }
+}
+@keyframes circle-progress {
+0% { stroke-dasharray: 0, 100; }
+}
+@media not all {
+}
+@media not all {
+}
+@media (min-width: 544px) {
+}
+@media not all {
+}
+@keyframes wiggle {
+0% { transform: rotate(-25deg); }
+100% { transform: rotate(15deg) scale(1.2); }
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 544px) {
+}
+@media (min-width: 768px) {
+}
+@media (max-width: 768px) {
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 0px) {
+}
+@media (min-width: 768px) {
+}
+@keyframes tasklist-metadata-toast-slide-in {
+0% { opacity: 0; transform: translateX(-100%); }
+10% { opacity: 1; transform: translateX(0px); }
+80% { opacity: 1; transform: translateX(0px); }
+100% { opacity: 0; }
+}
+@media (min-width: 768px) {
+}
+@media (max-width: 768px) {
+}

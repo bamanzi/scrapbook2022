@@ -1,0 +1,1890 @@
+<!DOCTYPE html>
+<html theme="light" class="js" lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<script>/* Code removed by ScrapBook */</script><meta name="awa-ver" content="light">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="color-scheme" content="dark light">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-title" content="Windows Command Line - Windows Terminal, Console and Command Line, Windows Subsystem for Linux, WSL, Windows Package Manager">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="https://devblogs.microsoft.com/commandline/xmlrpc.php">
+	<!-- [Begin] JSLL SHIM (1DS) domain prefetch  -->
+	<link rel="preconnect" href="https://js.monitor.azure.com/">
+	<link rel="preconnect" href="https://browser.events.data.microsoft.com/">
+	<!-- [END] JSLL SHIM (1DS) domain prefetch  -->
+	<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+	<!-- This site is optimized with the Yoast SEO Premium plugin v20.3 (Yoast SEO v20.3) - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Access Linux filesystems in Windows and WSL 2 - Windows Command Line</title>
+	<link rel="canonical" href="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Access Linux filesystems in Windows and WSL 2">
+	<meta property="og:description" content="Starting with Windows Insiders preview build 20211, WSL 2 will be offering a new feature: wsl --mount. This new parameter allows a physical disk to be attached and mounted inside WSL 2, which enables you to access filesystems that aren’t natively supported by Windows (such as ext4).">
+	<meta property="og:url" content="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/">
+	<meta property="og:site_name" content="Windows Command Line">
+	<meta property="article:published_time" content="2020-09-10T17:08:58+00:00">
+	<meta property="article:modified_time" content="2020-09-10T17:11:14+00:00">
+	<meta property="og:image" content="https://devblogs.microsoft.com/commandline/wp-content/uploads/sites/33/2019/03/CommandLineIcon.png">
+	<meta property="og:image:width" content="512">
+	<meta property="og:image:height" content="512">
+	<meta property="og:image:type" content="image/png">
+	<meta name="author" content="Pierre Boulay">
+	<meta name="twitter:card" content="summary_large_image">
+	<script type="application/ld+json" class="yoast-schema-graph">/* Code removed by ScrapBook */</script>
+	<!-- / Yoast SEO Premium plugin. -->
+
+
+<link rel="alternate" type="application/rss+xml" title="Windows Command Line » Feed" href="https://devblogs.microsoft.com/commandline/feed/">
+<link rel="alternate" type="application/rss+xml" title="Windows Command Line » Comments Feed" href="https://devblogs.microsoft.com/commandline/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Windows Command Line » Access Linux filesystems in Windows and WSL 2 Comments Feed" href="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/feed/">
+<script type="text/javascript">/* Code removed by ScrapBook */</script><script src="about:blank" type="text/javascript" defer=""></script>
+<style type="text/css">
+/* Code tidied up by ScrapBook */
+img.wp-smiley, img.emoji { display: inline ! important; border: medium none ! important; box-shadow: none ! important; height: 1em ! important; width: 1em ! important; margin: 0px 0.07em ! important; vertical-align: -0.1em ! important; background: transparent none repeat scroll 0% 0% ! important; padding: 0px ! important; }
+</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="mpp_gutenberg-css" href="blocks.style.build.css" type="text/css" media="all">
+<link rel="stylesheet" id="classic-theme-styles-css" href="classic-themes.min.css" type="text/css" media="all">
+<style id="global-styles-inline-css" type="text/css">
+/* Code tidied up by ScrapBook */
+body { --wp--preset--color--black:  #000000; --wp--preset--color--cyan-bluish-gray:  #abb8c3; --wp--preset--color--white:  #fff; --wp--preset--color--pale-pink:  #f78da7; --wp--preset--color--vivid-red:  #cf2e2e; --wp--preset--color--luminous-vivid-orange:  #ff6900; --wp--preset--color--luminous-vivid-amber:  #fcb900; --wp--preset--color--light-green-cyan:  #7bdcb5; --wp--preset--color--vivid-green-cyan:  #00d084; --wp--preset--color--pale-cyan-blue:  #8ed1fc; --wp--preset--color--vivid-cyan-blue:  #0693e3; --wp--preset--color--vivid-purple:  #9b51e0; --wp--preset--color--blue:  #007bff; --wp--preset--color--indigo:  #6610f2; --wp--preset--color--purple:  #5533ff; --wp--preset--color--pink:  #e83e8c; --wp--preset--color--red:  #dc3545; --wp--preset--color--orange:  #fd7e14; --wp--preset--color--yellow:  #ffc107; --wp--preset--color--green:  #28a745; --wp--preset--color--teal:  #20c997; --wp--preset--color--cyan:  #17a2b8; --wp--preset--color--gray:  #6c757d; --wp--preset--color--gray-dark:  #343a40; --wp--preset--gradient--vivid-cyan-blue-to-vivid-purple:  linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%); --wp--preset--gradient--light-green-cyan-to-vivid-green-cyan:  linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%); --wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange:  linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%); --wp--preset--gradient--luminous-vivid-orange-to-vivid-red:  linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%); --wp--preset--gradient--very-light-gray-to-cyan-bluish-gray:  linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%); --wp--preset--gradient--cool-to-warm-spectrum:  linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%); --wp--preset--gradient--blush-light-purple:  linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%); --wp--preset--gradient--blush-bordeaux:  linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%); --wp--preset--gradient--luminous-dusk:  linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%); --wp--preset--gradient--pale-ocean:  linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%); --wp--preset--gradient--electric-grass:  linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%); --wp--preset--gradient--midnight:  linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%); --wp--preset--duotone--dark-grayscale:  url('#wp-duotone-dark-grayscale'); --wp--preset--duotone--grayscale:  url('#wp-duotone-grayscale'); --wp--preset--duotone--purple-yellow:  url('#wp-duotone-purple-yellow'); --wp--preset--duotone--blue-red:  url('#wp-duotone-blue-red'); --wp--preset--duotone--midnight:  url('#wp-duotone-midnight'); --wp--preset--duotone--magenta-yellow:  url('#wp-duotone-magenta-yellow'); --wp--preset--duotone--purple-green:  url('#wp-duotone-purple-green'); --wp--preset--duotone--blue-orange:  url('#wp-duotone-blue-orange'); --wp--preset--font-size--small:  13px; --wp--preset--font-size--medium:  20px; --wp--preset--font-size--large:  36px; --wp--preset--font-size--x-large:  42px; --wp--preset--spacing--20:  0.44rem; --wp--preset--spacing--30:  0.67rem; --wp--preset--spacing--40:  1rem; --wp--preset--spacing--50:  1.5rem; --wp--preset--spacing--60:  2.25rem; --wp--preset--spacing--70:  3.38rem; --wp--preset--spacing--80:  5.06rem; }
+:where(.is-layout-flex) { gap: 0.5em; }
+:where(.wp-block-columns.is-layout-flex) { gap: 2em; }
+:where(.wp-block-columns.is-layout-flex) { gap: 2em; }
+</style>
+<link rel="stylesheet" id="child-understrap-styles-css" href="dist.css" type="text/css" media="all">
+<link rel="stylesheet" id="fabric-icons-css" href="fabric-icons.css" type="text/css" media="all">
+<link rel="stylesheet" id="simplecomments-style-css" href="simplecomments.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-featherlight-css" href="wp-featherlight.min.css" type="text/css" media="all">
+<script type="text/javascript">/* Code removed by ScrapBook */</script><script type="text/javascript" src="about:blank" id="jquery-core-js"></script>
+<script type="text/javascript" src="about:blank" id="back-to-top-scripts-js"></script>
+<link rel="https://api.w.org/" href="https://devblogs.microsoft.com/commandline/wp-json/"><link rel="alternate" type="application/json" href="https://devblogs.microsoft.com/commandline/wp-json/wp/v2/posts/5989"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://devblogs.microsoft.com/commandline/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://devblogs.microsoft.com/commandline/wp-includes/wlwmanifest.xml">
+<link rel="shortlink" href="https://devblogs.microsoft.com/commandline/?p=5989">
+<link rel="alternate" type="application/json+oembed" href="https://devblogs.microsoft.com/commandline/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdevblogs.microsoft.com%2Fcommandline%2Faccess-linux-filesystems-in-windows-and-wsl-2%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://devblogs.microsoft.com/commandline/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdevblogs.microsoft.com%2Fcommandline%2Faccess-linux-filesystems-in-windows-and-wsl-2%2F&amp;format=xml">
+<style>
+/* Code tidied up by ScrapBook */
+</style><style type="text/css">
+/* Code tidied up by ScrapBook */
+</style><style type="text/css" id="custom-background-css">
+/* Code tidied up by ScrapBook */
+body.custom-background { background-color: rgb(244, 244, 244); }
+</style>
+	<link rel="preload" as="style" href="https://devblogs.microsoft.com/commandline/wp-content/plugins/code-prettify/prettify/prettify.css"><link rel="icon" href="cropped-CommandLineIcon-1-32x32.png" sizes="32x32">
+<link rel="icon" href="cropped-CommandLineIcon-1-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="https://devblogs.microsoft.com/commandline/wp-content/uploads/sites/33/2019/03/cropped-CommandLineIcon-1-180x180.png">
+<meta name="msapplication-TileImage" content="https://devblogs.microsoft.com/commandline/wp-content/uploads/sites/33/2019/03/cropped-CommandLineIcon-1-270x270.png">
+<style type="text/css">
+/* Code tidied up by ScrapBook */
+@media only screen and (min-width: 650px) {
+}
+@keyframes nsl-loader-spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+</style>	<!-- Start JSLL SHIM(1DS) Tags -->
+	<script src="about:blank" type="text/javascript"></script>
+	<script type="text/javascript">/* Code removed by ScrapBook */</script>
+   	<!-- END JSLL SHIM(1DS) Integration -->
+	<script>/* Code removed by ScrapBook */</script>
+<style id="ms-consent-banner-main-styles">
+/* Code tidied up by ScrapBook */
+@media only screen and (max-width: 768px) {
+}
+@media only screen and (max-width: 768px) and (orientation: landscape), only screen and (max-height: 260px), only screen and (max-width: 340px) {
+}
+@media only screen and (max-height: 260px), only screen and (max-width: 340px) {
+}
+</style><style type="text/css" id="ms-consent-banner-theme-styles">
+/* Code tidied up by ScrapBook */
+</style><link rel="stylesheet" type="text/css" href="prettify.css"><style id="ms-consent-banner-main-styles">
+/* Code tidied up by ScrapBook */
+@media only screen and (max-width: 768px) {
+}
+@media only screen and (max-width: 768px) and (orientation: landscape), only screen and (max-height: 260px), only screen and (max-width: 340px) {
+}
+@media only screen and (max-height: 260px), only screen and (max-width: 340px) {
+}
+</style><style type="text/css" id="ms-consent-banner-theme-styles">
+/* Code tidied up by ScrapBook */
+</style><style type="text/css" id="ms-consent-banner-theme-styles">
+/* Code tidied up by ScrapBook */
+</style></head>
+<body class="post-template-default single single-post postid-5989 single-format-standard custom-background wp-custom-logo wp-featherlight-captions group-blog" style="visibility: visible; opacity: 1;"><div style="display: none;" id="lightningjs-usabilla_live"><div><iframe id="lightningjs-frame-usabilla_live" src="index_1.html" frameborder="0"></iframe></div></div>
+<noscript>
+  <style>
+    body {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+</noscript>
+	
+
+<!-- new cookies banner  -->
+
+
+<script src="about:blank"></script>
+
+		<div id="cookie-banner"></div>
+		<script>/* Code removed by ScrapBook */</script>
+<!-- end new cookies banner  -->
+<!-- UHF header -->
+<div id="headerArea" class="uhf" data-m="{&quot;cN&quot;:&quot;headerArea&quot;,&quot;cT&quot;:&quot;Area_coreuiArea&quot;,&quot;id&quot;:&quot;a1Body&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;Body&quot;}">
+                <div id="headerRegion" data-region-key="headerregion" data-m="{&quot;cN&quot;:&quot;headerRegion&quot;,&quot;cT&quot;:&quot;Region_coreui-region&quot;,&quot;id&quot;:&quot;r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;a1&quot;}">
+
+    <div id="headerUniversalHeader" data-m="{&quot;cN&quot;:&quot;headerUniversalHeader&quot;,&quot;cT&quot;:&quot;Module_coreui-universalheader&quot;,&quot;id&quot;:&quot;m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;r1a1&quot;}" data-module-id="Category|headerRegion|coreui-region|headerUniversalHeader|coreui-universalheader">
+        
+
+
+                        <div data-m="{&quot;cN&quot;:&quot;cookiebanner_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c1m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;m1r1a1&quot;}">
+
+<div id="uhfCookieAlert" data-locale="en-us">
+    <div id="msccBannerV2"></div>
+</div>
+
+                            
+                        </div>
+
+
+
+
+        <a id="uhfSkipToMain" class="m-skip-to-main" data-href="#mainContent" tabindex="0" data-m="{&quot;cN&quot;:&quot;Skip to content_nonnav&quot;,&quot;id&quot;:&quot;nn2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;m1r1a1&quot;}">Skip to main content</a>
+
+
+<header class="c-uhfh context-uhf no-js c-sgl-stck c-category-header " itemscope="itemscope" data-header-footprint="/DEV_Blogs/DEV_header_commandline, fromService: True" data-magict="true" itemtype="http://schema.org/Organization">
+    
+    
+</header>
+
+
+
+
+    </div>
+        </div>
+
+    </div><link rel="stylesheet" href="74-888e54.css" type="text/css" media="all"><link rel="stylesheet" href="override.css" type="text/css"><script src="about:blank"></script><script src="about:blank"></script><!--/ UHF header -->
+<div class="hfeed site" id="page">
+
+<div class="wrapper" id="single-wrapper">
+
+	<div class="container" id="content" tabindex="-1">
+
+		<div class="row" id="mainContent">
+
+			<!-- Do the left sidebar check -->
+			
+<div class="col-md content-area" id="primary">
+
+			<main class="site-main" id="main">
+
+				
+					<article class="addtoanyshare" id="post-5989" data-bi-area="body">
+<div class="row justify-content-center postcontent  " id="featured">
+
+	<div class="entry-content col-12 sharepostcontent">
+        <h1 class="entry-title" style="margin-bottom: 15px;">Access Linux filesystems in Windows and WSL 2</h1>         <div class="row justify-content-center author-header"><div class="col-md-4"><div class="post-detail-avatar-section"><div class="post-detail-avatar"> <img alt="" data-src="https://secure.gravatar.com/avatar/1a7ec26bd627bbdd66fc70cb87c6aefc?s=58&amp;d=identicon&amp;r=g" src="1a7ec26bd627bbdd66fc70cb87c6aefc_003.png" data-srcset="https://secure.gravatar.com/avatar/1a7ec26bd627bbdd66fc70cb87c6aefc?s=116&amp;d=identicon&amp;r=g 2x" class="avatar avatar-58 photo lazyloaded" decoding="async" srcset="1a7ec26bd627bbdd66fc70cb87c6aefc.png 2x" width="58" height="58"></div><p>Pierre Boulay</p></div></div></div><div style="clear: both; padding-bottom: 10px;"></div>        <div class="entry-meta entry-meta-layout" style="text-align: center;">
+            <p style="text-align: center; font-size: 14px; color: rgb(97, 97, 97); margin-top: 20px; padding-top: 6px; border-top: 2px solid rgb(151, 149, 147); display: inline-block;">
+            September 10th, 2020<span class="entry-meta-comment"><a data-bi-name="jump-to-comments" href="#comments" aria-label="click to comments" title="Jump to comments"><i class="fabric-icon fabric-icon--Message"></i>42</a></span><span class="entry-meta-comment"><span class="post-like" id="postLike-5989"><span class="icon-like-dislike"><a class="x-hidden-focus" aria-label="Login to like, vote count 0" title="" data-toggle="tooltip" href="https://devblogs.microsoft.com/commandline/wp-login.php?redirect_to=https%3A%2F%2Fdevblogs.microsoft.com%2Fcommandline%2Faccess-linux-filesystems-in-windows-and-wsl-2%2F" data-bi-id="body" data-bi-name="Login to like" data-original-title="Login to like"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048" class="svg_dd790ee3 x-hidden-focus" focusable="false"><path d="M1504 128q113 0 212 43t173 116 116 173 43 212q0 109-41 209t-118 176l-865 864-865-864Q83 981 42 881T0 672q0-112 42-211t117-173 173-117 212-43q83 0 148 19t120 52 106 81 106 103q55-56 105-103t106-80 121-53 148-19zm294 838q59-59 90-135t31-159q0-87-32-162t-88-131-132-87-163-32q-84 0-149 26t-120 70-105 97-106 111q-54-54-105-109t-106-99-121-72-148-28q-86 0-162 32t-132 89-89 133-33 162q0 83 31 159t91 135l774 774 774-774z"></path></svg><span> 0</span></a></span></span></span></p>
+		</div><!-- .entry-meta -->
+        <div class="social-icon-bar-mobile row justify-content-center">
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/" target="_blank" title="Share on Facebook" rel="noopener noreferrer nofollow" class="facebook"><i class="fa fa-facebook"></i></a>
+    <a href="https://twitter.com/intent/tweet?url=https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/&amp;text=Access%20Linux%20filesystems%20in%20Windows%20and%20WSL%202" target="_blank" title="Share on Twitter" rel="noopener noreferrer nofollow" class="twitter"><i class="fa fa-twitter"></i></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/" target="_blank" title="Share on LinkedIn" rel="noopener noreferrer nofollow" class="linkedin"><i class="fa fa-linkedin"></i></a>
+</div>
+<p>Starting with <a href="https://blogs.windows.com/windows-insider/2020/09/10/announcing-windows-10-insider-preview-build-20211/" target="_blank">Windows Insiders preview build 20211</a>, WSL 2 will be offering a new feature: <code class=" prettyprinted" style=""><span class="pln">wsl </span><span class="pun">--</span><span class="pln">mount</span></code>. This new parameter allows a physical disk to be attached and mounted inside WSL 2, which enables you to access filesystems that aren’t natively supported by Windows (such as ext4).</p>
+<p>So, if you’re dual booting with Windows &amp; Linux using different disks, you can now access your Linux files from Windows!</p>
+<h2 id="getting-started">Getting started<a aria-labelledby="getting-started" class="linkicon" href="#getting-started"><i class="fabric-icon fabric-icon--Link" aria-hidden="true"></i></a></h2>
+<p>To mount a disk, open a PowerShell window with administrator privileges and run:</p>
+<pre class=" prettyprinted" style="" tabindex="0"><code class=" prettyprinted" style=""><span class="pln"><span class="pln">wsl </span></span><span class="pun"><span class="pun">--</span></span><span class="pln"><span class="pln">mount </span></span><span class="pun"><span class="pun">&lt;</span></span><span class="typ"><span class="typ">DiskPath</span></span><span class="pun"><span class="pun">&gt;</span></span></code></pre>
+<p>To list the available disks in Windows, run:</p>
+<pre class=" prettyprinted" style="" tabindex="0"><code class=" prettyprinted" style=""><span class="pln"><span class="pln">wmic diskdrive list brief</span></span></code></pre>
+<p>To unmount and detach the disk from WSL 2, run</p>
+<pre class=" prettyprinted" style="" tabindex="0"><code class=" prettyprinted" style=""><span class="pln"><span class="pln">wsl </span></span><span class="pun"><span class="pun">--</span></span><span class="pln"><span class="pln">unmount </span></span><span class="pun"><span class="pun">&lt;</span></span><span class="typ"><span class="typ">Diskpath</span></span><span class="pun"><span class="pun">&gt;</span></span></code></pre>
+<p>The disks paths are available under the ‘DeviceID’ columns. Usually under the <code class=" prettyprinted" style=""><span class="pln">\\</span><span class="pun">.</span><span class="pln">\\\.\PHYSICALDRIVE</span><span class="pun">*</span></code> format. Below is an example of mounting a specific partition of a given hard disk into WSL and browsing its files.</p>
+<p><a class="lightbox-link" aria-label="Lightbox image, click or press enter to enlarge" href="https://devblogs.microsoft.com/commandline/wp-content/uploads/sites/33/2020/08/mountScreenshot.png" data-featherlight="image"><img decoding="async" data-src="https://devblogs.microsoft.com/commandline/wp-content/uploads/sites/33/2020/08/mountScreenshot.png" src="mountScreenshot.png" alt="terminal with wsl text" class="aligncenter size-full wp-image-6116 lazyloaded" data-srcset="https://devblogs.microsoft.com/commandline/wp-content/uploads/sites/33/2020/08/mountScreenshot.png 1366w, https://devblogs.microsoft.com/commandline/wp-content/uploads/sites/33/2020/08/mountScreenshot-300x200.png 300w, https://devblogs.microsoft.com/commandline/wp-content/uploads/sites/33/2020/08/mountScreenshot-1024x682.png 1024w, https://devblogs.microsoft.com/commandline/wp-content/uploads/sites/33/2020/08/mountScreenshot-768x512.png 768w" sizes="(max-width: 1366px) 100vw, 1366px" srcset="mountScreenshot.png 1366w, mountScreenshot-300x200.png 300w, mountScreenshot-1024x682.png 1024w, mountScreenshot-768x512.png 768w" width="1366" height="910"></a></p>
+<h2 id="accessing-these-files-with-file-explorer">Accessing these files with File Explorer<a aria-labelledby="accessing-these-files-with-file-explorer" class="linkicon" href="#accessing-these-files-with-file-explorer"><i class="fabric-icon fabric-icon--Link" aria-hidden="true"></i></a></h2>
+<p>Once mounted, it’s also possible to access these disks through the Windows explorer by navigating to \wsl$ and then to the mount folder.</p>
+<p><a class="lightbox-link" aria-label="Lightbox image, click or press enter to enlarge" href="https://devblogs.microsoft.com/commandline/wp-content/uploads/sites/33/2020/08/accessEXT4.png" data-featherlight="image"><img decoding="async" data-src="https://devblogs.microsoft.com/commandline/wp-content/uploads/sites/33/2020/08/accessEXT4.png" src="accessEXT4.png" alt="Accessing an EXT4 partition with file explorer" class="aligncenter size-full wp-image-6117 lazyloaded" data-srcset="https://devblogs.microsoft.com/commandline/wp-content/uploads/sites/33/2020/08/accessEXT4.png 1366w, https://devblogs.microsoft.com/commandline/wp-content/uploads/sites/33/2020/08/accessEXT4-300x179.png 300w, https://devblogs.microsoft.com/commandline/wp-content/uploads/sites/33/2020/08/accessEXT4-1024x612.png 1024w, https://devblogs.microsoft.com/commandline/wp-content/uploads/sites/33/2020/08/accessEXT4-768x459.png 768w" sizes="(max-width: 1366px) 100vw, 1366px" srcset="accessEXT4.png 1366w, accessEXT4-300x179.png 300w, accessEXT4-1024x612.png 1024w, accessEXT4-768x459.png 768w" width="1366" height="816"></a></p>
+<h2 id="limitations">Limitations<a aria-labelledby="limitations" class="linkicon" href="#limitations"><i class="fabric-icon fabric-icon--Link" aria-hidden="true"></i></a></h2>
+<p>By default, <code class=" prettyprinted" style=""><span class="pln">wsl </span><span class="pun">--</span><span class="pln">mount</span></code> attempts to mount the disk as ext4. To specify a filesystem, or for more advanced scenarios, check out <a href="https://docs.microsoft.com/windows/wsl/wsl2-mount-disk" target="_blank">Mount a disk in WSL 2</a>.</p>
+<p>Also please note that this feature comes with the limitation that only physical disks can be attached to WSL 2. At this time, it’s not possible to attach a single partition. More details on the limitations <a href="https://docs.microsoft.com/windows/wsl/wsl2-mount-disk#limitations" target="_blank">here</a>.</p>
+<h2 id="give-us-your-feedback">Give us your feedback!<a aria-labelledby="give-us-your-feedback" class="linkicon" href="#give-us-your-feedback"><i class="fabric-icon fabric-icon--Link" aria-hidden="true"></i></a></h2>
+<p>If you run into any issues, or have feedback for our team please file an issue on our <a href="https://github.com/microsoft/wsl/issues" target="_blank">Github</a> , and if you have general questions about WSL you can find all of our team members that are on Twitter on <a href="https://twitter.com/i/lists/1131397802204864512/members" target="_blank">this twitter list</a>.</p>
+
+        <div class="row justify-content-center">
+                </div>
+
+		
+        <div style="clear: both; padding-bottom: 0px;"></div><div class="postdetail-author-info">        <div class="authorinfoarea">
+
+            <div class="post-authoravatar"><img alt="" data-src="https://secure.gravatar.com/avatar/1a7ec26bd627bbdd66fc70cb87c6aefc?s=60&amp;d=identicon&amp;r=g" src="1a7ec26bd627bbdd66fc70cb87c6aefc_004.png" data-srcset="https://secure.gravatar.com/avatar/1a7ec26bd627bbdd66fc70cb87c6aefc?s=120&amp;d=identicon&amp;r=g 2x" class="avatar avatar-60 photo lazyloaded" decoding="async" srcset="1a7ec26bd627bbdd66fc70cb87c6aefc_001.png 2x" width="60" height="60"></div>
+            <h5 class="post-authorname">
+                <a class="no-underline" data-bi-id="author follow within post" data-bi-area="" data-bi-name="Pierre Boulay" aria-label="Pierre Boulay" href="https://devblogs.microsoft.com/commandline/author/piboulay">
+                    Pierre Boulay                </a>
+                <span>Senior Software Engineer, Linux on Windows</span>
+            </h5>
+            <div class="social-links">
+
+                
+        <p>
+            <strong>Follow </strong>
+      <a class="no-underline stayinformed hvr-pop" title="RSS Feed" aria-label="Pierre Boulay RSS Feed" target="_blank" href="https://devblogs.microsoft.com/commandline/author/piboulay/feed/">
+   <i class="fa fa-rss"></i>
+</a>
+        </p>
+
+            <div style="clear: both;"></div>
+
+            </div>
+       </div>
+        </div>
+	</div><!-- .entry-content -->
+
+</div>
+
+
+	<footer class="cattagsarea">
+
+		<span class="cat-links">Posted in <a href="https://devblogs.microsoft.com/commandline/category/commandline/" rel="category tag" aria-label="Command Line Category">Command Line</a></span>
+	</footer><!-- .entry-footer -->
+
+</article><!-- #post-## --><!-- Related Posts -->	
+								 
+				
+			<!-- End Related Posts -->
+					
+
+    <div id="comments" class="comments-area" data-bi-area="comments">
+    				<h2 class="comments-title">
+            42 comments		</h2>
+		
+			<p class="nocomments">Comments are closed.				<a href="https://devblogs.microsoft.com/commandline/wp-login.php?redirect_to=https%3A%2F%2Fdevblogs.microsoft.com%2Fcommandline%2Faccess-linux-filesystems-in-windows-and-wsl-2%2F%23comments" title="Login to edit/delete your existing comments">Login to edit/delete your existing comments</a>
+				</p>
+			<nav aria-label="Comment navigation">
+			<!-- <span class="nav-text">Comments page</span> -->
+				<ul class="pagination">
+										<li class="page-item active">
+							<span aria-current="page" class="page-link current"><span class="screen-reader-text-pagination">Page</span> 1<span class="screen-reader-text-pagination">of comments</span> </span>						</li>
+											<li class="page-item ">
+							<a class="page-link" href="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/comment-page-2#comments"><span class="screen-reader-text-pagination">Page</span> 2<span class="screen-reader-text-pagination">of comments</span> </a>						</li>
+											<li class="page-item ">
+							<a class="next page-link" href="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/comment-page-2#comments"><i class="fabric-icon fabric-icon--ChevronRight"></i><span class="screen-reader-text-pagination">Next comment</span></a>						</li>
+									</ul>
+		</nav>
+	
+		<ul class="commentlist">
+							
+    <li class="comment byuser comment-author-slavo5150 even thread-even depth-1 comment-show" id="li-comment-5166" style="display: block;">
+    	<article id="comment-5166" class="comment">
+        	<div class="comment-author vcard">
+          	<img alt="" data-src="https://secure.gravatar.com/avatar/d761ed356e9112c630c9ace60249ba3f?s=40&amp;d=identicon&amp;r=g" src="d761ed356e9112c630c9ace60249ba3f_001.png" data-srcset="https://secure.gravatar.com/avatar/d761ed356e9112c630c9ace60249ba3f?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo lazyloaded" decoding="async" srcset="d761ed356e9112c630c9ace60249ba3f.png 2x" width="40" height="40">          </div><!-- .comment-author .vcard -->
+          	        <header>
+					<!-- <span class="author-name" <cite class="fn">JinShil</cite> 					</span> -->
+					<span class="author-name">
+												JinShil											</span>
+
+					<span class="comment-date">
+						<time pubdate="" datetime="2020-09-10T18:45:16-07:00">
+							September 10, 2020  6:45 pm          	</time>
+				 	</span>
+
+					 <span class="voting"><span id="loggedoutvotes5166"><a class="comment-reply-login x-hidden-focus" title="" data-toggle="tooltip" href="https://devblogs.microsoft.com/commandline/wp-login.php?redirect_to=https%3A%2F%2Fdevblogs.microsoft.com%2Fcommandline%2Faccess-linux-filesystems-in-windows-and-wsl-2%2F%23comment-5166" data-bi-id="comments" data-bi-name="Login to vote" aria-label="Login to vote" data-original-title="Login to vote"><span class="icon-like-dislike"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048" class="svg_dd790ee3 x-hidden-focus" focusable="false"><path d="M1856 640q39 0 74 15t61 41 42 61 15 75q0 32-10 61l-256 768q-10 29-28 53t-42 42-52 26-60 10h-512q-179 0-345-69-72-29-144-44t-151-15H0V768h417q65 0 122-24t104-70l622-621q25-25 50-39t61-14q33 0 62 12t51 35 34 51 13 62q0 81-18 154t-53 146q-20 43-34 87t-19 93h444zm-256 1024q20 0 37-12t24-32q5-14 18-54t33-96 42-124 46-137 44-134 39-118 27-86 10-39q0-26-19-45t-45-19h-576q0-53 2-98t10-89 22-86 37-91q28-58 42-118t15-126q0-14-9-23t-23-9q-6 0-10 4t-9 9L734 765q-32 32-68 56t-78 41q-80 34-171 34H128v640h320q178 0 345 69 144 59 295 59h512z"></path></svg></span></a> 0</span>				</span>
+					<div class="comment-meta commentmetadata">
+						<span class="collapse-comment" id="collapse-comment-5166" data-toggle="collapse">
+							<!-- <a href="javascript:void(0)" title="collapse this comment"> -->
+							<button class="btn" title="" data-toggle="tooltip" data-original-title="collapse this comment">
+							<span class="sr-only">collapse this comment</span><i class="fabric-icon fabric-icon--ChevronDown" aria-hidden="true"></i>
+							</button>
+							<!-- </a> -->
+						</span>
+						
+						<span class="copy-link">
+							<button class="copy-link-anchor btn" title="" data-toggle="tooltip" data-clipboard-text="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5166" targeturi="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5166" data-original-title="copy link to this comment">
+								<span class="sr-only">copy link to this comment</span>
+								<i class="fabric-icon fabric-icon--Link" aria-hidden="true"></i><div class="copy-link-live" role="region" aria-live="assertive"></div>
+							</button>
+						</span>
+
+											</div><!-- .comment-meta .commentmetadata -->
+				</header>
+																		<div class="comment-content" id="comment-text-5166">
+										<p>But, can you edit the files?</p>
+									</div>
+
+				<footer>
+				<div class="reply">
+									</div><!-- .reply -->
+        </footer>
+      </article><!-- #comment-## -->
+
+    <ul class="children">
+
+    <li class="comment byuser comment-author-smartemma03 odd alt depth-2 comment-show" id="li-comment-5168">
+    	<article id="comment-5168" class="comment">
+        	<div class="comment-author vcard">
+          	<img alt="" data-src="https://secure.gravatar.com/avatar/d7335c0599bdfe2bb5ab4b3df204bcbc?s=40&amp;d=identicon&amp;r=g" src="d7335c0599bdfe2bb5ab4b3df204bcbc_001.png" data-srcset="https://secure.gravatar.com/avatar/d7335c0599bdfe2bb5ab4b3df204bcbc?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo lazyloaded" decoding="async" srcset="d7335c0599bdfe2bb5ab4b3df204bcbc.png 2x" width="40" height="40">          </div><!-- .comment-author .vcard -->
+          	        <header>
+					<!-- <span class="author-name" <cite class="fn">Emmanuel Adebiyi</cite> 					</span> -->
+					<span class="author-name">
+												Emmanuel Adebiyi											</span>
+
+					<span class="comment-date">
+						<time pubdate="" datetime="2020-09-11T06:40:17-07:00">
+							September 11, 2020  6:40 am          	</time>
+				 	</span>
+
+					 <span class="voting"><span id="loggedoutvotes5168"><a class="comment-reply-login x-hidden-focus" title="" data-toggle="tooltip" href="https://devblogs.microsoft.com/commandline/wp-login.php?redirect_to=https%3A%2F%2Fdevblogs.microsoft.com%2Fcommandline%2Faccess-linux-filesystems-in-windows-and-wsl-2%2F%23comment-5168" data-bi-id="comments" data-bi-name="Login to vote" aria-label="Login to vote" data-original-title="Login to vote"><span class="icon-like-dislike"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048" class="svg_dd790ee3 x-hidden-focus" focusable="false"><path d="M1856 640q39 0 74 15t61 41 42 61 15 75q0 32-10 61l-256 768q-10 29-28 53t-42 42-52 26-60 10h-512q-179 0-345-69-72-29-144-44t-151-15H0V768h417q65 0 122-24t104-70l622-621q25-25 50-39t61-14q33 0 62 12t51 35 34 51 13 62q0 81-18 154t-53 146q-20 43-34 87t-19 93h444zm-256 1024q20 0 37-12t24-32q5-14 18-54t33-96 42-124 46-137 44-134 39-118 27-86 10-39q0-26-19-45t-45-19h-576q0-53 2-98t10-89 22-86 37-91q28-58 42-118t15-126q0-14-9-23t-23-9q-6 0-10 4t-9 9L734 765q-32 32-68 56t-78 41q-80 34-171 34H128v640h320q178 0 345 69 144 59 295 59h512z"></path></svg></span></a> 0</span>				</span>
+					<div class="comment-meta commentmetadata">
+						<span class="collapse-comment" id="collapse-comment-5168" data-toggle="collapse">
+							<!-- <a href="javascript:void(0)" title="collapse this comment"> -->
+							<button class="btn" title="" data-toggle="tooltip" data-original-title="collapse this comment">
+							<span class="sr-only">collapse this comment</span><i class="fabric-icon fabric-icon--ChevronDown" aria-hidden="true"></i>
+							</button>
+							<!-- </a> -->
+						</span>
+						
+						<span class="copy-link">
+							<button class="copy-link-anchor btn" title="" data-toggle="tooltip" data-clipboard-text="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5168" targeturi="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5168" data-original-title="copy link to this comment">
+								<span class="sr-only">copy link to this comment</span>
+								<i class="fabric-icon fabric-icon--Link" aria-hidden="true"></i><div class="copy-link-live" role="region" aria-live="assertive"></div>
+							</button>
+						</span>
+
+											</div><!-- .comment-meta .commentmetadata -->
+				</header>
+																		<div class="comment-content" id="comment-text-5168">
+										<p>Of course</p>
+									</div>
+
+				<footer>
+				<div class="reply">
+									</div><!-- .reply -->
+        </footer>
+      </article><!-- #comment-## -->
+
+    </li><!-- #comment-## -->
+
+    <li class="comment byuser comment-author-piboulay bypostauthor even depth-2 comment-show" id="li-comment-5175">
+    	<article id="comment-5175" class="comment">
+        	<div class="comment-author vcard">
+          	<img alt="" data-src="https://secure.gravatar.com/avatar/1a7ec26bd627bbdd66fc70cb87c6aefc?s=40&amp;d=identicon&amp;r=g" src="1a7ec26bd627bbdd66fc70cb87c6aefc_005.png" data-srcset="https://secure.gravatar.com/avatar/1a7ec26bd627bbdd66fc70cb87c6aefc?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo lazyloaded" decoding="async" srcset="1a7ec26bd627bbdd66fc70cb87c6aefc_002.png 2x" width="40" height="40">          </div><!-- .comment-author .vcard -->
+          	        <header>
+					<!-- <span class="author-name" <cite class="fn">Pierre Boulay</cite> 					</span> -->
+					<span class="author-name">
+												<a class="url x-hidden-focus" href="https://devblogs.microsoft.com/commandline/author/piboulay/" alt="Pierre Boulay" title="Pierre Boulay">Pierre Boulay<img src="MicrosoftLogo_50x50.png" alt="Microsoft employee" title="Microsoft employee" width="18" height="18"></a>
+											</span>
+
+					<span class="comment-date">
+						<time pubdate="" datetime="2020-09-14T11:56:57-07:00">
+							September 14, 2020  11:56 am          	</time>
+				 	</span>
+
+					 <span class="voting"><span id="loggedoutvotes5175"><a class="comment-reply-login x-hidden-focus" title="" data-toggle="tooltip" href="https://devblogs.microsoft.com/commandline/wp-login.php?redirect_to=https%3A%2F%2Fdevblogs.microsoft.com%2Fcommandline%2Faccess-linux-filesystems-in-windows-and-wsl-2%2F%23comment-5175" data-bi-id="comments" data-bi-name="Login to vote" aria-label="Login to vote" data-original-title="Login to vote"><span class="icon-like-dislike"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048" class="svg_dd790ee3 x-hidden-focus" focusable="false"><path d="M1856 640q39 0 74 15t61 41 42 61 15 75q0 32-10 61l-256 768q-10 29-28 53t-42 42-52 26-60 10h-512q-179 0-345-69-72-29-144-44t-151-15H0V768h417q65 0 122-24t104-70l622-621q25-25 50-39t61-14q33 0 62 12t51 35 34 51 13 62q0 81-18 154t-53 146q-20 43-34 87t-19 93h444zm-256 1024q20 0 37-12t24-32q5-14 18-54t33-96 42-124 46-137 44-134 39-118 27-86 10-39q0-26-19-45t-45-19h-576q0-53 2-98t10-89 22-86 37-91q28-58 42-118t15-126q0-14-9-23t-23-9q-6 0-10 4t-9 9L734 765q-32 32-68 56t-78 41q-80 34-171 34H128v640h320q178 0 345 69 144 59 295 59h512z"></path></svg></span></a> 0</span>				</span>
+					<div class="comment-meta commentmetadata">
+						<span class="collapse-comment" id="collapse-comment-5175" data-toggle="collapse">
+							<!-- <a href="javascript:void(0)" title="collapse this comment"> -->
+							<button class="btn" title="" data-toggle="tooltip" data-original-title="collapse this comment">
+							<span class="sr-only">collapse this comment</span><i class="fabric-icon fabric-icon--ChevronDown" aria-hidden="true"></i>
+							</button>
+							<!-- </a> -->
+						</span>
+						
+						<span class="copy-link">
+							<button class="copy-link-anchor btn" title="" data-toggle="tooltip" data-clipboard-text="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5175" targeturi="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5175" data-original-title="copy link to this comment">
+								<span class="sr-only">copy link to this comment</span>
+								<i class="fabric-icon fabric-icon--Link" aria-hidden="true"></i><div class="copy-link-live" role="region" aria-live="assertive"></div>
+							</button>
+						</span>
+
+											</div><!-- .comment-meta .commentmetadata -->
+				</header>
+																		<div class="comment-content" id="comment-text-5175">
+										<p>Yes, that’s the whole point 🙂</p>
+									</div>
+
+				<footer>
+				<div class="reply">
+									</div><!-- .reply -->
+        </footer>
+      </article><!-- #comment-## -->
+
+    <ul class="children">
+
+    <li class="comment byuser comment-author-amedearamsey odd alt depth-3 comment-show" id="li-comment-5186">
+    	<article id="comment-5186" class="comment">
+        	<div class="comment-author vcard">
+          	<img alt="" data-src="https://devblogs.microsoft.com/commandline/wp-content/uploads/sites/33/2020/09/user-40070-150x150.png" src="user-40070-150x150.png" data-srcset="https://devblogs.microsoft.com/commandline/wp-content/uploads/sites/33/2020/09/user-40070-150x150.png 2x" class="avatar avatar-40 photo avatar-default lazyloaded" decoding="async" srcset="user-40070-150x150.png 2x" width="40" height="40">          </div><!-- .comment-author .vcard -->
+          	        <header>
+					<!-- <span class="author-name" <cite class="fn">Amedea Ramsey</cite> 					</span> -->
+					<span class="author-name">
+												Amedea Ramsey											</span>
+
+					<span class="comment-date">
+						<time pubdate="" datetime="2020-09-16T07:22:36-07:00">
+							September 16, 2020  7:22 am          	</time>
+				 	</span>
+
+					 <span class="voting"><span id="loggedoutvotes5186"><a class="comment-reply-login x-hidden-focus" title="" data-toggle="tooltip" href="https://devblogs.microsoft.com/commandline/wp-login.php?redirect_to=https%3A%2F%2Fdevblogs.microsoft.com%2Fcommandline%2Faccess-linux-filesystems-in-windows-and-wsl-2%2F%23comment-5186" data-bi-id="comments" data-bi-name="Login to vote" aria-label="Login to vote" data-original-title="Login to vote"><span class="icon-like-dislike"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048" class="svg_dd790ee3 x-hidden-focus" focusable="false"><path d="M1856 640q39 0 74 15t61 41 42 61 15 75q0 32-10 61l-256 768q-10 29-28 53t-42 42-52 26-60 10h-512q-179 0-345-69-72-29-144-44t-151-15H0V768h417q65 0 122-24t104-70l622-621q25-25 50-39t61-14q33 0 62 12t51 35 34 51 13 62q0 81-18 154t-53 146q-20 43-34 87t-19 93h444zm-256 1024q20 0 37-12t24-32q5-14 18-54t33-96 42-124 46-137 44-134 39-118 27-86 10-39q0-26-19-45t-45-19h-576q0-53 2-98t10-89 22-86 37-91q28-58 42-118t15-126q0-14-9-23t-23-9q-6 0-10 4t-9 9L734 765q-32 32-68 56t-78 41q-80 34-171 34H128v640h320q178 0 345 69 144 59 295 59h512z"></path></svg></span></a> 0</span>				</span>
+					<div class="comment-meta commentmetadata">
+						<span class="collapse-comment" id="collapse-comment-5186" data-toggle="collapse">
+							<!-- <a href="javascript:void(0)" title="collapse this comment"> -->
+							<button class="btn" title="" data-toggle="tooltip" data-original-title="collapse this comment">
+							<span class="sr-only">collapse this comment</span><i class="fabric-icon fabric-icon--ChevronDown" aria-hidden="true"></i>
+							</button>
+							<!-- </a> -->
+						</span>
+						
+						<span class="copy-link">
+							<button class="copy-link-anchor btn" title="" data-toggle="tooltip" data-clipboard-text="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5186" targeturi="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5186" data-original-title="copy link to this comment">
+								<span class="sr-only">copy link to this comment</span>
+								<i class="fabric-icon fabric-icon--Link" aria-hidden="true"></i><div class="copy-link-live" role="region" aria-live="assertive"></div>
+							</button>
+						</span>
+
+											</div><!-- .comment-meta .commentmetadata -->
+				</header>
+																		<div class="comment-content" id="comment-text-5186">
+										<p>Please I need someone to teach me programming and coding willingly.</p>
+									</div>
+
+				<footer>
+				<div class="reply">
+									</div><!-- .reply -->
+        </footer>
+      </article><!-- #comment-## -->
+
+    <ul class="children">
+
+    <li class="comment byuser comment-author-399b55c12f46ce22205d2524a8240bb0 even depth-4 comment-show" id="li-comment-5222">
+    	<article id="comment-5222" class="comment">
+        	<div class="comment-author vcard">
+          	<img alt="" data-src="https://devblogs.microsoft.com/commandline/wp-content/uploads/sites/33/2020/10/user-41346-150x150.png" src="user-41346-150x150.png" data-srcset="https://devblogs.microsoft.com/commandline/wp-content/uploads/sites/33/2020/10/user-41346-150x150.png 2x" class="avatar avatar-40 photo avatar-default lazyloaded" decoding="async" srcset="user-41346-150x150.png 2x" width="40" height="40">          </div><!-- .comment-author .vcard -->
+          	        <header>
+					<!-- <span class="author-name" <cite class="fn">Asaf Katz</cite> 					</span> -->
+					<span class="author-name">
+												Asaf Katz											</span>
+
+					<span class="comment-date">
+						<time pubdate="" datetime="2020-10-01T00:55:28-07:00">
+							October 1, 2020  12:55 am          	</time>
+				 	</span>
+
+					 <span class="voting"><span id="loggedoutvotes5222"><a class="comment-reply-login x-hidden-focus" title="" data-toggle="tooltip" href="https://devblogs.microsoft.com/commandline/wp-login.php?redirect_to=https%3A%2F%2Fdevblogs.microsoft.com%2Fcommandline%2Faccess-linux-filesystems-in-windows-and-wsl-2%2F%23comment-5222" data-bi-id="comments" data-bi-name="Login to vote" aria-label="Login to vote" data-original-title="Login to vote"><span class="icon-like-dislike"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048" class="svg_dd790ee3 x-hidden-focus" focusable="false"><path d="M1856 640q39 0 74 15t61 41 42 61 15 75q0 32-10 61l-256 768q-10 29-28 53t-42 42-52 26-60 10h-512q-179 0-345-69-72-29-144-44t-151-15H0V768h417q65 0 122-24t104-70l622-621q25-25 50-39t61-14q33 0 62 12t51 35 34 51 13 62q0 81-18 154t-53 146q-20 43-34 87t-19 93h444zm-256 1024q20 0 37-12t24-32q5-14 18-54t33-96 42-124 46-137 44-134 39-118 27-86 10-39q0-26-19-45t-45-19h-576q0-53 2-98t10-89 22-86 37-91q28-58 42-118t15-126q0-14-9-23t-23-9q-6 0-10 4t-9 9L734 765q-32 32-68 56t-78 41q-80 34-171 34H128v640h320q178 0 345 69 144 59 295 59h512z"></path></svg></span></a> 0</span>				</span>
+					<div class="comment-meta commentmetadata">
+						<span class="collapse-comment" id="collapse-comment-5222" data-toggle="collapse">
+							<!-- <a href="javascript:void(0)" title="collapse this comment"> -->
+							<button class="btn" title="" data-toggle="tooltip" data-original-title="collapse this comment">
+							<span class="sr-only">collapse this comment</span><i class="fabric-icon fabric-icon--ChevronDown" aria-hidden="true"></i>
+							</button>
+							<!-- </a> -->
+						</span>
+						
+						<span class="copy-link">
+							<button class="copy-link-anchor btn" title="" data-toggle="tooltip" data-clipboard-text="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5222" targeturi="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5222" data-original-title="copy link to this comment">
+								<span class="sr-only">copy link to this comment</span>
+								<i class="fabric-icon fabric-icon--Link" aria-hidden="true"></i><div class="copy-link-live" role="region" aria-live="assertive"></div>
+							</button>
+						</span>
+
+											</div><!-- .comment-meta .commentmetadata -->
+				</header>
+																		<div class="comment-content" id="comment-text-5222">
+										<p>Hi Amedea,<br>
+What kind of programs would you like make? Web sites, games, mobile applications?</p>
+<p>Here are some websites that can teach the skills you need to get started, all of them are great:</p>
+<p>Free Resources:<br>
+– <a href="https://www.freecodecamp.org/" target="_blank">https://www.freecodecamp.org</a><br>
+– <a href="https://www.khanacademy.org/" target="_blank">https://www.khanacademy.org</a><br>
+– <a href="https://www.codecademy.com/" target="_blank">https://www.codecademy.com</a></p>
+<p>Paid Resources (around 25$/Month)<br>
+– <a href="https://www.pluralsight.com/" target="_blank">https://www.pluralsight.com</a><br>
+– <a href="https://www.lynda.com/" target="_blank">https://www.lynda.com</a></p>
+<p>Hope you’ll find what you’re looking for.<br>
+Best of luck <img draggable="false" role="img" class="emoji" alt="✨" src="2728.svg"></p>
+									</div>
+
+				<footer>
+				<div class="reply">
+									</div><!-- .reply -->
+        </footer>
+      </article><!-- #comment-## -->
+
+    </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+    <li class="comment byuser comment-author-mailasciiwolf-com odd alt thread-odd thread-alt depth-1 comment-show" id="li-comment-5167" style="display: block;">
+    	<article id="comment-5167" class="comment">
+        	<div class="comment-author vcard">
+          	<img alt="" data-src="https://secure.gravatar.com/avatar/ea9041da95a10e630294c26f8728102d?s=40&amp;d=identicon&amp;r=g" src="ea9041da95a10e630294c26f8728102d_001.png" data-srcset="https://secure.gravatar.com/avatar/ea9041da95a10e630294c26f8728102d?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo lazyloaded" decoding="async" srcset="ea9041da95a10e630294c26f8728102d.png 2x" width="40" height="40">          </div><!-- .comment-author .vcard -->
+          	        <header>
+					<!-- <span class="author-name" <cite class="fn">Ascii Wolf</cite> 					</span> -->
+					<span class="author-name">
+												Ascii Wolf											</span>
+
+					<span class="comment-date">
+						<time pubdate="" datetime="2020-09-11T02:32:37-07:00">
+							September 11, 2020  2:32 am          	</time>
+				 	</span>
+
+					 <span class="voting"><span id="loggedoutvotes5167"><a class="comment-reply-login x-hidden-focus" title="" data-toggle="tooltip" href="https://devblogs.microsoft.com/commandline/wp-login.php?redirect_to=https%3A%2F%2Fdevblogs.microsoft.com%2Fcommandline%2Faccess-linux-filesystems-in-windows-and-wsl-2%2F%23comment-5167" data-bi-id="comments" data-bi-name="Login to vote" aria-label="Login to vote" data-original-title="Login to vote"><span class="icon-like-dislike"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048" class="svg_dd790ee3 x-hidden-focus" focusable="false"><path d="M1856 640q39 0 74 15t61 41 42 61 15 75q0 32-10 61l-256 768q-10 29-28 53t-42 42-52 26-60 10h-512q-179 0-345-69-72-29-144-44t-151-15H0V768h417q65 0 122-24t104-70l622-621q25-25 50-39t61-14q33 0 62 12t51 35 34 51 13 62q0 81-18 154t-53 146q-20 43-34 87t-19 93h444zm-256 1024q20 0 37-12t24-32q5-14 18-54t33-96 42-124 46-137 44-134 39-118 27-86 10-39q0-26-19-45t-45-19h-576q0-53 2-98t10-89 22-86 37-91q28-58 42-118t15-126q0-14-9-23t-23-9q-6 0-10 4t-9 9L734 765q-32 32-68 56t-78 41q-80 34-171 34H128v640h320q178 0 345 69 144 59 295 59h512z"></path></svg></span></a> 0</span>				</span>
+					<div class="comment-meta commentmetadata">
+						<span class="collapse-comment" id="collapse-comment-5167" data-toggle="collapse">
+							<!-- <a href="javascript:void(0)" title="collapse this comment"> -->
+							<button class="btn" title="" data-toggle="tooltip" data-original-title="collapse this comment">
+							<span class="sr-only">collapse this comment</span><i class="fabric-icon fabric-icon--ChevronDown" aria-hidden="true"></i>
+							</button>
+							<!-- </a> -->
+						</span>
+						
+						<span class="copy-link">
+							<button class="copy-link-anchor btn" title="" data-toggle="tooltip" data-clipboard-text="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5167" targeturi="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5167" data-original-title="copy link to this comment">
+								<span class="sr-only">copy link to this comment</span>
+								<i class="fabric-icon fabric-icon--Link" aria-hidden="true"></i><div class="copy-link-live" role="region" aria-live="assertive"></div>
+							</button>
+						</span>
+
+											</div><!-- .comment-meta .commentmetadata -->
+				</header>
+																		<div class="comment-content" id="comment-text-5167">
+										<p>Cool! Now, if only SFTP support was added to Explorer as well, I would be happy. 🙂</p>
+									</div>
+
+				<footer>
+				<div class="reply">
+									</div><!-- .reply -->
+        </footer>
+      </article><!-- #comment-## -->
+
+    <ul class="children">
+
+    <li class="comment byuser comment-author-piboulay bypostauthor even depth-2 comment-show" id="li-comment-5176">
+    	<article id="comment-5176" class="comment">
+        	<div class="comment-author vcard">
+          	<img alt="" data-src="https://secure.gravatar.com/avatar/1a7ec26bd627bbdd66fc70cb87c6aefc?s=40&amp;d=identicon&amp;r=g" src="1a7ec26bd627bbdd66fc70cb87c6aefc_005.png" data-srcset="https://secure.gravatar.com/avatar/1a7ec26bd627bbdd66fc70cb87c6aefc?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo lazyloaded" decoding="async" srcset="1a7ec26bd627bbdd66fc70cb87c6aefc_002.png 2x" width="40" height="40">          </div><!-- .comment-author .vcard -->
+          	        <header>
+					<!-- <span class="author-name" <cite class="fn">Pierre Boulay</cite> 					</span> -->
+					<span class="author-name">
+												<a class="url x-hidden-focus" href="https://devblogs.microsoft.com/commandline/author/piboulay/" alt="Pierre Boulay" title="Pierre Boulay">Pierre Boulay<img src="MicrosoftLogo_50x50.png" alt="Microsoft employee" title="Microsoft employee" width="18" height="18"></a>
+											</span>
+
+					<span class="comment-date">
+						<time pubdate="" datetime="2020-09-14T11:58:03-07:00">
+							September 14, 2020  11:58 am          	</time>
+				 	</span>
+
+					 <span class="voting"><span id="loggedoutvotes5176"><a class="comment-reply-login x-hidden-focus" title="" data-toggle="tooltip" href="https://devblogs.microsoft.com/commandline/wp-login.php?redirect_to=https%3A%2F%2Fdevblogs.microsoft.com%2Fcommandline%2Faccess-linux-filesystems-in-windows-and-wsl-2%2F%23comment-5176" data-bi-id="comments" data-bi-name="Login to vote" aria-label="Login to vote" data-original-title="Login to vote"><span class="icon-like-dislike"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048" class="svg_dd790ee3 x-hidden-focus" focusable="false"><path d="M1856 640q39 0 74 15t61 41 42 61 15 75q0 32-10 61l-256 768q-10 29-28 53t-42 42-52 26-60 10h-512q-179 0-345-69-72-29-144-44t-151-15H0V768h417q65 0 122-24t104-70l622-621q25-25 50-39t61-14q33 0 62 12t51 35 34 51 13 62q0 81-18 154t-53 146q-20 43-34 87t-19 93h444zm-256 1024q20 0 37-12t24-32q5-14 18-54t33-96 42-124 46-137 44-134 39-118 27-86 10-39q0-26-19-45t-45-19h-576q0-53 2-98t10-89 22-86 37-91q28-58 42-118t15-126q0-14-9-23t-23-9q-6 0-10 4t-9 9L734 765q-32 32-68 56t-78 41q-80 34-171 34H128v640h320q178 0 345 69 144 59 295 59h512z"></path></svg></span></a> 0</span>				</span>
+					<div class="comment-meta commentmetadata">
+						<span class="collapse-comment" id="collapse-comment-5176" data-toggle="collapse">
+							<!-- <a href="javascript:void(0)" title="collapse this comment"> -->
+							<button class="btn" title="" data-toggle="tooltip" data-original-title="collapse this comment">
+							<span class="sr-only">collapse this comment</span><i class="fabric-icon fabric-icon--ChevronDown" aria-hidden="true"></i>
+							</button>
+							<!-- </a> -->
+						</span>
+						
+						<span class="copy-link">
+							<button class="copy-link-anchor btn" title="" data-toggle="tooltip" data-clipboard-text="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5176" targeturi="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5176" data-original-title="copy link to this comment">
+								<span class="sr-only">copy link to this comment</span>
+								<i class="fabric-icon fabric-icon--Link" aria-hidden="true"></i><div class="copy-link-live" role="region" aria-live="assertive"></div>
+							</button>
+						</span>
+
+											</div><!-- .comment-meta .commentmetadata -->
+				</header>
+																		<div class="comment-content" id="comment-text-5176">
+										<p>You can mount an SFTP share in WSL, and then access it through the \WSL$ path in the Windows Explorer.</p>
+									</div>
+
+				<footer>
+				<div class="reply">
+									</div><!-- .reply -->
+        </footer>
+      </article><!-- #comment-## -->
+
+    <ul class="children">
+
+    <li class="comment byuser comment-author-rpavery79 odd alt depth-3 comment-show" id="li-comment-5224">
+    	<article id="comment-5224" class="comment">
+        	<div class="comment-author vcard">
+          	<img alt="" data-src="https://secure.gravatar.com/avatar/f453c9999ab52d98e719d66b3618038d?s=40&amp;d=identicon&amp;r=g" src="f453c9999ab52d98e719d66b3618038d_001.png" data-srcset="https://secure.gravatar.com/avatar/f453c9999ab52d98e719d66b3618038d?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo lazyloaded" decoding="async" srcset="f453c9999ab52d98e719d66b3618038d.png 2x" width="40" height="40">          </div><!-- .comment-author .vcard -->
+          	        <header>
+					<!-- <span class="author-name" <cite class="fn">Ryan Avery</cite> 					</span> -->
+					<span class="author-name">
+												Ryan Avery											</span>
+
+					<span class="comment-date">
+						<time pubdate="" datetime="2020-10-02T16:43:02-07:00">
+							October 2, 2020  4:43 pm          	</time>
+				 	</span>
+
+					 <span class="voting"><span id="loggedoutvotes5224"><a class="comment-reply-login x-hidden-focus" title="" data-toggle="tooltip" href="https://devblogs.microsoft.com/commandline/wp-login.php?redirect_to=https%3A%2F%2Fdevblogs.microsoft.com%2Fcommandline%2Faccess-linux-filesystems-in-windows-and-wsl-2%2F%23comment-5224" data-bi-id="comments" data-bi-name="Login to vote" aria-label="Login to vote" data-original-title="Login to vote"><span class="icon-like-dislike"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048" class="svg_dd790ee3 x-hidden-focus" focusable="false"><path d="M1856 640q39 0 74 15t61 41 42 61 15 75q0 32-10 61l-256 768q-10 29-28 53t-42 42-52 26-60 10h-512q-179 0-345-69-72-29-144-44t-151-15H0V768h417q65 0 122-24t104-70l622-621q25-25 50-39t61-14q33 0 62 12t51 35 34 51 13 62q0 81-18 154t-53 146q-20 43-34 87t-19 93h444zm-256 1024q20 0 37-12t24-32q5-14 18-54t33-96 42-124 46-137 44-134 39-118 27-86 10-39q0-26-19-45t-45-19h-576q0-53 2-98t10-89 22-86 37-91q28-58 42-118t15-126q0-14-9-23t-23-9q-6 0-10 4t-9 9L734 765q-32 32-68 56t-78 41q-80 34-171 34H128v640h320q178 0 345 69 144 59 295 59h512z"></path></svg></span></a> 0</span>				</span>
+					<div class="comment-meta commentmetadata">
+						<span class="collapse-comment" id="collapse-comment-5224" data-toggle="collapse">
+							<!-- <a href="javascript:void(0)" title="collapse this comment"> -->
+							<button class="btn" title="" data-toggle="tooltip" data-original-title="collapse this comment">
+							<span class="sr-only">collapse this comment</span><i class="fabric-icon fabric-icon--ChevronDown" aria-hidden="true"></i>
+							</button>
+							<!-- </a> -->
+						</span>
+						
+						<span class="copy-link">
+							<button class="copy-link-anchor btn" title="" data-toggle="tooltip" data-clipboard-text="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5224" targeturi="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5224" data-original-title="copy link to this comment">
+								<span class="sr-only">copy link to this comment</span>
+								<i class="fabric-icon fabric-icon--Link" aria-hidden="true"></i><div class="copy-link-live" role="region" aria-live="assertive"></div>
+							</button>
+						</span>
+
+											</div><!-- .comment-meta .commentmetadata -->
+				</header>
+																		<div class="comment-content" id="comment-text-5224">
+										<p>Pierre, does this actually work? I just tried mounting an SSHFS system in WSL2. It mounts fine and files are available in Ubuntu, but when I use Explorer and browse to the mounted folder, I get the error message:</p>
+<p>“\wsl$\Ubuntu\mnt\test_mount is not accessible. You might not have permission to use this network resource. Contact the administrator of this server to find out if you have access permissions.</p>
+<p>Attempt to access invalid address.”</p>
+<p>If it helps, I am using the following to mount:</p>
+<pre class="prettyprint prettyprinted" style=""><span class="pln">sshfs </span><span class="pun">-</span><span class="pln">o idmap</span><span class="pun">=</span><span class="pln">user server</span><span class="pun">:</span><span class="str">/files /</span><span class="pln">mnt</span><span class="pun">/</span><span class="pln">test_mount</span></pre>
+<p>And server is aliased in my .ssh/config to the hostname, port, and username for that server</p>
+<p>Note that when unmounted, windows explorer can open the folder, but of course the contents are empty.</p>
+<p>Thanks!</p>
+									</div>
+
+				<footer>
+				<div class="reply">
+									</div><!-- .reply -->
+        </footer>
+      </article><!-- #comment-## -->
+
+    <ul class="children">
+
+    <li class="comment byuser comment-author-piboulay bypostauthor even depth-4 comment-show" id="li-comment-5241">
+    	<article id="comment-5241" class="comment">
+        	<div class="comment-author vcard">
+          	<img alt="" data-src="https://secure.gravatar.com/avatar/1a7ec26bd627bbdd66fc70cb87c6aefc?s=40&amp;d=identicon&amp;r=g" src="1a7ec26bd627bbdd66fc70cb87c6aefc_005.png" data-srcset="https://secure.gravatar.com/avatar/1a7ec26bd627bbdd66fc70cb87c6aefc?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo lazyloaded" decoding="async" srcset="1a7ec26bd627bbdd66fc70cb87c6aefc_002.png 2x" width="40" height="40">          </div><!-- .comment-author .vcard -->
+          	        <header>
+					<!-- <span class="author-name" <cite class="fn">Pierre Boulay</cite> 					</span> -->
+					<span class="author-name">
+												<a class="url x-hidden-focus" href="https://devblogs.microsoft.com/commandline/author/piboulay/" alt="Pierre Boulay" title="Pierre Boulay">Pierre Boulay<img src="MicrosoftLogo_50x50.png" alt="Microsoft employee" title="Microsoft employee" width="18" height="18"></a>
+											</span>
+
+					<span class="comment-date">
+						<time pubdate="" datetime="2020-10-12T15:54:23-07:00">
+							October 12, 2020  3:54 pm          	</time>
+				 	</span>
+
+					 <span class="voting"><span id="loggedoutvotes5241"><a class="comment-reply-login x-hidden-focus" title="" data-toggle="tooltip" href="https://devblogs.microsoft.com/commandline/wp-login.php?redirect_to=https%3A%2F%2Fdevblogs.microsoft.com%2Fcommandline%2Faccess-linux-filesystems-in-windows-and-wsl-2%2F%23comment-5241" data-bi-id="comments" data-bi-name="Login to vote" aria-label="Login to vote" data-original-title="Login to vote"><span class="icon-like-dislike"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048" class="svg_dd790ee3 x-hidden-focus" focusable="false"><path d="M1856 640q39 0 74 15t61 41 42 61 15 75q0 32-10 61l-256 768q-10 29-28 53t-42 42-52 26-60 10h-512q-179 0-345-69-72-29-144-44t-151-15H0V768h417q65 0 122-24t104-70l622-621q25-25 50-39t61-14q33 0 62 12t51 35 34 51 13 62q0 81-18 154t-53 146q-20 43-34 87t-19 93h444zm-256 1024q20 0 37-12t24-32q5-14 18-54t33-96 42-124 46-137 44-134 39-118 27-86 10-39q0-26-19-45t-45-19h-576q0-53 2-98t10-89 22-86 37-91q28-58 42-118t15-126q0-14-9-23t-23-9q-6 0-10 4t-9 9L734 765q-32 32-68 56t-78 41q-80 34-171 34H128v640h320q178 0 345 69 144 59 295 59h512z"></path></svg></span></a> 0</span>				</span>
+					<div class="comment-meta commentmetadata">
+						<span class="collapse-comment" id="collapse-comment-5241" data-toggle="collapse">
+							<!-- <a href="javascript:void(0)" title="collapse this comment"> -->
+							<button class="btn" title="" data-toggle="tooltip" data-original-title="collapse this comment">
+							<span class="sr-only">collapse this comment</span><i class="fabric-icon fabric-icon--ChevronDown" aria-hidden="true"></i>
+							</button>
+							<!-- </a> -->
+						</span>
+						
+						<span class="copy-link">
+							<button class="copy-link-anchor btn" title="" data-toggle="tooltip" data-clipboard-text="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5241" targeturi="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5241" data-original-title="copy link to this comment">
+								<span class="sr-only">copy link to this comment</span>
+								<i class="fabric-icon fabric-icon--Link" aria-hidden="true"></i><div class="copy-link-live" role="region" aria-live="assertive"></div>
+							</button>
+						</span>
+
+											</div><!-- .comment-meta .commentmetadata -->
+				</header>
+																		<div class="comment-content" id="comment-text-5241">
+										<p>This is probably caused by a uid mismatch.</p>
+<p>To make the mountpoint accessible in the explorer, the uid needs to match the default wsl user for your distro.</p>
+<p>To figure out your uid, run <code class=" prettyprinted" style=""><span class="pln">id </span><span class="pun">-</span><span class="pln">u</span></code> inside WSL.<br>
+Once you have that, change your mount command line to something like:</p>
+<pre class=" prettyprinted" style=""><code class=" prettyprinted" style=""><span class="pln"><span class="pln">sshfs </span></span><span class="pun"><span class="pun">-</span></span><span class="pln"><span class="pln">o idmap</span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln">user server</span></span><span class="pun"><span class="pun">:</span></span><span class="str"><span class="str">/files /</span></span><span class="pln"><span class="pln">mnt</span></span><span class="pun"><span class="pun">/</span></span><span class="pln"><span class="pln">test_mount uid</span></span><span class="pun"><span class="pun">=[</span></span><span class="pln"><span class="pln">uid here </span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln">without the brackets</span></span><span class="pun"><span class="pun">)]</span></span></code></pre>
+<p>If that doesn’t work, I recommend <a href="https://github.com/microsoft/WSL/issues/new/choose" target="_blank">creating an issue</a></p>
+									</div>
+
+				<footer>
+				<div class="reply">
+									</div><!-- .reply -->
+        </footer>
+      </article><!-- #comment-## -->
+
+    </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+    <li class="comment byuser comment-author-jason-jarvis odd alt thread-even depth-1 comment-show" id="li-comment-5169" style="display: block;">
+    	<article id="comment-5169" class="comment">
+        	<div class="comment-author vcard">
+          	<img alt="" data-src="https://secure.gravatar.com/avatar/1380c118b2bac488724d3312f816d935?s=40&amp;d=identicon&amp;r=g" src="1380c118b2bac488724d3312f816d935_001.png" data-srcset="https://secure.gravatar.com/avatar/1380c118b2bac488724d3312f816d935?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo lazyloaded" decoding="async" srcset="1380c118b2bac488724d3312f816d935.png 2x" width="40" height="40">          </div><!-- .comment-author .vcard -->
+          	        <header>
+					<!-- <span class="author-name" <cite class="fn">Jason Jarvis</cite> 					</span> -->
+					<span class="author-name">
+												Jason Jarvis											</span>
+
+					<span class="comment-date">
+						<time pubdate="" datetime="2020-09-11T07:54:05-07:00">
+							September 11, 2020  7:54 am          	</time>
+				 	</span>
+
+					 <span class="voting"><span id="loggedoutvotes5169"><a class="comment-reply-login x-hidden-focus" title="" data-toggle="tooltip" href="https://devblogs.microsoft.com/commandline/wp-login.php?redirect_to=https%3A%2F%2Fdevblogs.microsoft.com%2Fcommandline%2Faccess-linux-filesystems-in-windows-and-wsl-2%2F%23comment-5169" data-bi-id="comments" data-bi-name="Login to vote" aria-label="Login to vote" data-original-title="Login to vote"><span class="icon-like-dislike"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048" class="svg_dd790ee3 x-hidden-focus" focusable="false"><path d="M1856 640q39 0 74 15t61 41 42 61 15 75q0 32-10 61l-256 768q-10 29-28 53t-42 42-52 26-60 10h-512q-179 0-345-69-72-29-144-44t-151-15H0V768h417q65 0 122-24t104-70l622-621q25-25 50-39t61-14q33 0 62 12t51 35 34 51 13 62q0 81-18 154t-53 146q-20 43-34 87t-19 93h444zm-256 1024q20 0 37-12t24-32q5-14 18-54t33-96 42-124 46-137 44-134 39-118 27-86 10-39q0-26-19-45t-45-19h-576q0-53 2-98t10-89 22-86 37-91q28-58 42-118t15-126q0-14-9-23t-23-9q-6 0-10 4t-9 9L734 765q-32 32-68 56t-78 41q-80 34-171 34H128v640h320q178 0 345 69 144 59 295 59h512z"></path></svg></span></a> 0</span>				</span>
+					<div class="comment-meta commentmetadata">
+						<span class="collapse-comment" id="collapse-comment-5169" data-toggle="collapse">
+							<!-- <a href="javascript:void(0)" title="collapse this comment"> -->
+							<button class="btn" title="" data-toggle="tooltip" data-original-title="collapse this comment">
+							<span class="sr-only">collapse this comment</span><i class="fabric-icon fabric-icon--ChevronDown" aria-hidden="true"></i>
+							</button>
+							<!-- </a> -->
+						</span>
+						
+						<span class="copy-link">
+							<button class="copy-link-anchor btn" title="" data-toggle="tooltip" data-clipboard-text="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5169" targeturi="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5169" data-original-title="copy link to this comment">
+								<span class="sr-only">copy link to this comment</span>
+								<i class="fabric-icon fabric-icon--Link" aria-hidden="true"></i><div class="copy-link-live" role="region" aria-live="assertive"></div>
+							</button>
+						</span>
+
+											</div><!-- .comment-meta .commentmetadata -->
+				</header>
+																		<div class="comment-content" id="comment-text-5169">
+										<p>How’s the performance?</p>
+									</div>
+
+				<footer>
+				<div class="reply">
+									</div><!-- .reply -->
+        </footer>
+      </article><!-- #comment-## -->
+
+    <ul class="children">
+
+    <li class="comment byuser comment-author-piboulay bypostauthor even depth-2 comment-show" id="li-comment-5177">
+    	<article id="comment-5177" class="comment">
+        	<div class="comment-author vcard">
+          	<img alt="" data-src="https://secure.gravatar.com/avatar/1a7ec26bd627bbdd66fc70cb87c6aefc?s=40&amp;d=identicon&amp;r=g" src="1a7ec26bd627bbdd66fc70cb87c6aefc_005.png" data-srcset="https://secure.gravatar.com/avatar/1a7ec26bd627bbdd66fc70cb87c6aefc?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo lazyloaded" decoding="async" srcset="1a7ec26bd627bbdd66fc70cb87c6aefc_002.png 2x" width="40" height="40">          </div><!-- .comment-author .vcard -->
+          	        <header>
+					<!-- <span class="author-name" <cite class="fn">Pierre Boulay</cite> 					</span> -->
+					<span class="author-name">
+												<a class="url x-hidden-focus" href="https://devblogs.microsoft.com/commandline/author/piboulay/" alt="Pierre Boulay" title="Pierre Boulay">Pierre Boulay<img src="MicrosoftLogo_50x50.png" alt="Microsoft employee" title="Microsoft employee" width="18" height="18"></a>
+											</span>
+
+					<span class="comment-date">
+						<time pubdate="" datetime="2020-09-14T11:58:53-07:00">
+							September 14, 2020  11:58 am          	</time>
+				 	</span>
+
+					 <span class="voting"><span id="loggedoutvotes5177"><a class="comment-reply-login x-hidden-focus" title="" data-toggle="tooltip" href="https://devblogs.microsoft.com/commandline/wp-login.php?redirect_to=https%3A%2F%2Fdevblogs.microsoft.com%2Fcommandline%2Faccess-linux-filesystems-in-windows-and-wsl-2%2F%23comment-5177" data-bi-id="comments" data-bi-name="Login to vote" aria-label="Login to vote" data-original-title="Login to vote"><span class="icon-like-dislike"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048" class="svg_dd790ee3 x-hidden-focus" focusable="false"><path d="M1856 640q39 0 74 15t61 41 42 61 15 75q0 32-10 61l-256 768q-10 29-28 53t-42 42-52 26-60 10h-512q-179 0-345-69-72-29-144-44t-151-15H0V768h417q65 0 122-24t104-70l622-621q25-25 50-39t61-14q33 0 62 12t51 35 34 51 13 62q0 81-18 154t-53 146q-20 43-34 87t-19 93h444zm-256 1024q20 0 37-12t24-32q5-14 18-54t33-96 42-124 46-137 44-134 39-118 27-86 10-39q0-26-19-45t-45-19h-576q0-53 2-98t10-89 22-86 37-91q28-58 42-118t15-126q0-14-9-23t-23-9q-6 0-10 4t-9 9L734 765q-32 32-68 56t-78 41q-80 34-171 34H128v640h320q178 0 345 69 144 59 295 59h512z"></path></svg></span></a> 0</span>				</span>
+					<div class="comment-meta commentmetadata">
+						<span class="collapse-comment" id="collapse-comment-5177" data-toggle="collapse">
+							<!-- <a href="javascript:void(0)" title="collapse this comment"> -->
+							<button class="btn" title="" data-toggle="tooltip" data-original-title="collapse this comment">
+							<span class="sr-only">collapse this comment</span><i class="fabric-icon fabric-icon--ChevronDown" aria-hidden="true"></i>
+							</button>
+							<!-- </a> -->
+						</span>
+						
+						<span class="copy-link">
+							<button class="copy-link-anchor btn" title="" data-toggle="tooltip" data-clipboard-text="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5177" targeturi="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5177" data-original-title="copy link to this comment">
+								<span class="sr-only">copy link to this comment</span>
+								<i class="fabric-icon fabric-icon--Link" aria-hidden="true"></i><div class="copy-link-live" role="region" aria-live="assertive"></div>
+							</button>
+						</span>
+
+											</div><!-- .comment-meta .commentmetadata -->
+				</header>
+																		<div class="comment-content" id="comment-text-5177">
+										<p>Should be close to native from inside WSL 2. From the Windows Explorer there is some penalty</p>
+									</div>
+
+				<footer>
+				<div class="reply">
+									</div><!-- .reply -->
+        </footer>
+      </article><!-- #comment-## -->
+
+    </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+    <li class="comment byuser comment-author-alex_stefan_92 odd alt thread-odd thread-alt depth-1 comment-show" id="li-comment-5170" style="display: block;">
+    	<article id="comment-5170" class="comment">
+        	<div class="comment-author vcard">
+          	<img alt="" data-src="https://secure.gravatar.com/avatar/c8ef480992691dae5cf6af25537b9284?s=40&amp;d=identicon&amp;r=g" src="c8ef480992691dae5cf6af25537b9284_001.png" data-srcset="https://secure.gravatar.com/avatar/c8ef480992691dae5cf6af25537b9284?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo lazyloaded" decoding="async" srcset="c8ef480992691dae5cf6af25537b9284.png 2x" width="40" height="40">          </div><!-- .comment-author .vcard -->
+          	        <header>
+					<!-- <span class="author-name" <cite class="fn">Stefan Maric</cite> 					</span> -->
+					<span class="author-name">
+												Stefan Maric											</span>
+
+					<span class="comment-date">
+						<time pubdate="" datetime="2020-09-11T08:14:03-07:00">
+							September 11, 2020  8:14 am          	</time>
+				 	</span>
+
+					 <span class="voting"><span id="loggedoutvotes5170"><a class="comment-reply-login x-hidden-focus" title="" data-toggle="tooltip" href="https://devblogs.microsoft.com/commandline/wp-login.php?redirect_to=https%3A%2F%2Fdevblogs.microsoft.com%2Fcommandline%2Faccess-linux-filesystems-in-windows-and-wsl-2%2F%23comment-5170" data-bi-id="comments" data-bi-name="Login to vote" aria-label="Login to vote" data-original-title="Login to vote"><span class="icon-like-dislike"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048" class="svg_dd790ee3 x-hidden-focus" focusable="false"><path d="M1856 640q39 0 74 15t61 41 42 61 15 75q0 32-10 61l-256 768q-10 29-28 53t-42 42-52 26-60 10h-512q-179 0-345-69-72-29-144-44t-151-15H0V768h417q65 0 122-24t104-70l622-621q25-25 50-39t61-14q33 0 62 12t51 35 34 51 13 62q0 81-18 154t-53 146q-20 43-34 87t-19 93h444zm-256 1024q20 0 37-12t24-32q5-14 18-54t33-96 42-124 46-137 44-134 39-118 27-86 10-39q0-26-19-45t-45-19h-576q0-53 2-98t10-89 22-86 37-91q28-58 42-118t15-126q0-14-9-23t-23-9q-6 0-10 4t-9 9L734 765q-32 32-68 56t-78 41q-80 34-171 34H128v640h320q178 0 345 69 144 59 295 59h512z"></path></svg></span></a> 0</span>				</span>
+					<div class="comment-meta commentmetadata">
+						<span class="collapse-comment" id="collapse-comment-5170" data-toggle="collapse">
+							<!-- <a href="javascript:void(0)" title="collapse this comment"> -->
+							<button class="btn" title="" data-toggle="tooltip" data-original-title="collapse this comment">
+							<span class="sr-only">collapse this comment</span><i class="fabric-icon fabric-icon--ChevronDown" aria-hidden="true"></i>
+							</button>
+							<!-- </a> -->
+						</span>
+						
+						<span class="copy-link">
+							<button class="copy-link-anchor btn" title="" data-toggle="tooltip" data-clipboard-text="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5170" targeturi="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5170" data-original-title="copy link to this comment">
+								<span class="sr-only">copy link to this comment</span>
+								<i class="fabric-icon fabric-icon--Link" aria-hidden="true"></i><div class="copy-link-live" role="region" aria-live="assertive"></div>
+							</button>
+						</span>
+
+											</div><!-- .comment-meta .commentmetadata -->
+				</header>
+																		<div class="comment-content" id="comment-text-5170">
+										<p>If the whole device is exposed to the Linux kernel, does that mean I could mount an encrypted LUKS volume inside WSL and navigate the fs using explorer.exe?</p>
+<p>That would be awesome. It would mean one doesn’t need VeraCrypt for disk encryption interop between windows and linux.</p>
+									</div>
+
+				<footer>
+				<div class="reply">
+									</div><!-- .reply -->
+        </footer>
+      </article><!-- #comment-## -->
+
+    <ul class="children">
+
+    <li class="comment byuser comment-author-piboulay bypostauthor even depth-2 comment-show" id="li-comment-5178">
+    	<article id="comment-5178" class="comment">
+        	<div class="comment-author vcard">
+          	<img alt="" data-src="https://secure.gravatar.com/avatar/1a7ec26bd627bbdd66fc70cb87c6aefc?s=40&amp;d=identicon&amp;r=g" src="1a7ec26bd627bbdd66fc70cb87c6aefc_005.png" data-srcset="https://secure.gravatar.com/avatar/1a7ec26bd627bbdd66fc70cb87c6aefc?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo lazyloaded" decoding="async" srcset="1a7ec26bd627bbdd66fc70cb87c6aefc_002.png 2x" width="40" height="40">          </div><!-- .comment-author .vcard -->
+          	        <header>
+					<!-- <span class="author-name" <cite class="fn">Pierre Boulay</cite> 					</span> -->
+					<span class="author-name">
+												<a class="url x-hidden-focus" href="https://devblogs.microsoft.com/commandline/author/piboulay/" alt="Pierre Boulay" title="Pierre Boulay">Pierre Boulay<img src="MicrosoftLogo_50x50.png" alt="Microsoft employee" title="Microsoft employee" width="18" height="18"></a>
+											</span>
+
+					<span class="comment-date">
+						<time pubdate="" datetime="2020-09-14T12:01:18-07:00">
+							September 14, 2020  12:01 pm          	</time>
+				 	</span>
+
+					 <span class="voting"><span id="loggedoutvotes5178"><a class="comment-reply-login x-hidden-focus" title="" data-toggle="tooltip" href="https://devblogs.microsoft.com/commandline/wp-login.php?redirect_to=https%3A%2F%2Fdevblogs.microsoft.com%2Fcommandline%2Faccess-linux-filesystems-in-windows-and-wsl-2%2F%23comment-5178" data-bi-id="comments" data-bi-name="Login to vote" aria-label="Login to vote" data-original-title="Login to vote"><span class="icon-like-dislike"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048" class="svg_dd790ee3 x-hidden-focus" focusable="false"><path d="M1856 640q39 0 74 15t61 41 42 61 15 75q0 32-10 61l-256 768q-10 29-28 53t-42 42-52 26-60 10h-512q-179 0-345-69-72-29-144-44t-151-15H0V768h417q65 0 122-24t104-70l622-621q25-25 50-39t61-14q33 0 62 12t51 35 34 51 13 62q0 81-18 154t-53 146q-20 43-34 87t-19 93h444zm-256 1024q20 0 37-12t24-32q5-14 18-54t33-96 42-124 46-137 44-134 39-118 27-86 10-39q0-26-19-45t-45-19h-576q0-53 2-98t10-89 22-86 37-91q28-58 42-118t15-126q0-14-9-23t-23-9q-6 0-10 4t-9 9L734 765q-32 32-68 56t-78 41q-80 34-171 34H128v640h320q178 0 345 69 144 59 295 59h512z"></path></svg></span></a> 0</span>				</span>
+					<div class="comment-meta commentmetadata">
+						<span class="collapse-comment" id="collapse-comment-5178" data-toggle="collapse">
+							<!-- <a href="javascript:void(0)" title="collapse this comment"> -->
+							<button class="btn" title="" data-toggle="tooltip" data-original-title="collapse this comment">
+							<span class="sr-only">collapse this comment</span><i class="fabric-icon fabric-icon--ChevronDown" aria-hidden="true"></i>
+							</button>
+							<!-- </a> -->
+						</span>
+						
+						<span class="copy-link">
+							<button class="copy-link-anchor btn" title="" data-toggle="tooltip" data-clipboard-text="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5178" targeturi="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5178" data-original-title="copy link to this comment">
+								<span class="sr-only">copy link to this comment</span>
+								<i class="fabric-icon fabric-icon--Link" aria-hidden="true"></i><div class="copy-link-live" role="region" aria-live="assertive"></div>
+							</button>
+						</span>
+
+											</div><!-- .comment-meta .commentmetadata -->
+				</header>
+																		<div class="comment-content" id="comment-text-5178">
+										<p>You can as long as the Linux kernel supports dm-crypt.</p>
+<p>Unfortunately the kernel that we currently ship doesn’t, but you can <a href="https://github.com/microsoft/WSL2-Linux-Kernel" target="_blank">build you own</a> (just make sure that <code class=" prettyprinted" style=""><span class="pln">CONFIG_DM_CRYPT</span></code> is ‘y’), and then install in <code class=" prettyprinted" style=""><span class="pun">%</span><span class="pln">windir</span><span class="pun">%</span><span class="pln">\system32\lxss\tools\kernel</span></code></p>
+									</div>
+
+				<footer>
+				<div class="reply">
+									</div><!-- .reply -->
+        </footer>
+      </article><!-- #comment-## -->
+
+    <ul class="children">
+
+    <li class="comment byuser comment-author-kostedeoutlook-de odd alt depth-3 comment-show" id="li-comment-5184">
+    	<article id="comment-5184" class="comment">
+        	<div class="comment-author vcard">
+          	<img alt="" data-src="https://secure.gravatar.com/avatar/b8ea6a87a563ec48c875b404d2505534?s=40&amp;d=identicon&amp;r=g" src="b8ea6a87a563ec48c875b404d2505534_001.png" data-srcset="https://secure.gravatar.com/avatar/b8ea6a87a563ec48c875b404d2505534?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo lazyloaded" decoding="async" srcset="b8ea6a87a563ec48c875b404d2505534.png 2x" width="40" height="40">          </div><!-- .comment-author .vcard -->
+          	        <header>
+					<!-- <span class="author-name" <cite class="fn">Simon Kostede</cite> 					</span> -->
+					<span class="author-name">
+												Simon Kostede											</span>
+
+					<span class="comment-date">
+						<time pubdate="" datetime="2020-09-15T15:24:41-07:00">
+							September 15, 2020  3:24 pm          	</time>
+				 	</span>
+
+					 <span class="voting"><span id="loggedoutvotes5184"><a class="comment-reply-login x-hidden-focus" title="" data-toggle="tooltip" href="https://devblogs.microsoft.com/commandline/wp-login.php?redirect_to=https%3A%2F%2Fdevblogs.microsoft.com%2Fcommandline%2Faccess-linux-filesystems-in-windows-and-wsl-2%2F%23comment-5184" data-bi-id="comments" data-bi-name="Login to vote" aria-label="Login to vote" data-original-title="Login to vote"><span class="icon-like-dislike"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048" class="svg_dd790ee3 x-hidden-focus" focusable="false"><path d="M1856 640q39 0 74 15t61 41 42 61 15 75q0 32-10 61l-256 768q-10 29-28 53t-42 42-52 26-60 10h-512q-179 0-345-69-72-29-144-44t-151-15H0V768h417q65 0 122-24t104-70l622-621q25-25 50-39t61-14q33 0 62 12t51 35 34 51 13 62q0 81-18 154t-53 146q-20 43-34 87t-19 93h444zm-256 1024q20 0 37-12t24-32q5-14 18-54t33-96 42-124 46-137 44-134 39-118 27-86 10-39q0-26-19-45t-45-19h-576q0-53 2-98t10-89 22-86 37-91q28-58 42-118t15-126q0-14-9-23t-23-9q-6 0-10 4t-9 9L734 765q-32 32-68 56t-78 41q-80 34-171 34H128v640h320q178 0 345 69 144 59 295 59h512z"></path></svg></span></a> 0</span>				</span>
+					<div class="comment-meta commentmetadata">
+						<span class="collapse-comment" id="collapse-comment-5184" data-toggle="collapse">
+							<!-- <a href="javascript:void(0)" title="collapse this comment"> -->
+							<button class="btn" title="" data-toggle="tooltip" data-original-title="collapse this comment">
+							<span class="sr-only">collapse this comment</span><i class="fabric-icon fabric-icon--ChevronDown" aria-hidden="true"></i>
+							</button>
+							<!-- </a> -->
+						</span>
+						
+						<span class="copy-link">
+							<button class="copy-link-anchor btn" title="" data-toggle="tooltip" data-clipboard-text="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5184" targeturi="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5184" data-original-title="copy link to this comment">
+								<span class="sr-only">copy link to this comment</span>
+								<i class="fabric-icon fabric-icon--Link" aria-hidden="true"></i><div class="copy-link-live" role="region" aria-live="assertive"></div>
+							</button>
+						</span>
+
+											</div><!-- .comment-meta .commentmetadata -->
+				</header>
+																		<div class="comment-content" id="comment-text-5184">
+										<p>will a future kernel support dm-crypt natively? I imagine quite a few people run Linux from encrypted and LVM-d filesystems.</p>
+									</div>
+
+				<footer>
+				<div class="reply">
+									</div><!-- .reply -->
+        </footer>
+      </article><!-- #comment-## -->
+
+    </li><!-- #comment-## -->
+
+    <li class="comment byuser comment-author-alex_stefan_92 even depth-3 comment-show" id="li-comment-5185">
+    	<article id="comment-5185" class="comment">
+        	<div class="comment-author vcard">
+          	<img alt="" data-src="https://secure.gravatar.com/avatar/c8ef480992691dae5cf6af25537b9284?s=40&amp;d=identicon&amp;r=g" src="c8ef480992691dae5cf6af25537b9284_001.png" data-srcset="https://secure.gravatar.com/avatar/c8ef480992691dae5cf6af25537b9284?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo lazyloaded" decoding="async" srcset="c8ef480992691dae5cf6af25537b9284.png 2x" width="40" height="40">          </div><!-- .comment-author .vcard -->
+          	        <header>
+					<!-- <span class="author-name" <cite class="fn">Stefan Maric</cite> 					</span> -->
+					<span class="author-name">
+												Stefan Maric											</span>
+
+					<span class="comment-date">
+						<time pubdate="" datetime="2020-09-16T02:07:03-07:00">
+							September 16, 2020  2:07 am          	</time>
+				 	</span>
+
+					 <span class="voting"><span id="loggedoutvotes5185"><a class="comment-reply-login x-hidden-focus" title="" data-toggle="tooltip" href="https://devblogs.microsoft.com/commandline/wp-login.php?redirect_to=https%3A%2F%2Fdevblogs.microsoft.com%2Fcommandline%2Faccess-linux-filesystems-in-windows-and-wsl-2%2F%23comment-5185" data-bi-id="comments" data-bi-name="Login to vote" aria-label="Login to vote" data-original-title="Login to vote"><span class="icon-like-dislike"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048" class="svg_dd790ee3 x-hidden-focus" focusable="false"><path d="M1856 640q39 0 74 15t61 41 42 61 15 75q0 32-10 61l-256 768q-10 29-28 53t-42 42-52 26-60 10h-512q-179 0-345-69-72-29-144-44t-151-15H0V768h417q65 0 122-24t104-70l622-621q25-25 50-39t61-14q33 0 62 12t51 35 34 51 13 62q0 81-18 154t-53 146q-20 43-34 87t-19 93h444zm-256 1024q20 0 37-12t24-32q5-14 18-54t33-96 42-124 46-137 44-134 39-118 27-86 10-39q0-26-19-45t-45-19h-576q0-53 2-98t10-89 22-86 37-91q28-58 42-118t15-126q0-14-9-23t-23-9q-6 0-10 4t-9 9L734 765q-32 32-68 56t-78 41q-80 34-171 34H128v640h320q178 0 345 69 144 59 295 59h512z"></path></svg></span></a> 0</span>				</span>
+					<div class="comment-meta commentmetadata">
+						<span class="collapse-comment" id="collapse-comment-5185" data-toggle="collapse">
+							<!-- <a href="javascript:void(0)" title="collapse this comment"> -->
+							<button class="btn" title="" data-toggle="tooltip" data-original-title="collapse this comment">
+							<span class="sr-only">collapse this comment</span><i class="fabric-icon fabric-icon--ChevronDown" aria-hidden="true"></i>
+							</button>
+							<!-- </a> -->
+						</span>
+						
+						<span class="copy-link">
+							<button class="copy-link-anchor btn" title="" data-toggle="tooltip" data-clipboard-text="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5185" targeturi="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5185" data-original-title="copy link to this comment">
+								<span class="sr-only">copy link to this comment</span>
+								<i class="fabric-icon fabric-icon--Link" aria-hidden="true"></i><div class="copy-link-live" role="region" aria-live="assertive"></div>
+							</button>
+						</span>
+
+											</div><!-- .comment-meta .commentmetadata -->
+				</header>
+																		<div class="comment-content" id="comment-text-5185">
+										<p>Interesting. Any plans on have it enabled in the default distribution in the future?</p>
+<p>I guess that before WSL having support for disks mounts it made no sense to enable it, but now I would include any disk mapper supported by the linux kernel.</p>
+<p>But exiting news nonetheless!</p>
+									</div>
+
+				<footer>
+				<div class="reply">
+									</div><!-- .reply -->
+        </footer>
+      </article><!-- #comment-## -->
+
+    </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+    <li class="comment byuser comment-author-benbeige odd alt thread-even depth-1 comment-show" id="li-comment-5171" style="display: block;">
+    	<article id="comment-5171" class="comment">
+        	<div class="comment-author vcard">
+          	<img alt="" data-src="https://devblogs.microsoft.com/commandline/wp-content/uploads/sites/33/2020/09/user-39602.jpg" src="user-39602.jpg" data-srcset="https://devblogs.microsoft.com/commandline/wp-content/uploads/sites/33/2020/09/user-39602.jpg 2x" class="avatar avatar-40 photo avatar-default lazyloaded" decoding="async" srcset="user-39602.jpg 2x" width="40" height="40">          </div><!-- .comment-author .vcard -->
+          	        <header>
+					<!-- <span class="author-name" <cite class="fn">Ben Beige</cite> 					</span> -->
+					<span class="author-name">
+												Ben Beige											</span>
+
+					<span class="comment-date">
+						<time pubdate="" datetime="2020-09-11T09:48:15-07:00">
+							September 11, 2020  9:48 am          	</time>
+				 	</span>
+
+					 <span class="voting"><span id="loggedoutvotes5171"><a class="comment-reply-login x-hidden-focus" title="" data-toggle="tooltip" href="https://devblogs.microsoft.com/commandline/wp-login.php?redirect_to=https%3A%2F%2Fdevblogs.microsoft.com%2Fcommandline%2Faccess-linux-filesystems-in-windows-and-wsl-2%2F%23comment-5171" data-bi-id="comments" data-bi-name="Login to vote" aria-label="Login to vote" data-original-title="Login to vote"><span class="icon-like-dislike"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048" class="svg_dd790ee3 x-hidden-focus" focusable="false"><path d="M1856 640q39 0 74 15t61 41 42 61 15 75q0 32-10 61l-256 768q-10 29-28 53t-42 42-52 26-60 10h-512q-179 0-345-69-72-29-144-44t-151-15H0V768h417q65 0 122-24t104-70l622-621q25-25 50-39t61-14q33 0 62 12t51 35 34 51 13 62q0 81-18 154t-53 146q-20 43-34 87t-19 93h444zm-256 1024q20 0 37-12t24-32q5-14 18-54t33-96 42-124 46-137 44-134 39-118 27-86 10-39q0-26-19-45t-45-19h-576q0-53 2-98t10-89 22-86 37-91q28-58 42-118t15-126q0-14-9-23t-23-9q-6 0-10 4t-9 9L734 765q-32 32-68 56t-78 41q-80 34-171 34H128v640h320q178 0 345 69 144 59 295 59h512z"></path></svg></span></a> 0</span>				</span>
+					<div class="comment-meta commentmetadata">
+						<span class="collapse-comment" id="collapse-comment-5171" data-toggle="collapse">
+							<!-- <a href="javascript:void(0)" title="collapse this comment"> -->
+							<button class="btn" title="" data-toggle="tooltip" data-original-title="collapse this comment">
+							<span class="sr-only">collapse this comment</span><i class="fabric-icon fabric-icon--ChevronDown" aria-hidden="true"></i>
+							</button>
+							<!-- </a> -->
+						</span>
+						
+						<span class="copy-link">
+							<button class="copy-link-anchor btn" title="" data-toggle="tooltip" data-clipboard-text="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5171" targeturi="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5171" data-original-title="copy link to this comment">
+								<span class="sr-only">copy link to this comment</span>
+								<i class="fabric-icon fabric-icon--Link" aria-hidden="true"></i><div class="copy-link-live" role="region" aria-live="assertive"></div>
+							</button>
+						</span>
+
+											</div><!-- .comment-meta .commentmetadata -->
+				</header>
+																		<div class="comment-content" id="comment-text-5171">
+										<p>Will this work with LVM partitions as well?</p>
+									</div>
+
+				<footer>
+				<div class="reply">
+									</div><!-- .reply -->
+        </footer>
+      </article><!-- #comment-## -->
+
+    <ul class="children">
+
+    <li class="comment byuser comment-author-piboulay bypostauthor even depth-2 comment-show" id="li-comment-5182">
+    	<article id="comment-5182" class="comment">
+        	<div class="comment-author vcard">
+          	<img alt="" data-src="https://secure.gravatar.com/avatar/1a7ec26bd627bbdd66fc70cb87c6aefc?s=40&amp;d=identicon&amp;r=g" src="1a7ec26bd627bbdd66fc70cb87c6aefc_005.png" data-srcset="https://secure.gravatar.com/avatar/1a7ec26bd627bbdd66fc70cb87c6aefc?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo lazyloaded" decoding="async" srcset="1a7ec26bd627bbdd66fc70cb87c6aefc_002.png 2x" width="40" height="40">          </div><!-- .comment-author .vcard -->
+          	        <header>
+					<!-- <span class="author-name" <cite class="fn">Pierre Boulay</cite> 					</span> -->
+					<span class="author-name">
+												<a class="url x-hidden-focus" href="https://devblogs.microsoft.com/commandline/author/piboulay/" alt="Pierre Boulay" title="Pierre Boulay">Pierre Boulay<img src="MicrosoftLogo_50x50.png" alt="Microsoft employee" title="Microsoft employee" width="18" height="18"></a>
+											</span>
+
+					<span class="comment-date">
+						<time pubdate="" datetime="2020-09-14T12:16:54-07:00">
+							September 14, 2020  12:16 pm          	</time>
+				 	</span>
+
+					 <span class="voting"><span id="loggedoutvotes5182"><a class="comment-reply-login x-hidden-focus" title="" data-toggle="tooltip" href="https://devblogs.microsoft.com/commandline/wp-login.php?redirect_to=https%3A%2F%2Fdevblogs.microsoft.com%2Fcommandline%2Faccess-linux-filesystems-in-windows-and-wsl-2%2F%23comment-5182" data-bi-id="comments" data-bi-name="Login to vote" aria-label="Login to vote" data-original-title="Login to vote"><span class="icon-like-dislike"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048" class="svg_dd790ee3 x-hidden-focus" focusable="false"><path d="M1856 640q39 0 74 15t61 41 42 61 15 75q0 32-10 61l-256 768q-10 29-28 53t-42 42-52 26-60 10h-512q-179 0-345-69-72-29-144-44t-151-15H0V768h417q65 0 122-24t104-70l622-621q25-25 50-39t61-14q33 0 62 12t51 35 34 51 13 62q0 81-18 154t-53 146q-20 43-34 87t-19 93h444zm-256 1024q20 0 37-12t24-32q5-14 18-54t33-96 42-124 46-137 44-134 39-118 27-86 10-39q0-26-19-45t-45-19h-576q0-53 2-98t10-89 22-86 37-91q28-58 42-118t15-126q0-14-9-23t-23-9q-6 0-10 4t-9 9L734 765q-32 32-68 56t-78 41q-80 34-171 34H128v640h320q178 0 345 69 144 59 295 59h512z"></path></svg></span></a> 0</span>				</span>
+					<div class="comment-meta commentmetadata">
+						<span class="collapse-comment" id="collapse-comment-5182" data-toggle="collapse">
+							<!-- <a href="javascript:void(0)" title="collapse this comment"> -->
+							<button class="btn" title="" data-toggle="tooltip" data-original-title="collapse this comment">
+							<span class="sr-only">collapse this comment</span><i class="fabric-icon fabric-icon--ChevronDown" aria-hidden="true"></i>
+							</button>
+							<!-- </a> -->
+						</span>
+						
+						<span class="copy-link">
+							<button class="copy-link-anchor btn" title="" data-toggle="tooltip" data-clipboard-text="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5182" targeturi="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5182" data-original-title="copy link to this comment">
+								<span class="sr-only">copy link to this comment</span>
+								<i class="fabric-icon fabric-icon--Link" aria-hidden="true"></i><div class="copy-link-live" role="region" aria-live="assertive"></div>
+							</button>
+						</span>
+
+											</div><!-- .comment-meta .commentmetadata -->
+				</header>
+																		<div class="comment-content" id="comment-text-5182">
+										<p>Unfortunately not, because lvm relies on a daemon that isn’t running in WSL 2.</p>
+<p>It might be possible to get it to work if you manually start lvmetad, but this scenario isn’t supported at this time.</p>
+									</div>
+
+				<footer>
+				<div class="reply">
+									</div><!-- .reply -->
+        </footer>
+      </article><!-- #comment-## -->
+
+    </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+    <li class="comment byuser comment-author-marcellunespalau odd alt thread-odd thread-alt depth-1 comment-show" id="li-comment-5172" style="display: block;">
+    	<article id="comment-5172" class="comment">
+        	<div class="comment-author vcard">
+          	<img alt="" data-src="https://secure.gravatar.com/avatar/11c92010b59700fc0021bf0adc7e9340?s=40&amp;d=identicon&amp;r=g" src="11c92010b59700fc0021bf0adc7e9340_001.png" data-srcset="https://secure.gravatar.com/avatar/11c92010b59700fc0021bf0adc7e9340?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo lazyloaded" decoding="async" srcset="11c92010b59700fc0021bf0adc7e9340.png 2x" width="40" height="40">          </div><!-- .comment-author .vcard -->
+          	        <header>
+					<!-- <span class="author-name" <cite class="fn">Marcel Lunes Palau</cite> 					</span> -->
+					<span class="author-name">
+												Marcel Lunes Palau											</span>
+
+					<span class="comment-date">
+						<time pubdate="" datetime="2020-09-12T04:42:00-07:00">
+							September 12, 2020  4:42 am          	</time>
+				 	</span>
+
+					 <span class="voting"><span id="loggedoutvotes5172"><a class="comment-reply-login x-hidden-focus" title="" data-toggle="tooltip" href="https://devblogs.microsoft.com/commandline/wp-login.php?redirect_to=https%3A%2F%2Fdevblogs.microsoft.com%2Fcommandline%2Faccess-linux-filesystems-in-windows-and-wsl-2%2F%23comment-5172" data-bi-id="comments" data-bi-name="Login to vote" aria-label="Login to vote" data-original-title="Login to vote"><span class="icon-like-dislike"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048" class="svg_dd790ee3 x-hidden-focus" focusable="false"><path d="M1856 640q39 0 74 15t61 41 42 61 15 75q0 32-10 61l-256 768q-10 29-28 53t-42 42-52 26-60 10h-512q-179 0-345-69-72-29-144-44t-151-15H0V768h417q65 0 122-24t104-70l622-621q25-25 50-39t61-14q33 0 62 12t51 35 34 51 13 62q0 81-18 154t-53 146q-20 43-34 87t-19 93h444zm-256 1024q20 0 37-12t24-32q5-14 18-54t33-96 42-124 46-137 44-134 39-118 27-86 10-39q0-26-19-45t-45-19h-576q0-53 2-98t10-89 22-86 37-91q28-58 42-118t15-126q0-14-9-23t-23-9q-6 0-10 4t-9 9L734 765q-32 32-68 56t-78 41q-80 34-171 34H128v640h320q178 0 345 69 144 59 295 59h512z"></path></svg></span></a> 0</span>				</span>
+					<div class="comment-meta commentmetadata">
+						<span class="collapse-comment" id="collapse-comment-5172" data-toggle="collapse">
+							<!-- <a href="javascript:void(0)" title="collapse this comment"> -->
+							<button class="btn" title="" data-toggle="tooltip" data-original-title="collapse this comment">
+							<span class="sr-only">collapse this comment</span><i class="fabric-icon fabric-icon--ChevronDown" aria-hidden="true"></i>
+							</button>
+							<!-- </a> -->
+						</span>
+						
+						<span class="copy-link">
+							<button class="copy-link-anchor btn" title="" data-toggle="tooltip" data-clipboard-text="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5172" targeturi="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5172" data-original-title="copy link to this comment">
+								<span class="sr-only">copy link to this comment</span>
+								<i class="fabric-icon fabric-icon--Link" aria-hidden="true"></i><div class="copy-link-live" role="region" aria-live="assertive"></div>
+							</button>
+						</span>
+
+											</div><!-- .comment-meta .commentmetadata -->
+				</header>
+																		<div class="comment-content" id="comment-text-5172">
+										<p>Exactly what linux file systems will be accessed?<br>
+I use xfs and I would like it to be able to access that file system from windows.</p>
+									</div>
+
+				<footer>
+				<div class="reply">
+									</div><!-- .reply -->
+        </footer>
+      </article><!-- #comment-## -->
+
+    <ul class="children">
+
+    <li class="comment byuser comment-author-piboulay bypostauthor even depth-2 comment-show" id="li-comment-5179">
+    	<article id="comment-5179" class="comment">
+        	<div class="comment-author vcard">
+          	<img alt="" data-src="https://secure.gravatar.com/avatar/1a7ec26bd627bbdd66fc70cb87c6aefc?s=40&amp;d=identicon&amp;r=g" src="1a7ec26bd627bbdd66fc70cb87c6aefc_005.png" data-srcset="https://secure.gravatar.com/avatar/1a7ec26bd627bbdd66fc70cb87c6aefc?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo lazyloaded" decoding="async" srcset="1a7ec26bd627bbdd66fc70cb87c6aefc_002.png 2x" width="40" height="40">          </div><!-- .comment-author .vcard -->
+          	        <header>
+					<!-- <span class="author-name" <cite class="fn">Pierre Boulay</cite> 					</span> -->
+					<span class="author-name">
+												<a class="url x-hidden-focus" href="https://devblogs.microsoft.com/commandline/author/piboulay/" alt="Pierre Boulay" title="Pierre Boulay">Pierre Boulay<img src="MicrosoftLogo_50x50.png" alt="Microsoft employee" title="Microsoft employee" width="18" height="18"></a>
+											</span>
+
+					<span class="comment-date">
+						<time pubdate="" datetime="2020-09-14T12:12:52-07:00">
+							September 14, 2020  12:12 pm          	</time>
+				 	</span>
+
+					 <span class="voting"><span id="loggedoutvotes5179"><a class="comment-reply-login x-hidden-focus" title="" data-toggle="tooltip" href="https://devblogs.microsoft.com/commandline/wp-login.php?redirect_to=https%3A%2F%2Fdevblogs.microsoft.com%2Fcommandline%2Faccess-linux-filesystems-in-windows-and-wsl-2%2F%23comment-5179" data-bi-id="comments" data-bi-name="Login to vote" aria-label="Login to vote" data-original-title="Login to vote"><span class="icon-like-dislike"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048" class="svg_dd790ee3 x-hidden-focus" focusable="false"><path d="M1856 640q39 0 74 15t61 41 42 61 15 75q0 32-10 61l-256 768q-10 29-28 53t-42 42-52 26-60 10h-512q-179 0-345-69-72-29-144-44t-151-15H0V768h417q65 0 122-24t104-70l622-621q25-25 50-39t61-14q33 0 62 12t51 35 34 51 13 62q0 81-18 154t-53 146q-20 43-34 87t-19 93h444zm-256 1024q20 0 37-12t24-32q5-14 18-54t33-96 42-124 46-137 44-134 39-118 27-86 10-39q0-26-19-45t-45-19h-576q0-53 2-98t10-89 22-86 37-91q28-58 42-118t15-126q0-14-9-23t-23-9q-6 0-10 4t-9 9L734 765q-32 32-68 56t-78 41q-80 34-171 34H128v640h320q178 0 345 69 144 59 295 59h512z"></path></svg></span></a> 0</span>				</span>
+					<div class="comment-meta commentmetadata">
+						<span class="collapse-comment" id="collapse-comment-5179" data-toggle="collapse">
+							<!-- <a href="javascript:void(0)" title="collapse this comment"> -->
+							<button class="btn" title="" data-toggle="tooltip" data-original-title="collapse this comment">
+							<span class="sr-only">collapse this comment</span><i class="fabric-icon fabric-icon--ChevronDown" aria-hidden="true"></i>
+							</button>
+							<!-- </a> -->
+						</span>
+						
+						<span class="copy-link">
+							<button class="copy-link-anchor btn" title="" data-toggle="tooltip" data-clipboard-text="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5179" targeturi="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5179" data-original-title="copy link to this comment">
+								<span class="sr-only">copy link to this comment</span>
+								<i class="fabric-icon fabric-icon--Link" aria-hidden="true"></i><div class="copy-link-live" role="region" aria-live="assertive"></div>
+							</button>
+						</span>
+
+											</div><!-- .comment-meta .commentmetadata -->
+				</header>
+																		<div class="comment-content" id="comment-text-5179">
+										<p>All filesystems supported by the kernel you’re running can be mounted  from WSL (in your case, xfs is supported by the kernel we ship).</p>
+<p>For more complex use cases, you can run <code class=" prettyprinted" style=""><span class="pln">wsl </span><span class="pun">--</span><span class="pln">mount </span><span class="pun">&lt;</span><span class="typ">Device</span><span class="pun">&gt;</span><span class="pln"> </span><span class="pun">--</span><span class="pln">bare</span></code>, and then manually mount the device from inside WSL.</p>
+									</div>
+
+				<footer>
+				<div class="reply">
+									</div><!-- .reply -->
+        </footer>
+      </article><!-- #comment-## -->
+
+    <ul class="children">
+
+    <li class="comment byuser comment-author-marcellunespalau odd alt depth-3 comment-show" id="li-comment-5244">
+    	<article id="comment-5244" class="comment">
+        	<div class="comment-author vcard">
+          	<img alt="" data-src="https://secure.gravatar.com/avatar/11c92010b59700fc0021bf0adc7e9340?s=40&amp;d=identicon&amp;r=g" src="11c92010b59700fc0021bf0adc7e9340_001.png" data-srcset="https://secure.gravatar.com/avatar/11c92010b59700fc0021bf0adc7e9340?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo lazyloaded" decoding="async" srcset="11c92010b59700fc0021bf0adc7e9340.png 2x" width="40" height="40">          </div><!-- .comment-author .vcard -->
+          	        <header>
+					<!-- <span class="author-name" <cite class="fn">Marcel Lunes Palau</cite> 					</span> -->
+					<span class="author-name">
+												Marcel Lunes Palau											</span>
+
+					<span class="comment-date">
+						<time pubdate="" datetime="2020-10-13T10:49:16-07:00">
+							October 13, 2020  10:49 am          	</time>
+				 	</span>
+
+					 <span class="voting"><span id="loggedoutvotes5244"><a class="comment-reply-login x-hidden-focus" title="" data-toggle="tooltip" href="https://devblogs.microsoft.com/commandline/wp-login.php?redirect_to=https%3A%2F%2Fdevblogs.microsoft.com%2Fcommandline%2Faccess-linux-filesystems-in-windows-and-wsl-2%2F%23comment-5244" data-bi-id="comments" data-bi-name="Login to vote" aria-label="Login to vote" data-original-title="Login to vote"><span class="icon-like-dislike"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048" class="svg_dd790ee3 x-hidden-focus" focusable="false"><path d="M1856 640q39 0 74 15t61 41 42 61 15 75q0 32-10 61l-256 768q-10 29-28 53t-42 42-52 26-60 10h-512q-179 0-345-69-72-29-144-44t-151-15H0V768h417q65 0 122-24t104-70l622-621q25-25 50-39t61-14q33 0 62 12t51 35 34 51 13 62q0 81-18 154t-53 146q-20 43-34 87t-19 93h444zm-256 1024q20 0 37-12t24-32q5-14 18-54t33-96 42-124 46-137 44-134 39-118 27-86 10-39q0-26-19-45t-45-19h-576q0-53 2-98t10-89 22-86 37-91q28-58 42-118t15-126q0-14-9-23t-23-9q-6 0-10 4t-9 9L734 765q-32 32-68 56t-78 41q-80 34-171 34H128v640h320q178 0 345 69 144 59 295 59h512z"></path></svg></span></a> 0</span>				</span>
+					<div class="comment-meta commentmetadata">
+						<span class="collapse-comment" id="collapse-comment-5244" data-toggle="collapse">
+							<!-- <a href="javascript:void(0)" title="collapse this comment"> -->
+							<button class="btn" title="" data-toggle="tooltip" data-original-title="collapse this comment">
+							<span class="sr-only">collapse this comment</span><i class="fabric-icon fabric-icon--ChevronDown" aria-hidden="true"></i>
+							</button>
+							<!-- </a> -->
+						</span>
+						
+						<span class="copy-link">
+							<button class="copy-link-anchor btn" title="" data-toggle="tooltip" data-clipboard-text="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5244" targeturi="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5244" data-original-title="copy link to this comment">
+								<span class="sr-only">copy link to this comment</span>
+								<i class="fabric-icon fabric-icon--Link" aria-hidden="true"></i><div class="copy-link-live" role="region" aria-live="assertive"></div>
+							</button>
+						</span>
+
+											</div><!-- .comment-meta .commentmetadata -->
+				</header>
+																		<div class="comment-content" id="comment-text-5244">
+										<p>In PowerShell “Invalid command line option: –mount”</p>
+									</div>
+
+				<footer>
+				<div class="reply">
+									</div><!-- .reply -->
+        </footer>
+      </article><!-- #comment-## -->
+
+    <ul class="children">
+
+    <li class="comment byuser comment-author-piboulay bypostauthor even depth-4 comment-show" id="li-comment-5245">
+    	<article id="comment-5245" class="comment">
+        	<div class="comment-author vcard">
+          	<img alt="" data-src="https://secure.gravatar.com/avatar/1a7ec26bd627bbdd66fc70cb87c6aefc?s=40&amp;d=identicon&amp;r=g" src="1a7ec26bd627bbdd66fc70cb87c6aefc_005.png" data-srcset="https://secure.gravatar.com/avatar/1a7ec26bd627bbdd66fc70cb87c6aefc?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo lazyloaded" decoding="async" srcset="1a7ec26bd627bbdd66fc70cb87c6aefc_002.png 2x" width="40" height="40">          </div><!-- .comment-author .vcard -->
+          	        <header>
+					<!-- <span class="author-name" <cite class="fn">Pierre Boulay</cite> 					</span> -->
+					<span class="author-name">
+												<a class="url x-hidden-focus" href="https://devblogs.microsoft.com/commandline/author/piboulay/" alt="Pierre Boulay" title="Pierre Boulay">Pierre Boulay<img src="MicrosoftLogo_50x50.png" alt="Microsoft employee" title="Microsoft employee" width="18" height="18"></a>
+											</span>
+
+					<span class="comment-date">
+						<time pubdate="" datetime="2020-10-13T12:03:23-07:00">
+							October 13, 2020  12:03 pm          	</time>
+				 	</span>
+
+					 <span class="voting"><span id="loggedoutvotes5245"><a class="comment-reply-login x-hidden-focus" title="" data-toggle="tooltip" href="https://devblogs.microsoft.com/commandline/wp-login.php?redirect_to=https%3A%2F%2Fdevblogs.microsoft.com%2Fcommandline%2Faccess-linux-filesystems-in-windows-and-wsl-2%2F%23comment-5245" data-bi-id="comments" data-bi-name="Login to vote" aria-label="Login to vote" data-original-title="Login to vote"><span class="icon-like-dislike"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048" class="svg_dd790ee3 x-hidden-focus" focusable="false"><path d="M1856 640q39 0 74 15t61 41 42 61 15 75q0 32-10 61l-256 768q-10 29-28 53t-42 42-52 26-60 10h-512q-179 0-345-69-72-29-144-44t-151-15H0V768h417q65 0 122-24t104-70l622-621q25-25 50-39t61-14q33 0 62 12t51 35 34 51 13 62q0 81-18 154t-53 146q-20 43-34 87t-19 93h444zm-256 1024q20 0 37-12t24-32q5-14 18-54t33-96 42-124 46-137 44-134 39-118 27-86 10-39q0-26-19-45t-45-19h-576q0-53 2-98t10-89 22-86 37-91q28-58 42-118t15-126q0-14-9-23t-23-9q-6 0-10 4t-9 9L734 765q-32 32-68 56t-78 41q-80 34-171 34H128v640h320q178 0 345 69 144 59 295 59h512z"></path></svg></span></a> 0</span>				</span>
+					<div class="comment-meta commentmetadata">
+						<span class="collapse-comment" id="collapse-comment-5245" data-toggle="collapse">
+							<!-- <a href="javascript:void(0)" title="collapse this comment"> -->
+							<button class="btn" title="" data-toggle="tooltip" data-original-title="collapse this comment">
+							<span class="sr-only">collapse this comment</span><i class="fabric-icon fabric-icon--ChevronDown" aria-hidden="true"></i>
+							</button>
+							<!-- </a> -->
+						</span>
+						
+						<span class="copy-link">
+							<button class="copy-link-anchor btn" title="" data-toggle="tooltip" data-clipboard-text="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5245" targeturi="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5245" data-original-title="copy link to this comment">
+								<span class="sr-only">copy link to this comment</span>
+								<i class="fabric-icon fabric-icon--Link" aria-hidden="true"></i><div class="copy-link-live" role="region" aria-live="assertive"></div>
+							</button>
+						</span>
+
+											</div><!-- .comment-meta .commentmetadata -->
+				</header>
+																		<div class="comment-content" id="comment-text-5245">
+										<p>There are two dashes (-) on this argument.<br>
+If that doesn’t help, please <a href="https://github.com/microsoft/WSL/issues/new/choose" target="_blank">create an issue</a></p>
+									</div>
+
+				<footer>
+				<div class="reply">
+									</div><!-- .reply -->
+        </footer>
+      </article><!-- #comment-## -->
+
+    </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+    <li class="comment byuser comment-author-kjeffcoat odd alt thread-even depth-1 comment-show" id="li-comment-5173" style="display: block;">
+    	<article id="comment-5173" class="comment">
+        	<div class="comment-author vcard">
+          	<img alt="" data-src="https://secure.gravatar.com/avatar/efbed93d1ef63fdfc2da967cf74951ec?s=40&amp;d=identicon&amp;r=g" src="efbed93d1ef63fdfc2da967cf74951ec_001.png" data-srcset="https://secure.gravatar.com/avatar/efbed93d1ef63fdfc2da967cf74951ec?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo lazyloaded" decoding="async" srcset="efbed93d1ef63fdfc2da967cf74951ec.png 2x" width="40" height="40">          </div><!-- .comment-author .vcard -->
+          	        <header>
+					<!-- <span class="author-name" <cite class="fn">K Kaland</cite> 					</span> -->
+					<span class="author-name">
+												K Kaland											</span>
+
+					<span class="comment-date">
+						<time pubdate="" datetime="2020-09-12T08:39:51-07:00">
+							September 12, 2020  8:39 am          	</time>
+				 	</span>
+
+					 <span class="voting"><span id="loggedoutvotes5173"><a class="comment-reply-login x-hidden-focus" title="" data-toggle="tooltip" href="https://devblogs.microsoft.com/commandline/wp-login.php?redirect_to=https%3A%2F%2Fdevblogs.microsoft.com%2Fcommandline%2Faccess-linux-filesystems-in-windows-and-wsl-2%2F%23comment-5173" data-bi-id="comments" data-bi-name="Login to vote" aria-label="Login to vote" data-original-title="Login to vote"><span class="icon-like-dislike"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048" class="svg_dd790ee3 x-hidden-focus" focusable="false"><path d="M1856 640q39 0 74 15t61 41 42 61 15 75q0 32-10 61l-256 768q-10 29-28 53t-42 42-52 26-60 10h-512q-179 0-345-69-72-29-144-44t-151-15H0V768h417q65 0 122-24t104-70l622-621q25-25 50-39t61-14q33 0 62 12t51 35 34 51 13 62q0 81-18 154t-53 146q-20 43-34 87t-19 93h444zm-256 1024q20 0 37-12t24-32q5-14 18-54t33-96 42-124 46-137 44-134 39-118 27-86 10-39q0-26-19-45t-45-19h-576q0-53 2-98t10-89 22-86 37-91q28-58 42-118t15-126q0-14-9-23t-23-9q-6 0-10 4t-9 9L734 765q-32 32-68 56t-78 41q-80 34-171 34H128v640h320q178 0 345 69 144 59 295 59h512z"></path></svg></span></a> 0</span>				</span>
+					<div class="comment-meta commentmetadata">
+						<span class="collapse-comment" id="collapse-comment-5173" data-toggle="collapse">
+							<!-- <a href="javascript:void(0)" title="collapse this comment"> -->
+							<button class="btn" title="" data-toggle="tooltip" data-original-title="collapse this comment">
+							<span class="sr-only">collapse this comment</span><i class="fabric-icon fabric-icon--ChevronDown" aria-hidden="true"></i>
+							</button>
+							<!-- </a> -->
+						</span>
+						
+						<span class="copy-link">
+							<button class="copy-link-anchor btn" title="" data-toggle="tooltip" data-clipboard-text="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5173" targeturi="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5173" data-original-title="copy link to this comment">
+								<span class="sr-only">copy link to this comment</span>
+								<i class="fabric-icon fabric-icon--Link" aria-hidden="true"></i><div class="copy-link-live" role="region" aria-live="assertive"></div>
+							</button>
+						</span>
+
+											</div><!-- .comment-meta .commentmetadata -->
+				</header>
+																		<div class="comment-content" id="comment-text-5173">
+										<p>Does the limitation of only working with disks mean it’s not possible to mount Linux partitions if they are on the same physical disk (boot disk) as Windows, e.g. on a laptop?</p>
+									</div>
+
+				<footer>
+				<div class="reply">
+									</div><!-- .reply -->
+        </footer>
+      </article><!-- #comment-## -->
+
+    <ul class="children">
+
+    <li class="comment byuser comment-author-piboulay bypostauthor even depth-2 comment-show" id="li-comment-5180">
+    	<article id="comment-5180" class="comment">
+        	<div class="comment-author vcard">
+          	<img alt="" data-src="https://secure.gravatar.com/avatar/1a7ec26bd627bbdd66fc70cb87c6aefc?s=40&amp;d=identicon&amp;r=g" src="1a7ec26bd627bbdd66fc70cb87c6aefc_005.png" data-srcset="https://secure.gravatar.com/avatar/1a7ec26bd627bbdd66fc70cb87c6aefc?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo lazyloaded" decoding="async" srcset="1a7ec26bd627bbdd66fc70cb87c6aefc_002.png 2x" width="40" height="40">          </div><!-- .comment-author .vcard -->
+          	        <header>
+					<!-- <span class="author-name" <cite class="fn">Pierre Boulay</cite> 					</span> -->
+					<span class="author-name">
+												<a class="url x-hidden-focus" href="https://devblogs.microsoft.com/commandline/author/piboulay/" alt="Pierre Boulay" title="Pierre Boulay">Pierre Boulay<img src="MicrosoftLogo_50x50.png" alt="Microsoft employee" title="Microsoft employee" width="18" height="18"></a>
+											</span>
+
+					<span class="comment-date">
+						<time pubdate="" datetime="2020-09-14T12:13:33-07:00">
+							September 14, 2020  12:13 pm          	</time>
+				 	</span>
+
+					 <span class="voting"><span id="loggedoutvotes5180"><a class="comment-reply-login x-hidden-focus" title="" data-toggle="tooltip" href="https://devblogs.microsoft.com/commandline/wp-login.php?redirect_to=https%3A%2F%2Fdevblogs.microsoft.com%2Fcommandline%2Faccess-linux-filesystems-in-windows-and-wsl-2%2F%23comment-5180" data-bi-id="comments" data-bi-name="Login to vote" aria-label="Login to vote" data-original-title="Login to vote"><span class="icon-like-dislike"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048" class="svg_dd790ee3 x-hidden-focus" focusable="false"><path d="M1856 640q39 0 74 15t61 41 42 61 15 75q0 32-10 61l-256 768q-10 29-28 53t-42 42-52 26-60 10h-512q-179 0-345-69-72-29-144-44t-151-15H0V768h417q65 0 122-24t104-70l622-621q25-25 50-39t61-14q33 0 62 12t51 35 34 51 13 62q0 81-18 154t-53 146q-20 43-34 87t-19 93h444zm-256 1024q20 0 37-12t24-32q5-14 18-54t33-96 42-124 46-137 44-134 39-118 27-86 10-39q0-26-19-45t-45-19h-576q0-53 2-98t10-89 22-86 37-91q28-58 42-118t15-126q0-14-9-23t-23-9q-6 0-10 4t-9 9L734 765q-32 32-68 56t-78 41q-80 34-171 34H128v640h320q178 0 345 69 144 59 295 59h512z"></path></svg></span></a> 0</span>				</span>
+					<div class="comment-meta commentmetadata">
+						<span class="collapse-comment" id="collapse-comment-5180" data-toggle="collapse">
+							<!-- <a href="javascript:void(0)" title="collapse this comment"> -->
+							<button class="btn" title="" data-toggle="tooltip" data-original-title="collapse this comment">
+							<span class="sr-only">collapse this comment</span><i class="fabric-icon fabric-icon--ChevronDown" aria-hidden="true"></i>
+							</button>
+							<!-- </a> -->
+						</span>
+						
+						<span class="copy-link">
+							<button class="copy-link-anchor btn" title="" data-toggle="tooltip" data-clipboard-text="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5180" targeturi="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5180" data-original-title="copy link to this comment">
+								<span class="sr-only">copy link to this comment</span>
+								<i class="fabric-icon fabric-icon--Link" aria-hidden="true"></i><div class="copy-link-live" role="region" aria-live="assertive"></div>
+							</button>
+						</span>
+
+											</div><!-- .comment-meta .commentmetadata -->
+				</header>
+																		<div class="comment-content" id="comment-text-5180">
+										<p>Yes, this scenario isn’t supported at this time.</p>
+									</div>
+
+				<footer>
+				<div class="reply">
+									</div><!-- .reply -->
+        </footer>
+      </article><!-- #comment-## -->
+
+    </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+    <li class="comment byuser comment-author-pavelminaev odd alt thread-odd thread-alt depth-1 comment-show" id="li-comment-5174" style="display: block;">
+    	<article id="comment-5174" class="comment">
+        	<div class="comment-author vcard">
+          	<img alt="" data-src="https://devblogs.microsoft.com/commandline/wp-content/uploads/sites/33/2020/09/user-39697-150x150.png" src="user-39697-150x150.png" data-srcset="https://devblogs.microsoft.com/commandline/wp-content/uploads/sites/33/2020/09/user-39697-150x150.png 2x" class="avatar avatar-40 photo avatar-default lazyloaded" decoding="async" srcset="user-39697-150x150.png 2x" width="40" height="40">          </div><!-- .comment-author .vcard -->
+          	        <header>
+					<!-- <span class="author-name" <cite class="fn">Pavel Minaev</cite> 					</span> -->
+					<span class="author-name">
+												Pavel Minaev											</span>
+
+					<span class="comment-date">
+						<time pubdate="" datetime="2020-09-12T18:19:43-07:00">
+							September 12, 2020  6:19 pm          	</time>
+				 	</span>
+
+					 <span class="voting"><span id="loggedoutvotes5174"><a class="comment-reply-login x-hidden-focus" title="" data-toggle="tooltip" href="https://devblogs.microsoft.com/commandline/wp-login.php?redirect_to=https%3A%2F%2Fdevblogs.microsoft.com%2Fcommandline%2Faccess-linux-filesystems-in-windows-and-wsl-2%2F%23comment-5174" data-bi-id="comments" data-bi-name="Login to vote" aria-label="Login to vote" data-original-title="Login to vote"><span class="icon-like-dislike"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048" class="svg_dd790ee3 x-hidden-focus" focusable="false"><path d="M1856 640q39 0 74 15t61 41 42 61 15 75q0 32-10 61l-256 768q-10 29-28 53t-42 42-52 26-60 10h-512q-179 0-345-69-72-29-144-44t-151-15H0V768h417q65 0 122-24t104-70l622-621q25-25 50-39t61-14q33 0 62 12t51 35 34 51 13 62q0 81-18 154t-53 146q-20 43-34 87t-19 93h444zm-256 1024q20 0 37-12t24-32q5-14 18-54t33-96 42-124 46-137 44-134 39-118 27-86 10-39q0-26-19-45t-45-19h-576q0-53 2-98t10-89 22-86 37-91q28-58 42-118t15-126q0-14-9-23t-23-9q-6 0-10 4t-9 9L734 765q-32 32-68 56t-78 41q-80 34-171 34H128v640h320q178 0 345 69 144 59 295 59h512z"></path></svg></span></a> 0</span>				</span>
+					<div class="comment-meta commentmetadata">
+						<span class="collapse-comment" id="collapse-comment-5174" data-toggle="collapse">
+							<!-- <a href="javascript:void(0)" title="collapse this comment"> -->
+							<button class="btn" title="" data-toggle="tooltip" data-original-title="collapse this comment">
+							<span class="sr-only">collapse this comment</span><i class="fabric-icon fabric-icon--ChevronDown" aria-hidden="true"></i>
+							</button>
+							<!-- </a> -->
+						</span>
+						
+						<span class="copy-link">
+							<button class="copy-link-anchor btn" title="" data-toggle="tooltip" data-clipboard-text="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5174" targeturi="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5174" data-original-title="copy link to this comment">
+								<span class="sr-only">copy link to this comment</span>
+								<i class="fabric-icon fabric-icon--Link" aria-hidden="true"></i><div class="copy-link-live" role="region" aria-live="assertive"></div>
+							</button>
+						</span>
+
+											</div><!-- .comment-meta .commentmetadata -->
+				</header>
+																		<div class="comment-content" id="comment-text-5174">
+										<p>Does this make it possible to use a physical disk for a WSL root filesystem? It would be truly amazing if one could have a full-fledged dual-boot setup that could <em>also</em> double as WSL.</p>
+									</div>
+
+				<footer>
+				<div class="reply">
+									</div><!-- .reply -->
+        </footer>
+      </article><!-- #comment-## -->
+
+    <ul class="children">
+
+    <li class="comment byuser comment-author-piboulay bypostauthor even depth-2 comment-show" id="li-comment-5181">
+    	<article id="comment-5181" class="comment">
+        	<div class="comment-author vcard">
+          	<img alt="" data-src="https://secure.gravatar.com/avatar/1a7ec26bd627bbdd66fc70cb87c6aefc?s=40&amp;d=identicon&amp;r=g" src="1a7ec26bd627bbdd66fc70cb87c6aefc_005.png" data-srcset="https://secure.gravatar.com/avatar/1a7ec26bd627bbdd66fc70cb87c6aefc?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo lazyloaded" decoding="async" srcset="1a7ec26bd627bbdd66fc70cb87c6aefc_002.png 2x" width="40" height="40">          </div><!-- .comment-author .vcard -->
+          	        <header>
+					<!-- <span class="author-name" <cite class="fn">Pierre Boulay</cite> 					</span> -->
+					<span class="author-name">
+												<a class="url x-hidden-focus" href="https://devblogs.microsoft.com/commandline/author/piboulay/" alt="Pierre Boulay" title="Pierre Boulay">Pierre Boulay<img src="MicrosoftLogo_50x50.png" alt="Microsoft employee" title="Microsoft employee" width="18" height="18"></a>
+											</span>
+
+					<span class="comment-date">
+						<time pubdate="" datetime="2020-09-14T12:15:33-07:00">
+							September 14, 2020  12:15 pm          	</time>
+				 	</span>
+
+					 <span class="voting"><span id="loggedoutvotes5181"><a class="comment-reply-login x-hidden-focus" title="" data-toggle="tooltip" href="https://devblogs.microsoft.com/commandline/wp-login.php?redirect_to=https%3A%2F%2Fdevblogs.microsoft.com%2Fcommandline%2Faccess-linux-filesystems-in-windows-and-wsl-2%2F%23comment-5181" data-bi-id="comments" data-bi-name="Login to vote" aria-label="Login to vote" data-original-title="Login to vote"><span class="icon-like-dislike"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048" class="svg_dd790ee3 x-hidden-focus" focusable="false"><path d="M1856 640q39 0 74 15t61 41 42 61 15 75q0 32-10 61l-256 768q-10 29-28 53t-42 42-52 26-60 10h-512q-179 0-345-69-72-29-144-44t-151-15H0V768h417q65 0 122-24t104-70l622-621q25-25 50-39t61-14q33 0 62 12t51 35 34 51 13 62q0 81-18 154t-53 146q-20 43-34 87t-19 93h444zm-256 1024q20 0 37-12t24-32q5-14 18-54t33-96 42-124 46-137 44-134 39-118 27-86 10-39q0-26-19-45t-45-19h-576q0-53 2-98t10-89 22-86 37-91q28-58 42-118t15-126q0-14-9-23t-23-9q-6 0-10 4t-9 9L734 765q-32 32-68 56t-78 41q-80 34-171 34H128v640h320q178 0 345 69 144 59 295 59h512z"></path></svg></span></a> 0</span>				</span>
+					<div class="comment-meta commentmetadata">
+						<span class="collapse-comment" id="collapse-comment-5181" data-toggle="collapse">
+							<!-- <a href="javascript:void(0)" title="collapse this comment"> -->
+							<button class="btn" title="" data-toggle="tooltip" data-original-title="collapse this comment">
+							<span class="sr-only">collapse this comment</span><i class="fabric-icon fabric-icon--ChevronDown" aria-hidden="true"></i>
+							</button>
+							<!-- </a> -->
+						</span>
+						
+						<span class="copy-link">
+							<button class="copy-link-anchor btn" title="" data-toggle="tooltip" data-clipboard-text="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5181" targeturi="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5181" data-original-title="copy link to this comment">
+								<span class="sr-only">copy link to this comment</span>
+								<i class="fabric-icon fabric-icon--Link" aria-hidden="true"></i><div class="copy-link-live" role="region" aria-live="assertive"></div>
+							</button>
+						</span>
+
+											</div><!-- .comment-meta .commentmetadata -->
+				</header>
+																		<div class="comment-content" id="comment-text-5181">
+										<p>That’s an interesting idea.</p>
+<p>It’s not possible to boot directly on a mounted disk, but you can chroot into it after mounting it.</p>
+									</div>
+
+				<footer>
+				<div class="reply">
+									</div><!-- .reply -->
+        </footer>
+      </article><!-- #comment-## -->
+
+    <ul class="children">
+
+    <li class="comment byuser comment-author-ihor-youw odd alt depth-3 comment-show" id="li-comment-5257">
+    	<article id="comment-5257" class="comment">
+        	<div class="comment-author vcard">
+          	<img alt="" data-src="https://secure.gravatar.com/avatar/21da76d9d78a41f4e732d25ce7177ee8?s=40&amp;d=identicon&amp;r=g" src="21da76d9d78a41f4e732d25ce7177ee8_001.jpeg" data-srcset="https://secure.gravatar.com/avatar/21da76d9d78a41f4e732d25ce7177ee8?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo lazyloaded" decoding="async" srcset="21da76d9d78a41f4e732d25ce7177ee8.jpeg 2x" width="40" height="40">          </div><!-- .comment-author .vcard -->
+          	        <header>
+					<!-- <span class="author-name" <cite class="fn">Ihor Dutchak</cite> 					</span> -->
+					<span class="author-name">
+												Ihor Dutchak											</span>
+
+					<span class="comment-date">
+						<time pubdate="" datetime="2020-10-19T06:26:05-07:00">
+							October 19, 2020  6:26 am          	</time>
+				 	</span>
+
+					 <span class="voting"><span id="loggedoutvotes5257"><a class="comment-reply-login x-hidden-focus" title="" data-toggle="tooltip" href="https://devblogs.microsoft.com/commandline/wp-login.php?redirect_to=https%3A%2F%2Fdevblogs.microsoft.com%2Fcommandline%2Faccess-linux-filesystems-in-windows-and-wsl-2%2F%23comment-5257" data-bi-id="comments" data-bi-name="Login to vote" aria-label="Login to vote" data-original-title="Login to vote"><span class="icon-like-dislike"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048" class="svg_dd790ee3 x-hidden-focus" focusable="false"><path d="M1856 640q39 0 74 15t61 41 42 61 15 75q0 32-10 61l-256 768q-10 29-28 53t-42 42-52 26-60 10h-512q-179 0-345-69-72-29-144-44t-151-15H0V768h417q65 0 122-24t104-70l622-621q25-25 50-39t61-14q33 0 62 12t51 35 34 51 13 62q0 81-18 154t-53 146q-20 43-34 87t-19 93h444zm-256 1024q20 0 37-12t24-32q5-14 18-54t33-96 42-124 46-137 44-134 39-118 27-86 10-39q0-26-19-45t-45-19h-576q0-53 2-98t10-89 22-86 37-91q28-58 42-118t15-126q0-14-9-23t-23-9q-6 0-10 4t-9 9L734 765q-32 32-68 56t-78 41q-80 34-171 34H128v640h320q178 0 345 69 144 59 295 59h512z"></path></svg></span></a> 0</span>				</span>
+					<div class="comment-meta commentmetadata">
+						<span class="collapse-comment" id="collapse-comment-5257" data-toggle="collapse">
+							<!-- <a href="javascript:void(0)" title="collapse this comment"> -->
+							<button class="btn" title="" data-toggle="tooltip" data-original-title="collapse this comment">
+							<span class="sr-only">collapse this comment</span><i class="fabric-icon fabric-icon--ChevronDown" aria-hidden="true"></i>
+							</button>
+							<!-- </a> -->
+						</span>
+						
+						<span class="copy-link">
+							<button class="copy-link-anchor btn" title="" data-toggle="tooltip" data-clipboard-text="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5257" targeturi="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5257" data-original-title="copy link to this comment">
+								<span class="sr-only">copy link to this comment</span>
+								<i class="fabric-icon fabric-icon--Link" aria-hidden="true"></i><div class="copy-link-live" role="region" aria-live="assertive"></div>
+							</button>
+						</span>
+
+											</div><!-- .comment-meta .commentmetadata -->
+				</header>
+																		<div class="comment-content" id="comment-text-5257">
+										<blockquote>
+<p>but you can chroot into it after mounting it</p>
+</blockquote>
+<p>Would be cool to have a way to chroot to a specific device quickly, like wsl –chroot \.\PHYSICALDRIVE… without need to mount a drive -&gt; mount all the /dev/… /proc/… etc. -&gt; chroot…</p>
+									</div>
+
+				<footer>
+				<div class="reply">
+									</div><!-- .reply -->
+        </footer>
+      </article><!-- #comment-## -->
+
+    <ul class="children">
+
+    <li class="comment byuser comment-author-piboulay bypostauthor even depth-4 comment-show" id="li-comment-5258">
+    	<article id="comment-5258" class="comment">
+        	<div class="comment-author vcard">
+          	<img alt="" data-src="https://secure.gravatar.com/avatar/1a7ec26bd627bbdd66fc70cb87c6aefc?s=40&amp;d=identicon&amp;r=g" src="1a7ec26bd627bbdd66fc70cb87c6aefc_005.png" data-srcset="https://secure.gravatar.com/avatar/1a7ec26bd627bbdd66fc70cb87c6aefc?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo lazyloaded" decoding="async" srcset="1a7ec26bd627bbdd66fc70cb87c6aefc_002.png 2x" width="40" height="40">          </div><!-- .comment-author .vcard -->
+          	        <header>
+					<!-- <span class="author-name" <cite class="fn">Pierre Boulay</cite> 					</span> -->
+					<span class="author-name">
+												<a class="url x-hidden-focus" href="https://devblogs.microsoft.com/commandline/author/piboulay/" alt="Pierre Boulay" title="Pierre Boulay">Pierre Boulay<img src="MicrosoftLogo_50x50.png" alt="Microsoft employee" title="Microsoft employee" width="18" height="18"></a>
+											</span>
+
+					<span class="comment-date">
+						<time pubdate="" datetime="2020-10-19T12:42:10-07:00">
+							October 19, 2020  12:42 pm          	</time>
+				 	</span>
+
+					 <span class="voting"><span id="loggedoutvotes5258"><a class="comment-reply-login x-hidden-focus" title="" data-toggle="tooltip" href="https://devblogs.microsoft.com/commandline/wp-login.php?redirect_to=https%3A%2F%2Fdevblogs.microsoft.com%2Fcommandline%2Faccess-linux-filesystems-in-windows-and-wsl-2%2F%23comment-5258" data-bi-id="comments" data-bi-name="Login to vote" aria-label="Login to vote" data-original-title="Login to vote"><span class="icon-like-dislike"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048" class="svg_dd790ee3 x-hidden-focus" focusable="false"><path d="M1856 640q39 0 74 15t61 41 42 61 15 75q0 32-10 61l-256 768q-10 29-28 53t-42 42-52 26-60 10h-512q-179 0-345-69-72-29-144-44t-151-15H0V768h417q65 0 122-24t104-70l622-621q25-25 50-39t61-14q33 0 62 12t51 35 34 51 13 62q0 81-18 154t-53 146q-20 43-34 87t-19 93h444zm-256 1024q20 0 37-12t24-32q5-14 18-54t33-96 42-124 46-137 44-134 39-118 27-86 10-39q0-26-19-45t-45-19h-576q0-53 2-98t10-89 22-86 37-91q28-58 42-118t15-126q0-14-9-23t-23-9q-6 0-10 4t-9 9L734 765q-32 32-68 56t-78 41q-80 34-171 34H128v640h320q178 0 345 69 144 59 295 59h512z"></path></svg></span></a> 0</span>				</span>
+					<div class="comment-meta commentmetadata">
+						<span class="collapse-comment" id="collapse-comment-5258" data-toggle="collapse">
+							<!-- <a href="javascript:void(0)" title="collapse this comment"> -->
+							<button class="btn" title="" data-toggle="tooltip" data-original-title="collapse this comment">
+							<span class="sr-only">collapse this comment</span><i class="fabric-icon fabric-icon--ChevronDown" aria-hidden="true"></i>
+							</button>
+							<!-- </a> -->
+						</span>
+						
+						<span class="copy-link">
+							<button class="copy-link-anchor btn" title="" data-toggle="tooltip" data-clipboard-text="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5258" targeturi="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5258" data-original-title="copy link to this comment">
+								<span class="sr-only">copy link to this comment</span>
+								<i class="fabric-icon fabric-icon--Link" aria-hidden="true"></i><div class="copy-link-live" role="region" aria-live="assertive"></div>
+							</button>
+						</span>
+
+											</div><!-- .comment-meta .commentmetadata -->
+				</header>
+																		<div class="comment-content" id="comment-text-5258">
+										<p>That’s an interesting idea.</p>
+<p>I’d recommend <a href="https://github.com/microsoft/WSL/issues/new?assignees=&amp;labels=feature&amp;template=feature_request.md&amp;title=" target="_blank">creating a feature request</a></p>
+									</div>
+
+				<footer>
+				<div class="reply">
+									</div><!-- .reply -->
+        </footer>
+      </article><!-- #comment-## -->
+
+    </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+    <li class="comment byuser comment-author-rkppom odd alt thread-even depth-1 comment-show" id="li-comment-5183" style="display: block;">
+    	<article id="comment-5183" class="comment">
+        	<div class="comment-author vcard">
+          	<img alt="" data-src="https://secure.gravatar.com/avatar/0be6e741ecf3007e5dda93d2854ddb37?s=40&amp;d=identicon&amp;r=g" src="0be6e741ecf3007e5dda93d2854ddb37_001.png" data-srcset="https://secure.gravatar.com/avatar/0be6e741ecf3007e5dda93d2854ddb37?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo lazyloaded" decoding="async" srcset="0be6e741ecf3007e5dda93d2854ddb37.png 2x" width="40" height="40">          </div><!-- .comment-author .vcard -->
+          	        <header>
+					<!-- <span class="author-name" <cite class="fn">tsuki Shimo</cite> 					</span> -->
+					<span class="author-name">
+												tsuki Shimo											</span>
+
+					<span class="comment-date">
+						<time pubdate="" datetime="2020-09-15T00:32:50-07:00">
+							September 15, 2020  12:32 am          	</time>
+				 	</span>
+
+					 <span class="voting"><span id="loggedoutvotes5183"><a class="comment-reply-login x-hidden-focus" title="" data-toggle="tooltip" href="https://devblogs.microsoft.com/commandline/wp-login.php?redirect_to=https%3A%2F%2Fdevblogs.microsoft.com%2Fcommandline%2Faccess-linux-filesystems-in-windows-and-wsl-2%2F%23comment-5183" data-bi-id="comments" data-bi-name="Login to vote" aria-label="Login to vote" data-original-title="Login to vote"><span class="icon-like-dislike"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048" class="svg_dd790ee3 x-hidden-focus" focusable="false"><path d="M1856 640q39 0 74 15t61 41 42 61 15 75q0 32-10 61l-256 768q-10 29-28 53t-42 42-52 26-60 10h-512q-179 0-345-69-72-29-144-44t-151-15H0V768h417q65 0 122-24t104-70l622-621q25-25 50-39t61-14q33 0 62 12t51 35 34 51 13 62q0 81-18 154t-53 146q-20 43-34 87t-19 93h444zm-256 1024q20 0 37-12t24-32q5-14 18-54t33-96 42-124 46-137 44-134 39-118 27-86 10-39q0-26-19-45t-45-19h-576q0-53 2-98t10-89 22-86 37-91q28-58 42-118t15-126q0-14-9-23t-23-9q-6 0-10 4t-9 9L734 765q-32 32-68 56t-78 41q-80 34-171 34H128v640h320q178 0 345 69 144 59 295 59h512z"></path></svg></span></a> 0</span>				</span>
+					<div class="comment-meta commentmetadata">
+						<span class="collapse-comment" id="collapse-comment-5183" data-toggle="collapse">
+							<!-- <a href="javascript:void(0)" title="collapse this comment"> -->
+							<button class="btn" title="" data-toggle="tooltip" data-original-title="collapse this comment">
+							<span class="sr-only">collapse this comment</span><i class="fabric-icon fabric-icon--ChevronDown" aria-hidden="true"></i>
+							</button>
+							<!-- </a> -->
+						</span>
+						
+						<span class="copy-link">
+							<button class="copy-link-anchor btn" title="" data-toggle="tooltip" data-clipboard-text="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5183" targeturi="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5183" data-original-title="copy link to this comment">
+								<span class="sr-only">copy link to this comment</span>
+								<i class="fabric-icon fabric-icon--Link" aria-hidden="true"></i><div class="copy-link-live" role="region" aria-live="assertive"></div>
+							</button>
+						</span>
+
+											</div><!-- .comment-meta .commentmetadata -->
+				</header>
+																		<div class="comment-content" id="comment-text-5183">
+										<p>Can WSL2 mount other filesystem like JFS with this function?</p>
+									</div>
+
+				<footer>
+				<div class="reply">
+									</div><!-- .reply -->
+        </footer>
+      </article><!-- #comment-## -->
+
+    <ul class="children">
+
+    <li class="comment byuser comment-author-piboulay bypostauthor even depth-2 comment-show" id="li-comment-5213">
+    	<article id="comment-5213" class="comment">
+        	<div class="comment-author vcard">
+          	<img alt="" data-src="https://secure.gravatar.com/avatar/1a7ec26bd627bbdd66fc70cb87c6aefc?s=40&amp;d=identicon&amp;r=g" src="1a7ec26bd627bbdd66fc70cb87c6aefc_005.png" data-srcset="https://secure.gravatar.com/avatar/1a7ec26bd627bbdd66fc70cb87c6aefc?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo lazyloaded" decoding="async" srcset="1a7ec26bd627bbdd66fc70cb87c6aefc_002.png 2x" width="40" height="40">          </div><!-- .comment-author .vcard -->
+          	        <header>
+					<!-- <span class="author-name" <cite class="fn">Pierre Boulay</cite> 					</span> -->
+					<span class="author-name">
+												<a class="url x-hidden-focus" href="https://devblogs.microsoft.com/commandline/author/piboulay/" alt="Pierre Boulay" title="Pierre Boulay">Pierre Boulay<img src="MicrosoftLogo_50x50.png" alt="Microsoft employee" title="Microsoft employee" width="18" height="18"></a>
+											</span>
+
+					<span class="comment-date">
+						<time pubdate="" datetime="2020-09-24T15:31:26-07:00">
+							September 24, 2020  3:31 pm          	</time>
+				 	</span>
+
+					 <span class="voting"><span id="loggedoutvotes5213"><a class="comment-reply-login x-hidden-focus" title="" data-toggle="tooltip" href="https://devblogs.microsoft.com/commandline/wp-login.php?redirect_to=https%3A%2F%2Fdevblogs.microsoft.com%2Fcommandline%2Faccess-linux-filesystems-in-windows-and-wsl-2%2F%23comment-5213" data-bi-id="comments" data-bi-name="Login to vote" aria-label="Login to vote" data-original-title="Login to vote"><span class="icon-like-dislike"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048" class="svg_dd790ee3 x-hidden-focus" focusable="false"><path d="M1856 640q39 0 74 15t61 41 42 61 15 75q0 32-10 61l-256 768q-10 29-28 53t-42 42-52 26-60 10h-512q-179 0-345-69-72-29-144-44t-151-15H0V768h417q65 0 122-24t104-70l622-621q25-25 50-39t61-14q33 0 62 12t51 35 34 51 13 62q0 81-18 154t-53 146q-20 43-34 87t-19 93h444zm-256 1024q20 0 37-12t24-32q5-14 18-54t33-96 42-124 46-137 44-134 39-118 27-86 10-39q0-26-19-45t-45-19h-576q0-53 2-98t10-89 22-86 37-91q28-58 42-118t15-126q0-14-9-23t-23-9q-6 0-10 4t-9 9L734 765q-32 32-68 56t-78 41q-80 34-171 34H128v640h320q178 0 345 69 144 59 295 59h512z"></path></svg></span></a> 0</span>				</span>
+					<div class="comment-meta commentmetadata">
+						<span class="collapse-comment" id="collapse-comment-5213" data-toggle="collapse">
+							<!-- <a href="javascript:void(0)" title="collapse this comment"> -->
+							<button class="btn" title="" data-toggle="tooltip" data-original-title="collapse this comment">
+							<span class="sr-only">collapse this comment</span><i class="fabric-icon fabric-icon--ChevronDown" aria-hidden="true"></i>
+							</button>
+							<!-- </a> -->
+						</span>
+						
+						<span class="copy-link">
+							<button class="copy-link-anchor btn" title="" data-toggle="tooltip" data-clipboard-text="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5213" targeturi="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5213" data-original-title="copy link to this comment">
+								<span class="sr-only">copy link to this comment</span>
+								<i class="fabric-icon fabric-icon--Link" aria-hidden="true"></i><div class="copy-link-live" role="region" aria-live="assertive"></div>
+							</button>
+						</span>
+
+											</div><!-- .comment-meta .commentmetadata -->
+				</header>
+																		<div class="comment-content" id="comment-text-5213">
+										<p>The kernel that we officially ship doesn’t support JFS at this time, but if you <a href="https://github.com/microsoft/WSL2-Linux-Kernel" target="_blank">build your own</a>, you should be able to mount a JFS volume.</p>
+									</div>
+
+				<footer>
+				<div class="reply">
+									</div><!-- .reply -->
+        </footer>
+      </article><!-- #comment-## -->
+
+    </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+    <li class="comment byuser comment-author-rohat-bozyil odd alt thread-odd thread-alt depth-1 comment-show" id="li-comment-5189" style="display: block;">
+    	<article id="comment-5189" class="comment">
+        	<div class="comment-author vcard">
+          	<img alt="" data-src="https://secure.gravatar.com/avatar/5c714acd69bccfb448cc6a7fda444ade?s=40&amp;d=identicon&amp;r=g" src="5c714acd69bccfb448cc6a7fda444ade_001.png" data-srcset="https://secure.gravatar.com/avatar/5c714acd69bccfb448cc6a7fda444ade?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo lazyloaded" decoding="async" srcset="5c714acd69bccfb448cc6a7fda444ade.png 2x" width="40" height="40">          </div><!-- .comment-author .vcard -->
+          	        <header>
+					<!-- <span class="author-name" <cite class="fn">Rohat Bozyil</cite> 					</span> -->
+					<span class="author-name">
+												Rohat Bozyil											</span>
+
+					<span class="comment-date">
+						<time pubdate="" datetime="2020-09-20T22:37:25-07:00">
+							September 20, 2020  10:37 pm          	</time>
+				 	</span>
+
+					 <span class="voting"><span id="loggedoutvotes5189"><a class="comment-reply-login x-hidden-focus" title="" data-toggle="tooltip" href="https://devblogs.microsoft.com/commandline/wp-login.php?redirect_to=https%3A%2F%2Fdevblogs.microsoft.com%2Fcommandline%2Faccess-linux-filesystems-in-windows-and-wsl-2%2F%23comment-5189" data-bi-id="comments" data-bi-name="Login to vote" aria-label="Login to vote" data-original-title="Login to vote"><span class="icon-like-dislike"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048" class="svg_dd790ee3 x-hidden-focus" focusable="false"><path d="M1856 640q39 0 74 15t61 41 42 61 15 75q0 32-10 61l-256 768q-10 29-28 53t-42 42-52 26-60 10h-512q-179 0-345-69-72-29-144-44t-151-15H0V768h417q65 0 122-24t104-70l622-621q25-25 50-39t61-14q33 0 62 12t51 35 34 51 13 62q0 81-18 154t-53 146q-20 43-34 87t-19 93h444zm-256 1024q20 0 37-12t24-32q5-14 18-54t33-96 42-124 46-137 44-134 39-118 27-86 10-39q0-26-19-45t-45-19h-576q0-53 2-98t10-89 22-86 37-91q28-58 42-118t15-126q0-14-9-23t-23-9q-6 0-10 4t-9 9L734 765q-32 32-68 56t-78 41q-80 34-171 34H128v640h320q178 0 345 69 144 59 295 59h512z"></path></svg></span></a> 0</span>				</span>
+					<div class="comment-meta commentmetadata">
+						<span class="collapse-comment" id="collapse-comment-5189" data-toggle="collapse">
+							<!-- <a href="javascript:void(0)" title="collapse this comment"> -->
+							<button class="btn" title="" data-toggle="tooltip" data-original-title="collapse this comment">
+							<span class="sr-only">collapse this comment</span><i class="fabric-icon fabric-icon--ChevronDown" aria-hidden="true"></i>
+							</button>
+							<!-- </a> -->
+						</span>
+						
+						<span class="copy-link">
+							<button class="copy-link-anchor btn" title="" data-toggle="tooltip" data-clipboard-text="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5189" targeturi="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5189" data-original-title="copy link to this comment">
+								<span class="sr-only">copy link to this comment</span>
+								<i class="fabric-icon fabric-icon--Link" aria-hidden="true"></i><div class="copy-link-live" role="region" aria-live="assertive"></div>
+							</button>
+						</span>
+
+											</div><!-- .comment-meta .commentmetadata -->
+				</header>
+																		<div class="comment-content" id="comment-text-5189">
+										<p>Hello Pierre</p>
+<p>Is this functionality only limited to storage devices, or would it enable me to make use of peripheral devices which connect through the same USB receptacles?<br>
+An example would be if I could use a wired joystick-controller that makes use of the USB type-A interface, the same way I use USB type-A for my flash drive.</p>
+									</div>
+
+				<footer>
+				<div class="reply">
+									</div><!-- .reply -->
+        </footer>
+      </article><!-- #comment-## -->
+
+    <ul class="children">
+
+    <li class="comment byuser comment-author-piboulay bypostauthor even depth-2 comment-show" id="li-comment-5214">
+    	<article id="comment-5214" class="comment">
+        	<div class="comment-author vcard">
+          	<img alt="" data-src="https://secure.gravatar.com/avatar/1a7ec26bd627bbdd66fc70cb87c6aefc?s=40&amp;d=identicon&amp;r=g" src="1a7ec26bd627bbdd66fc70cb87c6aefc_005.png" data-srcset="https://secure.gravatar.com/avatar/1a7ec26bd627bbdd66fc70cb87c6aefc?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo lazyloaded" decoding="async" srcset="1a7ec26bd627bbdd66fc70cb87c6aefc_002.png 2x" width="40" height="40">          </div><!-- .comment-author .vcard -->
+          	        <header>
+					<!-- <span class="author-name" <cite class="fn">Pierre Boulay</cite> 					</span> -->
+					<span class="author-name">
+												<a class="url x-hidden-focus" href="https://devblogs.microsoft.com/commandline/author/piboulay/" alt="Pierre Boulay" title="Pierre Boulay">Pierre Boulay<img src="MicrosoftLogo_50x50.png" alt="Microsoft employee" title="Microsoft employee" width="18" height="18"></a>
+											</span>
+
+					<span class="comment-date">
+						<time pubdate="" datetime="2020-09-24T15:32:33-07:00">
+							September 24, 2020  3:32 pm          	</time>
+				 	</span>
+
+					 <span class="voting"><span id="loggedoutvotes5214"><a class="comment-reply-login x-hidden-focus" title="" data-toggle="tooltip" href="https://devblogs.microsoft.com/commandline/wp-login.php?redirect_to=https%3A%2F%2Fdevblogs.microsoft.com%2Fcommandline%2Faccess-linux-filesystems-in-windows-and-wsl-2%2F%23comment-5214" data-bi-id="comments" data-bi-name="Login to vote" aria-label="Login to vote" data-original-title="Login to vote"><span class="icon-like-dislike"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048" class="svg_dd790ee3 x-hidden-focus" focusable="false"><path d="M1856 640q39 0 74 15t61 41 42 61 15 75q0 32-10 61l-256 768q-10 29-28 53t-42 42-52 26-60 10h-512q-179 0-345-69-72-29-144-44t-151-15H0V768h417q65 0 122-24t104-70l622-621q25-25 50-39t61-14q33 0 62 12t51 35 34 51 13 62q0 81-18 154t-53 146q-20 43-34 87t-19 93h444zm-256 1024q20 0 37-12t24-32q5-14 18-54t33-96 42-124 46-137 44-134 39-118 27-86 10-39q0-26-19-45t-45-19h-576q0-53 2-98t10-89 22-86 37-91q28-58 42-118t15-126q0-14-9-23t-23-9q-6 0-10 4t-9 9L734 765q-32 32-68 56t-78 41q-80 34-171 34H128v640h320q178 0 345 69 144 59 295 59h512z"></path></svg></span></a> 0</span>				</span>
+					<div class="comment-meta commentmetadata">
+						<span class="collapse-comment" id="collapse-comment-5214" data-toggle="collapse">
+							<!-- <a href="javascript:void(0)" title="collapse this comment"> -->
+							<button class="btn" title="" data-toggle="tooltip" data-original-title="collapse this comment">
+							<span class="sr-only">collapse this comment</span><i class="fabric-icon fabric-icon--ChevronDown" aria-hidden="true"></i>
+							</button>
+							<!-- </a> -->
+						</span>
+						
+						<span class="copy-link">
+							<button class="copy-link-anchor btn" title="" data-toggle="tooltip" data-clipboard-text="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5214" targeturi="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#comment-5214" data-original-title="copy link to this comment">
+								<span class="sr-only">copy link to this comment</span>
+								<i class="fabric-icon fabric-icon--Link" aria-hidden="true"></i><div class="copy-link-live" role="region" aria-live="assertive"></div>
+							</button>
+						</span>
+
+											</div><!-- .comment-meta .commentmetadata -->
+				</header>
+																		<div class="comment-content" id="comment-text-5214">
+										<p>This feature is only limited to storage devices. Unfortunately it can’t be used to pass-through a USB device to WSL 2.</p>
+									</div>
+
+				<footer>
+				<div class="reply">
+									</div><!-- .reply -->
+        </footer>
+      </article><!-- #comment-## -->
+
+    </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+					</ul><!-- .commentlist -->
+				<nav aria-label="Comment navigation">
+			<!-- <span class="nav-text">Comments page</span> -->
+				<ul class="pagination">
+										<li class="page-item active">
+							<span aria-current="page" class="page-link current"><span class="screen-reader-text-pagination">Page</span> 1<span class="screen-reader-text-pagination">of comments</span> </span>						</li>
+											<li class="page-item ">
+							<a class="page-link" href="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/comment-page-2#comments"><span class="screen-reader-text-pagination">Page</span> 2<span class="screen-reader-text-pagination">of comments</span> </a>						</li>
+											<li class="page-item ">
+							<a class="next page-link" href="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/comment-page-2#comments"><i class="fabric-icon fabric-icon--ChevronRight"></i><span class="screen-reader-text-pagination">Next comment</span></a>						</li>
+									</ul>
+		</nav>
+	</div><!-- #comments .comments-area -->
+
+				
+			</main><!-- #main -->
+
+		<!-- Do the right sidebar check -->
+		</div><!-- #primary -->
+
+
+	</div><!-- .row -->
+
+</div><!-- Container end -->
+
+</div><!-- Wrapper end -->
+<!-- Accessibility fix for tags -->
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<!-- End -->
+
+
+
+
+<!-- #page we need this extra closing tag here -->
+<div class="social-icon-bar" data-bi-area="left gutter">
+    
+    
+    
+</div>
+<div class="back-comment-buttons" data-bi-area="right gutter">
+	<a data-bi-name="comments_click_to_top" href="#page" title="Back to top" aria-label="click back to top of page" class="back-to-top"><i class="fabric-icon fabric-icon--SortUp"></i></a>
+
+	</div>
+<div style="display: none;">
+
+</div>        <script>/* Code removed by ScrapBook */</script>
+        <script type="text/javascript" id="commentsvote-js-extra">/* Code removed by ScrapBook */</script>
+<script type="text/javascript" src="about:blank" id="commentsvote-js"></script>
+<script type="text/javascript" src="about:blank" id="mpp_gutenberg_tabs-js"></script>
+<script type="text/javascript" src="about:blank" id="anchorific-js"></script>
+<script type="text/javascript" id="code-prettify-js-before">/* Code removed by ScrapBook */</script>
+
+<script type="text/javascript" src="about:blank" id="popper-scripts-js"></script>
+<script type="text/javascript" src="about:blank" id="gifffer-js-js"></script>
+<script type="text/javascript" src="about:blank" id="theme-pciker-scripts-js"></script>
+<script type="text/javascript" id="child-understrap-scripts-js-extra">/* Code removed by ScrapBook */</script>
+<script type="text/javascript" src="about:blank" id="child-understrap-scripts-js"></script>
+<script type="text/javascript" id="simplecomments-js-extra">/* Code removed by ScrapBook */</script>
+<script type="text/javascript" src="about:blank" id="simplecomments-js"></script>
+<script type="text/javascript" src="about:blank" id="clipboard-js"></script>
+<script type="text/javascript" src="about:blank" id="wp-featherlight-js"></script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>	<!-- Model form for code insert  -->
+	<div class="modal fade" id="codeModal" tabindex="-1" role="dialog" aria-labelledby="codeModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+		<div class="modal-header">
+			<h5 class="modal-title" id="codeModalLabel">Code Block</h5>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">×</span>
+			</button>
+		</div>
+		<form id="myForm" action="https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/#">
+			<div class="modal-body">
+				<div class="form-group">
+					<label for="code-text">Paste your code snippet</label>
+					<textarea class="form-control" id="code-text" style="height: 150px;"></textarea>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+				<button type="button" class="btn btn-primary">Ok</button>
+			</div>
+		</form>
+		</div>
+	</div>
+	</div>
+<div id="usabilla-button" class="vscom-usabilla-button">
+    <a tabindex="0" id="usbl-integrated-button" data-bi-id="Usabilla" class="vscom-usabilla-link" role="button">
+        
+    </a>
+</div>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+
+<!-- UHF footer -->
+<div id="footerArea" class="uhf" data-m="{&quot;cN&quot;:&quot;footerArea&quot;,&quot;cT&quot;:&quot;Area_coreuiArea&quot;,&quot;id&quot;:&quot;a2Body&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;Body&quot;}">
+                <div id="footerRegion" data-region-key="footerregion" data-m="{&quot;cN&quot;:&quot;footerRegion&quot;,&quot;cT&quot;:&quot;Region_coreui-region&quot;,&quot;id&quot;:&quot;r1a2&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;a2&quot;}">
+
+    <div id="footerUniversalFooter" data-m="{&quot;cN&quot;:&quot;footerUniversalFooter&quot;,&quot;cT&quot;:&quot;Module_coreui-universalfooter&quot;,&quot;id&quot;:&quot;m1r1a2&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;r1a2&quot;}" data-module-id="Category|footerRegion|coreui-region|footerUniversalFooter|coreui-universalfooter">
+        
+
+
+
+<footer id="uhf-footer" class="c-uhff context-uhf" data-uhf-mscc-rq="false" data-footer-footprint="/DEV_Blogs/DEV_BlogsFooter, fromService: True" data-m="{&quot;cN&quot;:&quot;Uhf footer_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c1m1r1a2&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;m1r1a2&quot;}">
+        
+    
+    
+</footer>
+
+<script id="uhf-footer-ccpa">/* Code removed by ScrapBook */</script>
+
+
+
+
+
+    </div>
+        </div>
+
+    </div><!--/ UHF footer -->
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<!-- newRelic Atribute  -->
+<script>/* Code removed by ScrapBook */</script>
+<!-- end newRelic Atribute  -->
+
+</div></body>
+</html>

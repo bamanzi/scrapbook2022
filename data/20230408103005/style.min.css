@@ -1,0 +1,64 @@
+/* Code tidied up by ScrapBook */
+:where(.wp-block-button__link) { box-shadow: none; text-decoration: none; border-radius: 9999px; padding: calc(0.667em + 2px) calc(1.333em + 2px); }
+@media (min-width: 782px) {
+}
+@media (max-width: 781px) {
+}
+@media (min-width: 782px) {
+}
+:where(.wp-block-columns.has-background) { padding: 1.25em 2.375em; }
+@supports (position:sticky) {
+  .wp-block-cover-image::after, .wp-block-cover::after { content: none; }
+}
+@supports (-webkit-overflow-scrolling:touch) {
+  .wp-block-cover-image.has-parallax, .wp-block-cover.has-parallax, .wp-block-cover__image-background.has-parallax, video.wp-block-cover__video-background.has-parallax { background-attachment: scroll; }
+}
+@media not all {
+}
+:where(.wp-block-file__button) { border-radius: 2em; padding: 0.5em 1em; }
+:where(.wp-block-file__button):is(a):active, :where(.wp-block-file__button):is(a):focus, :where(.wp-block-file__button):is(a):hover, :where(.wp-block-file__button):is(a):visited { box-shadow: none; color: rgb(255, 255, 255); opacity: 0.85; text-decoration: none; }
+@media (min-width: 600px) {
+}
+@media (min-width: 600px) {
+}
+@supports ((-webkit-mask-image:none) or (mask-image:none)) or (-webkit-mask-image:none) {
+  .wp-block-image.is-style-circle-mask img { mask-image: url("data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"/></svg>"); mask-mode: alpha; mask-repeat: no-repeat; mask-size: contain; mask-position: center center; border-radius: 0px; }
+}
+@media (min-width: 600px) {
+}
+ol, ul { box-sizing: border-box; }
+@media (max-width: 600px) {
+}
+@media (min-width: 782px) {
+}
+@media (min-width: 782px) {
+}
+@media (min-width: 782px) {
+}
+@keyframes overlay-menu__fade-in-animation {
+0% { opacity: 0; transform: translateY(0.5em); }
+100% { opacity: 1; transform: translateY(0px); }
+}
+@media not all {
+}
+@media (min-width: 600px) {
+}
+@media (min-width: 600px) {
+}
+@media (min-width: 782px) {
+}
+:where(p.has-text-color:not(.has-link-color)) a { color: inherit; }
+@media (min-width: 600px) {
+}
+@media (min-width: 600px) {
+}
+:where(.wp-block-search__button) { border: 1px solid rgb(204, 204, 204); padding: 0.375em 0.625em; }
+@media not all {
+}
+@supports (position:sticky) {
+  .wp-block-video [poster] { object-fit: cover; }
+}
+:root { --wp--preset--font-size--normal: 16px; --wp--preset--font-size--huge: 42px; }
+.aligncenter { clear: both; }
+html :where(.has-border-color) { border-style: solid; }
+html :where(img[class*="wp-image-"]) { height: auto; max-width: 100%; }

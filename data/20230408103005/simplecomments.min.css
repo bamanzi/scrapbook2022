@@ -1,0 +1,71 @@
+/* Code tidied up by ScrapBook */
+#comments.comments-area { font-size: 16px; overflow: hidden; }
+h2.comments-title { font-size: 1.5em; font-family: Segoe UI; line-height: 2em; }
+ul li.comment { list-style-type: none; font-family: Segoe UI; color: rgb(50, 49, 48); }
+ul.commentlist { padding-left: 0px; font-size: 1em; }
+ul.commentlist li.comment.depth-1 { position: relative; }
+ul.commentlist li.comment.depth-1::before { position: absolute; display: block; content: ""; float: left; left: 70px; height: calc(100% - 1px); width: calc(100% - 70px); box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); border-radius: 4px; z-index: -1; }
+ul.commentlist li.comment.depth-1 > article header { border-radius: 4px 4px 0px 0px; }
+ul.commentlist li.comment.depth-1 > article.comment footer { border-radius: 0px 0px 4px 4px; }
+ul.commentlist li ul:last-of-type { border-radius: 0px 0px 4px 4px; }
+.commentlist li { margin: 1em; padding-bottom: 1px; }
+.commentlist li ul.children { margin-left: 70px; padding: 0.5em 1em; background-color: rgb(255, 255, 255); }
+.commentlist li ul.children li { margin: 0px; padding-top: 0.85em; box-shadow: none; }
+.commentlist li header { font-size: 1em; }
+.commentlist li footer { background: rgb(255, 255, 255) none repeat scroll 0% 0%; padding: 0px 1em 0.5em; margin-left: 70px; }
+.comments-area .pagination { justify-content: center; }
+.commentmetadata { float: right; }
+.comment-meta.commentmetadata span { width: 22px; display: inline-grid; text-align: center; }
+.comment-author .avatar { border-radius: 50%; }
+.author-name, .parent-author-name { font-size: 1.125em; color: rgb(0, 93, 166); margin-right: 0.5em; }
+.author-name { font-weight: 700; }
+.comment-date { font-size: 1em; color: rgb(115, 113, 112); font-weight: 400; padding-left: 0.5em; }
+.comment-author.vcard { float: left; margin: 15px; }
+article.comment header { line-height: 21px; padding: 1em; margin-left: 70px; background-color: rgb(255, 255, 255); }
+article.comment .comment-content { font-size: 1em; padding: 0.5em 1em; margin-left: 70px; background-color: rgb(255, 255, 255); }
+.comment-meta .collapse-comment a i, .comment-meta .copy-link a i, .comment-meta .copy-link-live, .comment-meta .delete-btn a i, .comment-meta .edit-btn a i, .fabric-icon--Reply, .reply i.fa-reply { font-size: 1em; color: rgb(0, 93, 166); line-height: 20px; font-style: normal; padding: 0px 0.25em; }
+@media screen and (max-width: 767px) {
+  .comment-author.vcard { margin: 15px 5px 5px; }
+  .commentlist li { margin: 0px; }
+  .comment-date { display: block; padding-left: 0px; }
+  .commentlist li footer, article.comment .comment-content, article.comment header { margin-left: 50px; }
+  .commentmetadata { margin-bottom: 5px; }
+  .commentlist li ul.children { margin-left: 50px; padding-right: 0px; }
+  .commentlist li.depth-2 ul.children { margin-left: 0px; }
+  .commentlist article.comment .comment-content { display: block; }
+  .commentlist article.comment .comment-content p { display: inline-block; }
+}
+@media screen and (max-width: 480px) {
+  article.comment header { margin-left: 30px; padding-left: 0.5em; }
+  .commentlist li footer, article.comment .comment-content, article.comment header { margin-left: 30px; }
+  .children article.comment .comment-content { margin-left: 22px; }
+  .commentlist li.depth-2 ul.children { margin-left: 0px; }
+  .commentlist li ul.children { padding-bottom: 0px; }
+  .commentlist > li > ul.children { margin-left: 30px; padding-left: 0px; }
+  .commentlist li ul.children { padding-left: 0px; }
+  .commentlist li ul.children article.comment header { margin-top: 0px ! important; }
+  .comment-author.vcard { margin-left: 0px; }
+  .children .comment-author.vcard { margin-left: 5px; }
+  .comment-author .avatar { width: 25px; height: 25px; }
+  .comments-area nav { flex-direction: column; text-align: center; }
+}
+#comments.comments-area { position: relative; }
+.commentlist li ul.children article { border-top: 1px solid rgb(200, 198, 196); padding-top: 2px; }
+.commentlist li ul.children article.comment header { margin-top: 2px; }
+.commentlist li ul.children, .commentlist li ul.children li { padding-top: 0px; }
+.copy-link { display: inline-block; }
+.copy-link .copy-link-live { color: rgb(0, 0, 0); font-size: 13px; margin-top: -34px; position: absolute; padding: 0px; margin-left: -11px; }
+.commentlist pre, .commentlist pre.prettyprint, .commentlist pre.prettyprinted { background-color: rgb(240, 240, 240) ! important; padding: 10px ! important; border-radius: 10px; border: 0px none ! important; }
+form#myForm .form-group { margin-bottom: 0px; }
+#codeModal .modal-footer .btn-primary { color: rgb(255, 255, 255); background-color: rgb(59, 115, 175); border-color: rgb(59, 115, 175); }
+#codeModal .modal-footer .btn-primary:hover { opacity: 0.8; background-color: rgb(59, 115, 175); border-color: rgb(59, 115, 175); }
+#codeModal .modal-title { text-align: center; font-size: 18px; }
+#myForm .modal-body { padding-top: 0px; font-size: 16px; }
+.author-name img { margin-left: 5px; margin-bottom: 2px; }
+article.comment .comment-content a {  }
+.comments-area nav { display: flex; justify-content: center; margin-top: 20px; align-items: center; }
+.comments-area nav .pagination { margin-bottom: 0px; }
+.commentlist .commentmetadata .btn { background-color: rgb(255, 255, 255); border: medium none; color: rgb(0, 93, 166); padding: 2px; font-size: 16px; cursor: pointer; }
+.commentlist .commentmetadata .btn:hover { border: medium none; }
+.icon-like-dislike svg { width: 20px; vertical-align: middle; margin-left: 10px; fill: rgb(0, 93, 166); }
+.icon-like-dislike a { cursor: pointer; }

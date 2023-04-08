@@ -1,0 +1,14 @@
+/* Code tidied up by ScrapBook */
+pre .pln { color: rgb(0, 0, 0); }
+@media screen {
+  pre .str { color: rgb(0, 136, 0); }
+  pre .typ { color: rgb(102, 0, 102); }
+  pre .clo, pre .opn, pre .pun { color: rgb(102, 102, 0); }
+}
+@media print, projection {
+  pre .kwd, pre .tag, pre .typ { font-weight: 700; }
+  pre .str { color: rgb(0, 102, 0); }
+  pre .typ { color: rgb(68, 0, 68); }
+  pre .clo, pre .opn, pre .pun { color: rgb(68, 68, 0); }
+}
+pre.prettyprint { padding: 2px; border: 1px solid rgb(136, 136, 136); }

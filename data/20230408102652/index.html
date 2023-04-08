@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="icon" type="image/png" href="favicon.png">
+  <!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+ <title>WSL / WSL 2 Backup and Restore</title>
+<meta name="generator" content="Jekyll v4.3.2">
+<meta property="og:title" content="WSL / WSL 2 Backup and Restore">
+<meta name="author" content="Mike Slinn">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Microsoft WSL / WSL 2 guest OS backup and restore - problem and solution.">
+<meta property="og:description" content="Microsoft WSL / WSL 2 guest OS backup and restore - problem and solution.">
+<link rel="canonical" href="https://www.mslinn.com/blog/2022/01/10/wsl-backup.html">
+<meta property="og:url" content="https://www.mslinn.com/blog/2022/01/10/wsl-backup.html">
+<meta property="og:site_name" content="Mike Slinn">
+<meta property="og:image" content="https://www.mslinn.com/images/mike/mikeSquaretrans_207x207.png">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2022-01-10T00:00:00-05:00">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:image" content="https://www.mslinn.com/images/mike/mikeSquaretrans_207x207.png">
+<meta property="twitter:title" content="WSL / WSL 2 Backup and Restore">
+<meta name="twitter:site" content="@mslinn">
+<meta name="twitter:creator" content="@Mike Slinn">
+<script async="" src="about:blank"></script><script type="application/ld+json">/* Code removed by ScrapBook */</script>
+  <script>/* Code removed by ScrapBook */</script>
+</head><body id="body">
+<header>
+      <img alt="Mike Slinn" class="right" id="headerImage" src="mikePersuades_500x500.webp" title="Mike Slinn">
+   <div class="inner">
+      <a href="https://mslinn.com/index.html">
+       <div class="h1">Mike Slinn</div>
+      </a>
+     <h1 id="headerH1">WSL / WSL 2 Backup and Restore</h1>
+ </div>
+ </header>
+ <div id="content-wrapper">
+   <div class="inner clearfix">
+     <section id="main-content">
+       <p class="published">
+          Published 2022-01-10.
+          Last modified 2023-04-02.
+                <br>Time to read: 6 minutes.
+       </p>
+         <div class="postCategories">
+  This page is part of the <a href="https://mslinn.com/blog/"><code>posts</code></a> collection, categorized under <a href="https://mslinn.com/blog/index.html#WSL">WSL</a>.
+</div>
+<div class="blurb">
+<p>
+  I needed to back up my WSL2 installation before
+  <a href="https://www.microsoft.com/en-us/software-download/windows10" target="_blank" rel="nofollow">reinstalling Windows 10</a>,
+  as one must do every 6 months if you work your machine like a developer.
+  It had been years since I had last refreshed this machine,
+  and it was now bluescreening several times a day.
+  Reboots took forever.
+</p>
+<div class="pullQuoteFull liImg">
+  This article presents the best WSL backup approaches I found
+</div>
+<p>
+  I wanted to retain my WSL2 instance.
+  When refreshing Windows you must reinstall all your programs,
+  and you lose all the WSL/WSL2 instances.
+  The refresh decommissions them,
+  then moves them into a hidden directory tree,
+  along with the rest of the stuff stored in your old Windows 10 profile directory tree.
+</p>
+<p>
+  I also wanted to be able to replicate my WSL2 instance reliably and easily.
+  It was very important to me to be able to administer WSL instances separately from my Windows 10 profile.
+</p>
+<h2 id="location">Location, Location, Location</h2>
+<p>
+  Only recently has it become possible to work with WSL/WSL2 images on non-system drives.
+  Most online documentation is now out of date in this regard.
+  Running Windows off a different drive than the drive that a WSL/WSL2 client OS runs from
+  can provide a dramatic performance boost for some applications.
+</p>
+<div class="pullQuoteFull liImg">
+  Reinstalling Windows is less traumatic if the WSL/WSL2 image elsewhere in the filesystem
+</div>
+<h2 id="dell">Dell’s Ignorance Causes Pain</h2>
+<p>
+  I use Dell laptops, because I love their onsite warranty price and product features.
+  However, sometimes it feels like Dell’s solution to every problem is to replace the motherboard.
+</p>
+<p>
+  When Windows 10 encounters a new motherboard, it takes anti-piracy measures,
+  and refuses to do much of anything useful.
+</p>
+<p>
+  Refreshing Windows solves that problem,
+  but doing that blows away the standard WSL/WSL2 image.
+  Again. And again. And again!
+</p>
+<p>
+  Dell replaced the motherboard 4 times in 2 years for one of my laptops.
+  They simply do not understand how replacing the motherboard creates long-term issues.
+</p>
+<h2 id="ready">Test Your Backup</h2>
+<p>
+  Backing up WSL/WSL2 can be problematic.
+  Restoring it is even more delicate.
+  Knowing this, I decided to backup and test the restoration process before refreshing Windows and potentially losing my working system.
+</p>
+<p>
+  I have tried several times before to make this work.
+  As I said, it had been years since I allowed the OS in my main workstation to be refreshed.
+  The reason I resisted doing proper maintenance was because I wanted to preserve my WSL2 Ubuntu image.
+  Until today, I met with frustrating failures every time I attempted to use the standard tools.
+  Today I succeeded, via new software, hence the publication of my notes.
+  Who wants to read stories about all the things that do not work?
+</p>
+<p class="alert rounded shadow">
+  Following is my experience.
+  I began by following the directions in
+  <a href="https://www.windowscentral.com/how-backup-windows-subsystem-linux-wsl-distribution" target="_blank" rel="nofollow">How to back up a Windows Subsystem for Linux (WSL) distribution</a>,
+    published 18 Feb 2021 by Windows Central.
+  It is a nice story, but I've tried this stuff on a variety of computers,
+  and this is not Microsoft’s most robust code base.
+  Read on and I will tell you of reality as I found it.
+</p>
+<h2 id="wslOptions">WSL Command-Line Options</h2>
+<p>
+  First let's look at the command-line options for the <code>wsl</code> command.
+</p>
+<div class="jekyll_pre">
+<div class="codeLabel unselectable" data-lt-active="false">cmd.exe</div><pre data-lt-active="false" class="maxOneScreenHigh copyContainer" id="id239a35520b16"><button class="copyBtn" data-clipboard-target="#id239a35520b16" title="Copy to clipboard"><img src="clippy.svg" alt="Copy to clipboard" style="width: 13px;"></button><span class="unselectable">Microsoft Windows [Version 10.0.19044.1415]
+(c) Microsoft Corporation. All rights reserved. </span>
+
+<span class="unselectable">C:\Users\Mike Slinn&gt; </span>wsl --help
+<span class="unselectable">Copyright (c) Microsoft Corporation. All rights reserved.
+  For privacy information about this product please visit https://aka.ms/privacy.<br>
+  Usage: wsl.exe [Argument] [Options...] [CommandLine]<br>
+  Arguments for running Linux binaries:<br>
+  If no command line is provided, wsl.exe launches the default shell.<br>
+  --exec, -e &lt;CommandLine&gt;
+  Execute the specified command without using the default Linux shell.<br>
+  --shell-type &lt;Type&gt;
+  Execute the specified command with the provided shell type.<br>
+  Types:
+  standard
+  Execute the specified command using the default Linux shell.<br>
+  login
+  Execute the specified command using the default Linux shell as a log-in shell.<br>
+  none
+  Execute the specified command without using the default Linux shell.<br>
+  --
+  Pass the remaining command line as-is.<br>
+  Options:
+  --cd &lt;Directory&gt;
+  Sets the specified directory as the current working directory.
+  If ~ is used the Linux user's home path will be used. If the path begins
+  with a / character, it will be interpreted as an absolute Linux path.
+  Otherwise, the value must be an absolute Windows path.<br>
+  --distribution, -d &lt;Distro&gt;
+  Run the specified distribution.<br>
+  --user, -u &lt;UserName&gt;
+  Run as the specified user.<br>
+  --system
+  Launches a shell for the system distribution.<br>
+  Arguments for managing Windows Subsystem for Linux:<br>
+  --help
+  Display usage information.<br>
+  --debug-shell
+  Open a WSL2 debug shell for diagnostics purposes.<br>
+  --install [Distro] [Options...]
+  Install a Windows Subsystem for Linux distribution.
+  For a list of valid distributions, use 'wsl.exe --list --online'.<br>
+  Options:
+  --no-launch, -n
+  Do not launch the distribution after install.<br>
+  --web-download
+  Download the distribution from the internet instead of the Microsoft Store.<br>
+  --mount &lt;Disk&gt;
+  Attaches and mounts a physical or virtual disk in all WSL 2 distributions.<br>
+  Options:
+  --vhd
+  Specifies that &lt;Disk&gt; refers to a virtual hard disk.<br>
+  --bare
+  Attach the disk to WSL2, but don't mount it.<br>
+  --name &lt;Name&gt;
+  Mount the disk using a customised name for the mount-point.<br>
+  --type &lt;Type&gt;
+  Filesystem to use when mounting a disk, if not specified defaults to ext4.<br>
+  --options &lt;Options&gt;
+  Additional mount options.<br>
+  --partition &lt;Index&gt;
+  Index of the partition to mount, if not specified defaults to the whole disk.<br>
+  --set-default-version &lt;Version&gt;
+  Changes the default install version for new distributions.<br>
+  --shutdown
+  Immediately terminates all running distributions and the WSL 2
+  lightweight utility virtual machine.<br>
+  --status
+  Show the status of Windows Subsystem for Linux.<br>
+  --unmount [Disk]
+  Unmounts and detaches a disk from all WSL2 distributions.
+  Unmounts and detaches all disks if called without argument.<br>
+  --update
+  Update the Windows Subsystem for Linux package.<br>
+  Options:
+  --web-download
+  Download the update from the internet instead of the Microsoft Store.<br>
+  --pre-release
+  Download a pre-release version if available. Implies --web-download.<br>
+  --version, -v
+  Display version information.<br>
+  Arguments for managing distributions in Windows Subsystem for Linux:<br>
+  --export &lt;Distro&gt; &lt;FileName&gt; [Options]
+  Exports the distribution to a tar file.
+  The filename can be - for standard output.<br>
+  Options:
+  --vhd
+  Specifies that the distribution should be exported as a .vhdx file.<br>
+  --import &lt;Distro&gt; &lt;InstallLocation&gt; &lt;FileName&gt; [Options]
+  Imports the specified tar file as a new distribution.
+  The filename can be - for standard input.<br>
+  Options:
+  --version &lt;Version&gt;
+  Specifies the version to use for the new distribution.<br>
+  --vhd
+  Specifies that the provided file is a .vhdx file, not a tar file.
+  This operation makes a copy of the .vhdx file at the specified install location.<br>
+  --import-in-place &lt;Distro&gt; &lt;FileName&gt;
+  Imports the specified .vhdx file as a new distribution.
+  This virtual hard disk must be formatted with the ext4 filesystem type.<br>
+  --list, -l [Options]
+  Lists distributions.<br>
+  Options:
+  --all
+  List all distributions, including distributions that are
+  currently being installed or uninstalled.<br>
+  --running
+  List only distributions that are currently running.<br>
+  --quiet, -q
+  Only show distribution names.<br>
+  --verbose, -v
+  Show detailed information about all distributions.<br>
+  --online, -o
+  Displays a list of available distributions for install with 'wsl.exe --install'.<br>
+  --set-default, -s &lt;Distro&gt;
+  Sets the distribution as the default.<br>
+  --set-version &lt;Distro&gt; &lt;Version&gt;
+  Changes the version of the specified distribution.<br>
+  --terminate, -t &lt;Distro&gt;
+  Terminates the specified distribution.<br>
+  --unregister &lt;Distro&gt;
+  Unregisters the distribution and deletes the root filesystem. </span></pre>
+</div>
+<h2 id="wslBackup">Backing Up With WSL</h2>
+<p>
+  Now let's use the <code>wsl</code> command to back up the Ubuntu VM in WSL2.
+</p>
+<div class="jekyll_pre">
+<div class="codeLabel unselectable" data-lt-active="false">cmd.exe</div><pre data-lt-active="false" class="maxOneScreenHigh copyContainer" id="id2ff2d875c04e"><button class="copyBtn" data-clipboard-target="#id2ff2d875c04e" title="Copy to clipboard"><img src="clippy.svg" alt="Copy to clipboard" style="width: 13px;"></button><span class="unselectable">C:\Users\Mike Slinn&gt; </span>wsl --export Ubuntu ubuntuBear_2021-01-10.tar</pre>
+</div>
+<p>
+  Well, well, it backed up without any problem in about an hour!
+  Color me <s>surprised</s>happy.
+  File size was about 50 GB.
+</p>
+<p>
+  Alright, let's try importing the image now.
+  We'll locate the new image at <code>f:\ubuntuBear</code>.
+  It used to be that WSL did not support moving or installing a distro to non-system drives.
+  No longer!
+</p>
+<div class="jekyll_pre">
+<div class="codeLabel unselectable" data-lt-active="false">cmd.exe</div><pre data-lt-active="false" class="maxOneScreenHigh copyContainer" id="id4936be5c1d0c"><button class="copyBtn" data-clipboard-target="#id4936be5c1d0c" title="Copy to clipboard"><img src="clippy.svg" alt="Copy to clipboard" style="width: 13px;"></button><span class="unselectable">C:\Users\Mike Slinn&gt; </span>wsl --import Ubuntu f:\ubuntuBear ubuntuBear_2021-01-10.tar
+<span class="unselectable">A distribution with the supplied name already exists. </span></pre>
+</div>
+<p>
+  The error message <code>A distribution with the supplied name already exists</code>
+  makes sense because I backed up a WSL2 instance called <code>Ubuntu</code> and
+  instance names must be unique.
+  Let's import under the name <code>UbuntuBear</code>:
+</p>
+<div class="jekyll_pre">
+<div class="codeLabel unselectable" data-lt-active="false">cmd.exe</div><pre data-lt-active="false" class="maxOneScreenHigh copyContainer" id="id4ed5f9b663a7"><button class="copyBtn" data-clipboard-target="#id4ed5f9b663a7" title="Copy to clipboard"><img src="clippy.svg" alt="Copy to clipboard" style="width: 13px;"></button><span class="unselectable">C:\Users\Mike Slinn&gt; </span>wsl --import UbuntuBear f:\ubuntuBear ubuntuBear_2021-01-10.tar
+<span class="unselectable">Unspecified error </span></pre>
+</div>
+<p>
+  Ahh, the dreaded <code>Unspecified error</code> that <code>wsl import</code> is infamous for.
+  I found a few potential solutions, detailed below; I show the most desirable solution first.
+</p>
+<h2 id="vhdx">Solution 1: Importing the <span class="code">VDHX File</span></h2>
+<p>
+  Importing the original <code>vhdx</code> file directly instead of
+  creating and importing the <code>tar</code> file has been reported to work by
+  <a href="https://github.com/microsoft/WSL/issues/4735#issuecomment-1370093052" target="_blank" rel="nofollow">several people</a>.
+  This is a more desirable solution because it requires less work and is faster.
+  Note that the <kbd>^</kbd> character is a DOS command-line continuation character,
+  much like the Bash <kbd>\</kbd> character.
+</p>
+<div class="jekyll_pre">
+<div class="codeLabel unselectable" data-lt-active="false">cmd.exe</div><pre data-lt-active="false" class="maxOneScreenHigh copyContainer" id="id6b8ab759754c"><button class="copyBtn" data-clipboard-target="#id6b8ab759754c" title="Copy to clipboard"><img src="clippy.svg" alt="Copy to clipboard" style="width: 13px;"></button><span class="unselectable">C:\Users\Mike Slinn&gt; </span>wsl --import Ubuntu-20.04-d^
+  D:\WSL\Ubuntu-22.04\^
+  %HOMEDRIVE%%HOMEPATH%\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu20.04onWindows_79rhkp1fndgsc\LocalState\ext4.vhdx^
+  --vhd</pre>
+</div>
+<h2 id="vhdx">Solution 2: Updating Linux Kernel</h2>
+<p>
+  <a href="https://github.com/microsoft/WSL/issues/4735" target="_blank" rel="nofollow">The following</a> was written by
+  <a href="https://github.com/ken-cdit" target="_blank" rel="nofollow"><code>ken-cdit</code></a>:
+</p>
+<p>
+  Had the same issue.
+  I exported two WSL 2 distros and then did a clean install of my Windows OS.
+  "Unspecified error" came up when I tried to import them.
+</p>
+<p>
+  I fixed it by downloading the Linux kernel update package referred to at
+  <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10" target="_blank" rel="nofollow"><code>https:/<wbr>/<wbr>docs.microsoft.com/<wbr>en-us/<wbr>windows/<wbr>wsl/<wbr>install-win10</code></a>
+  and then running the command <code>wsl --set-default-version 2</code>.
+</p>
+<p>
+  After this, my two distros imported without error.
+</p>
+<p>
+ I had the whole thing still in the console so here is a screencap...
+</p>
+<div class="imgWrapper imgFlex inline" style=" ">
+   <picture class="imgPicture">
+  <source srcset="solution.webp" type="image/webp">
+  <source srcset="solution.png" type="image/png">
+  <img class="imgImg rounded shadow" src="solution.png" style="width: 100%;">
+</picture>
+</div>
+<h2 id="LxRunOfflineInstall">Solution 3: <span class="code">LxRunOffline</span></h2>
+<h3 id="LxRunOfflineInstall">Installing <span class="code">LxRunOffline</span></h3>
+<p>
+  <a href="https://github.com/microsoft/WSL/issues/4735#issuecomment-800103777" target="_blank" rel="nofollow">Google brought me</a>
+  to a potential solution,
+  <a href="https://github.com/DDoSolitary/LxRunOffline" target="_blank" rel="nofollow"><code>LxRunOffline</code></a>, which provided me limited success.
+</p><p>
+  I downloaded the binaries in
+  <a href="https://github.com/DDoSolitary/LxRunOffline/releases/download/v3.5.0/LxRunOffline-v3.5.0-msvc.zip" target="_blank" rel="nofollow"><code>LxRunOffline-v3.5.0-msvc.zip</code></a>
+  directly from <a href="https://github.com/DDoSolitary/LxRunOffline/releases" target="_blank" rel="nofollow">GitHub</a>
+  into <code>C:\Program Files\LxRunOffline</code>.
+</p>
+<p>
+  Now add <code>C:\Program Files\LxRunOffline</code> to the Windows <code>PATH</code>:
+</p>
+<div class="jekyll_pre">
+<div class="codeLabel unselectable" data-lt-active="false">cmd.exe</div><pre data-lt-active="false" class="maxOneScreenHigh copyContainer" id="id6339d4f59014"><button class="copyBtn" data-clipboard-target="#id6339d4f59014" title="Copy to clipboard"><img src="clippy.svg" alt="Copy to clipboard" style="width: 13px;"></button><span class="unselectable">C:\Users\Mike Slinn&gt; </span>setx PATH "%PATH%;C:\Program Files\LxRunOffline"
+
+SUCCESS: Specified value was saved. %}</pre>
+</div>
+<p>
+  I then ran the following in an administrative shell to register the DLL:
+</p>
+<div class="jekyll_pre">
+<div class="codeLabel unselectable" data-lt-active="false">cmd.exe</div><pre data-lt-active="false" class="maxOneScreenHigh copyContainer" id="id403b94b0b0eb"><button class="copyBtn" data-clipboard-target="#id403b94b0b0eb" title="Copy to clipboard"><img src="clippy.svg" alt="Copy to clipboard" style="width: 13px;"></button><span class="unselectable">C:\Users\Mike Slinn&gt; </span>regsvr32 "C:\Program Files\LxRunOffline\LxRunOfflineShellExt.dll"</pre>
+</div>
+<h3 id="LxRunOffline" class="code">LxRunOffline Help Info</h3>
+<p>
+  Let's progressively discover how this command-line program can be used.
+  First I'll just type the command name, which causes the program to list its top-level actions.
+</p>
+<div class="jekyll_pre">
+<div class="codeLabel unselectable" data-lt-active="false">cmd.exe</div><pre data-lt-active="false" class="maxOneScreenHigh copyContainer" id="id2ec4c5a782e5"><button class="copyBtn" data-clipboard-target="#id2ec4c5a782e5" title="Copy to clipboard"><img src="clippy.svg" alt="Copy to clipboard" style="width: 13px;"></button><span class="unselectable">C:\Users\Mike Slinn&gt; </span>LxRunOffline
+<span class="unselectable">[ERROR] No action is specified.
+
+Supported actions are:
+    l, list            List all installed distributions.
+    gd, get-default    Get the default distribution, which is used by bash.exe.
+    sd, set-default    Set the default distribution, which is used by bash.exe.
+    i, install         Install a new distribution.
+    ui, uninstall      Uninstall a distribution.
+    rg, register       Register an existing installation directory.
+    ur, unregister     Unregister a distribution but not delete the installation directory.
+    m, move            Move a distribution to a new directory.
+    d, duplicate       Duplicate an existing distribution in a new directory.
+    e, export          Export a distribution"s filesystem to a .tar.gz file, which can be imported by the "install" command.
+    r, run             Run a command in a distribution.
+    di, get-dir        Get the installation directory of a distribution.
+    gv, get-version    Get the filesystem version of a distribution.
+    ge, get-env        Get the default environment variables of a distribution.
+    se, set-env        Set the default environment variables of a distribution.
+    ae, add-env        Add to the default environment variables of a distribution.
+    re, remove-env     Remove from the default environment variables of a distribution.
+    gu, get-uid        Get the UID of the default user of a distribution.
+    su, set-uid        Set the UID of the default user of a distribution.
+    gk, get-kernelcmd  Get the default kernel command line of a distribution.
+    sk, set-kernelcmd  Set the default kernel command line of a distribution.
+    gf, get-flags      Get some flags of a distribution. See https://docs.microsoft.com/en-us/previous-versions/windows/desktop/api/wslapi/ne-wslapi-wsl_distribution_flags for details.
+    sf, set-flags      Set some flags of a distribution. See https://docs.microsoft.com/en-us/previous-versions/windows/desktop/api/wslapi/ne-wslapi-wsl_distribution_flags for details.
+    s, shortcut        Create a shortcut to launch a distribution.
+    ec, export-config  Export configuration of a distribution to an XML file.
+    ic, import-config  Import configuration of a distribution from an XML file.
+    sm, summary        Get general information of a distribution.
+    version            Get version information about this LxRunOffline.exe. </span></pre>
+</div>
+<p>
+  Alright, let's get information about the <code>i</code> (<code>install</code>) option.
+</p>
+<div class="jekyll_pre">
+<div class="codeLabel unselectable" data-lt-active="false">cmd.exe</div><pre data-lt-active="false" class="maxOneScreenHigh copyContainer" id="id39a098b68e1b"><button class="copyBtn" data-clipboard-target="#id39a098b68e1b" title="Copy to clipboard"><img src="clippy.svg" alt="Copy to clipboard" style="width: 13px;"></button><span class="unselectable">C:\Users\Mike Slinn&gt; </span>LxRunOffline i
+<span class="unselectable">[ERROR] the option '-d' is required but missing
+
+Options:
+  -n arg                Name of the distribution
+  -d arg                The directory to install the distribution into.
+  -f arg                The tar file containing the root filesystem of the
+                        distribution to be installed. If a file of the same
+                        name with a .xml extension exists and "-c" isn"t
+                        specified, that file will be imported as a config file.
+  -r arg                The directory in the tar file to extract. This argument
+                        is optional.
+  -c arg                The config file to use. This argument is optional.
+  -v arg (=2)           The version of filesystem to use, latest available one
+                        if not specified.
+  -s                    Create a shortcut for this distribution on Desktop. </span></pre>
+</div>
+<p>
+  I'll use the <code>-d</code> option to specify the directory to install into,
+  as well as the <code>-f</code> and <code>-n</code> options.
+</p>
+<h3 id="LxRunOfflineImport"><span class="code">LxRunOffline</span> Import</h3>
+<p>
+  I feel brave, let's try importing for real now:
+</p>
+<div class="jekyll_pre">
+<div class="codeLabel unselectable" data-lt-active="false">cmd.exe</div><pre data-lt-active="false" class="maxOneScreenHigh copyContainer" id="idd1bc196d51f8"><button class="copyBtn" data-clipboard-target="#idd1bc196d51f8" title="Copy to clipboard"><img src="clippy.svg" alt="Copy to clipboard" style="width: 13px;"></button><span class="unselectable">C:\Users\Mike Slinn&gt; </span>LxRunOffline i -d f:/ubuntuBear -n UbuntuBear -f ubuntuBear_2021-01-10.tar
+<span class="unselectable">[ERROR] The distro "UbuntuBear" already exists. </span></pre>
+</div>
+<p>
+  Some debris remains from the failed import (remember the <code>Unspecified error</code> a moment ago?).
+  I will delete the b0rked <code>UbuntuBear</code> instance in a moment.
+  Let's call this newly cloned linux instance <code>UbuntuBear2</code>.
+</p>
+<div class="jekyll_pre">
+<div class="codeLabel unselectable" data-lt-active="false">cmd.exe</div><pre data-lt-active="false" class="maxOneScreenHigh copyContainer" id="id39deb7f53682"><button class="copyBtn" data-clipboard-target="#id39deb7f53682" title="Copy to clipboard"><img src="clippy.svg" alt="Copy to clipboard" style="width: 13px;"></button><span class="unselectable">C:\Users\Mike Slinn&gt; </span>LxRunOffline i -d f:/ubuntuBear -n UbuntuBear2 -f ubuntuBear_2021-01-10.tar
+<span class="unselectable">[WARNING] Ignoring an unsupported file "var/lib/docker/volumes/backingFsBlockDev" of type 0060000.
+[WARNING] Ignoring an unsupported file "tmp/clr-debug-pipe-17041-8893592-out" of type 0010000.
+[WARNING] Ignoring an unsupported file "tmp/clr-debug-pipe-10716-846285-in" of type 0010000.
+[WARNING] Ignoring an unsupported file "tmp/clr-debug-pipe-1899-75308257-out" of type 0010000.
+[WARNING] Ignoring an unsupported file "tmp/clr-debug-pipe-10151-8749190-out" of type 0010000.
+[WARNING] Ignoring an unsupported file "tmp/clr-debug-pipe-18789-129803847-in" of type 0010000.
+[WARNING] Ignoring an unsupported file "tmp/clr-debug-pipe-811-127664322-in" of type 0010000.
+[WARNING] Ignoring an unsupported file "tmp/clr-debug-pipe-12447-115564106-in" of type 0010000.
+[WARNING] Ignoring an unsupported file "tmp/clr-debug-pipe-24480-65839207-in" of type 0010000.
+[WARNING] Ignoring an unsupported file "tmp/clr-debug-pipe-23230-107496852-out" of type 0010000.
+[WARNING] Ignoring an unsupported file "tmp/clr-debug-pipe-23230-107496852-in" of type 0010000.
+[WARNING] Ignoring an unsupported file "tmp/clr-debug-pipe-24480-65839207-out" of type 0010000.
+[WARNING] Ignoring an unsupported file "tmp/clr-debug-pipe-14211-5836039-in" of type 0010000.
+[WARNING] Ignoring an unsupported file "tmp/clr-debug-pipe-19778-110293600-out" of type 0010000.
+[WARNING] Ignoring an unsupported file "tmp/clr-debug-pipe-1969-34761241-in" of type 0010000.
+[WARNING] Ignoring an unsupported file "tmp/clr-debug-pipe-17041-8893592-in" of type 0010000.
+[WARNING] Ignoring an unsupported file "tmp/clr-debug-pipe-1899-75308257-in" of type 0010000.
+[WARNING] Ignoring an unsupported file "tmp/clr-debug-pipe-7642-17996-out" of type 0010000.
+[WARNING] Ignoring an unsupported file "tmp/clr-debug-pipe-10151-8749190-in" of type 0010000.
+[WARNING] Ignoring an unsupported file "tmp/clr-debug-pipe-19082-8772885-in" of type 0010000.
+[WARNING] Ignoring an unsupported file "tmp/clr-debug-pipe-12857-5829248-out" of type 0010000.
+[WARNING] Ignoring an unsupported file "tmp/clr-debug-pipe-26692-70009588-in" of type 0010000.
+[WARNING] Ignoring an unsupported file "tmp/clr-debug-pipe-12447-115564106-out" of type 0010000.
+[WARNING] Ignoring an unsupported file "tmp/clr-debug-pipe-22582-1181861-out" of type 0010000.
+[WARNING] Ignoring an unsupported file "tmp/clr-debug-pipe-14211-5836039-out" of type 0010000.
+[WARNING] Ignoring an unsupported file "tmp/clr-debug-pipe-1969-34761241-out" of type 0010000.
+[WARNING] Ignoring an unsupported file "tmp/clr-debug-pipe-7642-17996-in" of type 0010000.
+[WARNING] Ignoring an unsupported file "tmp/clr-debug-pipe-10716-846285-out" of type 0010000.
+[WARNING] Ignoring an unsupported file "tmp/clr-debug-pipe-11424-57667328-out" of type 0010000.
+[WARNING] Ignoring an unsupported file "tmp/clr-debug-pipe-28497-49814437-out" of type 0010000.
+[WARNING] Ignoring an unsupported file "tmp/clr-debug-pipe-18789-129803847-out" of type 0010000.
+[WARNING] Ignoring an unsupported file "tmp/clr-debug-pipe-2234-80045-in" of type 0010000.
+[WARNING] Ignoring an unsupported file "tmp/clr-debug-pipe-19082-8772885-out" of type 0010000.
+[WARNING] Ignoring an unsupported file "tmp/clr-debug-pipe-12857-5829248-in" of type 0010000.
+[WARNING] Ignoring an unsupported file "tmp/clr-debug-pipe-22582-1181861-in" of type 0010000.
+[WARNING] Ignoring an unsupported file "tmp/clr-debug-pipe-26692-70009588-out" of type 0010000.
+[WARNING] Ignoring an unsupported file "tmp/clr-debug-pipe-10990-5814132-in" of type 0010000.
+[WARNING] Ignoring an unsupported file "tmp/clr-debug-pipe-811-127664322-out" of type 0010000.
+[WARNING] Ignoring an unsupported file "tmp/clr-debug-pipe-10990-5814132-out" of type 0010000.
+[WARNING] Ignoring an unsupported file "tmp/clr-debug-pipe-11424-57667328-in" of type 0010000.
+[WARNING] Ignoring an unsupported file "tmp/clr-debug-pipe-2234-80045-out" of type 0010000.
+[WARNING] Ignoring an unsupported file "tmp/clr-debug-pipe-19778-110293600-in" of type 0010000.
+[WARNING] Ignoring an unsupported file "tmp/clr-debug-pipe-28497-49814437-in" of type 0010000.
+[WARNING] Ignoring an unsupported file "dev/random" of type 0020000.
+[WARNING] Ignoring an unsupported file "dev/tty" of type 0020000.
+[WARNING] Ignoring an unsupported file "dev/full" of type 0020000.
+[WARNING] Ignoring an unsupported file "dev/urandom" of type 0020000.
+[WARNING] Ignoring an unsupported file "dev/ptmx" of type 0020000.
+[WARNING] Ignoring an unsupported file "dev/zero" of type 0020000.
+[WARNING] Ignoring an unsupported file "dev/console" of type 0020000.
+[WARNING] Ignoring an unsupported file "dev/null" of type 0020000.
+[WARNING] Ignoring an unsupported file "dev/mapper/control" of type 0020000.
+[ERROR] Couldn"t create the file "\\?\f:\ubuntuBear\rootfs\home\mslinn\.atom\packages\markdown-preview-plus\spec\fixtures\subdir\�cc�nt�d.md".
+Reason: The file exists. </span></pre>
+</div>
+<p>
+  Most of the warnings do not seem to be important.
+  I do not care about Docker anyway.
+  Also, now I know that temporary files and <code>dev</code> nodes should all be deleted before running this program.
+  Even better, the program that created the tar should be modified to not attempt to replicate any temporary files.
+</p>
+<p>
+  I don't understand the problem with the atom package,
+  but I'll try to delete all of the atom settings from the tar,
+  along with the other problematic directories,
+  and then retry.
+</p>
+<h3 id="cleanup">Cleaning Up WSL</h3>
+<p>
+  First let's see the VMs registered with WSL:
+</p>
+<div class="jekyll_pre">
+<div class="codeLabel unselectable" data-lt-active="false">Shell</div><pre data-lt-active="false" class="maxOneScreenHigh copyContainer" id="id6a48d2782e0e"><button class="copyBtn" data-clipboard-target="#id6a48d2782e0e" title="Copy to clipboard"><img src="clippy.svg" alt="Copy to clipboard" style="width: 13px;"></button><span class="unselectable">C:\Users\Mike Slinn&gt; </span>wsl -l
+<span class="unselectable">Windows Subsystem for Linux Distributions:
+Ubuntu (Default)
+UbuntuBear
+UbuntuBear2 </span></pre>
+</div>
+<p>
+  Let's delete the debris remaining from the failed <code>UbuntuBear</code> and <code>UbuntuBear2</code> imports:
+</p>
+<div class="jekyll_pre">
+<div class="codeLabel unselectable" data-lt-active="false">Shell</div><pre data-lt-active="false" class="maxOneScreenHigh copyContainer" id="id8b615ffb82ff"><button class="copyBtn" data-clipboard-target="#id8b615ffb82ff" title="Copy to clipboard"><img src="clippy.svg" alt="Copy to clipboard" style="width: 13px;"></button><span class="unselectable">C:\Users\Mike Slinn&gt; </span>wsl --unregister UbuntuBear
+<span class="unselectable">Unregistering... </span>
+
+<span class="unselectable">C:\Users\Mike Slinn&gt; </span>wsl --unregister UbuntuBear2
+<span class="unselectable">Unregistering... </span></pre>
+</div>
+<p>
+  Attempting to delete the directory created by LxRunOffline hit a corrupted directory.
+</p>
+<div class="jekyll_pre">
+<div class="codeLabel unselectable" data-lt-active="false">Shell</div><pre data-lt-active="false" class="maxOneScreenHigh copyContainer" id="id89bfb9afd1af"><button class="copyBtn" data-clipboard-target="#id89bfb9afd1af" title="Copy to clipboard"><img src="clippy.svg" alt="Copy to clipboard" style="width: 13px;"></button><span class="unselectable">C:\Users\Mike Slinn&gt; </span>del /s /q f:\ubuntuBear
+<span class="unselectable">Deleted file - f:\ubuntuBear\rootfs\init
+Deleted file - f:\ubuntuBear\rootfs\lib
+Deleted file - f:\ubuntuBear\rootfs\lib32
+Deleted file - f:\ubuntuBear\rootfs\lib64
+Deleted file - f:\ubuntuBear\rootfs\libx32
+Deleted file - f:\ubuntuBear\rootfs\sbin
+Deleted file - f:\ubuntuBear\rootfs\home\mslinn\.wget-hsts
+Deleted file - f:\ubuntuBear\rootfs\home\mslinn\.Xauthority
+Deleted file - f:\ubuntuBear\rootfs\home\mslinn\.zcompdump
+Deleted file - f:\ubuntuBear\rootfs\home\mslinn\.zcompdump-Bear-5.8
+Deleted file - f:\ubuntuBear\rootfs\home\mslinn\.zcompdump-localhost-5.8
+Deleted file - f:\ubuntuBear\rootfs\home\mslinn\.zshenv
+Deleted file - f:\ubuntuBear\rootfs\home\mslinn\.zshrc
+Deleted file - f:\ubuntuBear\rootfs\home\mslinn\.zshrc.pre-oh-my-zsh
+Deleted file - f:\ubuntuBear\rootfs\home\mslinn\.zsh_history
+Deleted file - f:\ubuntuBear\rootfs\home\mslinn\ancient_warmth_workspace.code-workspace
+Deleted file - f:\ubuntuBear\rootfs\home\mslinn\bear2.zip
+Deleted file - f:\ubuntuBear\rootfs\home\mslinn\bear3.zip
+Deleted file - f:\ubuntuBear\rootfs\home\mslinn\bearDirs.tar
+Deleted file - f:\ubuntuBear\rootfs\home\mslinn\dead.letter
+Deleted file - f:\ubuntuBear\rootfs\home\mslinn\django_bash_completion
+Deleted file - f:\ubuntuBear\rootfs\home\mslinn\jekyll_workspace.code-workspace
+Deleted file - f:\ubuntuBear\rootfs\home\mslinn\msp.txt
+Deleted file - f:\ubuntuBear\rootfs\home\mslinn\nodesource_setup.sh
+Deleted file - f:\ubuntuBear\rootfs\home\mslinn\package-lock.json
+Deleted file - f:\ubuntuBear\rootfs\home\mslinn\package.json
+Deleted file - f:\ubuntuBear\rootfs\home\mslinn\worldPeaceMusicCollective.png
+Deleted file - f:\ubuntuBear\rootfs\home\mslinn\worldPeaceMusicCollectiveBordered.png
+Deleted file - f:\ubuntuBear\rootfs\home\mslinn\.vscode-server\extensions\wix.vscode-import-cost-2.15.0\package.json
+Deleted file - f:\ubuntuBear\rootfs\home\mslinn\.vscode-server\extensions\wix.vscode-import-cost-2.15.0\pom.xml
+Deleted file - f:\ubuntuBear\rootfs\home\mslinn\.vscode-server\extensions\wix.vscode-import-cost-2.15.0\README.md
+The file or directory is corrupted and unreadable. </span></pre>
+</div>
+<p>
+  “The file or directory is corrupted and unreadable.”
+  That needs to be dealt with right away!
+  I fixed the directory errors in drive F like this:
+</p>
+<div class="jekyll_pre">
+<div class="codeLabel unselectable" data-lt-active="false">cmd.exe</div><pre data-lt-active="false" class="maxOneScreenHigh copyContainer" id="id3ab9d10ba3a1"><button class="copyBtn" data-clipboard-target="#id3ab9d10ba3a1" title="Copy to clipboard"><img src="clippy.svg" alt="Copy to clipboard" style="width: 13px;"></button><span class="unselectable">C:\Program Files&gt; </span>chkdsk /F F:
+<span class="unselectable">The type of the file system is NTFS.
+
+Chkdsk cannot run because the volume is in use by another
+process.  Chkdsk may run if this volume is dismounted first.
+ALL OPENED HANDLES TO THIS VOLUME WOULD THEN BE INVALID. </span>y
+
+<span class="unselectable">Chkdsk cannot dismount the volume because it is a system drive or
+there is an active paging file on it.  Would you like to schedule
+this volume to be checked the next time the system restarts? (Y/N)</span> y
+
+<span class="unselectable">This volume will be checked the next time the system restarts. </span></pre>
+</div>
+<p>
+  I rebooted the system, and it fixed the errors on drive F:.
+</p>
+<h3 id="prune">Pruning the tar</h3>
+<p>
+  First lets back up the tar that we want to prune.
+</p>
+<div class="jekyll_pre">
+<div class="codeLabel unselectable" data-lt-active="false">Shell</div><pre data-lt-active="false" class="maxOneScreenHigh copyContainer" id="id5dd0c9121df3"><button class="copyBtn" data-clipboard-target="#id5dd0c9121df3" title="Copy to clipboard"><img src="clippy.svg" alt="Copy to clipboard" style="width: 13px;"></button><span class="unselectable">$ </span>pushd '/mnt/c/Users/Mike Slinn/'
+
+<span class="unselectable">$ </span>ls -alF *.tar
+<span class="unselectable">-rwxr--r-- 1 mslinn mslinn   524482560 Jan 10 18:45 'bear_ubuntu_2021-01-10.tar'*
+-rwxr--r-- 1 mslinn mslinn 51464028160 Jan 10 21:11 'ubuntuBear_2021-01-10.tar'* </span>
+
+<span class="unselectable">$ </span>cp ubuntuBear_2021-01-10.tar ubuntuBearPruned_2021-01-10.tar</pre>
+</div>
+<p>
+  Now lets try to prune out all the problematic, and unnecessary, files.
+</p>
+<div class="jekyll_pre">
+<div class="codeLabel unselectable" data-lt-active="false">Shell</div><pre data-lt-active="false" class="maxOneScreenHigh copyContainer" id="id9fdb7075c191"><button class="copyBtn" data-clipboard-target="#id9fdb7075c191" title="Copy to clipboard"><img src="clippy.svg" alt="Copy to clipboard" style="width: 13px;"></button><span class="unselectable">$ </span>tar -f ubuntuBearPruned_2021-01-10.tar \
+  --delete dev/* \
+  --delete tmp/* \
+  --delete home/mslinn/.atom/* \
+  --delete var/lib/docker/* \
+  --delete var/sitesUbuntu/* \
+  --delete var/work/* \
+  --delete var/tmp/*
+<span class="unselectable">tar: Ignoring unknown extended header keyword 'LIBARCHIVE.xattr.security.capability'
+tar: Ignoring unknown extended header keyword 'LIBARCHIVE.xattr.security.capability'
+tar: Ignoring unknown extended header keyword 'LIBARCHIVE.xattr.security.capability'
+tar: Ignoring unknown extended header keyword 'LIBARCHIVE.xattr.security.capability'
+tar: Ignoring unknown extended header keyword 'LIBARCHIVE.xattr.security.capability'
+tar: Ignoring unknown extended header keyword 'LIBARCHIVE.xattr.user.fuseoverlayfs.opaque'
+tar: Ignoring unknown extended header keyword 'LIBARCHIVE.xattr.user.fuseoverlayfs.opaque'
+tar: Pattern matching characters used in file names
+tar: Use --wildcards to enable pattern matching, or --no-wildcards to suppress this warning
+tar: dev/*: Not found in archive
+tar: Pattern matching characters used in file names
+tar: Use --wildcards to enable pattern matching, or --no-wildcards to suppress this warning
+tar: tmp/*: Not found in archive
+tar: Pattern matching characters used in file names
+tar: Use --wildcards to enable pattern matching, or --no-wildcards to suppress this warning
+tar: home/mslinn/.atom/*: Not found in archive
+tar: Pattern matching characters used in file names
+tar: Use --wildcards to enable pattern matching, or --no-wildcards to suppress this warning
+tar: var/lib/docker/*: Not found in archive
+tar: Pattern matching characters used in file names
+tar: Use --wildcards to enable pattern matching, or --no-wildcards to suppress this warning
+tar: var/sitesUbuntu/*: Not found in archive
+tar: Pattern matching characters used in file names
+tar: Use --wildcards to enable pattern matching, or --no-wildcards to suppress this warning
+tar: var/work/*: Not found in archive
+tar: Pattern matching characters used in file names
+tar: Use --wildcards to enable pattern matching, or --no-wildcards to suppress this warning
+tar: var/tmp/*: Not found in archive
+tar: Exiting with failure status due to previous errors </span></pre>
+</div>
+<p>
+  I think the error messages just indicate that the tar was made by <a href="https://www.freebsd.org/cgi/man.cgi?tar(1)" target="_blank" rel="nofollow">BSD-TAR</a>,
+  while Ubuntu uses <a href="https://www.gnu.org/software/tar/" target="_blank" rel="nofollow">GNU-TAR</a>.
+  I installed <code>bsdtar</code> like this:
+</p>
+<div class="jekyll_pre">
+<div class="codeLabel unselectable" data-lt-active="false">Shell</div><pre data-lt-active="false" class="maxOneScreenHigh copyContainer" id="id0af1facfd3be"><button class="copyBtn" data-clipboard-target="#id0af1facfd3be" title="Copy to clipboard"><img src="clippy.svg" alt="Copy to clipboard" style="width: 13px;"></button><span class="unselectable">$ </span>yes | sudo apt-get install <a href="https://packages.ubuntu.com/hirsute/libarchive-tools" target="_blank" rel="nofollow">libarchive-tools</a>
+<span class="unselectable">Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following NEW packages will be installed:
+  libarchive-tools
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 57.1 kB of archives.
+After this operation, 207 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu hirsute/universe amd64 libarchive-tools amd64 3.4.3-2 [57.1 kB]
+Fetched 57.1 kB in 0s (167 kB/s)
+Selecting previously unselected package libarchive-tools.
+(Reading database ... 244498 files and directories currently installed.)
+Preparing to unpack .../libarchive-tools_3.4.3-2_amd64.deb ...
+Unpacking libarchive-tools (3.4.3-2) ...
+Setting up libarchive-tools (3.4.3-2) ...
+Processing triggers for man-db (2.9.4-2) ... </span></pre>
+</div>
+<p>
+  I <a href="https://stackoverflow.com/a/56031400/553865" target="_blank" rel="nofollow">tried again</a>
+  using <code>bsdtar</code>,
+  which does not support GNU tar's <code>--delete</code> option.
+  Unfortunately, I only got a 1KB file out, no matter what I did.
+</p>
+<div class="jekyll_pre">
+<div class="codeLabel unselectable" data-lt-active="false">Shell</div><pre data-lt-active="false" class="maxOneScreenHigh copyContainer" id="idcf4e0b60f4b6"><button class="copyBtn" data-clipboard-target="#idcf4e0b60f4b6" title="Copy to clipboard"><img src="clippy.svg" alt="Copy to clipboard" style="width: 13px;"></button><span class="unselectable">$ </span>bsdtar -cvf ubuntuBearPruned2_2021-01-10.tar \
+  --exclude 'dev/*' \
+  --exclude 'tmp/*' \
+  --exclude 'home/mslinn/.atom/*' \
+  --exclude 'var/lib/docker/*' \
+  --exclude 'var/sitesUbuntu/*' \
+  --exclude 'var/work/*' \
+  --exclude 'var/tmp/*' \
+  @ubuntuBear_2021-01-10.tar</pre>
+</div>
+<p>
+  Maybe there is a bug.
+  Maybe there is bad documentation.
+  I do not think I made an error.
+  Life is short.
+  Bugs are rampant.
+  <a href="https://en.wikipedia.org/wiki/Illegitimi_non_carborundum" target="_blank" rel="nofollow">Illegitimi non carborundum!</a>
+</p>
+<p>
+  I give up on this direction.
+  Let's try to win some other way!
+</p>
+<h3 id="duplicate">Success Duplicating the Ubuntu Instance</h3>
+<p>
+  Let’s try duplicating the Ubuntu instance with <code>LxRunOffline</code>.
+  First the <code>Ubuntu</code> VM must be terminated.
+</p>
+<div class="jekyll_pre">
+<div class="codeLabel unselectable" data-lt-active="false">cmd.exe</div><pre data-lt-active="false" class="maxOneScreenHigh copyContainer" id="id1ad2df449fe6"><button class="copyBtn" data-clipboard-target="#id1ad2df449fe6" title="Copy to clipboard"><img src="clippy.svg" alt="Copy to clipboard" style="width: 13px;"></button><span class="unselectable">C:\Users\Mike Slinn&gt; </span>wsl -t Ubuntu
+
+<span class="unselectable">C:\Users\Mike Slinn&gt; </span>LxRunOffline duplicate -n Ubuntu -N UbuntuWsl2 -d f:\UbuntuWsl2</pre>
+</div>
+<p>
+  The above ran for a couple of hours and concluded without error.
+  <code>LxRunOffline duplicate</code> automatically registers the new instance.
+</p>
+<p>
+  The <code>F:\UbuntuWsl2</code>directory was 239 GB.
+  That's a fair-sized VM.
+  The directory only contains one file, called <code>ext4.vhdx</code>.
+</p>
+<p>
+  Let's see the Ubuntu instances that are currently set:
+</p>
+<div class="jekyll_pre">
+<div class="codeLabel unselectable" data-lt-active="false">cmd.exe</div><pre data-lt-active="false" class="maxOneScreenHigh copyContainer" id="id11f7a0c8d310"><button class="copyBtn" data-clipboard-target="#id11f7a0c8d310" title="Copy to clipboard"><img src="clippy.svg" alt="Copy to clipboard" style="width: 13px;"></button><span class="unselectable">C:\Users\Mike Slinn&gt; </span>wsl --list
+<span class="unselectable">Windows Subsystem for Linux Distributions:
+Ubuntu (Default)
+UbuntuWsl2 </span></pre>
+</div>
+<div class="right" style="font-size: 3em;">😁</div>
+<p>
+  That is what I wanted to see!
+  I started the new <code>UbuntuWsl2</code> Ubuntu instance like this:
+</p>
+<div class="jekyll_pre">
+<div class="codeLabel unselectable" data-lt-active="false">cmd.exe</div><pre data-lt-active="false" class="maxOneScreenHigh copyContainer" id="id0b071679dcd2"><button class="copyBtn" data-clipboard-target="#id0b071679dcd2" title="Copy to clipboard"><img src="clippy.svg" alt="Copy to clipboard" style="width: 13px;"></button><span class="unselectable">C:\Users\Mike Slinn&gt; </span>wsl -d UbuntuWsl2</pre>
+</div>
+<p>
+  To set the default Ubuntu instance I typed:
+</p>
+<div class="jekyll_pre">
+<div class="codeLabel unselectable" data-lt-active="false">cmd.exe</div><pre data-lt-active="false" class="maxOneScreenHigh copyContainer" id="idbb473f32569d"><button class="copyBtn" data-clipboard-target="#idbb473f32569d" title="Copy to clipboard"><img src="clippy.svg" alt="Copy to clipboard" style="width: 13px;"></button><span class="unselectable">C:\Users\Mike Slinn&gt; </span>wsl --setdefault UbuntuWsl2</pre>
+</div>
+<p>
+  Let's verify that worked:
+</p>
+<div class="jekyll_pre">
+<div class="codeLabel unselectable" data-lt-active="false">cmd.exe</div><pre data-lt-active="false" class="maxOneScreenHigh copyContainer" id="id7a1c40fa141f"><button class="copyBtn" data-clipboard-target="#id7a1c40fa141f" title="Copy to clipboard"><img src="clippy.svg" alt="Copy to clipboard" style="width: 13px;"></button><span class="unselectable">C:\Users\Mike Slinn&gt; </span>wsl --list
+<span class="unselectable">Windows Subsystem for Linux Distributions:
+UbuntuWsl2 (Default)
+Ubuntu </span></pre>
+</div>
+<p>
+  I then deleted the huge tar files that I had created in earlier steps.
+  I never needed them because I used <code>LxRunOffline duplicate</code>.
+</p>
+<h2 id="usb3">Ubuntu on 500GB USB3 SSD</h2>
+<div class="imgWrapper imgFlex right" style=" ">
+    <a href="https://www.amazon.com/gp/product/B08GTXVG9P" target="_blank" class="imgImgUrl"><picture class="imgPicture">
+  <source srcset="sandiskExtreme.webp" type="image/webp">
+  <source srcset="sandiskExtreme.png" type="image/png">
+  <img class="imgImg rounded shadow" src="sandiskExtreme.png" style="width: 100%;">
+</picture>
+</a>
+</div>
+<p>
+  I have a <a href="https://www.amazon.com/gp/product/B08GTXVG9P" target="_blank" rel="nofollow">Sandisk Extreme 500GB USB3 SSD drive</a>.
+  This tiny, light, and very portable storage device should be perfect for holding my Ubuntu development system.
+  How cool it would be to be able to drop it into a small pocket!
+</p>
+<p>
+  Better yet, the
+  <a href="https://www.quora.com/Can-a-USB-3-0-external-SSD-be-faster-than-an-internal-laptop80%99s-HDD" target="_blank" rel="nofollow">performance of portable USB3 SSD drives</a>
+  blows away traditional hard drives.
+</p>
+<p>
+  For example, assume that your SSD drive appears as drive <code>X</code>.
+  Also assume that <code>LxRunOffline.exe</code> and <code>LxRunOffline.dll</code> have been copied to the root directory of the SSD drive.
+  To register your portable Ubuntu you would simply type:
+</p>
+<div class="jekyll_pre">
+<div class="codeLabel unselectable" data-lt-active="false">cmd.exe</div><pre data-lt-active="false" class="maxOneScreenHigh copyContainer" id="id4d95dafa49e5"><button class="copyBtn" data-clipboard-target="#id4d95dafa49e5" title="Copy to clipboard"><img src="clippy.svg" alt="Copy to clipboard" style="width: 13px;"></button><span class="unselectable">C:\&gt; </span>X:LxRunOffline register X:\MyUbuntu -n UbuntuMSlinn</pre>
+</div>
+<div class="pullQuote">
+  You can walk up to any recently updated Windows 10 machine,
+  plug your tiny USB3 SSD drive into a USB3 or USB3.1 port,
+  run the registration command, and boom! you are productive with great storage performance.
+</div>
+<div class="right" style="font-size: 3em;">😁</div>
+<h2 id="duplicate">Duplicating to SSD</h2>
+<p>
+  Again, the <code>Ubuntu</code> VM must be terminated.
+</p>
+<div class="jekyll_pre">
+<div class="codeLabel unselectable" data-lt-active="false">cmd.exe</div><pre data-lt-active="false" class="maxOneScreenHigh copyContainer" id="idb42cffd89b61"><button class="copyBtn" data-clipboard-target="#idb42cffd89b61" title="Copy to clipboard"><img src="clippy.svg" alt="Copy to clipboard" style="width: 13px;"></button><span class="unselectable">C:\Users\Mike Slinn&gt; </span>wsl -t Ubuntu
+
+<span class="unselectable">C:\Users\Mike Slinn&gt; </span>LxRunOffline duplicate -n Ubuntu -N UbuntuWsl2Extreme -d I:\UbuntuWsl2Extreme</pre>
+</div>
+<p>
+  The above ran for a couple of hours and concluded without error.
+  <code>LxRunOffline duplicate</code> automatically registers the new instance.
+</p>
+<p>
+  Let's see the Ubuntu instances that are currently set:
+</p>
+<div class="jekyll_pre">
+<div class="codeLabel unselectable" data-lt-active="false">cmd.exe</div><pre data-lt-active="false" class="maxOneScreenHigh copyContainer" id="id46e3e9ef71a6"><button class="copyBtn" data-clipboard-target="#id46e3e9ef71a6" title="Copy to clipboard"><img src="clippy.svg" alt="Copy to clipboard" style="width: 13px;"></button><span class="unselectable">C:\Users\Mike Slinn&gt; </span>wsl --list
+<span class="unselectable">Windows Subsystem for Linux Distributions:
+Ubuntu (Default)
+UbuntuWsl2
+UbuntuWsl2Extreme </span></pre>
+</div>
+<div class="right" style="font-size: 3em;">😁</div>
+<h2 id="startStop">Starting and Stopping Portable VMs</h2>
+<p>
+  You can start the WSL VM called <code>UbuntuMSlinn</code> by using <code>wsl -d</code>:
+</p>
+<div class="jekyll_pre">
+<div class="codeLabel unselectable" data-lt-active="false">cmd.exe</div><pre data-lt-active="false" class="maxOneScreenHigh copyContainer" id="id2312b9d9cd22"><button class="copyBtn" data-clipboard-target="#id2312b9d9cd22" title="Copy to clipboard"><img src="clippy.svg" alt="Copy to clipboard" style="width: 13px;"></button><span class="unselectable">C:\&gt; </span>wsl -d UbuntuMSlinn</pre>
+</div>
+<p>
+  You can stop it by using <code>wsl -t</code>:
+</p>
+<div class="jekyll_pre">
+<div class="codeLabel unselectable" data-lt-active="false">cmd.exe</div><pre data-lt-active="false" class="maxOneScreenHigh copyContainer" id="idf55a01a4b112"><button class="copyBtn" data-clipboard-target="#idf55a01a4b112" title="Copy to clipboard"><img src="clippy.svg" alt="Copy to clipboard" style="width: 13px;"></button><span class="unselectable">C:\&gt; </span>wsl -t UbuntuMSlinn</pre>
+</div>
+<h2 id="issues">Microsoft WSL Issue Reporting</h2>
+<p>
+  In the course of writing this blog post I found the
+  <a href="https://github.com/microsoft/WSL/blob/master/CONTRIBUTING.md#8-collect-wsl-logs" target="_blank" rel="nofollow">web page</a>
+  for reporting a WSL issue, so that Microsoft can look at it.
+</p></div>
+<div class="bottomNavButtons">
+  <button class="arrowButtonLeft" type="button">
+      <b>AI / ML System Behavior Reflects the Society That Produced It</b>
+  </button>
+ <div class="indexButtonsContainer">
+    <button class="indexButtons indexButtonSelected" type="button" title="Front Page">Front Page</button>
+    <button class="indexButtons " type="button" title="11 articles">Expert Witness</button>
+    <button class="indexButtons " type="button" title="12 articles">Git</button>
+    <button class="indexButtons " type="button" title="21 articles">Jekyll</button>
+    <button class="indexButtons " type="button" title="33 articles">Django / Oscar</button>
+    <button class="indexButtons " type="button" title="40 articles">A/V Studio</button><br>
+    <button class="indexButtons indexButtonSelected" type="button" title="128 articles">Blog</button><br>
+ </div>
+  <button class="arrowButtonRight" type="button">
+      <b>Windows Diskpart Cooperates With Diskmgmt</b>
+  </button>
+</div>
+       <div class="share">
+Share to
+  <a target="_blank" href="https://twitter.com/intent/tweet?text=https://www.mslinn.com/blog/2022/01/10/wsl-backup.html%20@mslinn">Twitter</a>,
+  <a target="_blank" href="https://news.ycombinator.com/submitlink?u=https://www.mslinn.com/blog/2022/01/10/wsl-backup.html&amp;t=WSL%20/%20WSL%202%20Backup%20and%20Restore">Hacker News</a>,
+  <a target="_blank" href="http://www.linkedin.com/shareArticle?url=https%3A%2F%2Fwww.mslinn.com%2Fblog%2F2022%2F01%2F10%2Fwsl-backup.html">LinkedIn</a>.
+</div>
+     </section>
+     <nav id="sidebar">
+       <div id="google_translate_element"></div>
+<form id="google_sitesearch" method="get" action="https://www.google.com/custom" target="_top" style="padding: 0px;" rel="nofollow">
+  <input name="domains" value="mslinn.com" type="hidden">
+  <input name="q" size="19" maxlength="255" value="" style="font-size: smaller; width: 100%; margin: 0px; padding: 0px;" type="text"><br>
+  <input name="sitesearch" value="mslinn.com" type="hidden">
+  <input name="sa" value="Search this site" style="width: 100%; margin: 0px; padding: 0px;" type="submit">
+  <input name="client" value="pub-7878925096326197" type="hidden">
+  <input name="forid" value="1" type="hidden">
+  <input name="ie" value="ISO-8859-1" type="hidden">
+  <input name="oe" value="ISO-8859-1" type="hidden">
+  <input name="safe" value="active" type="hidden">
+  <input name="cof" value="GALT:#008000;GL:1;DIV:#336699;VLC:663399;AH:center;BGC:FFFFFF;LBGC:2E5B89;ALC:0000FF;LC:0000FF;T:000000;GFNT:0000FF;GIMP:0000FF;FORID:1;" type="hidden">
+  <input name="hl" value="en" type="hidden">
+</form>
+       <nav id="tocSide">
+ <h2>Page Contents</h2>
+<ul>
+ <li><a href="#location">Location, Location, Location</a>
+ </li><li><a href="#dell">Dell’s Ignorance Causes Pain</a>
+ </li><li><a href="#ready">Test Your Backup</a>
+ </li><li><a href="#wslOptions">WSL Command-Line Options</a>
+ </li><li><a href="#wslBackup">Backing Up With WSL</a>
+ </li><li><a href="#vhdx">Solution 1: Importing the VDHX File</a>
+ </li><li><a href="#vhdx">Solution 2: Updating Linux Kernel</a>
+ </li><li><a href="#LxRunOfflineInstall">Solution 3: LxRunOffline</a>
+   <ul>
+     <li><a href="#LxRunOfflineInstall">Installing LxRunOffline</a>
+     </li><li><a href="#LxRunOffline">LxRunOffline Help Info</a>
+     </li><li><a href="#LxRunOfflineImport">LxRunOffline Import</a>
+     </li><li><a href="#cleanup">Cleaning Up WSL</a>
+     </li><li><a href="#prune">Pruning the tar</a>
+     </li><li><a href="#duplicate">Success Duplicating the Ubuntu Instance</a>
+   </li></ul>
+ </li><li><a href="#usb3">Ubuntu on 500GB USB3 SSD</a>
+ </li><li><a href="#duplicate">Duplicating to SSD</a>
+ </li><li><a href="#startStop">Starting and Stopping Portable VMs</a>
+ </li><li><a href="#issues">Microsoft WSL Issue Reporting</a>
+</li></ul>
+</nav>
+       <div id="sidebarContent">
+  <fieldset style="margin-top: 2em;">
+    <legend>&nbsp;In This <a href="https://mslinn.com/blog/blogsByLastModified.html">Collection</a>&nbsp;</legend>
+   <ul class="PageNavigation">
+       <li>Previous post:
+          <a class="prev" href="https://mslinn.com/blog/2021/12/26/ai-society.html"> AI / ML System Behavior Reflects the Society That Produced It</a> 
+       </li><li>Next post:
+          <a class="next" href="https://mslinn.com/blog/2022/01/14/diskpart.html">Windows Diskpart Cooperates With Diskmgmt</a> 
+   </li></ul>
+  </fieldset>
+         <h2>Site Themes</h2>
+         <ul>
+           <li><a href="https://mslinn.com/index.html">Welcome!</a>
+           </li><li>
+              <fieldset>
+                <legend>&nbsp;Expert&nbsp;Witness&nbsp;</legend>
+               <ul>
+                 <li><a href="https://mslinn.com/softwareexpert/index.html">Overview</a>
+                 </li><li><a href="https://mslinn.com/expertArticles/index.html">Articles</a>
+                 </li><li><a href="https://mslinn.com/resume/bio.html">Biography</a>
+                 </li><li><a href="https://mslinn.com/resume/index.html">Resume</a>:
+                    <a href="https://mslinn.com/resume/MikeSlinnResume.docx">Word</a> •
+                    <a href="https://mslinn.com/resume/MikeSlinnResume.pdf">PDF</a>
+               </li></ul>
+              </fieldset>
+           </li><li>
+              <fieldset style="padding-bottom: 1em;">
+                <legend>&nbsp;General&nbsp;Blog&nbsp;</legend>
+               <ul>
+                 <li><a href="https://mslinn.com/blog/index.html">Grouped by category</a>
+                 </li><li><a href="https://mslinn.com/blog/blogsByDate.html">Sorted by date</a>
+                 </li><li style="margin-bottom: 0px;"><a href="https://mslinn.com/blog/blogsByLastModified.html">Sorted by last modified</a>
+               </li></ul>
+              </fieldset>
+           </li><li>
+              <fieldset style="padding-bottom: 1em;">
+                <legend>Git</legend>
+               <ul>
+                 <li><a href="https://mslinn.com/git/index.html">Organized</a>
+                 </li><li><a href="https://mslinn.com/blog/gitByLastModified.html">Sorted by last modified</a>
+                 </li><li style="margin-bottom: 0px;"><a href="https://mslinn.com/feed/git.xml" target="_blank">Atom feed</a>
+               </li></ul>
+              </fieldset>
+           </li><li>
+              <fieldset style="padding-bottom: 1em;">
+                <legend>Jekyll</legend>
+               <ul>
+                 <li><a href="https://mslinn.com/jekyll/index.html">Organized</a>
+                 </li><li><a href="https://mslinn.com/blog/jekyllByLastModified.html">Sorted by last modified</a>
+                 </li><li style="margin-bottom: 0px;"><a href="https://mslinn.com/feed/jekyll.xml" target="_blank">Atom feed</a>
+               </li></ul>
+              </fieldset>
+           </li><li>
+              <fieldset style="padding-bottom: 1em;">
+                <legend>Django &amp; Oscar</legend>
+               <ul>
+                 <li><a href="https://mslinn.com/django/index.html">Organized</a>
+                 </li><li><a href="https://mslinn.com/blog/djangoByLastModified.html">Sorted by last modified</a>
+                 </li><li style="margin-bottom: 0px;"><a href="https://mslinn.com/feed/django.xml" target="_blank">Atom feed</a>
+               </li></ul>
+              </fieldset>
+           </li><li>
+              <fieldset style="padding-bottom: 1em;">
+                <legend>A/V&nbsp;Studio</legend>
+               <ul>
+                 <li><a href="https://mslinn.com/av_studio/">Organized</a>
+                 </li><li><a href="https://mslinn.com/blog/avStudioByLastModified.html">Sorted by last modified</a>
+                 </li><li style="margin-bottom: 0px;"><a href="https://mslinn.com/feed/av_studio.xml" target="_blank">Atom feed</a>
+               </li></ul>
+              </fieldset>
+           </li><li><a href="https://mslinn.com/articles/index.html">Other Writing</a>
+           </li><li><a href="https://mslinn.com/feed.xml" target="_blank">Complete Atom Feed</a>
+           </li><li><a href="https://feeds.soundcloud.com/users/soundcloud:users:7143896/sounds.rss">SoundCloud RSS Feed</a>
+         </li></ul>
+         <h2>Online</h2>
+         <ul>
+           <li><a href="https://www.linkedin.com/in/mslinn" target="_blank" rel="nofollow">LinkedIn</a>
+           </li><li><a href="https://twitter.com/mslinn" target="_blank" rel="nofollow">Twitter</a>
+           </li><li><a href="https://www.youtube.com/user/mslinn" target="_blank" rel="nofollow">YouTube</a>
+           </li><li><a href="https://www.slideshare.net/mslinn/" target="_blank" rel="nofollow">SlideShare</a>
+           </li><li><a href="https://soundcloud.com/mslinn" target="_blank" rel="nofollow">SoundCloud</a>
+         </li></ul>
+         <h2>Other Sites</h2>
+         <ul>
+           <li><a href="https://www.scalacourses.com/" rel="nofollow">ScalaCourses.com</a>
+           </li><li><a href="https://www.ancientwarmth.com/" rel="nofollow">AncientWarmth.com</a>
+         </li></ul>
+       </div>
+     </nav>
+     <p class="copyright" id="copyright">© Copyright 1994-2023 Michael Slinn. All rights reserved.<br>
+      For requests to use this copyright-protected work in any manner, email <a href="mailto:mslinn@mslinn.com">mslinn@mslinn.com</a>.</p>
+   </div>
+ </div>
+  <script src="about:blank"></script>
+  <script>/* Code removed by ScrapBook */</script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script type="text/javascript" src="about:blank"></script>
+</body>
+</html>
