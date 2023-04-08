@@ -1,0 +1,16 @@
+/* Code tidied up by ScrapBook */
+@import url("record.css");
+#wm-ipp-base { height: 65px; padding: 0px; margin: 0px; border: medium none; background: transparent none repeat scroll 0% 0%; }
+#wm-ipp-print { display: none ! important; }
+@media print {
+  #wm-ipp-base { display: none ! important; }
+  #wm-ipp-print { display: block ! important; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+}
+@media (max-width: 414px) {
+}
+@media (min-width: 1055px) {
+}
+@media (max-width: 1054px) {
+}
+@media (max-width: 1163px) {
+}

@@ -1,0 +1,52 @@
+/* Code tidied up by ScrapBook */
+.BorderGrid { display: table; width: 100%; margin-top: -16px; margin-bottom: -16px; table-layout: fixed; border-collapse: collapse; border-style: hidden; }
+.BorderGrid .BorderGrid-cell { padding-top: 16px; padding-bottom: 16px; }
+.BorderGrid--spacious { margin-top: -24px; margin-bottom: -24px; }
+.BorderGrid--spacious .BorderGrid-cell { padding-top: 24px; padding-bottom: 24px; }
+.BorderGrid-row { display: table-row; }
+.BorderGrid-cell { display: table-cell; border: 1px solid var(--color-border-muted); }
+@media (max-width: 767px) {
+}
+@media (min-width: 767px) {
+}
+@media (min-width: 1012px) {
+}
+@media (min-width: 1012px) {
+}
+.include-fragment-error { display: none; }
+.file-navigation::before { display: table; content: ""; }
+.file-navigation::after { display: table; clear: both; content: ""; }
+@media (max-width: 544px) {
+}
+@media (max-width: 768px) {
+}
+@media (max-width: 544px) {
+}
+@media (max-width: 768px) {
+}
+@media (max-width: 544px) {
+}
+@media (max-width: 768px) {
+}
+@media (max-width: 768px) {
+}
+@media (max-width: 768px) {
+}
+@media (max-width: 768px) {
+}
+@media (max-width: 544px) {
+}
+@media (max-width: 544px) {
+}
+@media (max-width: 544px) {
+}
+@media (max-width: 375px) {
+}
+@media (max-width: 768px) {
+}
+@media print {
+}
+@media screen and (min-width: 1280px) {
+}
+@media screen and (min-width: 1856px) {
+}

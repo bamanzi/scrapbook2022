@@ -1,0 +1,204 @@
+/* Code tidied up by ScrapBook */
+body { background-color: rgb(241, 241, 241); color: rgb(59, 59, 59); font-family: verdana,sans-serif; }
+.side a[href*="redd.it/gwpxps"] { background: rgb(0, 0, 0) none repeat scroll 0% 0% ! important; color: rgb(255, 255, 255); font-weight: 600; width: 250px ! important; line-height: 32px; display: block ! important; }
+.side a[href*="redd.it/gwpxps"]:hover { opacity: 0.9; }
+.side a[title*="Newest Movie"] { content: ""; background-image: url("L0PfvGSONBXJyr5eN_mORYFH_Ik8bSNwmcIYJCoUSoc.png"); background-size: contain; width: 289px; height: 428px; display: block; font-size: 0px; right: 15px; transition: opacity 0.2s ease 0s; }
+@keyframes stickyanimation {
+0% { background-position: 0px 0px; }
+100% { background-position: 0px -8470px; }
+}
+@keyframes stickyanimation {
+0% { background-position: 0px 0px; }
+100% { background-position: 0px -8470px; }
+}
+@keyframes linkanimation {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(359deg); }
+}
+@keyframes thumbanimation {
+0% { background-position: 0px 0px; }
+100% { background-position: 0px -10850px; }
+}
+#header-img { transition: all 0.5s ease 0s; height: 150px; width: 204px; margin-top: 0px; margin-left: 90px; }
+#header-img:hover { transition: all 0.5s ease 0s; transform: scale(1.05, 1.05); }
+.md .-text, .md p, .md pre > code, .md th, .md td, .md li { font-size: 0.9em; line-height: 1.35em; }
+.md .-blocks, .md .-lists, .md pre, .md blockquote, .md table, .md p, .md ul, .md ol { margin-bottom: 0.5em; }
+@keyframes dcupmod {
+0% { color: rgb(255, 140, 105); }
+8% { bottom: 23px; opacity: 1; }
+15% { bottom: 28px; }
+30% { color: rgb(255, 0, 0); }
+50% { color: red; bottom: 33px; }
+60% { color: rgb(255, 69, 0); }
+100% { bottom: 38px; opacity: 0; }
+}
+@keyframes dcupmod {
+0% { color: rgb(255, 140, 105); }
+8% { bottom: 23px; opacity: 1; }
+15% { bottom: 28px; }
+30% { color: rgb(255, 0, 0); }
+50% { color: red; bottom: 33px; }
+60% { color: rgb(255, 69, 0); }
+100% { bottom: 38px; opacity: 0; }
+}
+@keyframes dcupmod {
+0% { color: rgb(255, 140, 105); }
+8% { bottom: 23px; opacity: 1; }
+15% { bottom: 28px; }
+30% { color: rgb(255, 0, 0); }
+50% { color: red; bottom: 33px; }
+60% { color: rgb(255, 69, 0); }
+100% { bottom: 38px; opacity: 0; }
+}
+.subscribers .word, .users-online .word { display: none; }
+.subscribers .number::after { content: " Justice League members"; }
+.users-online .number::after { content: " on patrol"; }
+.titlebox .usertext .md > h1 { text-align: center; }
+.users-online::before { background-image: url("iKzl4LabDbsBSyEaNnEvTG_CmJ41Z1D3IiqFj1WrFJo.png"); width: 16px; height: 16px; background-position: 0px 0px; background-repeat: no-repeat; }
+.side .md h1 { line-height: 0.8em; }
+#header { height: 200px; padding: 0px; background: rgb(0, 68, 153) url("JmwOViucV8IpGBeCOWfdXFekAOiLurnT2fAe-xTf3YA.png") no-repeat scroll center center / 2274px 200px; position: relative; }
+.content { z-index: 1; margin: 20px 5px 0px; }
+#header-img-a, .tabmenu { display: inline; float: left; }
+#sr-header-area { height: 24px; border: 0px none; padding-right: 110px; background: rgba(107, 0, 0, 0.25) none repeat scroll 0% 0%; line-height: 23px; text-transform: uppercase; color: rgb(255, 255, 255); pointer-events: all; opacity: 0.45; }
+#sr-header-area:hover { opacity: 1; background: rgba(107, 0, 0, 0.75) none repeat scroll 0% 0%; }
+#sr-header-area .sr-list a, #sr-header-area #srLeftContainer a, #sr-header-area a.subbarlink, .dropdown.srdrop .selected { color: rgb(255, 255, 255) ! important; }
+#sr-more-link, div#RESShortcutsEditContainer { display: flex; width: auto; height: 24px; max-height: none; background: transparent none repeat scroll 0% 0%; color: rgb(255, 255, 255); }
+.tabmenu { background-color: rgba(0, 127, 217, 0.75); position: absolute; font-size: 12px; margin-top: 151px; border-radius: 2px; vertical-align: bottom; list-style-type: none; white-space: nowrap; display: inline-block; height: 30px ! important; left: 10px; }
+.tabmenu:hover { background-color: rgba(0, 127, 217, 0.9); }
+.tabmenu li { padding: 4px 0px; display: block; float: left; margin: 0px 3px; }
+.tabmenu li a { color: rgb(255, 255, 255); font-weight: normal; background-color: transparent; border: 0pt none; text-shadow: 0pt 1px 0pt rgb(0, 0, 0); padding-left: 20px; padding-right: 20px; vertical-align: middle; }
+.tabmenu li a:hover { color: rgb(28, 237, 227); }
+.tabmenu li.selected a { color: rgb(28, 237, 227); font-weight: normal; background-color: transparent; border: 0pt none; text-shadow: 0pt 1px 0pt rgb(0, 0, 0); padding-left: 20px; padding-right: 20px; vertical-align: middle; }
+div.side { padding-right: 0px; padding-bottom: 0px; padding-left: 0px; padding-top: 480px ! important; margin-top: 45px; background: transparent url("6bM2XU8c8iztO1eWxaT30KdONyi1Rw8RQEmfGKl-2Sc.png") no-repeat scroll 0% 0% / 300px 460px; }
+.side .md [title*="COTM"] { position: absolute; top: 240px; right: 0%; margin-right: 5px; width: 300px; height: 465px; }
+.side::before { position: absolute; top: 705px; width: 292px; content: "Created by Gene Luen Yang & Bernard Chang"; font-size: 10px; color: rgb(255, 255, 255); padding: 3px 4px; text-align: center; background: rgb(4, 10, 11) none repeat scroll 0% 0%; }
+.side a[title*="Book Club"] { content: ""; background: transparent url("znnQGQ9qIFY6eYXBuFkC_wzt7WKL2cjvIxZDG5sHuG4.png") repeat scroll 0% 0% / cover ; width: 300px; height: 460px; display: block; font-size: 0px; position: relative; right: 7px; }
+.sidecontentbox ul.content { background-color: rgb(255, 255, 255); border: 0px none ! important; }
+.side a[href*="/r/DCcomics/wiki/flair"], .side a[title*="Reading Recommendations"] { padding: 6px 6px 6px 10px; line-height: 8px; font-weight: normal; font-size: 10px; color: black; width: 235px ! important; text-align: center; background-color: rgb(241, 241, 241); display: inline-block; margin: 5px 5px 5px 10px; }
+.side a[href*="/r/DCcomics/wiki/flair"]:hover, .side a[title*="Reading Recommendations"]:hover { padding: 6px 6px 6px 10px; line-height: 8px; font-weight: normal; font-size: 10px; color: white; width: 235px ! important; text-align: center; background-color: rgb(6, 153, 72); display: inline-block; margin: 5px 5px 5px 10px; }
+.md a { color: rgb(51, 102, 153); }
+.titlebox .md h3:last-of-type { background-color: White; border: medium none; border-radius: 0px; display: block; font-size: 10px; font-weight: normal; height: 21px; left: 10px; line-height: 21px; width: calc(100% - 114px); overflow: hidden; padding: 4px 52px; position: absolute; text-align: left; top: 202px; vertical-align: text-bottom; z-index: 98; }
+#header-bottom-right { background: transparent none repeat scroll 0% 0% ! important; }
+.titlebox .md h3:last-of-type a { font-weight: bold; }
+.titlebox .md h3:last-of-type a:hover { text-decoration: underline; }
+div.content { margin-top: 45px; }
+.titlebox .md ol { counter-reset: li; }
+.titlebox .md ol > li { position: relative; margin: 0px 0px 6px; padding: 4px 8px; list-style: outside none none; border-top: 1px solid rgb(241, 241, 241); border-bottom: 1px solid rgb(241, 241, 241); border-right: 1px solid rgb(241, 241, 241); background: rgb(253, 253, 253) none repeat scroll 0% 0%; }
+.titlebox .md ol > li::before { content: counter(li, decimal); counter-increment: li; position: absolute; top: -1px; left: -26px; bottom: -1px; width: 26px; border-right: 1px solid rgb(238, 238, 238); margin-right: 4px; padding: 4px 0px; border-top: 2px solid rgb(241, 241, 241); color: rgb(102, 102, 102); background: rgb(241, 241, 241) none repeat scroll 0% 0%; font-weight: bold; text-align: center; font-size: 12px; }
+.titlebox .md ul > li a:hover { background: rgb(255, 245, 205) none repeat scroll 0px 0px; }
+.titlebox .md ul > li a { background: rgb(253, 253, 253) none repeat scroll 0px 0px; border: 1px solid rgb(241, 241, 241); list-style: outside none none; margin: 0px 0px 6px; padding: 4px 8px; position: relative; left: -30px; width: 250px; text-align: center; display: block; transition: background 0.1s ease 0s; }
+.pagename a { display: inline-block; background-repeat: no-repeat; padding-bottom: 0px; }
+.hover.pagename.redditname { color: white; position: relative; top: 130px; }
+.redditname a { background: transparent url("iS_KLlmEfJJToxmgO5cSrF18frmYPmMFg80eK45yc3s.png") no-repeat scroll 0% 0% / contain ; border-radius: 10px; bottom: 0px; padding-bottom: 0px; text-indent: -9000px; margin-bottom: 15px; transition: opacity 0.75s ease 0s; }
+.pagename.redditname a { position: relative; left: calc(50% - 611px); bottom: 100px; margin: 0px; height: 80px; width: 611px; }
+.side .redditname a { display: block ! important; top: 0px; height: 35px; width: 270px; background-size: 100% auto ! important; margin-left: 6px; background-color: transparent; background-image: url("iS_KLlmEfJJToxmgO5cSrF18frmYPmMFg80eK45yc3s.png"); background-repeat: no-repeat; background-attachment: scroll; background-clip: border-box; background-origin: padding-box; background-position: 0% 0%; padding-bottom: 0px; }
+body:not(.search-page) #search { margin-bottom: 90px; }
+body:not(.search-page) .premium-banner { margin-top: 45px; }
+body:not(.search-page) .morelink { position: absolute; top: 765px; }
+body:not(.search-page) #searchexpando { margin: 45px 0px 0px; }
+#search input[type="text"] { box-shadow: 1px 1px 4px rgb(16, 158, 240); border: 1px solid rgb(170, 170, 170); border-radius: 5px; background-image: url("Rv2V1aIkPbU2JyKi.png"); background-repeat: repeat-x; font-size: 12px; padding: 4px; }
+#header-bottom-right { top: 208px ! important; background-color: rgb(241, 241, 241); margin-right: 8px; }
+body:not(.res) #header-bottom-right { top: 211px ! important; }
+.morelink { font-weight: normal; letter-spacing: 0px; background: rgb(16, 158, 240) none repeat scroll 0% 0%; border: medium none; border-radius: 2px; height: 30px; line-height: 30px; overflow: hidden; color: white; box-shadow: 1px 1px 4px rgb(16, 158, 240); }
+.morelink:hover { background: rgb(105, 105, 105) none repeat scroll 0% 0%; border-color: rgb(141, 141, 141); }
+.morelink .nub { display: none; }
+.morelink { color: rgb(255, 255, 255); font-family: Verdana,Arial,sans-serif; font-size: 16px; width: 145px; }
+.morelink a, .morelink a:hover { color: rgb(255, 255, 255); }
+.sidebox.submit-link .morelink::before { display: block; clear: none; content: "Submit a Link"; font-size: 95%; }
+.sidebox.submit-text .morelink::before { display: block; clear: none; content: "Or a Self Post"; font-size: 90%; }
+.sidebox.submit .morelink a { position: absolute; top: 0px; padding-left: 1000px; font-size: 0px; text-align: right; color: rgb(86, 166, 247); }
+.sidebox.submit.submit-link { width: 150px; }
+.sidebox.submit.submit-text { margin-top: -42px; margin-left: 153px; }
+.sidebox.submit:hover::before { position: fixed; display: block; z-index: 1000; padding: 6px 10px; content: "Have a question? Try asking in the weekly Ask the Veterans post every Sunday!"; text-align: center; bottom: 0px; width: 100%; left: 0px; color: rgb(255, 255, 255) ! important; text-shadow: 0px 0px; border: 0px none ! important; font-size: 12px; background-color: rgb(0, 153, 0); }
+.titlebox { padding: 7px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); }
+.titlebox .bottom { border: 0px none; }
+.titlebox .usertext { margin: 15px 0px; line-height: 120%; font-size: small; }
+.titlebox .usertext .md { margin: 0px; padding: 0px; overflow: visible; }
+.titlebox .usertext .md > h1 { background-color: rgb(21, 134, 222); color: rgb(255, 255, 255); text-shadow: 1px 1px 4px rgb(0, 0, 0); padding: 15px; border-top: 1px solid rgb(119, 210, 245) ! important; border-bottom: 1px solid rgb(0, 0, 0) ! important; margin: 20px -7px 15px -12px; z-index: 100; font-size: 16px; font-weight: bold; box-shadow: 2px 2px 5px rgb(0, 0, 0); }
+.infobar { overflow: hidden; }
+.content { margin-left: 10px; }
+.side::after { display: block; margin: 10px 0px; padding: 10px 0px; color: rgb(204, 204, 204); content: "Bald Man Illuminati"; text-transform: none; font-size: 10px; position: absolute; width: 300px; text-align: center; }
+@keyframes animationFrames {
+0% { left: 0px; top: 0px; opacity: 1; transform: rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg); }
+100% { left: 0px; top: 0px; opacity: 1; transform: rotate(360deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg); }
+}
+@keyframes animationFrames {
+0% { left: 0px; top: 0px; opacity: 1; transform: rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg); }
+100% { left: 0px; top: 0px; opacity: 1; transform: rotate(360deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg); }
+}
+@keyframes animationFrames {
+0% { left: 0px; top: 0px; opacity: 1; transform: rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg); }
+100% { left: 0px; top: 0px; opacity: 1; transform: rotate(360deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg); }
+}
+[href$="#news"], [href$="#artwork"], [href$="#comics"], [href$="#fanmade"], [href$="#tvmovies"], [href$="#cosplay"], [href$="#merch"], [href$="#games"], [href$="#webcomics"], [href$="#other"], [href$="#dccomics"], [href$="#recs"], [href*="ccomics+nsfw%3Ano+-spoiler"], [title*="Default Browsing"] { background: rgb(241, 241, 241) none repeat scroll 0% 0%; border-left: 5px solid; color: rgb(0, 0, 0) ! important; width: 100px; padding: 6px 6px 6px 10px; line-height: 8px; font-weight: normal; font-size: 10px; display: inline-block; margin: 5px 5px 5px 10px; }
+[href$="#news"]:hover, [href$="#artwork"]:hover, [href$="#comics"]:hover, [href$="#fanmade"]:hover, [href$="#tvmovies"]:hover, [href$="#cosplay"]:hover, [href$="#merch"]:hover, [href$="#games"]:hover, [href$="#webcomics"]:hover, [href$="#other"]:hover, [href$="#dccomics"]:hover, [href$="#recs"]:hover, [href*="ccomics+nsfw%3Ano+-spoiler"]:hover, [title*="Default Browsing"]:hover { background: rgb(105, 105, 105) none repeat scroll 0% 0%; color: rgb(255, 255, 255); }
+[href$="#news"] { border-left-color: rgb(143, 208, 62); }
+[href$="#artwork"] { border-left-color: rgb(237, 25, 58); }
+[href$="#comics"] { border-left-color: rgb(150, 91, 165); }
+[href$="#fanmade"] { border-left-color: rgb(240, 195, 24); }
+[href$="#tvmovies"] { border-left-color: rgb(0, 184, 222); }
+[href$="#cosplay"] { border-left-color: rgb(240, 195, 24); }
+[href$="#merch"] { border-left-color: rgb(0, 77, 183); }
+[href$="#games"] { border-left-color: rgb(255, 125, 0); }
+[href$="#webcomics"] { border-left-color: rgb(238, 77, 155); }
+[href$="#other"] { border-left-color: rgb(0, 0, 0); }
+[href$="#dccomics"] { border-left-color: rgb(6, 153, 72); }
+[href$="#recs"] { border-left-color: rgb(0, 0, 0); }
+[href*="ccomics+nsfw%3Ano+-spoiler"], [title*="Default Browsing"] { border-left: 0px none; text-align: center; width: 235px; }
+a[href$="aquaman"]::before, .flair-aquaman { background-position: 0px -60px; }
+a[href$="batman"]::before, .flair-batman { background-position: 0px -300px; }
+a[href$="flash"]::before, .flair-flash { background-position: 0px -1320px; }
+a[href$="supergirl"]::before, .flair-supergirl { background-position: 0px -3420px; }
+a[href$="superman"]::before, .flair-superman { background-position: 0px -3510px; }
+a[href$="teentitans"]::before, .flair-teentitans { background-position: 0px -3660px; }
+a[href$="v"]::before, .flair-v { background-position: 0px -3810px; }
+a[href$="watchmen"]::before, .flair-watchmen { background-position: 0px -3960px; }
+a[href$="FlashTV"]::before, .flair-FlashTV { background-position: 0px -7860px; }
+td a { background-color: transparent ! important; border: medium none ! important; color: rgb(111, 111, 111) ! important; font-weight: bold; font-size: 10px ! important; }
+.side a[title*="Dccomics.com"], .side a[title*="Discord Chat"], .side a[title*="Community Events"], .side a[title*="Message the Mods"], .side a[title*="Sort By New"], .side a[title*="Twitter"], .side a[title*="Wiki"] { display: block; height: 32px; width: 288px; background: transparent url("FZ-J5we_WMHHTkIv5fRpA-iMQq8b2f1vBWijkDJttbk.png") repeat scroll 0% 0%; font-size: 0px; transition: opacity 0.5s ease 0s; }
+.side a[title*="Dccomics.com"]:hover, .side a[title*="Discord Chat"]:hover, .side a[title*="Community Events"]:hover, .side a[title*="Message the Mods"]:hover, .side a[title*="Sort By New"]:hover, .side a[title*="Twitter"]:hover, .side a[title*="Wiki"]:hover { opacity: 0.8; }
+.side a[title*="Dccomics.com"] { background-position: -5px -5px; }
+.side a[title*="Discord Chat"] { background-position: -5px -47px; }
+.side a[title*="Community Events"] { background-position: -5px -89px; }
+.side a[title*="Message the Mods"] { background-position: -5px -131px; }
+.side a[title*="Sort By New"] { background-position: -5px -173px; }
+.side a[title*="Twitter"] { background-position: -5px -215px; }
+.side a[title*="Wiki"] { background-position: -5px -257px; }
+.side a[title*="Recommended "] { display: block; height: 45px; width: 280px; background: transparent url("a3fri0MMPgXmCmh27izEI5rT_XkLret-Ck0DfodHEAM.png") repeat scroll 0% 0%; margin: 5px 0px 5px -7px; font-size: 0px; }
+.side a[title*="Recommended "]:hover { opacity: 0.8 ! important; }
+.side a[href*="wiki_aquaman"] { background-position: -5px -5px; }
+.side a[href*="wiki_batman"] { background-position: -5px -60px; }
+.side a[href*="wiki_the_flash"] { background-position: -5px -775px; }
+.side a[href*="wiki_green_arrow"] { background-position: -5px -225px; }
+.side a[href*="wiki_green_lantern"] { background-position: -5px -280px; }
+.side a[href*="wiki_superman"] { background-position: -5px -665px; }
+.side a[href*="wiki_wonder_woman"] { background-position: -5px -1050px; }
+.side a[href*="wiki_other_characters_.28guest_recs.29"] { background-position: -5px -555px; }
+.side h2 + blockquote { text-align: center; border: medium none; }
+.side a[title*="Recommended Team "], .side a[title*="Recommended Category "] { text-align: center; display: inline-block; width: 130px; height: 28px; background: transparent url("fEjYwyV233sUmfmL2lzC-uyaDleRIUXgLufL4ZwRiFw.png") repeat scroll 0% 0%; box-sizing: border-box; margin: 4px 0px 0px; padding: 3px 0px; font-size: 0px; }
+.side a[href*="wiki_justice_league"] { background-position: -5px -233px; }
+.side a[href*="wiki_teen_titans"] { background: transparent url("LJnRV5QF4uh5-1lxXZ8l_sknDrL6kgkQX6nXcgweyg4.png") repeat scroll 0px 0px; }
+.side a[href*="wiki_teen_titans"] {  }
+.side a[href*="wiki_watchmen"] { background-position: -5px -613px; }
+.side a[href*="wiki_major_events"] { background-position: -5px -81px; }
+.side a[href*="wiki_the_new_52"] { background-position: -5px -309px; }
+.side a[href*="wiki_rebirth"] { background-position: -5px -385px; }
+.side a[href*="wiki_tv"] { background-position: -5px -461px; }
+.side a[href*="wiki_film"] { background-position: -5px -271px; }
+.side a[href*="wiki_video_games"] { background-position: -5px -575px; }
+.side a[href*="wiki_dc_for_all_ages"] { background-position: -5px -119px; }
+.side a[href*="wiki_vertigo"] { background-position: -5px -537px; }
+.side a[href*="wiki_wildstorm"] { background-position: -5px -651px; }
+.side a[href*="#wiki_mod.27s_pick"] { background-position: -5px -390px; }
+@keyframes intensify {
+0% { margin-left: 0px; }
+100% { margin-left: 2px; }
+}
+@keyframes intensify {
+0% { margin-left: 0px; }
+100% { margin-left: 2px; }
+}
+@keyframes intensify {
+0% { margin-left: 0px; }
+100% { margin-left: 2px; }
+}

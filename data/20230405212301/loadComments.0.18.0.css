@@ -1,0 +1,34 @@
+/* Code tidied up by ScrapBook */
+@media screen and (max-width: 700px) {
+}
+.trellis-comment-form { position: sticky; top: 67px; padding-top: 15px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; z-index: 10; }
+.trellis-comment-form input, .trellis-comment-form textarea { resize: none; font-size: 90%; padding: 10px; margin: 0px; }
+.trellis-comment-form input::-moz-placeholder, .trellis-comment-form textarea::-moz-placeholder { color: rgb(145, 145, 145); }
+.trellis-comment-form input::placeholder, .trellis-comment-form textarea::placeholder { color: rgb(145, 145, 145); }
+.trellis-comment-form .trellis-comment-form-outer-box { background-color: rgb(250, 250, 250); border: 1px solid rgb(225, 225, 225); padding: 25px; margin-top: -9px; }
+.trellis-comment-form .trellis-comment-form-outer-box .trellis-comment-form-box { display: flex; -moz-box-pack: justify; justify-content: space-between; -moz-box-align: end; align-items: flex-end; }
+.trellis-comment-form .trellis-comment-form-outer-box .trellis-comment-form-box-inputGroup { display: flex; -moz-box-orient: vertical; -moz-box-direction: normal; flex-direction: column; width: 100%; }
+@media screen and (min-width: 701px) {
+  .trellis-comment-form .trellis-comment-form-outer-box .trellis-comment-form-box-inputGroup { margin-right: 20px; }
+}
+.trellis-comment-form .trellis-comment-form-outer-box .trellis-comment-form-box input { margin-right: 20px; height: 80%; }
+.trellis-comment-form .trellis-comment-form-outer-box .trellis-comment-form-box .trellis-comment-form-button { background-color: var(--mv-trellis-color-link,#275f62); font-size: 80%; height: 80%; border: 1px solid var(--mv-trellis-color-link,#275f62); word-break: normal; }
+.trellis-comment-form .trellis-comment-form-outer-box .trellis-comment-form-box .trellis-comment-form-button:disabled { opacity: 0.2; }
+.trellis-comment-form .trellis-comment-form-outer-box .trellis-comment-form-box .trellis-comment-form-button:hover { background-color: var(--mv-trellis-color-link-hover,#243746); }
+@media screen and (max-width: 700px) {
+  .trellis-comment-form .trellis-comment-form-outer-box .trellis-comment-form-box { -moz-box-orient: vertical; -moz-box-direction: normal; flex-direction: column; }
+  .trellis-comment-form .trellis-comment-form-outer-box .trellis-comment-form-box-inputGroup:nth-child(2) { margin-top: 20px; }
+  .trellis-comment-form .trellis-comment-form-outer-box .trellis-comment-form-box input[name="author_email"] { margin: 0px 0px 20px; }
+}
+.trellis-comments .post-title { background: rgb(255, 255, 255) none repeat scroll 0% 0%; color: rgb(96, 96, 96); font-weight: 700; margin: 35px 0px 25px; text-align: center; text-transform: uppercase; z-index: 11; }
+.trellis-comments .trellis-comment-form { position: static; }
+@keyframes fadein {
+0%, 100% { opacity: 0; }
+100% { opacity: 1; }
+}
+@keyframes fadein {
+0%, 100% { opacity: 0; }
+100% { opacity: 1; }
+}
+@media screen and (max-width: 700px) {
+}

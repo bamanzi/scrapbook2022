@@ -1,0 +1,23 @@
+/* Code tidied up by ScrapBook */
+:root { --appmsgPageGap:  20px; --discussPageGap:  16px; }
+@media (prefers-color-scheme: dark) {
+}
+@media (prefers-color-scheme: dark) {
+}
+@media (prefers-color-scheme: dark) {
+}
+@media (prefers-color-scheme: dark) {
+}
+.weui-mask { position: fixed; z-index: 1000; inset: 0px; background: rgba(0, 0, 0, 0.6) none repeat scroll 0% 0%; }
+@media only screen and (max-device-height: 558px) {
+}
+@media (prefers-color-scheme: dark) {
+}
+@media (prefers-color-scheme: dark) {
+}
+@media (prefers-color-scheme: dark) {
+}
+.weui-wa-hotarea-el__wrp, .weui-wa-hotarea, .weui-wa-hotarea_before { position: relative; }
+.weui-wa-hotarea_before::before, .weui-wa-hotarea::after { content: ""; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); min-width: 44px; min-height: 44px; width: 100%; height: 100%; }
+body .weui-a11y_ref { display: none; }
+body .weui-wa-hotarea_before::before, body .weui-wa-hotarea::after { pointer-events: auto; }

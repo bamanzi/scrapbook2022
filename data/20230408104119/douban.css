@@ -1,0 +1,83 @@
+/* Code tidied up by ScrapBook */
+html { color: rgb(17, 17, 17); background: rgb(255, 255, 255) none repeat scroll 0% 0%; }
+body, div, dl, dt, dd, ul, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, blockquote { margin: 0px; padding: 0px; }
+fieldset, img { border: 0px none; }
+address, caption, cite, code, dfn, em, i, strong, th, var, optgroup { font-style: normal; font-weight: normal; }
+ul, ol { list-style: outside none none; }
+h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: normal; }
+legend { color: rgb(0, 0, 0); }
+input, button, textarea, select, optgroup, option { font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; }
+input, button, textarea, select {  }
+a { cursor: pointer; }
+a:link { color: rgb(51, 119, 170); text-decoration: none; }
+a:visited { color: rgb(102, 102, 153); text-decoration: none; }
+a:hover { color: rgb(255, 255, 255); text-decoration: none; background: rgb(51, 119, 170) none repeat scroll 0% 0%; }
+a:active { color: rgb(255, 255, 255); text-decoration: none; background: rgb(255, 153, 51) none repeat scroll 0% 0%; }
+a img { border-width: 0px; vertical-align: middle; }
+body, td, th { font: 12px/1.62 Helvetica,Arial,sans-serif; }
+textarea { resize: none; }
+input[type="text"]:focus, input[type="password"]:focus, textarea:focus { outline: medium none; }
+.clearfix::after { content: "."; display: block; height: 0px; clear: both; visibility: hidden; }
+.clearfix { display: inline-block; }
+.clearfix { display: block; }
+#wrapper { width: 950px; margin: 0px auto; }
+#content { min-height: 420px; }
+#footer { color: rgb(153, 153, 153); padding: 6px 0px; margin-top: 40px; overflow: hidden; border-top: 1px dashed rgb(221, 221, 221); }
+.grid-16-8 .article { float: left; width: 590px; padding-right: 40px; }
+.grid-16-8 .aside { float: right; width: 310px; }
+fieldset { border: 1px solid rgb(221, 221, 221); padding: 0px 10px; margin-bottom: 15px; }
+fieldset legend { color: rgb(102, 102, 102); padding: 0px 5px; }
+input { margin-right: 3px; vertical-align: middle; }
+label { font-family: Tahoma; vertical-align: middle; }
+.extra { clear: both; text-align: right; }
+form { margin: 0px; padding: 0px; border: 0px none; }
+textarea { font-family: Arial; overflow: auto; }
+input { font-size: 12px; }
+a { cursor: pointer; }
+a:link { color: rgb(51, 119, 170); text-decoration: none; }
+a:visited { color: rgb(102, 102, 153); text-decoration: none; }
+a:hover { color: rgb(255, 255, 255); text-decoration: none; background: rgb(51, 119, 170) none repeat scroll 0% 0%; }
+a:active { color: rgb(255, 255, 255); text-decoration: none; background: rgb(255, 153, 51) none repeat scroll 0% 0%; }
+a img { border-width: 0px; vertical-align: middle; }
+h1 { overflow-wrap: break-word; display: block; font-size: 25px; font-weight: bold; color: rgb(73, 73, 73); margin: 0px; padding: 0px 0px 15px; line-height: 1.1; }
+h3 { margin-left: 4px; color: rgb(102, 102, 102); margin-bottom: 1px; line-height: 1.8; }
+ul { list-style-type: none; margin: 0px; padding: 0px; }
+h4 { height: 26px; margin: 0px 0px 10px 4px; overflow: hidden; color: rgb(102, 102, 102); line-height: 1.62; }
+h2 { font: 15px/150% Arial,Helvetica,sans-serif; color: rgb(0, 119, 34); margin: 0px 0px 12px; }
+.rr { float: right; }
+textarea { border: 1px solid rgb(204, 204, 204); padding: 3px; font-size: 14px; }
+.pl { font: 12px/150% Arial,Helvetica,sans-serif; color: rgb(102, 102, 102); }
+.txd textarea { width: 98%; }
+.pil { height: 48px; width: 48px; }
+#comments { width: 100%; overflow-wrap: break-word; overflow: hidden; padding: 20px 0px 0px; }
+.fleft { float: left; }
+.fright { float: right; }
+.clearfix::after { content: "."; display: block; height: 0px; clear: both; visibility: hidden; }
+.clearfix { display: inline-block; }
+.clearfix { display: block; }
+.color-green { color: rgb(0, 119, 34); }
+.topic-content .user-face, .topic-reply .user-face { float: left; width: 48px; height: 48px; overflow: hidden; }
+.topic-content .topic-doc { float: right; width: 520px; margin-bottom: 10px; }
+.topic-content .topic-doc h3 { height: auto; background: transparent none repeat scroll 0% 0%; }
+.topic-content .topic-doc p { overflow-wrap: break-word; overflow: hidden; }
+.topic-reply li { margin: 0px 0px 20px 48px; position: relative; }
+.topic-reply li .reply-doc { float: right; width: 473px; }
+.topic-reply li .reply-doc h4 { margin: 0px 0px 15px 4px; height: 22px; line-height: 22px; }
+.topic-reply li .reply-doc p { margin: 0px 0px 25px; overflow-wrap: break-word; overflow: hidden; }
+.bg-img-green { display: block; background: rgb(242, 251, 242) none repeat scroll 0% 0%; }
+.aside .mod { margin-bottom: 40px; word-break: break-all; }
+.mod::after { content: " "; display: block; clear: both; }
+@media not all {
+}
+.aside .mod { margin: 0px 0px 40px; }
+@media not all, not all {
+}
+@media not all {
+}
+.sns-bar { clear: both; overflow: hidden; margin-bottom: 20px; padding-top: 20px; color: rgb(102, 102, 102); }
+.update-item, .comment-item { overflow: hidden; margin-bottom: 1.6em; }
+.update-item .content, .comment-item .content { overflow: hidden; }
+@media not all, (min-resolution: 2dppx), (min-resolution: 192dpi) {
+}
+@media not all, (min-resolution: 2dppx), (min-resolution: 192dpi) {
+}

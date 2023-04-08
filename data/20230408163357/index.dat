@@ -1,0 +1,10 @@
+id	20230408163357
+create	20230408163357
+modify	20230408163419
+type	
+title	JuNest - The lightweight Arch Linux based distro that runs, without root privileges, on top of any other Linux distro. 
+chars	UTF-8
+icon	resource://scrapbook/data/20230408163357/favicon.svg
+source	https://github.com/fsquillace/junest#quickstart
+comment	
+lock	

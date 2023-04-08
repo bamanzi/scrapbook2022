@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="about:blank" type="text/javascript"></script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script type="text/javascript" src="about:blank" charset="utf-8"></script>
+<script type="text/javascript" src="about:blank" charset="utf-8"></script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<link rel="stylesheet" type="text/css" href="banner-styles.css">
+<link rel="stylesheet" type="text/css" href="iconochive.css">
+<!-- End Wayback Rewrite JS Include -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://ownyourbits.com/xmlrpc.php">
+
+<title>Sandbox your applications with Firejail – Own your bits</title>
+<link rel="dns-prefetch" href="http://web.archive.org/web/20210928161107/https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="http://web.archive.org/web/20210928161107/https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="Own your bits » Feed" href="http://web.archive.org/web/20210928161107/https://ownyourbits.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Own your bits » Comments Feed" href="http://web.archive.org/web/20210928161107/https://ownyourbits.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Own your bits » Sandbox your applications with Firejail Comments Feed" href="http://web.archive.org/web/20210928161107/https://ownyourbits.com/2017/10/29/sandbox-your-applications-with-firejail/feed/">
+		<script type="text/javascript">/* Code removed by ScrapBook */</script><script src="about:blank" type="text/javascript" defer=""></script>
+		<style type="text/css">
+/* Code tidied up by ScrapBook */
+</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="bootstrap-css" href="bootstrap.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="ajaira-font-icon-css" href="font-awesome.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="ajaira-google-fonts-css" href="css.css" type="text/css" media="all">
+<link rel="stylesheet" id="ajaira-slilcknav-css" href="slicknav.css" type="text/css" media="all">
+<link rel="stylesheet" id="ajaira-style-css" href="style.css" type="text/css" media="all">
+<link rel="stylesheet" id="ajaira-responsive-css" href="responsive.css" type="text/css" media="all">
+<link rel="stylesheet" id="enlighterjs-css" href="enlighterjs.min.css" type="text/css" media="all">
+<script type="text/javascript" src="about:blank" id="jquery-core-js"></script>
+<script type="text/javascript" src="about:blank" id="jquery-migrate-js"></script>
+<link rel="https://api.w.org/" href="https://ownyourbits.com/wp-json/"><link rel="alternate" type="application/json" href="http://web.archive.org/web/20210928161107/https://ownyourbits.com/wp-json/wp/v2/posts/1695"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://ownyourbits.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://ownyourbits.com/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 5.6.5">
+<link rel="canonical" href="http://web.archive.org/web/20210928161107/https://ownyourbits.com/2017/10/29/sandbox-your-applications-with-firejail/">
+<link rel="shortlink" href="http://web.archive.org/web/20210928161107/https://ownyourbits.com/?p=1695">
+<link rel="alternate" type="application/json+oembed" href="http://web.archive.org/web/20210928161107/https://ownyourbits.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fownyourbits.com%2F2017%2F10%2F29%2Fsandbox-your-applications-with-firejail%2F">
+<link rel="alternate" type="text/xml+oembed" href="http://web.archive.org/web/20210928161107/https://ownyourbits.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fownyourbits.com%2F2017%2F10%2F29%2Fsandbox-your-applications-with-firejail%2F&amp;format=xml">
+
+		<style>
+/* Code tidied up by ScrapBook */
+</style>
+
+	<meta name="generator" content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress.">
+<!--[if lte IE 9]><link rel="stylesheet" type="text/css" href="https://ownyourbits.com/wp-content/plugins/js_composer/assets/css/vc_lte_ie9.min.css" media="screen"><![endif]-->	<style type="text/css">
+/* Code tidied up by ScrapBook */
+.site-title a, .site-description { color: rgb(255, 255, 255); }
+</style>
+	<link rel="icon" href="favicon-1.png" sizes="32x32">
+<link rel="icon" href="favicon-1.png" sizes="192x192">
+<link rel="apple-touch-icon" href="http://web.archive.org/web/20210928161107im_/https://ownyourbits.com/wp-content/uploads/2017/01/favicon-1.png">
+<meta name="msapplication-TileImage" content="https://ownyourbits.com/wp-content/uploads/2017/01/favicon-1.png">
+		<style type="text/css" id="wp-custom-css">
+/* Code tidied up by ScrapBook */
+footer#colophon { display: none; }
+.site-title { font-weight: 600; font-family: calc; }
+.site-description { font-weight: 600; }
+input.wpedon_paypalbuttonimage { display: block; margin: 0px auto; }
+h1, h2, h3, h4 { text-align: center; }
+</style>
+		<noscript><style type="text/css"> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript></head>
+<body class="post-template-default single single-post postid-1695 single-format-standard group-blog wpb-js-composer js-comp-ver-5.4.7 vc_responsive"><div id="page" class="site"><div id="content" class="site-content container"><div id="primary" class="content-area col-md-9"><main id="main" class="site-main" role="main"><!--DOCUMENT_FRAGMENT--><article id="post-1695" class="post-1695 post type-post status-publish format-standard has-post-thumbnail hentry category-foss category-linux category-security"><header class="entry-header text-center"><h1 class="entry-title">Sandbox your applications with Firejail</h1>		<div class="entry-meta">
+			<span class="posted-on"> <a href="#" rel="bookmark"><time class="entry-date published" datetime="2017-10-29T23:24:09+00:00">October 29, 2017</time><time class="updated" datetime="2018-03-17T09:53:06+00:00">March 17, 2018</time></a></span> | <span class="byline"> by <span class="author vcard"><a class="url fn n" href="http://web.archive.org/web/20210928161107/https://ownyourbits.com/author/cisquero_admin/">nachoparker</a></span></span>		</div><!-- .entry-meta -->
+			</header><!-- .entry-header -->
+				<div class="post-image">
+				<a href="#" rel="bookmark">
+					<img src="logo-sml.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy" width="250" height="89">				</a>
+			</div> <!--  .post-image -->		
+		<div class="entry-content">
+		
+		<p>One thing I that like about the Android App security model is that for a given app, it presents the permissions to the user and the user has to accept them. This is good because the user has control over the software it runs, and is an invaluable tool to be able to use an App without granting it too much access without having to renounce to use it altogether.</p>
+<p>Fortunately, the Linux world is a much more friendly environment in terms of malicious software. A big reason for this, is the fact that software is audited and curated by distro package maintainers. I recommend <a href="http://web.archive.org/web/20210928161107/http://kmkeen.com/maintainers-matter/">this interesting post</a> on the subject.</p>
+<p>Even the best written software can contain vulnerabilities that can be exploited. With the advent of container technologies, such as docker, flatpak or LXC, many have suggested to use them to isolate software from the rest of the system and in doing so mitigate the harm of possible breaches.</p>
+<p>By sandboxing software this way, you get some more control over what it is capable of doing, effectively getting closer to the Android security model.</p>
+<h4>Some alternatives</h4>
+<p>Well, containers are just a buzzword, in the sense that they are really no first class citizens in Linux. There is no concept of <em>container</em> in the Linux kernel. Rather, containers are a smart combination of existing kernel techniques that help isolate parts of the system. The big contribution of <em>container technologies</em> is to make it easier to use this Linux features. There are others I have not tested, such as <a href="http://web.archive.org/web/20210928161107/https://sandstorm.io/">Sandstorm.io</a> and <a href="http://web.archive.org/web/20210928161107/https://github.com/opencontainers/runc">runC</a>.</p>
+<h6>Docker</h6>
+<p><a href="http://web.archive.org/web/20210928161107/https://www.docker.com/">Docker</a> is the most prominent actor in this scenario. While docker security has improved greately the past few years, and you can use it to run contained graphical applications<a href="http://web.archive.org/web/20210928161107/https://blog.jessfraz.com/post/docker-containers-on-the-desktop/"> by mounting the X server socket</a>, it seems an overkill to require a docker daemon to run firefox more securely.</p>
+<p>Among other recent security improvements, docker now supports <a href="http://web.archive.org/web/20210928161107/https://docs.docker.com/engine/security/userns-remap">user namespaces</a>, allowing to map the <em>root</em> user so that a priviledged process inside the containers runs as a normal user outside of it.</p>
+<p>Also, as the docker daemon runs with <em>root</em> privileges, and it is a pretty big featureful piece of software, it expands the attack surface unnecessarily just to provide sandboxing. There has to be a better way.</p>
+<h6>Bubblewrap</h6>
+<p>We also can have look at <a href="http://web.archive.org/web/20210928161107/https://github.com/projectatomic/bubblewrap">bubblewrap</a> from ProjectAtomic. It is derived from the <a href="http://web.archive.org/web/20210928161107/http://flatpak.org/">Flatpak</a> project, and compared to Docker it is designed to be run by user processes with no privileges, like desktop applications.</p>
+<p>This kind of software is the focus of the Flatpak project, whereas Docker is designed towards servers, daemons, cloud and the whole <a href="http://web.archive.org/web/20210928161107/https://en.wikipedia.org/wiki/Infrastructure_as_a_service">IaaS</a> thing.</p>
+<p>For a regular, security conscious user it seems a bit too hard to manage and setup. Just have a look at the (always awesome) Arch Wiki page and <a href="http://web.archive.org/web/20210928161107/https://wiki.archlinux.org/index.php/Bubblewrap">see for yourself</a>.</p>
+<p>It is the smallest of the three and that is a benefit in terms of attack surface. The downside is that it does not cover and does not try to cover all scenarios, so it does not play well with pulseaudio, X11 or DBus. Bubblewrap designers<a href="http://web.archive.org/web/20210928161107/https://github.com/projectatomic/bubblewrap#related-project-comparison-firejail"> argue that this is more secure</a>, so Flatpak tries to make software such as Wayland aware of the sandbox.</p>
+<p>In short, it does not play well with all software.</p>
+<h6>Firejail</h6>
+<p>Finally, I would like to recommend Firejail, which is the one I use personally. It is easy to use, easy to install and configure, and it comes with a very nice set of configuration files for common software. If you want to get advanced, it has that too.</p>
+<p>It tries to cover all software, so it is far more complex. This is seen by many as a bad thing because it is really hard to secure a complex SUID program. The benefit is that it will work easily with all your current software.</p>
+<p>But before we learn how to use it, let’s see how these “sandboxes” work.</p>
+<h4>How do sandboxes work</h4>
+<p>As we mentioned before, the so called <em>containers</em> merely use some existing Linux features. All <em>container technologies</em> that I know build on top of these.</p>
+<h6>Linux namespaces</h6>
+<p>The Linux kernel has the concept of <a href="http://web.archive.org/web/20210928161107/https://en.wikipedia.org/wiki/Linux_namespaces">namespaces</a>. These namespaces represent different views of different parts of the system.</p>
+<p>For example, only if two processes run in the same <em>file namespace</em> they will be able to see the same file and directory tree and access to the same files. Files in other namespaces will be invisible and inaccesible to them.</p>
+<p>There are 7 namespaces in Linux, such as the <em>file namespace</em>, the <em>network namespace</em>, the <em>cgroup namespace</em>, the <em>user namespace</em>, the <em>pid namespace </em>and so on. For instance, we can have two processes use the same network interface without being able to see each other (<em>net</em> <em>namespace),</em> or have different views of the pid tree or user ids (<em>pid and uid</em> <em>namespaces</em>)<em>.</em></p>
+<p>We can see what namespaces are available in our system with</p>
+<pre class="lang:default highlight:0 decode:true">$ ls /proc/self/ns
+cgroup  ipc  mnt  net  pid  pid_for_children  uts</pre>
+<h6>Linux capabilities</h6>
+<p>Traditionally, Linux has had the concept of an all powerful <em>root</em> priveleged user. That user has unlimited powers and access to all parts of the system. SUID programs are allowed all these privileges even if run by an unprivileged user.</p>
+<p>While there is a legitimate need for this in some situations, it is also dangerous and unnecessary. For instance, many will be surprised to know that the simple <em>ping</em> command requires access to <em>raw sockets </em>in order to send the ICMP packages.</p>
+<p>Linux capabilities allows us to improve this black and white situation. We can limit what the <em>root</em> user is able to perform by indivilually setting its <em>capabilities. </em>Things such as <em>chowning</em> files, ignoring <em>DAC</em> permissions, changing the network configuration or killing processes can be determined individually for a given process.</p>
+<p><a href="http://web.archive.org/web/20210928161107/http://man7.org/linux/man-pages/man7/capabilities.7.html">Here</a> is the complete list of capabilities. For instance, we can check the default capabilities of the <em>ping</em> executable with <a href="http://web.archive.org/web/20210928161107/https://www.insecure.ws/linux/getcap_setcap.html">getcap</a>.</p>
+<pre class="lang:default highlight:0 decode:true">$ getcap /usr/bin/ping
+/usr/bin/ping = cap_net_raw+ep</pre>
+<p>Sandboxes often allow us to decide what capabilities we grant to a&nbsp; privileged process, providing an extra level of control.</p>
+<h6>Seccomp filters</h6>
+<p>Most userspace processes need to interact with the kernel, even if we don’t realize it. There’s very few interesting things a program can do without access to files, network or standard output.</p>
+<p>Userspace programs use kernel facilities through <a href="http://web.archive.org/web/20210928161107/https://en.wikipedia.org/wiki/System_call">system calls</a>. There are <a href="http://web.archive.org/web/20210928161107/http://man7.org/linux/man-pages/man2/syscalls.2.html">over 300 system calls</a> in Linux. These are often used to try to exploit kernel bugs and escalate privileges, and needless to say, that most often userland software doesn’t need <em>all </em>of them.</p>
+<p><em>seccomp-bpf</em> is a feature of the kernel that allows us to use <a href="http://web.archive.org/web/20210928161107/https://en.wikipedia.org/wiki/Berkeley_Packet_Filter">BPF filters</a>, to specify what syscalls are we allowing for our processes.</p>
+<p>If a program is a text processor, why would it need access to the network? we can control that.</p>
+<h4>Firejail basic usage</h4>
+<p>Now that we understand the basics, let’s see how to use Firejail.</p>
+<p>Install the package from your distro repository and you are ready to go.</p>
+<p>If you want to run a sandboxed program, just run the command after <em>firejail</em></p>
+<pre class="lang:default highlight:0 decode:true ">$ firejail program_name</pre>
+<p>It supports one time flags, such as —<em>seccomp</em> to filter system calls, or <em>–private</em> in order to hide even the home folder from the process.</p>
+<p>Do you want some private square browsing?</p>
+<pre class="lang:default highlight:0 decode:true">$ firejail --private firefox --private window</pre>
+<figure id="attachment_1708" aria-describedby="caption-attachment-1708" style="width: 854px;" class="wp-caption aligncenter"><img loading="lazy" class="wp-image-1708 size-full" src="privateprivate.jpg" alt="" srcset="privateprivate.jpg 854w, privateprivate-300x201.jpg 300w, privateprivate-768x515.jpg 768w, privateprivate-700x470.jpg 700w" sizes="(max-width: 854px) 100vw, 854px" width="854" height="573"><figcaption id="caption-attachment-1708" class="wp-caption-text">The contents of my home folder are invisible to Firefox</figcaption></figure>
+<p>For more granular control, a <em>profile</em> configuration file can be used, but creating one is rarely needed. Firejail comes with a nice set of preconfigured profiles that you can find in <em>/etc/firejail</em></p>
+<pre class="lang:default highlight:0 decode:true">ls /etc/firejail/                                                                                                                                                                                                   2.12 L  ✓ 
+0ad.profile               clementine.profile      feh.profile                   google-chrome-unstable.profile            konversation.profile       neverball.profile           seamonkey-bin.profile        viewnior.profile
+2048-qt.profile           clipit.profile          file-roller.profile           google-chrome.profile                     ktorrent.profile           nolocal.net                 seamonkey.profile            viking.profile
+7z.profile                cmus.profile            file.profile                  google-play-music-desktop-player.profile  kwrite.profile             nylas.profile               server.profile               vim.profile
+Cryptocat.profile         conkeror.profile        filezilla.profile             gpa.profile                               leafpad.profile            obs.profile                 silentarmy.profile           virtualbox.profile
+Cyberfox.profile          corebird.profile        firefox-esr.profile           gpg-agent.profile                         less.profile               odt2txt.profile             simple-scan.profile          vivaldi-beta.profile
+FossaMail.profile         cpio.profile            firefox-nightly.profile       gpg.profile                               libreoffice.profile        okular.profile              simutrans.profile            vivaldi-stable.profile
+Gitter.profile            cryptocat.profile       firefox.profile               gpicview.profile                          liferea.profile            open-invaders.profile       skanlite.profile             vivaldi.profile
+Mathematica.profile       curl.profile            firejail.config               gpredict.profile                          localc.profile             openbox.profile             skype.profile                vlc.profile
+Telegram.profile          cvlc.profile            flashpeak-slimjet.profile     gtar.profile                              lodraw.profile             openshot.profile            skypeforlinux.profile        vym.profile
+Thunar.profile            cyberfox.profile        flowblade.profile             gthumb.profile                            loffice.profile            opera-beta.profile          slack.profile                w3m.profile
+VirtualBox.profile        darktable.profile       fontforge.profile             guayadeque.profile                        lofromtemplate.profile     opera.profile               smplayer.profile             warzone2100.profile
+Wire.profile              deadbeef.profile        fossamail.profile             gucharmap.profile                         login.users                orage.profile               snap.profile                 waterfox.profile
+Xephyr.profile            default.profile         franz.profile                 gwenview.profile                          loimpress.profile          palemoon.profile            soffice.profile              webserver.net
+Xvfb.profile              deluge.profile          frozen-bubble.profile         gzip.profile                              lollypop.profile           parole.profile              soundconverter.profile       weechat-curses.profile
+abrowser.profile          dex2jar.profile         gajim.profile                 handbrake-gtk.profile                     lomath.profile             pcmanfm.profile             spotify.profile              weechat.profile
+akregator.profile         dia.profile             galculator.profile            handbrake.profile                         loweb.profile              pdfsam.profile              sqlitebrowser.profile        wesnoth.profile
+amarok.profile            digikam.profile         geany.profile                 hashcat.profile                           lowriter.profile           pdftotext.profile           ssh-agent.profile            wget.profile
+android-studio.profile    dillo.profile           geary.profile                 hedgewars.profile                         luminance-hdr.profile      peek.profile                ssh.profile                  whitelist-common.inc
+apktool.profile           dino.profile            gedit.profile                 hexchat.profile                           lximage-qt.profile         picard.profile              start-tor-browser.profile    wine.profile
+arduino.profile           disable-common.inc      geeqie.profile                highlight.profile                         lxmusic.profile            pidgin.profile              steam.profile                wire.profile
+ark.profile               disable-devel.inc       ghb.profile                   hugin.profile                             lxterminal.profile         pingus.profile              stellarium.profile           wireshark-gtk.profile
+arm.profile               disable-passwdmgr.inc   gimp-2.8.profile              icecat.profile                            lynx.profile               pithos.profile              strings.profile              wireshark-qt.profile
+atom-beta.profile         disable-programs.inc    gimp.profile                  icedove.profile                           mate-calc.profile          pix.profile                 supertux2.profile            wireshark.profile
+atom.profile              display.profile         git.profile                   iceweasel.profile                         mate-calculator.profile    pluma.profile               synfigstudio.profile         xchat.profile
+atool.profile             dnscrypt-proxy.profile  gitg.profile                  idea.sh.profile                           mate-color-select.profile  polari.profile              tar.profile                  xed.profile
+atril.profile             dnsmasq.profile         gitter.profile                img2txt.profile                           mate-dictionary.profile    psi-plus.profile            telegram-desktop.profile     xfburn.profile
+audacious.profile         dolphin.profile         gjs.profile                   inkscape.profile                          mathematica.profile        qbittorrent.profile         telegram.profile             xfce4-dict.profile
+audacity.profile          dosbox.profile          globaltime.profile            inox.profile                              mcabber.profile            qemu-launcher.profile       thunar.profile               xfce4-notes.profile
+aweather.profile          dragon.profile          gnome-2048.profile            iridium-browser.profile                   mediainfo.profile          qemu-system-x86_64.profile  thunderbird.profile          xiphos.profile
+baloo_file.profile         dropbox.profile         gnome-books.profile           iridium.profile                           mediathekview.profile      qlipper.profile             torbrowser-launcher.profile  xmms.profile
+baobab.profile            ebook-viewer.profile    gnome-calculator.profile      itch.profile                              meld.profile               qpdfview.profile            totem.profile                xonotic-glx.profile
+bibletime.profile         electron.profile        gnome-chess.profile           jd-gui.profile                            midori.profile             qtox.profile                tracker.profile              xonotic-sdl.profile
+bitlbee.profile           elinks.profile          gnome-clocks.profile          jitsi.profile                             minetest.profile           quassel.profile             transmission-cli.profile     xonotic.profile
+bleachbit.profile         emacs.profile           gnome-contacts.profile        k3b.profile                               mousepad.profile           quiterss.profile            transmission-gtk.profile     xpdf.profile
+blender.profile           empathy.profile         gnome-documents.profile       kate.profile                              mplayer.profile            qupzilla.profile            transmission-qt.profile      xplayer.profile
+bless.profile             enchant.profile         gnome-font-viewer.profile     kcalc.profile                             mpv.profile                qutebrowser.profile         transmission-show.profile    xpra.profile
+brasero.profile           engrampa.profile        gnome-maps.profile            keepass.profile                           multimc5.profile           rambox.profile              truecraft.profile            xreader.profile
+brave.profile             eog.profile             gnome-mplayer.profile         keepass2.profile                          mumble.profile             ranger.profile              tuxguitar.profile            xviewer.profile
+caja.profile              eom.profile             gnome-music.profile           keepassx.profile                          mupdf.profile              remmina.profile             uget-gtk.profile             xz.profile
+calibre.profile           epiphany.profile        gnome-photos.profile          keepassx2.profile                         mupen64plus.profile        rhythmbox.profile           unbound.profile              xzdec.profile
+catfish.profile            etr.profile             gnome-twitch.profile          keepassxc.profile                         musescore.profile          riot-web.profile            unknown-horizons.profile     yandex-browser.profile
+cherrytree.profile        evince.profile          gnome-weather.profile         kino.profile                              mutt.profile               ristretto.profile           unrar.profile                youtube-dl.profile
+chromium-browser.profile  evolution.profile       goobox.profile                kmail.profile                             nautilus.profile           rtorrent.profile            unzip.profile                zathura.profile
+chromium.profile          exiftool.profile        google-chrome-beta.profile    knotes.profile                            nemo.profile               scribus.profile             uudeview.profile             zoom.profile
+claws-mail.profile        fbreader.profile        google-chrome-stable.profile  kodi.profile                              netsurf.profile            sdat2img.profile            uzbl-browser.profile</pre>
+<p>It becomes a hassle to always prepend <em>firejail</em> to your commands, so you can easily configure your system to firejail everything you have a profile for. The command</p>
+<pre class="lang:default highlight:0 decode:true">$ sudo firecfg
+Configuring symlinks in /usr/local/bin
+   audacious created
+   audacity created
+   brasero created
+   cvlc created
+   display created
+   dnsmasq created
+   evince created
+   feh created
+   filezilla created
+   firefox created
+   ghb created
+   gimp created
+   gimp-2.8 created
+   gitg created
+   gthumb created
+   img2txt created
+   inkscape created
+   k3b created
+   keepassxc created
+   less created
+   libreoffice created
+   localc created
+   lodraw created
+   loffice created
+   lofromtemplate created
+   loimpress created
+   lomath created
+   loweb created
+   lowriter created
+   meld created
+   mplayer created
+   pdftotext created
+   pidgin created
+   simple-scan created
+   soffice created
+   ssh created
+   ssh-agent created
+   strings created
+   telegram-desktop created
+   tracker created
+   transmission-gtk created
+   vlc created
+   wget created
+   wireshark-gtk created</pre>
+<p>will create symlinks in <em>/usr/local/bin </em>for programs that exist in the profile folder, so that they will be opened by firejail.</p>
+<p>Also, it comes with desktop integration, and a widget called <em>firetools</em></p>
+<p><img loading="lazy" class="aligncenter size-full wp-image-1706" src="firejail.png" alt="" width="104" height="294"></p>
+<p>You can create your symlinks to use firejail with any other program</p>
+<pre class="lang:default decode:true ">$ sudo ln -s /usr/bin/firejail /usr/local/bin/&lt;program name&gt;</pre>
+<p>Sometimes, you want to run the program without the sandbox only once. For instance, you might want to use <em>meld</em> in arbitrary paths. Instead of editing the profile, you can just find the binary</p>
+<pre class="lang:default highlight:0 decode:true ">$ which -a meld
+/usr/local/bin/meld
+/usr/bin/meld
+/usr/local/bin/meld
+/usr/bin/meld</pre>
+<p>, and knowing that the one in <em>/usr/local/bin</em> is the symlink, we can just invoke it as</p>
+<pre class="lang:default highlight:0 decode:true ">$ /usr/bin/meld</pre>
+<h4>Firejail advanced usage</h4>
+<p>You can check what applications you have sandboxed with</p>
+<pre class="lang:default highlight:0 decode:true">$ firejail --list
+738:nacho:firejail --list
+26599:nacho:firejail /usr/bin/filezilla
+30047:nacho:/usr/bin/firejail /usr/bin/keepassxc
+31180:nacho:/usr/bin/firejail /usr/bin/firefox</pre>
+<p>Likewise, you can inspect processes inside a sandbox with</p>
+<pre class="lang:default highlight:0 decode:true">$ firejail --tree
+2126:nacho:/usr/bin/firejail /usr/bin/firefox
+  2140:nacho:/usr/bin/firejail /usr/bin/firefox
+    2201:nacho:/usr/lib/firefox/firefox
+2129:nacho:/usr/bin/firejail /usr/bin/mumble
+  2145:nacho:/usr/bin/firejail /usr/bin/mumble
+    2221:nacho:/usr/bin/mumble
+2131:nacho:/usr/bin/firejail /usr/bin/thunderbird
+  2152:nacho:/usr/bin/firejail /usr/bin/thunderbird
+    2225:nacho:/usr/lib/thunderbird/thunderbird
+3286:nacho:gpg-agent --homedir /home/nacho/.gnupg --use-standard-socket --daemon
+2738:nacho:/usr/bin/firejail /usr/bin/keepassxc
+  2739:nacho:/usr/bin/firejail /usr/bin/keepassxc
+    2745:nacho:/usr/bin/keepassxc</pre>
+<p>or monitor resources with <em>–top </em>or <em>–netstats</em></p>
+<pre class="lang:default highlight:0 decode:true">$firejail --top
+PID   User      RES(KiB) SHR(KiB) CPU%  Prcs Uptime    Command
+26599 nacho     59236    44404    13.0  3    00:07:33  firejail /usr/bin/filezilla 
+31180 nacho     761036   132316   12.0  3    00:02:14  firejail /usr/bin/firefox 
+369   nacho     2192     1940     0.0   1    00:00:09  firejail --top 
+30047 nacho     76340    56716    0.0   3    00:03:10  firejail /usr/bin/keepassxc</pre>
+<p>You can copy files in and out of the sandbox with <em>–ls</em>, <em>–put</em> and <em>–get</em></p>
+<pre class="lang:default highlight:0 decode:true">$ firejail --name=mybrowser --private firefox
+
+$ firejail --ls=mybrowser ~/Downloads
+drwxr-xr-x netblue  netblue         4096 .
+drwxr-xr-x netblue  netblue         4096 ..
+-rw-r--r-- netblue  netblue         7847 x11-x305.png
+-rw-r--r-- netblue  netblue         6800 x11-x642.png
+-rw-r--r-- netblue  netblue        34139 xpra-clipboard.png
+
+$ firejail --get=mybrowser ~/Downloads/xpra-clipboard.png
+
+$ firejail --put=mybrowser xpra-clipboard.png ~/Downloads/xpra-clipboard.png
+</pre>
+<p>You can traffic shape with <em>–bandwidth </em>( download/upload 80KBps/20KBps )</p>
+<pre class="lang:default highlight:0 decode:true">firejail --bandwidth=mybrowser set eth0 80 20</pre>
+<p>You can even shell inside the sandbox with <em>–join</em>, in a similar way as doing <span class="lang:default highlight:0 decode:true crayon-inline ">docker exec -ti container bash</span></p>
+<p>Other cool options are <em>–disable-mnt</em> which is self-explanatory and <em>–chroot=dirname</em> which will mount <em>dirname</em> read only.</p>
+<p>The <a href="http://web.archive.org/web/20210928161107/https://firejail.wordpress.com/features-3/man-firejail/">man pages</a> contain excelent information.</p>
+<h4>Playing around</h4>
+<p>We can check our current namespaces with</p>
+<pre class="lang:default highlight:0 decode:true">$ lsns
+
+NS TYPE NPROCS PID USER COMMAND
+4026531835 cgroup 75 592 nacho /usr/lib/systemd/systemd --user
+4026531836 pid 74 592 nacho /usr/lib/systemd/systemd --user
+4026531838 uts 70 592 nacho /usr/lib/systemd/systemd --user
+4026531839 ipc 74 592 nacho /usr/lib/systemd/systemd --user
+4026531840 mnt 70 592 nacho /usr/lib/systemd/systemd --user
+4026531993 net 75 592 nacho /usr/lib/systemd/systemd --user
+4026532421 mnt 1 2201 nacho /usr/lib/firefox/firefox
+4026532422 uts 1 2201 nacho /usr/lib/firefox/firefox
+4026532423 pid 1 2201 nacho /usr/lib/firefox/firefox
+4026532424 mnt 1 2221 nacho /usr/bin/mumble
+4026532425 uts 1 2221 nacho /usr/bin/mumble
+4026532426 pid 2 2221 nacho /usr/bin/mumble
+4026532487 mnt 2 2225 nacho /usr/lib/thunderbird/thunderbird
+4026532488 uts 2 2225 nacho /usr/lib/thunderbird/thunderbird
+4026532489 pid 2 2225 nacho /usr/lib/thunderbird/thunderbird
+4026532633 mnt 1 2266 nacho /usr/bin/ssh -Y xxxx@xxxxx.xxxx</pre>
+<p>, and elevated capabilities with</p>
+<pre class="lang:default highlight:0 decode:true">$ pscap
+ppid pid name command capabilities
+1 266 root systemd-journal chown, dac_override, dac_read_search, fowner, setgid, setuid, sys_ptrace, sys_admin, audit_control, mac_override, syslog, audit_read
+1 286 root systemd-udevd full
+1 431 root systemd-logind chown, dac_override, dac_read_search, fowner, kill, sys_admin, sys_tty_config, audit_control, mac_admin
+1 432 root dockerd full
+1 441 root login full
+432 450 root docker-containe full
+1 732 rtkit rtkit-daemon dac_read_search, sys_ptrace, sys_nice
+1 2984 root udisksd full
+450 4405 root docker-containe full
+4405 4423 root bash chown, dac_override, fowner, fsetid, kill, setgid, setuid, setpcap, net_bind_service, net_raw, sys_chroot, mknod, audit_write, setfcap
+15942 8107 root sudo full
+8107 8122 root wpa_supplicant full
+1 10113 root upowerd full
+450 10710 root docker-containe full
+10710 10727 root run.sh full
+10727 10814 root nginx full
+10814 10815 root nginx full
+10814 10816 root nginx full
+10814 10817 root nginx full
+10814 10819 root nginx full
+10814 10820 root nginx full
+10814 10821 root nginx full
+10814 10822 root nginx full
+10814 10823 root nginx full
+10727 10830 root php5-fpm full
+10727 10834 root nxlog full
+10727 10835 root ntpd full
+10727 10837 root mysqld full
+10727 10842 root sshd full
+10727 10847 root in.tftpd full
+450 10925 root docker-containe full
+10925 10946 root script full
+10946 10953 root sh full
+10953 10954 root bash full
+1 17653 root systemd-hostnam sys_admin
+10727 18157 root sleep full
+450 21275 root docker-containe full
+21275 21291 root bash chown, dac_override, fowner, fsetid, kill, setgid, setuid, setpcap, net_bind_service, net_raw, sys_chroot, mknod, audit_write, setfcap</pre>
+<p>Obviously, only priviledged processes are susceptible of having capabilities in the first place, so no user processes on that list.</p>
+<p>We can run <em>wireshark</em> with <em>sudo</em> in order for it to have access to the network interfaces. This is a bad idea: permissions should be set properly to avoid this, but we will do it for the sake of the example</p>
+<pre class="lang:default highlight:0 decode:true ">$ sudo /usr/bin/wireshark
+
+$ pscap | grep wireshark
+
+26219 26221 root wireshark-gtk full</pre>
+<p>We can compare that to running it in a sandbox, where it has dropped all capabilities that it doesn’t need</p>
+<pre class="lang:default highlight:0 decode:true ">$ sudo firejail wireshark-gtk
+
+$ pscap | grep wireshark
+
+26803 26817 root wireshark-gtk dac_override, net_admin, net_raw</pre>
+<p>&nbsp;</p>
+<h4>References</h4>
+<p>For more advanced configuration options, including writing and auditing profiles, I usually refer to the following sites.</p>
+<p><a href="http://web.archive.org/web/20210928161107/https://wiki.archlinux.org/index.php/Firejail">Arch wiki</a></p>
+<p><a href="http://web.archive.org/web/20210928161107/https://firejail.wordpress.com/">Firejail home page</a></p>
+<p><a href="http://web.archive.org/web/20210928161107/https://www.linux.com/news/understanding-and-securing-linux-namespaces">https://www.linux.com/news/understanding-and-securing-linux-namespaces</a></p>
+
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+	<nav class="navigation post-navigation" role="navigation" aria-label="Posts">
+		<h2 class="screen-reader-text">Post navigation</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="http://web.archive.org/web/20210928161107/https://ownyourbits.com/2017/09/29/nextcloudpi-updated-to-nc-12-0-3-brings-wizard-duckdns-and-more/" rel="prev">               
+							<span class="meta-nav" aria-hidden="true">Previous</span>
+                              <span class="post-title">NextCloudPi updated to NC 12.0.3, brings wizard, duckDNS and more</span> 
+                          </a></div><div class="nav-next"><a href="http://web.archive.org/web/20210928161107/https://ownyourbits.com/2017/11/12/nextcloudpi-gets-new-look-and-feel-redis-spdns-support-berryboot-support-debian-installer-and-more/" rel="next">
+                              <span class="meta-nav" aria-hidden="true">Next</span> 
+                              <span class="post-title">NextCloudPi gets new look and feel, Redis, spDNS support, Berryboot support, Debian installer and more</span>
+                          </a></div></div>
+	</nav>
+
+<div class="author-info">
+	<div class="author-avatar">
+		<img alt="" src="c22d7bd017f1db2e2c76a0dec04c7123_001.txt" srcset="c22d7bd017f1db2e2c76a0dec04c7123.txt 2x" class="avatar avatar-70 photo" loading="lazy" width="70" height="70">	</div><!-- .author-avatar -->
+
+	<div class="author-description">
+		<h2 class="author-title"><span class="author-heading">Author:</span> nachoparker</h2>
+
+		<p class="author-bio">
+			Humbly sharing things that I find useful
+[ <a href="http://web.archive.org/web/20210928161107/https://github.com/nachoparker">github</a> <a href="http://web.archive.org/web/20210928161107/https://hub.docker.com/u/ownyourbits/">dockerhub</a> ]			<a class="author-link" href="http://web.archive.org/web/20210928161107/https://ownyourbits.com/author/cisquero_admin/" rel="author">
+				View all posts by nachoparker			</a>
+		</p><!-- .author-bio -->
+	</div><!-- .author-description -->
+</div><!-- .author-info -->
+
+<div id="comments" class="comments-area">
+
+			<h2 class="comments-title">
+			4 Comments		</h2>
+
+		
+		<ol class="comment-list">
+					<li id="comment-3604" class="pingback even thread-even depth-1">
+			<div class="comment-body">
+				Pingback: <a href="http://web.archive.org/web/20210928161107/https://firejail.wordpress.com/2017/11/05/own-your-bits-sandbox-your-applications-with-firejail/" rel="external nofollow ugc" class="url">OWN YOUR BITS: Sandbox your applications with Firejail | Firejail</a> 			</div>
+		</li><!-- #comment-## -->
+		<li id="comment-3641" class="pingback odd alt thread-odd thread-alt depth-1">
+			<div class="comment-body">
+				Pingback: <a href="http://web.archive.org/web/20210928161107/http://techrights.org/2017/11/07/apache-openoffice-revisited/" rel="external nofollow ugc" class="url">Links 7/11/2017: 4.0 Development Update, Apache Kafka Reaches 1.0, Apache OpenOffice Revisited | Techrights</a> 			</div>
+		</li><!-- #comment-## -->
+		<li id="comment-5146" class="pingback even thread-even depth-1">
+			<div class="comment-body">
+				Pingback: <a href="http://web.archive.org/web/20210928161107/https://regginator729.wordpress.com/2017/12/12/using-bubblewrap-as-sandbox/" rel="external nofollow ugc" class="url">Using bubblewrap to sandbox applications in Linux – Excerpts of the Regginator</a> 			</div>
+		</li><!-- #comment-## -->
+		<li id="comment-5365" class="pingback odd alt thread-odd thread-alt depth-1">
+			<div class="comment-body">
+				Pingback: <a href="http://web.archive.org/web/20210928161107/https://regginator729.wordpress.com/2017/12/22/firejail-sandbox-linux/" rel="external nofollow ugc" class="url">Using Firejail to sandbox applications in Linux – Excerpts of the Regginator</a></div></li></ol></div><!--/DOCUMENT_FRAGMENT--></main></div></div></div></body>
+</html>

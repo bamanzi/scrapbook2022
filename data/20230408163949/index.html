@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>新闻|LURE 初窥！将 AUR 带入所有 Linux 发行版</title>
+ 
+<meta name="keywords" content="LURE 初窥！将 AUR 带入所有 Linux 发行版">
+<meta name="description" content="LURE 是一个新的开源项目，它希望成为所有发行版的 AUR。 ">
+<meta name="copyright" content="2005-2019 Linux.cn">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="applicable-device" content="pc,mobile">
+<meta name="referrer" content="always">
+<base href=""><link rel="stylesheet" type="text/css" href="style_1_common.css">
+<link rel="stylesheet" type="text/css" href="style_1_portal_view.css">
+<link href="responsive.css" rel="stylesheet">
+
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script src="about:blank" type="text/javascript"></script>
+<script src="about:blank" type="text/javascript"></script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script src="about:blank" type="text/javascript"></script>
+<script src="about:blank" type="text/javascript"></script>
+<link rel="alternate" type="application/rss+xml" title="Linux 中国◆开源社区 RSS" href="https://linux.cn/rss.xml">
+<link rel="shortcut icon" href="favicon.ico" sizes="32x32">
+<link rel="canonical" href="https://linux.cn/article-15151-1.html">
+<script src="about:blank" type="text/javascript"></script>
+</head>
+<body id="nv_portal" class="pg_view"><div id="wp" class="wp"><div id="ct" class="ct2 wp cl"><div class="mn"><article class="vw"><!--DOCUMENT_FRAGMENT--><div class="h hm bm" style="margin-top: 0px;"><h1 class="ph" id="article_title">LURE 初窥！将 AUR 带入所有 Linux 发行版 </h1>
+</div>
+
+<div class="d" style="width: 100%; margin: 0px;">
+<div id="article_content" style="border-radius: 0px;">
+<div class="ph" id="article_copyright">
+<span>作者： 
+    	 
+    		    			<span class="textcut"><a href="https://news.itsfoss.com/lure-aur/" target="_blank">Ankush Das</a></span>
+    		    	    	<span>译者： 
+<a href="https://linux.cn/lctt/" target="_blank">LCTT</a>&nbsp;<a href="https://linux.cn/lctt/wxy" target="_blank">Xingyu.Wang</a></span>
+<p id="article_date">
+| 2022-10-18 10:46&nbsp;&nbsp;
+评论: <a href="https://linux.cn/portal.php?mod=comment&amp;id=15151&amp;idtype=aid" title="查看全部评论"><em id="_commentnum">1</em></a>&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
+</span></div>
+<blockquote>
+<p>LURE 是一个新的开源项目，它希望成为所有发行版的 AUR。</p>
+</blockquote>
+
+<p>AUR（<ruby>Arch 用户仓库<rt>Arch User Repository</rt></ruby>）是一个由社区驱动的基于 Arch 的 Linux 的发行版仓库。</p>
+<p><strong>简而言之：</strong>&nbsp;它可以帮助你安装官方仓库中没有的软件包，并让你获得最新的版本。</p>
+<p>我发现它对我在&nbsp;<a href="https://news.itsfoss.com/manjaro-linux-experience/">Manjaro Linux</a>&nbsp;上的体验很有帮助。</p>
+<p>从技术上讲，AUR 从源头构建一个软件包，然后利用软件包管理器（<code>pacman</code>）来安装它。</p>
+<p>你也可以在我们的详细指南中探索更多关于它的信息。</p>
+<blockquote>
+<p><strong><a href="https://itsfoss.com/aur-arch-linux/">什么是 AUR？ 如何在 Arch 和 Manjaro Linux 中使用 AUR？</a></strong></p>
+</blockquote>
+<p>📢 现在你对 AUR 有了一个基本的了解，有一个&nbsp;<strong>新的开源项目</strong>&nbsp;旨在将 AUR 的功能带到所有的发行版中。</p>
+<p>这个项目被称为 “<ruby>Linux 用户仓库<rt>Linux User REpository</rt></ruby>”（LURE）。</p>
+<blockquote>
+<p>💡 LURE 项目正处于 alpha 阶段，由创建者在几周前宣布。所以，它完全是一个正在进行的工作。</p>
+</blockquote>
+<h3 id="%E5%B7%B2%E7%BB%8F%E6%9C%89%E8%BF%99%E6%A0%B7%E7%9A%84%E9%A1%B9%E7%9B%AE%E4%BA%86" class="mume-header">已经有这样的项目了？</h3>
+<p><img src="104606pjzjjjf90rncmiff.png" alt="lure 添加仓库"></p>
+<p><strong>没有。</strong></p>
+<p>开发者们已经尝试做一个 AUR 的替代品，但是是针对特定的发行版。就像&nbsp;<a href="https://mpr.makedeb.org/">makedeb 软件包仓库</a>&nbsp;是针对 Debian 的。</p>
+<p>LURE 是一个雄心勃勃的想法，可以在你选择的任何发行版上工作。</p>
+<p>它试图成为一个帮助你使用类似于&nbsp;<code>PKGBUILD</code>&nbsp;的脚本为你的发行版创建原生软件包的工具。</p>
+<blockquote>
+<p><strong><a href="https://itsfoss.com/create-pkgbuild/">创建 PKGBUILD 为 Arch Linux 制作软件包</a></strong></p>
+</blockquote>
+<p>开发者在&nbsp;<a href="https://www.reddit.com/r/linux/comments/xq09nf/lure_aur_on_nonarch_distros/">Reddit 公告帖子</a>&nbsp;中提到了一些技术细节：</p>
+<blockquote>
+<p>我的项目叫 LURE，是 “Linux 用户仓库”的简称。它构建原生软件包，然后使用系统软件包管理器安装它们，就像 AUR 一样。它使用一个类似于 AUR 的&nbsp;<code>PKGBUILD</code>&nbsp;的构建脚本来构建软件包。</p>
+<p>它是用纯 Go 语言编写的，这意味着它在构建后没有任何依赖性，除了一些特权提升命令（<code>sudo</code>，<code>doas</code>&nbsp;等等）和任何一个支持的软件包管理器，目前支持&nbsp;<code>pacman</code>、<code>apt</code>、<code>apk</code>（Alpine Linux 上，不是安卓）、<code>dnf</code>、<code>yum</code>&nbsp;和&nbsp;<code>zypper</code>。</p>
+</blockquote>
+<p><strong>听起来很棒！</strong></p>
+<blockquote>
+<p><strong><a href="https://gitea.arsenm.dev/Arsen6331/lure">LURE 项目Repo</a></strong></p>
+</blockquote>
+<p>你也可以在它的&nbsp;<a href="https://github.com/Arsen6331/lure">GitHub 镜像</a>&nbsp;上探索更多信息。</p>
+<h3 id="%E4%BD%BF%E7%94%A8-lure" class="mume-header">使用 LURE</h3>
+<p>你不必安装一个额外的软件包管理器来使它工作，它可以自动与你系统的软件包管理器一起工作。</p>
+<p>因此，如果它在其仓库（或任何其添加的仓库）中没有找到一个包，它就会转到系统的默认仓库，并从那里安装它。就像我用&nbsp;<code>lure</code>&nbsp;命令在我的系统上安装/移除&nbsp;<code>neofetch</code>&nbsp;一样。</p>
+<p><img src="104606hs3dvvvzf7sppba0.png" alt="lure neofetch remove"></p>
+<p>虽然该项目处于早期开发阶段，但它为各种发行版提供了&nbsp;<a href="https://gitea.arsenm.dev/Arsen6331/lure/releases/tag/v0.0.2">二进制包</a>，以让你安装和测试它们。</p>
+<p><img src="104606li6orupmrafxo122.jpg" alt=""></p>
+<p>目前，它的仓库包括一个来自创建者自己的项目。但你可以尝试添加一个仓库并构建/安装东西。</p>
+<p>为了方便起见，我试着在它的仓库中安装软件包。</p>
+<p><img src="104606b7th007d3eq71bpt.png" alt=""></p>
+<p>命令看起来像这样：</p>
+<pre class="prettyprint linenums"><code>lure in itd-bin
+</code></pre>
+<p>在它的&nbsp;<a href="https://github.com/Arsen6331/lure/blob/master/docs/usage.md">官方文档页面</a>，你可以读到更多关于它在构建/安装/添加存储库方面的用法。</p>
+<p>未来版本的一些计划中的功能包括：</p>
+<ul>
+<li>自动安装脚本</li>
+<li>基于 Docker 的自动测试工具</li>
+<li>仓库的网页接口</li>
+</ul>
+<h3 id="%E8%AE%A9%E5%AE%83%E5%8F%98%E5%BE%97%E6%9B%B4%E5%A5%BD" class="mume-header">让它变得更好</h3>
+<p>嗯，首先，这是一个优秀的项目。如果你是过去使用过 Arch 的人，或者想离开 Arch Linux，这将是一个很好的工具。</p>
+<p>然而，对于大多数终端用户和非 Arch Linux 新手来说，像&nbsp;<a href="https://itsfoss.com/install-pamac-arch-linux/">Pamac GUI 软件包管理器</a>&nbsp;这样的软件包管理器支持 LURE 应该是锦上添花的。</p>
+<p>当然，在目前的阶段，它需要开源贡献者的支持。所以，如果你喜欢这个想法，请随时为该项目贡献改进意见</p>
+<p>*💭 你对 LURE 有什么看法？请在下面的评论中分享你的想法！ *</p>
+<hr>
+<p>via:&nbsp;<a href="https://news.itsfoss.com/lure-aur/">https://news.itsfoss.com/lure-aur/</a></p>
+<p>作者：<a href="https://news.itsfoss.com/author/ankush/">Ankush Das</a>&nbsp;选题：<a href="https://github.com/lkxed">lkxed</a>&nbsp;译者：<a href="https://github.com/wxy">wxy</a>&nbsp;校对：<a href="https://github.com/wxy">wxy</a></p>
+<p>本文由&nbsp;<a href="https://github.com/LCTT/TranslateProject">LCTT</a>&nbsp;原创编译，<a href="https://linux.cn/">Linux中国</a>&nbsp;荣誉推出</p></div></div><!--/DOCUMENT_FRAGMENT--></article></div></div></div></body>
+</html>

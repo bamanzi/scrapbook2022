@@ -1,0 +1,162 @@
+/* Code tidied up by ScrapBook */
+@media only screen and (min-width: 270px) and (max-width: 385px) {
+}
+@media only screen and (min-width: 270px) and (max-width: 385px) {
+}
+@media (min-width: 500px) {
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 1024px) {
+}
+@media (min-width: 1366px) {
+}
+@media (min-width: 1500px) {
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 900px) {
+}
+@media (min-width: 1024px) and (max-width: 1366px) {
+}
+@media (min-width: 1025px) and (max-width: 1280px) {
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 1024px) {
+}
+.sticky-cta { display: grid; background-color: rgb(255, 255, 255); width: 319px; margin: auto; }
+.sticky-cta .operator, .sticky-cta__header, .sticky-cta__link { padding: 0.7rem; }
+.sticky-cta .operator, .sticky-cta__link { border-width: medium 1px 1px; border-style: none solid solid; border-color: currentcolor rgb(51, 51, 51) rgb(51, 51, 51); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; }
+.sticky-cta__header { text-align: center; background-color: rgb(51, 51, 51); }
+.sticky-cta__header h2 { font-size: 1.25rem; }
+.sticky-cta__header h2.heading, .sticky-cta__header h3.heading, .sticky-cta__header h4.heading { margin: 0px; color: rgb(255, 255, 255); }
+.sticky-cta__operators { display: grid; grid-auto-columns: 1fr; }
+.sticky-cta .operator { display: grid; gap: 0px 1.8rem; grid-template-areas: "editorsChoice deal" "logo deal" "logo bonus" "logo button"; }
+.sticky-cta .operator.editors-choice { border: 3px solid rgb(0, 183, 232); }
+.sticky-cta .operator__editors-choice { grid-area: editorsChoice / editorsChoice / editorsChoice / editorsChoice; display: flex; gap: 8px; background: rgb(0, 183, 232) none repeat scroll 0% 0%; color: rgb(255, 255, 255); font-size: 12px; font-weight: 600; padding: 5px 10px; position: relative; top: -14px; left: -14px; border-radius: 0px 0px 10px; }
+.sticky-cta .operator__editors-choice::after { content: ""; display: flex; align-self: center; background: transparent url("editor-mark.svg") no-repeat scroll 0% 0% / auto 100%; width: 13px; height: 13px; }
+.sticky-cta .operator__logo { grid-area: logo / logo / logo / logo; align-self: center; width: 130px; }
+.sticky-cta .operator__logo img { width: 100%; }
+.sticky-cta .operator__deal { grid-area: deal / deal / deal / deal; font-size: 18px; font-weight: 600; }
+.sticky-cta .operator__bonus { grid-area: bonus / bonus / bonus / bonus; font-size: 14px; }
+.sticky-cta .operator__button { grid-area: button / button / button / button; display: flex; font-size: 14px; font-weight: 600; margin-top: 0.5rem; gap: 8px; }
+.sticky-cta .operator__button:hover { color: rgb(126, 211, 33); }
+.sticky-cta .operator__button::after { content: ""; display: flex; align-self: center; background: transparent url("chevron-blue.svg") no-repeat scroll 0% 0% / auto 100%; width: 13px; height: 13px; margin-bottom: -5px; }
+.sticky-cta .operator__button:hover::after { background: transparent url("chevron-green.svg") no-repeat scroll 0% 0% / auto 100%; }
+@media only screen and (min-width: 300px) and (max-width: 320px) {
+}
+@media only screen and (min-width: 300px) and (max-width: 768px) {
+}
+@media only screen and (min-width: 300px) and (max-width: 768px) {
+}
+@media only screen and (min-width: 300px) and (max-width: 768px) {
+}
+@media only screen and (min-width: 300px) and (max-width: 550px) {
+}
+@media only screen and (min-width: 300px) and (max-width: 450px) {
+}
+@media only screen and (min-width: 450px) and (max-width: 610px) {
+}
+@media only screen and (min-width: 300px) and (max-width: 610px) {
+}
+@media only screen and (min-width: 300px) and (max-width: 500px) {
+}
+@media only screen and (min-width: 500px) and (max-width: 768px) {
+}
+@media only screen and (min-width: 300px) and (max-width: 768px) {
+}
+@media only screen and (min-width: 300px) and (max-width: 768px) {
+}
+@media only screen and (min-width: 300px) and (max-width: 768px) {
+}
+@media only screen and (min-width: 300px) and (max-width: 768px) {
+}
+@media only screen and (min-width: 300px) and (max-width: 768px) {
+}
+@media only screen and (min-width: 1024px) and (max-width: 1300px) {
+}
+@media only screen and (min-width: 300px) and (max-width: 768px) {
+}
+@media only screen and (min-width: 1024px) and (max-width: 1300px) {
+}
+@media (min-width: 1024px) and (max-width: 1300px), only screen and (min-width: 300px) and (max-width: 768px) {
+}
+@media only screen and (min-width: 1024px) and (max-width: 1350px) {
+}
+@media only screen and (min-width: 300px) and (max-width: 768px) {
+}
+@media only screen and (min-width: 300px) and (max-width: 768px) {
+}
+@media only screen and (min-width: 1024px) and (max-width: 1300px) {
+}
+@media only screen and (min-width: 300px) and (max-width: 768px) {
+}
+@media only screen and (min-width: 1024px) and (max-width: 1300px) {
+}
+@media (min-width: 1024px) and (max-width: 1300px), only screen and (min-width: 300px) and (max-width: 768px) {
+}
+@media only screen and (min-width: 300px) and (max-width: 768px) {
+}
+@media (min-width: 1024px) and (max-width: 1300px), only screen and (min-width: 300px) and (max-width: 768px) {
+}
+@media only screen and (min-width: 300px) and (max-width: 768px) {
+}
+@media only screen and (min-width: 300px) and (max-width: 768px) {
+}
+@media only screen and (max-width: 480px) {
+}
+@media only screen and (min-width: 300px) and (max-width: 768px) {
+}
+@media (min-width: 1024px) and (max-width: 1300px), only screen and (min-width: 300px) and (max-width: 768px) {
+}
+@media (min-width: 1024px) and (max-width: 1300px), only screen and (min-width: 300px) and (max-width: 768px) {
+}
+@media only screen and (min-width: 768px) and (max-width: 1366px) {
+}
+@media only screen and (min-width: 768px) {
+}
+@media only screen and (min-width: 768px) {
+}
+@media only screen and (min-width: 768px) {
+}
+@media only screen and (min-width: 768px) {
+}
+@media (max-width: 970px) {
+}
+@media (min-width: 1400px) {
+}
+@media (min-width: 900px) and (max-width: 1024px) {
+}
+@media (min-width: 1440px) {
+}
+@media (min-width: 1920px) {
+}
+@media only screen and (min-width: 768px) {
+}
+@media only screen and (min-width: 1024px) and (max-width: 1366px) {
+}
+@media only screen and (min-width: 768px) {
+}
+@media only screen and (min-width: 1024px) and (max-width: 1300px) {
+}
+@media (min-width: 400px) {
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 991px) {
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 1024px) and (max-width: 1350px) {
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 768px) {
+}

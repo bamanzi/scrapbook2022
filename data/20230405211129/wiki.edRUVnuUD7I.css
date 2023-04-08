@@ -1,0 +1,15 @@
+/* Code tidied up by ScrapBook */
+.wiki-page .wiki-page-content { margin: 15px 325px 15px 15px; }
+.wiki-page .wiki-page-content .wiki.md { max-width: none; }
+.wiki-page .wiki-page-content .wiki > .toc > ul { float: right; padding: 11px 22px; margin: 0px 0px 11px 22px; border: 1px solid rgb(141, 156, 170); list-style: outside none none; max-width: 300px; }
+.wiki-page .wiki-page-content .wiki > .toc > ul ul { margin: 4px 0px; padding-left: 22px; border-left: 1px dotted rgb(204, 204, 238); list-style: outside none none; }
+.wiki-page .wiki-page-content .wiki > .toc > ul li { margin: 0px; }
+.wiki-page .wikititle { margin-left: 15px; color: rgb(102, 102, 102); display: inline; vertical-align: middle; }
+.wiki-page .wikititle strong { font-weight: bold; }
+.wiki-page .pageactions { display: inline-block; font-size: larger; margin-left: 25px; border-radius: 5px; border: 1px solid rgb(141, 156, 170); vertical-align: middle; }
+.wiki-page .pageactions .wikiaction { display: inline-block; margin: 2px; padding: 2px 10px 3px; border-radius: 3px; }
+.wiki-page .pageactions .wikiaction:hover { background-color: rgb(206, 227, 248); }
+.wiki-page .pageactions .wikiaction-current:hover { background-color: rgb(95, 153, 207); }
+.wiki-page .pageactions .wikiaction-current { color: white; background-color: rgb(95, 153, 207); }
+.wiki-page .source { width: 100%; display: none; }
+.wiki-page .toggle-source { float: right; }

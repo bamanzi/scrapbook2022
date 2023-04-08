@@ -1,0 +1,174 @@
+/* Code tidied up by ScrapBook */
+* { -moz-text-size-adjust: none; }
+@font-face {
+  font-family: "iconfont";
+  src: url("iconfont-4e6.woff") format("woff");
+}
+html, body, div, section, article, aside, header, hgroup, footer, nav, h1, h2, h3, h4, h5, h6, p, blockquote, address, time, span, em, strong, img, ol, ul, li, figure, video, th, td, tr {  }
+body { background: rgb(255, 255, 255) url("background.png") repeat-x scroll 0% 0%; margin: 0px auto; text-align: center; font: 12px Verdana,Arial,Tahoma,sans-serif; color: rgb(51, 51, 51); }
+#wrap { margin: 0px auto; width: 970px; text-align: left; }
+a { color: rgb(32, 127, 123); text-decoration: none; }
+a:hover { color: rgb(217, 2, 2); }
+a img { border: medium none; }
+form { margin: 0px; padding: 0px; font-size: 12px; }
+small { font-size: 9px; }
+#header { width: 970px; overflow: hidden; }
+.topLogo { width: 200px; float: left; margin-right: 20px; padding-top: 25px; }
+.topLogo h1, .topLogo h2 { font: small-caps 21px/20px Georgia,"Times New Roman",serif; color: rgb(217, 2, 2); margin: 0px; padding: 0px; }
+.topLogo h1 a, .topLogo h2 a { text-decoration: none; color: rgb(217, 2, 2); }
+.topLogo h1 a:hover, .topLogo h2 a:hover { color: rgb(32, 127, 123); }
+.topLogo h1 a span.abb, .topLogo h2 a span.abb { font-size: 14px; }
+.topLogo .blogDescription { font: 11px/1em Tahoma; color: rgb(32, 127, 123); }
+.topMenu { width: 470px; float: left; margin-right: 20px; font: 14px Georgia,"Times New Roman",serif; }
+.topMenu ul { margin: 0px; padding: 0px; list-style: outside none none; display: block; }
+.topMenu ul li { margin: 0px 13px 0px 0px; padding: 25px 0px 0px; float: left; border-top: 5px solid rgb(210, 235, 234); font-weight: bold; }
+.topMenu ul li a { color: rgb(32, 127, 123); padding-top: 20px; text-decoration: none; }
+.topMenu ul li a:hover { color: rgb(217, 2, 2); }
+.topSearch { width: 260px; float: right; padding-top: 18px; }
+.s { border: 1px solid rgb(146, 189, 187); width: 230px; float: left; height: 18px; }
+.searchSubmit { padding: 1px 0px 0px; background: transparent none repeat scroll 0% 0%; border: medium none; font: bold 12px/20px Georgia,"Times New Roman",serif; cursor: pointer; float: right; }
+a.searchArrow { float: right; padding: 5px 0px 0px; }
+a.searchArrow::after { content: "►"; }
+#advanced-search-link::after { content: "►"; padding-left: 3px; }
+#advanced-search-link { font: bold 14px Georgia,"Times New Roman",serif; }
+#advanced-search-link:hover { color: rgb(217, 2, 2); }
+.topButton { display: none; }
+.overlay { display: none; position: fixed; top: 0px; height: 100%; width: 100%; background: rgba(0, 0, 0, 0.5) none repeat scroll 0% 0%; overflow: auto; z-index: 98; }
+.overlay-wrap { display: none; position: fixed; top: 0px; right: 0px; height: 100%; width: 70%; background: rgb(33, 42, 52) none repeat scroll 0% 0%; overflow: auto; z-index: 99; }
+#page { width: 970px; overflow: hidden; }
+#lsidebar { width: 200px; float: left; margin-right: 20px; margin-left: -707px; }
+#rsidebar { float: right; width: 260px; }
+#content { float: left; width: 470px; margin-right: 20px; margin-left: 220px; display: inline; margin-bottom: 15px; }
+#lsidebar .leftPicCustomWrap { width: 200px; padding-top: 15px; overflow: hidden; }
+#lsidebar .leftPicCustom { margin: 0px; border: 0px none; background: transparent none repeat scroll 0% 0%; }
+#lsidebar h2, #rsidebar h2 { font: 17px Georgia,"Times New Roman",serif; color: rgb(217, 2, 2); margin: 0px; padding: 0px 0px 5px; border-bottom: 1px solid rgb(32, 127, 123); }
+#lsidebar ul, #rsidebar ul { margin: 0px; padding: 0px; list-style: outside none none; }
+#lsidebar ul li, #rsidebar ul li { margin: 0px 0px 25px; padding: 0px; list-style: outside none none; }
+#lsidebar li li, #rsidebar li li { margin: 0px; padding: 4px 0px; list-style: outside none none; border-bottom: 1px solid rgb(221, 221, 221); }
+.post { margin-bottom: 25px; width: 470px; overflow: hidden; }
+.post a, .postFeatured a { text-decoration: underline; }
+.postTitle h1, .postTitle h2 { font: 22px Georgia,"Times New Roman",serif; color: rgb(217, 2, 2); padding: 0px 0px 5px; border-bottom: 1px solid rgb(221, 221, 221); margin: 0px 0px 5px; }
+.postInfo { font-size: 11px; line-height: 1.5em; }
+.postInfo h2 { font-size: 11px; font-weight: normal; display: inline; }
+.postInfo a:link, .postInfo a:visited, .postInfo a:hover { color: rgb(51, 51, 51); }
+.postInfo a:link, .postInfo a:visited { text-decoration: none; }
+.postInfo a:hover { text-decoration: underline; }
+.postContent { margin-top: 20px; margin-bottom: 10px; line-height: 17px; width: 470px; overflow: hidden; }
+.alignright { text-align: right; margin-left: 10px; }
+.commentZone { margin-bottom: 25px; }
+h3#respond, h3#comments, h3#trackbacks { font: 18px Georgia,"Times New Roman",serif; color: rgb(217, 2, 2); padding: 0px 0px 5px; border-bottom: 1px solid rgb(221, 221, 221); margin: 30px 0px 0px; }
+.commentList { margin: 0px; padding: 0px; list-style: outside none none; }
+.commentList li { overflow: hidden; display: block; padding: 10px 0px 0px; }
+.commentLeft { float: left; width: 50px; margin-right: 10px; }
+.commentLeft img { padding: 4px; border: 1px solid rgb(229, 229, 229); }
+.commentAuthor { font: bold 14px Georgia,"Times New Roman",serif; }
+.commentRight { width: 410px; float: left; overflow: hidden; }
+.commentRight p { margin: 10px 0px; }
+#author, #email, #url { border: 1px solid rgb(146, 189, 187); }
+#comment { border: 1px solid rgb(146, 189, 187); width: 400px; }
+#commentform #email { width: 153px; }
+#submit { width: 80px; height: 20px; border: medium none; background: transparent url("bg-addcomment.gif") no-repeat scroll 0% 0%; font: bold 12px Georgia,"Times New Roman",serif; color: rgb(255, 255, 255); text-align: center; cursor: pointer; }
+#footer { border-top: 1px solid rgb(221, 221, 221); padding-top: 5px; font-size: 10px; margin-bottom: 20px; width: 970px; overflow: hidden; }
+#footer .footer { width: 800px; margin-left: auto; margin-right: auto; }
+.navigations a:link, .navigations a:visited, .navigations a:hover { color: rgb(51, 51, 51); text-decoration: none; background: transparent none repeat scroll 0% 0%; font-weight: normal; }
+.center { text-align: center; overflow: hidden; }
+.comment-rating { float: left; width: 130px; }
+.star-rating, .star-rating a:hover, .star-rating a:active, .star-rating a:focus, .star-rating .current-rating { background: transparent url("star.png") repeat-x scroll left -1000px; }
+.star-rating { position: relative; width: 107px; height: 25px; overflow: hidden; list-style: outside none none; margin: 0px; padding: 0px; background-position: left top; }
+.star-rating li { display: inline; }
+.star-rating a, .star-rating .current-rating { position: absolute; top: 0px; left: 0px; text-indent: -1000em; height: 25px; line-height: 25px; outline: medium none; overflow: hidden; border: medium none; }
+.star-rating a:hover, .star-rating a:active, .star-rating a:focus { background-position: left bottom; }
+.star-rating a.one-star { width: 37px; z-index: 6; }
+.star-rating a.two-stars { width: 55px; z-index: 5; }
+.star-rating a.three-stars { width: 73px; z-index: 4; }
+.star-rating a.four-stars { width: 91px; z-index: 3; }
+.star-rating a.five-stars { width: 107px; z-index: 2; }
+.star-rating a.zero-star { width: 18px; z-index: 8; background: transparent url("no_star.png") no-repeat scroll left top; }
+.star-rating a.zero-star:hover, .star-rating a.zero-star:active, .star-rating a.zero-star:focus { background-position: left center; }
+div.rating-dis { margin-top: 5px; }
+.yahoo { display: none; }
+.torrent_info { font-size: 10px; line-height: 1.5em; font-family: "Trebuchet MS",sans-serif,verdana,"Lucida Sans"; }
+.torrent_info a:link, .torrent_info a:visited, .torrent_info a:hover { color: rgb(0, 101, 206); }
+#magnetIcon img { vertical-align: text-bottom; }
+@media only screen and (max-width: 736px) {
+  html, body, div, section, article, aside, header, hgroup, footer, nav, h1, h2, h3, h4, h5, h6, p, blockquote, address, time, span, em, strong, img, ol, ul, li, figure, video, th, td, tr {  }
+  body { background: rgb(255, 255, 255) none repeat scroll 0% 0%; }
+  #wrap { margin: 0px auto; width: auto; text-align: left; }
+  #header { width: inherit; overflow: hidden; margin-bottom: 15px; height: auto; }
+  .topLogo { width: inherit; float: none; margin-right: 0px; padding-top: 0px; background: rgb(255, 255, 255) url("background.png") repeat scroll 0% 0%; display: block; height: 48px; top: 0px; left: 0px; right: 0px; position: absolute; z-index: 1000; }
+  .topLogo h1, .topLogo h2 { font: small-caps 28px/20px Georgia,"Times New Roman",serif; margin: 0px; padding: 15px 0px 0px 45px; }
+  .topLogo .blogDescription { display: none; }
+  .topSearch { width: 67%; float: none; padding-top: 0px; position: absolute; left: 33%; top: 75px; z-index: 1001; display: none; }
+  .topSearch .s { background: rgb(55, 63, 72) none repeat scroll 0px 0px; border: medium none; border-radius: 8px; color: rgb(127, 133, 138); display: block; outline: 0px none; padding: 10px 20% 10px 5%; width: 70%; float: none; font-size: 1.5em; height: auto; }
+  a#advanced-search-link::after { display: none; font-size: 16px; position: absolute; top: 10px; right: 16%; z-index: 1002; }
+  a#advanced-search-link { display: none; }
+  .topSearch .searchSubmit::after { color: rgb(32, 127, 123); content: ""; font-family: "FontAwesome"; font-size: 22px; position: absolute; top: 10px; right: 9%; z-index: 1002; }
+  .topSearch .searchSubmit img { display: none; }
+  .topButton { display: inline; position: absolute; right: 12px; top: 10px; z-index: 1002; font-size: 30px; }
+  .topButton a { text-decoration: none; cursor: pointer; }
+  .btn-open::after { color: rgb(217, 2, 2); content: ""; font-family: "FontAwesome"; }
+  .btn-open:hover::after { color: rgb(32, 127, 123); }
+  .topMenu::after { background-color: rgb(68, 72, 77); bottom: 0px; content: " "; height: 1px; margin-left: -4.5%; position: absolute; width: 104.5%; }
+  .topMenu { float: none; margin-right: 0px; width: 67%; font-size: 16px; margin-bottom: 2em; padding-bottom: 2em; position: absolute; left: 33%; top: 125px; z-index: 1001; display: none; }
+  .topMenu ul { margin: 0px; padding: 0px; }
+  .topMenu ul li { margin: 0px; padding: 0px 6.25% 0px 0px; float: none; border-top: medium none; font-weight: normal; font-family: Verdana,Geneva,sans-serif; }
+  .topMenu ul li a { color: rgb(255, 255, 255); display: block; margin-top: 14px; padding: 2px 0px; text-decoration: none; }
+  .topMenu ul li a:hover { box-shadow: 0px 2px 0px 0px rgb(32, 127, 123); color: rgb(255, 255, 255); }
+  .topMenu .social-button { display: none; }
+  #page { width: 90%; margin-right: auto; margin-left: auto; overflow: hidden; margin-top: 60px; }
+  #lsidebar { float: none; margin-right: 0px; margin-left: 0px; width: 67%; font-size: 16px; margin-bottom: 2em; padding-bottom: 2em; position: absolute; left: 33%; top: 300px; z-index: 1001; }
+  #lsidebar ul li.leftCat { display: none; }
+  #lsidebar ul li.leftCat::before { font-family: "FontAwesome"; display: block; float: right; height: 10px; margin-top: 6px; text-indent: -6%; width: 10px; color: rgb(153, 153, 153); cursor: pointer; }
+  #lsidebar ul li.closeCat::before { content: ""; }
+  #lsidebar ul li h2 { border: medium none; color: rgb(153, 153, 153); font-family: Verdana,Geneva,sans-serif; margin: 0px; padding: 0px; }
+  #lsidebar ul li h2:hover { cursor: pointer; }
+  #lsidebar ul li.leftCat ul { margin-left: 2em; display: none; }
+  #lsidebar ul li ul li { margin: 0px; padding: 0px 6.25% 0px 0px; float: none; border: medium none; }
+  #lsidebar ul li ul li a { color: rgb(255, 255, 255); display: block; margin-top: 14px; padding: 2px 0px; text-decoration: none; }
+  #lsidebar ul li ul li a:hover { box-shadow: 0px 2px 0px 0px rgb(32, 127, 123); color: rgb(255, 255, 255); }
+  #lsidebar ul li.leftPicCustomWrap { display: block; position: absolute; top: -300px; left: -49.2%; width: auto; padding: 0px; }
+  #lsidebar img.leftPicCustom { padding: 8px 0px 0px 8px; width: 32px; }
+  #rsidebar { float: none; display: none; }
+  #page { width: 90%; }
+  #content { float: none; width: auto; margin-right: 0px; margin-left: 0px; display: inline; margin-bottom: 0px; }
+  .post { width: auto; margin-right: 0px; margin-left: 0px; }
+  .postContent { width: auto; }
+  .postContent p { font-size: 1.1em; }
+  .navigations { display: none; }
+  .commentZone { width: auto; max-width: 487px; margin-left: 0px; margin-right: 0px; }
+  .commentRight { width: 80%; }
+  #comment { width: 90%; max-width: 400px; }
+  #commentform #email { width: 125px; }
+  #footer { width: auto; }
+  #footer .footer { width: 90%; }
+  .cd-top:hover, .cd-top:focus, .cd-top:active { color: rgb(255, 255, 255); }
+  .cd-top { color: rgb(255, 255, 255); font-size: 22px; border-radius: 5px; text-align: center; display: inline-block; padding-top: 8px; height: 32px; width: 40px; bottom: 40px; right: 10px; position: fixed; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05); overflow: hidden; white-space: nowrap; background-color: rgb(32, 127, 123); visibility: hidden; opacity: 0; transition: opacity 0.3s ease 0s, visibility 0s ease 0.3s; }
+}
+@media only screen and (min-width: 737px) and (max-width: 988px) {
+  #wrap { margin: 0px auto; width: auto; text-align: left; }
+  #header { width: inherit; overflow: hidden; margin-bottom: 0px; height: 87px; clear: both; }
+  .topLogo { width: 310px; float: left; margin-right: 0px; padding-top: 0px; background: rgb(255, 255, 255) url("background.png") repeat scroll 0% 0%; display: block; height: 48px; top: 0px; left: 0px; position: absolute; }
+  .topLogo h1, .topLogo h2 { font: small-caps 28px/20px Georgia,"Times New Roman",serif; margin: 0px; padding: 15px 0px 0px 55px; }
+  .topLogo .blogDescription { display: none; }
+  .topMenu { width: 205px; margin-left: 315px; margin-right: 0px; margin-top: -10px; }
+  .topMenu .social-button { display: none; }
+  .topSearch { float: left; width: 200px; }
+  .topSearch .s { width: 170px; }
+  .overlay { display: none; }
+  .overlay-wrap { display: none; }
+  #page { width: auto; }
+  #content { float: left; margin-left: 20px; }
+  #lsidebar { display: block; margin-left: 10px; margin-right: 0px; }
+  #lsidebar ul li.leftPicCustomWrap { display: block; position: absolute; top: 0px; left: 10px; width: auto; padding: 0px; }
+  #lsidebar img.leftPicCustom { padding: 8px 0px 0px 8px; width: 32px; }
+  #rsidebar { float: none; display: none; }
+  #footer { width: auto; }
+  #footer .footer { width: 90%; }
+  .cd-top { display: none; }
+}
+@media only screen and (min-width: 989px) {
+  #header { height: 87px; padding-top: 0px; }
+  .overlay { display: none; }
+  .overlay-wrap { display: none; }
+  .cd-top { display: none; }
+}

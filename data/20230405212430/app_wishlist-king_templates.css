@@ -1,0 +1,8 @@
+/* Code tidied up by ScrapBook */
+:root { --wk-icon--stroke-width:  1px; --wk-link--color:  currentColor; --wk-link__icon--size:  20px; --wk-button--color:  currentColor; --wk-button__icon--color:  currentColor; --wk-button__icon--size:  16px; --wk-product-form__submit--background:  white; --wk-product-form__submit--color:  currentColor; --wk-share-button--color:  white; --wk-share-button--background:  #3d3d3d; --wk-share-button--size:  26px; --wk-page__image--aspect-ratio:  1 / 1; --wk-page__grid--max-columns:  4; }
+@media (max-width: 850px) {
+}
+@media (max-width: 600px) {
+}
+@media (max-width: 320px) {
+}

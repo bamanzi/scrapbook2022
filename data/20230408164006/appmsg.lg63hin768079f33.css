@@ -1,0 +1,17 @@
+/* Code tidied up by ScrapBook */
+.weui-mask { position: fixed; z-index: 1000; inset: 0px; background: rgba(0, 0, 0, 0.6) none repeat scroll 0% 0%; }
+@media only screen and (max-device-height: 558px) {
+}
+@media (prefers-color-scheme: dark) {
+}
+@media (prefers-color-scheme: dark) {
+}
+@media (prefers-color-scheme: dark) {
+}
+@media (prefers-color-scheme: dark) {
+}
+:root { --appmsgPageGap:  20px; --discussPageGap:  16px; }
+.album_read_card { overflow: hidden; margin-top: 16px; font-size: 14px; color: rgba(0, 0, 0, 0.9); line-height: 1.4; }
+@media (prefers-color-scheme: dark) {
+  .album_read_card { color: rgba(255, 255, 255, 0.8); }
+}

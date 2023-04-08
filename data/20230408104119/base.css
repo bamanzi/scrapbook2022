@@ -1,0 +1,23 @@
+/* Code tidied up by ScrapBook */
+.nav { width: 100%; min-width: 950px; overflow: hidden; margin-bottom: 40px; }
+.nav .nav-wrap { border-bottom: 1px solid rgb(229, 235, 228); }
+.nav .nav-primary, .nav .nav-secondary { width: 950px; margin: 0px auto; padding-bottom: 0px; overflow: hidden; }
+.nav .nav-primary { position: relative; padding: 10px 0px 5px; overflow: hidden; }
+.nav .nav-logo { float: left; height: 56px; width: 145px; margin: 0px 13px 0px 0px; background: transparent url("lg_main_a11_1.png") no-repeat scroll 0px 12px; }
+.nav .nav-logo a { display: block; width: 100%; height: 100%; overflow: hidden; line-height: 100em; }
+.nav .nav-logo a:hover, .nav .nav-logo a:active { background: transparent none repeat scroll 0% 0% ! important; }
+.nav-search { position: relative; overflow: hidden; padding: 10px 0px 15px; }
+.nav-search input { -moz-appearance: none; border: medium none; background: transparent none repeat scroll 0% 0%; }
+.nav-search label { position: absolute; left: 11px; top: 10px; line-height: 30px; cursor: text; color: rgb(187, 187, 187); width: auto; }
+.nav-search :-moz-placeholder { color: rgb(187, 187, 187); }
+.nav-search ::-moz-placeholder { color: rgb(187, 187, 187); }
+.nav-search .inp { float: left; width: 470px; height: 34px; text-align: center; cursor: text; background: transparent url("nav_bg_a1.png") no-repeat scroll 0px 0px; }
+.nav-search .inp input { background: rgb(255, 255, 255) none repeat scroll 0% 0%; width: 96%; margin: 0px; text-align: left; height: 30px; padding-left: 10px; outline: medium none; }
+.nav-search legend { display: none; }
+.nav-search fieldset { border: medium none; padding: 0px; margin: 0px; position: static; }
+.nav-search .inp-btn { position: relative; left: -1px; width: 37px; height: 34px; overflow: hidden; }
+.nav-search .inp-btn input { width: 100%; height: 100%; font-size: 0px; padding: 35px 0px 0px; overflow: hidden; background: transparent url("nav_bg_a1.png") no-repeat scroll 0px -40px; color: transparent; cursor: pointer; }
+.nav-search .inp-btn input:hover { background-position: -40px -40px; }
+.nav-search .inp-btn input:active { background-position: 0px -40px; }
+#db-nav-group .nav-search .inp { background-image: url("nav_mv_bg.png"); }
+#db-nav-group .nav-search .inp-btn input { background-image: url("nav_mv_bg.png"); }

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Running your programs in a jail with Firejail </title>
+<link rel="stylesheet" href="combine.css" media="all">
+<link rel="stylesheet" href="chrome://scrapbook/skin/annotation.css" media="all" data-sb-obj="stylesheet">
+<style type="text/css" media="all" data-sb-obj="stylesheet">
+body {
+    margin: 0px;
+    background-color: #FFFFFF;
+}
+cite.scrapbook-header {
+    clear: both;
+    display: block;
+    padding: 3px 6px;
+    font-family: "MS UI Gothic","Tahoma","Verdana","Arial","Sans-Serif","Helvetica";
+    font-style: normal;
+    font-size: 12px;
+    background-color: InfoBackground;
+    border: 1px solid ThreeDShadow;
+}
+cite.scrapbook-header img {
+    vertical-align: middle;
+}
+cite.scrapbook-header a {
+    color: InfoText;
+    text-decoration: none;
+}
+cite.scrapbook-header a[href]:hover {
+    color: #3388FF;
+}
+cite.scrapbook-header a.marked { font-weight: bold; }
+cite.scrapbook-header a.combine  { color: blue; }
+cite.scrapbook-header a.bookmark { color: limegreen; }
+cite.scrapbook-header a.notex { color: rgb(80,0,32); }
+</style>
+</head>
+<body>
+
+<!--Running your programs in a jail with Firejail-->
+<cite class="scrapbook-header">
+	<img src="favicon.ico" width="16" height="16">
+	<a class="" href="https://www.linux-magazine.com/Issues/2015/173/Firejail">Running your programs in a jail with Firejail</a>
+</cite>
+<div id="item20230408162536" style="position: relative;">
+<div xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" xmlns:fb="http://www.facebook.com/2008/fbml" id="item20230408162536html" lang="en-US">
+<div id="item20230408162536body">
+<div id="Body"><div id="Stage"><div class="container" id="mainContent"><div class="row"><div id="ContentLeft" class="span8"><div class="full article"><!--DOCUMENT_FRAGMENT--><h2>Running your programs in a jail with Firejail	    </h2>
+    <div class="full-content">
+		    <div class="social_bookmarks">
+    <div style="display: inline; padding-top: 5px;">
+	<a class="FlattrButton" style="display: none;" title="Firejail" rev="flattr;uid:lnmusa;button:compact;category:text;tags:linux,magazine,linux-magazine;" href="http://www.linux-magazine.com/Issues/2015/173/Firejail">
+	    Firejail enhances security by isolating programs and processes in separate jails and thus regulating access to the filesystem.
+	</a>
+    </div>
+    <a class="a2a_dd" href="http://www.addtoany.com/share_save?linkurl=http%3A%2F%2Fwww.linux-magazin.de%2F&amp;linkname=linux-magazine.com"><img src="share_save_171_16.png" alt="Share" border="0" width="171" height="16"></a>
+    
+	<script type="text/javascript">/* Code removed by ScrapBook */</script>
+	<script type="text/javascript" src="about:blank"></script>
+    
+</div>
+
+	    <h1>    The Jailer</h1>
+	    		<div class="leadimage">
+		    
+
+
+
+
+            
+ 
+    
+    
+
+
+
+
+        	<img src="CoverStoryImage-1_173.png_medium.png" itemprop="image" alt="">
+        		    		</div>
+	    	    	    	        <div class="attribute-issue">
+		    Article from <a href="https://www.linux-magazine.com/Issues/2015/173">Issue 173/2015</a>
+	        </div>
+	    	    		
+
+                <div class="author">
+		    	    	    	    	    	    			    	    
+
+	    Author(s): 	    		<span class="author" itemprop="author">Tim Schürmann</span>
+	    	    	    </div>
+	    	    <div class="article_intro">
+		    <p>Firejail enhances security by isolating programs and processes in separate jails and thus regulating access to the filesystem.</p>
+	    </div>
+			    	    	    	            	<div class="article_body"><p>Malware frequently exploits vulnerabilities in the browser or background services. After breaking in, malicious programs manipulate configuration files, install rootkits, or exploit other programs. A software tool called Firejail prevents malware from taking over by locking away Firefox, Apache, or any other endangered program in a jail.</p><p>In this isolated jail, which is also called a sandbox, a program that has been compromised by malware won't be able to manipulate any important files and can only run wild in the confines of its own walls. If so desired, Firejail will regulate and manage the view of the filesystem and discard any files created by the programs. Unlike a virtual machine, which emulates a complete PC, the GUI and server applications, as well as demanding games with 3D acceleration, run at full power in the Firejail sandbox.</p><a name="eztoc0_0_1" id="eztoc0_0_1"></a><h4>Building a Jail</h4><p>On the Firejail homepage, you can get prebuilt packages for popular distributions: Debian, Ubuntu, Linux Mint, Fedora, openSUSE, CentOS 7, and RHEL 7 <a href="https://www.linux-magazine.com/Issues/2015/173/Firejail/(offset)/6#article_i1" target="_self" class="info">[1]</a>. All of these packages require a 64-bit system. Arch Linux users will find Firejail in the AUR; packages for Slackware are available from the SlackBuilds repository <a href="https://www.linux-magazine.com/Issues/2015/173/Firejail/(offset)/6#article_i2" target="_self" class="info">[2]</a>.</p><p>If you can't find a matching package for your distribution, you need to turn to the source code archive. After unpacking the archive, you only need to run the following command line:</p>    <pre class="auto">./configure &amp;&amp; make &amp;&amp; sudo make install</pre><p>For the build and installation to start, you need <code>make</code>, a C compiler, and the kernel headers. Firejail works with all kernels from the 3.x series; however, there are a few functions that you can only use if you have a newer kernel version (more on this subject later).</p><p>To lock an application up in jail, you need to call <code>firejail</code> with the name of the program you want to launch. To run Firefox in a jail, you would type:</p>    <pre class="auto">firejail firefox</pre><p>If the program you are locking away additionally needs parameters, you simply append them. If you simply call <code>firejail</code> without any parameters, you get a sandbox with a Bash shell, as shown in <a href="file:///D:/home/projects/scrapbook2022/data/20230408162536/index.html#article_f1" target="_self" class="figure">Figure 1</a>. In contrast to what the official documentation says <a href="https://www.linux-magazine.com/Issues/2015/173/Firejail/(offset)/6#article_i3" target="_self" class="info">[3]</a>, Firejail keeps running in the background until the program in the sandbox terminates.</p>
+<div class="object-center" id="article_f1">    
+        	                    
+	<a href="https://www.linux-magazine.com/var/linux_magazin/storage/images/issues/2015/173/firejail/figure-1/646697-1-eng-US/Figure-1_reference.png" rel="lightbox[image]" title="Figure 1: On launching, Firejail outputs an overview of the valid IP addresses in the sandbox. In this sandbox started by Firejail, the locked-in program always has a process ID of 1.">
+	    <img src="Figure-1_large.png" alt="">
+	</a>
+	<span class="attribute-caption" style="max-width: 336px;">
+Figure 1: On launching, Firejail outputs an overview of the valid IP addresses in the sandbox. In this sandbox started by Firejail, the locked-in program always has a process ID of 1.
+</span>    </div><p>A minor stumbling hazard for web servers, databases, and other services is that their daemons immediately disappear into the background when launched. Firejail then believes that the program was terminated and takes down the sandbox and the service with it. To prevent this from happening, you need to resort to the following trick:</p>    <pre class="auto">firejail "/etc/init.d/sshd start &amp;&amp; sleep inf"</pre><p>to keep Firejail waiting, or running, infinitely after starting the daemon.</p><a name="eztoc0_0_2" id="eztoc0_0_2"></a><h4>Extremely Forgetful</h4><p>The programs in the sandbox have only read access to all directories and are thus unable to manipulate any important files. However, the directories <code>/home</code>, <code>/tmp</code>, and <code>/var</code> remain writable (<a href="file:///D:/home/projects/scrapbook2022/data/20230408162536/index.html#article_f2" target="_self" class="figure">Figure 2</a>).</p>
+<div class="object-center" id="article_f2">    
+        	                    
+	<a href="https://www.linux-magazine.com/var/linux_magazin/storage/images/issues/2015/173/firejail/figure-2/646700-1-eng-US/Figure-2_reference.png" rel="lightbox[image]" title="Figure 2: If you launch Firejail with the additional --debug parameter in place, the tool displays a variety of information – including the mounted directories.">
+	    <img src="Figure-2_large.png" alt="">
+	</a>
+	<span class="attribute-caption" style="max-width: 336px;">
+Figure 2: If you launch Firejail with the additional --debug parameter in place, the tool displays a variety of information – including the mounted directories.
+</span>    </div><p>If these restrictions do not suit your purposes, you can enable what is known as an overlay filesystem. The technology behind this is also used on Live systems: Firejail lets the program in the sandbox think that it can manipulate the filesystem to its heart's desire. Instead, Firejail actually intercepts any changes and even discards them when the sandbox terminates. This means that your hard disk remains totally unchanged. From a technical point of view, Firejail overlays a filesystem on top of the existing one (see the "Internals" box for details).</p><div class="box textbox" id="article_xinternals">
+<div class="boxtitle">
+<p>Internals</p>
+</div>
+<p>Firejail relies on Linux kernel namespaces to create sandboxes. In doing so, Firejail tricks processes into believing that they are running entirely on their own on the system. Additionally, the tool uses namespaces to regulate access to the network and the filesystem.</p><p>Firejail also creates its own network stack in the sandbox. The sandbox thus has its own routing table, its own netfilter or iptables firewalls, and its own network interfaces. Firejail implements the overlay filesystem with the help of OverlayFS <a href="https://www.linux-magazine.com/Issues/2015/173/Firejail/(offset)/6#article_i5" target="_self" class="info">[5]</a>. New or modified files end up in a separate filesystem, which overlays the existing filesystem. Private mode follows a similar principle: If enabled, Firejail mounts a <code>tempfs</code> filesystem on top of the home directory.</p><p>As the <code>--seccomp</code> and <code>--caps</code> parameters suggest, Firejail uses the kernel's seccomp support or turns to Linux Capabilities <a href="https://www.linux-magazine.com/Issues/2015/173/Firejail/(offset)/6#article_i6" target="_self" class="info">[6]</a>. Experts can list additional syscalls after <code>--seccomp</code> that they want Firejail to block in the sandbox, for example:</p>    <pre class="auto">firejail --seccomp=chmod,fchmod,fchmodat</pre><p>For deeper insights into the workings of the jailed processes, try the <code>firemon</code> tool. It lets you monitor all of the <code>fork</code>, <code>exec</code>, ID change, and <code>exit</code> events in the sandbox and log these activities if needed. The <code>firemon</code> tool needs root privileges to do this. To discover which processes the <code>open</code>, <code>unlink</code>, <code>mkdir</code>, <code>rmdir</code>, <code>stat</code>, <code>access</code>, <code>socket</code>, <code>connect</code>, and <code>bind</code> functions call in <code>glibc</code>, try launching <code>firejail</code> with the <code>--trace</code> parameter:</p>    <pre class="auto">firejail --trace firefox</pre>
+<div class="clear"></div>
+</div><p>If you want to use the overlay filesystem, simply append the <code>--overlay</code> option to the <code>firejail</code> command line:</p>    <pre class="auto">firejail --overlay gedit</pre><p>After starting Gedit in this way, you can create and modify files. After terminating Gedit, all the new files disappear into a black hole, while the modified files continue to exist unchanged on your hard disk. The overlay filesystem is useful for browsers in particular: It means that any cookies you collect, the browser history, and the cache are deleted when you terminate the browser. The <code>--overlay</code> option needs a Linux kernel as of version 3.18, although some distributions enabled this feature some time ago, including Ubuntu and openSUSE.</p><a name="eztoc0_0_3" id="eztoc0_0_3"></a><h4>Privacy</h4><p>Firejail can switch the sandbox to Private mode. In this case, the sandbox hides the complete home directory specifically from the active programs. They only see empty <code>/root</code> and <code>/home</code> directories. Firejail discards any files written to these directories after terminating the sandbox. You can enable Private mode using the <code>--private</code> parameter:</p>    <pre class="auto">firejail --private firefox</pre><p>Instead of <code>/root</code> and <code>/home</code>, you can pass in any other directory to the sandbox. In this case, files created by the program are kept, although they will never reach the genuine <code>/root</code> and <code>/home</code> directories, but always end up in the substitute directories that you specify. In the example</p>    <pre class="auto">firejail --private=~/junk firefox</pre><p>Firefox would see the contents of the <code>~/junk</code> directory as its home directory while running in the sandbox (<a href="file:///D:/home/projects/scrapbook2022/data/20230408162536/index.html#article_f3" target="_self" class="figure">Figure 3</a>).</p>
+<div class="object-center" id="article_f3">    
+        	                    
+	<a href="https://www.linux-magazine.com/var/linux_magazin/storage/images/issues/2015/173/firejail/figure-3/646703-1-eng-US/Figure-3_reference.png" rel="lightbox[image]" title="Figure 3: Firejail mounts the ~/junk directory with a single file in the sandbox. The shell running in the sandbox only sees the content of the ~/junk directory as its home.">
+	    <img src="Figure-3_large.png" alt="">
+	</a>
+	<span class="attribute-caption" style="max-width: 336px;">
+Figure 3: Firejail mounts the ~/junk directory with a single file in the sandbox. The shell running in the sandbox only sees the content of the ~/junk directory as its home.
+</span>    </div></div>
+        	    <div class="pagenavigator">
+	<p>
+	    			    <span class="pages">
+						<span class="current">1</span>
+				    			<span class="other"><a href="https://www.linux-magazine.com/Issues/2015/173/Firejail/(offset)/3">2</a></span>
+		    				    			<span class="other"><a href="https://www.linux-magazine.com/Issues/2015/173/Firejail/(offset)/6">3</a></span>
+		    					    </span>
+	    		    <span class="next"><a href="https://www.linux-magazine.com/Issues/2015/173/Firejail/(offset)/3"><span class="text">Next&nbsp;»</span></a></span></p></div></div><!--/DOCUMENT_FRAGMENT--></div></div></div></div></div></div>
+
+</div>
+</div>
+</div>
+
+<!--Mount Miracles-->
+<cite class="scrapbook-header">
+	<img src="favicon.ico" width="16" height="16">
+	<a class="" href="https://www.linux-magazine.com/Issues/2015/173/Firejail/(offset)/3">Mount Miracles</a>
+</cite>
+<div id="item20230408162553" style="position: relative;">
+<div xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" xmlns:fb="http://www.facebook.com/2008/fbml" id="item20230408162553html" lang="en-US">
+<div id="item20230408162553body">
+<div id="Body"><div id="Stage"><div class="container" id="mainContent"><div class="row"><div id="ContentLeft" class="span8"><div class="full article"><div class="full-content"><!--DOCUMENT_FRAGMENT--><div class="article_body"><h4>Mount Miracles</h4><p>In all of the configurations I've looked at thus far, the programs in the sandbox see a few, or many, files from your filesystem. But you can change this, too, by mounting a completely different Linux installation in the sandbox. The filesystem can reside on the second partition, or you can install a completely new Linux system in a separate directory. Various tools are available for doing this; on Debian, for example, you could use <code>debootstrap</code> (<a href="file:///D:/home/projects/scrapbook2022/data/20230408162553/index.html#article_f4" target="_self" class="figure">Figures 4</a> and <a href="file:///D:/home/projects/scrapbook2022/data/20230408162553/index.html#article_f5" target="_self" class="figure">5</a>). When you are done, you only need to tell Firejail the name of the subdirectory:</p>    <pre class="auto">firejail --chroot=/debian iceweasel --name=debian</pre>
+<div class="object-center" id="article_f4">    
+        	                    
+	<a href="https://www.linux-magazine.com/var/linux_magazin/storage/images/issues/2015/173/firejail/figure-4/646706-1-eng-US/Figure-4_reference.png" rel="lightbox[image]" title="Figure 4: These two commands quickly create a new Debian installation in the /debian subdirectory, which can then …">
+	    <img src="Figure-4_large.png" alt="">
+	</a>
+	<span class="attribute-caption" style="max-width: 336px;">
+Figure 4: These two commands quickly create a new Debian installation in the /debian subdirectory, which can then …
+</span>    </div><p>This command would mount the <code>/debian</code> directory as the root filesystem in the sandbox and then launch Iceweasel. The browser thus only sees the files and directories below <code>/debian</code>. If you launch the sandbox as a normal user, unlike in <a href="file:///D:/home/projects/scrapbook2022/data/20230408162553/index.html#article_f4" target="_self" class="figure">Figure 4</a>, the program in the sandbox will run under this user ID (UID). The UIDs on your system and the one used in the sandbox need to match in this case. Finally, the <code>--name=</code> option changes the hostname. In this example, Iceweasel would think it was running on a computer by the name of <code>debian</code>.</p>
+<div class="object-center" id="article_f5">    
+        	                    
+	<a href="https://www.linux-magazine.com/var/linux_magazin/storage/images/issues/2015/173/firejail/figure-5/646709-1-eng-US/Figure-5_reference.png" rel="lightbox[image]" title="Figure 5: … be foisted onto a sandbox.">
+	    <img src="Figure-5_large.png" alt="">
+	</a>
+	<span class="attribute-caption" style="max-width: 336px;">
+Figure 5: … be foisted onto a sandbox.
+</span>    </div><a name="eztoc0_0_2" id="eztoc0_0_2"></a><h4>Incapable</h4><p>If you specify the additional <code>--seccomp</code> option, Firejail prevents programs in the sandbox from performing a couple of security-critical actions. Among other things, they are not allowed to load kernel modules, manage swap memory, run programs with root privileges (SUID), or restart the system. If an application tries to call one of these system functions, the kernel immediately terminates it. This totally useful safety net is only available as of the Linux kernel version 3.5, however.</p><p>Additionally, Firejail supports the <code>--caps</code> parameter. Firejail uses it to enable a security filter kernel-side. Among other things, the filter blocks any attempts to restart the system, replace the kernel, load kernel modules, escalate privileges of the processes in the sandbox (using the <code>nice</code> value), or assign system administrator privileges to them. The <code>--seccomp</code> and <code>--caps</code> options thus partly prevent the same actions. In the case of <code>--caps</code>, however, the kernel does not terminate the process but lets it continue running. This security filter also supports older Linux kernels.</p><a name="eztoc0_0_3" id="eztoc0_0_3"></a><h4>On the Network</h4><p>If desired, Firejail can integrate its own TCP/IP network interface into the sandbox. You can then connect to this with an existing network bridge, which is useful for test purposes or to set up a demilitarized zone (DMZ). The following command:</p>    <pre class="auto">firejail --net=br0 --ip=10.10.20.10 firefox</pre><p>tells Firejail to connect the network bridge that already exists on the PC, <code>br0</code>, with the sandbox in which Firefox is running. If you leave out the <code>--ip</code> parameter, Firejail will try to find a matching free IP address itself (as shown in <a href="file:///D:/home/projects/scrapbook2022/data/20230408162553/index.html#article_f6" target="_self" class="figure">Figure 6</a>). Specifying the <code>--net=none</code> parameter completely disconnects the sandbox from the network.</p>
+<div class="object-center" id="article_f6">    
+        	                    
+	<a href="https://www.linux-magazine.com/var/linux_magazin/storage/images/issues/2015/173/firejail/figure-6/646712-1-eng-US/Figure-6_reference.png" rel="lightbox[image]" title="Figure 6: In this example, a network bridge was first set up (br0); then, the sandbox was connected to it. Finally, Firejail assigned itself an IP address that was not previously used.">
+	    <img src="Figure-6_large.png" alt="">
+	</a>
+	<span class="attribute-caption" style="max-width: 336px;">
+Figure 6: In this example, a network bridge was first set up (br0); then, the sandbox was connected to it. Finally, Firejail assigned itself an IP address that was not previously used.
+</span>    </div></div>
+        	    <div class="pagenavigator">
+	<p>
+	    		    <span class="previous"><a href="https://www.linux-magazine.com/Issues/2015/173/Firejail"><span class="text">«&nbsp;Previous</span></a></span>
+			    <span class="pages">
+						    			<span class="other"><a href="https://www.linux-magazine.com/Issues/2015/173/Firejail">1</a></span>
+		    				<span class="current">2</span>
+				    			<span class="other"><a href="https://www.linux-magazine.com/Issues/2015/173/Firejail/(offset)/6">3</a></span>
+		    					    </span>
+	    		    <span class="next"><a href="https://www.linux-magazine.com/Issues/2015/173/Firejail/(offset)/6"><span class="text">Next&nbsp;»</span></a></span></p></div><!--/DOCUMENT_FRAGMENT--></div></div></div></div></div></div></div>
+
+</div>
+</div>
+</div>
+
+<!--Profile-->
+<cite class="scrapbook-header">
+	<img src="favicon.ico" width="16" height="16">
+	<a class="" href="https://www.linux-magazine.com/Issues/2015/173/Firejail/(offset)/6">Profile</a>
+</cite>
+<div id="item20230408162612" style="position: relative;">
+<div xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" xmlns:fb="http://www.facebook.com/2008/fbml" id="item20230408162612html" lang="en-US">
+<div id="item20230408162612body">
+<div id="Body"><div id="Stage"><div class="container" id="mainContent"><div class="row"><div id="ContentLeft" class="span8"><div class="full article"><div class="full-content"><!--DOCUMENT_FRAGMENT--><div class="article_body"><h4>Profile</h4><p>In addition to command-line parameters, you can create your own configuration file for each program. In these security profiles, you can explicitly enable the <code>--seccomp</code> and <code>--caps</code> functions. Additionally, you can define in detail which directories Firejail will not pass through to the sandbox, or where access will be restricted to read-only, and you can define mountpoints to match. Finally, you can define limits for the sandbox, for example, by restricting the number of processes running in it.</p><p>All security profiles reside in the <code>/etc/firejail</code> directory. Firejail 0.9.18 comes with preconfigured profiles for Chromium, Dropbox, Evince, Firefox, Iceweasel, and Midori. The profile file then starts with the program name and has a file extension of <code>.profile</code>. The profile for <code>firefox</code> thus resides in the <code>firefox.profile</code> file.</p><p>After calling <code>firejail firefox</code>, Firejail automatically applies all the settings from the matching security profile. The security profiles themselves have a very simple setup, with a setting in each line. <a href="https://www.linux-magazine.com/Issues/2015/173/Firejail/(offset)/6#article_t1" target="_self" class="table">Table 1</a> shows the most important settings at a glance. For more information on the structure of the security profiles, check out the man page: <code>man firejail-profile</code>.</p><div class="box table">
+<div class="boxname">
+<p>Table 1</p>
+</div>
+<div class="boxtitle">
+<p>Security Profiles</p>
+</div>
+<table class="renderedtable" cellspacing="0" cellpadding="2">
+<tbody><tr>
+<th valign="top">  <p>Statement</p>
+  </th><th valign="top">  <p>Meaning</p>
+  </th>
+</tr>
+
+<tr>
+<td style="vertical-align: top;" valign="top">  <p>blacklist /usr/bin</p>
+  </td>
+<td style="vertical-align: top;" valign="top">  <p>The sandbox hides the /usr/bin directory</p>
+  </td>
+
+</tr>
+
+<tr>
+<td style="vertical-align: top;" valign="top">  <p>read-only /usr/bin</p>
+  </td>
+<td style="vertical-align: top;" valign="top">  <p>The sandbox mounts the /usr/bin directory read-only</p>
+  </td>
+
+</tr>
+
+<tr>
+<td style="vertical-align: top;" valign="top">  <p>tmpfs /etc</p>
+  </td>
+<td style="vertical-align: top;" valign="top">  <p>Mounts a tempfs filesystem via the /etc directory (any files stored are discarded after terminating the sandbox)</p>
+  </td>
+
+</tr>
+
+<tr>
+<td style="vertical-align: top;" valign="top">  <p>bind /root/config/ssh, /etc/ssh</p>
+  </td>
+<td style="vertical-align: top;" valign="top">  <p>Mounts the /root/config/ssh directory as /etc/ssh in the sandbox</p>
+  </td>
+
+</tr>
+
+<tr>
+<td style="vertical-align: top;" valign="top">  <p>private /tmp/muell</p>
+  </td>
+<td style="vertical-align: top;" valign="top">  <p>Mounts the directory /tmp/muell as the home directory in the sandbox</p>
+  </td>
+
+</tr>
+
+<tr>
+<td style="vertical-align: top;" valign="top">  <p>caps</p>
+  </td>
+<td style="vertical-align: top;" valign="top">  <p>Enables a kernel-side security filter (see text)</p>
+  </td>
+
+</tr>
+
+<tr>
+<td style="vertical-align: top;" valign="top">  <p>seccomp</p>
+  </td>
+<td style="vertical-align: top;" valign="top">  <p>Blocks certain security-critical actions (see text)</p>
+  </td>
+
+</tr>
+
+<tr>
+<td style="vertical-align: top;" valign="top">  <p>rlimit-fsize 1024</p>
+  </td>
+<td style="vertical-align: top;" valign="top">  <p>A program in the sandbox can create files with a maximum size of 1024 bytes</p>
+  </td>
+
+</tr>
+
+<tr>
+<td style="vertical-align: top;" valign="top">  <p>rlimit-nofile 500</p>
+  </td>
+<td style="vertical-align: top;" valign="top">  <p>A program in the sandbox can open a maximum of 500 files at the same time</p>
+  </td>
+
+</tr>
+
+<tr>
+<td style="vertical-align: top;" valign="top">  <p>rlimit-nproc 1000</p>
+  </td>
+<td style="vertical-align: top;" valign="top">  <p>A maximum of 1,000 processes can be created in the sandbox</p>
+  </td>
+
+</tr>
+
+</tbody></table>
+
+<div class="clear"></div>
+</div><a name="eztoc0_0_2" id="eztoc0_0_2"></a><h4>Insights</h4><p>The <code>firejail --list</code> command lists all jails currently running and programs running in them. Using <code>firejail --tree</code> lets you quickly discover which program started which other processes and identify the user accounts they are running on (<a href="file:///D:/home/projects/scrapbook2022/data/20230408162612/index.html#article_f7" target="_self" class="figure">Figure 7</a>). The <code>--top</code> parameter delivers a similar view to the popular <code>top</code> command.</p>
+<div class="object-center" id="article_f7">    
+        	                    
+	<a href="https://www.linux-magazine.com/var/linux_magazin/storage/images/issues/2015/173/firejail/figure-7/646715-1-eng-US/Figure-7_reference.png" rel="lightbox[image]" title="Figure 7: Using firejail --tree tells the tool to display the processes from the sandboxes in a tree. In the sandbox at the bottom, a shell was opened first, and Firefox was called in it.">
+	    <img src="Figure-7_large.png" alt="">
+	</a>
+	<span class="attribute-caption" style="max-width: 336px;">
+Figure 7: Using firejail --tree tells the tool to display the processes from the sandboxes in a tree. In the sandbox at the bottom, a shell was opened first, and Firefox was called in it.
+</span>    </div><p>You can retroactively change into the sandbox. To do so, you first need to determine the process ID (PID) of the sandbox by typing <code>firejail --list</code>. In the list of all the sandboxes that is then shown, you will be able to identify the correct one by looking at the program name. At the start of the matching line, you will see the PID, such as <code>2652</code>. Then, simply append this to the <code>--join=</code> parameter:</p>    <pre class="auto">firejail --join=2652</pre><p>Firejail then opens a shell running in the sandbox and subject to that sandbox's restrictions (<a href="file:///D:/home/projects/scrapbook2022/data/20230408162612/index.html#article_f8" target="_self" class="figure">Figure 8</a>). To use the join function, however, you need a Linux kernel version 3.8 or newer.</p>
+<div class="object-center" id="article_f8">    
+        	                    
+	<a href="https://www.linux-magazine.com/var/linux_magazin/storage/images/issues/2015/173/firejail/figure-8/646718-1-eng-US/Figure-8_reference.png" rel="lightbox[image]" title="Figure 8: Firefox running in a sandbox in which firejail --join=2652 opens a shell.">
+	    <img src="Figure-8_large.png" alt="">
+	</a>
+	<span class="attribute-caption" style="max-width: 336px;">
+Figure 8: Firefox running in a sandbox in which firejail --join=2652 opens a shell.
+</span>    </div><a name="eztoc0_0_3" id="eztoc0_0_3"></a><h4>Conclusions</h4><p>Firejail, which is licensed under the GPL v2, is easy to use and enhances security. Applications don't need any special preparation for life in the sandbox; you can even put Dropbox in jail <a href="https://www.linux-magazine.com/Issues/2015/173/Firejail/(offset)/6#article_i4" target="_self" class="info">[4]</a>. That said, a sandbox is not a panacea. A web server remotely controlled by hackers might not be able to destroy the system on which it is running, but it still would be able to exploit the system, using it to attack other Internet sites. Firejail is thus simply another brick in the wall for hardening your Linux system; however, it is one that you can set up quickly and pretty effectively.</p><p>For more information on Firejail, visit the Firejail homepage <a href="https://www.linux-magazine.com/Issues/2015/173/Firejail/(offset)/6#article_i1" target="_self" class="info">[1]</a>. In addition to a small collection of links with various tutorials, you will also find a how-to that explains how to use Firejail as your login shell.</p><div class="box infobox">
+<div class="boxtitle">
+<p>Infos</p>
+</div>
+<ol>
+
+<li>Firejail: <a href="https://l3net.wordpress.com/projects/firejail/" target="_blank">https://l3net.wordpress.com/projects/firejail/</a></li>
+
+<li>Firejail in the SlackBuilds directory: <a href="http://slackbuilds.org/repository/14.1/system/firejail/?search=firejail" target="_blank">http://slackbuilds.org/repository/14.1/system/firejail/?search=firejail</a></li>
+
+<li>Firejail documentation: <a href="https://l3net.wordpress.com/projects/firejail/firejail-usage/" target="_blank">https://l3net.wordpress.com/projects/firejail/firejail-usage/</a></li>
+
+<li>Dropbox in a sandbox: <a href="https://l3net.wordpress.com/2014/11/18/running-dropbox-in-firejail-sandbox/" target="_blank">https://l3net.wordpress.com/2014/11/18/running-dropbox-in-firejail-sandbox/</a></li>
+
+<li>Wikipedia entry on OverlayFS: <a href="http://en.wikipedia.org/wiki/OverlayFS" target="_blank">http://en.wikipedia.org/wiki/OverlayFS</a></li>
+
+<li>Information on Linux Capabilities: <a href="https://www.kernel.org/pub/linux/libs/security/linux-privs/kernel-2.2/capfaq-0.2.txt" target="_blank">https://www.kernel.org/pub/linux/libs/security/linux-privs/kernel-2.2/capfaq-0.2.txt</a></li>
+
+</ol>
+
+<div class="clear"></div>
+</div></div>
+        	    <div class="pagenavigator">
+	<p>
+	    		    <span class="previous"><a href="https://www.linux-magazine.com/Issues/2015/173/Firejail/(offset)/3"><span class="text">«&nbsp;Previous</span></a></span>
+			    <span class="pages">
+						    			<span class="other"><a href="https://www.linux-magazine.com/Issues/2015/173/Firejail">1</a></span>
+		    				    			<span class="other"><a href="https://www.linux-magazine.com/Issues/2015/173/Firejail/(offset)/3">2</a></span>
+		    				<span class="current">3</span></span></p></div><!--/DOCUMENT_FRAGMENT--></div></div></div></div></div></div></div>
+
+</div>
+</div>
+</div>
+
+
+
+</body>
+</html>

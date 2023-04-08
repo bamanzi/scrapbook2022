@@ -1,13 +1,10 @@
 id	20210717085004
 create	20210717085004
-modify	20220312210220
+modify	20230405211234
 type	
 title	List of Comics - Battlestar Wiki
 chars	UTF-8
-icon	favicon.ico.bin
+icon	
 source	https://en.battlestarwiki.org/List_of_Comics#Battlestar_Galactica:_Starbuck
 comment	
 lock	
-folder	misc	battlestar galactica
-container	
-exported	2022-03-21T11:55:03.534Z

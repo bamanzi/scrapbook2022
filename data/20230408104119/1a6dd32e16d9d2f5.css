@@ -1,0 +1,60 @@
+/* Code tidied up by ScrapBook */
+.sns-bar { padding-top: 1em; text-align: right; }
+.action-btn, .action-react .react-btn { display: inline-block; vertical-align: middle; height: 12px; line-height: 1; border-radius: 2px; padding: 6px 9px 4px 24px; }
+.action-react { display: inline-block; margin-right: 10px; }
+.action-react .react-btn { background-position: 5px center; background-size: 16px 16px; background-repeat: no-repeat; }
+.action-react .react-like { color: rgb(202, 100, 69); background-color: rgb(251, 233, 217); background-image: url("ic_action_like@2x.png"); }
+.action-react .react-like:link, .action-react .react-like:visited { border: 1px solid rgb(250, 213, 181); }
+.action-react .react-like:hover, .action-react .react-like:active { border: 1px solid rgb(248, 199, 157); }
+.dialog_join_group { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 10; padding: 45px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; border-radius: 6px; box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.5); text-align: center; }
+.join_group_close { font-size: 24px; line-height: 1; padding: 0px 5px; color: rgb(204, 204, 204); position: absolute; right: 10px; top: 10px; cursor: pointer; }
+.join_group_desc { font-size: 13px; color: rgb(155, 155, 155); padding: 11px 0px 20px; }
+.join_group_comfirm, .join_group_cancel { display: inline-block; font-size: 13px; width: 70px; height: 30px; margin: 0px 10px; line-height: 30px; border-radius: 3px; border-width: 1px; border-style: solid; box-sizing: border-box; }
+a.join_group_cancel { border-color: rgb(221, 221, 221); background: rgb(255, 255, 255) none repeat scroll 0% 0%; color: rgb(102, 102, 102); }
+.tabs { font-size: 0px; letter-spacing: -0.31em; word-spacing: -0.43em; }
+.tabs a { display: inline-block; padding: 1px 8px; margin-right: 5px; }
+.tabs a:link, .tabs a:visited, .tabs a:hover, .tabs a:active { font-size: 13px; line-height: 1.2; letter-spacing: normal; word-spacing: normal; }
+.tabs a:hover, .tabs a:active { border-radius: 3px; }
+.tabs a.on:link, .tabs a.on:visited, .tabs a.on:hover, .tabs a.on:active { color: rgb(255, 255, 255); background: rgb(131, 191, 115) none repeat scroll 0% 0%; border-radius: 3px; }
+.tabs { margin: 40px 0px 10px; padding-bottom: 8px; border-bottom: 1px solid rgb(230, 230, 230); }
+#g-side-info { margin-bottom: 15px; border: 1px solid rgb(238, 238, 238); }
+#g-side-info .bd { padding: 10px; overflow: hidden; }
+.group-item .pic { float: left; margin-right: 12px; width: 48px; }
+.group-item .pic img { width: 100%; }
+.group-item .info { overflow: hidden; margin-right: 24px; }
+.group-item .title { font-size: 15px; }
+#g-side-info .ft { background-color: rgb(248, 248, 248); font-size: 14px; padding: 6px 0px; }
+#g-side-info .ft { background-color: rgb(237, 246, 237); padding: 10px 0px; }
+#g-side-info .ft-members { margin-bottom: 10px; line-height: 1.5; color: rgb(102, 102, 102); }
+#g-side-info .ft-members i { color: rgb(51, 119, 0); }
+.bn-join-group-disable, .bn-join, .lnk-selection { padding: 0px 10px; display: inline-block; line-height: 1.8; text-align: center; border-radius: 3px; }
+.bn-join-group-disable, .bn-join:link, .bn-join:visited, .bn-join:hover, .bn-join:active, .lnk-selection:link, .lnk-selection:visited, .lnk-selection:hover, .lnk-selection:active { background-color: rgb(63, 161, 86); color: rgb(255, 255, 255); }
+.lnk-selection:active, .lnk-selection:hover { background-color: rgb(68, 175, 93); }
+#g-side-info .ft .member-status { padding-left: 70px; }
+.topic-list ul { margin-top: -5px; }
+.topic-list li { padding: 5px 0px; margin: 0px; border-bottom: 1px dashed rgb(221, 221, 221); line-height: 1.4; }
+.back-to-top { display: none; position: fixed; width: 100px; height: 40px; overflow: hidden; }
+.back-to-top a { position: absolute; left: 0px; top: 40px; }
+[data-icon]::before, .item-3rd .item-weibo::before, .groupicon-weibo::before, .item-3rd .item-qq::before, .groupicon-qq::before { font-family: "groupicons"; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; line-height: 1; }
+.item-3rd .item-qq::before, .groupicon-qq::before { content: ""; }
+.item-3rd .item-weibo::before, .groupicon-weibo::before { content: ""; }
+#g-popup-reg { position: fixed; z-index: 100; left: 50%; top: 20%; margin-left: -170px; overflow: hidden; box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2); }
+#g-popup-reg .bd { border: 1px solid rgb(238, 238, 238); background: rgb(255, 255, 255) none repeat scroll 0% 0%; }
+#g-popup-reg iframe { width: 340px; height: 448px; }
+#g-popup-reg .lnk-close { position: absolute; left: 10px; top: 10px; }
+#g-popup-reg .lnk-close:link, #g-popup-reg .lnk-close:visited, #g-popup-reg .lnk-close:hover, #g-popup-reg .lnk-close:active { padding: 0px 2px; line-height: 1; font-size: 18px; color: rgb(170, 170, 170); }
+#g-popup-reg .lnk-close:hover { color: rgb(255, 255, 255); }
+#landing-bar { position: fixed; bottom: 0px; height: 60px; width: 100%; border-top: 1px solid rgb(222, 226, 222); background: rgb(236, 246, 237) none repeat scroll 0% 0%; }
+#landing-bar .bd { position: relative; width: 950px; padding-top: 15px; margin: 0px auto; }
+#landing-bar p { float: left; margin: 0px 60px 15px 80px; font-size: 18px; color: rgb(0, 119, 34); }
+#landing-bar .operation { float: left; margin-right: 10px; }
+#landing-bar .operation a { display: inline-block; border: 1px solid rgb(83, 134, 67); padding: 3px 16px; margin-right: 12px; font-size: 14px; background: rgb(63, 161, 86) none repeat scroll 0% 0%; color: rgb(255, 255, 255); border-radius: 2px; }
+#landing-bar .operation .a_show_login { background: rgb(236, 246, 237) none repeat scroll 0% 0%; color: rgb(63, 161, 86); }
+.item-3rd { font-size: 13px; line-height: 30px; color: rgb(153, 153, 153); }
+.item-3rd a { border-radius: 50%; padding: 5px 6px 4px; margin-right: 5px; color: rgb(255, 255, 255); font-size: 15px; }
+.item-3rd .item-qq { background: rgb(0, 151, 226) none repeat scroll 0% 0%; }
+.item-3rd .item-qq img { display: none; }
+.item-3rd .item-weibo { background: rgb(243, 41, 53) none repeat scroll 0% 0%; }
+.item-3rd .item-weibo img { display: none; }
+#landing-bar .lnk-close { position: absolute; top: 0px; right: 0px; padding: 0px 2px; font-size: 40px; line-height: 1.4; color: rgb(170, 170, 170); font-weight: lighter; }
+#landing-bar .lnk-close:hover { background: transparent none repeat scroll 0% 0%; }

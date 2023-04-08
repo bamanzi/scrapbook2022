@@ -1,0 +1,37 @@
+/* Code tidied up by ScrapBook */
+body { margin: 0px; }
+#db-global-nav { font: 12px/1.62 Helvetica,Arial,sans-serif; }
+#db-global-nav ul { margin: 0px; padding: 0px; }
+#db-global-nav a { cursor: pointer; text-decoration: none; }
+#db-global-nav .more-items { display: none; position: absolute; left: 0px; }
+#db-global-nav { height: 28px; color: rgb(213, 213, 213); background-color: rgb(84, 86, 82); min-width: 950px; }
+#db-global-nav a:link, #db-global-nav a:visited, #db-global-nav a:hover, #db-global-nav a:active { color: rgb(213, 213, 213); }
+#db-global-nav a:hover, #db-global-nav a:active { color: rgb(255, 255, 255); background-color: transparent; }
+#db-global-nav .global-nav-items { font-size: 0px; }
+#db-global-nav .global-nav-items li { display: inline-block; line-height: 28px; font-size: 12px; vertical-align: baseline; }
+#db-global-nav .global-nav-items a { display: inline-block; padding: 0px 12px; height: 28px; }
+#db-global-nav .top-nav-info { float: right; margin: 0px 12px 0px 0px; line-height: 28px; }
+#db-global-nav .top-nav-info a { display: inline-block; margin: 0px; padding: 0px 12px; height: 28px; }
+#db-global-nav .top-nav-doubanapp { position: relative; float: right; margin-right: 5px; line-height: 28px; }
+#db-global-nav .top-nav-doubanapp .lnk-doubanapp { display: inline-block; padding: 0px 8px; height: 28px; }
+#db-global-nav .top-nav-doubanapp .more-items { padding: 10px 20px 30px; left: -76px; width: 211px; border-top: medium none; color: rgb(17, 17, 17); font-size: 15px; line-height: 1.62; font-weight: bold; text-align: center; text-rendering: optimizelegibility; }
+#db-global-nav .top-nav-doubanapp .more-items .appintro-title { padding-top: 170px; margin-top: 0px; margin-bottom: 0px; font-size: 24px; font-weight: 400; background: transparent url("nav_doubanapp_6.png") no-repeat scroll center center; }
+@media not all, (min-resolution: 2dppx), (min-resolution: 192dpi) {
+  #db-global-nav .top-nav-doubanapp .more-items .appintro-title { background-image: url("nav_doubanapp_6@2x.png"); background-size: 100px auto; }
+}
+#db-global-nav .top-nav-doubanapp .more-items .qrcode { padding-top: 160px; margin-top: 30px; font-size: 0px; background: transparent url("nav_doubanapp_6_qrcode.png") no-repeat scroll center center; }
+@media not all, (min-resolution: 2dppx), (min-resolution: 192dpi) {
+  #db-global-nav .top-nav-doubanapp .more-items .qrcode { background-image: url("nav_doubanapp_6_qrcode@2x.png"); background-size: 160px 160px; }
+}
+#db-global-nav .top-nav-doubanapp .download { margin-top: 10px; }
+#db-global-nav .top-nav-doubanapp .download a { display: inline; font-weight: normal; font-size: 12px; background: transparent none repeat scroll 0% 0%; padding: 0px; }
+#db-global-nav .top-nav-doubanapp .download a:link, #db-global-nav .top-nav-doubanapp .download a:visited { color: rgb(51, 119, 170); }
+#db-global-nav .top-nav-doubanapp .download a:hover { background: transparent none repeat scroll 0% 0%; }
+#db-global-nav .top-nav-doubanapp .download .download-android { margin-top: 8px; background-position: 0px -130px; }
+#db-global-nav .top-nav-doubanapp .download .download-android::before { content: ""; }
+#db-global-nav #doubanapp-tip { display: none; position: absolute; top: 28px; border: 1px solid; padding: 0px 30px 0px 10px; color: rgb(19, 188, 57); background: rgb(255, 255, 255) none repeat scroll 0% 0%; z-index: 10; white-space: nowrap; }
+#db-global-nav #doubanapp-tip::after { content: ""; position: absolute; top: -5px; left: 35px; height: 7px; width: 7px; border-style: solid; border-color: rgb(19, 188, 57); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; border-width: 1px 1px 0px 0px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; transform: rotate(-45deg); }
+#db-global-nav #doubanapp-tip .tip-link:link, #db-global-nav #doubanapp-tip .tip-link:visited, #db-global-nav #doubanapp-tip .tip-link:hover, #db-global-nav #doubanapp-tip .tip-link:active { color: rgb(19, 188, 57); background: rgb(255, 255, 255) none repeat scroll 0% 0%; }
+#db-global-nav #doubanapp-tip .tip-close { position: absolute; right: 6px; width: 15px; height: 15px; line-height: 26px; text-align: center; }
+#db-global-nav #doubanapp-tip .tip-close:hover { color: rgb(153, 153, 153); }
+#db-global-nav {  }

@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Security-Policy" content="block-all-mixed-content">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="amp-ad-enable-refresh" content="doubleclick=30">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+<link rel="dns-prefetch" href="https://connect.facebook.net/">
+<link rel="preload" href="https://www.howtogeek.com/public/htgfonts/htgfonts.css" as="style">
+<style type="text/css">
+/* Code tidied up by ScrapBook */
+html { font-family: sans-serif; }
+body { margin: 0px; }
+article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary { display: block; }
+a { background-color: transparent; }
+a:active, a:hover { outline: 0px none; }
+b, strong { font-weight: bold; }
+h1 { font-size: 2em; margin: 0.67em 0px; }
+small { font-size: 80%; }
+img { border: 0px none; }
+svg:not(:root) { overflow: hidden; }
+hr { box-sizing: content-box; height: 0px; }
+button, input, optgroup, select, textarea { color: inherit; font: inherit; margin: 0px; }
+button { overflow: visible; }
+button, select { text-transform: none; }
+button, html input[type="button"], input[type="reset"], input[type="submit"] { -moz-appearance: button; cursor: pointer; }
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0px none; padding: 0px; }
+input { line-height: normal; }
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; padding: 0px; }
+body, button, input, select, textarea { color: rgb(64, 64, 64); font-family: sans-serif; font-size: 1rem; line-height: 1.5; }
+h1, h2, h3, h4, h5, h6 { clear: both; }
+p { margin-bottom: 1.5em; }
+dfn, cite, em, i { font-style: italic; }
+blockquote { margin: 0px 1.5em; }
+html { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: inherit; }
+body { background: rgb(255, 255, 255) none repeat scroll 0% 0%; }
+blockquote::before, blockquote::after, q::before, q::after { content: ""; }
+blockquote, q { quotes: "" ""; }
+hr { background-color: rgb(204, 204, 204); border: 0px none; height: 1px; margin-bottom: 1.5em; }
+ul, ol { margin: 0px 0px 1.5em 3em; }
+ul { list-style: outside none disc; }
+img { height: auto; max-width: 100%; }
+button, input[type="button"], input[type="reset"], input[type="submit"] { border-width: 1px; border-style: solid; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; border-color: rgb(204, 204, 204) rgb(204, 204, 204) rgb(187, 187, 187); border-radius: 3px; background: rgb(230, 230, 230) none repeat scroll 0% 0%; color: rgba(0, 0, 0, 0.8); font-size: 0.75rem; line-height: 1; padding: 0.6em 1em 0.4em; }
+button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover { border-color: rgb(204, 204, 204) rgb(187, 187, 187) rgb(170, 170, 170); }
+button:focus, input[type="button"]:focus, input[type="reset"]:focus, input[type="submit"]:focus, button:active, input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:active { border-color: rgb(170, 170, 170) rgb(187, 187, 187) rgb(187, 187, 187); }
+input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type="number"], input[type="tel"], input[type="range"], input[type="date"], input[type="month"], input[type="week"], input[type="time"], input[type="datetime"], input[type="datetime-local"], input[type="color"], textarea { color: rgb(102, 102, 102); border: 1px solid rgb(204, 204, 204); border-radius: 3px; padding: 3px; }
+input[type="text"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="number"]:focus, input[type="tel"]:focus, input[type="range"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="time"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="color"]:focus, textarea:focus { color: rgb(17, 17, 17); }
+a { color: royalblue; }
+a:hover, a:focus, a:active { color: midnightblue; }
+a:focus { outline: thin dotted; }
+a:hover, a:active { outline: 0px none; }
+.main-navigation ul { list-style: outside none none; margin: 0px; padding-left: 0px; }
+.main-navigation li { float: left; position: relative; }
+.main-navigation a { display: block; text-decoration: none; }
+.main-navigation li:hover > a, .main-navigation li.focus > a {  }
+@media screen and (min-width: 37.5em) {
+  .main-navigation ul { display: block; }
+}
+.screen-reader-text { clip: rect(1px, 1px, 1px, 1px); position: absolute ! important; height: 1px; width: 1px; overflow: hidden; overflow-wrap: normal ! important; }
+.screen-reader-text:focus { background-color: rgb(241, 241, 241); border-radius: 3px; box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.6); clip: auto ! important; color: rgb(33, 117, 155); display: block; font-size: 0.875rem; font-weight: bold; height: auto; left: 5px; line-height: normal; padding: 15px 23px 14px; text-decoration: none; top: 5px; width: auto; z-index: 100000; }
+.clear::before, .clear::after, .entry-content::before, .entry-content::after, .comment-content::before, .comment-content::after, .site-header::before, .site-header::after, .site-content::before, .site-content::after, .site-footer::before, .site-footer::after { content: ""; display: table; table-layout: fixed; }
+.clear::after, .entry-content::after, .comment-content::after, .site-header::after, .site-content::after, .site-footer::after { clear: both; }
+.hentry { margin: 0px; }
+.page-content, .entry-content, .entry-summary { margin: 1.5em 0px 0px; }
+embed, iframe, object { max-width: 100%; }
+body { text-align: left; overflow-x: hidden; }
+@media screen and (max-width: 768px) {
+  .single-post .adslot970 #purch_Y_L_1_1 { z-index: 100001; position: fixed; bottom: 0px ! important; display: block; width: 100%; left: 0px; height: 55px; text-align: center; background-color: white ! important; box-shadow: 0px -1px 1px 0px rgba(0, 0, 0, 0.2); padding-top: 5px; }
+  .entry-content img.size-full { width: 100%; height: auto; }
+}
+a { color: rgb(29, 85, 169); text-decoration: none; }
+a:hover { color: rgb(224, 125, 2); }
+div.message span a { text-decoration: underline; }
+.sptagicon-lifesavvy { color: rgb(113, 17, 17) ! important; }
+body #primary .entry-content ul#nextuplist { list-style-type: none; margin-left: 0px; padding-left: 0px; }
+body #primary .entry-content ul#nextuplist li a { text-decoration: none; color: rgb(29, 85, 169); }
+.entry-content a { color: rgb(29, 85, 169); text-decoration: underline; }
+.entry-content a:hover { color: rgb(224, 125, 2); }
+.entry-content ol, .entry-content ul { margin-left: 5px; }
+.entry-content blockquote { background-color: rgb(249, 249, 249); border: 1px solid rgb(182, 201, 220); color: rgb(64, 64, 64); clear: both; overflow-x: auto; margin: 0px 10px 10px; max-width: 700px; padding: 10px; text-align: left; }
+.full-screen-menu { background-color: rgba(23, 34, 50, 0.85); display: none; height: 100vh; padding-top: 45px; width: 100vw; z-index: 100000010; position: fixed; top: 0px; left: 0px; }
+.full-screen-menu .htg-close { color: rgb(51, 51, 51); cursor: pointer; position: absolute; font-size: 25px; right: 20px; top: 20px; }
+@media screen and (max-width: 768px) {
+  .full-screen-menu .htg-close { right: 30px; top: -30px; }
+}
+.full-screen-menu .full-screen-menu-inner { background-color: rgb(255, 255, 255); padding-bottom: 10px; padding-top: 20px; width: 100%; position: relative; }
+.full-screen-menu .inner { display: block; margin: 0px auto; max-width: 1080px; padding-left: 20px; padding-right: 20px; position: relative; }
+@media screen and (max-width: 768px) {
+  .full-screen-menu.search-menu .searchform input[type="submit"] { right: 0%; }
+}
+@media screen and (min-width: 768px) {
+  .full-screen-menu.search-menu nav { display: none; }
+}
+.full-screen-menu .searchform { position: relative; }
+.full-screen-menu .searchform input[type="text"] { border-left: 0px none; border-top: 0px none; border-right: 0px none; width: 80%; font-size: 22px; }
+.full-screen-menu .searchform input[type="submit"] { background: transparent none repeat scroll 0% 0%; border: 1px solid black; border-radius: 40px; display: inline-block; font-size: 14px; height: 40px; margin: 0px auto; padding: 0px; width: 40px; position: absolute; top: 15px; right: 15%; }
+.full-screen-menu form { height: 70px; line-height: 60px; }
+.full-screen-menu form input { height: 40px; }
+.full-screen-menu form input[type="text"] { vertical-align: bottom; width: 80%; }
+.full-screen-menu form input[type="submit"] { background: rgb(0, 0, 0) none repeat scroll 0% 0%; border: medium none; border-radius: 5px; color: rgb(0, 0, 0); display: block; font-size: 24px; height: auto; margin: 25px auto; padding: 20px; text-transform: uppercase; vertical-align: bottom; width: 40%; }
+.full-screen-menu nav { display: inline-block; width: 100%; }
+@media screen and (max-width: 767px) {
+  .full-screen-menu nav { margin-top: 40px; }
+}
+@media only screen and (min-width: 769px) {
+}
+.full-screen-menu nav ul { float: left; line-height: 85px; width: 25%; z-index: 999999; }
+.full-screen-menu nav ul:nth-child(3) { border-left: 1px solid rgb(204, 204, 204); }
+.full-screen-menu nav ul a, .full-screen-menu nav ul li { color: black; font-family: "Oswald",sans-serif; font-size: 20px; font-weight: normal; max-height: 50px; text-transform: uppercase; }
+@media only screen and (max-width: 1070px) and (min-width: 768px) {
+  .full-screen-menu nav ul a, .full-screen-menu nav ul li { font-size: 16px; }
+}
+.full-screen-menu nav ul a:hover { color: rgb(224, 125, 2); }
+.full-screen-menu nav ul li { display: block; height: 100%; line-height: 24px; margin: 5px 2% 5px 0px; padding-right: 20px; width: 100%; }
+@media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 860px) {
+  .full-screen-menu nav ul { height: auto; line-height: 50px; margin-bottom: 40px; width: 50%; }
+  .full-screen-menu nav ul li { width: 100%; }
+}
+@media screen and (min-width: 768px) {
+  .full-screen-menu.category-menu .searchform { display: none; }
+}
+@media screen and (max-width: 768px) {
+  .full-screen-menu.category-menu input[type="text"] { width: 100%; }
+  .full-screen-menu.category-menu input[type="submit"] { right: 0%; }
+}
+.full-screen-menu.subscribe-menu { color: white; height: 100vh; }
+.full-screen-menu.subscribe-menu .htg-close { top: 20px; right: 20px; }
+@media screen and (max-width: 768px) {
+  .full-screen-menu.subscribe-menu .htg-close { top: 0px; right: 40px; }
+}
+.full-screen-menu.subscribe-menu .subscribe-wrap { background-color: white; height: 20vh; position: relative; min-height: 200px; }
+@media screen and (max-width: 767px) {
+  .full-screen-menu.subscribe-menu .subscribe-wrap { min-height: 300px; padding-top: 40px; }
+}
+.full-screen-menu.subscribe-menu .inner { position: absolute; left: 50%; top: 50%; transform: translateY(-50%) translateX(-50%); max-width: 1200px; width: 100%; }
+.full-screen-menu.subscribe-menu .left { float: left; width: 60%; }
+@media screen and (max-width: 767px) {
+  .full-screen-menu.subscribe-menu .left { float: none; width: 100%; }
+}
+.full-screen-menu.subscribe-menu .right { float: right; width: 40%; }
+@media screen and (max-width: 767px) {
+  .full-screen-menu.subscribe-menu .right { float: none; width: 100%; }
+}
+.full-screen-menu.subscribe-menu input[type="text"] { font-size: 16px; height: 40px; margin-top: 10px; padding-left: 10px; width: 70%; }
+.full-screen-menu.subscribe-menu input[type="submit"] { color: white; display: inline-block; font-size: 16px; height: 40px; line-height: 40px; margin: 0px; width: 25%; padding-top: 0px; padding-bottom: 0px; }
+@media screen and (max-width: 768px) {
+}
+.full-screen-menu.subscribe-menu .emailsubheader { color: rgb(51, 51, 51); font-size: 26px; font-family: oswald,sans-serif; margin-bottom: 0px; margin-top: 0px; max-width: 600px; text-transform: uppercase; }
+.full-screen-menu.subscribe-menu p { color: black; font-size: 17px; margin-bottom: 0px; margin-top: 0px; max-width: 600px; }
+.full-screen-menu.subscribe-menu img { display: inline-block; float: left; max-width: 100px; margin-right: 30px; }
+@media screen and (max-width: 400px) {
+}
+@media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 768px) {
+}
+#masthead { display: block; margin-left: auto; margin-right: auto; background-color: rgb(0, 0, 0); height: 45px; min-height: 45px; position: fixed; top: 0px ! important; transition: top 0.2s ease-in-out 0s; width: 100%; z-index: 100000; }
+#masthead .search { cursor: pointer; float: right; margin-top: 15px; margin-right: 15px; margin-left: 0px; }
+@media screen and (max-width: 768px) {
+  #masthead .search { margin-top: 15px; margin-left: 0px; display: none; }
+}
+#masthead .main-logo { margin-top: 3px; max-width: 220px; height: 26px; }
+#masthead ul#topmenu { color: rgb(255, 255, 255); float: right; height: 20px; position: relative; top: 6px; margin-left: 0px; padding-left: 0px; }
+#masthead ul#topmenu a { color: white; }
+#masthead ul#topmenu a:hover { color: rgb(224, 125, 2); }
+#masthead ul#topmenu li { display: inline-block; margin-right: 13px; font-family: oswald,sans-serif; text-transform: uppercase; font-weight: 400; font-size: 15px; padding: 5px; }
+@media screen and (max-width: 1095px) {
+  #masthead ul#topmenu { display: none; }
+}
+#masthead .facebook, #masthead .twitter, #masthead .rss, #masthead .email, #masthead .facebook-mobile, #masthead .twitter-mobile, #masthead .linkedin, #masthead .instagram { cursor: pointer; display: inline-block; float: right; margin-top: 15px; margin-right: 11px; }
+@media screen and (max-width: 768px) {
+  #masthead .facebook, #masthead .twitter, #masthead .rss, #masthead .email, #masthead .facebook-mobile, #masthead .twitter-mobile, #masthead .linkedin, #masthead .instagram { display: none; }
+}
+#masthead .facebook { margin-top: 14px; }
+#masthead .twitter { margin-top: 14px; }
+#masthead .twitter svg { height: 19px; }
+#masthead .facebook-mobile, #masthead .twitter-mobile { display: none; }
+@media screen and (max-width: 768px) {
+  #masthead .facebook-mobile, #masthead .twitter-mobile { display: none; }
+}
+#masthead svg { height: 17px; width: 25px; }
+#masthead .subscribe-button { float: right; color: white; cursor: pointer; position: relative; top: 0px; font-family: Oswald,sans-serif; font-weight: bold; font-size: 15px; margin-right: 10px; margin-left: 9px; background-color: rgb(192, 77, 2); height: 45px; padding: 0px 20px; line-height: 45px; text-transform: uppercase; }
+@media screen and (max-width: 768px) {
+  #masthead .subscribe-button { display: none; }
+}
+#masthead .inner { display: block; margin: 0px auto; max-width: 1080px; padding-left: 20px; padding-right: 60px; position: relative; }
+#masthead .site-branding { display: inline-block; float: left; margin-top: 5px; }
+@media screen and (min-width: 768px) {
+}
+#page { padding-top: 65px; }
+#page .entry-header { display: block; margin: 0px auto -10px; max-width: 1080px; padding: 10px 20px; background-color: white; }
+#page .entry-header .entry-title { margin-top: 5px; margin-bottom: 10px; }
+#page .entry-header .entry-title a { color: rgb(51, 51, 51); }
+@media screen and (max-width: 768px) {
+  #page .entry-header .entry-title a { font-size: 30px; line-height: 38px; display: block; }
+}
+@media screen and (min-width: 768px) {
+  #page .entry-header .entry-title a { font-family: "Roboto",sans-serif; line-height: 48px; font-size: 40px; color: rgb(51, 51, 51); }
+  #page .entry-header .entry-title a:hover { color: rgb(224, 125, 2); }
+}
+#page .entry-header .entry-meta { font-size: 12px; margin-top: 0px; text-transform: uppercase; color: rgb(102, 102, 102); }
+#page .entry-header .entry-meta .post-author { font-weight: bold; color: rgb(29, 85, 169); }
+#page .entry-header .entry-meta a { color: rgb(29, 85, 169); }
+#page .entry-header .entry-meta a:hover { color: rgb(224, 125, 2); }
+#page .entry-header .entry-meta .author-twitter a { color: rgb(29, 85, 169); text-transform: lowercase; }
+#page .entry-header .entry-meta .author-twitter a:hover { color: rgb(224, 125, 2); }
+.site-footer { color: white; padding-top: 40px; padding-bottom: 20px; position: absolute; width: 100vw; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; background-color: rgb(0, 0, 0); }
+.site-footer .copyright { clear: both; display: block; margin: 20px auto; font-size: 11px; text-align: center; }
+@media screen and (max-width: 768px) {
+  .site-footer .copyright { text-align: center; width: 100%; }
+}
+.site-footer .logo img { max-width: 200px; }
+.site-footer a { color: white; display: block; margin-bottom: 10px; text-decoration: none; }
+.site-footer a:hover { color: rgb(230, 230, 230); }
+.site-footer a:visited { color: white; }
+.site-footer div.logo, .site-footer .pages, .site-footer .footer-nav { display: inline-block; float: left; width: 33%; }
+@media screen and (max-width: 768px) {
+  .site-footer div.logo, .site-footer .pages, .site-footer .footer-nav { display: block; text-align: center; width: 100%; }
+}
+.site-footer ul { list-style: outside none none; }
+@media screen and (max-width: 768px) {
+  .site-footer ul { border-top: 1px solid rgb(153, 153, 153); margin: 20px 20px 0px; padding-left: 0px; padding-top: 20px; }
+}
+.site-footer ul a { margin-bottom: 0px; }
+.site-footer .social a { color: white; }
+.site-footer .social p { margin-bottom: 10px; }
+.site-footer .pages a, .site-footer .footer-nav a { margin-bottom: 10px; }
+@media screen and (max-width: 768px) {
+  .site-footer .pages a { display: block; float: left; width: 50%; }
+}
+.site-footer .facebook, .site-footer .twitter, .site-footer .instagram, .site-footer .rss, .site-footer .linkedin { background-color: rgb(59, 89, 152); color: white; height: 40px; line-height: 40px; max-width: 200px; padding-top: 0px; padding-bottom: 0px; }
+@media screen and (max-width: 768px) {
+  .site-footer .facebook, .site-footer .twitter, .site-footer .instagram, .site-footer .rss, .site-footer .linkedin { display: block; margin: 0px auto; text-align: left; }
+}
+.site-footer .facebook:hover, .site-footer .twitter:hover, .site-footer .instagram:hover, .site-footer .rss:hover, .site-footer .linkedin:hover { background-color: rgb(45, 67, 115); cursor: pointer; }
+.site-footer .facebook svg, .site-footer .twitter svg, .site-footer .instagram svg, .site-footer .rss svg, .site-footer .linkedin svg { float: left; height: 40px; width: 40px; }
+.site-footer .facebook svg, .site-footer .facebook p, .site-footer .twitter svg, .site-footer .twitter p, .site-footer .instagram svg, .site-footer .instagram p, .site-footer .rss svg, .site-footer .rss p, .site-footer .linkedin svg, .site-footer .linkedin p { display: inline-block; }
+.site-footer .facebook p, .site-footer .twitter p, .site-footer .instagram p, .site-footer .rss p, .site-footer .linkedin p { line-height: 40px; margin-top: 0px; margin-bottom: 0px; padding-left: 15px; }
+.site-footer .twitter { background-color: rgb(15, 122, 200); }
+.site-footer .twitter:hover { background-color: rgb(15, 138, 216); cursor: pointer; }
+.site-footer .twitter svg { margin-left: 7px; margin-right: 7px; max-width: 25px; }
+.site-footer .linkedin { background-color: rgb(0, 119, 181); }
+.site-footer .linkedin:hover { background-color: rgb(0, 85, 130); cursor: pointer; }
+.site-footer .linkedin svg { margin-left: 7px; margin-right: 7px; max-width: 25px; }
+.site-footer .container { display: block; margin: 0px auto; max-width: 1080px; }
+h2, strong { font-weight: 600; }
+@media screen and (max-width: 768px) {
+  #secondary #purch_Y_R_1_1, #secondary #purch_Y_S_0_1 { display: none; }
+  #purch_Y_L_0_1 { display: none; }
+  .adslot.adslot970 {  }
+}
+@media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 786px) {
+}
+@media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 768px) {
+}
+#purch_Y_R_1_1, #purch_Y_L_0_1, #purch_Y_S_0_1, #purch_Y_R_0_1, #purch_Y_L_1_1, #div-thetop1 { padding-top: 0px; text-align: center; }
+#purch_Y_L_1_1 { margin-left: auto; margin-right: auto; }
+#purch_Y_S_0_1 { margin-top: 20px; margin-bottom: 20px; }
+@media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 768px) {
+}
+@media (min-width: 801px) {
+}
+@media screen and (max-width: 768px) {
+}
+@media screen and (min-width: 768px) {
+}
+span.sptag, strong.sptag { font-weight: bold; font-size: 12px; margin-top: 0px; padding-top: 0px; display: block; color: rgb(29, 85, 169); }
+@media screen and (max-width: 767px) {
+}
+@media screen and (max-width: 767px) {
+}
+@media screen and (max-width: 767px) {
+}
+@media screen and (max-width: 767px) {
+}
+@media screen and (max-width: 767px) {
+}
+.hamburger { padding: 13px 0px; display: inline-block; cursor: pointer; float: right; transition-property: opacity, filter; transition-duration: 0.15s; transition-timing-function: linear; font: inherit; color: inherit; text-transform: none; background-color: transparent; border: 0px none; margin: 0px; overflow: visible; }
+.hamburger:hover { opacity: 0.9; }
+.hamburger:focus { outline: 0px none; }
+.hamburger-box { width: 20px; height: 14px; display: inline-block; position: relative; }
+.hamburger-inner { display: block; top: 50%; margin-top: -1px; }
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after { width: 20px; height: 2px; background-color: rgb(255, 255, 255); border-radius: 4px; position: absolute; transition-property: transform; transition-duration: 0.15s; transition-timing-function: ease; }
+.hamburger-inner::before, .hamburger-inner::after { content: ""; display: block; }
+.hamburger-inner::before { top: -6px; }
+.hamburger-inner::after { bottom: -6px; }
+.hamburger--slider .hamburger-inner { top: 1px; }
+.hamburger--slider .hamburger-inner::before { top: 6px; transition-property: transform, opacity; transition-timing-function: ease; transition-duration: 0.15s; }
+.hamburger--slider .hamburger-inner::after { top: 12px; }
+@media screen and (max-width: 768px) {
+  .htg-hamburger { position: absolute; right: 15px; }
+}
+.email_signup_disclaimer { display: block; margin: 0px auto; clear: both; text-align: center; }
+.email_signup_disclaimer, .email_signup_disclaimer a { color: rgb(128, 128, 128) ! important; font-size: small ! important; }
+.email_signup_disclaimer a { text-decoration: underline; }
+@media screen and (min-width: 920px) {
+}
+@media print {
+  .nextup { display: none; }
+  #purch_Y_R_1_1, #purch_Y_L_0_1, #purch_Y_S_0_1, #purch_Y_R_0_1, #purch_Y_L_1_1, #div-thetop1 { display: none; }
+}
+@media screen and (max-width: 768px) {
+}
+@media screen and (min-width: 768px) {
+}
+@media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 768px) {
+}
+#floating-sidebar-area { height: 400px ! important; display: none; }
+@media screen and (min-width: 768px) {
+}
+@media screen and (max-width: 768px) {
+}
+@media screen and (min-width: 768px) {
+}
+@media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 768px) {
+}
+.bio_popup_hoverbox_1, .bio_popup_hoverbox_2, .bio_popup_hoverbox_3, .bio_popup_hoverbox_4, .bio_popup_hoverbox_5, .bio_popup_hoverbox_6, .bio_popup_hoverbox_7, .bio_popup_hoverbox_8, .bio_popup_hoverbox_9, .bio_popup_hoverbox_10 { display: block; position: absolute; box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15); z-index: 200090; background-color: white; min-height: 100px; min-width: 200px; max-width: 500px; margin-top: 3px; margin-bottom: 5px; padding: 15px; font-size: 0.9rem; font-family: "Open Sans",sans-serif; border-radius: 6px; visibility: hidden; opacity: 0; transition: visibility 1s linear 0s, opacity 1s linear 0s; }
+.bio_popup_on_hover_1:hover + .bio_popup_hoverbox_1, .bio_popup_on_hover_2:hover + .bio_popup_hoverbox_2, .bio_popup_on_hover_3:hover + .bio_popup_hoverbox_3, .bio_popup_on_hover_4:hover + .bio_popup_hoverbox_4, .bio_popup_on_hover_5:hover + .bio_popup_hoverbox_5, .bio_popup_on_hover_6:hover + .bio_popup_hoverbox_6, .bio_popup_on_hover_7:hover + .bio_popup_hoverbox_7, .bio_popup_on_hover_8:hover + .bio_popup_hoverbox_8, .bio_popup_on_hover_9:hover + .bio_popup_hoverbox_9, .bio_popup_on_hover_10:hover + .bio_popup_hoverbox_10 { visibility: visible; opacity: 1; transition: visibility 0.2s linear 0s, opacity 0.2s linear 0s; }
+.bio_popup_hoverbox_1:hover, .bio_popup_hoverbox_2:hover, .bio_popup_hoverbox_3:hover, .bio_popup_hoverbox_4:hover, .bio_popup_hoverbox_5:hover, .bio_popup_hoverbox_6:hover, .bio_popup_hoverbox_7:hover, .bio_popup_hoverbox_8:hover, .bio_popup_hoverbox_9:hover, .bio_popup_hoverbox_10:hover { visibility: visible; opacity: 1; }
+@media screen and (max-width: 768px) {
+  header .entry-meta > span { max-width: 80%; }
+  .bio_popup_hoverbox_1, .bio_popup_hoverbox_2, .bio_popup_hoverbox_3, .bio_popup_hoverbox_4, .bio_popup_hoverbox_5, .bio_popup_hoverbox_6, .bio_popup_hoverbox_7, .bio_popup_hoverbox_8, .bio_popup_hoverbox_9, .bio_popup_hoverbox_10 { left: 10px; right: 10px; }
+}
+.bio_popup_body { text-transform: none; }
+.bio_popup_name { font-size: 26px; font-weight: bold; }
+.bio_popup_title { text-transform: uppercase; color: rgb(102, 102, 102); }
+.bio_popup_aboutbtn { border-radius: 3px; background-color: rgb(240, 240, 240); display: inline-block; text-align: center; padding: 5px 10px; float: right; text-transform: uppercase; font-size: 10px; text-decoration: none; }
+.mobile-hamburger-socials { display: none; width: 100%; text-align: center; clear: both; }
+@media screen and (max-width: 768px) {
+  .mobile-hamburger-socials { display: block; }
+}
+@media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 768px) {
+}
+.author-meta-entry-wrap { display: inline-block; }
+@media screen and (max-width: 919px) {
+}
+@media screen and (max-width: 768px) {
+}
+.full-screen-menu .full-screen-menu-inner, .subscribe-wrap { background-color: rgb(255, 255, 255); padding-bottom: 10px; padding-top: 20px; width: 80%; max-width: 1100px; position: relative; margin-left: auto; margin-right: auto; border-radius: 6px; margin-top: 15px; }
+.subscribe-button::after { top: 20px; }
+.oswald-header-menu-link { font-family: oswald,sans-serif; margin-bottom: 10px; }
+@media screen and (max-width: 768px) {
+  .full-screen-menu-inner { margin-right: 0px ! important; height: 100% ! important; border-radius: 0px ! important; overflow: auto ! important; }
+  .full-screen-menu nav ul { width: 100% ! important; }
+  .full-screen-menu nav ul li { width: 100% ! important; text-align: left ! important; }
+  .full-screen-menu nav { margin-top: 20px ! important; }
+  .full-screen-menu nav ul a { text-transform: none; }
+  .full-screen-menu nav ul a, .full-screen-menu nav ul li { max-height: unset ! important; }
+  .full-screen-menu nav ul:nth-child(3) { border-left: 0px none; }
+  .full-screen-menu .full-screen-menu-inner { width: 100% ! important; }
+}
+.mobile-menu-right-arrow, .desktop-menu-right-arrow { float: right; }
+.full-screen-menu nav ul li.explore-menu-active { color: maroon; text-decoration: underline; }
+.explore-menu-segment { float: left; width: 28%; padding: 10px; }
+.explore-menu-trigger:hover { color: rgb(224, 125, 2); }
+@media screen and (max-width: 600px) {
+  .adslot970 { min-height: 0px ! important; }
+}
+@media screen and (max-width: 600px) {
+}
+@media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 767px) {
+}
+@media screen and (max-width: 767px) {
+}
+@media screen and (max-width: 767px) {
+}
+@media screen and (max-width: 767px) {
+}
+@media screen and (max-width: 767px) {
+}
+@media screen and (min-width: 767px) {
+}
+@media screen and (max-width: 767px) {
+}
+@media screen and (max-width: 767px) {
+}
+@media screen and (max-width: 767px) {
+}
+@media screen and (max-width: 600px) {
+}
+#floating-sidebar-area .future_hybrid_sidebar_top_margin { height: 1200px; }
+@media screen and (max-width: 768px) {
+}
+@-moz-document url-prefix("") {
+  .star-icon { font-size: 50px; line-height: 34px; }
+}
+.header-commission-statement { width: 100%; background-color: rgb(245, 245, 245); color: rgb(106, 106, 106); font-size: 12px; text-align: center; margin-top: 45px; padding: 10px 0px; font-family: -apple-system,roboto; display: none; }
+body.single .header-commission-statement { display: block; z-index: 5; }
+body.single #page { padding-top: 25px; }
+.header-commission-statement a { text-decoration: underline; color: rgb(106, 106, 106); }
+@media screen and (min-width: 768px) {
+  .header-commission-statement { position: absolute; margin-top: -38px; }
+  body.single { margin-top: 84px; }
+}
+@media screen and (max-width: 768px) {
+  .header-commission-statement { font-size: 11px; margin-top: 21px; }
+}
+@media screen and (min-width: 920px) {
+}
+@media screen and (max-width: 919px) {
+}
+@media screen and (min-width: 700px) {
+}
+@media screen and (min-width: 700px) {
+}
+@media screen and (max-width: 699px) {
+}
+@media screen and (max-width: 400px) {
+}
+body { font-family: "Roboto","Open Sans",sans-serif; }
+@media screen and (max-width: 768px) {
+  body { font-family: "-apple-system","Roboto",sans-serif; }
+}
+body #content { display: block; margin-left: auto; margin-right: auto; background-color: white; max-width: 1080px; padding: 20px; }
+@media screen and (max-width: 768px) {
+}
+body #primary { display: inline-block; float: left; max-width: 660px; width: 70%; }
+@media screen and (min-width: 768px) {
+  body #primary img { max-width: 650px; }
+}
+@media screen and (max-width: 768px) {
+  body #primary { display: block; padding-right: 0px; width: 100%; }
+}
+body #primary .entry-content { margin-top: 0px; }
+body #primary .entry-content h2 { font-size: 27px; }
+body #primary .entry-content blockquote { background-color: rgb(249, 249, 249); border: 1px solid rgb(182, 201, 220); color: rgb(64, 64, 64); clear: both; overflow-x: auto; margin: 0px 10px 10px; max-width: 700px; padding: 10px; text-align: left; }
+body #primary .entry-content blockquote p { margin: 10px 0px; padding: 0px; }
+body #primary .entry-content ul { margin-left: 20px; padding-left: 10px; }
+body #primary .entry-content ul li { margin-bottom: 10px; }
+body #primary .entry-content > p > a { display: inline; }
+body #primary .entry-content p:first-child { margin-top: 0px; }
+@media screen and (max-width: 768px) {
+}
+body #secondary { display: inline-block; float: left; position: relative; }
+@media screen and (max-width: 768px) {
+  body #secondary { display: block; padding-left: 0px; width: 100%; }
+}
+@media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 768px) {
+}
+body #secondary > div:not([class]) { text-align: center; }
+body #secondary #floating-sidebar-area { text-align: left; }
+@media screen and (max-width: 768px) {
+  body #secondary #floating-sidebar-area { display: none; }
+}
+body .article-bottom { float: left; display: block; text-align: center; width: 100%; }
+@media screen and (max-width: 768px) {
+}
+body .article-bottom #purch_Y_L_0_1 { margin-top: 20px; }
+@media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 768px) {
+}
+@media screen and (min-width: 1140px) {
+  body #content, #page .entry-header { max-width: 1140px ! important; }
+  body #primary { max-width: 730px; }
+  body #primary img { max-width: 730px; }
+}
+@media screen and (min-width: 1650px) {
+}
+</style>
+<link rel="stylesheet" href="htgfonts.css">
+<link rel="preload" as="image" href="https://www.howtogeek.com/wp-content/uploads/2016/12/how-do-you-safely-run-an-untrusted-executable-file-on-linux-00.jpg?width=1198&amp;trim=1,1&amp;bg-color=000&amp;pad=1,1">
+<!-- Future Aperture -->
+<script src="about:blank"></script><script>/* Code removed by ScrapBook */</script><script src="about:blank" async="" type="text/javascript"></script><script async="" src="about:blank"></script><script async="" type="text/javascript" src="about:blank"></script><script>/* Code removed by ScrapBook */</script>
+<script async="" src="about:blank"></script>
+<script src="about:blank" async=""></script>
+<script>/* Code removed by ScrapBook */</script>
+<!-- End Future Aperture -->
+<script>/* Code removed by ScrapBook */</script><title>How Do You Safely Run an Untrusted Executable File on Linux? </title>
+<meta property="fb:page_id" content="65878196434">
+<link rel="alternate" type="application/rss+xml" title="How-To Geek RSS Feed" href="https://feeds.howtogeek.com/HowToGeek">
+<meta name="ROBOTS" content="INDEX, FOLLOW, max-image-preview:large">
+<script type="application/ld+json">/* Code removed by ScrapBook */</script>	<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@howtogeek">
+<meta name="twitter:image" content="https://www.howtogeek.com/wp-content/uploads/2016/12/how-do-you-safely-run-an-untrusted-executable-file-on-linux-00.jpg?height=200p&amp;trim=2,2,2,2">
+<meta property="og:site_name" content="How-To Geek">
+<meta property="og:title" name="title" content="How Do You Safely Run an Untrusted Executable File on Linux?">
+<meta property="og:type" content="article">
+<meta property="og:description" name="og:description" content="In this day and age, it is not a bad idea to be leery of untrusted executable files, but is there a safe way to run one on your Linux system if you really need to do so? Today’s SuperUser Q&amp;A post has some helpful advice in response to a worried reader’s query.">
+<meta property="og:image" content="https://www.howtogeek.com/wp-content/uploads/2016/12/how-do-you-safely-run-an-untrusted-executable-file-on-linux-00.jpg?height=200p&amp;trim=2,2,2,2">
+<meta name="description" content="In this day and age, it is not a bad idea to be leery of untrusted executable files, but is there a safe way to run one on your Linux system if you really need to do so? Today’s SuperUser Q&amp;A post has some helpful advice in response to a worried reader’s query.">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="icon" type="image/png" href="32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="192x192.png" sizes="192x192">
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.howtogeek.com/apple-touch-icon.png">
+<meta name="msapplication-TileImage" content="/public/images/144x144.png">
+<meta name="msapplication-TileColor" content="#000">
+<meta name="theme-color" content="">
+<link rel="canonical" href="https://www.howtogeek.com/285595/how-do-you-safely-run-an-untrusted-executable-file-on-linux/">
+<meta property="og:url" content="https://www.howtogeek.com/285595/how-do-you-safely-run-an-untrusted-executable-file-on-linux/"><link rel="amphtml" href="https://www.howtogeek.com/285595/how-do-you-safely-run-an-untrusted-executable-file-on-linux/amp/">
+<script>/* Code removed by ScrapBook */</script>
+<script>/* Code removed by ScrapBook */</script>
+<script>/* Code removed by ScrapBook */</script>
+<!-- Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+<script type="text/javascript" async="true">/* Code removed by ScrapBook */</script>
+<!-- End Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script defer="" type="text/javascript" src="about:blank"></script>
+<style>
+/* Code tidied up by ScrapBook */
+@media print {
+  #masthead, .full-screen-menu, .adslot, .site-footer, #secondary, #purch_N_C_0_1, .social-media-buttons, .article-bottom, .jw-loaded, #purch_N_C_0_1 { display: none ! important; }
+  #page::before { content: "How-To Geek"; font-size: 24px; font-weight: bold; padding-left: 20px; width: 700px; border-bottom: 1px solid black; display: block; margin: 10px auto; }
+}
+</style>
+<!-- Facebook Pixel Code -->
+<script>/* Code removed by ScrapBook */</script>
+<!-- End Facebook Pixel Code -->
+<style>
+/* Code tidied up by ScrapBook */
+@keyframes moka-slide-in {
+100% { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+}
+@keyframes moka-slide-in {
+100% { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+}
+@keyframes moka-fade-in {
+100% { opacity: 1; }
+}
+@keyframes moka-fade-in {
+100% { opacity: 1; }
+}
+@keyframes moka-fade-in-partial {
+100% { opacity: 1; }
+}
+@keyframes moka-fade-in-partial {
+100% { opacity: 1; }
+}
+@media screen and (max-width: 768px) {
+}
+</style>
+<script type="text/javascript">/* Code removed by ScrapBook */</script><script data-pagespeed-no-defer="">/* Code removed by ScrapBook */</script></head>
+<body class="post-template-default single single-post postid-285595 single-format-standard group-blog"><!--DOCUMENT_FRAGMENT--><div id="page" class="site hentry h-entry"><header class="entry-header"><h1 class="entry-title"><a aria-label="How Do You Safely Run an Untrusted Executable File on Linux?" title="How Do You Safely Run an Untrusted Executable File on Linux?" href="#">How Do You Safely Run an Untrusted Executable File on Linux?</a></h1>
+<div class="entry-meta" data-nosnippet="data-nosnippet">
+<span class="author-meta-entry-wrap">
+<a class="p-author h-card vcard author post-author bio_popup_on_hover_1" href="https://www.howtogeek.com/author/asianangel/"><span class="fn">Akemi Iwaya</span></a><div class="bio_popup_hoverbox_1"><strong class="bio_popup_name">Akemi Iwaya</strong><br><span class="bio_popup_title">Writer</span><br style="clear: both;"><p class="bio_popup_body">Akemi Iwaya has been part of the How-To Geek/LifeSavvy Media team since 2009. She has previously written under the pen name "Asian Angel" and was a Lifehacker intern before joining How-To Geek/LifeSavvy Media. She has been quoted as an authoritative source by ZDNet Worldwide. <a style="text-decoration: underline;" href="https://www.howtogeek.com/author/asianangel/" aria-label="Full Biography for Akemi Iwaya: Read more...">Read more...</a></p><a href="https://www.howtogeek.com/about" class="bio_popup_aboutbtn">About How-To Geek</a></div><link rel="prefetch" href="https://www.howtogeek.com/285595/how-do-you-safely-run-an-untrusted-executable-file-on-linux/">	<span style="white-space: pre;"><svg role="img" aria-label="Twitter Icon" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg" style="fill: rgb(42, 163, 239); height: 12px; width: 12px; display: inline-block; position: relative; top: 2px;" aria-hidden="true" tabindex="-1"><path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"></path></svg> <span class="author-twitter"><a href="https://twitter.com/asian_angel">@asian_angel</a></span></span>
+<br>
+<div style="display: inline-block;">	<time class="post-date published" datetime="2016-12-20T16:04:38-05:00">Dec 20, 2016, 4:04 pm EDT</time>
+| 2 min read
+<meta name="twitter:label1" content="Written by">
+<meta name="twitter:data1" content="Akemi Iwaya">
+<meta name="twitter:label2" content="Est. Reading Time">
+<meta name="twitter:data2" content="2 minutes"></div>	</span>
+</div><!-- .entry-meta -->
+</header><!-- .entry-header -->
+</div> <!-- page -->
+<div id="content" class="site-content">
+<div id="primary" class="content-area">
+<main id="main" class="site-main" role="main">
+<article id="post-285595" class="post-285595 post type-post status-publish format-standard category-the-geek-blog tag-files tag-hardware tag-installation tag-linux tag-terminal tag-privacyandsecurity tag-search tag-software tag-virtualmachines tag-malware">
+<div class="entry-content e-content">
+<p><img class="type:primaryImage alignnone size-full wp-image-285793" data-pagespeed-no-defer="" src="how-do-you-safely-run-an-untrusted-executable-file-on-linux-00.jpg" alt="" width="730" height="300"></p>
+<p>In this day and age, it is not a bad idea to be leery of untrusted executable files, but is there a safe way to run one on your Linux system if you really need to do so? Today’s SuperUser Q&amp;A post has some helpful advice in response to a worried reader’s query.</p>
+<p><em>Today’s Question &amp; Answer session comes to us courtesy of SuperUser—a subdivision of Stack Exchange, a community-driven grouping of Q&amp;A web sites.</em></p>
+<div aria-hidden="true" id="purch_N_C_0_1"></div>
+<script type="text/javascript" data-pagespeed-no-defer="">/* Code removed by ScrapBook */</script><script defer="" type="text/javascript" src="about:blank"></script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>	<div style="clear: both;"></div>
+<h2 role="heading" aria-level="2">The Question</h2>
+<p>SuperUser reader Emanuele wants to know how to safely run an untrusted executable file on Linux:</p>
+<blockquote><p>I have downloaded an executable file compiled by a third party and I need to run it on my system (Ubuntu Linux 16.04, x64) with full access to HW resources such as the CPU and GPU (through the NVIDIA drivers).</p>
+<p>Suppose this executable file contains a virus or backdoor, how should I run it? Should I create a new user profile, run it, then delete the user profile?</p></blockquote>
+<p>How do you safely run an untrusted executable file on Linux?</p><div class="future_hybrid_paragraph"></div>
+<h2 role="heading" aria-level="2">The Answer</h2>
+<p>SuperUser contributors Shiki and Emanuele have the answer for us. First up, Shiki:</p>
+<blockquote><p>First and foremost, if it is a very high risk binary file, you would have to set up an isolated physical machine, run the binary file, then physically destroy the hard drive, the motherboard, and basically all the rest because in this day and age, even your robot vacuum can spread malware. And what if the program already infected your microwave through the computer’s speakers using high-frequency data transmitting?!</p>
+<p>But let’s take off that tinfoil hat and jump back to reality for a bit.</p>
+<p><strong>No Virtualization – Quick to Use</strong></p>
+<p><a href="https://firejail.wordpress.com/">Firejail</a></p>
+<p>I had to run a similar untrusted binary file just a few days ago and my search led to this very cool small program. It is already packaged for Ubuntu, very small, and has virtually no dependencies. You can install it on Ubuntu using: <em>sudo apt-get install firejail</em></p>
+<p>Package info:</p>
+<p><img class="alignnone size-full wp-image-285792" alt="" src="how-do-you-safely-run-an-untrusted-executable-file-on-linux-01.jpg" width="625" height="511"></p>
+<p><strong>Virtualization</strong></p>
+<p><a href="https://virt-manager.org/">KVM</a> or <a href="https://www.virtualbox.org/">Virtualbox</a></p>
+<p>This is the safest bet depending on the binary, but hey, see above. If it has been sent by “Mr. Hacker” who is a black belt, black hat programmer, there is a chance that the binary can escape a virtualized environment.</p>
+<p><strong>Malware Binary – Cost Saver Method</strong></p>
+<p>Rent a virtual machine! For example, virtual server providers like Amazon (AWS), Microsoft (Azure), DigitalOcean, Linode, Vultr, and Ramnode. You rent the machine, run whatever you need, then they will wipe it out. Most of the bigger providers bill by the hour, so it really is cheap.</p></blockquote>
+<p>Followed by the answer from Emanuele:</p>
+<blockquote><p>A word of caution. Firejail is OK, but one has to be extremely careful in specifying all the options in terms of the blacklist and whitelist. By default, it does not do what is cited in this <a href="https://www.linux-magazine.com/Issues/2015/173/Firejail">Linux Magazine article</a>. Firejail’s author has also left some <a href="https://github.com/netblue30/firejail/issues/970">comments about known issues at Github</a>.</p>
+<p>Be extremely careful when you use it, it might give you a false sense of security without the <em>right options</em>.</p></blockquote>
+<hr>
+<p>Have something to add to the explanation? Sound off in the comments. Want to read more answers from other tech-savvy Stack Exchange users? <a href="https://superuser.com/questions/1155372/how-can-i-run-an-untrusted-executable-on-linux-safely">Check out the full discussion thread here</a>.</p>
+<p><small><em>Image Credit: <a href="https://www.clker.com/clipart-prison-cell.html">Prison Cell Clip Art (Clker.com)</a></em></small></p>
+<script type="text/javascript" data-pagespeed-no-defer="">/* Code removed by ScrapBook */</script><script>/* Code removed by ScrapBook */</script>
+<div class="nextup">
+<span id="nextuplabel" style="font-weight: bold; font-size: 22px; color: rgb(0, 0, 0); margin-bottom: 10px; display: block;" role="heading" aria-level="2">READ NEXT</span>
+<ul id="nextuplist">
+<li>› <a href="https://www.howtogeek.com/883092/fixed-there-was-an-error-generating-a-response-on-chatgpt/">Fixed: “There Was an Error Generating a Response” on ChatGPT</a></li><li>› <a href="https://www.howtogeek.com/884759/update-your-apple-devices-now-to-fix-a-safari-security-flaw/">Update Your Apple Devices Now to Fix a Safari Security Flaw</a></li><li>› <a href="https://www.howtogeek.com/884761/powertoys-will-now-let-you-preview-reg-files/">Microsoft PowerToys Will Now Let You Preview REG Files</a></li><li>› <a href="https://www.howtogeek.com/880278/make-your-legal-practice-more-efficient-with-nuance-dragon-legal-software/">Make Your Legal Practice More Efficient With Nuance Dragon Legal Software</a></li><li>› <a href="https://www.howtogeek.com/884735/google-is-shutting-down-some-old-nest-devices-and-services/">Google Is Shutting Down Some Old Nest Devices and Services</a></li><li>› <a href="https://www.howtogeek.com/884691/grab-a-fire-tv-stick-4k-max-for-just-35-today/">Grab a Fire TV Stick 4K Max for Just $35 Today</a></li>
+</ul>
+</div>
+</div><!-- .entry-content -->
+<footer class="entry-footer" data-nosnippet="data-nosnippet">
+<div style="border: 1px solid rgb(238, 238, 238); padding: 15px; margin-bottom: 20px;">
+<span>
+<a href="https://www.howtogeek.com/author/asianangel/" style="font-weight: bold; text-transform: uppercase; font-size: 20px; font-family: oswald,roboto,sans-serif; padding-top: 0px; margin-top: 0px; line-height: 20px;"><span style="padding-top: 0px; margin-top: 0px;">Akemi Iwaya</span></a>
+<br style="margin-top: 10px;"><span style="font-size: 15px;">Akemi Iwaya has been part of the How-To Geek/LifeSavvy Media team since 2009. She has previously written under the pen name "Asian Angel" and was a Lifehacker intern before joining How-To Geek/LifeSavvy Media. She has been quoted as an authoritative source by ZDNet Worldwide. <br style="display: none;"><a href="https://www.howtogeek.com/author/asianangel/" style="text-transform: uppercase; font-size: 13px; font-weight: bold;">Read Full Bio »</a></span></span></div></footer></article></main></div></div><!--/DOCUMENT_FRAGMENT--></body>
+</html>

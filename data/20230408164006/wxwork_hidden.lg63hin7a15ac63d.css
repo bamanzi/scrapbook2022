@@ -1,0 +1,38 @@
+/* Code tidied up by ScrapBook */
+.comment_primary_emotion_list_pc { display: flex; flex-wrap: wrap; padding: 12px; overflow: hidden; font-size: 24px; }
+@media (prefers-color-scheme: dark) {
+}
+@supports (-webkit-overflow-scrolling:touch) {
+  .menu_options[data-v-74a607c8] { filter: drop-shadow(0px 4px 30px rgba(0, 0, 0, 0.2)); }
+  .menu_options .menu_options_bar[data-v-74a607c8] { filter: none; }
+}
+@supports (-apple-trailing-word:auto) {
+  .menu_options[data-v-74a607c8] { filter: drop-shadow(0px 4px 30px rgba(0, 0, 0, 0.2)); }
+  .menu_options .menu_options_bar[data-v-74a607c8] { filter: none; }
+}
+@media (prefers-color-scheme: dark) {
+}
+@keyframes tagLoveAnimate {
+0% { transform: scale(1); }
+50% { transform: scale(1.5); }
+100% { transform: scale(1); }
+}
+@keyframes tagAvatarAnimate {
+0% { transform: scale(0.5); opacity: 0; }
+44% { transform: scale(1); opacity: 1; }
+66% { transform: scale(1); opacity: 1; }
+100% { transform: scale(1) translate3d(0px, -150%, 0px); opacity: 0; }
+}
+.wx-root, body { --tagColor:  #83E0AF; --underlineHightColor:  rgba(7, 193, 96, .1); --menuBackground:  rgba(248, 248, 248, .8); }
+@media (prefers-color-scheme: dark) {
+  .wx-root:not([data-weui-theme="light"]), body:not([data-weui-theme="light"]) { --tagColor:  #197645; --underlineHightColor:  rgba(7, 193, 96, .1); --menuBackground:  rgba(30, 30, 30, .9); }
+}
+@supports (-webkit-overflow-scrolling:touch) {
+  .wx_text_underline {  }
+}
+@keyframes underAnchorHighlight {
+0% { background-color: transparent; }
+30% { background-color: var(--underlineHightColor); }
+70% { background-color: var(--underlineHightColor); }
+100% { background-color: transparent; }
+}

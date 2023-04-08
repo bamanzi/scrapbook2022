@@ -1,0 +1,19 @@
+/* Code tidied up by ScrapBook */
+.clearfix::after { content: "."; display: block; height: 0px; visibility: hidden; clear: both; }
+.clearfix {  }
+#db-nav-group { position: relative; background: rgb(240, 246, 243) none repeat scroll 0% 0%; overflow: visible; }
+#db-nav-group .nav-wrap { border: medium none; }
+#db-nav-group .nav-primary { overflow: visible; padding: 12px 0px 6px; }
+#db-nav-group .nav-logo { background-image: url("lg_group_a11_2.png"); }
+#db-nav-group a:link, #db-nav-group a:visited { color: rgb(3, 123, 130); }
+#db-nav-group a:hover, #db-nav-group a:active { background-color: rgb(3, 123, 130); color: rgb(255, 255, 255); }
+#db-nav-group .nav-search { position: absolute; right: 0px; }
+#db-nav-group li { display: inline; }
+#db-nav-group .nav-items { float: left; margin-top: 15px; }
+#db-nav-group .nav-items li { margin-right: 30px; font-size: 15px; }
+#db-nav-group .nav-search label { top: 11px; line-height: 28px; }
+#db-nav-group .nav-search .inp { width: 278px; height: 28px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; border: 1px solid rgb(225, 233, 225); text-align: left; border-radius: 0px; }
+#db-nav-group .nav-search .inp input { margin: 0px; width: 242px; height: 28px; }
+#db-nav-group .nav-search .inp-btn { position: absolute; left: auto; top: 10px; right: 0px; width: 30px; height: 28px; border-width: 1px 1px 1px medium; border-style: solid solid solid none; border-color: rgb(225, 233, 225) rgb(225, 233, 225) rgb(225, 233, 225) currentcolor; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; background-color: rgb(255, 255, 255); font-size: 0px; overflow: hidden; }
+#db-nav-group .nav-search .inp-btn input { width: 30px; height: 28px; padding: 0px; margin: 0px; line-height: 100px; background: transparent url("bn_srh_1.png") no-repeat scroll 50% 50%; }
+.nlst, .nlst h3, .bg-img-green h4 { background-color: rgb(240, 246, 243); }

@@ -1,0 +1,39 @@
+/* Code tidied up by ScrapBook */
+.nav { width: 100%; min-width: 1040px; overflow: hidden; margin-bottom: 50px; }
+.nav .nav-wrap { border-bottom: 1px solid rgb(229, 235, 228); }
+.nav .nav-primary, .nav .nav-secondary { width: 1040px; margin: 0px auto; padding-bottom: 0px; overflow: hidden; }
+.nav .nav-primary { position: relative; padding: 10px 0px 5px; overflow: hidden; }
+.nav .nav-logo { float: left; height: 56px; width: 145px; margin: 0px 13px 0px 0px; background-repeat: no-repeat; background-position: 0px 12px; background-size: 153px 30px; background-image: url("lg_main@2x.png"); }
+.nav .nav-logo a { display: block; width: 100%; height: 100%; overflow: hidden; line-height: 100em; }
+.nav .nav-logo a:hover, .nav .nav-logo a:active { background: transparent none repeat scroll 0% 0% ! important; }
+.nav-search { position: relative; overflow: hidden; padding: 10px 0px 15px; }
+.nav-search input { -moz-appearance: none; border: medium none; background: transparent none repeat scroll 0% 0%; }
+.nav-search label { position: absolute; left: 11px; top: 10px; line-height: 30px; cursor: text; color: rgb(187, 187, 187); width: auto; }
+.nav-search :-moz-placeholder { color: rgb(187, 187, 187); }
+.nav-search ::-moz-placeholder { color: rgb(187, 187, 187); }
+.nav-search .inp { float: left; width: 470px; height: 34px; text-align: center; cursor: text; background: transparent url("nav_bg_a1.png") no-repeat scroll 0px 0px; }
+.nav-search .inp input { background: rgb(255, 255, 255) none repeat scroll 0% 0%; width: 96%; margin: 0px; text-align: left; height: 30px; padding-left: 10px; outline: medium none; }
+.nav-search legend { display: none; }
+.nav-search fieldset { border: medium none; padding: 0px; margin: 0px; position: static; }
+.nav-search .inp-btn { position: relative; left: -1px; width: 37px; height: 34px; overflow: hidden; }
+.nav-search .inp-btn input { width: 100%; height: 100%; font-size: 0px; padding: 35px 0px 0px; overflow: hidden; background: transparent url("nav_bg_a1.png") no-repeat scroll 0px -40px; color: transparent; cursor: pointer; }
+.nav-search .inp-btn input:hover { background-position: -40px -40px; }
+.nav-search .inp-btn input:active { background-position: 0px -40px; }
+#db-nav-sns { position: relative; background: rgb(237, 244, 237) none repeat scroll 0% 0%; }
+#db-nav-sns a:link, #db-nav-sns a:visited { color: rgb(0, 119, 34); }
+#db-nav-sns a:hover, #db-nav-sns a:active { background-color: rgb(0, 119, 34); color: rgb(255, 255, 255); }
+#db-nav-sns li { display: inline; }
+#db-nav-sns .nav-wrap { border: medium none; }
+#db-nav-sns .nav-primary { overflow: hidden; padding-top: 12px; }
+#db-nav-sns .nav-search { position: absolute; right: 0px; }
+#db-nav-sns .nav-logo { width: 184px; height: 57px; background-position: 0px 10px; }
+#db-nav-sns label { line-height: 28px; }
+#db-nav-sns .inp { width: 278px; height: 28px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; border: 1px solid rgb(225, 233, 225); text-align: left; border-radius: 0px; }
+#db-nav-sns .inp input { margin: 0px; width: 242px; height: 28px; }
+#db-nav-sns .inp-btn { position: absolute; left: auto; top: 10px; right: 0px; width: 30px; height: 28px; border-width: 1px 1px 1px medium; border-style: solid solid solid none; border-color: rgb(225, 233, 225) rgb(225, 233, 225) rgb(225, 233, 225) currentcolor; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; background-color: rgb(255, 255, 255); font-size: 0px; overflow: hidden; }
+#db-nav-sns .inp-btn input { width: 30px; height: 28px; padding: 0px; margin: 0px; line-height: 100px; background: transparent url("bn_srh_1.png") no-repeat scroll 50% 50%; }
+#db-nav-sns .inp-btn { position: absolute; left: auto; top: 10px; right: 0px; width: 30px; height: 28px; border-width: 1px 1px 1px medium; border-style: solid solid solid none; border-color: rgb(225, 233, 225) rgb(225, 233, 225) rgb(225, 233, 225) currentcolor; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; background-color: rgb(255, 255, 255); font-size: 0px; overflow: hidden; }
+#db-nav-sns .inp-btn input { width: 30px; height: 28px; padding: 0px; margin: 0px; line-height: 100px; background: transparent url("bn_srh_1.png") no-repeat scroll 50% 50%; }
+#db-nav-sns .nav-items { float: left; margin-top: 15px; }
+#db-nav-sns .nav-items li { margin-right: 20px; font-size: 16px; }
+#db-nav-sns .nav-items li a { position: relative; }

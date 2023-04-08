@@ -1,0 +1,42 @@
+/* Code tidied up by ScrapBook */
+.grid-16-8 .aside { width: 300px; }
+.event-labels { display: inline-block; font-size: 12px; vertical-align: middle; }
+h2 { font-size: 15px; color: rgb(17, 17, 17); }
+.operation-div { position: absolute; right: 5px; bottom: 0px; height: 1.2em; line-height: 1.4; display: inline-flex; align-items: center; }
+.operation-div span, .operation-div a { margin-left: 10px; cursor: pointer; color: rgb(187, 187, 187); }
+.operation-div .lnk-delete-comment { display: none; }
+.operation-div .lnk-opt-line { display: none; }
+.operation-div a:link, .operation-div a:visited { color: rgb(170, 170, 170); }
+.operation-div a:hover, .operation-div a:active, .operation-div span:hover, .operation-div span:active { background-color: rgb(170, 170, 170); color: rgb(255, 255, 255); }
+.topic-doc, .reply-doc { font-size: 14px; line-height: 1.62; }
+.clearfix { clear: both; }
+.topic-reply .user-face { float: left; width: 48px; height: 48px; margin-right: 20px; overflow: hidden; }
+.topic-reply li { margin: 0px 0px 10px; position: relative; }
+.topic-reply li .reply-doc { float: none; width: auto; overflow: hidden; }
+.topic-reply li p { font-size: 14px; padding-bottom: 10px; white-space: pre-line; }
+.topic-reply .pubtime { margin: 0px 1em; }
+.topic-content .create-time { margin-left: 1em; font-size: 13px; display: inline-block; }
+.topic-content .create-ip, .topic-content .create-visit-count { display: inline-block; font-size: 13px; color: rgb(187, 187, 187); }
+.pubdate { white-space: nowrap; margin-left: 10px; }
+.reply-quote { width: 30em; padding-left: 7px; margin: 20px 0px; border-left: 2px solid rgb(221, 221, 221); position: relative; }
+.reply-quote .short { color: rgb(102, 102, 102); }
+.reply-quote .all { display: none; color: rgb(102, 102, 102); }
+.topic-author-icon { display: inline-block; color: rgb(131, 190, 115); border: 1px solid rgb(131, 190, 115); background-color: transparent; border-radius: 2px; font-size: 9px; height: 16px; box-sizing: border-box; line-height: 14px; padding: 0px 3px; text-align: center; vertical-align: middle; }
+.operation-more { display: inline-block; }
+.aside .mod { margin-bottom: 20px; }
+#content .article { margin-bottom: 4em; }
+#link-report_group { overflow: hidden; font-size: 13px; color: rgb(187, 187, 187); }
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  #db-global-nav { min-width: 600px; width: auto; }
+  #db-nav-group { min-width: 600px; }
+  #db-nav-group .nav-primary { width: auto; padding: 12px 12px 6px ! important; }
+  #db-nav-group li:nth-child(n+3) { display: none; }
+  #db-nav-group div.nav-search { top: 12px; right: 10px; }
+  #wrapper { padding: 0px 16px; }
+  .grid-16-8 .article { width: 100%; padding-right: 0px; font-size: 16px; }
+  .grid-16-8 .aside { width: 100%; margin-top: 20px; }
+  #wrapper::before { content: ""; display: block; }
+  #g-side-info, #g-side-info-member {  }
+  .topic-content .topic-doc { font-size: 16px; }
+  #dale_group_topic_bottom_super_banner { overflow: hidden; }
+}

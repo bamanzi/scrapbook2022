@@ -1,0 +1,13 @@
+/* Code tidied up by ScrapBook */
+@media (prefers-color-scheme: light) {
+  :root { --link-color:  #234da7; --text-color:  #444; --text-color-weak:  #777; --text-color-em:  #333; --default-button-text-color:  #fff; --default-button-bg-color:  #1a73e8; --bg-color:  #fff; --border-color:  #ccc; --shadow-color:  #333; --dash-color:  #ddd; }
+}
+@media (prefers-color-scheme: dark) {
+  :root { --link-color:  #8AB4F8; --text-color:  #E8EAED; --text-color-weak:  #a4a5a8; --text-color-em:  #fff; --default-button-text-color:  #000; --default-button-bg-color:  #8ab4f8; --bg-color:  #35363A; --border-color:  #ccc; --shadow-color:  #ddd; --dash-color:  #60666b; }
+}
+body { background-color:  var(--bg-color); color:  var(--text-color); margin: 0px; padding: 0px; font-family: "Open Sans","Helvetica Neue",Arial,sans-serif; font-weight: 400; font-size: 14px; }
+a { color:  var(--link-color); }
+.tabLink { word-break: break-all; vertical-align: middle; padding-left: 10px; padding-right: 12px; text-decoration: none; }
+.tabGroupLabel { padding-top: 10px; padding-bottom: 0px; padding-left: 24px; color:  var(--text-color); font-size: 26px; font-weight: 300; }
+.tabGroupContainer { padding-left: 24px; padding-top: 8px; position: relative; font-size: 13px; }
+.favIconImg { vertical-align: middle; width: 16px; height: 16px; }
