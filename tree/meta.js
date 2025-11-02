@@ -2546,5 +2546,70 @@ scrapbook.meta({
     "modify": "20251008141625568",
     "source": "https://www.reddit.com/r/DCcomics/comments/vio4ub/discussion_the_top_71_dc_comic_runs_voted_by_the/",
     "icon": "../tree/favicon/ed1a4ac81ead87a5805fc80e2478aebd4a352ab4.png"
+  },
+  "20251102003949533": {
+    "index": "20251102003949533/index.html",
+    "title": "Star Trek Comics Weekly #0 – Rich Handley",
+    "type": "",
+    "create": "20251102003949533",
+    "modify": "20251102003949533",
+    "source": "https://richhandley.com/2019/05/21/star-trek-comics-weekly-0/",
+    "icon": "cropped-favicon-32x32.png"
+  },
+  "20251102004146444": {
+    "index": "",
+    "title": "[2025.10] Trixie — the new version of Raspberry Pi OS - Raspberry Pi",
+    "type": "bookmark",
+    "create": "20251102004146444",
+    "modify": "20251102004146444",
+    "source": "https://www.raspberrypi.com/news/trixie-the-new-version-of-raspberry-pi-os/",
+    "icon": "../tree/favicon/5366c8abf6567af5cfc0bcbe516e00c30497e18c.png"
+  },
+  "20251102004318421": {
+    "index": "20251102004318421/index.html",
+    "title": "Install and Use Flatpak on Ubuntu",
+    "type": "",
+    "create": "20251102004318421",
+    "modify": "20251102004318421",
+    "source": "https://itsfoss.com/flatpak-ubuntu/",
+    "icon": "android-chrome-192x192.png"
+  },
+  "20251102004539121": {
+    "index": "20251102004539121/index.html",
+    "title": "How to Install Flatpak on Ubuntu 24.04, 22.04 or 20.04 - LinuxCapable",
+    "type": "",
+    "create": "20251102004539121",
+    "modify": "20251102004539121",
+    "source": "https://linuxcapable.com/how-to-install-flatpak-on-ubuntu-linux/",
+    "icon": "cropped-linuxcapable.com-tiny-logo-32x32.png"
+  },
+  "20251102004820001": {
+    "index": "20251102004820001/index.html",
+    "title": "Setup a native proxy switcher on Firefox · GitHub",
+    "type": "",
+    "create": "20251102004820001",
+    "modify": "20251102004820001",
+    "source": "https://gist.github.com/thoughtsunificator/6f7d9e56b26a652bd18cd96d631714c2",
+    "icon": "favicon.png"
+  },
+  "20251102005300784": {
+    "index": "20251102005300784/index.html",
+    "title": "Pocket 将于2025年7月8日关闭，“稍后阅读”真变“永远不读”，你需要知道的事 - 小众软件",
+    "type": "",
+    "create": "20251102005300784",
+    "modify": "20251102005300784",
+    "source": "https://www.appinn.com/pocket-shutting-down/",
+    "icon": "Appinn-icon-32.jpg"
+  },
+  "20251102005305587": {
+    "index": "20251102005305587/index.html",
+    "title": "Pocket 将于2025年7月8日关闭，“稍后阅读”真变“永远不读”，你需要知道的事 - 小众软件",
+    "type": "",
+    "create": "20251102005305587",
+    "modify": "20251102005305587",
+    "source": "https://www.appinn.com/pocket-shutting-down/",
+    "icon": "Appinn-icon-32.jpg",
+    "parent": "root",
+    "recycled": "20251102005807748"
   }
 })

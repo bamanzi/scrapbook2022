@@ -1,0 +1,1186 @@
+<!DOCTYPE html><html lang="en-US" data-scrapbook-source="https://linuxcapable.com/how-to-install-flatpak-on-ubuntu-linux/" data-scrapbook-create="20251102004539121"><head>
+	<meta charset="UTF-8">
+	<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- This site is optimized with the Yoast SEO plugin v26.2 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>How to Install Flatpak on Ubuntu 24.04, 22.04 or 20.04 - LinuxCapable</title>
+	<meta name="description" content="Learn to install Flatpak on Ubuntu 24.04, 22.04, or 20.04 and enable Flathub + tips to install, update, remove, or search Flatpak applications.">
+	<link rel="canonical" href="https://linuxcapable.com/how-to-install-flatpak-on-ubuntu-linux/">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="How to Install Flatpak on Ubuntu 24.04, 22.04 or 20.04 - LinuxCapable">
+	<meta property="og:description" content="Learn to install Flatpak on Ubuntu 24.04, 22.04, or 20.04 and enable Flathub + tips to install, update, remove, or search Flatpak applications.">
+	<meta property="og:url" content="https://linuxcapable.com/how-to-install-flatpak-on-ubuntu-linux/">
+	<meta property="og:site_name" content="LinuxCapable">
+	<meta property="article:published_time" content="2023-03-02T05:56:48+00:00">
+	<meta property="article:modified_time" content="2024-09-01T11:54:25+00:00">
+	<meta property="og:image" content="https://linuxcapable.com/wp-content/uploads/2023/03/How-to-install-Flatpak-on-Ubuntu-1024x647.png">
+	<meta property="og:image:width" content="1024">
+	<meta property="og:image:height" content="647">
+	<meta property="og:image:type" content="image/png">
+	<meta name="author" content="Joshua James">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:creator" content="@joshism_j">
+	<meta name="twitter:site" content="@linuxcapable">
+	<meta name="twitter:label1" content="Written by">
+	<meta name="twitter:data1" content="Joshua James">
+	<meta name="twitter:label2" content="Est. reading time">
+	<meta name="twitter:data2" content="7 minutes">
+	
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel="alternate" type="application/rss+xml" title="LinuxCapable » Feed" href="https://linuxcapable.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="LinuxCapable » Comments Feed" href="https://linuxcapable.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="LinuxCapable » How to Install Flatpak on Ubuntu 24.04, 22.04 or 20.04 Comments Feed" href="https://linuxcapable.com/how-to-install-flatpak-on-ubuntu-linux/feed/">
+
+<link rel="stylesheet" id="generatepress-fonts-css" href="fonts.css" media="all">
+<style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+</style>
+<link rel="stylesheet" id="wp-block-library-css" href="style.min.css" media="all">
+<style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--contrast: var(--contrast);--wp--preset--color--contrast-2: var(--contrast-2);--wp--preset--color--contrast-3: var(--contrast-3);--wp--preset--color--base: var(--base);--wp--preset--color--base-2: var(--base-2);--wp--preset--color--base-3: var(--base-3);--wp--preset--color--accent: var(--accent);--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel="stylesheet" id="mkaz-code-syntax-prism-css-css" href="prism-a11y-dark.css" media="all">
+<link rel="stylesheet" id="bsearch-style-css" href="bsearch-styles.min.css" media="all">
+<link rel="stylesheet" id="generate-comments-css" href="comments.min.css" media="all">
+<link rel="stylesheet" id="generate-style-css" href="main.min.css" media="all">
+<style id="generate-style-inline-css">
+.is-right-sidebar{width:25%;}.is-left-sidebar{width:25%;}.site-content .content-area{width:75%;}@media (max-width: 768px){.main-navigation .menu-toggle,.sidebar-nav-mobile:not(#sticky-placeholder){display:block;}.main-navigation ul,.gen-sidebar-nav,.main-navigation:not(.slideout-navigation):not(.toggled) .main-nav > ul,.has-inline-mobile-toggle #site-navigation .inside-navigation > *:not(.navigation-search):not(.main-nav){display:none;}.nav-align-right .inside-navigation,.nav-align-center .inside-navigation{justify-content:space-between;}.has-inline-mobile-toggle .mobile-menu-control-wrapper{display:flex;flex-wrap:wrap;}.has-inline-mobile-toggle .inside-header{flex-direction:row;text-align:left;flex-wrap:wrap;}.has-inline-mobile-toggle .header-widget,.has-inline-mobile-toggle #site-navigation{flex-basis:100%;}.nav-float-left .has-inline-mobile-toggle #site-navigation{order:10;}}
+.dynamic-author-image-rounded{border-radius:100%;}.dynamic-featured-image, .dynamic-author-image{vertical-align:middle;}.one-container.blog .dynamic-content-template:not(:last-child), .one-container.archive .dynamic-content-template:not(:last-child){padding-bottom:0px;}.dynamic-entry-excerpt > p:last-child{margin-bottom:0px;}
+</style>
+<link rel="stylesheet" id="recent-posts-widget-with-thumbnails-public-style-css" href="public.css" media="all">
+<link rel="stylesheet" id="generatepress-dynamic-css" href="style.min-1.css" media="all">
+<style id="generateblocks-inline-css">
+.gb-button-wrapper{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:flex-start;clear:both;}.gb-button-wrapper-28c95231{justify-content:flex-end;margin-bottom:2px;margin-left:20px;}.gb-button-wrapper-d82799ce{margin-bottom:15px;}.gb-button-wrapper-a18c1c1d{justify-content:flex-end;}.gb-button-wrapper a.gb-button-764a4eda{display:inline-flex;align-items:center;justify-content:center;column-gap:0.5em;text-align:center;margin-right:15px;color:var(--accent);text-decoration:none;}.gb-button-wrapper a.gb-button-764a4eda:hover, .gb-button-wrapper a.gb-button-764a4eda:active, .gb-button-wrapper a.gb-button-764a4eda:focus{color:var(--accent);}.gb-button-wrapper a.gb-button-764a4eda .gb-icon{line-height:0;}.gb-button-wrapper a.gb-button-764a4eda .gb-icon svg{width:1.2em;height:1.2em;fill:currentColor;}.gb-button-wrapper a.gb-button-40334303{display:inline-flex;align-items:center;justify-content:center;column-gap:0.5em;text-align:center;margin-right:15px;color:var(--accent);text-decoration:none;}.gb-button-wrapper a.gb-button-40334303:hover, .gb-button-wrapper a.gb-button-40334303:active, .gb-button-wrapper a.gb-button-40334303:focus{color:var(--accent);}.gb-button-wrapper a.gb-button-40334303 .gb-icon{line-height:0;}.gb-button-wrapper a.gb-button-40334303 .gb-icon svg{width:1.2em;height:1.2em;fill:currentColor;}.gb-button-wrapper a.gb-button-84c9a956{display:inline-flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;}.gb-button-wrapper a.gb-button-d119a8b2{display:inline-flex;align-items:center;justify-content:center;font-size:17px;text-align:center;padding:10px;margin-right:20px;color:var(--base-3);text-decoration:none;}.gb-button-wrapper a.gb-button-d119a8b2:hover, .gb-button-wrapper a.gb-button-d119a8b2:active, .gb-button-wrapper a.gb-button-d119a8b2:focus{color:var(--base-2);}.gb-button-wrapper a.gb-button-2d819663{display:inline-flex;align-items:center;justify-content:center;font-size:17px;text-align:center;padding:10px;margin-right:20px;color:var(--base-3);text-decoration:none;}.gb-button-wrapper a.gb-button-2d819663:hover, .gb-button-wrapper a.gb-button-2d819663:active, .gb-button-wrapper a.gb-button-2d819663:focus{color:var(--base-2);}.gb-button-wrapper a.gb-button-bb5041e3{display:inline-flex;align-items:center;justify-content:center;font-size:17px;text-align:center;padding:10px;margin-right:20px;color:var(--base-3);text-decoration:none;}.gb-button-wrapper a.gb-button-bb5041e3:hover, .gb-button-wrapper a.gb-button-bb5041e3:active, .gb-button-wrapper a.gb-button-bb5041e3:focus{color:var(--base-2);}.gb-button-wrapper a.gb-button-db425f41{display:inline-flex;align-items:center;justify-content:center;font-size:17px;text-align:center;padding:10px;margin-right:20px;color:var(--base-3);text-decoration:none;}.gb-button-wrapper a.gb-button-db425f41:hover, .gb-button-wrapper a.gb-button-db425f41:active, .gb-button-wrapper a.gb-button-db425f41:focus{color:var(--base-2);}.gb-button-wrapper a.gb-button-bec8d56e, .gb-button-wrapper a.gb-button-bec8d56e:visited{color:var(--accent);text-decoration:none;display:inline-flex;align-items:center;justify-content:center;text-align:center;}.gb-button-wrapper a.gb-button-bec8d56e:hover, .gb-button-wrapper a.gb-button-bec8d56e:active, .gb-button-wrapper a.gb-button-bec8d56e:focus{color:#674dbc;}.gb-button-wrapper a.gb-button-bec8d56e .gb-icon{font-size:1.4em;line-height:0;align-items:center;display:inline-flex;}.gb-button-wrapper a.gb-button-bec8d56e .gb-icon svg{height:1em;width:1em;fill:currentColor;}.gb-button-wrapper a.gb-button-122d9fa4, .gb-button-wrapper a.gb-button-122d9fa4:visited{color:var(--accent);text-decoration:none;display:inline-flex;align-items:center;justify-content:center;text-align:center;}.gb-button-wrapper a.gb-button-122d9fa4:hover, .gb-button-wrapper a.gb-button-122d9fa4:active, .gb-button-wrapper a.gb-button-122d9fa4:focus{color:#674dbc;}.gb-button-wrapper a.gb-button-122d9fa4 .gb-icon{font-size:1.4em;line-height:0;align-items:center;display:inline-flex;}.gb-button-wrapper a.gb-button-122d9fa4 .gb-icon svg{height:1em;width:1em;fill:currentColor;}.gb-container-215ca2b7{margin-top:30px;margin-right:30px;margin-bottom:0px;position:relative;z-index:10;}.gb-grid-wrapper > .gb-grid-column-215ca2b7 > .gb-container{display:flex;flex-direction:column;height:100%;}.gb-container-85529cf0{margin-top:-60px;background-color:var(--contrast);color:var(--base-3);}.gb-container-85529cf0 > .gb-inside-container{padding:120px 30px 200px;max-width:1020px;margin-left:auto;margin-right:auto;}.gb-grid-wrapper > .gb-grid-column-85529cf0 > .gb-container{display:flex;flex-direction:column;height:100%;}.gb-container-4effdea4 > .gb-inside-container{padding:0;}.gb-grid-wrapper > .gb-grid-column-4effdea4{width:40%;}.gb-grid-wrapper > .gb-grid-column-4effdea4 > .gb-container{display:flex;flex-direction:column;height:100%;}.gb-container-c6dbdadd{margin-top:60px;border-top:1px solid rgba(255, 255, 255, 0.3);}.gb-container-c6dbdadd > .gb-inside-container{padding:60px 0 0;max-width:1020px;margin-left:auto;margin-right:auto;}.gb-grid-wrapper > .gb-grid-column-c6dbdadd > .gb-container{display:flex;flex-direction:column;height:100%;}.gb-container-7a90a28f > .gb-inside-container{padding:0;}.gb-grid-wrapper > .gb-grid-column-7a90a28f{width:50%;}.gb-grid-wrapper > .gb-grid-column-7a90a28f > .gb-container{display:flex;flex-direction:column;height:100%;}.gb-container-1cc69e8f > .gb-inside-container{padding:0;}.gb-grid-wrapper > .gb-grid-column-1cc69e8f{width:50%;}.gb-grid-wrapper > .gb-grid-column-1cc69e8f > .gb-container{display:flex;flex-direction:column;height:100%;}.gb-container-d1dd99b1 > .gb-inside-container{padding:60px 0 0;max-width:1020px;margin-left:auto;margin-right:auto;}.gb-grid-wrapper > .gb-grid-column-d1dd99b1 > .gb-container{display:flex;flex-direction:column;height:100%;}.gb-container-9c89f761 > .gb-inside-container{padding:0;}.gb-grid-wrapper > .gb-grid-column-9c89f761{width:50%;}.gb-grid-wrapper > .gb-grid-column-9c89f761 > .gb-container{display:flex;flex-direction:column;height:100%;}.gb-container-9cf413a8{text-align:left;}.gb-container-9cf413a8 > .gb-inside-container{padding:0;}.gb-grid-wrapper > .gb-grid-column-9cf413a8{width:15%;}.gb-grid-wrapper > .gb-grid-column-9cf413a8 > .gb-container{display:flex;flex-direction:column;height:100%;}.gb-container-625f3305 > .gb-inside-container{padding:0;}.gb-grid-wrapper > .gb-grid-column-625f3305{width:85%;}.gb-grid-wrapper > .gb-grid-column-625f3305 > .gb-container{display:flex;flex-direction:column;height:100%;}.gb-container-5d70717c{text-align:right;}.gb-container-5d70717c > .gb-inside-container{padding:0;}.gb-grid-wrapper > .gb-grid-column-5d70717c{width:50%;}.gb-grid-wrapper > .gb-grid-column-5d70717c > .gb-container{display:flex;flex-direction:column;height:100%;}.gb-container-78f3ead4 > .gb-inside-container{padding:0;}.gb-grid-wrapper > .gb-grid-column-78f3ead4{width:85%;}.gb-grid-wrapper > .gb-grid-column-78f3ead4 > .gb-container{display:flex;flex-direction:column;height:100%;}.gb-container-780c810b > .gb-inside-container{padding:0;}.gb-grid-wrapper > .gb-grid-column-780c810b{width:15%;}.gb-grid-wrapper > .gb-grid-column-780c810b > .gb-container{display:flex;flex-direction:column;height:100%;}h2.gb-headline-63d5de93{display:flex;align-items:center;justify-content:flex-end;text-align:right;margin-bottom:0px;}h2.gb-headline-63d5de93 .gb-icon{line-height:0;color:var(--accent);}h2.gb-headline-63d5de93 .gb-icon svg{width:120px;height:120px;fill:currentColor;}p.gb-headline-a6f36397{font-size:18px;padding-top:2px;margin-bottom:0px;}p.gb-headline-643cf12f{font-size:18px;padding-top:2px;margin-bottom:0px;}.gb-grid-wrapper-214e14b1{display:flex;flex-wrap:wrap;align-items:center;}.gb-grid-wrapper-214e14b1 > .gb-grid-column{box-sizing:border-box;}.gb-grid-wrapper-49f321fa{display:flex;flex-wrap:wrap;margin-left:-30px;}.gb-grid-wrapper-49f321fa > .gb-grid-column{box-sizing:border-box;padding-left:30px;}.gb-grid-wrapper-a4b97d6a{display:flex;flex-wrap:wrap;margin-left:-20px;}.gb-grid-wrapper-a4b97d6a > .gb-grid-column{box-sizing:border-box;padding-left:20px;}.gb-grid-wrapper-c04126aa{display:flex;flex-wrap:wrap;align-items:center;margin-left:-10px;}.gb-grid-wrapper-c04126aa > .gb-grid-column{box-sizing:border-box;padding-left:10px;}.gb-grid-wrapper-ee647ff2{display:flex;flex-wrap:wrap;align-items:center;margin-left:-15px;}.gb-grid-wrapper-ee647ff2 > .gb-grid-column{box-sizing:border-box;padding-left:15px;}@media (min-width: 1025px) {.gb-button-wrapper-fe863527 > .gb-button{flex:1;}}@media (max-width: 1024px) {.gb-container-85529cf0 > .gb-inside-container{padding:120px 60px;}.gb-grid-wrapper > .gb-grid-column-4effdea4{width:100%;}.gb-grid-wrapper > .gb-grid-column-9cf413a8{width:25%;}.gb-grid-wrapper > .gb-grid-column-625f3305{width:75%;}.gb-grid-wrapper > .gb-grid-column-78f3ead4{width:75%;}.gb-grid-wrapper > .gb-grid-column-780c810b{width:25%;}.gb-grid-wrapper-214e14b1 > .gb-grid-column{padding-bottom:60px;}}@media (max-width: 1024px) and (min-width: 768px) {.gb-button-wrapper-d82799ce{flex-direction:column;}.gb-button-wrapper-38a2c075 > .gb-button{flex:1;}.gb-button-wrapper-fe863527 > .gb-button{flex:1;}}@media (max-width: 767px) {.gb-button-wrapper-d82799ce{flex-direction:column;}.gb-button-wrapper-a18c1c1d{justify-content:flex-start;}.gb-button-wrapper-38a2c075 > .gb-button{flex:1;}.gb-button-wrapper-fe863527 > .gb-button{flex:1;}.gb-container-85529cf0 > .gb-inside-container{padding:100px 40px;}.gb-grid-wrapper > .gb-grid-column-4effdea4{width:100%;}.gb-container-7a90a28f{text-align:left;}.gb-grid-wrapper > .gb-grid-column-7a90a28f{width:100%;}.gb-grid-wrapper > .gb-grid-column-1cc69e8f{width:100%;}.gb-grid-wrapper > div.gb-grid-column-1cc69e8f{padding-bottom:0;}.gb-container-9c89f761{margin-bottom:10px;}.gb-grid-wrapper > .gb-grid-column-9c89f761{width:100%;}.gb-grid-wrapper > .gb-grid-column-9cf413a8{width:15%;}.gb-grid-wrapper > .gb-grid-column-625f3305{width:85%;}.gb-container-5d70717c{text-align:left;}.gb-grid-wrapper > .gb-grid-column-5d70717c{width:100%;}.gb-grid-wrapper > .gb-grid-column-78f3ead4{width:85%;}.gb-grid-wrapper > .gb-grid-column-780c810b{width:15%;order:-1;}}:root{--gb-container-width:1020px;}.gb-container .wp-block-image img{vertical-align:middle;}.gb-grid-wrapper .wp-block-image{margin-bottom:0;}.gb-highlight{background:none;}.gb-shape{line-height:0;}
+</style>
+<link rel="stylesheet" id="generate-blog-images-css" href="featured-images.min.css" media="all">
+<link rel="stylesheet" id="generate-navigation-branding-css" href="navigation-branding-flex.min.css" media="all">
+<style id="generate-navigation-branding-inline-css">
+@media (max-width: 768px){.site-header, #site-navigation, #sticky-navigation{display:none !important;opacity:0.0;}#mobile-header{display:block !important;width:100% !important;}#mobile-header .main-nav > ul{display:none;}#mobile-header.toggled .main-nav > ul, #mobile-header .menu-toggle, #mobile-header .mobile-bar-items{display:block;}#mobile-header .main-nav{-ms-flex:0 0 100%;flex:0 0 100%;-webkit-box-ordinal-group:5;-ms-flex-order:4;order:4;}}.main-navigation.has-branding .inside-navigation.grid-container, .main-navigation.has-branding.grid-container .inside-navigation:not(.grid-container){padding:0px 20px 0px 20px;}.main-navigation.has-branding:not(.grid-container) .inside-navigation:not(.grid-container) .navigation-branding{margin-left:10px;}.navigation-branding img, .site-logo.mobile-header-logo img{height:65px;width:auto;}.navigation-branding .main-title{line-height:65px;}@media (max-width: 768px){.main-navigation.has-branding.nav-align-center .menu-bar-items, .main-navigation.has-sticky-branding.navigation-stick.nav-align-center .menu-bar-items{margin-left:auto;}.navigation-branding{margin-right:auto;margin-left:10px;}.navigation-branding .main-title, .mobile-header-navigation .site-logo{margin-left:10px;}.main-navigation.has-branding .inside-navigation.grid-container{padding:0px;}.navigation-branding img, .site-logo.mobile-header-logo{height:65px;}.navigation-branding .main-title{line-height:65px;}}
+</style>
+<link rel="icon" href="cropped-linuxcapable.com-tiny-logo-32x32.png" sizes="32x32">
+<link rel="icon" href="cropped-linuxcapable.com-tiny-logo-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="https://linuxcapable.com/wp-content/uploads/2022/04/cropped-linuxcapable.com-tiny-logo-180x180.png">
+<meta name="msapplication-TileImage" content="https://linuxcapable.com/wp-content/uploads/2022/04/cropped-linuxcapable.com-tiny-logo-270x270.png">
+		<style id="wp-custom-css">
+			.main-navigation .menu-bar-items {
+    flex-direction: row-reverse;
+}
+
+code {
+    color: #d63384;
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    font-size: 0.95em;
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar-top {
+        display: none;
+    }
+}
+
+@media (max-width: 1024px) {
+    .desktop-ads {
+        display: none !important;
+    }
+}
+
+@media (min-width: 1025px) {
+    .mobile-ads {
+        display: none !important;
+    }
+}
+
+.facebook-icon {
+    color: #4267B2;
+    transition: color 0.3s ease;
+}
+
+.facebook-icon:hover {
+    color: #5b7bd5;
+}
+
+.twitter-icon {
+    color: #1DA1F2;
+    transition: color 0.3s ease;
+}
+
+.twitter-icon:hover {
+    color: #50B7F5;
+}
+
+.ad-container {
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+    .ad-container {
+        display: block;
+        min-height: 105px;
+        padding-top: 25px;
+    }
+
+    #article-start-mobile {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    .ad-container {
+        display: block;
+        min-height: 0px;
+        padding-top: 0px;
+    }
+
+    #article-start {
+        display: none;
+    }
+
+    #article-start-mobile {
+        display: block;
+    }
+}
+
+@media (max-width: 1023px) {
+    .sticky-sidebar-nitro {
+        display: none !important;
+    }
+
+    #top-sidebar-right {
+        display: none !important;
+    }
+}
+
+.site-footer a:hover {
+    color: #444444 !important;
+}
+
+pre {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    font-family: monospace;
+    border-radius: 5px;
+}
+
+pre.wp-block-code {
+    padding: 1em;
+    margin: 20px auto;
+}
+
+pre.wp-block-code code {
+    white-space: pre-wrap !important;
+}
+
+.site-header {
+    border-bottom: 1px solid #dddddd;
+}
+
+.generate-columns-container .featured-column {
+    width: 100%;
+}
+
+blockquote {
+    font-size: 18px;
+    color: #666666;
+    border-left: 2px solid #745acc;
+    margin: 40px;
+    padding: 0px 20px 0px 30px;
+}
+
+blockquote p {
+    margin-bottom: 5px;
+}
+
+figure.wp-block-image,
+.gb-grid-wrapper figure.wp-block-image,
+div.wp-block-image,
+.gb-grid-wrapper div.wp-block-image {
+    margin-bottom: 2em;
+}
+
+.rpwwt-post-title {
+    font-weight: bold !important;
+    font-size: 16px !important;
+    list-style-type: disc !important;
+}
+
+.widget-title {
+    font-weight: bold !important;
+    font-size: 20px !important;
+    list-style-type: disc !important;
+    position: relative;
+}
+
+.widget-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    height: 2px;
+    width: 100%;
+    background: #000;
+}
+
+h2.wp-block-heading {
+    border-bottom: 2px solid;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+h3.wp-block-heading {
+    border-bottom: 2px dotted;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+h4.wp-block-heading {
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+code:not([lang="bash"]):not(.language-bash) {
+    font-size: 16px;
+}
+
+.wp-block-quote {
+    border: 2px solid #6a00ff;
+    background-color: #f1f1f1;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+}
+
+.wp-block-quote p,
+.wp-block-quote ul li,
+.wp-block-quote ol li {
+    color: #000;
+    font-size: 18px;
+}
+
+.wp-block-quote a {
+    color: #6a00ff;
+    text-decoration: underline;
+}
+
+.wp-block-quote p:first-of-type::before {
+    content: "Note to Reader: ";
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.wp-block-quote ul {
+    list-style-type: disc;
+    margin-left: 40px;
+}
+
+.wp-block-quote ol {
+    list-style-type: decimal;
+    margin-left: 40px;
+}
+
+.wp-block-heading code {
+    font-size: inherit;
+}
+		</style>
+		<!-- Google tag (gtag.js) -->
+
+
+</head>
+
+<body class="wp-singular post-template-default single single-post postid-23033 single-format-standard wp-custom-logo wp-embed-responsive wp-theme-generatepress post-image-below-header post-image-aligned-center sticky-menu-slide mobile-header mobile-header-logo right-sidebar nav-float-right separate-containers header-aligned-left dropdown-hover featured-image-active using-mouse" itemtype="https://schema.org/Blog" itemscope="">
+	<a class="screen-reader-text skip-link" href="#content" title="Skip to content">Skip to content</a>		<header class="site-header has-inline-mobile-toggle" id="masthead" aria-label="Site" itemtype="https://schema.org/WPHeader" itemscope="">
+			<div class="inside-header">
+				<div class="site-logo">
+					<a href="https://linuxcapable.com/" rel="home" data-wpel-link="internal">
+						<img class="header-image is-logo-image" alt="LinuxCapable" src="linuxcapable.com-website-banner.png" width="737" height="108">
+					</a>
+				</div>	<nav class="main-navigation mobile-menu-control-wrapper" id="mobile-menu-control-wrapper" aria-label="Mobile Toggle">
+		<div class="menu-bar-items">	<span class="menu-bar-item">
+		<a href="#" role="button" aria-label="Open search" aria-haspopup="dialog" aria-controls="gp-search" data-gpmodal-trigger="gp-search"><span class="gp-icon icon-search"><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path fill-rule="evenodd" clip-rule="evenodd" d="M208 48c-88.366 0-160 71.634-160 160s71.634 160 160 160 160-71.634 160-160S296.366 48 208 48zM0 208C0 93.125 93.125 0 208 0s208 93.125 208 208c0 48.741-16.765 93.566-44.843 129.024l133.826 134.018c9.366 9.379 9.355 24.575-.025 33.941-9.379 9.366-24.575 9.355-33.941-.025L337.238 370.987C301.747 399.167 256.839 416 208 416 93.125 416 0 322.875 0 208z"></path></svg><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M71.029 71.029c9.373-9.372 24.569-9.372 33.942 0L256 222.059l151.029-151.03c9.373-9.372 24.569-9.372 33.942 0 9.372 9.373 9.372 24.569 0 33.942L289.941 256l151.03 151.029c9.372 9.373 9.372 24.569 0 33.942-9.373 9.372-24.569 9.372-33.942 0L256 289.941l-151.029 151.03c-9.373 9.372-24.569 9.372-33.942 0-9.372-9.373-9.372-24.569 0-33.942L222.059 256 71.029 104.971c-9.372-9.373-9.372-24.569 0-33.942z"></path></svg></span></a>
+	</span>
+	</div>		<button data-nav="site-navigation" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+			<span class="gp-icon icon-menu-bars"><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M0 96c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24z"></path></svg><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M71.029 71.029c9.373-9.372 24.569-9.372 33.942 0L256 222.059l151.029-151.03c9.373-9.372 24.569-9.372 33.942 0 9.372 9.373 9.372 24.569 0 33.942L289.941 256l151.03 151.029c9.372 9.373 9.372 24.569 0 33.942-9.373 9.372-24.569 9.372-33.942 0L256 289.941l-151.029 151.03c-9.373 9.372-24.569 9.372-33.942 0-9.372-9.373-9.372-24.569 0-33.942L222.059 256 71.029 104.971c-9.372-9.373-9.372-24.569 0-33.942z"></path></svg></span><span class="screen-reader-text">Menu</span>		</button>
+	</nav>
+			<nav class="main-navigation has-menu-bar-items sub-menu-left" id="site-navigation" aria-label="Primary" itemtype="https://schema.org/SiteNavigationElement" itemscope="">
+			<div class="inside-navigation">
+								<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+					<span class="gp-icon icon-menu-bars"><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M0 96c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24z"></path></svg><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M71.029 71.029c9.373-9.372 24.569-9.372 33.942 0L256 222.059l151.029-151.03c9.373-9.372 24.569-9.372 33.942 0 9.372 9.373 9.372 24.569 0 33.942L289.941 256l151.03 151.029c9.372 9.373 9.372 24.569 0 33.942-9.373 9.372-24.569 9.372-33.942 0L256 289.941l-151.029 151.03c-9.373 9.372-24.569 9.372-33.942 0-9.372-9.373-9.372-24.569 0-33.942L222.059 256 71.029 104.971c-9.372-9.373-9.372-24.569 0-33.942z"></path></svg></span><span class="screen-reader-text">Menu</span>				</button>
+				<div id="primary-menu" class="main-nav"><ul id="menu-primary-marketer" class=" menu sf-menu"><li id="menu-item-63124" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-63124"><a href="https://linuxcapable.com/category/linux-commands/" data-wpel-link="internal">Linux Commands</a></li>
+<li id="menu-item-65096" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-65096"><a href="#">Linux Distributions<span role="presentation" class="dropdown-menu-toggle"><span class="gp-icon icon-arrow"><svg viewBox="0 0 330 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M305.913 197.085c0 2.266-1.133 4.815-2.833 6.514L171.087 335.593c-1.7 1.7-4.249 2.832-6.515 2.832s-4.815-1.133-6.515-2.832L26.064 203.599c-1.7-1.7-2.832-4.248-2.832-6.514s1.132-4.816 2.832-6.515l14.162-14.163c1.7-1.699 3.966-2.832 6.515-2.832 2.266 0 4.815 1.133 6.515 2.832l111.316 111.317 111.316-111.317c1.7-1.699 4.249-2.832 6.515-2.832s4.815 1.133 6.515 2.832l14.162 14.163c1.7 1.7 2.833 4.249 2.833 6.515z"></path></svg></span></span></a>
+<ul class="sub-menu" id="menu-item-65096-sub-menu">
+	<li id="menu-item-65519" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-65519"><a href="https://linuxcapable.com/category/centos-stream/" data-wpel-link="internal">CentOS Stream</a></li>
+	<li id="menu-item-29489" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-29489"><a href="https://linuxcapable.com/category/debian/" data-wpel-link="internal">Debian</a></li>
+	<li id="menu-item-27170" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-27170"><a href="https://linuxcapable.com/category/fedora/" data-wpel-link="internal">Fedora</a></li>
+	<li id="menu-item-65222" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-65222"><a href="https://linuxcapable.com/category/linux-mint/" data-wpel-link="internal">Linux Mint</a></li>
+	<li id="menu-item-64285" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-64285"><a href="https://linuxcapable.com/category/rocky-linux/" data-wpel-link="internal">Rocky Linux</a></li>
+	<li id="menu-item-61126" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-61126"><a href="https://linuxcapable.com/category/ubuntu/" data-wpel-link="internal">Ubuntu</a></li>
+</ul>
+</li>
+<li id="menu-item-64908" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-64908"><a href="#">System Administration<span role="presentation" class="dropdown-menu-toggle"><span class="gp-icon icon-arrow"><svg viewBox="0 0 330 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M305.913 197.085c0 2.266-1.133 4.815-2.833 6.514L171.087 335.593c-1.7 1.7-4.249 2.832-6.515 2.832s-4.815-1.133-6.515-2.832L26.064 203.599c-1.7-1.7-2.832-4.248-2.832-6.514s1.132-4.816 2.832-6.515l14.162-14.163c1.7-1.699 3.966-2.832 6.515-2.832 2.266 0 4.815 1.133 6.515 2.832l111.316 111.317 111.316-111.317c1.7-1.699 4.249-2.832 6.515-2.832s4.815 1.133 6.515 2.832l14.162 14.163c1.7 1.7 2.833 4.249 2.833 6.515z"></path></svg></span></span></a>
+<ul class="sub-menu" id="menu-item-64908-sub-menu">
+	<li id="menu-item-65102" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-65102"><a href="https://linuxcapable.com/category/git/" data-wpel-link="internal">Git</a></li>
+	<li id="menu-item-64909" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-64909"><a href="https://linuxcapable.com/category/nginx/" data-wpel-link="internal">Nginx</a></li>
+</ul>
+</li>
+</ul></div><div class="menu-bar-items">	<span class="menu-bar-item">
+		<a href="#" role="button" aria-label="Open search" aria-haspopup="dialog" aria-controls="gp-search" data-gpmodal-trigger="gp-search"><span class="gp-icon icon-search"><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path fill-rule="evenodd" clip-rule="evenodd" d="M208 48c-88.366 0-160 71.634-160 160s71.634 160 160 160 160-71.634 160-160S296.366 48 208 48zM0 208C0 93.125 93.125 0 208 0s208 93.125 208 208c0 48.741-16.765 93.566-44.843 129.024l133.826 134.018c9.366 9.379 9.355 24.575-.025 33.941-9.379 9.366-24.575 9.355-33.941-.025L337.238 370.987C301.747 399.167 256.839 416 208 416 93.125 416 0 322.875 0 208z"></path></svg><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M71.029 71.029c9.373-9.372 24.569-9.372 33.942 0L256 222.059l151.029-151.03c9.373-9.372 24.569-9.372 33.942 0 9.372 9.373 9.372 24.569 0 33.942L289.941 256l151.03 151.029c9.372 9.373 9.372 24.569 0 33.942-9.373 9.372-24.569 9.372-33.942 0L256 289.941l-151.029 151.03c-9.373 9.372-24.569 9.372-33.942 0-9.372-9.373-9.372-24.569 0-33.942L222.059 256 71.029 104.971c-9.372-9.373-9.372-24.569 0-33.942z"></path></svg></span></a>
+	</span>
+	</div><div class="gb-button-wrapper gb-button-wrapper-28c95231">
+
+<a class="gb-button gb-button-764a4eda" href="https://x.com/linuxcapable" target="_blank" rel="noopener noreferrer follow external" data-wpel-link="external"><span class="gb-icon"><svg aria-hidden="true" role="img" height="1em" width="1em" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"></path></svg></span></a>
+
+
+
+<a class="gb-button gb-button-40334303" href="https://linuxcapable.com/feed/" data-wpel-link="internal"><span class="gb-icon"><svg transform="scale(1.1)" aria-hidden="true" height="1.1em" width="1.1em" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">   <path fill="currentColor" d="M3.39,18.36a2.19,2.19,0,1,0,2.19-2.19A2.19,2.19,0,0,0,3.39,18.36Zm0-12.81v3a11.4,11.4,0,0,1,11.4,11.4h3A14.4,14.4,0,0,0,3.39,5.55Zm0,5.55v3A5.85,5.85,0,0,1,9.24,18.36h3A8.85,8.85,0,0,0,3.39,11.1Z"></path> </svg></span></a>
+
+</div>			</div>
+		</nav>
+					</div>
+		</header>
+				<nav id="mobile-header" data-auto-hide-sticky="" itemtype="https://schema.org/SiteNavigationElement" itemscope="" class="main-navigation mobile-header-navigation has-branding has-menu-bar-items">
+			<div class="inside-navigation grid-container grid-parent">
+				<div class="site-logo mobile-header-logo">
+						<a href="https://linuxcapable.com/" title="LinuxCapable" rel="home" data-wpel-link="internal">
+							<img src="linuxcapable.com-tiny-logo.png" alt="LinuxCapable" class="is-logo-image" width="90" height="69">
+						</a>
+					</div>					<button class="menu-toggle" aria-controls="mobile-menu" aria-expanded="false">
+						<span class="gp-icon icon-menu-bars"><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M0 96c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24z"></path></svg><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M71.029 71.029c9.373-9.372 24.569-9.372 33.942 0L256 222.059l151.029-151.03c9.373-9.372 24.569-9.372 33.942 0 9.372 9.373 9.372 24.569 0 33.942L289.941 256l151.03 151.029c9.372 9.373 9.372 24.569 0 33.942-9.373 9.372-24.569 9.372-33.942 0L256 289.941l-151.029 151.03c-9.373 9.372-24.569 9.372-33.942 0-9.372-9.373-9.372-24.569 0-33.942L222.059 256 71.029 104.971c-9.372-9.373-9.372-24.569 0-33.942z"></path></svg></span><span class="screen-reader-text">Menu</span>					</button>
+					<div id="mobile-menu" class="main-nav"><ul id="menu-primary-marketer-1" class=" menu sf-menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-63124"><a href="https://linuxcapable.com/category/linux-commands/" data-wpel-link="internal">Linux Commands</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-65096"><a href="#">Linux Distributions<span role="presentation" class="dropdown-menu-toggle"><span class="gp-icon icon-arrow"><svg viewBox="0 0 330 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M305.913 197.085c0 2.266-1.133 4.815-2.833 6.514L171.087 335.593c-1.7 1.7-4.249 2.832-6.515 2.832s-4.815-1.133-6.515-2.832L26.064 203.599c-1.7-1.7-2.832-4.248-2.832-6.514s1.132-4.816 2.832-6.515l14.162-14.163c1.7-1.699 3.966-2.832 6.515-2.832 2.266 0 4.815 1.133 6.515 2.832l111.316 111.317 111.316-111.317c1.7-1.699 4.249-2.832 6.515-2.832s4.815 1.133 6.515 2.832l14.162 14.163c1.7 1.7 2.833 4.249 2.833 6.515z"></path></svg></span></span></a>
+<ul class="sub-menu" id="menu-item-97696-sub-menu">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-65519"><a href="https://linuxcapable.com/category/centos-stream/" data-wpel-link="internal">CentOS Stream</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-29489"><a href="https://linuxcapable.com/category/debian/" data-wpel-link="internal">Debian</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-27170"><a href="https://linuxcapable.com/category/fedora/" data-wpel-link="internal">Fedora</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-65222"><a href="https://linuxcapable.com/category/linux-mint/" data-wpel-link="internal">Linux Mint</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-64285"><a href="https://linuxcapable.com/category/rocky-linux/" data-wpel-link="internal">Rocky Linux</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-61126"><a href="https://linuxcapable.com/category/ubuntu/" data-wpel-link="internal">Ubuntu</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-64908"><a href="#">System Administration<span role="presentation" class="dropdown-menu-toggle"><span class="gp-icon icon-arrow"><svg viewBox="0 0 330 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M305.913 197.085c0 2.266-1.133 4.815-2.833 6.514L171.087 335.593c-1.7 1.7-4.249 2.832-6.515 2.832s-4.815-1.133-6.515-2.832L26.064 203.599c-1.7-1.7-2.832-4.248-2.832-6.514s1.132-4.816 2.832-6.515l14.162-14.163c1.7-1.699 3.966-2.832 6.515-2.832 2.266 0 4.815 1.133 6.515 2.832l111.316 111.317 111.316-111.317c1.7-1.699 4.249-2.832 6.515-2.832s4.815 1.133 6.515 2.832l14.162 14.163c1.7 1.7 2.833 4.249 2.833 6.515z"></path></svg></span></span></a>
+<ul class="sub-menu" id="menu-item-96671-sub-menu">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-65102"><a href="https://linuxcapable.com/category/git/" data-wpel-link="internal">Git</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-64909"><a href="https://linuxcapable.com/category/nginx/" data-wpel-link="internal">Nginx</a></li>
+</ul>
+</li>
+</ul></div><div class="menu-bar-items">	<span class="menu-bar-item">
+		<a href="#" role="button" aria-label="Open search" aria-haspopup="dialog" aria-controls="gp-search" data-gpmodal-trigger="gp-search"><span class="gp-icon icon-search"><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path fill-rule="evenodd" clip-rule="evenodd" d="M208 48c-88.366 0-160 71.634-160 160s71.634 160 160 160 160-71.634 160-160S296.366 48 208 48zM0 208C0 93.125 93.125 0 208 0s208 93.125 208 208c0 48.741-16.765 93.566-44.843 129.024l133.826 134.018c9.366 9.379 9.355 24.575-.025 33.941-9.379 9.366-24.575 9.355-33.941-.025L337.238 370.987C301.747 399.167 256.839 416 208 416 93.125 416 0 322.875 0 208z"></path></svg><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M71.029 71.029c9.373-9.372 24.569-9.372 33.942 0L256 222.059l151.029-151.03c9.373-9.372 24.569-9.372 33.942 0 9.372 9.373 9.372 24.569 0 33.942L289.941 256l151.03 151.029c9.372 9.373 9.372 24.569 0 33.942-9.373 9.372-24.569 9.372-33.942 0L256 289.941l-151.029 151.03c-9.373 9.372-24.569 9.372-33.942 0-9.372-9.373-9.372-24.569 0-33.942L222.059 256 71.029 104.971c-9.372-9.373-9.372-24.569 0-33.942z"></path></svg></span></a>
+	</span>
+	</div><div class="gb-button-wrapper gb-button-wrapper-28c95231">
+
+<a class="gb-button gb-button-764a4eda" href="https://x.com/linuxcapable" target="_blank" rel="noopener noreferrer follow external" data-wpel-link="external"><span class="gb-icon"><svg aria-hidden="true" role="img" height="1em" width="1em" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"></path></svg></span></a>
+
+
+
+<a class="gb-button gb-button-40334303" href="https://linuxcapable.com/feed/" data-wpel-link="internal"><span class="gb-icon"><svg transform="scale(1.1)" aria-hidden="true" height="1.1em" width="1.1em" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">   <path fill="currentColor" d="M3.39,18.36a2.19,2.19,0,1,0,2.19-2.19A2.19,2.19,0,0,0,3.39,18.36Zm0-12.81v3a11.4,11.4,0,0,1,11.4,11.4h3A14.4,14.4,0,0,0,3.39,5.55Zm0,5.55v3A5.85,5.85,0,0,1,9.24,18.36h3A8.85,8.85,0,0,0,3.39,11.1Z"></path> </svg></span></a>
+
+</div>			</div><!-- .inside-navigation -->
+		</nav><!-- #site-navigation -->
+		
+	<div class="site grid-container container hfeed" id="page">
+				<div class="site-content" id="content">
+			
+	<div class="content-area" id="primary">
+		<main class="site-main" id="main">
+			
+<article id="post-23033" class="post-23033 post type-post status-publish format-standard has-post-thumbnail hentry category-ubuntu" itemtype="https://schema.org/CreativeWork" itemscope="">
+	<div class="inside-article">
+					<header class="entry-header">
+				<h1 class="entry-title" itemprop="headline">How to Install Flatpak on Ubuntu 24.04, 22.04 or 20.04</h1>		<div class="entry-meta">
+			<div class="posted-on">Last updated on September 1, 2024 7:54 pm by Joshua James</div><div class="reading-time">Estimated reading time: 8 minutes</div>		</div>
+					</header>
+			<div class="featured-image  page-header-image-single ">
+				
+			</div>
+
+
+		<div class="entry-content" itemprop="text">
+			
+<p>Flatpak is a popular framework for distributing and running applications in a secure, sandboxed environment on Linux systems. It allows you to install and run applications regardless of the Linux distribution you use, providing consistency and security across different environments. Flatpak packages include all the necessary dependencies, ensuring that applications run as expected without conflicting with system libraries. It’s particularly useful for accessing the latest versions of software that might not be available through traditional package managers.</p>
+
+
+
+<p>On Ubuntu 24.04, 22.04, or 20.04, you can install Flatpak via two methods: using the default Ubuntu repository for a stable and straightforward installation, or adding the Flatpak Team Launchpad PPA for access to the latest stable release or development builds for those who want to contribute to testing. This guide will walk you through both methods, ensuring you have the latest Flatpak setup that suits your needs.</p>
+
+
+
+<div class="lwptoc lwptoc-baseItems lwptoc-light lwptoc-notInherit" data-smooth-scroll="1" data-smooth-scroll-offset="24" data-lwptoc-initialized="1"><div class="lwptoc_i">    <div class="lwptoc_header">
+        <b class="lwptoc_title">Contents</b>                    <span class="lwptoc_toggle">
+                <a href="#" class="lwptoc_toggle_label" data-label="show">hide</a>            </span>
+            </div>
+<div class="lwptoc_items lwptoc_items-visible">
+    <div class="lwptoc_itemWrap"><div class="lwptoc_item">    <a href="#Update_Ubuntu_Before_Flatpak_Installation">
+                    <span class="lwptoc_item_number">1</span>
+                <span class="lwptoc_item_label">Update Ubuntu Before Flatpak Installation</span>
+    </a>
+    </div><div class="lwptoc_item">    <a href="#Method_1_Install_Flatpak_via_Default_APT_Repository">
+                    <span class="lwptoc_item_number">2</span>
+                <span class="lwptoc_item_label">Method 1: Install Flatpak via Default APT Repository</span>
+    </a>
+    </div><div class="lwptoc_item">    <a href="#Method_2_Install_Flatpak_via_Flatpak_Team_APT_PPA">
+                    <span class="lwptoc_item_number">3</span>
+                <span class="lwptoc_item_label">Method 2: Install Flatpak via Flatpak Team APT PPA</span>
+    </a>
+    </div><div class="lwptoc_item">    <a href="#Basic_Flatpak_Commands">
+                    <span class="lwptoc_item_number">4</span>
+                <span class="lwptoc_item_label">Basic Flatpak Commands</span>
+    </a>
+    </div><div class="lwptoc_item">    <a href="#Conclusion">
+                    <span class="lwptoc_item_number">5</span>
+                <span class="lwptoc_item_label">Conclusion</span>
+    </a>
+    </div></div></div>
+</div></div><h2 class="wp-block-heading" id="ftoc-heading-2"><span id="Update_Ubuntu_Before_Flatpak_Installation">Update Ubuntu Before Flatpak Installation</span></h2>
+
+
+
+<p>The first task is to update your system to ensure all existing packages are up to date before installing.</p>
+
+
+
+<pre class="wp-block-code language-bash" tabindex="0"><code lang="bash" class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> update <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> <span class="token function">apt</span> upgrade</code></pre>
+
+
+
+<h2 class="wp-block-heading"><span id="Method_1_Install_Flatpak_via_Default_APT_Repository">Method 1: Install Flatpak via Default APT Repository</span></h2>
+
+
+
+<p>Installing Flatpak on Ubuntu can be done through different methods. The first method we will discuss is installing it using the Ubuntu repository. It is important to note that by default, Ubuntu keeps Flatpak in its repository. Still, it is not installed by default due to its competition with Snap, the parent company of Ubuntu.</p>
+
+
+
+<p>To install Flatpak using the Ubuntu repository, you can use the following command in a Linux terminal:</p>
+
+
+
+<pre class="wp-block-code language-bash" tabindex="0"><code lang="bash" class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> flatpak</code></pre>
+
+
+
+<p>This command prompts you to enter your root password before installing Flatpak. After you enter your password, the installation process will begin.</p>
+
+
+
+<p>Once installed, you can add the Flathub repository, which is the primary repository for Flatpak applications, by running the following command:</p>
+
+
+
+<pre class="wp-block-code language-bash" tabindex="0"><code lang="bash" class="language-bash">flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo</code></pre>
+
+
+
+<p>This command will add the Flathub repository to your Flatpak installation, allowing you to easily search for and install applications from the Flathub repository.</p>
+
+
+
+<h2 class="wp-block-heading"><span id="Method_2_Install_Flatpak_via_Flatpak_Team_APT_PPA">Method 2: Install Flatpak via Flatpak Team APT PPA</span></h2>
+
+
+
+<p>The second method of installing Flatpak on Ubuntu uses the “Flatpak” team LaunchPAD PPA, which contains the latest stable and development versions of Flatpak. This method is highly recommended as Canonical, Ubuntu’s parent company, has been putting more pressure on using Snap over APT, especially against Flatpak.</p>
+
+
+
+<p><strong>Option 1: Import Flatpak stable PPA:</strong></p>
+
+
+
+<pre class="wp-block-code language-bash" tabindex="0"><code lang="bash" class="language-bash"><span class="token function">sudo</span> add-apt-repository ppa:flatpak/stable -y</code></pre>
+
+
+
+<p><strong>Option 2: Import Flatpak development PPA:</strong></p>
+
+
+
+<pre class="wp-block-code language-bash" tabindex="0"><code lang="bash" class="language-bash"><span class="token function">sudo</span> add-apt-repository ppa:flatpak/development -y</code></pre>
+
+
+
+<p>After importing the PPA, run an APT update to ensure that the changes are reflected:</p>
+
+
+
+<pre class="wp-block-code language-bash" tabindex="0"><code lang="bash" class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> update</code></pre>
+
+
+
+<p>Now, install Flatpak by running the following command:</p>
+
+
+
+<pre class="wp-block-code language-bash" tabindex="0"><code lang="bash" class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> flatpak</code></pre>
+
+
+
+<p>This command will prompt you to enter your root password before installing Flatpak. After entering your password, the installation process will begin.</p>
+
+
+
+<p>Once installed, you can add the Flathub repository, which is the primary repository for Flatpak applications, by running the following command:</p>
+
+
+
+<pre class="wp-block-code language-bash" tabindex="0"><code lang="bash" class="language-bash">flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo</code></pre>
+
+
+
+<p>This command will add the Flathub repository to your Flatpak installation, allowing you to easily search for and install applications from the Flathub repository.</p>
+
+
+
+<p>Furthermore, once you have installed the Flatpak version using the PPA, you can check the installed version by using the “apt-cache policy” command, as shown below:</p>
+
+
+
+<pre class="wp-block-code language-bash" tabindex="0"><code lang="bash" class="language-bash"><span class="token function">apt-cache</span> policy flatpak</code></pre>
+
+
+<div class="wp-block-image">
+<figure data-wp-context="{&quot;imageId&quot;:&quot;69031302c1ad6&quot;}" data-wp-interactive="core/image" class="aligncenter size-full wp-lightbox-container"><img decoding="async" width="1024" height="768" data-wp-class--hide="state.isContentHidden" data-wp-class--show="state.isContentVisible" data-wp-init="callbacks.setButtonStyles" data-wp-on-async--click="actions.showLightbox" data-wp-on-async--load="callbacks.setButtonStyles" data-wp-on-async-window--resize="callbacks.setButtonStyles" src="example-of-apt-cache-policy-with-flatpak-development-version-on-ubuntu-22.04-or-20.04-lts.png" alt="apt-cache policy command output for Flatpak development version on Ubuntu" class="wp-image-42791" srcset="example-of-apt-cache-policy-with-flatpak-development-version-on-ubuntu-22.04-or-20.04-lts.png 1024w, example-of-apt-cache-policy-with-flatpak-development-version-on-ubuntu-22.04-or-20.04-lts-300x225.png 300w, example-of-apt-cache-policy-with-flatpak-development-version-on-ubuntu-22.04-or-20.04-lts-768x576.png 768w, example-of-apt-cache-policy-with-flatpak-development-version-on-ubuntu-22.04-or-20.04-lts-320x240.png 320w, example-of-apt-cache-policy-with-flatpak-development-version-on-ubuntu-22.04-or-20.04-lts-375x281.png 375w, example-of-apt-cache-policy-with-flatpak-development-version-on-ubuntu-22.04-or-20.04-lts-412x309.png 412w, example-of-apt-cache-policy-with-flatpak-development-version-on-ubuntu-22.04-or-20.04-lts-810x608.png 810w, example-of-apt-cache-policy-with-flatpak-development-version-on-ubuntu-22.04-or-20.04-lts-960x720.png 960w, example-of-apt-cache-policy-with-flatpak-development-version-on-ubuntu-22.04-or-20.04-lts-75x56.png 75w" sizes="(max-width: 1024px) 100vw, 1024px"><button class="lightbox-trigger" type="button" aria-haspopup="dialog" aria-label="Enlarge" data-wp-init="callbacks.initTriggerButton" data-wp-on-async--click="actions.showLightbox" data-wp-style--right="state.imageButtonRight" data-wp-style--top="state.imageButtonTop" style="right: 16px; top: 15.5px;">
+			<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" viewBox="0 0 12 12">
+				<path fill="#fff" d="M2 0a2 2 0 0 0-2 2v2h1.5V2a.5.5 0 0 1 .5-.5h2V0H2Zm2 10.5H2a.5.5 0 0 1-.5-.5V8H0v2a2 2 0 0 0 2 2h2v-1.5ZM8 12v-1.5h2a.5.5 0 0 0 .5-.5V8H12v2a2 2 0 0 1-2 2H8Zm2-12a2 2 0 0 1 2 2v2h-1.5V2a.5.5 0 0 0-.5-.5H8V0h2Z"></path>
+			</svg>
+		</button><figcaption class="wp-element-caption">apt-cache policy command output for Flatpak development version on Ubuntu Linux</figcaption></figure></div>
+
+
+<p>As shown in the guide, the installation process installed the development version of Flatpak, which was version 1.15.3 at the time of writing. It is important to note that this version may be slightly ahead of the Flatpak PPA stable version and significantly ahead of Ubuntu’s default version, which is 1.12.7 and considered outdated.</p>
+
+
+
+<h2 class="wp-block-heading"><span id="Basic_Flatpak_Commands">Basic Flatpak Commands</span></h2>
+
+
+
+<p>This section will explain how to use Flatpak on your Ubuntu system in more detail.
+                </p>
+
+
+
+<h3 class="wp-block-heading">Adding a Remote Repository</h3>
+
+
+
+<p>Flatpak uses remote repositories to download and install applications. To add a remote repository, use the following command:</p>
+
+
+
+<pre class="wp-block-code language-bash" tabindex="0"><code lang="bash" class="language-bash">flatpak remote-add --if-not-exists <span class="token operator">&lt;</span>name<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>URL<span class="token operator">&gt;</span></code></pre>
+
+
+
+<p>For example, to add the Flathub repository, which is the primary repository for Flatpak applications, use the following command:</p>
+
+
+
+<pre class="wp-block-code language-bash" tabindex="0"><code lang="bash" class="language-bash">flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo</code></pre>
+
+
+
+<h3 class="wp-block-heading">Installing Applications</h3>
+
+
+
+<p>To install an application using Flatpak, use the following command:</p>
+
+
+
+<pre class="wp-block-code language-bash" tabindex="0"><code lang="bash" class="language-bash">flatpak <span class="token function">install</span> <span class="token operator">&lt;</span>application-name<span class="token operator">&gt;</span></code></pre>
+
+
+
+<p>For example, to install the GIMP image editing software, use the following command:</p>
+
+
+
+<pre class="wp-block-code language-bash" tabindex="0"><code lang="bash" class="language-bash">flatpak <span class="token function">install</span> org.gimp.GIMP</code></pre>
+
+
+
+<h3 class="wp-block-heading">Updating Applications</h3>
+
+
+
+<p>To update an application that was installed using Flatpak, use the following command:</p>
+
+
+
+<pre class="wp-block-code language-bash" tabindex="0"><code lang="bash" class="language-bash">flatpak update <span class="token operator">&lt;</span>application-name<span class="token operator">&gt;</span></code></pre>
+
+
+
+<p>For example, to update GIMP, use the following command:</p>
+
+
+
+<pre class="wp-block-code language-bash" tabindex="0"><code lang="bash" class="language-bash">flatpak update org.gimp.GIMP</code></pre>
+
+
+
+<h3 class="wp-block-heading">Uninstalling Applications</h3>
+
+
+
+<p>To uninstall an application that was installed using Flatpak, use the following command:</p>
+
+
+
+<pre class="wp-block-code language-bash" tabindex="0"><code lang="bash" class="language-bash">flatpak uninstall <span class="token operator">&lt;</span>application-name<span class="token operator">&gt;</span></code></pre>
+
+
+
+<p>For example, to uninstall GIMP, use the following command:</p>
+
+
+
+<pre class="wp-block-code language-bash" tabindex="0"><code lang="bash" class="language-bash">flatpak uninstall org.gimp.GIMP</code></pre>
+
+
+
+<h3 class="wp-block-heading">Listing Installed Applications</h3>
+
+
+
+<p>To list all the applications that were installed using Flatpak, use the following command:</p>
+
+
+
+<pre class="wp-block-code language-bash" tabindex="0"><code lang="bash" class="language-bash">flatpak list</code></pre>
+
+
+
+<h3 class="wp-block-heading">Searching for Applications</h3>
+
+
+
+<p>To search for an application in the Flatpak repository, use the following command:</p>
+
+
+
+<pre class="wp-block-code language-bash" tabindex="0"><code lang="bash" class="language-bash">flatpak search <span class="token operator">&lt;</span>search-term<span class="token operator">&gt;</span></code></pre>
+
+
+
+<p>For example, to search for the LibreOffice productivity suite, use the following command:</p>
+
+
+
+<pre class="wp-block-code language-bash" tabindex="0"><code lang="bash" class="language-bash">flatpak search libreoffice</code></pre>
+
+
+
+<h3 class="wp-block-heading">Listing Remote Repositories</h3>
+
+
+
+<p>To list all the remote repositories that are currently configured, use the following command:</p>
+
+
+
+<pre class="wp-block-code language-bash" tabindex="0"><code lang="bash" class="language-bash">flatpak remote-list</code></pre>
+
+
+
+<h3 class="wp-block-heading">Checking for Updates</h3>
+
+
+
+<p>To check for updates to applications installed using Flatpak, use the following command:</p>
+
+
+
+<pre class="wp-block-code language-bash" tabindex="0"><code lang="bash" class="language-bash">flatpak update</code></pre>
+
+
+
+<h3 class="wp-block-heading">Updating the Flatpak System</h3>
+
+
+
+<p>To update the Flatpak system itself, use the following command:</p>
+
+
+
+<pre class="wp-block-code language-bash" tabindex="0"><code lang="bash" class="language-bash">flatpak update --system</code></pre>
+
+
+
+<h3 class="wp-block-heading">Info on Applications</h3>
+
+
+
+<p>To get information about an application, such as its version and other details, use the following command:</p>
+
+
+
+<pre class="wp-block-code language-bash" tabindex="0"><code lang="bash" class="language-bash">flatpak info <span class="token operator">&lt;</span>application-name<span class="token operator">&gt;</span></code></pre>
+
+
+
+<p>For example, to get information about GIMP, use the following command:</p>
+
+
+
+<pre class="wp-block-code language-bash" tabindex="0"><code lang="bash" class="language-bash">flatpak info org.gimp.GIMP</code></pre>
+
+
+
+<h3 class="wp-block-heading">Running Applications</h3>
+
+
+
+<p>To run an application that was installed using Flatpak, use the following command:</p>
+
+
+
+<pre class="wp-block-code language-bash" tabindex="0"><code lang="bash" class="language-bash">flatpak run <span class="token operator">&lt;</span>application-name<span class="token operator">&gt;</span></code></pre>
+
+
+
+<p>For example, to run GIMP, use the following command:</p>
+
+
+
+<pre class="wp-block-code language-bash" tabindex="0"><code lang="bash" class="language-bash">flatpak run org.gimp.GIMP</code></pre>
+
+
+
+<h3 class="wp-block-heading">Sideload an Application</h3>
+
+
+
+<p>To sideload an application that was not downloaded from a repository, use the following command:
+                </p>
+
+
+
+<pre class="wp-block-code language-bash" tabindex="0"><code lang="bash" class="language-bash">flatpak <span class="token function">install</span> <span class="token operator">&lt;</span>path-to-application<span class="token operator">&gt;</span></code></pre>
+
+
+
+<h3 class="wp-block-heading">Exporting an Application</h3>
+
+
+
+<p>To export an application that was installed using Flatpak to a file, use the following command:</p>
+
+
+
+<pre class="wp-block-code language-bash" tabindex="0"><code lang="bash" class="language-bash">flatpak <span class="token builtin class-name">export</span> <span class="token operator">&lt;</span>application-name</code></pre>
+
+
+
+<h3 class="wp-block-heading">Exporting an Application</h3>
+
+
+
+<p>To export an application that was installed using Flatpak to a file, use the following command:</p>
+
+
+
+<pre class="wp-block-code language-bash" tabindex="0"><code lang="bash" class="language-bash">flatpak <span class="token builtin class-name">export</span> <span class="token operator">&lt;</span>application-name<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>filename<span class="token operator">&gt;</span></code></pre>
+
+
+
+<p>For example, to export GIMP to a file called gimp.flatpak, use the following command:</p>
+
+
+
+<pre class="wp-block-code language-bash" tabindex="0"><code lang="bash" class="language-bash">flatpak <span class="token builtin class-name">export</span> org.gimp.GIMP gimp.flatpak</code></pre>
+
+
+
+<h3 class="wp-block-heading">Importing an Application</h3>
+
+
+
+<p>To import an application that was exported using Flatpak, use the following command:</p>
+
+
+
+<pre class="wp-block-code language-bash" tabindex="0"><code lang="bash" class="language-bash">flatpak <span class="token function">install</span> <span class="token operator">&lt;</span>filename<span class="token operator">&gt;</span></code></pre>
+
+
+
+<p>For example, to import the gimp.flatpak file that was exported earlier, use the following command:</p>
+
+
+
+<pre class="wp-block-code language-bash" tabindex="0"><code lang="bash" class="language-bash">flatpak <span class="token function">install</span> gimp.flatpak</code></pre>
+
+
+
+<h3 class="wp-block-heading">List Files in an Application</h3>
+
+
+
+<p>To list the files that were installed as part of an application, use the following command:</p>
+
+
+
+<pre class="wp-block-code language-bash" tabindex="0"><code lang="bash" class="language-bash">flatpak list-files <span class="token operator">&lt;</span>application-name<span class="token operator">&gt;</span></code></pre>
+
+
+
+<p>For example, to list the files installed as part of GIMP, use the following command:</p>
+
+
+
+<pre class="wp-block-code language-bash" tabindex="0"><code lang="bash" class="language-bash">flatpak list-files org.gimp.GIMP</code></pre>
+
+
+
+<h3 class="wp-block-heading">Check Application Permissions</h3>
+
+
+
+<p>To check the permissions that an application has, use the following command:</p>
+
+
+
+<pre class="wp-block-code language-bash" tabindex="0"><code lang="bash" class="language-bash">flatpak permissions <span class="token operator">&lt;</span>application-name<span class="token operator">&gt;</span></code></pre>
+
+
+
+<p>For example, to check the permissions for GIMP, use the following command:</p>
+
+
+
+<pre class="wp-block-code language-bash" tabindex="0"><code lang="bash" class="language-bash">flatpak permissions org.gimp.GIMP</code></pre>
+
+
+
+<h3 class="wp-block-heading">Change Application Permissions</h3>
+
+
+
+<p>To change the permissions that an application has, use the following command:</p>
+
+
+
+<pre class="wp-block-code language-bash" tabindex="0"><code lang="bash" class="language-bash">flatpak override <span class="token operator">&lt;</span>application-name<span class="token operator">&gt;</span> --filesystem<span class="token operator">=</span><span class="token operator">&lt;</span>directory<span class="token operator">&gt;</span></code></pre>
+
+
+
+<p>For example, to permit GIMP to access a directory called MyPhotos, use the following command:</p>
+
+
+
+<pre class="wp-block-code language-bash" tabindex="0"><code lang="bash" class="language-bash">flatpak override org.gimp.GIMP --filesystem<span class="token operator">=</span>/home/user/MyPhotos</code></pre>
+
+
+
+<h3 class="wp-block-heading">Remote Update</h3>
+
+
+
+<p>To update all remote repositories, use the following command:</p>
+
+
+
+<pre class="wp-block-code language-bash" tabindex="0"><code lang="bash" class="language-bash">flatpak update --appstream</code></pre>
+
+
+
+<h3 class="wp-block-heading">Update a Single Remote</h3>
+
+
+
+<p>To update a single remote repository, use the following command:</p>
+
+
+
+<pre class="wp-block-code language-bash" tabindex="0"><code lang="bash" class="language-bash">flatpak update <span class="token operator">&lt;</span>remote-name<span class="token operator">&gt;</span></code></pre>
+
+
+
+<h3 class="wp-block-heading">Remove a Remote</h3>
+
+
+
+<p>To remove a remote repository, use the following command:</p>
+
+
+
+<pre class="wp-block-code language-bash" tabindex="0"><code lang="bash" class="language-bash">flatpak remote-delete <span class="token operator">&lt;</span>remote-name<span class="token operator">&gt;</span></code></pre>
+
+
+
+<h3 class="wp-block-heading">Run Application in Sandbox</h3>
+
+
+
+<p>To run an application in a sandbox environment, use the following command:</p>
+
+
+
+<pre class="wp-block-code language-bash" tabindex="0"><code lang="bash" class="language-bash">flatpak run --sandbox <span class="token operator">&lt;</span>application-name<span class="token operator">&gt;</span></code></pre>
+
+
+
+<p>For example, to run GIMP in a sandbox environment, use the following command:</p>
+
+
+
+<pre class="wp-block-code language-bash" tabindex="0"><code lang="bash" class="language-bash">flatpak run --sandbox org.gimp.GIMP</code></pre>
+
+
+
+<h3 class="wp-block-heading">Create an Application Bundle</h3>
+
+
+
+<p>To create an application bundle that can be distributed and installed on other systems, use the following command:</p>
+
+
+
+<pre class="wp-block-code language-bash" tabindex="0"><code lang="bash" class="language-bash">flatpak build-bundle <span class="token operator">&lt;</span>directory<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>bundle-file<span class="token operator">&gt;</span></code></pre>
+
+
+
+<p>For example, to create a bundle for GIMP, use the following command:</p>
+
+
+
+<pre class="wp-block-code language-bash" tabindex="0"><code lang="bash" class="language-bash">flatpak build-bundle org.gimp.GIMP gimp.bundle</code></pre>
+
+
+
+<h3 class="wp-block-heading">List Installed Runtimes with Flatpak on Ubuntu</h3>
+
+
+
+<p>To list all the runtimes that are currently installed, use the following command:
+                </p>
+
+
+
+<pre class="wp-block-code language-bash" tabindex="0"><code lang="bash" class="language-bash">flatpak list-runtime</code></pre>
+
+
+
+<h3 class="wp-block-heading">List Available Runtimes</h3>
+
+
+
+<p>To list all the runtimes that are available in the repository, use the following command:</p>
+
+
+
+<pre class="wp-block-code language-bash" tabindex="0"><code lang="bash" class="language-bash">flatpak list-runtime -a</code></pre>
+
+
+
+<h3 class="wp-block-heading">List Extensions</h3>
+
+
+
+<p>To list all the extensions that are currently installed, use the following command:</p>
+
+
+
+<pre class="wp-block-code language-bash" tabindex="0"><code lang="bash" class="language-bash">flatpak list-extension</code></pre>
+
+
+
+<h3 class="wp-block-heading">List Available Extensions</h3>
+
+
+
+<p>To list all the extensions that are available in the repository, use the following command:</p>
+
+
+
+<pre class="wp-block-code language-bash" tabindex="0"><code lang="bash" class="language-bash">flatpak list-extension -a</code></pre>
+
+
+
+<p>These are just some of the essential Flatpak commands for managing and deploying applications on your Ubuntu system.</p>
+
+
+
+<h2 class="wp-block-heading"><span id="Conclusion">Conclusion</span></h2>
+
+
+
+<p>With Flatpak installed on your Ubuntu system, you have access to a vast range of applications that are securely sandboxed and consistently updated across distributions. Whether you choose the stability of the default Ubuntu repository or the cutting-edge features from the Flatpak Team Launchpad PPA, you’ll ensure that your system is equipped to handle the latest applications available through Flatpak. Regular updates, especially when using the PPA, will keep your Flatpak installation current and ready for all the latest software. Enjoy the flexibility and security that Flatpak brings to your Ubuntu environment.</p>
+		</div>
+
+				<footer class="entry-meta" aria-label="Entry meta">
+			<span class="cat-links"><span class="gp-icon icon-categories"><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M0 112c0-26.51 21.49-48 48-48h110.014a48 48 0 0143.592 27.907l12.349 26.791A16 16 0 00228.486 128H464c26.51 0 48 21.49 48 48v224c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V112z"></path></svg></span><span class="screen-reader-text">Categories </span><a href="https://linuxcapable.com/category/ubuntu/" rel="category tag" data-wpel-link="internal">Ubuntu</a></span> 		</footer>
+		<div class="gb-container gb-container-d1dd99b1"><div class="gb-inside-container">
+<div class="gb-grid-wrapper gb-grid-wrapper-a4b97d6a">
+<div class="gb-grid-column gb-grid-column-9c89f761"><div class="gb-container gb-container-9c89f761"><div class="gb-inside-container">
+<div class="gb-grid-wrapper gb-grid-wrapper-c04126aa">
+<div class="gb-grid-column gb-grid-column-9cf413a8"><div class="gb-container gb-container-9cf413a8"><div class="gb-inside-container">
+<div class="gb-button-wrapper gb-button-wrapper-38a2c075">
+
+<a class="gb-button gb-button-bec8d56e" href="https://linuxcapable.com/install-avidemux-on-ubuntu-linux/" data-wpel-link="internal"><span class="gb-icon"><svg viewBox="0 0 16 16" class="bi bi-arrow-left-square" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">   <path d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm11.5 5.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z" fill-rule="evenodd"></path> </svg></span></a>
+
+</div>
+</div></div></div>
+
+<div class="gb-grid-column gb-grid-column-625f3305"><div class="gb-container gb-container-625f3305"><div class="gb-inside-container">
+
+<p class="gb-headline gb-headline-a6f36397 gb-headline-text"><a href="https://linuxcapable.com/install-avidemux-on-ubuntu-linux/" data-wpel-link="internal">How to Install Avidemux on Ubuntu 24.04, 22.04 or 20.04</a></p>
+
+</div></div></div>
+</div>
+</div></div></div>
+
+<div class="gb-grid-column gb-grid-column-5d70717c"><div class="gb-container gb-container-5d70717c"><div class="gb-inside-container">
+<div class="gb-grid-wrapper gb-grid-wrapper-ee647ff2">
+<div class="gb-grid-column gb-grid-column-78f3ead4"><div class="gb-container gb-container-78f3ead4"><div class="gb-inside-container">
+
+<p class="gb-headline gb-headline-643cf12f gb-headline-text"><a href="https://linuxcapable.com/how-to-install-zoom-on-ubuntu-linux/" data-wpel-link="internal">How to Install Zoom on Ubuntu 24.04, 22.04 or 20.04</a></p>
+
+</div></div></div>
+
+<div class="gb-grid-column gb-grid-column-780c810b"><div class="gb-container gb-container-780c810b"><div class="gb-inside-container">
+<div class="gb-button-wrapper gb-button-wrapper-fe863527">
+
+<a class="gb-button gb-button-122d9fa4" href="https://linuxcapable.com/how-to-install-zoom-on-ubuntu-linux/" data-wpel-link="internal"><span class="gb-icon"><svg viewBox="0 0 16 16" class="bi bi-arrow-right-square" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">   <path d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm4.5 5.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" fill-rule="evenodd"></path> </svg></span></a>
+
+</div>
+</div></div></div>
+</div>
+</div></div></div>
+</div>
+</div></div>
+
+
+<p></p>
+	</div>
+</article>
+
+			<div class="comments-area">
+				<div id="comments">
+
+		<!-- #respond -->
+	
+</div><!-- #comments -->
+			</div>
+
+					</main>
+	</div>
+
+	<div class="widget-area sidebar is-right-sidebar" id="right-sidebar">
+	<div class="inside-right-sidebar" style="position: relative; min-height: 100%;">
+		<div class="sidebar-top" style="min-height: 130px; padding-top: 38px;">
+</div>
+<aside id="recent-posts-widget-with-thumbnails-3" class="widget inner-padding recent-posts-widget-with-thumbnails">
+<div id="rpwwt-recent-posts-widget-with-thumbnails-3" class="rpwwt-widget">
+<h2 class="widget-title">Recent Posts</h2>
+	<ul>
+		<li><a href="https://linuxcapable.com/how-to-use-the-rmdir-command-in-linux/" data-wpel-link="internal"><span class="rpwwt-post-title">rmdir Command in Linux with Examples</span></a><div class="rpwwt-post-comments-number">No Comments</div></li>
+		<li><a href="https://linuxcapable.com/how-to-add-a-new-user-to-sudoers-on-ubuntu-linux/" data-wpel-link="internal"><span class="rpwwt-post-title">How to Add a New User to Sudoers on Ubuntu</span></a><div class="rpwwt-post-comments-number">No Comments</div></li>
+		<li><a href="https://linuxcapable.com/chmod-command-in-linux-with-examples/" data-wpel-link="internal"><span class="rpwwt-post-title">chmod Command in Linux with Examples</span></a><div class="rpwwt-post-comments-number">No Comments</div></li>
+		<li><a href="https://linuxcapable.com/nmap-commands-for-beginners-simple-scanning-tips/" data-wpel-link="internal"><span class="rpwwt-post-title">Nmap Commands for Beginners: Simple Scanning Tips</span></a><div class="rpwwt-post-comments-number">No Comments</div></li>
+		<li><a href="https://linuxcapable.com/how-to-create-symbolic-links-in-ubuntu/" data-wpel-link="internal"><span class="rpwwt-post-title">How to Create Symbolic Links in Ubuntu Linux</span></a><div class="rpwwt-post-comments-number">2 Comments</div></li>
+		<li><a href="https://linuxcapable.com/bash-wait-command/" data-wpel-link="internal"><span class="rpwwt-post-title">Bash wait Command with Examples</span></a><div class="rpwwt-post-comments-number">No Comments</div></li>
+		<li><a href="https://linuxcapable.com/wget-command-examples/" data-wpel-link="internal"><span class="rpwwt-post-title">wget Command in Linux: 30 Practical Examples</span></a><div class="rpwwt-post-comments-number">No Comments</div></li>
+		<li><a href="https://linuxcapable.com/curl-command-in-linux/" data-wpel-link="internal"><span class="rpwwt-post-title">Master cURL in Linux: 30 Practical Examples</span></a><div class="rpwwt-post-comments-number">No Comments</div></li>
+	</ul>
+</div><!-- .rpwwt-widget -->
+</aside>	</div>
+</div>
+
+	</div>
+</div>
+
+
+<div class="site-footer">
+	<div class="gb-container gb-container-215ca2b7"><div class="gb-inside-container">
+
+
+
+</div></div>
+
+<div class="gb-container gb-container-85529cf0"></div>
+
+
+<p></p>
+</div>
+
+
+
+	<div class="gp-modal gp-search-modal" id="gp-search" role="dialog" aria-modal="true" aria-label="Search">
+		<div class="gp-modal__overlay" tabindex="-1" data-gpmodal-close="">
+			<div class="gp-modal__container">
+					<form role="search" method="get" class="search-modal-form" action="https://linuxcapable.com/">
+		<label for="search-modal-input" class="screen-reader-text">Search for:</label>
+		<div class="search-modal-fields">
+			<input id="search-modal-input" type="search" class="search-field" placeholder="Search …" value="" name="s">
+			<button aria-label="Search"><span class="gp-icon icon-search"><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path fill-rule="evenodd" clip-rule="evenodd" d="M208 48c-88.366 0-160 71.634-160 160s71.634 160 160 160 160-71.634 160-160S296.366 48 208 48zM0 208C0 93.125 93.125 0 208 0s208 93.125 208 208c0 48.741-16.765 93.566-44.843 129.024l133.826 134.018c9.366 9.379 9.355 24.575-.025 33.941-9.379 9.366-24.575 9.355-33.941-.025L337.238 370.987C301.747 399.167 256.839 416 208 416 93.125 416 0 322.875 0 208z"></path></svg></span></button>
+		</div>
+			</form>
+				</div>
+		</div>
+	</div>
+	
+
+
+		<div class="wp-lightbox-overlay zoom" data-wp-interactive="core/image" data-wp-context="{}" data-wp-bind--role="state.roleAttribute" data-wp-bind--aria-label="state.currentImage.ariaLabel" data-wp-bind--aria-modal="state.ariaModal" data-wp-class--active="state.overlayEnabled" data-wp-class--show-closing-animation="state.showClosingAnimation" data-wp-watch="callbacks.setOverlayFocus" data-wp-on--keydown="actions.handleKeydown" data-wp-on-async--touchstart="actions.handleTouchStart" data-wp-on--touchmove="actions.handleTouchMove" data-wp-on-async--touchend="actions.handleTouchEnd" data-wp-on-async--click="actions.hideLightbox" data-wp-on-async-window--resize="callbacks.setOverlayStyles" data-wp-on-async-window--scroll="actions.handleScroll" data-wp-bind--style="state.overlayStyles" tabindex="-1">
+				<button type="button" aria-label="Close" style="fill: #000" class="close-button">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="m13.06 12 6.47-6.47-1.06-1.06L12 10.94 5.53 4.47 4.47 5.53 10.94 12l-6.47 6.47 1.06 1.06L12 13.06l6.47 6.47 1.06-1.06L13.06 12Z"></path></svg>
+				</button>
+				<div class="lightbox-image-container">
+					<figure data-wp-bind--class="state.currentImage.figureClassNames" data-wp-bind--style="state.figureStyles">
+						<img data-wp-bind--alt="state.currentImage.alt" data-wp-bind--class="state.currentImage.imgClassNames" data-wp-bind--style="state.imgStyles" data-wp-bind--src="state.currentImage.currentSrc" alt="" src="">
+					</figure>
+				</div>
+				<div class="lightbox-image-container">
+					<figure data-wp-bind--class="state.currentImage.figureClassNames" data-wp-bind--style="state.figureStyles">
+						<img data-wp-bind--alt="state.currentImage.alt" data-wp-bind--class="state.currentImage.imgClassNames" data-wp-bind--style="state.imgStyles" data-wp-bind--src="state.enlargedSrc" alt="" src="">
+					</figure>
+				</div>
+				<div class="scrim" style="background-color: #fff" aria-hidden="true"></div>
+		</div><link rel="stylesheet" id="lwptoc-main-css" href="main.min-1.css" media="all">
+
+
+<!--[if lte IE 11]>
+<script src="https://linuxcapable.com/wp-content/themes/generatepress/assets/js/classList.min.js?ver=3.6.0" id="generate-classlist-js"></script>
+<![endif]-->
+
+
+
+
+
+
+
+
+
+<style>.lwptoc .lwptoc_i A{color:#000000;}.lwptoc .lwptoc_i A:hover,.lwptoc .lwptoc_i A:focus,.lwptoc .lwptoc_i A:active{color:#aaaaaa;border-color:#aaaaaa;}.lwptoc .lwptoc_i A:visited{color:#5a5a5a;}</style>
+
+
+
+
+
+
+
+
+
+</body></html>

@@ -1,0 +1,1405 @@
+<!DOCTYPE html><html lang="en" data-color-scheme="system" data-scrapbook-source="https://itsfoss.com/flatpak-ubuntu/" data-scrapbook-create="20251102004318421"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Install and Use Flatpak on Ubuntu</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="theme-color" content="#007b80">
+
+
+    
+    
+
+        
+    
+
+
+  <style> 
+    body { 
+      --font-headings: var(--gh-font-heading, var(--font-system));
+      --font-body: var(--gh-font-heading, var(--font-system));
+    }
+  </style>
+
+    <link rel="preload stylesheet" href="css2.css" as="style">
+    <style>body { --font-body: var(--gh-font-body, 'Figtree'), sans-serif; --font-headings: var(--gh-font-heading, 'Figtree'), sans-serif; }</style>
+
+
+
+
+
+
+
+    
+
+    <link rel="stylesheet" type="text/css" href="app.min.css">
+    
+    
+<style>    
+    #pmLink {        
+        visibility: hidden;               
+        text-decoration: none;        
+        cursor: pointer;        
+        background: transparent;        
+        border: none;    
+    }
+
+    #pmLink:hover {        
+        visibility: visible;        
+        color: grey;    
+    } 
+</style>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    <link rel="stylesheet" href="cls.css">
+    
+    
+
+<!-- Google tag (gtag.js) -->
+
+
+
+    <style>
+  :root {
+    --global-max-width: 1320px; /* site max width */
+    --global-content-width: 680px; /* post-content-width */
+    --global-wide-width: 960px; /* site max width */
+    --global-post-hero-content-max-width: 768px;
+    --global-radius: 5px; /* default radius */
+    --global-gallery-gap: 1em; /* Image gallery distance between images */
+    --global-hyphens: none; /* none/auto */
+    --global-header-height: 72px;
+    --global-theme-notifications: visible; /* visible/hidden */
+    --global-progress-bar: visible; /* visible/hidden */
+    --global-content-preview-fading: 0%; /* 50%-100% for fading effect */
+    --global-hero-img-filter: ;
+    --global-scroll-behavior: auto;
+  }
+</style>
+
+
+
+    
+    
+     
+
+    <meta name="description" content="Ubuntu may come with Snap by default but you could still enjoy the Flatpak universal packages on it. Learn to install and use Fltapak on Ubuntu.">
+    <link rel="icon" href="android-chrome-192x192.png" type="image/png">
+    <link rel="canonical" href="https://itsfoss.com/flatpak-ubuntu/">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <meta property="og:site_name" content="It's FOSS">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Install and Use Flatpak on Ubuntu">
+    <meta property="og:description" content="Ubuntu may come with Snap by default but you could still enjoy the Flatpak universal packages on it.">
+    <meta property="og:url" content="https://itsfoss.com/flatpak-ubuntu/">
+    <meta property="og:image" content="https://itsfoss.com/content/images/2023/06/install-flatpak-ubuntu.png">
+    <meta property="article:published_time" content="2023-06-21T07:35:40.000Z">
+    <meta property="article:modified_time" content="2023-06-21T07:35:40.000Z">
+    <meta property="article:tag" content="Ubuntu">
+    
+    <meta property="article:publisher" content="https://www.facebook.com/itsfoss">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Install and Use Flatpak on Ubuntu">
+    <meta name="twitter:description" content="Ubuntu may come with Snap by default but you could still enjoy the Flatpak universal packages on it.">
+    <meta name="twitter:url" content="https://itsfoss.com/flatpak-ubuntu/">
+    <meta name="twitter:image" content="https://itsfoss.com/content/images/2023/06/install-flatpak-ubuntu.png">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Abhishek Prakash">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="Ubuntu">
+    <meta name="twitter:site" content="@itsfoss2">
+    <meta name="twitter:creator" content="@abhishek_foss">
+    <meta property="og:image:width" content="800">
+    <meta property="og:image:height" content="450">
+    
+    
+
+    <meta name="generator" content="Ghost 6.5">
+    <link rel="alternate" type="application/rss+xml" title="It's FOSS" href="https://itsfoss.com/rss/">
+    <style id="gh-members-styles">.gh-post-upgrade-cta-content,
+.gh-post-upgrade-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    width: 100%;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.gh-post-upgrade-cta-content {
+    border-radius: 8px;
+    padding: 40px 4vw;
+}
+
+.gh-post-upgrade-cta h2 {
+    color: #ffffff;
+    font-size: 28px;
+    letter-spacing: -0.2px;
+    margin: 0;
+    padding: 0;
+}
+
+.gh-post-upgrade-cta p {
+    margin: 20px 0 0;
+    padding: 0;
+}
+
+.gh-post-upgrade-cta small {
+    font-size: 16px;
+    letter-spacing: -0.2px;
+}
+
+.gh-post-upgrade-cta a {
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: none;
+    text-decoration: underline;
+}
+
+.gh-post-upgrade-cta a:hover {
+    color: #ffffff;
+    opacity: 0.8;
+    box-shadow: none;
+    text-decoration: underline;
+}
+
+.gh-post-upgrade-cta a.gh-btn {
+    display: block;
+    background: #ffffff;
+    text-decoration: none;
+    margin: 28px 0 0;
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.gh-post-upgrade-cta a.gh-btn:hover {
+    opacity: 0.92;
+}</style>
+    
+    
+    <link href="https://itsfoss.com/webmentions/receive/" rel="webmention">
+    
+    <link rel="stylesheet" type="text/css" href="cards.min.css">
+    
+    <style>:root {--ghost-accent-color: #007b80;}</style>
+    <style>
+  body {
+    --global-max-width: 1400px;
+	--global-content-width: 70rem;
+  }
+</style>
+
+<style>    
+ @media only screen and (max-width: 600px) {
+ .hide-mobile 
+ {display:none;}
+}  
+</style>
+
+<!-- Umami analytics -->
+
+
+<!-- Contextly Related Posts -->
+
+
+<!-- Open Links in New Tab -->
+
+
+<!-- Flex Offers verification -->
+<meta name="fo-verify" content="90fb0678-52f4-4bd4-981f-1eaa7310f6c0">
+  <script data-scrapbook-elem="custom-elements-loader">(function (names) { if (!customElements) { return; } for (const name of names) { customElements.define(name, class CustomElement extends HTMLElement {}); } })(["package-name"])</script></head>
+  <body class="post-template tag-ubuntu " data-hero-image="">
+    <div class="progress-bar"></div>
+    
+      <header class="header js-header" data-header="sticky">
+  <div class="container wrapper flex is-rel header__inner">
+<a class="header__brand" href="https://itsfoss.com/">        <picture class="">
+  <source srcset="itsfoss-logo-1.png 300w," data-sizes="auto" type="image/webp">
+  <img class="header__logo" data-srcset="/content/images/size/w300/2023/01/itsfoss-logo.png 300w," srcset="itsfoss-logo.png" data-sizes="auto" data-src="/content/images/size/w100/2023/01/itsfoss-logo.png" src="itsfoss-logo.png" alt="It's FOSS" loading="eager">
+</picture></a>
+    <nav class="header__menu items-center">
+      <ul class="nav">
+    <li class="nav-news" data-label="📰 News" data-length="7">
+      <a href="https://news.itsfoss.com/">
+        <span>📰 News</span>
+      </a>
+    </li>
+    <li class="nav-youtube" data-label="▶️ YouTube" data-length="10">
+      <a href="https://www.youtube.com/@itsfoss">
+        <span>▶️ YouTube</span>
+      </a>
+    </li>
+    <li class="nav-newsletter" data-label="📬 Newsletter" data-length="13">
+      <a href="https://itsfoss.com/newsletter/">
+        <span>📬 Newsletter</span>
+      </a>
+    </li>
+    <li class="nav-quizzes-puzzles" data-label="🧩 Quizzes &amp; Puzzles" data-length="20">
+      <a href="https://itsfoss.com/quiz/">
+        <span>🧩 Quizzes &amp; Puzzles</span>
+      </a>
+    </li>
+    <li class="nav-resources" data-label="🎒 Resources" data-length="12">
+      <a href="https://itsfoss.com/resources/">
+        <span>🎒 Resources</span>
+      </a>
+    </li>
+    <li class="nav-community" data-label="🏘️ Community" data-length="13">
+      <a href="https://itsfoss.community/">
+        <span>🏘️ Community</span>
+      </a>
+    </li>
+    <li class="nav-about" data-label="📖 About" data-length="8">
+      <a href="https://itsfoss.com/about/">
+        <span>📖 About</span>
+      </a>
+    </li>
+    <li class="nav-contact is-subitem" data-label="-🪪 Contact" data-length="11">
+      <a href="https://itsfoss.com/contact-us/">
+        <span>-🪪 Contact</span>
+      </a>
+    </li>
+    <li class="nav-members" data-label="Members" data-length="7">
+      <a href="#">
+        <span>Members</span>
+      </a>
+    </li>
+    <li class="nav-signin is-subitem" data-label="-Signin" data-length="7">
+      <a href="https://itsfoss.com/signin/">
+        <span>-Signin</span>
+      </a>
+    </li>
+    <li class="nav-signup is-subitem" data-label="-Signup" data-length="7">
+      <a href="https://itsfoss.com/signup/">
+        <span>-Signup</span>
+      </a>
+    </li>
+    <li class="nav-membership is-subitem" data-label="-Membership" data-length="11">
+      <a href="https://itsfoss.com/membership/">
+        <span>-Membership</span>
+      </a>
+    </li>
+</ul>
+
+        <div class="header__menu--sub items-center">
+          <button class="header__menu--more is-mainitem" aria-label="Menu"><i class="icon icon-dots">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+  <circle cx="5" cy="12" r="1"></circle>
+  <circle cx="12" cy="12" r="1"></circle>
+  <circle cx="19" cy="12" r="1"></circle>
+</svg>
+</i></button>
+          <ul class="nav secondary submenu">
+    <li class="nav-linux-server-side" data-label="Linux Server Side" data-length="17">
+      <a href="https://linuxhandbook.com/">
+        <span>Linux Server Side</span>
+      </a>
+    </li>
+    <li class="nav-en-espanol" data-label="En Español" data-length="10">
+      <a href="https://itsfoss.com/es/">
+        <span>En Español</span>
+      </a>
+    </li>
+    <li class="nav-feedback" data-label="🗳️ Feedback" data-length="12">
+      <a href="https://itsfoss.com/update-feedback/">
+        <span>🗳️ Feedback</span>
+      </a>
+    </li>
+    <li class="nav-impressum" data-label="Impressum" data-length="9">
+      <a href="https://itsfoss.com/impressum/">
+        <span>Impressum</span>
+      </a>
+    </li>
+    <li class="nav-terms-of-use" data-label="Terms of use" data-length="12">
+      <a href="https://itsfoss.com/terms/">
+        <span>Terms of use</span>
+      </a>
+    </li>
+    <li class="nav-policies" data-label="📜 Policies" data-length="11">
+      <a href="https://itsfoss.com/policies/">
+        <span>📜 Policies</span>
+      </a>
+    </li>
+</ul>
+        </div>
+    </nav>
+
+    <span class="header--spacer"></span>
+
+    <button class="btn-toggle header-search__toggle" data-ghost-search="" title="Search" aria-label="Search">
+      <i class="icon icon-search">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+  <circle cx="10" cy="10" r="7"></circle>
+  <line x1="21" y1="21" x2="15" y2="15"></line>
+</svg>
+
+
+
+</i>    </button>
+
+        <a href="https://itsfoss.com/membership/" class="btn signup-link btn--brand radius">Join 33K+ Members</a>
+      
+
+    <div class="member-menu js-member-menu">
+      <a href="https://itsfoss.com/signup/" class="signup-link">
+        <i class="icon icon-arrow-up-right icon--sm">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-up-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+  <line x1="17" y1="7" x2="7" y2="17"></line>
+  <polyline points="8 7 17 7 17 16"></polyline>
+</svg>
+
+
+
+</i>Sign up
+      </a>
+
+      <a href="https://itsfoss.com/signin/" class="signin-link">
+        <i class="icon icon-login icon--sm">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-in">
+  <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+  <polyline points="10 17 15 12 10 7"></polyline>
+  <line x1="15" y1="12" x2="3" y2="12"></line>
+</svg>
+</i>Sign in
+      </a>
+</div>
+    <button class="btn-toggle menu__toggle js-menu-open" type="button" title="Menu" aria-label="Menu">
+        <span></span>
+        <span></span>
+    </button>
+  </div>
+</header>
+
+
+      <div class="menu js-menu">
+  <div class="menu__header flex content-end">
+    <button class="btn-toggle menu__toggle is-active js-menu-close" type="button" title="Menu" aria-label="Menu">
+        <span></span>
+        <span></span>
+    </button>
+  </div>
+
+  <nav class="menu__navigation">
+    <ul class="nav">
+    <li class="nav-news" data-label="📰 News" data-length="7">
+      <a href="https://news.itsfoss.com/">
+        <span>📰 News</span>
+      </a>
+    </li>
+    <li class="nav-youtube" data-label="▶️ YouTube" data-length="10">
+      <a href="https://www.youtube.com/@itsfoss">
+        <span>▶️ YouTube</span>
+      </a>
+    </li>
+    <li class="nav-newsletter" data-label="📬 Newsletter" data-length="13">
+      <a href="https://itsfoss.com/newsletter/">
+        <span>📬 Newsletter</span>
+      </a>
+    </li>
+    <li class="nav-quizzes-puzzles" data-label="🧩 Quizzes &amp; Puzzles" data-length="20">
+      <a href="https://itsfoss.com/quiz/">
+        <span>🧩 Quizzes &amp; Puzzles</span>
+      </a>
+    </li>
+    <li class="nav-resources" data-label="🎒 Resources" data-length="12">
+      <a href="https://itsfoss.com/resources/">
+        <span>🎒 Resources</span>
+      </a>
+    </li>
+    <li class="nav-community" data-label="🏘️ Community" data-length="13">
+      <a href="https://itsfoss.community/">
+        <span>🏘️ Community</span>
+      </a>
+    </li>
+    <li class="nav-about" data-label="📖 About" data-length="8">
+      <a href="https://itsfoss.com/about/">
+        <span>📖 About</span>
+      </a>
+    </li>
+    <li class="nav-contact is-subitem" data-label="-🪪 Contact" data-length="11">
+      <a href="https://itsfoss.com/contact-us/">
+        <span>-🪪 Contact</span>
+      </a>
+    </li>
+    <li class="nav-members" data-label="Members" data-length="7">
+      <a href="#">
+        <span>Members</span>
+      </a>
+    </li>
+    <li class="nav-signin is-subitem" data-label="-Signin" data-length="7">
+      <a href="https://itsfoss.com/signin/">
+        <span>-Signin</span>
+      </a>
+    </li>
+    <li class="nav-signup is-subitem" data-label="-Signup" data-length="7">
+      <a href="https://itsfoss.com/signup/">
+        <span>-Signup</span>
+      </a>
+    </li>
+    <li class="nav-membership is-subitem" data-label="-Membership" data-length="11">
+      <a href="https://itsfoss.com/membership/">
+        <span>-Membership</span>
+      </a>
+    </li>
+</ul>
+
+      <ul class="nav secondary submenu">
+    <li class="nav-linux-server-side" data-label="Linux Server Side" data-length="17">
+      <a href="https://linuxhandbook.com/">
+        <span>Linux Server Side</span>
+      </a>
+    </li>
+    <li class="nav-en-espanol" data-label="En Español" data-length="10">
+      <a href="https://itsfoss.com/es/">
+        <span>En Español</span>
+      </a>
+    </li>
+    <li class="nav-feedback" data-label="🗳️ Feedback" data-length="12">
+      <a href="https://itsfoss.com/update-feedback/">
+        <span>🗳️ Feedback</span>
+      </a>
+    </li>
+    <li class="nav-impressum" data-label="Impressum" data-length="9">
+      <a href="https://itsfoss.com/impressum/">
+        <span>Impressum</span>
+      </a>
+    </li>
+    <li class="nav-terms-of-use" data-label="Terms of use" data-length="12">
+      <a href="https://itsfoss.com/terms/">
+        <span>Terms of use</span>
+      </a>
+    </li>
+    <li class="nav-policies" data-label="📜 Policies" data-length="11">
+      <a href="https://itsfoss.com/policies/">
+        <span>📜 Policies</span>
+      </a>
+    </li>
+</ul>
+  </nav>
+
+  <div class="menu__actions flex w-100">
+        <a href="https://itsfoss.com/signin/" class="btn signin-link btn--bordered radius m-r">
+          Log in
+        </a>
+        <a href="https://itsfoss.com/signup/" class="btn signup-link btn--brand radius">
+          Subscribe
+        </a>
+  </div>
+
+  <template data-toggle-template="">
+    <button class="submenu-toggle" onclick="this.parentNode.classList.toggle('is-active')" title="Menu toggle" aria-label="Menu toggle">
+      <i class="icon icon-chevron-down">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <polyline points="6 9 12 15 18 9"></polyline>
+</svg>
+</i>    </button>
+  </template>
+
+</div>
+
+    <main class="main">
+      
+
+  <div class="container wrapper m-0-auto">
+      <div class="post-hero is-post" data-feature-image="true" data-image-style="max-width">
+    
+    <div class="post-hero__content flex flex-col">
+      <h1 class="post-hero__title">Install and Use Flatpak on Ubuntu</h1>
+    
+        <div class="post-hero__excerpt text-acc">Ubuntu may come with Snap by default but you could still enjoy the Flatpak universal packages on it.</div>
+
+        <div class="resource-rating">
+          <i class="icon icon-star icon--sm filled">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-star" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+  <path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"></path>
+</svg>
+
+
+
+</i>          <i class="icon icon-star icon--sm filled">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-star" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+  <path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"></path>
+</svg>
+
+
+
+</i>          <i class="icon icon-star icon--sm filled">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-star" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+  <path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"></path>
+</svg>
+
+
+
+</i>          <i class="icon icon-star icon--sm filled">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-star" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+  <path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"></path>
+</svg>
+
+
+
+</i>          <i class="icon icon-star icon--sm filled">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-star" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+  <path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"></path>
+</svg>
+
+
+
+</i>        </div>
+
+        <div class="post-info text-acc m-t"> 
+  <ul class="post-info__avatars">
+      <li class="author-avatar has-image">
+        <a href="https://itsfoss.com/author/abhishek/" title="Abhishek Prakash" aria-label="Abhishek Prakash">
+            <picture class="">
+  <source data-srcset="https://www.gravatar.com/avatar/84de387e32f72af3e12bf434a82ea8e8?s=250&amp;r=x&amp;d=mp 30w,https://www.gravatar.com/avatar/84de387e32f72af3e12bf434a82ea8e8?s=250&amp;r=x&amp;d=mp 100w," data-sizes="auto" type="image/webp">
+  <img class="lazyload" data-srcset="https://www.gravatar.com/avatar/84de387e32f72af3e12bf434a82ea8e8?s=250&amp;r=x&amp;d=mp 30w,https://www.gravatar.com/avatar/84de387e32f72af3e12bf434a82ea8e8?s=250&amp;r=x&amp;d=mp 100w," srcset="84de387e32f72af3e12bf434a82ea8e8.jpeg" data-sizes="auto" data-src="https://www.gravatar.com/avatar/84de387e32f72af3e12bf434a82ea8e8?s=250&amp;r=x&amp;d=mp" src="84de387e32f72af3e12bf434a82ea8e8.jpeg" alt="Abhishek Prakash">
+</picture>        </a>
+      </li>
+  </ul>
+  <div class="post-info__detail">
+    <span class="post-info__author"><a href="https://itsfoss.com/author/abhishek/">Abhishek Prakash</a></span>
+    <div class="post-info__dr">
+      <time datetime="2023-06-21">21 Jun 2023</time> 
+      <span class="post-info__readtime">5 min read</span>
+      <a class="post-info__readtime" href="#fastcomments-widget">
+        
+        <div id="fastcomments-widget-comment-count"></div>
+        
+      </a>
+    </div>
+  </div>
+</div>
+    </div>
+
+
+  </div>
+
+    <div class="row m-b-lg">
+      <div class="col-xs-12 col-lg-3">
+        <div class="post-toc js-post-toc is-aside"> 
+  <div class="post-toc__header flex items-center">
+    <button class="post-toc__toggle js-toc-toggle">
+      <span class="m-r-sm uppercase">On this page</span>
+      <i class="icon icon-list icon--sm">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-list" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+  <line x1="9" y1="6" x2="20" y2="6"></line>
+  <line x1="9" y1="12" x2="20" y2="12"></line>
+  <line x1="9" y1="18" x2="20" y2="18"></line>
+  <line x1="5" y1="6" x2="5" y2="6.01"></line>
+  <line x1="5" y1="12" x2="5" y2="12.01"></line>
+  <line x1="5" y1="18" x2="5" y2="18.01"></line>
+</svg>
+</i>    </button>
+  </div>
+  <div class="post-toc__content js-toc"></div>
+  <div class="hide-mobile">
+  <div align="center" data-freestar-ad="__336x280 __336x280" id="itsfoss_300x250_300x600_Sidebar3_new" style="margin-top:5px">
+    
+  </div>
+  </div>
+</div>
+
+      </div>
+
+      <div class="col-xs-12 col-lg-6">
+
+        <article class="post tag-ubuntu content post-access-public no-overflow">
+          <div class="hide-mobile">
+            <!-- code from Primis/Freestar - Itsfoss.com  -->
+            <div id="FreeStarVideoAdContainer">
+            <div id="freestar-video-parent">
+            <div id="freestar-video-child"></div>
+            </div>
+            </div>
+            <!-- code from Primis/Freestar -->
+          </div>
+
+              <a href="https://www.warp.dev/?utm_source=its_foss&amp;utm_medium=display&amp;utm_campaign=linux_launch" target="_blank"><img src="warp.webp" alt="Warp Terminal"></a>
+          <p>The Linux world has three 'universal' packaging formats that allow running on 'any' Linux distribution; Snap, Flatpak and AppImage.</p>
+<p>Ubuntu comes baked-in with Snap but most distributions and developers avoid it because of its close source nature. They prefer <a href="https://itsfoss.com/what-is-flatpak/">Fedora's Flatpak packaging system</a>. </p>
+<p>As an Ubuntu user, you are not restricted to Snap. You also can use Flatpak on your Ubuntu system.</p>
+<p>In this tutorial, I'll discuss the following:</p>
+<ul><li>Enabling Flatpak support on Ubuntu</li><li>Using Flatpak commands to manage packages</li><li>Getting packages from Flathub</li><li>Add Flatpak packages to Software Center</li></ul>
+<p>Sounds exciting? Let's see them one by one.</p>
+<h2 id="installing-flatpak-on-ubuntu">Installing Flatpak on Ubuntu</h2>
+<p>You can easily install Flatpak using the following command:</p>
+<pre><code>sudo apt install flatpak</code></pre>
+<p>For <strong><em>Ubuntu 18.04 or older versions</em></strong>, use PPA:</p>
+<pre><code>sudo add-apt-repository ppa:flatpak/stable
+sudo apt update
+sudo apt install flatpak</code></pre>
+<h3 id="add-flathub-repo">Add Flathub repo</h3>
+<p>You have installed Flatpak support in your Ubuntu system. However, if you try to install a Flatpak package, you'll get '<a href="https://itsfoss.com/no-remote-ref-found-flatpak/">No remote refs found' error</a>. That's because there are no Flatpak repositories added and hence Flatpak doesn't even know from where it should get the applications.</p>
+<p>Flatpak has a centralized repository called Flathub. A number of Flatpak applications can be found and downloaded from here.</p>
+<p>You should add the Flathub repo to access those applications.</p>
+<pre><code>flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+</code></pre>
+<figure class="kg-card kg-image-card"><img src="install-flatpak-1.svg" alt="Install Flatpak in latest versions of Ubuntu and then add Flathub repo" loading="lazy" width="1240" height="386"><figcaption><span>Installing Flatpak and add Flathub Repo</span></figcaption></figure>
+<p>Once Flatpak is installed and configured, <strong>restart your system</strong>. Otherwise, installed Flatpak apps won't be visible on your system menu. </p>
+<p>Still, you can always run a flatpak app by running:</p>
+<pre><code>flatpak run &lt;package-name&gt;</code></pre>
+<h2 id="common-flatpak-commands">Common Flatpak Commands</h2>
+<p>Now that you have Flatpak packaging support installed, it's time to learn some of the most common Flatpak commands needed for package management.</p>
+<h3 id="search-for-a-package">Search for a Package</h3>
+<p>Either use Flathub website or use the following command, if you know the application name:</p>
+<pre><code>flatpak search &lt;package-name&gt;</code></pre>
+<figure class="kg-card kg-image-card"><img src="flatpak-search.svg" alt="Search for a package using Flatpak Search command" loading="lazy" width="1240" height="386"><figcaption><span>Search for a Package</span></figcaption></figure>
+<div class="kg-card kg-callout-card kg-callout-card-red"><div class="kg-callout-emoji">🚧</div><div class="kg-callout-text"><p><span>Except for searching a flatpak package, on other instances, the &lt;package-name&gt; refers to the proper Flatpak package name, like </span><code><span>com.raggesilver.BlackBox</span></code><span> (Application ID in the above screenshot). You may also use the last word </span><code><span>Blackbox</span></code><span> of the Application ID.</span></p></div></div>
+<h3 id="install-a-flatpak-package">Install a Flatpak package</h3>
+<p>Here's the syntax for installing a Flatpak package:</p>
+<pre><code>flatpak install &lt;remote-repo&gt; &lt;package-name&gt;</code></pre>
+<p>Since almost all the times you'll be getting applications from Flathub, the remote repository will be <code>flathub</code>:</p>
+<pre><code>flatpak install flathub &lt;package-name&gt;</code></pre>
+<figure class="kg-card kg-image-card"><img src="flatpak-install-package.svg" alt="Install a package after searching for its name" loading="lazy" width="1240" height="386"><figcaption><span>Install a Package</span></figcaption></figure>
+<p>In some rare cases, you may install Flatpak packages from the developer's repository directly instead of Flathub. In that case, you use a syntax like this: </p>
+<pre><code>flatpak install --from https://flathub.org/repo/appstream/com.spotify.Client.flatpakref</code></pre>
+<h3 id="install-a-package-from-flatpakref">Install a package from flatpakref</h3>
+<p>This is optional and rare too. But sometime, you will get a <code>.flatpakref</code> file for an application. This is <strong>NOT an offline installation</strong>. The .flatpakref has the necessary details about where to get the packages.</p>
+<p>To install from such a file, open a terminal and run:</p>
+<pre><code>flatpak install &lt;path-to-flatpakref file&gt;</code></pre>
+<figure class="kg-card kg-image-card"><img src="install-flatpak-ref.svg" alt="Install a Flatpak package from Flatpakref file" loading="lazy" width="1240" height="386"><figcaption><span>Install Flatpakref</span></figcaption></figure>
+<h3 id="run-a-flatpak-application-from-the-terminal">Run a Flatpak application from the terminal</h3>
+<p>Again, something you won't be doing it often. Mostly, you'll search for the installing application in the system menu and run the application from there.</p>
+<p>However, you can also run them from the terminal using:</p>
+<pre><code>flatpak run &lt;package-name&gt;</code></pre>
+<h3 id="list-installed-flatpak-packages">List installed Flatpak packages</h3>
+<p>Want to see which Flatpak applications are installed on your system? List them like this:</p>
+<pre><code>flatpak list</code></pre>
+<figure class="kg-card kg-image-card"><img src="flatpak-list.svg" alt="List all the installed Flatpak packages on your system" loading="lazy" width="1240" height="386"><figcaption><span>List Installed Packages</span></figcaption></figure>
+<h3 id="uninstall-a-flatpak-package">Uninstall a Flatpak package</h3>
+<p>You can remove an installed Flatpak package in the following manner:</p>
+<pre><code>flatpak uninstall &lt;package-name&gt;</code></pre>
+<p>If you want to <strong>clear the leftover packages and runtimes, that are no longer needed</strong>, use:</p>
+<pre><code>flatpak uninstall --unused</code></pre>
+<figure class="kg-card kg-image-card"><img src="flatpak-uninstall-package-with-removal-of-unused.svg" alt="Remove a Flatpak package and later, if there is any unused runtimes or packages, remove them" loading="lazy" width="1240" height="386"><figcaption><span>Remove a package</span></figcaption></figure>
+<p>It may help you <a href="https://itsfoss.com/free-up-space-ubuntu-linux/">save some disk space on Ubuntu</a>.</p>
+<h2 id="flatpak-commands-summary">Flatpak commands summary</h2>
+<p>Here's a quick summary of the commands you learned above:</p>
+<table>
+<thead>
+<tr>
+<th>Usage</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Search for Packages</td>
+<td>flatpak search <package-name></package-name></td>
+</tr>
+<tr>
+<td>Install a Package</td>
+<td>flatpak install <package-name></package-name></td>
+</tr>
+<tr>
+<td>List Installed Package</td>
+<td>flatpak list</td>
+</tr>
+<tr>
+<td>Install from flatpakref</td>
+<td>flatpak install &lt;package-name.flatpakref&gt;</td>
+</tr>
+<tr>
+<td>Uninstall a Package</td>
+<td>flatpak uninstall <package-name></package-name></td>
+</tr>
+<tr>
+<td>Uninstall Unused runtimes and packages</td>
+<td>flatpak uninstall --unused</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="using-flathub-to-explore-flatpak-packages">Using Flathub to explore Flatpak packages</h2>
+<p>I understand that searching for Flatpak packages through the command line is not the best experience and that's where the <a href="https://flathub.org/en-GB">Flathub website</a> comes into picture.</p>
+<p>You can browse the Flatpak application on Flathub, which provides additional details like verified publishers, total number of downloads etc.</p>
+<p>You'll also get the commands you need to use for installing the applications at the bottom of the application page.</p>
+<figure class="kg-card kg-gallery-card kg-width-wide kg-card-hascaption"><div class="kg-gallery-container"><div class="kg-gallery-row"><div class="kg-gallery-image"><img src="Flathub-apps-page-2-2.png" width="1438" height="916" loading="lazy" alt="" srcset="Flathub-apps-page-2-1.png 600w, Flathub-apps-page-2.png 1000w, Flathub-apps-page-2-2.png 1438w" sizes="(min-width: 720px) 720px"></div><div class="kg-gallery-image"><img src="application-details-in-flathub-website-2-2.png" width="1436" height="884" loading="lazy" alt="" srcset="application-details-in-flathub-website-2-1.png 600w, application-details-in-flathub-website-2.png 1000w, application-details-in-flathub-website-2-2.png 1436w" sizes="(min-width: 720px) 720px"></div></div></div><figcaption><p><span>Application Details in Flathub Official Website</span></p></figcaption></figure>
+<h2 id="bonus-use-software-center-with-flatpak-package-support">Bonus: Use Software Center with Flatpak package support</h2>
+<p>You can add the Flatpak packages to the GNOME Software Center application and use it for installing packages graphically.</p>
+<p>There is a dedicated plugin to add Flatpak to GNOME Software Center.</p>
+<div class="kg-card kg-callout-card kg-callout-card-red"><div class="kg-callout-emoji">🚧</div><div class="kg-callout-text"><p><span>Since Ubuntu 20.04, the default software center in Ubuntu is Snap Store and it does not support flatpak integration. So, installing the below package will result in two software centers simultaneously: one Snap and another DEB.</span></p></div></div>
+<figure class="kg-card kg-image-card"><img src="two-software-centers-in-Ubuntu.png" alt="When you install GNOME Software Flatpak plugin in Ubuntu, a DEB version of GNOME Software is installed. So you will have two software center application " loading="lazy" width="1472" height="348" srcset="two-software-centers-in-Ubuntu-1.png 600w, two-software-centers-in-Ubuntu-2.png 1000w, two-software-centers-in-Ubuntu.png 1472w" sizes="(min-width: 720px) 720px"><figcaption><span>Two Software Center in Ubuntu</span></figcaption></figure>
+<pre><code>sudo apt install gnome-software-plugin-flatpak</code></pre>
+<figure class="kg-card kg-image-card"><img src="install-gnome-flatpak-plugin.svg" alt="Installing GNOME Software Plugin in Ubuntu" loading="lazy" width="1240" height="386"><figcaption><span>Install GNOME Plugin</span></figcaption></figure>
+<h2 id="conclusion">Conclusion</h2>
+<p>You learned plenty of things here. You learned to enable Flatpak support in Ubuntu and manage Flatpak packages through the command line. You also learned about the integration with the Software Center.</p>
+<p>I hope you feel a bit more comfortable with Flatpaks now. Since you discovered one of the three universal packages, how about <a href="https://itsfoss.com/use-appimage-linux/">learning about Appimages</a>?</p>
+<figure class="kg-card kg-bookmark-card"><a class="kg-bookmark-container" href="https://itsfoss.com/use-appimage-linux/"><div class="kg-bookmark-content"><div class="kg-bookmark-title">How to Use AppImage in Linux [Complete Guide]</div><div class="kg-bookmark-description">What is AppImage? How to run it? How does it work? Here’s the complete guide about using AppImage in Linux.</div><div class="kg-bookmark-metadata"><img class="kg-bookmark-icon" src="android-chrome-192x192.png" alt=""><span class="kg-bookmark-author">Abhishek Prakash</span><span class="kg-bookmark-publisher">It's FOSS</span></div></div><div class="kg-bookmark-thumbnail"><img src="use-appimage-linux.png" alt=""></div></a></figure>
+<p><em>Let me know if you have questions or if you face any issues.</em></p>
+          
+        </article>
+
+              <div class="post-tags content-width">
+        <a href="https://itsfoss.com/tag/ubuntu/" style="--color-accent:#e6740a;">Ubuntu</a>
+    </div>
+
+            <div class="social-share content-width m-b-lg">
+  <a class="social-share__item twitter js-share" target="_blank" href="https://twitter.com/share?text=Install%20and%20Use%20Flatpak%20on%20Ubuntu&amp;url=https://itsfoss.com/flatpak-ubuntu/" title="Share on X" aria-label="Share on X">
+    <i class="icon icon-twitter-x icon--sm">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+  <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+  <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
+</svg>
+</i>    <span>Share</span>
+  </a>  
+  <a class="social-share__item bluesky js-share" target="_blank" href="https://bsky.app/intent/compose?text=Install%20and%20Use%20Flatpak%20on%20Ubuntu%20https://itsfoss.com/flatpak-ubuntu/" title="Share on Bluesky" aria-label="Share on Bluesky">
+    <i class="icon icon-bluesky icon--sm">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-bluesky"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M6.335 5.144c-1.654 -1.199 -4.335 -2.127 -4.335 .826c0 .59 .35 4.953 .556 5.661c.713 2.463 3.13 2.75 5.444 2.369c-4.045 .665 -4.889 3.208 -2.667 5.41c1.03 1.018 1.913 1.59 2.667 1.59c2 0 3.134 -2.769 3.5 -3.5c.333 -.667 .5 -1.167 .5 -1.5c0 .333 .167 .833 .5 1.5c.366 .731 1.5 3.5 3.5 3.5c.754 0 1.637 -.571 2.667 -1.59c2.222 -2.203 1.378 -4.746 -2.667 -5.41c2.314 .38 4.73 .094 5.444 -2.369c.206 -.708 .556 -5.072 .556 -5.661c0 -2.953 -2.68 -2.025 -4.335 -.826c-2.293 1.662 -4.76 5.048 -5.665 6.856c-.905 -1.808 -3.372 -5.194 -5.665 -6.856z"></path></svg>
+</i>    <span>Share</span>
+  </a>
+  <a class="social-share__item facebook js-share" target="_blank" href="https://www.facebook.com/sharer.php?u=https://itsfoss.com/flatpak-ubuntu/" title="Share on Facebook" aria-label="Share on Facebook">
+    <i class="icon icon-facebook icon--sm">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+  <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"></path>
+</svg>
+
+
+
+</i>    <span>Share</span>
+  </a>
+  <a class="social-share__item linkedin js-share" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://itsfoss.com/flatpak-ubuntu/&amp;title=Install%20and%20Use%20Flatpak%20on%20Ubuntu&amp;summary=Install%20and%20Use%20Flatpak%20on%20Ubuntu" title="Share on Linkedin" aria-label="Share on Linkedin">
+    <i class="icon icon-linkedin icon--sm">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin">
+  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+  <rect x="2" y="9" width="4" height="12"></rect>
+  <circle cx="4" cy="4" r="2"></circle>
+</svg>
+</i>    <span>Share</span>
+  </a>
+  <a class="social-share__item mail" href="https://itsfoss.com/cdn-cgi/l/email-protection#66591513040c0305125b2f081512070a0a435456070802435456331503435456200a071216070d4354560908435456330413081213400409021f5b0e121216155c49490f1215000915154805090b49000a071216070d4b1304130812134940080415165d2f081512070a0a435456070802435456331503435456200a071216070d4354560908435456330413081213" title="Share by email" aria-label="Share by email">
+    <i class="icon icon-mail icon--sm">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+  <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+  <polyline points="3 7 12 13 21 7"></polyline>
+</svg>
+</i>    <span>Email</span>
+  </a>
+  <a class="social-share__item linkedin" target="_blank" href="https://itsfoss.com/update-feedback/" title="Feedback" aria-label="Feedback">
+    <i class="icon icon-info icon--sm">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-info-circle" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+  <circle cx="12" cy="12" r="9"></circle>
+  <line x1="12" y1="8" x2="12.01" y2="8"></line>
+  <polyline points="11 12 12 12 12 16 13 16"></polyline>
+</svg>
+</i>    <span>Feedback</span>
+  </a>
+</div>
+
+
+            <div class="content-width author-info">
+              <span class="section-title text-10 m-b uppercase">About the author</span>
+
+                <div class="author-card in-post m-b-xl author-abhishek">
+  
+    <a href="https://itsfoss.com/author/abhishek/">
+      <figure class="author-card__profile">
+        <picture class="">
+  <source data-srcset="https://www.gravatar.com/avatar/84de387e32f72af3e12bf434a82ea8e8?s=250&amp;r=x&amp;d=mp 100w,https://www.gravatar.com/avatar/84de387e32f72af3e12bf434a82ea8e8?s=250&amp;r=x&amp;d=mp 300w,https://www.gravatar.com/avatar/84de387e32f72af3e12bf434a82ea8e8?s=250&amp;r=x&amp;d=mp 600w," data-sizes="auto" type="image/webp">
+  <img class="lazyload author-card__img" data-srcset="https://www.gravatar.com/avatar/84de387e32f72af3e12bf434a82ea8e8?s=250&amp;r=x&amp;d=mp 100w,https://www.gravatar.com/avatar/84de387e32f72af3e12bf434a82ea8e8?s=250&amp;r=x&amp;d=mp 300w,https://www.gravatar.com/avatar/84de387e32f72af3e12bf434a82ea8e8?s=250&amp;r=x&amp;d=mp 600w," srcset="84de387e32f72af3e12bf434a82ea8e8.jpeg" data-sizes="auto" data-src="https://www.gravatar.com/avatar/84de387e32f72af3e12bf434a82ea8e8?s=250&amp;r=x&amp;d=mp" src="84de387e32f72af3e12bf434a82ea8e8.jpeg" alt="Abhishek Prakash">
+</picture>      </figure>
+    </a>
+
+  <div class="author-card__content flex-1 has-image">
+    <h2 class="author-card__name"><a href="https://itsfoss.com/author/abhishek/">Abhishek Prakash</a></h2>
+    
+    <p class="author-card__bio">Created It's FOSS 13 years ago to share my Linux adventures. Have a Master's degree in Engineering and years of IT industry experience. Huge fan of Agatha Christie detective mysteries 🕵️‍♂️</p>
+    
+    <div class="author-card__info flex flex-cc">
+
+      <ul class="author-card__social flex-wrap gap-sm  has-twitter">
+          <li>
+            <a href="https://x.com/abhishek_foss" target="_blank" title="Twitter" aria-label="Twitter">
+              <i class="icon icon-twitter-x icon--sm">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+  <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+  <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
+</svg>
+</i>            </a>
+          </li>
+      </ul>
+    </div>
+  </div>
+</div>            </div>
+      </div>
+
+      <div class="col-xs-12 col-lg-3 hide-mobile">
+        <aside class="sidebar">
+    <span class="section-title sm">Featured</span>
+    <div class="sidebar__section">
+<a class="sidebar-story" href="https://itsfoss.com/diablo-like-games/">            <figure class="sidebar-story__media m-r">
+              <picture class="">
+  <source data-srcset="/content/images/size/w100/format/webp/2025/07/diablo-like-games.png 100w,/content/images/size/w300/format/webp/2025/07/diablo-like-games.png 300w," data-sizes="auto" type="image/webp">
+  <img class="lazyload" data-srcset="/content/images/size/w100/2025/07/diablo-like-games.png 100w,/content/images/size/w300/2025/07/diablo-like-games.png 300w," srcset="diablo-like-games.png" data-sizes="auto" data-src="/content/images/size/w100/2025/07/diablo-like-games.png" src="diablo-like-games.png" alt="a gamer penguin with a headphone and controller on its hand is sitting on the left, the cover for the first diablo game being shown inside a monitor on the right">
+</picture>            </figure>
+          <div class="sidebar-story__content">
+            <h3 class="sidebar-story__title">Diablo-like Games You Can Play With Steam on Linux</h3>
+          </div>
+</a><a class="sidebar-story" href="https://itsfoss.com/zimacube-review/">            <figure class="sidebar-story__media m-r">
+              <picture class="">
+  <source data-srcset="/content/images/size/w100/format/webp/2024/11/zimacube--1-.png 100w,/content/images/size/w300/format/webp/2024/11/zimacube--1-.png 300w," data-sizes="auto" type="image/webp">
+  <img class="lazyload" data-srcset="/content/images/size/w100/2024/11/zimacube--1-.png 100w,/content/images/size/w300/2024/11/zimacube--1-.png 300w," srcset="zimacube--1-.png" data-sizes="auto" data-src="/content/images/size/w100/2024/11/zimacube--1-.png" src="zimacube--1-.png" alt="Zimacube review">
+</picture>            </figure>
+          <div class="sidebar-story__content">
+            <h3 class="sidebar-story__title">ZimaCube Review: Almost Perfect Out of Box Homelab Experience in Local Cloud Setup</h3>
+          </div>
+</a><a class="sidebar-story" href="https://itsfoss.com/quiz/save-tux-linux-commands/">            <figure class="sidebar-story__media m-r">
+              <picture class="">
+  <source data-srcset="/content/images/size/w100/format/webp/2024/11/tux-rescue.png 100w,/content/images/size/w300/format/webp/2024/11/tux-rescue.png 300w," data-sizes="auto" type="image/webp">
+  <img class="lazyload" data-srcset="/content/images/size/w100/2024/11/tux-rescue.png 100w,/content/images/size/w300/2024/11/tux-rescue.png 300w," srcset="tux-rescue.png" data-sizes="auto" data-src="/content/images/size/w100/2024/11/tux-rescue.png" src="tux-rescue.png" alt="save the tux">
+</picture>            </figure>
+          <div class="sidebar-story__content">
+            <h3 class="sidebar-story__title">Save The Tux With Linux Command Knowledge Quiz</h3>
+          </div>
+</a><a class="sidebar-story" href="https://itsfoss.com/opencoder-vscode/">            <figure class="sidebar-story__media m-r">
+              <picture class="">
+  <source data-srcset="/content/images/size/w100/format/webp/2024/11/running-opencoder-llm-in-vscode.png 100w,/content/images/size/w300/format/webp/2024/11/running-opencoder-llm-in-vscode.png 300w," data-sizes="auto" type="image/webp">
+  <img class="lazyload" data-srcset="/content/images/size/w100/2024/11/running-opencoder-llm-in-vscode.png 100w,/content/images/size/w300/2024/11/running-opencoder-llm-in-vscode.png 300w," srcset="running-opencoder-llm-in-vscode.png" data-sizes="auto" data-src="/content/images/size/w100/2024/11/running-opencoder-llm-in-vscode.png" src="running-opencoder-llm-in-vscode.png" alt="opencoder LLM">
+</picture>            </figure>
+          <div class="sidebar-story__content">
+            <h3 class="sidebar-story__title">Running Opencoder LLM in VS Code: A Local, Copilot Alternative</h3>
+          </div>
+</a>    </div>
+
+    <div class="sidebar__section flex flex-cc hide-mobile">
+      <div align="center" data-freestar-ad="__300x250 __300x600" id="itsfoss_300x250_Sidebar1">
+        
+      </div>
+    </div>
+
+    <span class="section-title sm">Latest</span>
+    <div class="sidebar__section">   
+<a class="sidebar-story" href="https://itsfoss.com/fsearch/">            <figure class="sidebar-story__media m-r">
+              <picture class="">
+  <source data-srcset="/content/images/size/w100/format/webp/2025/10/fsearch.png 100w,/content/images/size/w300/format/webp/2025/10/fsearch.png 300w," data-sizes="auto" type="image/webp">
+  <img class="lazyload" data-srcset="/content/images/size/w100/2025/10/fsearch.png 100w,/content/images/size/w300/2025/10/fsearch.png 300w," srcset="fsearch.png" data-sizes="auto" data-src="/content/images/size/w100/2025/10/fsearch.png" src="fsearch.png" alt="fsearch app for Linux">
+</picture>            </figure>
+          <div class="sidebar-story__content">
+            <h3 class="sidebar-story__title">I Found Everything Search Engine Alternative for Linux Users</h3>
+
+            <div class="sidebar-story__info">
+              <time datetime="2025-10-31" class="sidebar-story__date">
+                31 Oct 2025
+              </time>
+            </div>
+          </div>
+</a><a class="sidebar-story" href="https://itsfoss.com/hyprland-halloween-customization/">            <figure class="sidebar-story__media m-r">
+              <picture class="">
+  <source data-srcset="/content/images/size/w100/format/webp/2025/10/halloween-thumbnail-1-.png 100w,/content/images/size/w300/format/webp/2025/10/halloween-thumbnail-1-.png 300w," data-sizes="auto" type="image/webp">
+  <img class="lazyload" data-srcset="/content/images/size/w100/2025/10/halloween-thumbnail-1-.png 100w,/content/images/size/w300/2025/10/halloween-thumbnail-1-.png 300w," srcset="halloween-thumbnail-1-.png" data-sizes="auto" data-src="/content/images/size/w100/2025/10/halloween-thumbnail-1-.png" src="halloween-thumbnail-1-.png" alt="Halloween customization">
+</picture>            </figure>
+          <div class="sidebar-story__content">
+            <h3 class="sidebar-story__title">Here's How You Can Customize Linux Desktop for Halloween [Dot Files Included]</h3>
+
+            <div class="sidebar-story__info">
+              <time datetime="2025-10-30" class="sidebar-story__date">
+                30 Oct 2025
+              </time>
+            </div>
+          </div>
+</a><a class="sidebar-story" href="https://itsfoss.com/newsletter/foss-weekly-25-44/">            <figure class="sidebar-story__media m-r">
+              <picture class="">
+  <source data-srcset="/content/images/size/w100/format/webp/2025/10/foss-weekly-1-.png 100w,/content/images/size/w300/format/webp/2025/10/foss-weekly-1-.png 300w," data-sizes="auto" type="image/webp">
+  <img class="lazyload" data-srcset="/content/images/size/w100/2025/10/foss-weekly-1-.png 100w,/content/images/size/w300/2025/10/foss-weekly-1-.png 300w," srcset="foss-weekly-1-.png" data-sizes="auto" data-src="/content/images/size/w100/2025/10/foss-weekly-1-.png" src="foss-weekly-1-.png" alt="Halloween special foss weekly newsletter">
+</picture>            </figure>
+          <div class="sidebar-story__content">
+            <h3 class="sidebar-story__title">FOSS Weekly #25.44: KDE Plasma 6.5 and Fedora 43 Released, Ghostty Terminal, Nextcloud Over Microsoft and Productivity App for Linux</h3>
+
+            <div class="sidebar-story__info">
+              <time datetime="2025-10-30" class="sidebar-story__date">
+                30 Oct 2025
+              </time>
+            </div>
+          </div>
+</a>    </div>
+
+      <div class="sidebar__section hide-mobile flex flex-cc">
+        <div class="sidebar__subscribe">
+            <h4 class="text-acc fw-800">
+              Become a Better Linux User
+            </h4>
+            <div class="m-b text-acc" id="sidebar-input-label">
+                With the FOSS Weekly Newsletter, you learn useful Linux tips, discover applications, explore new distros and stay updated with the latest from Linux world 
+            </div>
+            <form class="subscribe-form" data-members-form="subscribe" data-style="">
+  <input data-members-email="" class="" type="email" autocomplete="email" placeholder="Your email address" aria-labelledby="sidebar-input-label" required="" value=""> 
+  <button class="btn btn--brand" type="submit">
+    <span>Subscribe</span>
+  </button>
+  <div class="msg-success">Great! Check your inbox and click the link.</div>
+  <div class="msg-error">Sorry, something went wrong. Please try again.</div>
+</form>                  </div>
+      </div>
+	
+    <div class="sidebar__section is-sticky flex-direction: column hide-mobile">
+      <div align="center" data-freestar-ad="__336x280 __336x280" id="itsfoss_300x250_300x600_Sidebar2_new">
+        
+      </div>
+    </div>
+
+</aside>
+      </div>
+    </div>
+  </div>
+
+
+<div class="container wrapper flex flex-wrap gap-lg m-b-lg">
+  
+<div class="post-comments radius-double p-lg p-b-0 flex-1 self-align-start" id="comments">
+  
+      <div id="fastcomments-widget"></div>
+      
+</div>
+
+
+
+          <div class="related-posts radius-double p-lg flex-1 self-align-start">
+        <span class="section-title sm m-b uppercase">Read next</span>
+        <div class="post-list m-b-sm">
+            <a class="post-list-item" href="https://itsfoss.com/install-raspi-config-ubuntu/">
+              <h3 class="post-list-item__title">Install raspi-config in Ubuntu on Raspberry Pi</h3>
+              <i class="icon icon-chevron-right">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <polyline points="9 6 15 12 9 18"></polyline>
+</svg>
+</i>            </a>
+            <a class="post-list-item" href="https://itsfoss.com/use-spicetify/">
+              <h3 class="post-list-item__title">Spice Up Your Spotify Experience With Spicetify on Ubuntu</h3>
+              <i class="icon icon-chevron-right">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <polyline points="9 6 15 12 9 18"></polyline>
+</svg>
+</i>            </a>
+            <a class="post-list-item" href="https://itsfoss.com/no-camera-found-ubuntu/">
+              <h3 class="post-list-item__title">No Camera Found? Getting the Camera App to Work in Ubuntu 24.04</h3>
+              <i class="icon icon-chevron-right">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <polyline points="9 6 15 12 9 18"></polyline>
+</svg>
+</i>            </a>
+            <a class="post-list-item" href="https://itsfoss.com/gpu-usage-linux/">
+              <h3 class="post-list-item__title">How to Check GPU Usage on Linux Systems</h3>
+              <i class="icon icon-chevron-right">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <polyline points="9 6 15 12 9 18"></polyline>
+</svg>
+</i>            </a>
+            <a class="post-list-item" href="https://itsfoss.com/install-minecraft-ubuntu/">
+              <h3 class="post-list-item__title">Here's How I Managed to Install Minecraft on Ubuntu</h3>
+              <i class="icon icon-chevron-right">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <polyline points="9 6 15 12 9 18"></polyline>
+</svg>
+</i>            </a>
+        </div>
+      </div>
+</div>
+
+    </main>
+
+          <section class="container wrapper section cta m-b-0 is-post">
+      <div class="cta__inner radius-double is-rel w-100 p-t-lg p-b-lg has-img">
+        <div class="cta__content flex flex-col is-rel z-index-1">
+
+           <h2 class="cta__title">Become a Better Linux User</h2>
+           <p id="cta-input-label" class="cta__description opacity-075">With the FOSS Weekly Newsletter, you learn useful Linux tips, discover applications, explore new distros and stay updated with the latest from Linux world </p>
+          
+              <form class="subscribe-form" data-members-form="signup" data-style="inline-joined">
+  <input data-members-email="" class="" type="email" autocomplete="email" placeholder="Your email address" aria-labelledby="cta-input-label" required="" value=""> 
+  <button class="btn btn--brand btn--gradient uppercase" type="submit">
+    <span>Subscribe</span>
+  </button>
+  <div class="msg-success">Great! Check your inbox and click the link.</div>
+  <div class="msg-error">Sorry, something went wrong. Please try again.</div>
+</form>        </div>
+        
+
+          <figure class="cta__media">
+            <img class="lazyload cta__img" src="itsfoss-cta.webp" alt="itsfoss happy penguin">
+          </figure>
+
+      </div>
+    </section>
+      
+      <footer class="footer">
+  <div class="container wrapper">
+    <div class="row m-b">
+      <div class="col-xs-12 col-md-4">
+        <div class="footer__brand flex items-center">
+            <picture class="">
+  <source data-srcset="/content/images/size/w300/format/webp/2023/01/itsfoss-logo.png 300w," data-sizes="auto" type="image/webp">
+  <img class="footer__logo m-r lazyload" data-srcset="/content/images/size/w300/2023/01/itsfoss-logo.png 300w," srcset="itsfoss-logo.png" data-sizes="auto" data-src="/content/images/size/w100/2023/01/itsfoss-logo.png" src="itsfoss-logo.png" alt="It's FOSS">
+</picture>        </div>
+
+        <div class="footer__description" id="footer-input-label">
+          Making You a Better Linux User
+        </div>
+
+              <form class="subscribe-form radius-rounded m-b" data-members-form="subscribe" data-style="inline-joined">
+  <input data-members-email="" class="w-100 radius-rounded" type="email" autocomplete="email" placeholder="Your email address" aria-labelledby="footer-input-label" required="" value=""> 
+  <button class="btn btn--primary radius-rounded" type="submit">
+    <span>Subscribe</span>
+  </button>
+  <div class="msg-success">Great! Check your inbox and click the link.</div>
+  <div class="msg-error">Sorry, something went wrong. Please try again.</div>
+</form>      </div>
+
+      <div class="col-xs-12 col-md-4 m-b footer-nav">
+        <span class="fw-700 m-b-sm display-block text-acc">Navigation</span>
+        <div class="grid col-2">
+          <ul class="nav">
+    <li class="nav-news" data-label="📰 News" data-length="7">
+      <a href="https://news.itsfoss.com/">
+        <span>📰 News</span>
+      </a>
+    </li>
+    <li class="nav-youtube" data-label="▶️ YouTube" data-length="10">
+      <a href="https://www.youtube.com/@itsfoss">
+        <span>▶️ YouTube</span>
+      </a>
+    </li>
+    <li class="nav-newsletter" data-label="📬 Newsletter" data-length="13">
+      <a href="https://itsfoss.com/newsletter/">
+        <span>📬 Newsletter</span>
+      </a>
+    </li>
+    <li class="nav-quizzes-puzzles" data-label="🧩 Quizzes &amp; Puzzles" data-length="20">
+      <a href="https://itsfoss.com/quiz/">
+        <span>🧩 Quizzes &amp; Puzzles</span>
+      </a>
+    </li>
+    <li class="nav-resources" data-label="🎒 Resources" data-length="12">
+      <a href="https://itsfoss.com/resources/">
+        <span>🎒 Resources</span>
+      </a>
+    </li>
+    <li class="nav-community" data-label="🏘️ Community" data-length="13">
+      <a href="https://itsfoss.community/">
+        <span>🏘️ Community</span>
+      </a>
+    </li>
+    <li class="nav-about" data-label="📖 About" data-length="8">
+      <a href="https://itsfoss.com/about/">
+        <span>📖 About</span>
+      </a>
+    </li>
+    <li class="nav-contact is-subitem" data-label="-🪪 Contact" data-length="11">
+      <a href="https://itsfoss.com/contact-us/">
+        <span>-🪪 Contact</span>
+      </a>
+    </li>
+    <li class="nav-members" data-label="Members" data-length="7">
+      <a href="#">
+        <span>Members</span>
+      </a>
+    </li>
+    <li class="nav-signin is-subitem" data-label="-Signin" data-length="7">
+      <a href="https://itsfoss.com/signin/">
+        <span>-Signin</span>
+      </a>
+    </li>
+    <li class="nav-signup is-subitem" data-label="-Signup" data-length="7">
+      <a href="https://itsfoss.com/signup/">
+        <span>-Signup</span>
+      </a>
+    </li>
+    <li class="nav-membership is-subitem" data-label="-Membership" data-length="11">
+      <a href="https://itsfoss.com/membership/">
+        <span>-Membership</span>
+      </a>
+    </li>
+</ul>
+
+            <ul class="nav secondary submenu">
+    <li class="nav-linux-server-side" data-label="Linux Server Side" data-length="17">
+      <a href="https://linuxhandbook.com/">
+        <span>Linux Server Side</span>
+      </a>
+    </li>
+    <li class="nav-en-espanol" data-label="En Español" data-length="10">
+      <a href="https://itsfoss.com/es/">
+        <span>En Español</span>
+      </a>
+    </li>
+    <li class="nav-feedback" data-label="🗳️ Feedback" data-length="12">
+      <a href="https://itsfoss.com/update-feedback/">
+        <span>🗳️ Feedback</span>
+      </a>
+    </li>
+    <li class="nav-impressum" data-label="Impressum" data-length="9">
+      <a href="https://itsfoss.com/impressum/">
+        <span>Impressum</span>
+      </a>
+    </li>
+    <li class="nav-terms-of-use" data-label="Terms of use" data-length="12">
+      <a href="https://itsfoss.com/terms/">
+        <span>Terms of use</span>
+      </a>
+    </li>
+    <li class="nav-policies" data-label="📜 Policies" data-length="11">
+      <a href="https://itsfoss.com/policies/">
+        <span>📜 Policies</span>
+      </a>
+    </li>
+</ul>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-6 col-md-2 m-b">
+              <span class="fw-700 m-b-sm display-block text-acc">Resources</span>
+              <ul class="nav">
+                  <li><a href="https://itsfoss.com/tag/courses/">Courses 🎓</a></li>
+                  <li><a href="https://itsfoss.com/tag/distro-resources/">Distro Resources 📖</a></li>
+                  <li><a href="https://itsfoss.com/tag/guides/">Guides 📒</a></li>
+              </ul>
+      </div>
+
+      <div class="col-xs-12 col-sm-6 col-md-2 m-b">
+        <span class="fw-700 m-b-sm display-block text-acc">Social</span>
+        <div class="social-links flex flex-col">
+            <a href="https://www.facebook.com/itsfoss" class="facebook" aria-label="Facebook"><i class="icon icon-facebook icon--sm">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+  <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"></path>
+</svg>
+
+
+
+</i><span>Facebook</span></a>
+
+  <a href="https://x.com/itsfoss2" class="twitter" aria-label="Twitter"><i class="icon icon-twitter-x icon--sm">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+  <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+  <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
+</svg>
+</i><span>Twitter</span></a>
+
+<a href="https://itsfoss.com/rss/" class="rss" aria-label="RSS"><i class="icon icon-rss icon--sm">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-rss" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+  <circle cx="5" cy="19" r="1"></circle>
+  <path d="M4 4a16 16 0 0 1 16 16"></path>
+  <path d="M4 11a9 9 0 0 1 9 9"></path>
+</svg>
+
+
+
+</i><span>RSS</span></a>
+
+<a href="https://bsky.app/profile/itsfoss.bsky.social" class="bluesky" aria-label="Bluesky"><i class="icon icon-bluesky icon--sm">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-bluesky"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M6.335 5.144c-1.654 -1.199 -4.335 -2.127 -4.335 .826c0 .59 .35 4.953 .556 5.661c.713 2.463 3.13 2.75 5.444 2.369c-4.045 .665 -4.889 3.208 -2.667 5.41c1.03 1.018 1.913 1.59 2.667 1.59c2 0 3.134 -2.769 3.5 -3.5c.333 -.667 .5 -1.167 .5 -1.5c0 .333 .167 .833 .5 1.5c.366 .731 1.5 3.5 3.5 3.5c.754 0 1.637 -.571 2.667 -1.59c2.222 -2.203 1.378 -4.746 -2.667 -5.41c2.314 .38 4.73 .094 5.444 -2.369c.206 -.708 .556 -5.072 .556 -5.661c0 -2.953 -2.68 -2.025 -4.335 -.826c-2.293 1.662 -4.76 5.048 -5.665 6.856c-.905 -1.808 -3.372 -5.194 -5.665 -6.856z"></path></svg>
+</i><span>Bluesky</span></a>
+
+<a href="https://mastodon.social/@itsfoss" class="mastodon" aria-label="Mastodon"><i class="icon icon-mastodon icon--sm">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-mastodon"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M18.648 15.254c-1.816 1.763 -6.648 1.626 -6.648 1.626a18.262 18.262 0 0 1 -3.288 -.256c1.127 1.985 4.12 2.81 8.982 2.475c-1.945 2.013 -13.598 5.257 -13.668 -7.636l-.026 -1.154c0 -3.036 .023 -4.115 1.352 -5.633c1.671 -1.91 6.648 -1.666 6.648 -1.666s4.977 -.243 6.648 1.667c1.329 1.518 1.352 2.597 1.352 5.633s-.456 4.074 -1.352 4.944z"></path><path d="M12 11.204v-2.926c0 -1.258 -.895 -2.278 -2 -2.278s-2 1.02 -2 2.278v4.722m4 -4.722c0 -1.258 .895 -2.278 2 -2.278s2 1.02 2 2.278v4.722"></path></svg>
+</i><span>Mastodon</span></a>
+
+
+<a href="https://github.com/itsfoss" class="github" aria-label="Github"><i class="icon icon-github icon--sm">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <desc>Download more icon variants from https://tabler-icons.io/i/brand-github</desc>
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path>
+</svg>
+
+
+
+</i><span>Github</span></a>
+
+<a href="https://www.instagram.com/itsfoss/" class="instagram" aria-label="Instagram"><i class="icon icon-instagram icon--sm">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <desc>Download more icon variants from https://tabler-icons.io/i/brand-instagram</desc>
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+  <rect x="4" y="4" width="16" height="16" rx="4"></rect>
+  <circle cx="12" cy="12" r="3"></circle>
+  <line x1="16.5" y1="7.5" x2="16.5" y2="7.501"></line>
+</svg>
+
+
+
+</i><span>Instagram</span></a>
+
+
+<a href="https://www.reddit.com/r/LinuxUsersGroup/" class="reddit" aria-label="Reddit"><i class="icon icon-reddit icon--sm">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-reddit" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+  <path d="M12 8c2.648 0 5.028 .826 6.675 2.14a2.5 2.5 0 0 1 2.326 4.36c0 3.59 -4.03 6.5 -9 6.5c-4.875 0 -8.845 -2.8 -9 -6.294l-1 -.206a2.5 2.5 0 0 1 2.326 -4.36c1.646 -1.313 4.026 -2.14 6.674 -2.14z"></path>
+  <path d="M12 8l1 -5l6 1"></path>
+  <circle cx="19" cy="4" r="1"></circle>
+  <circle cx="9" cy="13" r=".5" fill="currentColor"></circle>
+  <circle cx="15" cy="13" r=".5" fill="currentColor"></circle>
+  <path d="M10 17c.667 .333 1.333 .5 2 .5s1.333 -.167 2 -.5"></path>
+</svg>
+
+
+
+</i><span>Reddit</span></a>
+
+<a href="https://t.me/itsfoss_official" class="telegram" aria-label="Telegram"><i class="icon icon-telegram icon--sm">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-telegram" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <desc>Download more icon variants from https://tabler-icons.io/i/brand-telegram</desc>
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+  <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4"></path>
+</svg>
+
+
+
+</i><span>Telegram</span></a>
+
+
+
+<a href="https://www.youtube.com/@Itsfoss" class="youtube" aria-label="Youtube"><i class="icon icon-youtube icon--sm">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-youtube" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <desc>Download more icon variants from https://tabler-icons.io/i/brand-youtube</desc>
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+  <rect x="3" y="5" width="18" height="14" rx="4"></rect>
+  <path d="M10 9l5 3l-5 3z"></path>
+</svg>
+
+
+
+</i><span>Youtube</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="footer__copy">
+        <span>©2025&nbsp;<a href="https://itsfoss.com/">It's FOSS</a>.</span>
+        <span>Hosted on&nbsp;<a href="https://m.do.co/c/d58840562553">Digital Ocean (get $200 in FREE credits)</a>&nbsp;&amp;&nbsp;Published with&nbsp;<a href="https://ghost.org/pricing/?via=abhishek70">Ghost</a>&nbsp;&amp;&nbsp;<a href="https://brightthemes.lemonsqueezy.com/?aff=GNoD0">Rinne</a>.</span>
+      </div>
+
+      <div class="color-scheme flex flex-cc radius-half">
+  <div class="color-scheme-symbol">
+    <span class="accent-bg"></span>
+  </div>
+  <select class="color-scheme-select radius-half js-color-scheme-select" aria-label="Change color scheme">
+    <option value="system" selected="">System</option>
+    <option value="light">Light</option>
+    <option value="dark">Dark</option>
+  </select>
+  <i class="icon icon-select">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-select" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M17 8.517L12 3 7 8.517M7 15.48l5 5.517 5-5.517"></path>
+</svg>
+
+
+
+</i></div>    </div>
+
+  </div>
+</footer>
+
+    <dialog class="notification">
+  <i class="icon icon-success notification-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-check" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+  <circle cx="12" cy="12" r="9"></circle>
+  <path d="M9 12l2 2l4 -4"></path>
+</svg>
+
+
+
+</i>  <i class="icon icon-error notification-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-alert-octagon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+  <path d="M8.7 3h6.6c.3 0 .5 .1 .7 .3l4.7 4.7c.2 .2 .3 .4 .3 .7v6.6c0 .3 -.1 .5 -.3 .7l-4.7 4.7c-.2 .2 -.4 .3 -.7 .3h-6.6c-.3 0 -.5 -.1 -.7 -.3l-4.7 -4.7c-.2 -.2 -.3 -.4 -.3 -.7v-6.6c0 -.3 .1 -.5 .3 -.7l4.7 -4.7c.2 -.2 .4 -.3 .7 -.3z"></path>
+  <line x1="12" y1="8" x2="12" y2="12"></line>
+  <line x1="12" y1="16" x2="12.01" y2="16"></line>
+</svg>
+
+
+
+</i>  <i class="icon icon-warning notification-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-alert-triangle" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+  <path d="M12 9v2m0 4v.01"></path>
+  <path d="M5 19h14a2 2 0 0 0 1.84 -2.75l-7.1 -12.25a2 2 0 0 0 -3.5 0l-7.1 12.25a2 2 0 0 0 1.75 2.75"></path>
+</svg>
+
+
+
+</i>  <p class="notification-msg signup-success">Great! You’ve successfully signed up.</p> 
+  <p class="notification-msg signin-success">Welcome back! You've successfully signed in.</p> 
+  <p class="notification-msg subscribe-success">You've successfully subscribed to It's FOSS.</p> 
+  <p class="notification-msg link-expired">Your link has expired.</p> 
+  <p class="notification-msg checkout-success">Success! Check your email for magic link to sign-in.</p> 
+  <p class="notification-msg billing-success">Success! Your billing info has been updated.</p> 
+  <p class="notification-msg billing-cancel">Your billing was not updated.</p> 
+  <button class="notification-close js-notification-close" aria-label="Close">
+    <i class="icon icon-x">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+  <line x1="18" y1="6" x2="6" y2="18"></line>
+  <line x1="6" y1="6" x2="18" y2="18"></line>
+</svg>
+</i>  </button>
+</dialog>
+
+      
+    
+
+    
+
+      
+
+  
+
+
+
+  
+
+  
+
+
+    <!-- HTML for contextly -->
+
+    
+    <!-- HTML for geo depending button from Freestar-->
+<button id="pmLink" class="btn btn--primary m-r-sm">Privacy Manager</button>
+
+<!-- Blockthrough script for freestar-->
+
+
+  
+
+</body></html>
